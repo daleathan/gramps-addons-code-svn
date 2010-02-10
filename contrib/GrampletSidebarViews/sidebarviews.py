@@ -69,6 +69,23 @@ def extend(class_):
             super(SidebarView, self).set_active()
             self.gramplet_pane.set_active()
 
+        #def can_configure(self):
+        #    """
+        #    See :class:`~gui.views.pageview.PageView 
+        #    :return: bool
+        #    """
+        #    self._config = self.gramplet_pane._config
+        #    return super(SidebarView, self).can_configure() or self.gramplet_pane.can_configure()
+
+        #def _get_configure_page_funcs(self):
+        #    """
+        #    Return a list of functions that create gtk elements to use in the 
+        #    notebook pages of the Configure dialog
+        #    
+        #    :return: list of functions
+        #    """
+        #    return super(SidebarView, self)._get_configure_page_funcs() + self.gramplet_pane._get_configure_page_funcs()
+
     return SidebarView
 
 class RelationshipViewSidebar(extend(RelationshipView)):
