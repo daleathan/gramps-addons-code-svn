@@ -35,25 +35,27 @@ def extend(class_):
                              default_gramplets=["Attributes Gramplet"])
             widget.pack1(container, resize=True, shrink=True)
             widget.pack2(self.gramplet_pane, resize=True, shrink=True)
-            self.gramplet_pane.set_size_request(self.gramplet_pane.pane_width, -1)
-            container.set_size_request(self.gramplet_pane.pane_other_width, -1)
             widget.set_position(self.gramplet_pane.pane_position)
             widget.connect("notify", self.move_handle)
             return widget
 
         def move_handle(self, widget, notify_type):
             if notify_type.name == "position-set":
-                self.gramplet_pane.pane_other_width = widget.get_child1().allocation.width
-                self.gramplet_pane.pane_width = widget.get_child2().allocation.width
                 self.gramplet_pane.pane_position = widget.get_position()
 
         def ui_definition(self):
             uid = super(SidebarView, self).ui_definition()
-            uid = uid.replace("</popup>", """            <menuitem action="AddGramplet"/>
+            this_uid = """            
+                <menuitem action="AddGramplet"/>
                 <menuitem action="RestoreGramplet"/>
                 <separator/>
-              </popup>
-                """)
+                """
+            if "</popup>" in uid:
+                uid = uid.replace("</popup>", this_uid + "</popup>")
+            elif "</ui>" in uid:
+                uid = uid.replace("</ui>", """<popup name="Popup">%s</popup></ui>""" % this_uid)
+            else:
+                uid = """<ui><popup name="Popup">%s</popup></ui>""" % this_uid
             return uid
 
         def define_actions(self):
