@@ -1,4 +1,29 @@
+#
+# Gramps - a GTK+/GNOME based genealogy program
+#
+# Copyright (C) 2010       Douglas S. Blank <doug.blank@gmail.com>
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+#
+#
+# $Id$
+#
+#
+
 import gtk
+import gobject
 
 from relview import RelationshipView
 from eventview import EventView
@@ -29,10 +54,11 @@ def extend(class_):
             container = super(SidebarView, self).build_widget()
             widget = gtk.HPaned()
             self.gramplet_pane = \
-                GrampletPane("%s_%s" % (self.navigation_type(), self.__class__.__name__), 
+                GrampletPane("%s_%s" % (self.navigation_type(), 
+                                        self.__class__.__name__), 
                              self, self.dbstate, self.uistate, 
                              column_count=1,
-                             default_gramplets=["Attributes Gramplet"])
+                             default_gramplets=self.DEFAULT_GRAMPLETS)
             widget.pack1(container, resize=True, shrink=True)
             widget.pack2(self.gramplet_pane, resize=True, shrink=True)
             widget.set_position(self.gramplet_pane.pane_position)
@@ -70,6 +96,8 @@ def extend(class_):
         def set_active(self):
             super(SidebarView, self).set_active()
             self.gramplet_pane.set_active()
+            # This is a workaround to get gramplets to redraw correctly:
+            gobject.timeout_add(100, self.gramplet_pane.set_state_all)
 
         #def can_configure(self):
         #    """
@@ -93,79 +121,95 @@ def extend(class_):
 class RelationshipViewSidebar(extend(RelationshipView)):
     """
     """
+    DEFAULT_GRAMPLETS = ["TODO Gramplet"]
 
 class EventViewSidebar(extend(EventView)):
     """
     EventView with Gramplet Sidebar.
     """
+    DEFAULT_GRAMPLETS = ["TODO Gramplet"]
 
 class FamilyViewSidebar(extend(FamilyView)):
     """
     FamilyView with Gramplet Sidebar.
     """
+    DEFAULT_GRAMPLETS = ["TODO Gramplet"]
 
 class FanChartViewSidebar(extend(FanChartView)):
     """
     FanChartView with Gramplet Sidebar.
     """
+    DEFAULT_GRAMPLETS = ["TODO Gramplet"]
 
 class GeoViewSidebar(extend(GeoView)):
     """
     GeoView with Gramplet Sidebar.
     """
+    DEFAULT_GRAMPLETS = ["TODO Gramplet"]
 
 class HtmlViewSidebar(extend(HtmlView)):
     """
     HtmlView with Gramplet Sidebar.
     """
+    DEFAULT_GRAMPLETS = ["TODO Gramplet"]
 
 class MediaViewSidebar(extend(MediaView)):
     """
     MediaView with Gramplet Sidebar.
     """
+    DEFAULT_GRAMPLETS = ["TODO Gramplet"]
 
 class NoteViewSidebar(extend(NoteView)):
     """
     NoteView with Gramplet Sidebar.
     """
+    DEFAULT_GRAMPLETS = ["TODO Gramplet"]
 
 class PedigreeViewSidebar(extend(PedigreeView)):
     """
     PedigreeView with Gramplet Sidebar.
     """
+    DEFAULT_GRAMPLETS = ["TODO Gramplet"]
 
 class PedigreeViewExtSidebar(extend(PedigreeViewExt)):
     """
     PedigreeViewext with Gramplet Sidebar.
     """
+    DEFAULT_GRAMPLETS = ["TODO Gramplet"]
 
 class PersonListViewSidebar(extend(PersonListView)):
     """
     PersonlistView with Gramplet Sidebar.
     """
+    DEFAULT_GRAMPLETS = ["TODO Gramplet"]
 
 class PersonTreeViewSidebar(extend(PersonTreeView)):
     """
     PersontreeView with Gramplet Sidebar.
     """
+    DEFAULT_GRAMPLETS = ["TODO Gramplet"]
 
 class PlaceListViewSidebar(extend(PlaceListView)):
     """
     PlacelistView with Gramplet Sidebar.
     """
+    DEFAULT_GRAMPLETS = ["TODO Gramplet"]
 
 class PlaceTreeViewSidebar(extend(PlaceTreeView)):
     """
     PlacetreeView with Gramplet Sidebar.
     """
+    DEFAULT_GRAMPLETS = ["TODO Gramplet"]
 
 class RepositoryViewSidebar(extend(RepositoryView)):
     """
     RepoView with Gramplet Sidebar.
     """
+    DEFAULT_GRAMPLETS = ["TODO Gramplet"]
 
 class SourceViewSidebar(extend(SourceView)):
     """
     SourceView with Gramplet Sidebar.
     """
+    DEFAULT_GRAMPLETS = ["TODO Gramplet"]
 
