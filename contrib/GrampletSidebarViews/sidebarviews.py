@@ -99,22 +99,37 @@ def extend(class_):
             # This is a workaround to get gramplets to redraw correctly:
             gobject.timeout_add(100, self.gramplet_pane.set_state_all)
 
-        #def can_configure(self):
-        #    """
-        #    See :class:`~gui.views.pageview.PageView 
-        #    :return: bool
-        #    """
-        #    self._config = self.gramplet_pane._config
-        #    return super(SidebarView, self).can_configure() or self.gramplet_pane.can_configure()
+        def can_configure(self):
+            """
+            See :class:`~gui.views.pageview.PageView 
+            :return: bool
+            """
+            if super(SidebarView, self).can_configure():
+                return True
+            elif self.gramplet_pane.can_configure():
+                self._config = self.gramplet_pane._config
+                return True
+            else:
+                return False
 
-        #def _get_configure_page_funcs(self):
-        #    """
-        #    Return a list of functions that create gtk elements to use in the 
-        #    notebook pages of the Configure dialog
-        #    
-        #    :return: list of functions
-        #    """
-        #    return super(SidebarView, self)._get_configure_page_funcs() + self.gramplet_pane._get_configure_page_funcs()
+        def _get_configure_page_funcs(self):
+            """
+            Return a list of functions that create gtk elements to use in the 
+            notebook pages of the Configure dialog
+            
+            :return: list of functions
+            """
+            def get_configure_page_funcs():
+                retval = []
+                if super(SidebarView, self).can_configure():
+                    other = super(SidebarView, self)._get_configure_page_funcs()
+                    if callable(other):
+                        retval += other()
+                    else:
+                        retval += other
+                func = self.gramplet_pane._get_configure_page_funcs()
+                return retval + func()
+            return get_configure_page_funcs
 
     return SidebarView
 
