@@ -26,7 +26,8 @@
 import os
 import datetime, time, calendar
 
-from gettext import gettext as gt
+from TransUtils import get_addon_translator
+gt = get_addon_translator().ugettext
 from gen.lib import Date
 
 # import the pyexiv2 python library classes that we will be needing
