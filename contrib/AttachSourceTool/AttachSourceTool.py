@@ -48,7 +48,7 @@ try:
     _ = get_addon_translator(__file__).ugettext
 except:
     import gettext
-    _ = gettext.ugettext
+    _ = gettext.gettext
 
 #------------------------------------------------------------------------
 #

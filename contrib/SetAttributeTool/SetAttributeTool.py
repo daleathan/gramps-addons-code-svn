@@ -39,7 +39,10 @@ from PluginUtils import Tool, PluginWindows, MenuToolOptions
 from gen.plug.menu import StringOption, FilterOption, PersonOption, \
     EnumeratedListOption
 import gen.lib
-from gen.display.name import displayer as name_displayer
+try:
+    from gen.display.name import displayer as name_displayer
+except:
+    from BasicUtils import name_displayer
 import Errors
 from ReportBase import ReportUtils
 
@@ -48,7 +51,7 @@ try:
     _ = get_addon_translator(__file__).ugettext
 except:
     import gettext
-    _ = gettext.ugettext
+    _ = gettext.gettext
 
 #-------------------------------------------------
 #
