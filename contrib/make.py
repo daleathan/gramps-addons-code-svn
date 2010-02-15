@@ -8,6 +8,8 @@ Examples:
    python make.py clean
    python make.py clean AddonDirectory
    python make.py init AddonDirectory
+   python make.py build AddonDirectory
+   python make.py build all
 
       Creates the initial directories for the addon.
 
@@ -177,13 +179,26 @@ elif command == "compile":
            '''-o "%(addon)s/locale/%(locale)s/LC_MESSAGES/addon.mo"''')
 elif command == "build":
     files = sys.argv[3:]
-    files += glob.glob(r('''%(addon)s/*.py'''))
-    files += glob.glob(r('''%(addon)s/*.glade'''))
-    files += glob.glob(r('''%(addon)s/*.xml'''))
-    files += glob.glob(r('''%(addon)s/locale/*/LC_MESSAGES/*.mo'''))
-    files_str = " ".join(files)
-    system('''mkdir -p ../download ''')
-    system('''tar cfz "../download/%(addon)s.addon.tgz" %(files)s''',
-           files=files_str)
+    if addon == "all":
+        dirs = [file for file in glob.glob("*") if os.path.isdir(file)]
+        for addon in dirs:
+            files = []
+            files += glob.glob(r('''%(addon)s/*.py'''))
+            files += glob.glob(r('''%(addon)s/*.glade'''))
+            files += glob.glob(r('''%(addon)s/*.xml'''))
+            files += glob.glob(r('''%(addon)s/locale/*/LC_MESSAGES/*.mo'''))
+            files_str = " ".join(files)
+            system('''mkdir -p ../download ''')
+            system('''tar cfz "../download/%(addon)s.addon.tgz" %(files)s''',
+                   files=files_str)
+    else:
+        files += glob.glob(r('''%(addon)s/*.py'''))
+        files += glob.glob(r('''%(addon)s/*.glade'''))
+        files += glob.glob(r('''%(addon)s/*.xml'''))
+        files += glob.glob(r('''%(addon)s/locale/*/LC_MESSAGES/*.mo'''))
+        files_str = " ".join(files)
+        system('''mkdir -p ../download ''')
+        system('''tar cfz "../download/%(addon)s.addon.tgz" %(files)s''',
+               files=files_str)
 else:
     raise AttributeError("unknown command")
