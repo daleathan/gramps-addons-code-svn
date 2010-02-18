@@ -22,14 +22,12 @@
 #
 
 #------------------------------------------------------------------------
-#
 # Exif Image Metadata Gramplet
-#
 #------------------------------------------------------------------------
 register(GRAMPLET,
     id = "Image Metadata Gramplet",
-    name = _("Image Metadata Gramplet-v0.1"),
-    height = 300,
+    name = _("Image Metadata Gramplet"),
+    height = 310,
     expand = False,
     gramplet = 'imageMetadataGramplet',
     gramplet_title = _("Image Metadata Gramplet"),
