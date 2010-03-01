@@ -18,7 +18,7 @@ msgstr ""
 
 #: TimelinePedigreeView/TimelinePedigreeView.gpr.py:33
 msgid "Timeline Pedigree"
-msgstr "Tijslijnstamboom"
+msgstr "Tijdslijnstamboom"
 
 #: TimelinePedigreeView/TimelinePedigreeView.gpr.py:34
 msgid "Ancestry"
