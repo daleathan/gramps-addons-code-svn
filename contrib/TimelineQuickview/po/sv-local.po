@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-11-23 19:34+0100\n"
-"PO-Revision-Date: 2010-02-15 20:39+0100\n"
+"PO-Revision-Date: 2010-02-25 13:08+0100\n"
 "Last-Translator: Peter Landgren <peter.talken@telia.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
@@ -65,7 +65,7 @@ msgstr "far- och morföräldrars föräldrar"
 
 #: TimelineQuickview/TimelineQuickview.py:58
 msgid "Inlaw Great, "
-msgstr ""
+msgstr "Ingift..."
 
 #: TimelineQuickview/TimelineQuickview.py:88
 msgid "Partner's spouse"
