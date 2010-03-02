@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-02-20 08:28+0100\n"
-"PO-Revision-Date: 2010-02-20 08:28+0100\n"
-"Last-Translator: erik <erik@ylana.telenet.be>\n"
+"PO-Revision-Date: 2010-03-02 18:29+0100\n"
+"Last-Translator: Erik De Richter <frederik.de.richter@pandora.be>\n"
 "Language-Team: Dutch\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -21,20 +21,12 @@ msgid "PlaceCompletion"
 msgstr "Locatie vervolledigen"
 
 #: PlaceCompletion/PlaceCompletion.gpr.py:26
-msgid ""
-"Provides a browsable list of selected places, with possibility to complete/"
-"parse/set the attribute fields."
-msgstr ""
-"Geeft een lijst van geselecteerde locaties, met de mogelijkheid om de"
-"kenmerkenvelden de vervolledigen/bekijken/veranderen."
+msgid "Provides a browsable list of selected places, with possibility to complete/parse/set the attribute fields."
+msgstr "Geeft een lijst van geselecteerde locaties, met de mogelijkheid om dekenmerkenvelden de vervolledigen/bekijken/veranderen."
 
 #: PlaceCompletion/PlaceCompletion.py:86
-msgid ""
-"Place Completion by parsing, file lookup and batch setting of place "
-"attributes"
-msgstr ""
-"Locatie vervolledigen door 'parsing', bestandscontrole en "
-"veranderen van de locatiekenmerken"
+msgid "Place Completion by parsing, file lookup and batch setting of place attributes"
+msgstr "Locatie vervolledigen door 'parsing', bestandscontrole en veranderen van de locatiekenmerken"
 
 #: PlaceCompletion/PlaceCompletion.py:236
 #: PlaceCompletion/PlaceCompletion.py:275
@@ -67,22 +59,20 @@ msgstr "Ontbrekende reguliere uitdrukking voor breedte/lengte te controleren"
 
 #: PlaceCompletion/PlaceCompletion.py:443
 #, python-format
-msgid ""
-"Regex groups %(lat)s and %(lon)s must be present in lat/lon match. Quiting"
-msgstr ""
-"Reguliere uitdrukkingen %(lat)s en %(lon)s moeten aanwezig zijn voor de  breedte/lengte controle. Stopt"
+msgid "Regex groups %(lat)s and %(lon)s must be present in lat/lon match. Quiting"
+msgstr "Reguliere uitdrukkingen %(lat)s en %(lon)s moeten aanwezig zijn voor de  breedte/lengte controle. Stopt"
 
 #: PlaceCompletion/PlaceCompletion.py:453
 msgid "Non valid regex for match lat/lon"
-msgstr ""
+msgstr "Geen geldige reguliere uitdrukking voor lengte/breedte"
 
 #: PlaceCompletion/PlaceCompletion.py:454
 msgid "Non valid regular expression given to find lat/lon. Quiting."
-msgstr ""
+msgstr "Geen geldige reguliere uitdrukking opgegeven voor lengte/breedte. Gestopt."
 
 #: PlaceCompletion/PlaceCompletion.py:512
 msgid "Finding Places and appropriate changes"
-msgstr ""
+msgstr "Locaties vinden en gepaste veranderingen"
 
 #: PlaceCompletion/PlaceCompletion.py:514
 msgid "Filtering"
@@ -90,7 +80,7 @@ msgstr "Filteren"
 
 #: PlaceCompletion/PlaceCompletion.py:524
 msgid "Loading lat/lon file in Memory..."
-msgstr ""
+msgstr "Lengte/breedte-bestand wordt geladen in het geheugen..."
 
 #: PlaceCompletion/PlaceCompletion.py:529
 msgid "Examining places"
@@ -234,7 +224,7 @@ msgstr "GeoNames USA state file, city search"
 
 #: PlaceCompletion/PlaceCompletion.py:1155
 msgid "GNS Geonet country file, city search"
-msgstr ""
+msgstr "'GNS Geonet'-landenbestand, stad wordt gezocht"
 
 #: PlaceCompletion/PlaceCompletion.py:1164
 msgid "GNS Geonet country file, title begin, general search"
@@ -254,7 +244,7 @@ msgstr "Geen breedte/lengte opgegeven"
 
 #: PlaceCompletion/placecompletion.glade.h:1
 msgid "<b>1. Look up latitude and longitude:</b>"
-msgstr "<b>1. Zoek de lengte en de breedte op:</b>"
+msgstr "1. Zoek de lengte en de breedte op:"
 
 #: PlaceCompletion/placecompletion.glade.h:2
 msgid "<b>2. Parsing and Conversion of existing title or position:</b>"
@@ -266,23 +256,15 @@ msgstr "<b<3. Verander de kenmerken van alle geselcteerde locaties:</b>"
 
 #: PlaceCompletion/placecompletion.glade.h:4
 msgid ""
-"<i>Delete to delete a row, Double-click on the row to edit place with "
-"changes pre-entered, \n"
-"Press Tab on a row or Google Maps button to see place on a map. Press Apply "
-"to do all changes automatically</i>"
+"<i>Delete to delete a row, Double-click on the row to edit place with changes pre-entered, \n"
+"Press Tab on a row or Google Maps button to see place on a map. Press Apply to do all changes automatically</i>"
 msgstr ""
-"<i>Verwijder om een rij te verwijderen, dubbelklikken op een rij om locatie "
-"aan te passen met de ingevulde velden, \n"
-"Druk 'Tab' op een rij of de 'Google Maps'-knop om een locatie op de kaart "
-"te zien. Druk op toepassen om alle veranderingen automatisch uit te voeren</i>"
+"<i>Verwijder om een rij te verwijderen, dubbelklikken op een rij om locatie aan te passen met de ingevulde velden, \n"
+"Druk 'Tab' op een rij of de 'Google Maps'-knop om een locatie op de kaart te zien. Druk op toepassen om alle veranderingen automatisch uit te voeren</i>"
 
 #: PlaceCompletion/placecompletion.glade.h:6
-msgid ""
-"<span size=\"large\"><b>Selection of the Places you want to complete:</b></"
-"span>"
-msgstr ""
-"<span size=\"groot\"><b>Selectie van de locaties die u wenst te vervolledigen:</b></"
-"span>"
+msgid "<span size=\"large\"><b>Selection of the Places you want to complete:</b></span>"
+msgstr "<span size=\"groot\"><b>Selectie van de locaties die u wenst te vervolledigen:</b></span>"
 
 #: PlaceCompletion/placecompletion.glade.h:7
 msgid "Apply all suggested changes"
@@ -375,3 +357,4 @@ msgstr "ZIP/Postcode"
 #: PlaceCompletion/placecompletion.glade.h:29
 msgid "_Google Maps"
 msgstr "_Google Maps"
+

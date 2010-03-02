@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-02-18 17:44+0100\n"
-"PO-Revision-Date: 2010-02-18 17:44+0100\n"
-"Last-Translator: erik <erik@ylana.telenet.be>\n"
+"PO-Revision-Date: 2010-03-02 18:31+0100\n"
+"Last-Translator: Erik De Richter <frederik.de.richter@pandora.be>\n"
 "Language-Team: Dutch\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -18,7 +18,7 @@ msgstr ""
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.gpr.py:3
 msgid "Deep Connections Gramplet"
-msgstr "Gramplet verre relaties"
+msgstr "'Verre relaties'-gramplet"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.gpr.py:9
 msgid "Deep Connections"
@@ -71,7 +71,7 @@ msgid ""
 "   who is a %s of "
 msgstr ""
 "\n"
-"   wie is een %s van " 
+"   wie is een %s van "
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:138
 msgid "No Home Person set."
@@ -124,3 +124,4 @@ msgid ""
 msgstr ""
 "\n"
 "Het zoeken is gedaan. er zijn %d relaties gevonden."
+
