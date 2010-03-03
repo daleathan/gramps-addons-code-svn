@@ -1,0 +1,50 @@
+# Dutch translations for gramps-addonsbranch package.
+# Copyright (C) 2010 THE gramps-addonsbranch'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the gramps-addonsbranch package.
+# erik <erik@ylana.telenet.be>, 2010.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gramps-addonsbranch 32\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-03-03 16:58+0100\n"
+"PO-Revision-Date: 2010-03-03 16:59+0100\n"
+"Last-Translator: erik <erik@ylana.telenet.be>\n"
+"Language-Team: Dutch\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: Query/Query.gpr.py:9
+msgid "Query Gramplet"
+msgstr "Zoek-gramplet"
+
+#: Query/Query.gpr.py:16
+msgid "Query"
+msgstr "Zoeken"
+
+#: Query/Query.gpr.py:28
+msgid "Query Quickview"
+msgstr "Zoeken snelscherm"
+
+#: Query/Query.gpr.py:31
+msgid "Display data that matches a query"
+msgstr "Toont gegevens die overeenkomen met een zoekopdracht"
+
+#: Query/QueryGramplet.py:32
+msgid "Enter SQL query"
+msgstr "Geef een 'SQL'-zoekopdracht in"
+
+#: Query/QueryQuickview.py:194
+#, python-format
+msgid "[%d rows processed]"
+msgstr "[%d rijen werden verwerkt]"
+
+#: Query/QueryQuickview.py:224
+msgid "Date"
+msgstr "Datum"
+
+#: Query/QueryQuickview.py:225
+msgid "Today"
+msgstr "Vandaag"

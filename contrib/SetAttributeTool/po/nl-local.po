@@ -1,0 +1,105 @@
+# Dutch translations for gramps-addonsbranch package.
+# Copyright (C) 2010 THE gramps-addonsbranch'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the gramps-addonsbranch package.
+# erik <erik@ylana.telenet.be>, 2010.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gramps-addonsbranch 32\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-03-03 17:01+0100\n"
+"PO-Revision-Date: 2010-03-03 17:01+0100\n"
+"Last-Translator: erik <erik@ylana.telenet.be>\n"
+"Language-Team: Dutch\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: SetAttributeTool/SetAttributeTool.gpr.py:25
+#: SetAttributeTool/SetAttributeTool.py:119
+#: SetAttributeTool/SetAttributeTool.py:179
+#: SetAttributeTool/SetAttributeTool.py:196
+msgid "Set Attribute"
+msgstr "Bepaal kenmerk"
+
+#: SetAttributeTool/SetAttributeTool.gpr.py:26
+msgid "Set an attribute to a given value."
+msgstr "Geef een kenmerk een bepaalde waarde."
+
+#: SetAttributeTool/SetAttributeTool.py:70
+#: SetAttributeTool/SetAttributeTool.py:122
+msgid "Options"
+msgstr "Opties"
+
+#: SetAttributeTool/SetAttributeTool.py:72
+msgid "Person Filter"
+msgstr "Persoonsfilter"
+
+#: SetAttributeTool/SetAttributeTool.py:73
+msgid "Select filter to restrict people"
+msgstr "Kies een filter om het aantal personen te beperken"
+
+#: SetAttributeTool/SetAttributeTool.py:77
+msgid "Filter Person"
+msgstr "Peronen worden gefilterd"
+
+#: SetAttributeTool/SetAttributeTool.py:78
+msgid "The center person for the filter"
+msgstr "De centrale persoon voor het filter"
+
+#: SetAttributeTool/SetAttributeTool.py:82
+msgid "Attribute"
+msgstr "Kenmerk"
+
+#: SetAttributeTool/SetAttributeTool.py:83
+msgid "Value"
+msgstr "Waarde"
+
+#: SetAttributeTool/SetAttributeTool.py:85
+msgid "Attribute type to add or edit"
+msgstr "Het kenmerktype dat toegevoegd of veranderd wordt"
+
+#: SetAttributeTool/SetAttributeTool.py:86
+msgid "Attribute value to add or edit"
+msgstr "De kenmerkwaarde die toegevoegd of veranderd wordt"
+
+#: SetAttributeTool/SetAttributeTool.py:127
+msgid "Results"
+msgstr "Resultaten"
+
+#: SetAttributeTool/SetAttributeTool.py:128
+msgid "Processing...\n"
+msgstr "Wordt verwerkt...\n"
+
+#: SetAttributeTool/SetAttributeTool.py:143
+msgid "Setting attributes..."
+msgstr "Kenmerken worden aangepast..."
+
+#: SetAttributeTool/SetAttributeTool.py:150
+#, python-format
+msgid ""
+"Setting '%s' attributes to '%s'...\n"
+"\n"
+msgstr "'%s' kenmerken worden aangepast naar '%s'...\n"
+
+#: SetAttributeTool/SetAttributeTool.py:182
+#, python-format
+msgid ""
+"\n"
+"Set %d '%s' attributes to '%s'\n"
+msgstr ""
+"\n"
+"%d '%s' kenmerken veranderd naar '%s'\n"
+
+#: SetAttributeTool/SetAttributeTool.py:184
+msgid "Done!\n"
+msgstr "Ok!\n"
+
+#: SetAttributeTool/SetAttributeTool.py:197
+msgid "Beta"
+msgstr "Beta"
+
+#: SetAttributeTool/SetAttributeTool.py:200
+msgid "Sets an attribute of a person to a given value."
+msgstr "Geef een kenmerk van een persoon een bepaalde waarde."
