@@ -44,7 +44,7 @@ msgstr "aantal afstammelingen"
 #: DescendantCount/DescendantCount.py:89
 #, python-format
 msgid "There are %d people.\n"
-msgstr "Er zijn %D personen.\n"
+msgstr "Er zijn %d personen.\n"
 
 #: DescendantCount/descendant_count.py:59
 #, python-format
