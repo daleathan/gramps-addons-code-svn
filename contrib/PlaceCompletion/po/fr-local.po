@@ -4,10 +4,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: trunk\n"
+"Project-Id-Version: addon\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-11-16 12:04+0100\n"
-"PO-Revision-Date: 2009-11-18 12:14+0100\n"
+"PO-Revision-Date: 2010-03-04 11:35+0100\n"
 "Last-Translator: \n"
 "Language-Team:  <fr@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -20,20 +20,12 @@ msgid "PlaceCompletion"
 msgstr "Arrangement du lieu"
 
 #: PlaceCompletion/PlaceCompletion.gpr.py:26
-msgid ""
-"Provides a browsable list of selected places, with possibility to complete/"
-"parse/set the attribute fields."
-msgstr ""
-"Fournit une liste consultable des lieux sélectionnés, avec la possibilité de "
-"compléter/parser/définir les champs de l'attribut"
+msgid "Provides a browsable list of selected places, with possibility to complete/parse/set the attribute fields."
+msgstr "Fournit une liste consultable des lieux sélectionnés, avec la possibilité de compléter/parser/définir les champs de l'attribut"
 
 #: PlaceCompletion/PlaceCompletion.py:78
-msgid ""
-"Place Completion by parsing, file lookup and batch setting of place "
-"attributes"
-msgstr ""
-"Arrangement du lieu par parsing, recherche et préférences batch pour les "
-"attributs du lieu"
+msgid "Place Completion by parsing, file lookup and batch setting of place attributes"
+msgstr "Arrangement du lieu par parsing, recherche et préférences batch pour les attributs du lieu"
 
 #: PlaceCompletion/PlaceCompletion.py:182
 #: PlaceCompletion/PlaceCompletion.py:221
@@ -140,8 +132,7 @@ msgstr "Titre de l'expression rationnelle non valide"
 
 #: PlaceCompletion/PlaceCompletion.py:419
 msgid "Non valid regular expression given to match title. Quiting."
-msgstr ""
-"Une expression rationnelle non valide a été donnée pour titre. Quitter."
+msgstr "Une expression rationnelle non valide a été donnée pour titre. Quitter."
 
 #: PlaceCompletion/PlaceCompletion.py:431
 #: PlaceCompletion/PlaceCompletion.py:564
@@ -163,11 +154,8 @@ msgstr "Expression rationnelle manquante pour lat/lon"
 
 #: PlaceCompletion/PlaceCompletion.py:435
 #, python-format
-msgid ""
-"Regex groups %(lat)s and %(lon)s must be present in lat/lon match. Quiting"
-msgstr ""
-"Les groupes d'expression rationnelle %(lat)s et %(lon)s doivent être présent "
-"dans la correspondance lat/lon. Quitter."
+msgid "Regex groups %(lat)s and %(lon)s must be present in lat/lon match. Quiting"
+msgstr "Les groupes d'expression rationnelle %(lat)s et %(lon)s doivent être présent dans la correspondance lat/lon. Quitter."
 
 #: PlaceCompletion/PlaceCompletion.py:445
 msgid "Non valid regex for match lat/lon"
@@ -175,8 +163,7 @@ msgstr "Expression rationnelle non valide pour lat/lon"
 
 #: PlaceCompletion/PlaceCompletion.py:446
 msgid "Non valid regular expression given to find lat/lon. Quiting."
-msgstr ""
-"Expression rationnelle donnée non valide pour trouver lat/lon. Quitter."
+msgstr "Expression rationnelle donnée non valide pour trouver lat/lon. Quitter."
 
 #: PlaceCompletion/PlaceCompletion.py:504
 msgid "Finding Places and appropriate changes"
@@ -202,7 +189,7 @@ msgstr "Ville"
 # province (Canada, Belgique)
 #: PlaceCompletion/PlaceCompletion.py:544
 msgid "State"
-msgstr "Région / Province"
+msgstr "Rég. / Province"
 
 #: PlaceCompletion/PlaceCompletion.py:548
 msgid "Country"
@@ -387,21 +374,14 @@ msgstr "<b>3. Définition des attributs pour tous les lieux sélectionnés :</b>
 
 #: PlaceCompletion/placecompletion.glade.h:4
 msgid ""
-"<i>Delete to delete a row, Double-click on the row to edit place with "
-"changes pre-entered, \n"
-"Press Tab on a row or Google Maps button to see place on a map. Press Apply "
-"to do all changes automatically</i>"
+"<i>Delete to delete a row, Double-click on the row to edit place with changes pre-entered, \n"
+"Press Tab on a row or Google Maps button to see place on a map. Press Apply to do all changes automatically</i>"
 msgstr ""
-"<i>Supprimer pour enlever une ligne, cliquez deux fois sur une ligne pour "
-"éditer un lieu avec les changements pré-entrés, \n"
-"Appuyez sur Tab à la ligne ou sur le bouton Google Maps pour visualiser le "
-"lieu sur une carte. Appuyez sur Appliquer pour effectuer les changements "
-"automatiquement</i>"
+"<i>Supprimer pour enlever une ligne, cliquez deux fois sur une ligne pour éditer un lieu avec les changements pré-entrés, \n"
+"Appuyez sur Tab à la ligne ou sur le bouton Google Maps pour visualiser le lieu sur une carte. Appuyez sur Appliquer pour effectuer les changements automatiquement</i>"
 
 #: PlaceCompletion/placecompletion.glade.h:6
-msgid ""
-"<span size=\"large\"><b>Selection of the Places you want to complete:</b></"
-"span>"
+msgid "<span size=\"large\"><b>Selection of the Places you want to complete:</b></span>"
 msgstr "<span size=\"large\"><b>Sélection des lieux à compléter :</b></span>"
 
 #: PlaceCompletion/placecompletion.glade.h:7
@@ -443,7 +423,7 @@ msgstr "Pays :"
 # comté (Canada)
 #: PlaceCompletion/placecompletion.glade.h:16
 msgid "County:"
-msgstr "Département / Comté :"
+msgstr "Dép. / Comté :"
 
 #: PlaceCompletion/placecompletion.glade.h:17
 msgid "Height:"
@@ -484,7 +464,7 @@ msgstr "Sélectionner un fichier"
 # province (Belgique, Canada)
 #: PlaceCompletion/placecompletion.glade.h:26
 msgid "State:"
-msgstr "Région / Province :"
+msgstr "Rég. / Province :"
 
 #: PlaceCompletion/placecompletion.glade.h:27
 msgid "Width:"
@@ -497,3 +477,4 @@ msgstr "Code lieu :"
 #: PlaceCompletion/placecompletion.glade.h:29
 msgid "_Google Maps"
 msgstr "_Google Maps"
+
