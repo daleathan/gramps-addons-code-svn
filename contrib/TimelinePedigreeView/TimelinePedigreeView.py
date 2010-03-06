@@ -500,20 +500,16 @@ class TimelinePedigreeView(NavigationView):
         self.dbstate.connect('database-changed', self.change_db)
         # Current Tree Size
         #pdb.set_trace()
-        #self.generations_in_tree = self.cman.get('interface.tree-size')
-        self.generations_in_tree = [3, 4]
-        self.use_timeline = True
-        self.show_lifespan = True
 
         # Define configuration settings
         self.cman = config.register_manager("timelinepedigreeview")
         self.cman.register("interface.show-images", False)
         self.cman.register("interface.show-marriage", False)
-        self.cman.register("interface.use-timeline", False)
-        self.cman.register("interface.show-lifespan", False)
+        self.cman.register("interface.use-timeline", True)
+        self.cman.register("interface.show-lifespan", True)
         self.cman.register("interface.scroll-direction", 0)
-        self.cman.register("interface.ancestor-size", 5)
-        self.cman.register("interface.descendant-size", 5)
+        self.cman.register("interface.ancestor-size", 4)
+        self.cman.register("interface.descendant-size", 3)
         
         self.cman.register("interface.tree-size", 5)
         self.cman.register("interface.layout", 0)
