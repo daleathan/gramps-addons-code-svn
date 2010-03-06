@@ -7,13 +7,14 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-11-23 19:30+0100\n"
-"PO-Revision-Date: 2009-12-10 11:23+0100\n"
-"Last-Translator: \n"
+"PO-Revision-Date: 2010-03-06 13:01+0100\n"
+"Last-Translator: Josip <josip@pisoj.com>\n"
 "Language-Team: Croatian <lokalizacija@linux.hr>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Poedit-Language: Croatian\n"
 
 #: DenominoViso/DenominoViso.gpr.py:9
 msgid "DenominoViso"
@@ -169,7 +170,7 @@ msgstr "naziv"
 
 #: DenominoViso/DenominoViso.py:1548
 msgid "volume"
-msgstr ""
+msgstr "svezak"
 
 #: DenominoViso/DenominoViso.py:1548
 msgid "author"
@@ -229,7 +230,7 @@ msgstr "Naziv web stranice"
 
 #: DenominoViso/DenominoViso.py:2540
 msgid "Any string you wish."
-msgstr ""
+msgstr "Bilo koja riječ"
 
 #: DenominoViso/DenominoViso.py:2544
 msgid "Either plot ancestor or descendants graph."
@@ -249,7 +250,7 @@ msgstr "vremenski smjer"
 
 #: DenominoViso/DenominoViso.py:2556
 msgid "Direction in which time increases."
-msgstr ""
+msgstr "Smjer vremenskog rasta"
 
 #: DenominoViso/DenominoViso.py:2561
 msgid "Generations"
@@ -265,7 +266,7 @@ msgstr "Najveća širina dijagrama (%)"
 
 #: DenominoViso/DenominoViso.py:2566
 msgid "Width of the tree as fraction of the browser window"
-msgstr ""
+msgstr "Širina stabla u odnosu na preglednik"
 
 #: DenominoViso/DenominoViso.py:2569
 msgid "Max chart height (px)"
@@ -277,7 +278,7 @@ msgstr "Visina stabla u pikselima."
 
 #: DenominoViso/DenominoViso.py:2573
 msgid "Closing remarks"
-msgstr ""
+msgstr "Zaključne zabilješke"
 
 #: DenominoViso/DenominoViso.py:2574
 msgid "List of strings, free text added at the bottom, for example for a copyright notice."
@@ -429,7 +430,7 @@ msgstr "Boja aktivne osobe:"
 
 #: DenominoViso/DenominoViso.py:2664
 msgid "RGB-color of geometric shape of the activated person."
-msgstr ""
+msgstr "RGB boja geometrijskog oblika za aktivnu osobu."
 
 #: DenominoViso/DenominoViso.py:2667
 msgid "Color of found persons:"
@@ -437,7 +438,7 @@ msgstr "Boja pronađenih osoba:"
 
 #: DenominoViso/DenominoViso.py:2668
 msgid "RGB-color of geometric shape of the persons found."
-msgstr ""
+msgstr "RGB boja geometrijskog oblika za pronađene osobe"
 
 #: DenominoViso/DenominoViso.py:2671
 msgid "Color of male persons:"
@@ -445,7 +446,7 @@ msgstr "Boja muških osoba:"
 
 #: DenominoViso/DenominoViso.py:2672
 msgid "RGB-color of geometric shape of the male persons."
-msgstr ""
+msgstr "RGB boja geometrijskog oblika za muške osobe."
 
 #: DenominoViso/DenominoViso.py:2675
 msgid "Colour of female persons:"
@@ -453,7 +454,7 @@ msgstr "Boja ženskih osoba:"
 
 #: DenominoViso/DenominoViso.py:2676
 msgid "RGB-color of geometric shape of the female persons."
-msgstr ""
+msgstr "RGB boja geometrijskog oblika za ženske osobe."
 
 #: DenominoViso/DenominoViso.py:2679
 msgid "Width of rectangle (hrd):"
@@ -477,19 +478,19 @@ msgstr "Napredne postavke"
 
 #: DenominoViso/DenominoViso.py:2697
 msgid "Old browser friendly output"
-msgstr ""
+msgstr "Prikaz prikladan za starije preglednike"
 
 #: DenominoViso/DenominoViso.py:2698
 msgid "Whether to create an ordinary html-file that includes the xhtml-file so that deprecated browsers can be presented with content they can swallow."
-msgstr ""
+msgstr "Izraditi običnu html datoteku koja sadrži xhtml pogodnu za prikaz i u starijim preglednicima."
 
 #: DenominoViso/DenominoViso.py:2701
 msgid "Mouse event handler"
-msgstr ""
+msgstr "Upravitelj akcijama miša"
 
 #: DenominoViso/DenominoViso.py:2703
 msgid "Mouse handler used to interact with visitor of webpage."
-msgstr ""
+msgstr "Upravitelj miša za interakciju sa posjetiteljima stranice."
 
 #: DenominoViso/DenominoViso.py:2707
 msgid "Birth relationship linestyle"
@@ -549,11 +550,11 @@ msgstr "treba biti"
 
 #: DenominoViso/DenominoViso.py:2922
 msgid "Name HTML-wrapper file"
-msgstr ""
+msgstr "Naziv HTML datoteke"
 
 #: DenominoViso/DenominoViso.py:2924
 msgid "Save HTML-wrapper file as ..."
-msgstr ""
+msgstr "Spremi HTML datoteku kao..."
 
 #: DenominoViso/DenominoViso.py:2951
 msgid "Give a filename ..."
@@ -565,7 +566,7 @@ msgstr "Tip odnosa"
 
 #: DenominoViso/DenominoViso.py:3103
 msgid "Use dashed linestyle"
-msgstr ""
+msgstr "Koristi isprekidane linije"
 
 #: DenominoViso/DenominoViso.py:3108
 msgid "Dash length"
@@ -573,7 +574,7 @@ msgstr "Duljina crtice"
 
 #: DenominoViso/DenominoViso.py:3112
 msgid "Inter-dash length"
-msgstr ""
+msgstr "Razmak između crtica"
 
 #: DenominoViso/DenominoViso.py:3163
 msgid "Confidence"
