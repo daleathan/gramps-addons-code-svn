@@ -20,7 +20,7 @@ for name in sidebar_list:
              id    = '%sSidebar' % name,
              name  = _("%s Sidebar") % _(name),
              category = ("Splitviews", _("Splitviews")),
-             description =  _("View with a Gramplet Sidebar"),
+             description =  _("%s with a Gramplet Sidebar") % name,
              version = '1.1',
              gramps_target_version = '3.2',
              status = STABLE,
