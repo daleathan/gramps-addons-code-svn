@@ -27,6 +27,7 @@
 register(GRAMPLET,
     id = "Image Metadata Gramplet",
     name = _("Image Metadata Gramplet"),
+    description = _("Gramplet for editing image EXIF metadata"),
     height = 310,
     expand = False,
     gramplet = 'imageMetadataGramplet',
