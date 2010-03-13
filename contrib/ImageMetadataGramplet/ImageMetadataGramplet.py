@@ -487,13 +487,13 @@ class imageMetadataGramplet(Gramplet):
             return None, None
 
         # get full image path
-        originalimage = Utils.media_path_full(self.dbstate.db, media_obj.get_path() )
+        self.orig_image = Utils.media_path_full(self.dbstate.db, media_obj.get_path() )
 
         # get the pyexiv2 image file
-        grampletimage = pyexiv2.Image( originalimage )
+        self.image = pyexiv2.Image( self.orig_image )
 
         # return originalimage and grampletimage to its callers
-        return originalimage, grampletimage  
+        return self.orig_image, self.image
 
     def get_value(self, key):
         """
