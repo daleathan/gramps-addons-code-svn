@@ -3,7 +3,7 @@ Gramps Licensing Information
 
  Gramps - a GTK+/GNOME based genealogy program
 
- Copyright 2009 Rob G. Healey <robhealey1@gmail.com>
+ Copyright 2009-2010 Rob G. Healey <robhealey1@gmail.com>
 
  This program is free software; you can redistribute it and/or modify
  it under the terms of the GNU General Public License as published by
@@ -22,19 +22,17 @@ Gramps Licensing Information
 # $Id: README 118 2010-01-21 06:42:00Z robhealey1 $
 --------------------------------------------------------------------------
 
-SPECIAL NOTE
-____________
-
-This is UNSTABLE, developmentl version, so expect bugs, problems, and a chance that 
-the entire API may change completely.
-
-gramps-addons/contrib/ImageMetadataEditorGramplet-v0.2/imageMetadataeditorgramplet.py
-Copyright (C) 2010 Rob G. Healey <robhealey1@gmail.com>
+gramps-addons/branches/gramps32/contrib/ImageMetadataGramplet/imageMetadataGramplet.py
+Copyright (C) 2009-2010 Rob G. Healey <robhealey1@gmail.com>
 *******
 
-Welcome to imageMetadataeditorgramplet.py.  By using pyexiv2-0.2, python binding library to exiv2,
+Welcome to imageMetadataGramplet.py.  By using pyexiv2-0.1.3, python binding library to exiv2,
 created by Olivier Tilloy, you are able to read, write, and edit the Exif Image Metadata stored 
-within *.jpg files...
+within image files...
+
+Available languages at the time of this compressed file are:
+------------------------------------------------------------
+fr, nl, and sv
 
 Fedora, Ubuntu/ Debian, Windows
 _______________________________
@@ -42,7 +40,6 @@ You may get this python library from: http://tilloy.net/dev/pyexiv2/
 
 Point your browser to http://exiv2.org/metadata.html for the complete metadata
 tag reference.
-
 
 Build dependencies
 ==================
@@ -96,15 +93,14 @@ Python modules (e.g. '/usr/lib/python2.6/site-packages/' on Linux).
 
 SPECIAL NOTE
 ____________
-You will need to cp the pyexiv2/src/pyexiv2 directory to your typical python site-packages directory:
+You will need to cp the pyexiv2/src/pyexiv2.py file to your typical python site-packages directory:
 
-cp -a pyexiv2 /usr/lib/python2.6/site-packages/
+cp -a pyexiv2.py /usr/lib/python2.6/site-packages/
 
-AS PYTHON3.1 is on the quick rise to replace python2, ywould need to:
-cp -a pyexiv2 /usr/lib/python3.1/site-packages
+AS PYTHON3.1 is on the quick rise to replace python2, you would need to:
+cp -a pyexiv2.py /usr/lib/python3.1/site-packages
 
 To use pyexiv2 in your scripts, simply import the pyexiv2 module.
-
 
 Documentation
 =============
@@ -125,7 +121,6 @@ Or using the more complete tool epydoc (http://epydoc.sourceforge.net/):
 
  $ epydoc --html -o doc src/pyexiv2/*.py
 
-
 License
 =======
 
@@ -145,7 +140,6 @@ You should have received a copy of the GNU General Public License
 along with pyexiv2; if not, write to the Free Software
 Foundation, Inc., 51 Franklin Street, 5th Floor, Boston, MA 02110-1301 USA.
 
-
 Developers
 ==========
 
@@ -164,14 +158,8 @@ To get a working copy of the latest version of the code, you need to have bazaar
 SPECIAL NOTE
 ____________
 
-This version, ImageMetadataEditorGramplet-v0.1/imageMetadataeditorgramplet.py WILL NOT
-work with the most current version of this pyexiv2 software.  You will need to use;
-the UNSTABLE, DEVELOPMENTAL version ImageMetadataEditorGramplet-v0.2, also available from:
-svn co https://gramps.svn.sourceforge.net/svnroot/gramps-addons gramps-addons
-
 Feedback, bug reports and patches are welcome!
 
 Join the pyexiv2-developers team on Launchpad to be informed of the latest
 updates and discuss changes and new features on the mailing list: register at
 https://launchpad.net/~pyexiv2-developers.
-
