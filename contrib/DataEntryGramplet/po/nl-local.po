@@ -36,7 +36,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-02-18 17:35+0100\n"
+"POT-Creation-Date: 2010-03-24 19:46+0100\n"
 "PO-Revision-Date: 2010-03-22 08:50+0100\n"
 "Last-Translator: Erik De Richter <frederik.de.richter@pandora.be>\n"
 "Language-Team: nederlands <frederik.de.richter@googlemail.com>\n"
@@ -51,7 +51,12 @@ msgstr ""
 msgid "Data Entry Gramplet"
 msgstr "'Gegevens invoeren'-gramplet"
 
-#: DataEntryGramplet/DataEntryGramplet.gpr.py:12
+#: DataEntryGramplet/DataEntryGramplet.gpr.py:9
+#, fuzzy
+msgid "Gramplet for quick data entry"
+msgstr "Gramplet-gegevens invoeren: %s"
+
+#: DataEntryGramplet/DataEntryGramplet.gpr.py:13
 msgid "Data Entry"
 msgstr "Gegevens invoeren"
 
