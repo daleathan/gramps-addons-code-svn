@@ -1,11 +1,10 @@
 # translation of nl.po to nederlands
-# translation of nl.po to
 # Dutch translation of GRAMPS
 # Copyright (C) 2003 The Free Software Foundation,  Inc.
 #
 # Tino Meinen <a.t.meinen@chello.nl>, 2003, 2004, 2005.
 # Kees Bakker <kees.bakker@xs4all.nl>, 2005, 2006, 2007.
-# Erik De Richter <frederik.de.richter@pandora.be>, 2006, 2007, 2008, 2009.
+# Erik De Richter <frederik.de.richter@pandora.be>, 2006, 2007, 2008, 2009, 2010.
 # --------------------------------------------------
 # Conventies (kan later altijd nog aangepast worden)
 # --------------------------------------------------
@@ -20,7 +19,7 @@
 # record             archief/kaart
 # database           gegevensbestand (KB)
 # chart              grafiek
-# Home person        Beginpersoon : EDR/Centrale persoon/spilfiguur/basispersoon/honkpersoon
+# Home person        Beginpersoon
 # spouse             echtgenoot
 # partner            partner
 # warning            let op
@@ -29,16 +28,17 @@
 # regex              regex onvertaald laten
 # expression         uitdrukking
 # given name         voornaam
-# reference	waarnaar verwezen wordt
-# count		aantal maal
-# lineage	lijn
+# reference	     waarnaar verwezen wordt, verwijzingen
+# count		     aantal maal
+# lineage	     lijn
+# reference          enekel voor de refentiestructuur
 msgid ""
 msgstr ""
 "Project-Id-Version: gramps\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-03-08 16:47+0100\n"
-"PO-Revision-Date: 2010-03-07 20:35+0100\n"
-"Last-Translator: \n"
+"PO-Revision-Date: 2010-04-10 08:42+0100\n"
+"Last-Translator: Erik De Richter <frederik.de.richter@pandora.be>\n"
 "Language-Team: nederlands <frederik.de.richter@googlemail.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -57,7 +57,7 @@ msgstr "Django is een webstructuur die draait op een geconfigureerde database"
 
 #: Django/ExportDjango.gpr.py:31
 msgid "Django options"
-msgstr "Django opties"
+msgstr "Django-opties"
 
 #: Django/ExportDjango.py:187
 #, python-format
@@ -68,7 +68,7 @@ msgstr[1] "Export voltooid: %d seconden"
 
 #: Django/ImportDjango.gpr.py:25
 msgid "Django Import"
-msgstr "Django import"
+msgstr "Django-import"
 
 #: Django/ImportDjango.py:185
 #, python-format
@@ -79,4 +79,4 @@ msgstr[1] "Import voltooid: %d seconden"
 
 #: Django/ImportDjango.py:186
 msgid "Django import"
-msgstr "Django import"
+msgstr "Django-import"
