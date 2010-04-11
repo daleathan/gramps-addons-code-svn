@@ -37,7 +37,7 @@ msgstr ""
 "Project-Id-Version: gramps\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-04-01 20:33+0200\n"
-"PO-Revision-Date: 2010-04-01 20:42+0100\n"
+"PO-Revision-Date: 2010-04-11 20:15+0100\n"
 "Last-Translator: Erik De Richter <frederik.de.richter@pandora.be>\n"
 "Language-Team: nederlands <frederik.de.richter@googlemail.com>\n"
 "MIME-Version: 1.0\n"
@@ -53,7 +53,7 @@ msgstr "Locatiefilterverslag"
 
 #: Locations/Locations.gpr.py:26
 msgid "Produces a textual filters output"
-msgstr "Tekstverslag van resultaat filter wordt aangemaakt"
+msgstr "Tekstverslag van filterresultaat wordt aangemaakt"
 
 #: Locations/Locations.py:71
 msgid "Locations"

@@ -1,11 +1,10 @@
 # translation of nl.po to nederlands
-# translation of nl.po to
 # Dutch translation of GRAMPS
 # Copyright (C) 2003 The Free Software Foundation,  Inc.
 #
 # Tino Meinen <a.t.meinen@chello.nl>, 2003, 2004, 2005.
 # Kees Bakker <kees.bakker@xs4all.nl>, 2005, 2006, 2007.
-# Erik De Richter <frederik.de.richter@pandora.be>, 2006, 2007, 2008, 2009.
+# Erik De Richter <frederik.de.richter@pandora.be>, 2006, 2007, 2008, 2009, 2010.
 # --------------------------------------------------
 # Conventies (kan later altijd nog aangepast worden)
 # --------------------------------------------------
@@ -20,7 +19,7 @@
 # record             archief/kaart
 # database           gegevensbestand (KB)
 # chart              grafiek
-# Home person        Beginpersoon : EDR/Centrale persoon/spilfiguur/basispersoon/honkpersoon
+# Home person        Beginpersoon
 # spouse             echtgenoot
 # partner            partner
 # warning            let op
@@ -29,16 +28,17 @@
 # regex              regex onvertaald laten
 # expression         uitdrukking
 # given name         voornaam
-# reference	waarnaar verwezen wordt
-# count		aantal maal
-# lineage	lijn
+# reference	     waarnaar verwezen wordt, verwijzingen
+# count		     aantal maal
+# lineage	     lijn
+# reference          enekel voor de refentiestructuur
 msgid ""
 msgstr ""
 "Project-Id-Version: gramps\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-03-09 12:12+0100\n"
-"PO-Revision-Date: 2010-03-09 19:47+0100\n"
-"Last-Translator: \n"
+"PO-Revision-Date: 2010-04-11 09:37+0100\n"
+"Last-Translator: Erik De Richter <frederik.de.richter@pandora.be>\n"
 "Language-Team: nederlands <frederik.de.richter@googlemail.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -53,7 +53,7 @@ msgstr "Relatieschermdeling"
 
 #: GrampletSidebarViews/sidebarviews.gpr.py:2
 msgid "Event Split View"
-msgstr "Gebeurtenisschermdeling"
+msgstr "Gebeurtenissenschermdeling"
 
 #: GrampletSidebarViews/sidebarviews.gpr.py:3
 msgid "Family Split View"
@@ -65,7 +65,7 @@ msgstr "Waaiergrafiekschermdeling"
 
 #: GrampletSidebarViews/sidebarviews.gpr.py:5
 msgid "Geo Split View"
-msgstr "Geoschermdeling"
+msgstr "Kaartschermdeling"
 
 #: GrampletSidebarViews/sidebarviews.gpr.py:6
 msgid "Html Split View"
@@ -77,19 +77,19 @@ msgstr "Mediaschermdeling"
 
 #: GrampletSidebarViews/sidebarviews.gpr.py:8
 msgid "Note Split View"
-msgstr "Opmerkingschermdeling"
+msgstr "Opmerkingenschermdeling"
 
 #: GrampletSidebarViews/sidebarviews.gpr.py:9
 msgid "Pedigree Split View"
-msgstr "Stamboomschermdeling"
+msgstr "Vooroudersschermdeling"
 
 #: GrampletSidebarViews/sidebarviews.gpr.py:10
 msgid "Person List Split View"
-msgstr "Persoonslijstschermdeling"
+msgstr "Personenlijstschermdeling"
 
 #: GrampletSidebarViews/sidebarviews.gpr.py:11
 msgid "Person Tree Split View"
-msgstr "Persoonsboomschermdeling"
+msgstr "Personenboomschermdeling"
 
 #: GrampletSidebarViews/sidebarviews.gpr.py:12
 msgid "Place List Split View"
@@ -101,11 +101,11 @@ msgstr "Locatieboomschermdeling"
 
 #: GrampletSidebarViews/sidebarviews.gpr.py:14
 msgid "Repository Split View"
-msgstr "Bibliotheekschermdeling"
+msgstr "Bibliothekenschermdeling"
 
 #: GrampletSidebarViews/sidebarviews.gpr.py:15
 msgid "Source Split View"
-msgstr "Bronschermdeling"
+msgstr "Bronnenschermdeling"
 
 #: GrampletSidebarViews/sidebarviews.gpr.py:22
 msgid "Splitviews"
@@ -134,7 +134,7 @@ msgstr "Horizontale schermen"
 
 #: GrampletSidebarViews/sidebarviews.py:169
 msgid "Vertical views"
-msgstr "Vertikale schermen"
+msgstr "Verticale schermen"
 
 #: GrampletSidebarViews/sidebarviews.py:170
 msgid "No split"
