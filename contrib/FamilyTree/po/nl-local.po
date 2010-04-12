@@ -1,0 +1,316 @@
+# translation of nl.po to nederlands
+# Dutch translation of GRAMPS
+# Copyright (C) 2003 The Free Software Foundation,  Inc.
+#
+# Tino Meinen <a.t.meinen@chello.nl>, 2003, 2004, 2005.
+# Kees Bakker <kees.bakker@xs4all.nl>, 2005, 2006, 2007.
+# Erik De Richter <frederik.de.richter@pandora.be>, 2006, 2007, 2008, 2009, 2010.
+# --------------------------------------------------
+# Conventies (kan later altijd nog aangepast worden)
+# --------------------------------------------------
+# active             actief (moet hier nog iets beters voor verzinnen)
+# attribute          kenmerk
+# bookmark           bladwijzer
+# view               scherm
+# city               plaats beter is stad dorp
+# marker             aanduiding
+# people             personen
+# place              locatie
+# record             archief/kaart
+# database           gegevensbestand (KB)
+# chart              grafiek
+# Home person        Beginpersoon
+# spouse             echtgenoot
+# partner            partner
+# warning            let op
+# at the age of      op een leeftijd van -> toen hij/zij .. oud was
+# repositories       bibliotheken
+# regex              regex onvertaald laten
+# expression         uitdrukking
+# given name         voornaam
+# reference	     waarnaar verwezen wordt, verwijzingen
+# count		     aantal maal
+# lineage	     lijn
+# reference          enekel voor de refentiestructuur
+msgid ""
+msgstr ""
+"Project-Id-Version: gramps\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-04-10 20:53+0200\n"
+"PO-Revision-Date: 2010-04-10 08:42+0100\n"
+"Last-Translator: Erik De Richter <frederik.de.richter@pandora.be>\n"
+"Language-Team: nederlands <frederik.de.richter@googlemail.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-Language: Nederlands\n"
+"X-Poedit-Country: België\n"
+
+#: FamilyTree/FamilyTree.gpr.py:3
+msgid "Family Tree"
+msgstr "Familiestamboom"
+
+#: FamilyTree/FamilyTree.gpr.py:4
+msgid "Produces a graphical family tree."
+msgstr "Een grafische voorouderstamboom aanmaken."
+
+#: FamilyTree/FamilyTree.py:92
+msgid "Family Tree for %s"
+msgstr "Familiestamboom van %s"
+
+#: FamilyTree/FamilyTree.py:626 FamilyTree/FamilyTree.py:631
+msgid "Unknown"
+msgstr "Onbekend"
+
+#: FamilyTree/FamilyTree.py:633
+msgid "%(father)s and %(mother)s"
+msgstr "%(father)s en %(mother)s"
+
+#: FamilyTree/FamilyTree.py:641
+msgid "Anonymous"
+msgstr "Anoniem"
+
+#: FamilyTree/FamilyTree.py:838
+msgid "born"
+msgstr "Geboren"
+
+#: FamilyTree/FamilyTree.py:840
+msgid "baptised"
+msgstr "gedoopd"
+
+#: FamilyTree/FamilyTree.py:842
+msgid "died"
+msgstr "stierf"
+
+#: FamilyTree/FamilyTree.py:844
+msgid "buried"
+msgstr "begraven"
+
+#: FamilyTree/FamilyTree.py:846
+msgid "cremated"
+msgstr "gecremeerd"
+
+#: FamilyTree/FamilyTree.py:848
+msgid "married"
+msgstr "getrouwd"
+
+#: FamilyTree/FamilyTree.py:850
+msgid "divorced"
+msgstr "gescheiden"
+
+#: FamilyTree/FamilyTree.py:852
+msgid "resident"
+msgstr "inwoner"
+
+#: FamilyTree/FamilyTree.py:859
+# python-format
+msgid "on %(ymd_date)s"
+msgstr "op %(ymd_date)s"
+
+#: FamilyTree/FamilyTree.py:861
+# python-format
+msgid "in %(ym_date)s"
+msgstr "in %(ym_date)s"
+
+#: FamilyTree/FamilyTree.py:863
+# python-format
+msgid "in %(y_date)s"
+msgstr "in %(y_date)s"
+
+#: FamilyTree/FamilyTree.py:867
+# python-format
+msgid "on %(placeholder)s"
+msgstr "op %(placeholder)s"
+
+#: FamilyTree/FamilyTree.py:870
+# python-format
+msgid "on %(placeholder)s (%(partial)s)"
+msgstr "op %(placeholder)s (%(partial)s)"
+
+#: FamilyTree/FamilyTree.py:887
+# python-format
+msgid "in %(place)s"
+msgstr "in %(place)s"
+
+#: FamilyTree/FamilyTree.py:898
+# python-format
+msgid "(%(description)s)"
+msgstr "(%(description)s)"
+
+#: FamilyTree/FamilyTree.py:975
+msgid "Tree Options"
+msgstr "Stamboomopties"
+
+#: FamilyTree/FamilyTree.py:977
+msgid "Center Family"
+msgstr "Centrale familie"
+
+#: FamilyTree/FamilyTree.py:978
+msgid "The center family for the tree"
+msgstr "De centrale familie voor deze stamboom"
+
+#: FamilyTree/FamilyTree.py:981
+msgid "Ancestor Generations"
+msgstr "Vooroudergeneraties"
+
+#: FamilyTree/FamilyTree.py:982
+msgid "The number of ancestor generations to include in the tree"
+msgstr "Het aantal vooroudergeneraties dat in de stamboom wordt opgenomen"
+
+#: FamilyTree/FamilyTree.py:985
+msgid "Descendant Generations"
+msgstr "Afstammelingengeneraties"
+
+#: FamilyTree/FamilyTree.py:986
+msgid "The number of descendant generations to include in the tree"
+msgstr "Het aantal afstammelingengeneraties dat in de stamboom wordt opgenome"
+
+#: FamilyTree/FamilyTree.py:989
+msgid "Sc_ale to fit on a single page"
+msgstr "Tot één enkele pagina reduceren"
+
+#: FamilyTree/FamilyTree.py:990
+msgid "Whether to scale to fit on a single page."
+msgstr "Al dan niet tot één enkele pagina reduceren."
+
+#: FamilyTree/FamilyTree.py:993
+msgid "Color"
+msgstr "Kleur"
+
+#: FamilyTree/FamilyTree.py:995
+msgid "No color"
+msgstr "Geen kleur"
+
+#: FamilyTree/FamilyTree.py:996
+msgid "Generations"
+msgstr "Generaties"
+
+#: FamilyTree/FamilyTree.py:997
+msgid "First generation"
+msgstr "Eerste generatie"
+
+#: FamilyTree/FamilyTree.py:998
+msgid "Second generation"
+msgstr "Tweede generatie"
+
+#: FamilyTree/FamilyTree.py:999
+msgid "Male line"
+msgstr "Mannelijke lijn"
+
+#: FamilyTree/FamilyTree.py:1000
+msgid "Male line and illegitimate children"
+msgstr "Mannelijke lijn en onwettige kinderen"
+
+#: FamilyTree/FamilyTree.py:1001
+msgid "Female line"
+msgstr "Vrouwelijke lijn"
+
+#: FamilyTree/FamilyTree.py:1004
+msgid "Shuffle colors"
+msgstr "Kleuren dooreen gebruiken"
+
+#: FamilyTree/FamilyTree.py:1005
+msgid "Whether to shuffle colors or order them in rainbow fashion."
+msgstr "Al dan niet kleuren door mekaar gebruiken of in regenboogwijze rangschikken."
+
+#: FamilyTree/FamilyTree.py:1008
+msgid "Content"
+msgstr "Inhoud"
+
+#: FamilyTree/FamilyTree.py:1010
+msgid "Use call name"
+msgstr "Gebruik roepnaam"
+
+#: FamilyTree/FamilyTree.py:1012
+msgid "Don't use call name"
+msgstr "De roepnaam niet gebruiken"
+
+#: FamilyTree/FamilyTree.py:1013
+msgid "Replace first name with call name"
+msgstr "De voornaam door de roepnaam vervangen"
+
+#: FamilyTree/FamilyTree.py:1014
+msgid "Underline call name in first name / add call name to first name"
+msgstr "Roepnaam in de voornaam onderlijen / roepnaam aan voornaam toevoegen"
+
+#: FamilyTree/FamilyTree.py:1017
+msgid "Include Occupation"
+msgstr "Beroep toevoegen"
+
+#: FamilyTree/FamilyTree.py:1020
+msgid "Include Residence"
+msgstr "Residentie toevoegen"
+
+#: FamilyTree/FamilyTree.py:1023
+msgid "Print event data (dead person)"
+msgstr "Gebeurtenissen uitdrukken (overleden persoon)"
+
+# niet/geen
+#: FamilyTree/FamilyTree.py:1025 FamilyTree/FamilyTree.py:1033
+msgid "None"
+msgstr "Geen"
+
+#: FamilyTree/FamilyTree.py:1026 FamilyTree/FamilyTree.py:1034
+msgid "Year only"
+msgstr "Alleen jaar"
+
+#: FamilyTree/FamilyTree.py:1027 FamilyTree/FamilyTree.py:1035
+msgid "Full date"
+msgstr "Volledige datum"
+
+#: FamilyTree/FamilyTree.py:1028 FamilyTree/FamilyTree.py:1036
+msgid "Full date and place"
+msgstr "Volledige datum en locatie"
+
+#: FamilyTree/FamilyTree.py:1031
+msgid "Print event data (living person)"
+msgstr "Gebeurtenissen uitdrukken (levende personen)"
+
+#: FamilyTree/FamilyTree.py:1039
+msgid "Fall back to baptism if birth event missing"
+msgstr "Op doopsel terugvallen indien geboorte ontbreekt"
+
+#: FamilyTree/FamilyTree.py:1042
+msgid "Fall back to burial or cremation if death event missing"
+msgstr "Op begrafenis of crematie terugvallen indien overlijden ontbreekt"
+
+#: FamilyTree/FamilyTree.py:1047
+msgid "Print fields for missing information"
+msgstr "Velden voor ontbrekende informatie afdrukken"
+
+#: FamilyTree/FamilyTree.py:1048
+msgid "Whether to include fields for missing information."
+msgstr "Al of niet velden voor ontbrekende informatie voorzien."
+
+#: FamilyTree/FamilyTree.py:1051
+msgid "Include event description"
+msgstr "Gebeurtenisbeschrijvingen toevoegen"
+
+#: FamilyTree/FamilyTree.py:1054
+msgid "Text Options"
+msgstr "Tekstopties"
+
+#: FamilyTree/FamilyTree.py:1056
+msgid "Title text"
+msgstr "Titeltekst"
+
+#: FamilyTree/FamilyTree.py:1059
+msgid "Footer text"
+msgstr "Voetnoottekst"
+
+#: FamilyTree/FamilyTree.py:1074
+msgid "The style used for the title."
+msgstr "De gebruikte stijl voor de titel."
+
+#: FamilyTree/FamilyTree.py:1082
+msgid "The style used for names."
+msgstr "De gebruikte stijl voor de namen."
+
+#: FamilyTree/FamilyTree.py:1090
+msgid "The style used for data (birth, death, marriage, divorce)."
+msgstr "De gebruikte stijl voor de gegevens(geboorte, overlijden, huwelijk, scheiding)."
+
+#: FamilyTree/FamilyTree.py:1100
+msgid "The style used for the footer."
+msgstr "De gebruikte stijl voor de voetnoot."
