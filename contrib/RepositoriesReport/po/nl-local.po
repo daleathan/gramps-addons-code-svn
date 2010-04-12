@@ -37,7 +37,7 @@ msgstr ""
 "Project-Id-Version: gramps\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-02-20 08:44+0100\n"
-"PO-Revision-Date: 2010-03-28 10:48+0100\n"
+"PO-Revision-Date: 2010-04-10 08:42+0100\n"
 "Last-Translator: Erik De Richter <frederik.de.richter@pandora.be>\n"
 "Language-Team: nederlands <frederik.de.richter@googlemail.com>\n"
 "MIME-Version: 1.0\n"
@@ -54,7 +54,7 @@ msgstr "Opties voor het bibliotheekverslag"
 #: RepositoriesReport/RepositoriesReport.gpr.py:26
 #: RepositoriesReport/RepositoriesReport.gpr.py:43
 msgid "Produces a textual repositories report"
-msgstr "Levert een tekstverslag van de bibliotheken"
+msgstr "Een tekstverslag van de bibliotheken"
 
 #: RepositoriesReport/RepositoriesReport.gpr.py:42
 #: RepositoriesReport/RepositoriesReport.py:71
@@ -70,7 +70,7 @@ msgstr "Verslagopties"
 #: RepositoriesReport/RepositoriesReport.py:166
 #: RepositoriesReport/RepositoriesReportAlt.py:385
 msgid "The style used for the title of the report."
-msgstr "De gebruikte stijl voor de titel van het verslag."
+msgstr "De gebruikte stijl voor de verslagtitel."
 
 #: RepositoriesReport/RepositoriesReport.py:180
 #: RepositoriesReport/RepositoriesReportAlt.py:399
@@ -203,12 +203,11 @@ msgstr "Privégegevens bijvoegen"
 
 #: RepositoriesReport/RepositoriesReportAlt.py:356
 msgid "Whether to include repositories and sources marked as private."
-msgstr ""
-"Al of niet de bibliotheken en bronnen met de aanduiding privaat toevoegen."
+msgstr "Al of niet de bibliotheken en bronnen met de aanduiding privaat toevoegen."
 
 #: RepositoriesReport/RepositoriesReportAlt.py:429
 msgid "The style used for child section."
-msgstr "De gebruikte stijl voor het deel van de kinderen."
+msgstr "De gebruikte stijl voor het paragraaf van de kinderen."
 
 #: RepositoriesReport/RepositoriesReportAlt.py:441
 msgid "The basic style used for the note display."

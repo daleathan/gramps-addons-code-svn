@@ -37,7 +37,7 @@ msgstr ""
 "Project-Id-Version: gramps\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-03-04 08:31+0100\n"
-"PO-Revision-Date: 2010-03-28 10:48+0100\n"
+"PO-Revision-Date: 2010-04-10 08:42+0100\n"
 "Last-Translator: Erik De Richter <frederik.de.richter@pandora.be>\n"
 "Language-Team: nederlands <frederik.de.richter@googlemail.com>\n"
 "MIME-Version: 1.0\n"
@@ -56,8 +56,8 @@ msgid ""
 "Provides a browsable list of selected places, with possibility to complete/"
 "parse/set the attribute fields."
 msgstr ""
-"Geeft een lijst van geselecteerde locaties, met de mogelijkheid om/"
-"de kenmerkenvelden te vervolledigen/bekijken/veranderen."
+"Geeft een lijst van geselecteerde locaties, met de mogelijkheid om/de "
+"kenmerkenvelden te vervolledigen/bekijken/veranderen."
 
 #: PlaceCompletion/PlaceCompletion.py:86
 msgid ""
@@ -90,7 +90,8 @@ msgstr "Geen geldige reguliere uitdrukking voor de titel"
 
 #: PlaceCompletion/PlaceCompletion.py:427
 msgid "Non valid regular expression given to match title. Quiting."
-msgstr "Geen geldige reguliere uitdrukking opgegeven om titel te controleren. Stopt."
+msgstr ""
+"Geen geldige reguliere uitdrukking opgegeven om titel te controleren. Stopt."
 
 #: PlaceCompletion/PlaceCompletion.py:442
 msgid "Missing regex groups in match lat/lon"
@@ -110,7 +111,8 @@ msgstr "Geen geldige reguliere uitdrukking voor lengte/breedte"
 
 #: PlaceCompletion/PlaceCompletion.py:454
 msgid "Non valid regular expression given to find lat/lon. Quiting."
-msgstr "Geen geldige reguliere uitdrukking opgegeven voor lengte/breedte. Gestopt."
+msgstr ""
+"Geen geldige reguliere uitdrukking opgegeven voor lengte/breedte. Gestopt."
 
 #: PlaceCompletion/PlaceCompletion.py:512
 msgid "Finding Places and appropriate changes"
@@ -305,8 +307,8 @@ msgid ""
 "Press Tab on a row or Google Maps button to see place on a map. Press Apply "
 "to do all changes automatically</i>"
 msgstr ""
-"<i>Verwijder om een rij te verwijderen, dubbelklikken op een rij om locatie aan "
-"te passen met de ingevulde velden, \n"
+"<i>Verwijder om een rij te verwijderen, dubbelklikken op een rij om locatie "
+"aan te passen met de ingevulde velden, \n"
 "Druk 'Tab' op een rij of de 'Google Maps'-knop om een locatie op de kaart te "
 "zien. Druk op toepassen om alle veranderingen automatisch uit te voeren</i>"
 
@@ -315,8 +317,8 @@ msgid ""
 "<span size=\"large\"><b>Selection of the Places you want to complete:</b></"
 "span>"
 msgstr ""
-"<span size=\"large\"><b>Selectie van de locaties die u wenst te vervolledigen:</b></"
-"span>"
+"<span size=\"large\"><b>Selectie van de locaties die u wenst te "
+"vervolledigen:</b></span>"
 
 #: PlaceCompletion/placecompletion.glade.h:7
 msgid "Apply all suggested changes"

@@ -1,20 +1,51 @@
-# Dutch translations for PACKAGE package.
-# Copyright (C) 2010 THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# erik <erik@ylana.telenet.be>, 2010.
+# translation of nl.po to nederlands
+# Dutch translation of GRAMPS
+# Copyright (C) 2003 The Free Software Foundation,  Inc.
 #
+# Tino Meinen <a.t.meinen@chello.nl>, 2003, 2004, 2005.
+# Kees Bakker <kees.bakker@xs4all.nl>, 2005, 2006, 2007.
+# Erik De Richter <frederik.de.richter@pandora.be>, 2006, 2007, 2008, 2009, 2010.
+# --------------------------------------------------
+# Conventies (kan later altijd nog aangepast worden)
+# --------------------------------------------------
+# active             actief (moet hier nog iets beters voor verzinnen)
+# attribute          kenmerk
+# bookmark           bladwijzer
+# view               scherm
+# city               plaats beter is stad dorp
+# marker             aanduiding
+# people             personen
+# place              locatie
+# record             archief/kaart
+# database           gegevensbestand (KB)
+# chart              grafiek
+# Home person        Beginpersoon
+# spouse             echtgenoot
+# partner            partner
+# warning            let op
+# at the age of      op een leeftijd van -> toen hij/zij .. oud was
+# repositories       bibliotheken
+# regex              regex onvertaald laten
+# expression         uitdrukking
+# given name         voornaam
+# reference	     waarnaar verwezen wordt, verwijzingen
+# count		     aantal maal
+# lineage	     lijn
+# reference          enekel voor de refentiestructuur
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: gramps\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-02-20 18:25+0100\n"
-"PO-Revision-Date: 2010-02-20 18:25+0100\n"
-"Last-Translator: erik <erik@ylana.telenet.be>\n"
-"Language-Team: Dutch\n"
+"PO-Revision-Date: 2010-04-10 08:42+0100\n"
+"Last-Translator: Erik De Richter <frederik.de.richter@pandora.be>\n"
+"Language-Team: nederlands <frederik.de.richter@googlemail.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-Language: Nederlands\n"
+"X-Poedit-Country: België\n"
 
 #: TimelinePedigreeView/TimelinePedigreeView.gpr.py:33
 msgid "Timeline Pedigree"
@@ -29,8 +60,8 @@ msgid ""
 "The view shows a timeline pedigree with ancestors and descendants of the "
 "selected person"
 msgstr ""
-"Dit scherm toont een tijdslijnstamboom met voorouders en nakomelingen "
-"van de geselecteerde persoon"
+"Dit scherm toont een tijdslijnstamboom met voorouders en nakomelingen van de "
+"geselecteerde persoon"
 
 #: TimelinePedigreeView/TimelinePedigreeView.py:78
 msgid "short for born|b."
@@ -42,7 +73,7 @@ msgstr "o."
 
 #: TimelinePedigreeView/TimelinePedigreeView.py:80
 msgid "short for baptized|bap."
-msgstr "doop."
+msgstr "dp."
 
 #: TimelinePedigreeView/TimelinePedigreeView.py:81
 msgid "short for chistianized|chr."
@@ -50,7 +81,7 @@ msgstr "chr."
 
 #: TimelinePedigreeView/TimelinePedigreeView.py:82
 msgid "short for buried|bur."
-msgstr "begr."
+msgstr "bgr."
 
 #: TimelinePedigreeView/TimelinePedigreeView.py:83
 msgid "short for cremated|crem."
@@ -62,31 +93,31 @@ msgstr "Tijdslijnstamboom"
 
 #: TimelinePedigreeView/TimelinePedigreeView.py:642
 msgid "Person Filter Editor"
-msgstr "Persoonsfilter bewerken"
+msgstr "Personenfilter aanapssen"
 
 #: TimelinePedigreeView/TimelinePedigreeView.py:920
 msgid "Relationship loop detected"
-msgstr "Verwantschapslus gevonden"
+msgstr "Relatiekringloop ontdekt"
 
 #: TimelinePedigreeView/TimelinePedigreeView.py:921
 msgid "A person was found to be his/her own ancestor."
-msgstr "De gevonden persoon is zijn/haar eigen voorouder."
+msgstr "Er werd een persoon gevonden die zijn/haar eigen voorouder is."
 
 #: TimelinePedigreeView/TimelinePedigreeView.py:1544
 msgid "Show images"
-msgstr "Toon beelden"
+msgstr "Afbeeldingen tonen"
 
 #: TimelinePedigreeView/TimelinePedigreeView.py:1546
 msgid "Show marriage data"
-msgstr "Toon huwelijksgegevens"
+msgstr "Huwelijksgegevens tonen"
 
 #: TimelinePedigreeView/TimelinePedigreeView.py:1548
 msgid "Order by timeline"
-msgstr "Ranschik volgens tijdslijn"
+msgstr "Volgens tijdslijn rangschikken"
 
 #: TimelinePedigreeView/TimelinePedigreeView.py:1550
 msgid "Show lifespan"
-msgstr "Toon levensperiode"
+msgstr "Levensperiode tonen"
 
 #: TimelinePedigreeView/TimelinePedigreeView.py:1552
 msgid "Mouse scroll direction"
@@ -116,6 +147,7 @@ msgstr[1] "%d generaties"
 msgid "Ancestor Generations"
 msgstr "Vooroudergeneraties"
 
+# Mensen
 #: TimelinePedigreeView/TimelinePedigreeView.py:1632
 #: TimelinePedigreeView/TimelinePedigreeView.py:1653
 msgid "People Menu"
@@ -127,7 +159,7 @@ msgstr "Echtgenoten"
 
 #: TimelinePedigreeView/TimelinePedigreeView.py:1718
 msgid "Siblings"
-msgstr "Broers of zussen"
+msgstr "Broers en zussen"
 
 #: TimelinePedigreeView/TimelinePedigreeView.py:1763
 msgid "Children"
@@ -139,11 +171,11 @@ msgstr "Ouders"
 
 #: TimelinePedigreeView/TimelinePedigreeView.py:1840
 msgid "Add New Parents..."
-msgstr "Voeg nieuwe ouders toe..."
+msgstr "Nieuwe ouders toevoegen..."
 
 #: TimelinePedigreeView/TimelinePedigreeView.py:1851
 msgid "Related"
-msgstr "Heeft relatie met"
+msgstr "Verwant"
 
 #: TimelinePedigreeView/TimelinePedigreeView.py:1900
 msgid "Family Menu"

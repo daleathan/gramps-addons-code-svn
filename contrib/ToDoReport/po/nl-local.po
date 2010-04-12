@@ -1,11 +1,10 @@
 # translation of nl.po to nederlands
-# translation of nl.po to
 # Dutch translation of GRAMPS
 # Copyright (C) 2003 The Free Software Foundation,  Inc.
 #
 # Tino Meinen <a.t.meinen@chello.nl>, 2003, 2004, 2005.
 # Kees Bakker <kees.bakker@xs4all.nl>, 2005, 2006, 2007.
-# Erik De Richter <frederik.de.richter@pandora.be>, 2006, 2007, 2008, 2009.
+# Erik De Richter <frederik.de.richter@pandora.be>, 2006, 2007, 2008, 2009, 2010.
 # --------------------------------------------------
 # Conventies (kan later altijd nog aangepast worden)
 # --------------------------------------------------
@@ -20,7 +19,7 @@
 # record             archief/kaart
 # database           gegevensbestand (KB)
 # chart              grafiek
-# Home person        Beginpersoon : EDR/Centrale persoon/spilfiguur/basispersoon/honkpersoon
+# Home person        Beginpersoon
 # spouse             echtgenoot
 # partner            partner
 # warning            let op
@@ -29,15 +28,16 @@
 # regex              regex onvertaald laten
 # expression         uitdrukking
 # given name         voornaam
-# reference	waarnaar verwezen wordt
-# count		aantal maal
-# lineage	lijn
+# reference	     waarnaar verwezen wordt, verwijzingen
+# count		     aantal maal
+# lineage	     lijn
+# reference          enekel voor de refentiestructuur
 msgid ""
 msgstr ""
 "Project-Id-Version: gramps\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-03-21 14:43+0100\n"
-"PO-Revision-Date: 2010-03-11 08:53+0100\n"
+"PO-Revision-Date: 2010-04-10 08:42+0100\n"
 "Last-Translator: Erik De Richter <frederik.de.richter@pandora.be>\n"
 "Language-Team: nederlands <frederik.de.richter@googlemail.com>\n"
 "MIME-Version: 1.0\n"
@@ -48,20 +48,21 @@ msgstr ""
 "X-Poedit-Country: België\n"
 
 #: ToDoReport/TodoReport.gpr.py:24
-#, fuzzy
 msgid "Todo Report"
-msgstr "Boekverslag"
+msgstr "'Nog te doen'-verslag"
 
 #: ToDoReport/TodoReport.gpr.py:25
 msgid ""
 "Produces a list of all the notes with a given marker along with the records "
 "that it references, the Person, Family, Event, etc."
 msgstr ""
+"Een lijst van alle opmerkingen met een bepaalde aanduiding samen met alle gegevens "
+"waarnaar verwezen wordt voor zowel personen, familie, gebeurtenissen enz."
 
 #: ToDoReport/TodoReport.py:91
-#, fuzzy, python-format
+# python-format
 msgid "Report on Notes Marked %s"
-msgstr "Verslag kon niet worden aangemaakt"
+msgstr "Verslag van de opmerkingen met aanduiding %s"
 
 #: ToDoReport/TodoReport.py:192
 msgid "Id"
@@ -72,19 +73,17 @@ msgid "Text"
 msgstr "Tekst"
 
 #: ToDoReport/TodoReport.py:324
-#, fuzzy, python-format
+# python-format
 msgid "%(relationship_type)s on %(relationship_date)s"
-msgstr " (%(birth_date)s - %(death_date)s)"
+msgstr "%(relationship_type)s op %(relationship_date)s"
 
 #: ToDoReport/TodoReport.py:355
-#, fuzzy
 msgid "date: "
-msgstr "datum"
+msgstr "datum: "
 
 #: ToDoReport/TodoReport.py:366
-#, fuzzy
 msgid "place: "
-msgstr "locatie"
+msgstr "locatie: "
 
 #: ToDoReport/TodoReport.py:469
 msgid "Report Options"
@@ -95,22 +94,20 @@ msgid "Marker"
 msgstr "Aanduiding"
 
 #: ToDoReport/TodoReport.py:482
-#, fuzzy
 msgid "The marker type to use for the report"
-msgstr "De gebruikte aanduiding voor dit verslag"
+msgstr "Het gebruikte aanduidingtype voor dit verslag"
 
 #: ToDoReport/TodoReport.py:485
-#, fuzzy
 msgid "Group by reference type"
-msgstr "Opmerking over een bronverwijzing"
+msgstr "Per referentietype groeperen"
 
 #: ToDoReport/TodoReport.py:486
 msgid "Group notes by Family, Person, Place, etc."
-msgstr ""
+msgstr "Opmerkingen groeperen per famile, persoon, locatie, enz."
 
 #: ToDoReport/TodoReport.py:503
 msgid "The style used for the title of the page."
-msgstr "De gebruikte stijl voor de titel van de pagina."
+msgstr "De gebruikte stijl voor de paginatitel."
 
 #: ToDoReport/TodoReport.py:513
 msgid "The style used for the section headers."
@@ -126,4 +123,4 @@ msgstr "De gebruikte basisstijl voor de tabelhoofdingen."
 
 #: ToDoReport/TodoReport.py:541
 msgid "The basic style used for the note display."
-msgstr "De gebruikte basisstijl voor de weergave van opmerkingen."
+msgstr "De gebruikte basisstijl voor de opmerkingenweergave."
