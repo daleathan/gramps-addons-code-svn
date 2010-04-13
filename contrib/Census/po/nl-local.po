@@ -1,20 +1,51 @@
-# Dutch translations for PACKAGE package.
-# Copyright (C) 2010 THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# erik <frederik.de.richter@googlemail.com>, 2010.
+# translation of nl.po to nederlands
+# Dutch translation of GRAMPS
+# Copyright (C) 2003 The Free Software Foundation,  Inc.
 #
+# Tino Meinen <a.t.meinen@chello.nl>, 2003, 2004, 2005.
+# Kees Bakker <kees.bakker@xs4all.nl>, 2005, 2006, 2007.
+# Erik De Richter <frederik.de.richter@pandora.be>, 2006, 2007, 2008, 2009, 2010.
+# --------------------------------------------------
+# Conventies (kan later altijd nog aangepast worden)
+# --------------------------------------------------
+# active             actief (moet hier nog iets beters voor verzinnen)
+# attribute          kenmerk
+# bookmark           bladwijzer
+# view               scherm
+# city               plaats beter is stad dorp
+# marker             aanduiding
+# people             personen
+# place              locatie
+# record             archief/kaart
+# database           gegevensbestand (KB)
+# chart              grafiek
+# Home person        Beginpersoon
+# spouse             echtgenoot
+# partner            partner
+# warning            let op
+# at the age of      op een leeftijd van -> toen hij/zij .. oud was
+# repositories       bibliotheken
+# regex              regex onvertaald laten
+# expression         uitdrukking
+# given name         voornaam
+# reference	     waarnaar verwezen wordt, verwijzingen
+# count		     aantal maal
+# lineage	     lijn
+# reference          enekel voor de refentiestructuur
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: gramps\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-02-18 10:41+0100\n"
-"PO-Revision-Date: 2010-02-18 10:41+0100\n"
-"Last-Translator: erik <frederik.de.richter@googlemail.com>\n"
-"Language-Team: Dutch\n"
+"PO-Revision-Date: 2010-04-10 08:42+0100\n"
+"Last-Translator: Erik De Richter <frederik.de.richter@pandora.be>\n"
+"Language-Team: nederlands <frederik.de.richter@googlemail.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-Language: Nederlands\n"
+"X-Poedit-Country: België\n"
 
 #: Census/Census.py:55
 msgid "Order"
@@ -30,7 +61,7 @@ msgstr "Volkstelling-gramplet"
 
 #: Census/CensusGramplet.py:79
 msgid "Census details for: "
-msgstr "Volktellingdetails voor:"
+msgstr "Volkstellingdetails voor:"
 
 #: Census/CensusGramplet.py:90 Census/CensusReport.py:291
 msgid "Source"
@@ -83,11 +114,11 @@ msgstr "Kan geen persoon toevoegen aan deze volkstelling."
 
 #: Census/CensusGramplet.py:484 Census/CensusGramplet.py:504
 msgid "First select a census from the drop-down list."
-msgstr "Selecteer eerst een volkstelling uit de lijst."
+msgstr "Eerst een volkstelling uit de lijst selecteren."
 
 #: Census/CensusGramplet.py:509
 msgid "Select Person"
-msgstr "Selecteer een persoon"
+msgstr "Persoon selecteren"
 
 #: Census/CensusReport.gpr.py:31
 msgid "Census Report"
@@ -95,12 +126,12 @@ msgstr "Volkstellingsverslag"
 
 #: Census/CensusReport.gpr.py:32
 msgid "Report of census events for a person."
-msgstr "Verslag van de volkstellinggebeurtenissen van een persoon."
+msgstr "Verslag van de volkstellingsgebeurtenissen van een persoon."
 
 #: Census/CensusReport.py:97
 #, python-format
 msgid "Person %s is not in the Database"
-msgstr "Persson %s zit niet in het gegevensbestand"
+msgstr "De persoon %s is niet te vinden in het gegevensbestand"
 
 #: Census/CensusReport.py:109
 #, python-format
@@ -133,7 +164,7 @@ msgstr "Volgens bron"
 
 #: Census/CensusReport.py:281
 msgid "By Person and Source"
-msgstr "Volgens persson en bron"
+msgstr "Volgens persoon en bron"
 
 #: Census/CensusReport.py:282
 msgid "All Census records"
@@ -149,7 +180,7 @@ msgstr "Persoon"
 
 #: Census/CensusReport.py:287
 msgid "The selected person for the report."
-msgstr "De geselecteerde persson voor het verslag."
+msgstr "De geselecteerde persoon voor het verslag."
 
 #: Census/CensusReport.py:296
 msgid "Page break after each census."
@@ -157,7 +188,7 @@ msgstr "Een  nieuwe pagina voor elke volkstelling."
 
 #: Census/CensusReport.py:297
 msgid "Start a new page after each census."
-msgstr "Begin een nieuwe pagina na iedere volkstelling."
+msgstr "Nieuwe pagina beginnen na iedere volkstelling."
 
 #: Census/CensusReport.py:315
 msgid "The style used for the title of the page."
@@ -183,6 +214,7 @@ msgstr "De standaard tekststijl."
 msgid "Address"
 msgstr "Adres"
 
+# enkelvoud beter?
 #: Census/census.xml.h:2
 msgid "Age"
 msgstr "Leeftijd"
@@ -225,7 +257,7 @@ msgstr "Parochie"
 
 #: Census/census.xml.h:12
 msgid "Civil Parish or Township"
-msgstr ""
+msgstr "Parochie of gemeente"
 
 #: Census/census.xml.h:13
 msgid "Comments"
@@ -241,19 +273,19 @@ msgstr "Geboortedatum"
 
 #: Census/census.xml.h:16
 msgid "Disability"
-msgstr ""
+msgstr "Handicap"
 
 #: Census/census.xml.h:17
 msgid "Ecclesiastical District"
-msgstr ""
+msgstr "Kerkelijk district"
 
 #: Census/census.xml.h:18
 msgid "Ecclesiastical Parish or District"
-msgstr ""
+msgstr "Kerkelijke parochie of district"
 
 #: Census/census.xml.h:19
 msgid "Employed"
-msgstr "Werknemer"
+msgstr "Tewerkgesteld"
 
 #: Census/census.xml.h:20
 msgid "Employer"
@@ -261,7 +293,7 @@ msgstr "Werkgever"
 
 #: Census/census.xml.h:21
 msgid "Employer, Worker or Own Account"
-msgstr ""
+msgstr "Werkgever, zelfstandige"
 
 #: Census/census.xml.h:22
 msgid "Gender"
@@ -269,11 +301,11 @@ msgstr "Geslacht"
 
 #: Census/census.xml.h:23
 msgid "Hamlet or Tything"
-msgstr ""
+msgstr "Gehucht"
 
 #: Census/census.xml.h:24
 msgid "Local Board or Improvement Commissioners District"
-msgstr ""
+msgstr "Locale raad"
 
 #: Census/census.xml.h:25
 msgid "Military"
@@ -281,11 +313,11 @@ msgstr "Militair"
 
 #: Census/census.xml.h:26
 msgid "Municipal Borough"
-msgstr ""
+msgstr "Gemeentelijk district"
 
 #: Census/census.xml.h:27
 msgid "Municipal Ward"
-msgstr ""
+msgstr "Stadsdistrict"
 
 #: Census/census.xml.h:28
 msgid "Name"
@@ -309,7 +341,7 @@ msgstr "Beroep"
 
 #: Census/census.xml.h:33
 msgid "Parish or Township"
-msgstr ""
+msgstr "Parochie of stad"
 
 #: Census/census.xml.h:34
 msgid "Parliamentary Borough"
@@ -345,7 +377,7 @@ msgstr "Stad"
 
 #: Census/census.xml.h:42
 msgid "Town, Village or Hamlet"
-msgstr ""
+msgstr "Stad, dorp of gehucht"
 
 #: Census/census.xml.h:43
 msgid "Type of roof"
@@ -361,7 +393,7 @@ msgstr "Dorp"
 
 #: Census/census.xml.h:46
 msgid "Village or Hamlet"
-msgstr ""
+msgstr "Dorp of gehucht"
 
 #: Census/census.xml.h:47
 msgid "Where Born"
