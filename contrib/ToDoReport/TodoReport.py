@@ -26,7 +26,7 @@
 
 #------------------------------------------------------------------------
 #
-# standard python modules
+# Gramps modules
 #
 #------------------------------------------------------------------------
 from gen.display.name import displayer as name_displayer
@@ -113,13 +113,16 @@ class TodoReport(Report):
         note_groups = dict()
         for note_handle in note_list:
             refs = self.database.find_backlink_handles(note_handle)
-            if len(list(refs)) > 0:
+            try:
                 # grouping by the first reference
                 (class_name, r_handle) = list(refs)[0]
                 if note_groups.has_key(class_name):
                     note_groups[class_name].append((r_handle, note_handle))
                 else:
                     note_groups[class_name] = [(r_handle, note_handle)]
+            except IndexError:
+                # no back-links were found
+                pass
         for k in sorted(note_groups.keys(), reverse=True):
             # now sort the handles based on the class name, if we don't find
             # a match, the data will not be sorted.
@@ -139,8 +142,8 @@ class TodoReport(Report):
         all_notes = []
         for note_handle in note_list:
             refs = self.database.find_backlink_handles(note_handle)
-            if len(list(refs)) > 0:
-                # grouping by the first reference
+            # grouping by the first reference
+            try:
                 (class_name, r_handle) = list(refs)[0]
                 if class_name == "Family":
                     key = self.getFamilyKey((r_handle,))
@@ -154,6 +157,11 @@ class TodoReport(Report):
                     note = self.database.get_note_from_handle(note_handle)
                     key = note.get_gramps_id()
                 all_notes.append((key, note_handle))
+            except IndexError:
+                # no back-link references were found, so we'll use the note ID
+                # as the key
+                note = self.database.get_note_from_handle(note_handle)
+                key = note.get_gramps_id()
         self._write_notes(sorted(all_notes))
 
     def _write_references(self, note_handle):
