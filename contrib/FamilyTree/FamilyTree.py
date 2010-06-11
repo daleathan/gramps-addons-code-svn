@@ -970,7 +970,7 @@ class FamilyTreeOptions(MenuReportOptions):
         MenuReportOptions.__init__(self, name, dbase)
 
 
-    def add_menu_options(self, menu):
+    def add_menu_options(self, m):
         """
         Add options to the menu for the descendant report.
         """
@@ -978,19 +978,19 @@ class FamilyTreeOptions(MenuReportOptions):
 
         family_id = menu.FamilyOption(_("Center Family"))
         family_id.set_help(_("The center family for the tree"))
-        menu.add_option(category_name, "family_id", family_id)
+        m.add_option(category_name, "family_id", family_id)
 
         max_ancestor_generations = menu.NumberOption(_("Ancestor Generations"), 5, 0, 50)
         max_ancestor_generations.set_help(_("The number of ancestor generations to include in the tree"))
-        menu.add_option(category_name, "max_ancestor_generations", max_ancestor_generations)
+        m.add_option(category_name, "max_ancestor_generations", max_ancestor_generations)
 
         max_descendant_generations = menu.NumberOption(_("Descendant Generations"), 10, 0, 50)
         max_descendant_generations.set_help(_("The number of descendant generations to include in the tree"))
-        menu.add_option(category_name, "max_descendant_generations", max_descendant_generations)
+        m.add_option(category_name, "max_descendant_generations", max_descendant_generations)
 
         fit_on_page = menu.BooleanOption(_("Sc_ale to fit on a single page"), True)
         fit_on_page.set_help(_("Whether to scale to fit on a single page."))
-        menu.add_option(category_name, 'fit_on_page', fit_on_page)
+        m.add_option(category_name, 'fit_on_page', fit_on_page)
 
         color = menu.EnumeratedListOption(_("Color"), self.COLOR_NONE)
         color.set_items([
@@ -1002,11 +1002,11 @@ class FamilyTreeOptions(MenuReportOptions):
             (self.COLOR_MALE_LINE, _("Male line")),
             (self.COLOR_MALE_LINE_WEAK, _("Male line and illegitimate children")),
             (self.COLOR_FEMALE_LINE, _("Female line"))])
-        menu.add_option(category_name, "color", color)
+        m.add_option(category_name, "color", color)
 
         shuffle_colors = menu.BooleanOption(_("Shuffle colors"), False)
         shuffle_colors.set_help(_("Whether to shuffle colors or order them in rainbow fashion."))
-        menu.add_option(category_name, "shuffle_colors", shuffle_colors)
+        m.add_option(category_name, "shuffle_colors", shuffle_colors)
 
         category_name = _("Content")
 
@@ -1015,13 +1015,13 @@ class FamilyTreeOptions(MenuReportOptions):
             (self.CALLNAME_DONTUSE, _("Don't use call name")),
             (self.CALLNAME_REPLACE, _("Replace first name with call name")),
             (self.CALLNAME_UNDERLINE_ADD, _("Underline call name in first name / add call name to first name"))])
-        menu.add_option(category_name, "callname", callname)
+        m.add_option(category_name, "callname", callname)
 
         include_occupation = menu.BooleanOption(_("Include Occupation"), True)
-        menu.add_option(category_name, 'include_occupation', include_occupation)
+        m.add_option(category_name, 'include_occupation', include_occupation)
 
         include_residence = menu.BooleanOption(_("Include Residence"), True)
-        menu.add_option(category_name, 'include_residence', include_residence)
+        m.add_option(category_name, 'include_residence', include_residence)
 
         eventstyle_dead = menu.EnumeratedListOption(_("Print event data (dead person)"), self.EVENTSTYLE_DATEPLACE)
         eventstyle_dead.set_items([
@@ -1029,7 +1029,7 @@ class FamilyTreeOptions(MenuReportOptions):
             (self.EVENTSTYLE_YEARONLY, _("Year only")),
             (self.EVENTSTYLE_DATE, _("Full date")),
             (self.EVENTSTYLE_DATEPLACE, _("Full date and place"))])
-        menu.add_option(category_name, "eventstyle_dead", eventstyle_dead)
+        m.add_option(category_name, "eventstyle_dead", eventstyle_dead)
 
         eventstyle_living = menu.EnumeratedListOption(_("Print event data (living person)"), self.EVENTSTYLE_DATEPLACE)
         eventstyle_living.set_items([
@@ -1037,30 +1037,30 @@ class FamilyTreeOptions(MenuReportOptions):
             (self.EVENTSTYLE_YEARONLY, _("Year only")),
             (self.EVENTSTYLE_DATE, _("Full date")),
             (self.EVENTSTYLE_DATEPLACE, _("Full date and place"))])
-        menu.add_option(category_name, "eventstyle_living", eventstyle_living)
+        m.add_option(category_name, "eventstyle_living", eventstyle_living)
 
         fallback_birth = menu.BooleanOption(_("Fall back to baptism if birth event missing"), True)
-        menu.add_option(category_name, 'fallback_birth', fallback_birth)
+        m.add_option(category_name, 'fallback_birth', fallback_birth)
 
         fallback_death = menu.BooleanOption(_("Fall back to burial or cremation if death event missing"), True)
-        menu.add_option(category_name, 'fallback_death', fallback_death)
+        m.add_option(category_name, 'fallback_death', fallback_death)
 
         # Fixme: the following 2 options should only be available if "Full date
         # and place" is selected above.
         missinginfo = menu.BooleanOption(_("Print fields for missing information"), True)
         missinginfo.set_help(_("Whether to include fields for missing information."))
-        menu.add_option(category_name, "missinginfo", missinginfo)
+        m.add_option(category_name, "missinginfo", missinginfo)
 
         include_event_description = menu.BooleanOption(_("Include event description"), True)
-        menu.add_option(category_name, 'include_event_description', include_event_description)
+        m.add_option(category_name, 'include_event_description', include_event_description)
 
         category_name = _("Text Options")
 
         title = menu.StringOption(_("Title text"), "")
-        menu.add_option(category_name, "title", title)
+        m.add_option(category_name, "title", title)
 
         footer = menu.StringOption(_("Footer text"), "")
-        menu.add_option(category_name, "footer", footer)
+        m.add_option(category_name, "footer", footer)
 
 
     def make_default_style(self,default_style):
