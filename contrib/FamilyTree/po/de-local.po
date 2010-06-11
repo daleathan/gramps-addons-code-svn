@@ -23,7 +23,7 @@ msgstr ""
 
 #: FamilyTree/FamilyTree.gpr.py:3
 msgid "Family Tree"
-msgstr "Family Tree"
+msgstr "Stammbaum"
 
 #: FamilyTree/FamilyTree.gpr.py:4
 msgid "Produces a graphical family tree."
