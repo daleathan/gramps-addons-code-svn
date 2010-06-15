@@ -37,7 +37,7 @@ msgstr ""
 "Project-Id-Version: gramps\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-03-08 16:37+0100\n"
-"PO-Revision-Date: 2010-03-23 11:40+0100\n"
+"PO-Revision-Date: 2010-03-22 08:50+0100\n"
 "Last-Translator: Erik De Richter <frederik.de.richter@pandora.be>\n"
 "Language-Team: nederlands <frederik.de.richter@googlemail.com>\n"
 "MIME-Version: 1.0\n"
@@ -50,11 +50,11 @@ msgstr ""
 #: CalculateEstimatedDates/CalculateEstimatedDates.gpr.py:9
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:182
 msgid "Calculate Estimated Dates"
-msgstr "Bereken geschatte datums"
+msgstr "Geschatte datums berekenen"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.gpr.py:10
 msgid "Calculates estimated dates for birth and death."
-msgstr "Bereken geschatte datums voor geboorte en overlijden."
+msgstr "Geschatte datums voor geboorte en overlijden berekenen."
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:72
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:185
@@ -68,7 +68,7 @@ msgstr "Filter"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:75
 msgid "Select filter to restrict people"
-msgstr "Kies een filter om aantal personen te beperken"
+msgstr "Filter om aantal personen te beperken, selecteren"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:79
 msgid "Filter Person"
@@ -95,8 +95,10 @@ msgid "Remove previously added events, notes, and source"
 msgstr "Eerder toegevoegde gebeurtenissen, opmerkingen en bronnen verwijderen"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:92
-msgid "Remove calculated events, notes, and source; occurs immediately on Execute"
-msgstr "Verwijder geschatte gebeurtenissen, opmerkingen en bronnen; dit wordt onmiddellijk uitgevoerd"
+msgid ""
+"Remove calculated events, notes, and source; occurs immediately on Execute"
+msgstr ""
+"Geschatte gebeurtenissen, opmerkingen en bronnen verwijderen; dit wordt onmiddellijk uitgevoerd"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:95
 msgid "Birth"
@@ -108,15 +110,15 @@ msgstr "Geen geboortegebeurtenissen toevoegen"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:97
 msgid "Add birth events without dates"
-msgstr "Geboortegebeurtenis zonder datum toevoegen"
+msgstr "Geboortegebeurtenissen zonder datum toevoegen"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:98
 msgid "Add birth events with dates"
-msgstr "Geboortegebeurtenis met datums toevoegen"
+msgstr "Geboortegebeurtenissen met datums toevoegen"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:99
 msgid "Add a birth events with or without estimated dates"
-msgstr "Voeg geboortegebeurtenissen toe met of zonder geschatte datums"
+msgstr "Geboortegebeurtenissen met of zonder geschatte datums toevoegen"
 
 # Gebeurtenistype: overlijden/sterven/sterfgeval/doodgaan
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:102
@@ -137,7 +139,7 @@ msgstr "Overlijdensgebeurtenissen met datums toevoegen"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:106
 msgid "Add death events with or without estimated dates"
-msgstr "Voeg overlijdensgebeurtenissen toe, met of zonder geschatte datums"
+msgstr "Overlijdensgebeurtenissen met of zonder geschatte datums toevoegen"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:110
 msgid "Maximum age"
@@ -186,7 +188,8 @@ msgstr "_Hulp"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:164
 msgid ""
-"The Calculate Estimated Dates Tool is used to add and remove birth and death events for people that are missing these events.\n"
+"The Calculate Estimated Dates Tool is used to add and remove birth and death "
+"events for people that are missing these events.\n"
 "\n"
 "To use:\n"
 "1. Go to the Options tab\n"
@@ -196,22 +199,35 @@ msgid ""
 "5. Select the people with which to add events\n"
 "6. Click on 'Add Selected Events' button to create\n"
 "\n"
-"NOTES: if you decide to make an event permanent, remove it from the Source. Otherwise, it will get removed the next time you automatically remove these events.\n"
+"NOTES: if you decide to make an event permanent, remove it from the Source. "
+"Otherwise, it will get removed the next time you automatically remove these "
+"events.\n"
 "\n"
-"You may have to run the tool repeatedly (without removing previous events) to add all of the events possible."
+"You may have to run the tool repeatedly (without removing previous events) "
+"to add all of the events possible."
 msgstr ""
-"Dit is een test \n"
-"To use:\n"
-"1. Go to the Options tab\n"
-"2. Check the [ ] Remove option to remove previous estimates\n"
-"3. Select the Add date options to date events with or without dates\n"
-"4. Click on Execute\n"
-"5. Select the people with which to add events\n"
-"6. Click on 'Add Selected Events' button to create\n"
+"Het hulpgereedschap om geschatte datums te bepalen wordt gebruikt om "
+"gebeurtenissen ivm. geboorte en overlijden toe te voegen of te verwijderen "
+"voor die personen die geen van deze gebeurtenissen hebben.\n"
 "\n"
-"NOTES: if you decide to make an event permanent, remove it from the Source. Otherwise, it will get removed the next time you automatically remove these events.\n"
+"Gebruik:\n"
+"1. Ga naar de optie tab\n"
+"2. Vinkt de [ ] verwijder optie aan om vorige datumschattingen te "
+"verwijderen\n"
+"3. Kies de optie datums toevoegen om gebeurtenissen zonder of met datum van "
+"een datum te voorzien\n"
+"4. Klik op Uitvoeren\n"
+"5. Kies de personen waarvoor u gebeurtenissen wenst toe te voegen\n"
+"6. Klik op de 'Geselecteerde gebeurtenissen toevoegen' knop\n"
 "\n"
-"You may have to run the tool repeatedly (without removing previous events) to add all of the events possible."
+"OPMERKING: wanneer u beslist om een gebeurtenis permanent te maken, "
+"verwijder het dan van de bron. Indien u dit niet doet, dan wordt de volgende "
+"keer dat u het hulpgereedschap gebruikt de gebeurtenissen automatisch "
+"gewist.\n"
+"\n"
+"Het kan zijn dat u het hulpgereedschap meerdere malen dient te activeren "
+"(zonder vorige gebeurtenissen die zijn aangemaakt te verwijderen) om alle "
+"mogelijke gebeurtenissen toe te voegen."
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:191
 msgid "Select All"
@@ -227,15 +243,19 @@ msgstr "Selectie wisselen"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:194
 msgid "Add Selected Events"
-msgstr "Gekozen gebeurtenissen toeveogen"
+msgstr "Gekozen gebeurtenissen toevoegen"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:200
 msgid "Remove Events, Notes, and Source and Reselect Data"
-msgstr "Verwijder gebeurtenissen, opmerkingen en bronnen en herselecteer gegevens"
+msgstr "Gebeurtenissen, opmerkingen en bronnen verwijderen en herselecteer gegevens"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:201
-msgid "Are you sure you want to remove previous events, notes, and source and reselect data?"
-msgstr "Bent u zeker dat u de vorige gebeurtenissen, opmerkingen en bron wilt verwijderen en wenst u de gegevens te herselecteren?"
+msgid ""
+"Are you sure you want to remove previous events, notes, and source and "
+"reselect data?"
+msgstr ""
+"Bent u zeker dat u de vorige gebeurtenissen, opmerkingen en bron wilt "
+"verwijderen en wenst u de gegevens te herselecteren?"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:202
 msgid "Remove and Run Select Again"
@@ -298,7 +318,7 @@ msgstr "Oude schattingen verwijderen... "
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:248
 #, python-format
 msgid "Removing '%s'..."
-msgstr "Verwijder '%s'..."
+msgstr "'%s'verwijderen..."
 
 # niet/geen
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:302
@@ -349,12 +369,12 @@ msgstr "Gebeurtenissen toevoegen '%s'..."
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:447
 #, python-format
 msgid "Added birth event based on %(evidence)s, from %(name)s"
-msgstr "Voegde geboortegebeurtenis toe gebaseerd op %(evidence)s, van %(name)s"
+msgstr "Geboortegebeurtenis toegevoegd gebaseerd op %(evidence)s, van %(name)s"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:450
 #, python-format
 msgid "Added birth event based on %s"
-msgstr "Voegde geboortegebeurtenis toe gebaseerd op %s"
+msgstr "Geboortegebeurtenis toegevoegd gebaseerd op %s"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:452
 msgid "Estimated birth date"
@@ -363,12 +383,12 @@ msgstr "Geschatte geboortedatum"
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:463
 #, python-format
 msgid "Added death event based on %(evidence)s, from %(person)s"
-msgstr "Voegde overlijdensgebeurtenis toe gebaseerd op %(evidence)s, van %(person)s"
+msgstr "Overlijdensgebeurtenis toegevoegd gebaseerd op %(evidence)s, van %(person)s"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:466
 #, python-format
 msgid "Added death event based on %s"
-msgstr "Voegde overlijdensgebeurtenis toe gebaseerd op %s"
+msgstr "Overlijdensgebeurtenis toegevoegd gebaseerd op %s"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:468
 msgid "Estimated death date"
@@ -380,7 +400,7 @@ msgstr " OK! Opgeslagen..."
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:480
 msgid "Add date estimates"
-msgstr "Voeg datumschattingen toe"
+msgstr "Datumschattingen toevoegen"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:483
 #, python-format
@@ -390,4 +410,3 @@ msgstr "%d gebeurtenissen toegevoegd."
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:511
 msgid "Estimated date"
 msgstr "Geschatte datum"
-
