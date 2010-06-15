@@ -1,0 +1,114 @@
+# translation of nl.po to nederlands
+# Dutch translation of GRAMPS
+# Copyright (C) 2003 The Free Software Foundation,  Inc.
+#
+# Tino Meinen <a.t.meinen@chello.nl>, 2003, 2004, 2005.
+# Kees Bakker <kees.bakker@xs4all.nl>, 2005, 2006, 2007.
+# Erik De Richter <frederik.de.richter@pandora.be>, 2006, 2007, 2008, 2009, 2010.
+# --------------------------------------------------
+# Conventies (kan later altijd nog aangepast worden)
+# --------------------------------------------------
+# active             actief (moet hier nog iets beters voor verzinnen)
+# attribute          kenmerk
+# bookmark           bladwijzer
+# view               scherm
+# city               plaats beter is stad dorp
+# marker             aanduiding
+# people             personen
+# place              locatie
+# record             archief/kaart
+# database           gegevensbestand (KB)
+# chart              grafiek
+# Home person        Beginpersoon
+# spouse             echtgenoot
+# partner            partner
+# warning            let op
+# at the age of      op een leeftijd van -> toen hij/zij .. oud was
+# repositories       bibliotheken
+# regex              regex onvertaald laten
+# expression         uitdrukking
+# given name         voornaam
+# reference	     waarnaar verwezen wordt, verwijzingen
+# count		     aantal maal
+# lineage	     lijn
+# reference          enekel voor de refentiestructuur
+msgid ""
+msgstr ""
+"Project-Id-Version: gramps\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-04-01 20:33+0200\n"
+"PO-Revision-Date: 2010-04-10 08:42+0100\n"
+"Last-Translator: Erik De Richter <frederik.de.richter@pandora.be>\n"
+"Language-Team: nederlands <frederik.de.richter@googlemail.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-Language: Nederlands\n"
+"X-Poedit-Country: België\n"
+
+#: Locations/Locations.gpr.py:25
+#, fuzzy
+msgid "Locations Filters Report"
+msgstr "Locatie bewerken"
+
+#: Locations/Locations.gpr.py:26
+#, fuzzy
+msgid "Produces a textual filters output"
+msgstr "Levert een locatieverslag in tekstvorm"
+
+#: Locations/Locations.py:71
+#, fuzzy
+msgid "Locations"
+msgstr "Locatie"
+
+#: Locations/Locations.py:97
+msgid ""
+"\n"
+"Census event (Individual)\n"
+msgstr ""
+"\n"
+"Volkstellinggebeurtenis (persoon)\n"
+
+#: Locations/Locations.py:118
+msgid ""
+"\n"
+"Residence event (Individual)\n"
+msgstr ""
+"\n"
+"Residentiegebeurtenis (persoon)\n"
+
+#: Locations/Locations.py:139
+#, fuzzy
+msgid ""
+"\n"
+"Census event (Family)\n"
+msgstr "Centrale familie"
+
+#: Locations/Locations.py:160
+msgid ""
+"\n"
+"Residence event (Family)\n"
+msgstr ""
+"\n"
+"Residentiegebeurtenis (familie)\n"
+
+#: Locations/Locations.py:181
+#, fuzzy
+msgid ""
+"\n"
+"Address filter (Person)\n"
+msgstr "Personenfilter"
+
+#: Locations/Locations.py:221
+msgid "The style used for the title of the page."
+msgstr "De gebruikte stijl voor de titel van de pagina."
+
+#: Locations/Locations.py:229
+#, fuzzy
+msgid "The basic style used for the paragraph title."
+msgstr "De gebruikte basisstijl voor de titelweergave."
+
+#: Locations/Locations.py:236
+msgid "The basic style used for the text display."
+msgstr "De gebruikte basisstijl voor de tekstweergave."

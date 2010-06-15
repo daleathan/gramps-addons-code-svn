@@ -1,0 +1,163 @@
+# translation of nl.po to nederlands
+# Dutch translation of GRAMPS
+# Copyright (C) 2003 The Free Software Foundation,  Inc.
+#
+# Tino Meinen <a.t.meinen@chello.nl>, 2003, 2004, 2005.
+# Kees Bakker <kees.bakker@xs4all.nl>, 2005, 2006, 2007.
+# Erik De Richter <frederik.de.richter@pandora.be>, 2006, 2007, 2008, 2009, 2010.
+# --------------------------------------------------
+# Conventies (kan later altijd nog aangepast worden)
+# --------------------------------------------------
+# active             actief (moet hier nog iets beters voor verzinnen)
+# attribute          kenmerk
+# bookmark           bladwijzer
+# view               scherm
+# city               plaats beter is stad dorp
+# marker             aanduiding
+# people             personen
+# place              locatie
+# record             archief/kaart
+# database           gegevensbestand (KB)
+# chart              grafiek
+# Home person        Beginpersoon
+# spouse             echtgenoot
+# partner            partner
+# warning            let op
+# at the age of      op een leeftijd van -> toen hij/zij .. oud was
+# repositories       bibliotheken
+# regex              regex onvertaald laten
+# expression         uitdrukking
+# given name         voornaam
+# reference	     waarnaar verwezen wordt, verwijzingen
+# count		     aantal maal
+# lineage	     lijn
+# reference          enekel voor de refentiestructuur
+msgid ""
+msgstr ""
+"Project-Id-Version: gramps\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-02-18 17:44+0100\n"
+"PO-Revision-Date: 2010-04-10 08:42+0100\n"
+"Last-Translator: Erik De Richter <frederik.de.richter@pandora.be>\n"
+"Language-Team: nederlands <frederik.de.richter@googlemail.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-Language: Nederlands\n"
+"X-Poedit-Country: België\n"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.gpr.py:3
+#, fuzzy
+msgid "Deep Connections Gramplet"
+msgstr "Afstammelingen-gramplet"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.gpr.py:9
+#, fuzzy
+msgid "Deep Connections"
+msgstr "Verzameling"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:52
+msgid "Double-click name for details"
+msgstr "Dubbelklikken op de achternaam voor meer gegevens"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:53
+msgid "No Family Tree loaded."
+msgstr "Geen familiestamboom geladen."
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:58
+#, fuzzy
+msgid "Pause"
+msgstr "Oorzaak"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:60
+msgid "Continue"
+msgstr "Toch doorgaan"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:81
+msgid "child"
+msgstr "kind"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:86
+msgid "husband"
+msgstr "echtgenoot"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:90
+msgid "wife"
+msgstr "echtgenote"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:97
+#, fuzzy
+msgid "sibling"
+msgstr "Broer of zus"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:102
+msgid "father"
+msgstr "vader"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:106
+msgid "mother"
+msgstr "moeder"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:124
+#, python-format
+msgid ""
+"\n"
+"   who is a %s of "
+msgstr ""
+"\n"
+"   wie is een %s van "
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:138
+msgid "No Home Person set."
+msgstr "Geen thuispersoon bepaald."
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:141
+#, fuzzy
+msgid "No Active Person set."
+msgstr "Geen actieve persoon bepaald."
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:144
+msgid "self"
+msgstr "zelf"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:148
+#, fuzzy
+msgid "Looking for relationship between\n"
+msgstr "Zoeken naar gebroken ouderrelaties"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:149
+#, python-format
+msgid "  <b>%s</b> (Home Person) and\n"
+msgstr "  <b>%s</b> (basispersoon) en\n"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:150
+#, python-format
+msgid "  <b>%s</b> (Active Person)...\n"
+msgstr "  <b>%s</b> (actieve persoon)...\n"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:158
+#, python-format
+msgid ""
+"Found relation #%d: \n"
+"   "
+msgstr ""
+"Relatie gevonden#%d: \n"
+"   "
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:164
+msgid ""
+"Paused.\n"
+"Press Continue to search for additional relations.\n"
+msgstr ""
+"Gestopt.\n"
+"Druk verder gaan om naar bijkomende relaties te zoeken.\n"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:177
+#, python-format
+msgid ""
+"\n"
+"Search completed. %d relations found."
+msgstr ""
+"\n"
+"Het zoeken is gedaan. er zijn %d relaties gevonden."

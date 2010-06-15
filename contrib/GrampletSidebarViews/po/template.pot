@@ -1,0 +1,114 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-04-11 09:34+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: GrampletSidebarViews/sidebarviews.gpr.py:1
+msgid "Relationship Split View"
+msgstr ""
+
+#: GrampletSidebarViews/sidebarviews.gpr.py:2
+msgid "Event Split View"
+msgstr ""
+
+#: GrampletSidebarViews/sidebarviews.gpr.py:3
+msgid "Family Split View"
+msgstr ""
+
+#: GrampletSidebarViews/sidebarviews.gpr.py:4
+msgid "Fan Chart Split View"
+msgstr ""
+
+#: GrampletSidebarViews/sidebarviews.gpr.py:5
+msgid "Geo Split View"
+msgstr ""
+
+#: GrampletSidebarViews/sidebarviews.gpr.py:6
+msgid "Html Split View"
+msgstr ""
+
+#: GrampletSidebarViews/sidebarviews.gpr.py:7
+msgid "Media Split View"
+msgstr ""
+
+#: GrampletSidebarViews/sidebarviews.gpr.py:8
+msgid "Note Split View"
+msgstr ""
+
+#: GrampletSidebarViews/sidebarviews.gpr.py:9
+msgid "Pedigree Split View"
+msgstr ""
+
+#: GrampletSidebarViews/sidebarviews.gpr.py:10
+msgid "Person List Split View"
+msgstr ""
+
+#: GrampletSidebarViews/sidebarviews.gpr.py:11
+msgid "Person Tree Split View"
+msgstr ""
+
+#: GrampletSidebarViews/sidebarviews.gpr.py:12
+msgid "Place List Split View"
+msgstr ""
+
+#: GrampletSidebarViews/sidebarviews.gpr.py:13
+msgid "Place Tree Split View"
+msgstr ""
+
+#: GrampletSidebarViews/sidebarviews.gpr.py:14
+msgid "Repository Split View"
+msgstr ""
+
+#: GrampletSidebarViews/sidebarviews.gpr.py:15
+msgid "Source Split View"
+msgstr ""
+
+#: GrampletSidebarViews/sidebarviews.gpr.py:22
+msgid "Splitviews"
+msgstr ""
+
+#: GrampletSidebarViews/sidebarviews.gpr.py:23
+#, python-format
+msgid "%s with a Gramplet Pane"
+msgstr ""
+
+#: GrampletSidebarViews/sidebarviews.py:132
+msgid "Add a gramplet"
+msgstr ""
+
+#: GrampletSidebarViews/sidebarviews.py:133
+msgid "Restore a gramplet"
+msgstr ""
+
+#: GrampletSidebarViews/sidebarviews.py:168
+msgid "Split view"
+msgstr ""
+
+#: GrampletSidebarViews/sidebarviews.py:170
+msgid "Horizontal views"
+msgstr ""
+
+#: GrampletSidebarViews/sidebarviews.py:171
+msgid "Vertical views"
+msgstr ""
+
+#: GrampletSidebarViews/sidebarviews.py:172
+msgid "No split"
+msgstr ""
+
+#: GrampletSidebarViews/sidebarviews.py:180
+msgid "Split View"
+msgstr ""

@@ -1,0 +1,231 @@
+# translation of nl.po to nederlands
+# Dutch translation of GRAMPS
+# Copyright (C) 2003 The Free Software Foundation,  Inc.
+#
+# Tino Meinen <a.t.meinen@chello.nl>, 2003, 2004, 2005.
+# Kees Bakker <kees.bakker@xs4all.nl>, 2005, 2006, 2007.
+# Erik De Richter <frederik.de.richter@pandora.be>, 2006, 2007, 2008, 2009, 2010.
+# --------------------------------------------------
+# Conventies (kan later altijd nog aangepast worden)
+# --------------------------------------------------
+# active             actief (moet hier nog iets beters voor verzinnen)
+# attribute          kenmerk
+# bookmark           bladwijzer
+# view               scherm
+# city               plaats beter is stad dorp
+# marker             aanduiding
+# people             personen
+# place              locatie
+# record             archief/kaart
+# database           gegevensbestand (KB)
+# chart              grafiek
+# Home person        Beginpersoon
+# spouse             echtgenoot
+# partner            partner
+# warning            let op
+# at the age of      op een leeftijd van -> toen hij/zij .. oud was
+# repositories       bibliotheken
+# regex              regex onvertaald laten
+# expression         uitdrukking
+# given name         voornaam
+# reference	     waarnaar verwezen wordt, verwijzingen
+# count		     aantal maal
+# lineage	     lijn
+# reference          enekel voor de refentiestructuur
+msgid ""
+msgstr ""
+"Project-Id-Version: gramps\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-02-20 08:44+0100\n"
+"PO-Revision-Date: 2010-04-10 08:42+0100\n"
+"Last-Translator: Erik De Richter <frederik.de.richter@pandora.be>\n"
+"Language-Team: nederlands <frederik.de.richter@googlemail.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-Language: Nederlands\n"
+"X-Poedit-Country: België\n"
+
+#: RepositoriesReport/RepositoriesReport.gpr.py:25
+#, fuzzy
+msgid "Repositories Report Options"
+msgstr "Verslagopties"
+
+#: RepositoriesReport/RepositoriesReport.gpr.py:26
+#: RepositoriesReport/RepositoriesReport.gpr.py:43
+#, fuzzy
+msgid "Produces a textual repositories report"
+msgstr "Levert een tekstueel vooroudersverslag"
+
+#: RepositoriesReport/RepositoriesReport.gpr.py:42
+#: RepositoriesReport/RepositoriesReport.py:71
+#: RepositoriesReport/RepositoriesReportAlt.py:92
+#, fuzzy
+msgid "Repositories Report"
+msgstr "Bibliotheken"
+
+#: RepositoriesReport/RepositoriesReport.py:142
+#: RepositoriesReport/RepositoriesReportAlt.py:321
+msgid "Report Options"
+msgstr "Verslagopties"
+
+#: RepositoriesReport/RepositoriesReport.py:166
+#: RepositoriesReport/RepositoriesReportAlt.py:385
+msgid "The style used for the title of the report."
+msgstr "De gebruikte stijl voor de titel van het verslag."
+
+#: RepositoriesReport/RepositoriesReport.py:180
+#: RepositoriesReport/RepositoriesReportAlt.py:399
+#, fuzzy
+msgid "The style used for repository title."
+msgstr "De gebruikte stijl voor de verslagtitel."
+
+#: RepositoriesReport/RepositoriesReport.py:194
+#: RepositoriesReport/RepositoriesReportAlt.py:414
+msgid "The style used for each section."
+msgstr "De gebruikte stijl voor iedere sectie."
+
+# Vertrouwelijk, Prive, Geheim
+#: RepositoriesReport/RepositoriesReportAlt.py:121
+msgid "Private"
+msgstr "Persoonlijk"
+
+#: RepositoriesReport/RepositoriesReportAlt.py:163
+#, fuzzy, python-format
+msgid ""
+"\n"
+"Address: %s"
+msgstr "Adres: "
+
+# Vertrouwelijk, Prive, Geheim
+#: RepositoriesReport/RepositoriesReportAlt.py:191
+#, fuzzy, python-format
+msgid "%s. Private"
+msgstr "Persoonlijk"
+
+#: RepositoriesReport/RepositoriesReportAlt.py:231
+#, fuzzy, python-format
+msgid "Author: %s"
+msgstr "Auteur:"
+
+#: RepositoriesReport/RepositoriesReportAlt.py:233
+#, fuzzy, python-format
+msgid ""
+"\n"
+"Abbreviation: %s"
+msgstr "Afkorting:"
+
+#: RepositoriesReport/RepositoriesReportAlt.py:235
+#, fuzzy, python-format
+msgid ""
+"\n"
+"Publication information: %s"
+msgstr "_Publicatie-informatie:"
+
+# Provincie:
+#: RepositoriesReport/RepositoriesReportAlt.py:237
+#, fuzzy, python-format
+msgid ""
+"\n"
+"Data: %s"
+msgstr "Deelstaat: %s"
+
+#: RepositoriesReport/RepositoriesReportAlt.py:323
+#, fuzzy
+msgid "Include repository's urls"
+msgstr "Bibliothekenpagina's bijvoegen"
+
+#: RepositoriesReport/RepositoriesReportAlt.py:324
+#, fuzzy
+msgid "Whether to include urls on repository."
+msgstr "Al of niet opmerkingen toevoegen."
+
+#: RepositoriesReport/RepositoriesReportAlt.py:327
+#, fuzzy
+msgid "Include repository's address"
+msgstr "Bibliothekenpagina's bijvoegen"
+
+#: RepositoriesReport/RepositoriesReportAlt.py:328
+#, fuzzy
+msgid "Whether to include addresses on repository."
+msgstr "Al of niet adressen van de ouders toevoegen."
+
+#: RepositoriesReport/RepositoriesReportAlt.py:331
+#, fuzzy
+msgid "Include source's author"
+msgstr "Bronnen bijvoegen"
+
+#: RepositoriesReport/RepositoriesReportAlt.py:332
+#, fuzzy
+msgid "Whether to include author."
+msgstr "Al of niet opmerkingen toevoegen."
+
+#: RepositoriesReport/RepositoriesReportAlt.py:335
+#, fuzzy
+msgid "Include source's abbreviation"
+msgstr "Bron-informatie bijvoegen"
+
+#: RepositoriesReport/RepositoriesReportAlt.py:336
+#, fuzzy
+msgid "Whether to include abbreviation."
+msgstr "Al of niet gebeurtenissen toevoegen."
+
+#: RepositoriesReport/RepositoriesReportAlt.py:339
+#, fuzzy
+msgid "Include source's publication information"
+msgstr "Bron-informatie bijvoegen"
+
+#: RepositoriesReport/RepositoriesReportAlt.py:340
+#, fuzzy
+msgid "Whether to include publication information."
+msgstr "Al of niet detailinformatie over de echtgenoten toevoegen."
+
+#: RepositoriesReport/RepositoriesReportAlt.py:343
+#, fuzzy
+msgid "Include source's data"
+msgstr "Bronnen bijvoegen"
+
+#: RepositoriesReport/RepositoriesReportAlt.py:344
+#, fuzzy
+msgid "Whether to include keys and values."
+msgstr "Al of niet andere namen toevoegen."
+
+#: RepositoriesReport/RepositoriesReportAlt.py:347
+msgid "Include notes"
+msgstr "Opmerkingen bijvoegen"
+
+#: RepositoriesReport/RepositoriesReportAlt.py:348
+#, fuzzy
+msgid "Whether to include notes on repositories and sources."
+msgstr "Al of niet opmerkingen i.v.m. de ouders toevoegen."
+
+#: RepositoriesReport/RepositoriesReportAlt.py:351
+#, fuzzy
+msgid "Include media"
+msgstr "Datums bijvoegen"
+
+#: RepositoriesReport/RepositoriesReportAlt.py:352
+#, fuzzy
+msgid "Whether to include media on sources."
+msgstr "Al of niet opmerkingen toevoegen."
+
+#: RepositoriesReport/RepositoriesReportAlt.py:355
+msgid "Include private records"
+msgstr "Privégegevens bijvoegen"
+
+#: RepositoriesReport/RepositoriesReportAlt.py:356
+#, fuzzy
+msgid "Whether to include repositories and sources marked as private."
+msgstr ""
+"Al of niet namen, datums en families die als privé beschouwd worden, "
+"bijvoegen."
+
+#: RepositoriesReport/RepositoriesReportAlt.py:429
+#, fuzzy
+msgid "The style used for child section."
+msgstr "De gebruikte stijl voor iedere sectie."
+
+#: RepositoriesReport/RepositoriesReportAlt.py:441
+msgid "The basic style used for the note display."
+msgstr "De gebruikte basisstijl voor de weergave van opmerkingen."

@@ -1,0 +1,140 @@
+# Dutch translations for gramps package.
+# Copyright (C) 2010 THE gramps'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the gramps package.
+# erik_de_richter <frederik.de.richter@pandora.be>, 2010.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gramps 3.2.3\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-06-15 08:55+0200\n"
+"PO-Revision-Date: 2010-06-15 08:55+0200\n"
+"Last-Translator: erik_de_richter <frederik.de.richter@pandora.be>\n"
+"Language-Team: Dutch\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: LastChange//LastChange.gpr.py:24
+msgid "Last Change Gramplet"
+msgstr "'Recentste aanpassingen'-gramplet"
+
+#: LastChange//LastChange.gpr.py:25
+msgid "List the last ten person records that have been changed"
+msgstr "Een lijst van de tien personen tonen die recent zijn aangepast"
+
+#: LastChange//LastChange.gpr.py:34
+msgid "Latest Changes"
+msgstr "Laatste aanpassingen"
+
+#: LastChange//LastChange.gpr.py:39
+msgid "Last Change Report"
+msgstr "Laatste aanpassingenverslag"
+
+#: LastChange//LastChange.gpr.py:40
+msgid "Report of the last records that have been changed"
+msgstr "Verslag van de laatste gegevens die veranderd werden"
+
+#: LastChange//LastChangeGramplet.py:48
+msgid "Double-click name for details"
+msgstr "Op naam dubbelklikken voor meer details"
+
+#: LastChange//LastChangeGramplet.py:49
+msgid "No Family Tree loaded."
+msgstr "Geen familiestamboom geladen."
+
+#: LastChange//LastChangeGramplet.py:53
+msgid "Processing..."
+msgstr "Verwerking..."
+
+#: LastChange//LastChangeGramplet.py:65
+msgid "changed on"
+msgstr "veranderd op"
+
+#: LastChange//LastChangeReport.py:140
+msgid "People Changed"
+msgstr "Personen aangepast"
+
+#: LastChange//LastChangeReport.py:141 LastChange//LastChangeReport.py:156
+#: LastChange//LastChangeReport.py:187 LastChange//LastChangeReport.py:207
+msgid "ID"
+msgstr "ID"
+
+#: LastChange//LastChangeReport.py:141
+msgid "Person"
+msgstr "Persoon"
+
+#: LastChange//LastChangeReport.py:141 LastChange//LastChangeReport.py:156
+#: LastChange//LastChangeReport.py:187 LastChange//LastChangeReport.py:207
+msgid "Changed On"
+msgstr "Veranderd op"
+
+#: LastChange//LastChangeReport.py:155
+msgid "Families Changed"
+msgstr "Families aangepast"
+
+#: LastChange//LastChangeReport.py:156
+msgid "Family Surname"
+msgstr "Familienaam"
+
+#: LastChange//LastChangeReport.py:173
+#, python-format
+msgid "%s and %s"
+msgstr "%s en %s"
+
+#: LastChange//LastChangeReport.py:186
+msgid "Events Changed"
+msgstr "Gebeurtenissen aangepast"
+
+#: LastChange//LastChangeReport.py:187
+msgid "Event"
+msgstr "Gebeurtenis"
+
+#: LastChange//LastChangeReport.py:206
+msgid "Places Changed"
+msgstr "Locaties aangepast"
+
+#: LastChange//LastChangeReport.py:207
+msgid "Place"
+msgstr "Locatie"
+
+#: LastChange//LastChangeReport.py:226
+msgid "Report Options"
+msgstr "Verslagopties"
+
+#: LastChange//LastChangeReport.py:227
+msgid "Select From:"
+msgstr "Kies uit:"
+
+#: LastChange//LastChangeReport.py:228
+msgid "People"
+msgstr "Personen"
+
+#: LastChange//LastChangeReport.py:229
+msgid "Families"
+msgstr "Families"
+
+#: LastChange//LastChangeReport.py:230
+msgid "Places"
+msgstr "Locaties"
+
+#: LastChange//LastChangeReport.py:231
+msgid "Events"
+msgstr "Gebeurtenissen"
+
+#: LastChange//LastChangeReport.py:247
+msgid "The style used for the title of the page."
+msgstr "De gebruikte stijl voor de paginatitel."
+
+#: LastChange//LastChangeReport.py:262
+msgid "The style used for the section headers."
+msgstr "De gebruikte stijl voor de paragraaftitels."
+
+#: LastChange//LastChangeReport.py:272
+msgid "The style used for normal text"
+msgstr "De stijl gebruikt voor de gewone tekst."
+
+#: LastChange//LastChangeReport.py:284
+msgid "The basic style used for table headings."
+msgstr "De basisstijl voor de tabelhoofdingen."

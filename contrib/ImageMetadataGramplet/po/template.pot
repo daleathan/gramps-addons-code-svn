@@ -1,0 +1,173 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-04-11 11:22+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ImageMetadataGramplet/ImageMetadataGramplet.gpr.py:29
+#: ImageMetadataGramplet/ImageMetadataGramplet.gpr.py:34
+msgid "Image Metadata Gramplet"
+msgstr ""
+
+#: ImageMetadataGramplet/ImageMetadataGramplet.gpr.py:30
+msgid "Gramplet for editing image EXIF metadata"
+msgstr ""
+
+#: ImageMetadataGramplet/ImageMetadataGramplet.py:84
+msgid ""
+"Enter text describing this image and who might be in the image.  It might be "
+"best to enter a location for this image, especially if there is no GPS "
+"Latitude/ Longitude information available."
+msgstr ""
+
+#: ImageMetadataGramplet/ImageMetadataGramplet.py:125
+msgid "Active image"
+msgstr ""
+
+#: ImageMetadataGramplet/ImageMetadataGramplet.py:126
+msgid "Photographer"
+msgstr ""
+
+#: ImageMetadataGramplet/ImageMetadataGramplet.py:128
+#: ImageMetadataGramplet/ImageMetadataGramplet.py:698
+msgid "Select Date"
+msgstr ""
+
+#: ImageMetadataGramplet/ImageMetadataGramplet.py:130
+msgid "Date/ Time"
+msgstr ""
+
+#: ImageMetadataGramplet/ImageMetadataGramplet.py:131
+msgid "Copyright"
+msgstr ""
+
+#: ImageMetadataGramplet/ImageMetadataGramplet.py:140
+msgid "Subject"
+msgstr ""
+
+#: ImageMetadataGramplet/ImageMetadataGramplet.py:152
+msgid "Latitude"
+msgstr ""
+
+#: ImageMetadataGramplet/ImageMetadataGramplet.py:163
+msgid "Lat. Ref"
+msgstr ""
+
+#: ImageMetadataGramplet/ImageMetadataGramplet.py:178
+msgid "Longitude"
+msgstr ""
+
+#: ImageMetadataGramplet/ImageMetadataGramplet.py:189
+msgid "Long. Ref."
+msgstr ""
+
+#: ImageMetadataGramplet/ImageMetadataGramplet.py:207
+msgid "Description"
+msgstr ""
+
+#: ImageMetadataGramplet/ImageMetadataGramplet.py:220
+msgid "Enter the name of the person who took this image."
+msgstr ""
+
+#: ImageMetadataGramplet/ImageMetadataGramplet.py:223
+msgid ""
+"Press the Select Date Button to bring up a calendar where you can choose a "
+"date."
+msgstr ""
+
+#: ImageMetadataGramplet/ImageMetadataGramplet.py:226
+msgid ""
+"Enter the copyright information for the image.  xample: (C) 2010 Smith and "
+"Wesson"
+msgstr ""
+
+#: ImageMetadataGramplet/ImageMetadataGramplet.py:229
+msgid ""
+"Enter words that describe this image, separated by comma.\n"
+"  Example: Kids,house,dog,car"
+msgstr ""
+
+#: ImageMetadataGramplet/ImageMetadataGramplet.py:233
+msgid ""
+"If using decimal format in Latitude, leave blank.  If using Degrees, "
+"Minutes, Seconds, please enter either a N or S"
+msgstr ""
+
+#: ImageMetadataGramplet/ImageMetadataGramplet.py:237
+msgid ""
+"Enter the GPS Latitude as either Degrees, Minutes, Seconds or Decimal "
+"formats."
+msgstr ""
+
+#: ImageMetadataGramplet/ImageMetadataGramplet.py:241
+msgid ""
+"If using decimal format in Longitude, leave blank.  If using Degrees, "
+"Minutes, Seconds,  please enter either a W or E"
+msgstr ""
+
+#: ImageMetadataGramplet/ImageMetadataGramplet.py:245
+msgid ""
+"Enter the GPS Longitude as either in Degrees, Minutes, Seconds or Decimal "
+"formats."
+msgstr ""
+
+#: ImageMetadataGramplet/ImageMetadataGramplet.py:251
+msgid "Save"
+msgstr ""
+
+#: ImageMetadataGramplet/ImageMetadataGramplet.py:254
+msgid "Clear"
+msgstr ""
+
+#: ImageMetadataGramplet/ImageMetadataGramplet.py:257
+msgid "Convert GPS Coordinates"
+msgstr ""
+
+#: ImageMetadataGramplet/ImageMetadataGramplet.py:297
+msgid ""
+"The media object that you have chosen is not an image.  Please re-select a "
+"different media object."
+msgstr ""
+
+#: ImageMetadataGramplet/ImageMetadataGramplet.py:301
+msgid ""
+"The type of this media object is not able to be confirmed.  Please re-select "
+"a different media object."
+msgstr ""
+
+#: ImageMetadataGramplet/ImageMetadataGramplet.py:519
+msgid "Image metadata has been saved."
+msgstr ""
+
+#: ImageMetadataGramplet/ImageMetadataGramplet.py:523
+#, python-format
+msgid ""
+"The image file %s does NOT have write access/ permissions. If you have "
+"access and rights to change the permissions, then please do it now."
+msgstr ""
+
+#: ImageMetadataGramplet/ImageMetadataGramplet.py:683
+#, python-format
+msgid ""
+"The image file %s does NOT have read access/ permissions.  If you have "
+"access and rights to change the permissions,  then please do it now."
+msgstr ""
+
+#: ImageMetadataGramplet/ImageMetadataGramplet.py:689
+#, python-format
+msgid ""
+"The image file %s is missing.  Please select another image or edit the media "
+"object to fix this problem."
+msgstr ""

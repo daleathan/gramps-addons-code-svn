@@ -1,0 +1,71 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-04-11 20:13+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: Locations/Locations.gpr.py:25
+msgid "Locations Filters Report"
+msgstr ""
+
+#: Locations/Locations.gpr.py:26
+msgid "Produces a textual filters output"
+msgstr ""
+
+#: Locations/Locations.py:71
+msgid "Locations"
+msgstr ""
+
+#: Locations/Locations.py:97
+msgid ""
+"\n"
+"Census event (Individual)\n"
+msgstr ""
+
+#: Locations/Locations.py:118
+msgid ""
+"\n"
+"Residence event (Individual)\n"
+msgstr ""
+
+#: Locations/Locations.py:139
+msgid ""
+"\n"
+"Census event (Family)\n"
+msgstr ""
+
+#: Locations/Locations.py:160
+msgid ""
+"\n"
+"Residence event (Family)\n"
+msgstr ""
+
+#: Locations/Locations.py:181
+msgid ""
+"\n"
+"Address filter (Person)\n"
+msgstr ""
+
+#: Locations/Locations.py:221
+msgid "The style used for the title of the page."
+msgstr ""
+
+#: Locations/Locations.py:229
+msgid "The basic style used for the paragraph title."
+msgstr ""
+
+#: Locations/Locations.py:236
+msgid "The basic style used for the text display."
+msgstr ""

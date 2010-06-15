@@ -1,0 +1,206 @@
+# translation of nl.po to nederlands
+# Dutch translation of GRAMPS
+# Copyright (C) 2003 The Free Software Foundation,  Inc.
+#
+# Tino Meinen <a.t.meinen@chello.nl>, 2003, 2004, 2005.
+# Kees Bakker <kees.bakker@xs4all.nl>, 2005, 2006, 2007.
+# Erik De Richter <frederik.de.richter@pandora.be>, 2006, 2007, 2008, 2009, 2010.
+# --------------------------------------------------
+# Conventies (kan later altijd nog aangepast worden)
+# --------------------------------------------------
+# active             actief (moet hier nog iets beters voor verzinnen)
+# attribute          kenmerk
+# bookmark           bladwijzer
+# view               scherm
+# city               plaats beter is stad dorp
+# marker             aanduiding
+# people             personen
+# place              locatie
+# record             archief/kaart
+# database           gegevensbestand (KB)
+# chart              grafiek
+# Home person        Beginpersoon
+# spouse             echtgenoot
+# partner            partner
+# warning            let op
+# at the age of      op een leeftijd van -> toen hij/zij .. oud was
+# repositories       bibliotheken
+# regex              regex onvertaald laten
+# expression         uitdrukking
+# given name         voornaam
+# reference	     waarnaar verwezen wordt, verwijzingen
+# count		     aantal maal
+# lineage	     lijn
+# reference          enekel voor de refentiestructuur
+msgid ""
+msgstr ""
+"Project-Id-Version: gramps\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-06-15 08:08+0200\n"
+"PO-Revision-Date: 2010-05-12 18:03+0100\n"
+"Last-Translator: Erik De Richter <frederik.de.richter@pandora.be>\n"
+"Language-Team: nederlands <frederik.de.richter@googlemail.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-Language: Nederlands\n"
+"X-Poedit-Country: België\n"
+
+#: FamilySheet/FamilySheet.gpr.py:3
+msgid "Family Sheet"
+msgstr "Familiepagina"
+
+#: FamilySheet/FamilySheet.gpr.py:4
+msgid ""
+"Produces a family sheet showing full information about a person and his/her "
+"partners and children."
+msgstr ""
+"Een familiepagina, waar de volledige informatie over een persoon en zijn/haar "
+"partners en kinderen, aanmaken."
+
+#: FamilySheet/FamilySheet.py:211 FamilySheet/FamilySheet.py:254
+#, python-format
+msgid "→ %s"
+msgstr "→ %s"
+
+#: FamilySheet/FamilySheet.py:375
+msgid "Address (%(date)s): %(location)s"
+msgstr "Adres (%(date)s): %(location)s"
+
+#: FamilySheet/FamilySheet.py:379
+msgid "Address: %(location)s"
+msgstr "Adres: %(location)s"
+
+#: FamilySheet/FamilySheet.py:426
+msgid "; %(type)s: %(value)s"
+msgstr ";%(type)s: %(value)s"
+
+#: FamilySheet/FamilySheet.py:523
+msgid "Source references:"
+msgstr "Bronnenverwijzingen:"
+
+#: FamilySheet/FamilySheet.py:536
+msgid "%s: "
+msgstr "%s: "
+
+#: FamilySheet/FamilySheet.py:540
+#, python-format
+msgid ", page %s"
+msgstr ", pagina %s"
+
+#: FamilySheet/FamilySheet.py:553
+msgid "Notes:"
+msgstr "Opmerkingen:"
+
+# python-format
+#: FamilySheet/FamilySheet.py:732
+#, python-format
+msgid "on %(ymd_date)s"
+msgstr "op %(ymd_date)s"
+
+# python-format
+#: FamilySheet/FamilySheet.py:734
+#, python-format
+msgid "in %(ym_date)s"
+msgstr "in %(ym_date)s"
+
+# python-format
+#: FamilySheet/FamilySheet.py:736
+#, python-format
+msgid "in %(y_date)s"
+msgstr "in %(y_date)s"
+
+# python-format
+#: FamilySheet/FamilySheet.py:740
+#, python-format
+msgid "on %(placeholder)s"
+msgstr "op %(placeholder)s"
+
+# python-format
+#: FamilySheet/FamilySheet.py:742
+#, python-format
+msgid "on %(placeholder)s (%(partial)s)"
+msgstr "op %(placeholder)s (%(partial)s)"
+
+# python-format
+#: FamilySheet/FamilySheet.py:785 FamilySheet/FamilySheet.py:787
+#, python-format
+msgid "in %(place)s"
+msgstr "in %(place)s"
+
+#: FamilySheet/FamilySheet.py:815
+msgid "Report Options"
+msgstr "Verslagopties"
+
+#: FamilySheet/FamilySheet.py:818
+msgid "Center person"
+msgstr "Centrale persoon"
+
+#: FamilySheet/FamilySheet.py:819
+msgid "The person whose partners and children are printed"
+msgstr "De persoon waarvan de partners en de kinderen uitgeprint worden"
+
+#: FamilySheet/FamilySheet.py:822
+msgid "Print sheets for:"
+msgstr "Pagina's uitdrukken voor:"
+
+#: FamilySheet/FamilySheet.py:824
+msgid "Center person only"
+msgstr "Enkel de centrale persoon"
+
+#: FamilySheet/FamilySheet.py:825
+msgid "Center person and descendants in side branches"
+msgstr "Centrale persoon en afstammelingen in zijtakken"
+
+#: FamilySheet/FamilySheet.py:826
+msgid "Center person and all descendants"
+msgstr "Centrale  persoon en alle afstammelingen"
+
+#: FamilySheet/FamilySheet.py:829
+msgid "Use call name"
+msgstr "Roepnaam gebruiken"
+
+#: FamilySheet/FamilySheet.py:831
+msgid "Don't use call name"
+msgstr "Roepnaam niet gebruiken"
+
+#: FamilySheet/FamilySheet.py:832
+msgid "Replace first name with call name"
+msgstr "Voornaam door de roepnaam vervangen"
+
+#: FamilySheet/FamilySheet.py:833
+msgid "Underline call name in first name / add call name to first name"
+msgstr "Roepnaam in de voornaam onderstrepen/ roepnaam aan voornaam toevoegen"
+
+#: FamilySheet/FamilySheet.py:836
+msgid "Print placeholders for missing information"
+msgstr "Velden voor ontbrekende informatie voorzien"
+
+#: FamilySheet/FamilySheet.py:839
+msgid "Include sources"
+msgstr "Bronnen bijvoegen"
+
+#: FamilySheet/FamilySheet.py:842
+msgid "Include notes"
+msgstr "Opmerkingen bijvoegen"
+
+#: FamilySheet/FamilySheet.py:856
+msgid "The basic style used for the text display"
+msgstr "De gebruikte basisstijl voor de tekstweergave"
+
+#: FamilySheet/FamilySheet.py:866
+msgid "The style used for the page key on the top"
+msgstr "De gebruikte stijl voor de titel van de pagina"
+
+#: FamilySheet/FamilySheet.py:875
+msgid "The style used for names"
+msgstr "De gebruikte stijl voor namen"
+
+#: FamilySheet/FamilySheet.py:885
+msgid "The style used for numbers"
+msgstr "De gebruikte stijl voor getallen"
+
+#: FamilySheet/FamilySheet.py:895
+msgid "The style used for footnotes (notes and source references)"
+msgstr "De gebruikte stijl voor voetnoten (opmerkingen en bronnenverwijzingen)"

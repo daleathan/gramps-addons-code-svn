@@ -1,0 +1,462 @@
+# translation of nl.po to nederlands
+# Dutch translation of GRAMPS
+# Copyright (C) 2003 The Free Software Foundation,  Inc.
+#
+# Tino Meinen <a.t.meinen@chello.nl>, 2003, 2004, 2005.
+# Kees Bakker <kees.bakker@xs4all.nl>, 2005, 2006, 2007.
+# Erik De Richter <frederik.de.richter@pandora.be>, 2006, 2007, 2008, 2009, 2010.
+# --------------------------------------------------
+# Conventies (kan later altijd nog aangepast worden)
+# --------------------------------------------------
+# active             actief (moet hier nog iets beters voor verzinnen)
+# attribute          kenmerk
+# bookmark           bladwijzer
+# view               scherm
+# city               plaats beter is stad dorp
+# marker             aanduiding
+# people             personen
+# place              locatie
+# record             archief/kaart
+# database           gegevensbestand (KB)
+# chart              grafiek
+# Home person        Beginpersoon
+# spouse             echtgenoot
+# partner            partner
+# warning            let op
+# at the age of      op een leeftijd van -> toen hij/zij .. oud was
+# repositories       bibliotheken
+# regex              regex onvertaald laten
+# expression         uitdrukking
+# given name         voornaam
+# reference	     waarnaar verwezen wordt, verwijzingen
+# count		     aantal maal
+# lineage	     lijn
+# reference          enekel voor de refentiestructuur
+msgid ""
+msgstr ""
+"Project-Id-Version: gramps\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-03-04 08:31+0100\n"
+"PO-Revision-Date: 2010-04-10 08:42+0100\n"
+"Last-Translator: Erik De Richter <frederik.de.richter@pandora.be>\n"
+"Language-Team: nederlands <frederik.de.richter@googlemail.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-Language: Nederlands\n"
+"X-Poedit-Country: België\n"
+
+#: PlaceCompletion/PlaceCompletion.gpr.py:25
+#, fuzzy
+msgid "PlaceCompletion"
+msgstr "Verzameling"
+
+#: PlaceCompletion/PlaceCompletion.gpr.py:26
+msgid ""
+"Provides a browsable list of selected places, with possibility to complete/"
+"parse/set the attribute fields."
+msgstr ""
+"Geeft een lijst van geselecteerde locaties, met de mogelijkheid om/de "
+"kenmerkenvelden te vervolledigen/bekijken/veranderen."
+
+#: PlaceCompletion/PlaceCompletion.py:86
+msgid ""
+"Place Completion by parsing, file lookup and batch setting of place "
+"attributes"
+msgstr ""
+"Locatie vervolledigen door 'parsing', bestandscontrole en veranderen van de "
+"locatiekenmerken"
+
+#: PlaceCompletion/PlaceCompletion.py:236
+#: PlaceCompletion/PlaceCompletion.py:275
+msgid "Error in PlaceCompletion.py"
+msgstr "Fout in PlaceCompletion.py"
+
+#: PlaceCompletion/PlaceCompletion.py:237
+#, fuzzy
+msgid "Non existing group used in get"
+msgstr "Niet bestaand persoon"
+
+#: PlaceCompletion/PlaceCompletion.py:276
+#, fuzzy
+msgid "Non existing group used in set"
+msgstr "Niet bestaand persoon"
+
+# Plaatsnaam
+#: PlaceCompletion/PlaceCompletion.py:334
+#, fuzzy
+msgid "Places tool"
+msgstr "Locatienaam"
+
+#: PlaceCompletion/PlaceCompletion.py:426
+msgid "Non Valid Title Regex"
+msgstr "Geen geldige reguliere uitdrukking voor de titel"
+
+#: PlaceCompletion/PlaceCompletion.py:427
+msgid "Non valid regular expression given to match title. Quiting."
+msgstr ""
+"Geen geldige reguliere uitdrukking opgegeven om titel te controleren. Stopt."
+
+#: PlaceCompletion/PlaceCompletion.py:442
+msgid "Missing regex groups in match lat/lon"
+msgstr "Ontbrekende reguliere uitdrukking voor breedte/lengte te controleren"
+
+#: PlaceCompletion/PlaceCompletion.py:443
+#, python-format
+msgid ""
+"Regex groups %(lat)s and %(lon)s must be present in lat/lon match. Quiting"
+msgstr ""
+"Reguliere uitdrukkingen %(lat)s en %(lon)s moeten aanwezig zijn voor de  "
+"breedte/lengte controle. Stopt"
+
+#: PlaceCompletion/PlaceCompletion.py:453
+msgid "Non valid regex for match lat/lon"
+msgstr "Geen geldige reguliere uitdrukking voor lengte/breedte"
+
+#: PlaceCompletion/PlaceCompletion.py:454
+msgid "Non valid regular expression given to find lat/lon. Quiting."
+msgstr ""
+"Geen geldige reguliere uitdrukking opgegeven voor lengte/breedte. Gestopt."
+
+#: PlaceCompletion/PlaceCompletion.py:512
+msgid "Finding Places and appropriate changes"
+msgstr "Locaties vinden en gepaste veranderingen"
+
+# Filteren? ik vermoed dat het hier om het znw gaat
+#: PlaceCompletion/PlaceCompletion.py:514
+#, fuzzy
+msgid "Filtering"
+msgstr "Filter"
+
+#: PlaceCompletion/PlaceCompletion.py:524
+msgid "Loading lat/lon file in Memory..."
+msgstr "Lengte/breedte-bestand wordt geladen in het geheugen..."
+
+#: PlaceCompletion/PlaceCompletion.py:529
+#, fuzzy
+msgid "Examining places"
+msgstr "'%s' wordt nagekeken..."
+
+# stad
+#: PlaceCompletion/PlaceCompletion.py:549
+#: PlaceCompletion/PlaceCompletion.py:1113
+msgid "City"
+msgstr "Dorp of stad"
+
+# Provincie
+#: PlaceCompletion/PlaceCompletion.py:552
+msgid "State"
+msgstr "Deelstaat"
+
+#: PlaceCompletion/PlaceCompletion.py:556
+msgid "Country"
+msgstr "Land"
+
+#: PlaceCompletion/PlaceCompletion.py:717
+#, fuzzy
+msgid "Doing Place changes"
+msgstr "Plaats-pagina's aanmaken"
+
+#: PlaceCompletion/PlaceCompletion.py:754
+#: PlaceCompletion/PlaceCompletion.py:764
+#, fuzzy
+msgid "Change places"
+msgstr "Typen wijzigen"
+
+#: PlaceCompletion/PlaceCompletion.py:759
+#, fuzzy
+msgid "No place record was modified."
+msgstr "Geen gebeurtenis-archief is aangepast."
+
+#: PlaceCompletion/PlaceCompletion.py:761
+#, fuzzy
+msgid "1 place record was modified."
+msgstr "Geen gebeurtenis-archief is aangepast."
+
+#: PlaceCompletion/PlaceCompletion.py:763
+#, fuzzy, python-format
+msgid "%d place records were modified."
+msgstr "%d gebeurtenisgegeven werd aangepast."
+
+#: PlaceCompletion/PlaceCompletion.py:836
+#: PlaceCompletion/PlaceCompletion.py:843
+#: PlaceCompletion/PlaceCompletion.py:849
+#: PlaceCompletion/PlaceCompletion.py:855
+msgid "Cannot open file"
+msgstr "Kan gegevensbestand niet openen"
+
+#: PlaceCompletion/PlaceCompletion.py:837
+#, fuzzy
+msgid "The selected file is a directory, not a file."
+msgstr "Het geselecteerde bestand is een map, geen bestand.\n"
+
+#: PlaceCompletion/PlaceCompletion.py:844
+msgid "You do not have read access to the selected file."
+msgstr "U heeft geen leestoegangsrechten tot het geselecteerde bestand."
+
+#: PlaceCompletion/PlaceCompletion.py:850
+msgid "The file you want to access is not a regular file."
+msgstr "Het bestand dat u wilt benaderen, is geen gewoon bestand."
+
+#: PlaceCompletion/PlaceCompletion.py:856
+#, fuzzy
+msgid "The file does not exist."
+msgstr "Bestand bestaat niet"
+
+#: PlaceCompletion/PlaceCompletion.py:875
+#, fuzzy
+msgid "Problem reading file"
+msgstr "Fout bij lezen van GEDCOM bestand"
+
+#: PlaceCompletion/PlaceCompletion.py:929
+#, fuzzy
+msgid "lat"
+msgstr "Heeft Relatie"
+
+#: PlaceCompletion/PlaceCompletion.py:929
+#, fuzzy
+msgid "lon"
+msgstr "Waals"
+
+#: PlaceCompletion/PlaceCompletion.py:993
+#: PlaceCompletion/PlaceCompletion.py:1005
+#, python-format
+msgid "invalid lat or lon value, %(lat)s, %(lon)s"
+msgstr "ongeldige brdt of lngt waarde, %(lat)s, %(lon)s"
+
+#: PlaceCompletion/PlaceCompletion.py:1074
+#, fuzzy
+msgid "No lat/lon conversion"
+msgstr "Geen relatie met de actieve persoon"
+
+#: PlaceCompletion/PlaceCompletion.py:1075
+#, fuzzy
+msgid "All in degree notation"
+msgstr "Alle generaties"
+
+#: PlaceCompletion/PlaceCompletion.py:1076
+msgid "All in decimal notation"
+msgstr "Alles in decimale notatie"
+
+#: PlaceCompletion/PlaceCompletion.py:1077
+msgid "Correct -50° in 50°S"
+msgstr "Verander -50° in 50°Z"
+
+#: PlaceCompletion/PlaceCompletion.py:1081
+#, fuzzy
+msgid "No changes"
+msgstr "Veranderingen teniet doen"
+
+#: PlaceCompletion/PlaceCompletion.py:1082
+msgid "City[, State]"
+msgstr "Stad[, Provincie]"
+
+#: PlaceCompletion/PlaceCompletion.py:1084
+msgid "TitleStart [, City] [, State]"
+msgstr "Titel, [, Stad] [, Provincie]"
+
+#: PlaceCompletion/PlaceCompletion.py:1107
+msgid "City [,|.] State"
+msgstr "Stad [,|.] Provincie"
+
+#: PlaceCompletion/PlaceCompletion.py:1109
+#, fuzzy
+msgid "City [,|.] Country"
+msgstr "_Stad/Provincie:"
+
+#: PlaceCompletion/PlaceCompletion.py:1111
+#, fuzzy
+msgid "City (Country)"
+msgstr "_Stad/Provincie:"
+
+#: PlaceCompletion/PlaceCompletion.py:1117
+#, fuzzy
+msgid "Don't search"
+msgstr "Onderzoeker"
+
+#: PlaceCompletion/PlaceCompletion.py:1120
+msgid "GeoNames country file, city search"
+msgstr "GeoNames landbestand, stad zoeken"
+
+#: PlaceCompletion/PlaceCompletion.py:1125
+msgid "GeoNames country file, city localized variants search"
+msgstr "GeoNames landbestand, lokale varianten op de stad zoeken"
+
+#: PlaceCompletion/PlaceCompletion.py:1136
+msgid "GeoNames country file, title begin, general search"
+msgstr "GeoNames landbestand, titel, algemeen zoeken"
+
+#: PlaceCompletion/PlaceCompletion.py:1141
+msgid "GeoNames USA state file, city search"
+msgstr "GeoNames USA state file, city search"
+
+#: PlaceCompletion/PlaceCompletion.py:1155
+msgid "GNS Geonet country file, city search"
+msgstr "'GNS Geonet'-landenbestand, stad wordt gezocht"
+
+#: PlaceCompletion/PlaceCompletion.py:1164
+msgid "GNS Geonet country file, title begin, general search"
+msgstr "GNS GeoNet landsbestand, titel, algemeen zoeken"
+
+#: PlaceCompletion/PlaceCompletion.py:1172
+msgid "Wikipedia CSV Dump"
+msgstr "Wikipedia CSV dump"
+
+# Plaatsen
+#: PlaceCompletion/PlaceCompletion.py:1260
+#, fuzzy
+msgid "All Places"
+msgstr "Alle locaties"
+
+#: PlaceCompletion/PlaceCompletion.py:1263
+#, fuzzy
+msgid "No Latitude/Longitude given"
+msgstr "Breedtegraad/ Lengtegraad"
+
+#: PlaceCompletion/placecompletion.glade.h:1
+msgid "<b>1. Look up latitude and longitude:</b>"
+msgstr "<b>1. Lengte en de breedte opzoeken:</b>"
+
+#: PlaceCompletion/placecompletion.glade.h:2
+msgid "<b>2. Parsing and Conversion of existing title or position:</b>"
+msgstr "<b>2. Een bestaande titel of positie inlezen en omzetten:</b>"
+
+#: PlaceCompletion/placecompletion.glade.h:3
+msgid "<b>3. Set attributes of all selected places:</b>"
+msgstr "<b>3. De kenmerken van alle geselecteerde locaties aanpassen:</b>"
+
+#: PlaceCompletion/placecompletion.glade.h:4
+msgid ""
+"<i>Delete to delete a row, Double-click on the row to edit place with "
+"changes pre-entered, \n"
+"Press Tab on a row or Google Maps button to see place on a map. Press Apply "
+"to do all changes automatically</i>"
+msgstr ""
+"<i>Verwijder om een rij te verwijderen, dubbelklikken op een rij om locatie "
+"aan te passen met de ingevulde velden, \n"
+"Druk 'Tab' op een rij of de 'Google Maps'-knop om een locatie op de kaart te "
+"zien. Druk op toepassen om alle veranderingen automatisch uit te voeren</i>"
+
+#: PlaceCompletion/placecompletion.glade.h:6
+msgid ""
+"<span size=\"large\"><b>Selection of the Places you want to complete:</b></"
+"span>"
+msgstr ""
+"<span size=\"large\"><b>Selectie van de locaties die u wenst te "
+"vervolledigen:</b></span>"
+
+#: PlaceCompletion/placecompletion.glade.h:7
+msgid "Apply all suggested changes"
+msgstr "Alle voorgestelde veranderingen toepassen"
+
+#: PlaceCompletion/placecompletion.glade.h:8
+#, fuzzy
+msgid "C_enter latitude:"
+msgstr "_Breedtegraad:"
+
+# Stad
+#: PlaceCompletion/placecompletion.glade.h:9
+msgid "C_ity:"
+msgstr "_Stad, dorp:"
+
+#: PlaceCompletion/placecompletion.glade.h:10
+#, fuzzy
+msgid "Center longitude:"
+msgstr "Lengtegraad:"
+
+#: PlaceCompletion/placecompletion.glade.h:11
+#, fuzzy
+msgid "Change title into:"
+msgstr "Bestandsnaam _wijzigen"
+
+# Stad
+#: PlaceCompletion/placecompletion.glade.h:12
+msgid "City:"
+msgstr "Dorp of stad:"
+
+#: PlaceCompletion/placecompletion.glade.h:13
+msgid "Convert lat/lon as:"
+msgstr "Lngt/brdt omzetten in:"
+
+#: PlaceCompletion/placecompletion.glade.h:14
+msgid "Count_ry:"
+msgstr "L_and:"
+
+#: PlaceCompletion/placecompletion.glade.h:15
+msgid "Country:"
+msgstr "Land:"
+
+#: PlaceCompletion/placecompletion.glade.h:16
+msgid "County:"
+msgstr "Provincie:"
+
+#: PlaceCompletion/placecompletion.glade.h:17
+msgid "Height:"
+msgstr "Hoogte:"
+
+# Periode/Reikweidte/Bereik
+# wordt gebruikt in:
+# Maximum span in years for all childer.
+# Dus: de periode waarin men kinderen kan krijgen.
+#: PlaceCompletion/placecompletion.glade.h:18
+msgid "Parish"
+msgstr "Parochie"
+
+# Periode/Reikweidte/Bereik
+# wordt gebruikt in:
+# Maximum span in years for all childer.
+# Dus: de periode waarin men kinderen kan krijgen.
+#: PlaceCompletion/placecompletion.glade.h:19
+#, fuzzy
+msgid "Parish:"
+msgstr "Parochie"
+
+#: PlaceCompletion/placecompletion.glade.h:20
+#, fuzzy
+msgid "Parse as:"
+msgstr "Ouders:"
+
+# Plaatsnaam
+#: PlaceCompletion/placecompletion.glade.h:21
+#, fuzzy
+msgid "Parse title:"
+msgstr "Locatienaam"
+
+#: PlaceCompletion/placecompletion.glade.h:22
+#, fuzzy
+msgid "Place _filter:"
+msgstr "Locatiefilters"
+
+#: PlaceCompletion/placecompletion.glade.h:23
+#, fuzzy
+msgid "Places in a rectangle:"
+msgstr "Locaties met overeenkomende parameters"
+
+#: PlaceCompletion/placecompletion.glade.h:24
+#, fuzzy
+msgid "Search in:"
+msgstr "Zoeken"
+
+#: PlaceCompletion/placecompletion.glade.h:25
+#, fuzzy
+msgid "Select A File"
+msgstr "Bestand _selecteren"
+
+# Provincie:
+#: PlaceCompletion/placecompletion.glade.h:26
+msgid "State:"
+msgstr "Deelstaat:"
+
+#: PlaceCompletion/placecompletion.glade.h:27
+msgid "Width:"
+msgstr "Breedte:"
+
+#: PlaceCompletion/placecompletion.glade.h:28
+msgid "ZIP/Postal Code:"
+msgstr "Postcode:"
+
+#: PlaceCompletion/placecompletion.glade.h:29
+#, fuzzy
+msgid "_Google Maps"
+msgstr "GoogleMaps"

@@ -1,0 +1,104 @@
+# translation of nl.po to nederlands
+# Dutch translation of GRAMPS
+# Copyright (C) 2003 The Free Software Foundation,  Inc.
+#
+# Tino Meinen <a.t.meinen@chello.nl>, 2003, 2004, 2005.
+# Kees Bakker <kees.bakker@xs4all.nl>, 2005, 2006, 2007.
+# Erik De Richter <frederik.de.richter@pandora.be>, 2006, 2007, 2008, 2009, 2010.
+# --------------------------------------------------
+# Conventies (kan later altijd nog aangepast worden)
+# --------------------------------------------------
+# active             actief (moet hier nog iets beters voor verzinnen)
+# attribute          kenmerk
+# bookmark           bladwijzer
+# view               scherm
+# city               plaats beter is stad dorp
+# marker             aanduiding
+# people             personen
+# place              locatie
+# record             archief/kaart
+# database           gegevensbestand (KB)
+# chart              grafiek
+# Home person        Beginpersoon
+# spouse             echtgenoot
+# partner            partner
+# warning            let op
+# at the age of      op een leeftijd van -> toen hij/zij .. oud was
+# repositories       bibliotheken
+# regex              regex onvertaald laten
+# expression         uitdrukking
+# given name         voornaam
+# reference	     waarnaar verwezen wordt, verwijzingen
+# count		     aantal maal
+# lineage	     lijn
+# reference          enekel voor de refentiestructuur
+msgid ""
+msgstr ""
+"Project-Id-Version: gramps\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-04-11 18:25+0200\n"
+"PO-Revision-Date: 2010-04-10 08:42+0100\n"
+"Last-Translator: Erik De Richter <frederik.de.richter@pandora.be>\n"
+"Language-Team: nederlands <frederik.de.richter@googlemail.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-Language: Nederlands\n"
+"X-Poedit-Country: België\n"
+
+#: LinesOfDescendency/lines-of-descendency.gpr.py:3
+#, fuzzy
+msgid "Lines of Descendency"
+msgstr "aantal afstammelingen"
+
+#: LinesOfDescendency/lines-of-descendency.gpr.py:4
+msgid ""
+"Prints out all descendency lines from a given ancestor to a given descendent "
+"in text."
+msgstr ""
+
+# Mensen
+#: LinesOfDescendency/lines-of-descendency.py:16
+msgid "People"
+msgstr "Personen"
+
+#: LinesOfDescendency/lines-of-descendency.py:18
+msgid "Ancestor"
+msgstr "Voorouder"
+
+#: LinesOfDescendency/lines-of-descendency.py:19
+msgid "The ancestor from which to start the line"
+msgstr ""
+
+#: LinesOfDescendency/lines-of-descendency.py:22
+#, fuzzy
+msgid "Descendent"
+msgstr "Nakomeling"
+
+#: LinesOfDescendency/lines-of-descendency.py:23
+msgid "The descendent to which to build the line"
+msgstr ""
+
+#: LinesOfDescendency/lines-of-descendency.py:35
+msgid "The style used for the title of the page."
+msgstr "De gebruikte stijl voor de titel van de pagina."
+
+#: LinesOfDescendency/lines-of-descendency.py:45
+#, fuzzy
+msgid "The style used for the title of a line."
+msgstr "De gebruikte stijl voor de titel van de pagina."
+
+#: LinesOfDescendency/lines-of-descendency.py:52
+msgid "The basic style used for the text display."
+msgstr "De gebruikte basisstijl voor de tekstweergave."
+
+#: LinesOfDescendency/lines-of-descendency.py:66
+#, python-format
+msgid "Person %s is not in the Database"
+msgstr "De persoon %s is niet te vinden in het gegevensbestand"
+
+#: LinesOfDescendency/lines-of-descendency.py:139
+#, python-format
+msgid "Lines of Descendency from %(ancestor)s to %(descendent)s"
+msgstr ""

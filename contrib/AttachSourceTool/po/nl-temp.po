@@ -1,0 +1,147 @@
+# translation of nl.po to nederlands
+# Dutch translation of GRAMPS
+# Copyright (C) 2003 The Free Software Foundation,  Inc.
+#
+# Tino Meinen <a.t.meinen@chello.nl>, 2003, 2004, 2005.
+# Kees Bakker <kees.bakker@xs4all.nl>, 2005, 2006, 2007.
+# Erik De Richter <frederik.de.richter@pandora.be>, 2006, 2007, 2008, 2009, 2010.
+# --------------------------------------------------
+# Conventies (kan later altijd nog aangepast worden)
+# --------------------------------------------------
+# active             actief (moet hier nog iets beters voor verzinnen)
+# attribute          kenmerk
+# bookmark           bladwijzer
+# view               scherm
+# city               plaats beter is stad dorp
+# marker             aanduiding
+# people             personen
+# place              locatie
+# record             archief/kaart
+# database           gegevensbestand (KB)
+# chart              grafiek
+# Home person        Beginpersoon
+# spouse             echtgenoot
+# partner            partner
+# warning            let op
+# at the age of      op een leeftijd van -> toen hij/zij .. oud was
+# repositories       bibliotheken
+# regex              regex onvertaald laten
+# expression         uitdrukking
+# given name         voornaam
+# reference	     waarnaar verwezen wordt, verwijzingen
+# count		     aantal maal
+# lineage	     lijn
+# reference          enekel voor de refentiestructuur
+msgid ""
+msgstr ""
+"Project-Id-Version: gramps\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-02-18 10:35+0100\n"
+"PO-Revision-Date: 2010-04-10 08:42+0100\n"
+"Last-Translator: Erik De Richter <frederik.de.richter@pandora.be>\n"
+"Language-Team: nederlands <frederik.de.richter@googlemail.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-Language: Nederlands\n"
+"X-Poedit-Country: België\n"
+
+#: AttachSourceTool/AttachSourceTool.gpr.py:25
+#: AttachSourceTool/AttachSourceTool.py:137
+#: AttachSourceTool/AttachSourceTool.py:191
+#: AttachSourceTool/AttachSourceTool.py:215
+#, fuzzy
+msgid "Attach Source"
+msgstr "Een bron toevoegen"
+
+#: AttachSourceTool/AttachSourceTool.gpr.py:26
+#: AttachSourceTool/AttachSourceTool.py:219
+msgid "Attaches a shared source to multiple objects."
+msgstr "Voegt een gedeelde bron toe aan verschillende objecten."
+
+#: AttachSourceTool/AttachSourceTool.py:67
+#: AttachSourceTool/AttachSourceTool.py:140
+msgid "Options"
+msgstr "Opties"
+
+#: AttachSourceTool/AttachSourceTool.py:69
+msgid "Person Filter"
+msgstr "Persoonsfilter"
+
+#: AttachSourceTool/AttachSourceTool.py:70
+msgid "Select filter to restrict people"
+msgstr "Kies een filter om aantal personen te beperken"
+
+#: AttachSourceTool/AttachSourceTool.py:74
+msgid "Filter Person"
+msgstr "Personenfilter"
+
+#: AttachSourceTool/AttachSourceTool.py:75
+msgid "The center person for the filter"
+msgstr "De centrale persoon voor de filter"
+
+#: AttachSourceTool/AttachSourceTool.py:81
+#, fuzzy
+msgid "Source type"
+msgstr "Brontekst"
+
+#: AttachSourceTool/AttachSourceTool.py:82
+#, fuzzy
+msgid "New source"
+msgstr "Nieuwe bron"
+
+#: AttachSourceTool/AttachSourceTool.py:83
+#, fuzzy
+msgid "Existing source"
+msgstr "Bronnen wegschrijven"
+
+#: AttachSourceTool/AttachSourceTool.py:84
+#, fuzzy
+msgid "Select the type of source to attach"
+msgstr "Kies de te sorteren personen"
+
+#: AttachSourceTool/AttachSourceTool.py:89
+#, fuzzy
+msgid "New Source Title"
+msgstr "Nieuwe bron"
+
+#: AttachSourceTool/AttachSourceTool.py:90
+msgid "Text of source to attach"
+msgstr "Brontekst die toegevoegd wordt"
+
+# Bronnen vermelden/citeren
+#: AttachSourceTool/AttachSourceTool.py:94
+#, fuzzy
+msgid "Existing Source ID"
+msgstr "Bron bewerken"
+
+#: AttachSourceTool/AttachSourceTool.py:95
+msgid "ID of source to attach"
+msgstr "ID van de bron die toegevoegd wordt"
+
+#: AttachSourceTool/AttachSourceTool.py:157
+msgid "Results"
+msgstr "Resultaten"
+
+#: AttachSourceTool/AttachSourceTool.py:158
+msgid "Processing...\n"
+msgstr "Wordt verwerkt...\n"
+
+#: AttachSourceTool/AttachSourceTool.py:173
+#, fuzzy
+msgid "Attaching sources...\n"
+msgstr "Bronnen wegschrijven"
+
+#: AttachSourceTool/AttachSourceTool.py:174
+#, fuzzy
+msgid "Attaching sources..."
+msgstr "Bronnen wegschrijven"
+
+#: AttachSourceTool/AttachSourceTool.py:194
+msgid "Done!\n"
+msgstr "OK!\n"
+
+#: AttachSourceTool/AttachSourceTool.py:216
+msgid "Beta"
+msgstr "Beta"
