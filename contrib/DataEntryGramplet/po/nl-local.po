@@ -1,11 +1,10 @@
 # translation of nl.po to nederlands
-# translation of nl.po to
 # Dutch translation of GRAMPS
 # Copyright (C) 2003 The Free Software Foundation,  Inc.
 #
 # Tino Meinen <a.t.meinen@chello.nl>, 2003, 2004, 2005.
 # Kees Bakker <kees.bakker@xs4all.nl>, 2005, 2006, 2007.
-# Erik De Richter <frederik.de.richter@pandora.be>, 2006, 2007, 2008, 2009.
+# Erik De Richter <frederik.de.richter@pandora.be>, 2006, 2007, 2008, 2009, 2010.
 # --------------------------------------------------
 # Conventies (kan later altijd nog aangepast worden)
 # --------------------------------------------------
@@ -20,7 +19,7 @@
 # record             archief/kaart
 # database           gegevensbestand (KB)
 # chart              grafiek
-# Home person        Beginpersoon : EDR/Centrale persoon/spilfiguur/basispersoon/honkpersoon
+# Home person        Beginpersoon
 # spouse             echtgenoot
 # partner            partner
 # warning            let op
@@ -29,15 +28,16 @@
 # regex              regex onvertaald laten
 # expression         uitdrukking
 # given name         voornaam
-# reference	waarnaar verwezen wordt
-# count		aantal maal
-# lineage	lijn
+# reference	     waarnaar verwezen wordt, verwijzingen
+# count		     aantal maal
+# lineage	     lijn
+# reference          enekel voor de refentiestructuur
 msgid ""
 msgstr ""
 "Project-Id-Version: gramps\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-03-24 19:46+0100\n"
-"PO-Revision-Date: 2010-03-22 08:50+0100\n"
+"PO-Revision-Date: 2010-05-12 18:03+0100\n"
 "Last-Translator: Erik De Richter <frederik.de.richter@pandora.be>\n"
 "Language-Team: nederlands <frederik.de.richter@googlemail.com>\n"
 "MIME-Version: 1.0\n"
@@ -52,9 +52,8 @@ msgid "Data Entry Gramplet"
 msgstr "'Gegevens invoeren'-gramplet"
 
 #: DataEntryGramplet/DataEntryGramplet.gpr.py:9
-#, fuzzy
 msgid "Gramplet for quick data entry"
-msgstr "Gramplet-gegevens invoeren: %s"
+msgstr "Gramplet voor snelle gegevensinvoer"
 
 #: DataEntryGramplet/DataEntryGramplet.gpr.py:13
 msgid "Data Entry"
@@ -152,7 +151,7 @@ msgstr "Kopieer de actieve gegevens"
 # is dit goed?
 #: DataEntryGramplet/DataEntryGramplet.py:102
 msgid "Clear"
-msgstr "Wissen"
+msgstr "Gewist"
 
 #: DataEntryGramplet/DataEntryGramplet.py:145
 #: DataEntryGramplet/DataEntryGramplet.py:159
@@ -209,7 +208,7 @@ msgstr "Kan de nieuwe persoon niet als kind toevoegen."
 
 #: DataEntryGramplet/DataEntryGramplet.py:558
 msgid "Please set gender on Active or new person."
-msgstr "Kies een gesclacht voor actieve of nieuwe persoon."
+msgstr "Geslacht voor actieve of nieuwe persoon kiezen."
 
 #: DataEntryGramplet/DataEntryGramplet.py:595
 #: DataEntryGramplet/DataEntryGramplet.py:628
@@ -218,7 +217,7 @@ msgstr "Zelfde geslacht voor actieve en nieuwe persoon."
 
 #: DataEntryGramplet/DataEntryGramplet.py:674
 msgid "Please set gender on Active person."
-msgstr "Kies een geslacht voor de actieve persoon."
+msgstr "Geslacht voor de actieve persoon kiezen."
 
 #: DataEntryGramplet/DataEntryGramplet.py:696
 #, python-format

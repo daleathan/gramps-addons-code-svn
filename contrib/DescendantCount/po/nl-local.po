@@ -37,7 +37,7 @@ msgstr ""
 "Project-Id-Version: gramps\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-03-03 16:50+0100\n"
-"PO-Revision-Date: 2010-04-13 13:50+0100\n"
+"PO-Revision-Date: 2010-05-12 18:03+0100\n"
 "Last-Translator: Erik De Richter <frederik.de.richter@pandora.be>\n"
 "Language-Team: nederlands <frederik.de.richter@googlemail.com>\n"
 "MIME-Version: 1.0\n"
@@ -50,7 +50,7 @@ msgstr ""
 #: DescendantCount/DescendantCount.gpr.py:3
 #: DescendantCount/DescendantCount.gpr.py:23
 msgid "Descendant Count"
-msgstr "Tellen van de afstammelingen"
+msgstr "Afstammelingen tellen"
 
 #: DescendantCount/DescendantCount.gpr.py:7
 msgid "Display descendant counts for each person."
@@ -70,7 +70,7 @@ msgstr "Persoon"
 
 #: DescendantCount/DescendantCount.py:80
 msgid "Number of Descendants"
-msgstr "aantal afstammelingen"
+msgstr "Aantal afstammelingen"
 
 #: DescendantCount/DescendantCount.py:89
 #, python-format
@@ -80,7 +80,7 @@ msgstr "Er zijn %d personen.\n"
 #: DescendantCount/descendant_count.py:59
 #, python-format
 msgid "Number of %s's descendants"
-msgstr "Het aantal afstammelingen van %s"
+msgstr "%s afstammelingen"
 
 #: DescendantCount/descendant_count.py:84
 #: DescendantCount/descendant_count.py:91
@@ -110,16 +110,18 @@ msgstr "Nog in leven"
 #: DescendantCount/descendant_count.py:116
 #, python-format
 msgid "Seen = number of descendants whose birth %s has lived to see"
-msgstr "Gezien  = het aantal afstammelingen waarvan %s de geboorte heeft meegemaakt"
+msgstr "Gezien = aantal afstammelingen waarvan %s de geboorte kan meegemaakt hebben"
 
 #: DescendantCount/descendant_count.py:118
 #, python-format
-msgid "Survived = number of descendants who died while %s was still being alive"
-msgstr "Overlevend = aantal afstammelingen die stierven terwijl %s nog in leven was"
+msgid ""
+"Survived = number of descendants who died while %s was still being alive"
+msgstr ""
+"Overlevend = aantal afstammelingen die stierven terwijl %s nog in leven was"
 
 #: DescendantCount/descendant_count.py:200
 msgid "Descendant count"
-msgstr "Telling afstammelingen"
+msgstr "Afstammelingen tellen"
 
 # Provincie
 #: DescendantCount/descendant_count.py:201
@@ -129,4 +131,3 @@ msgstr "Stabiel"
 #: DescendantCount/descendant_count.py:202
 msgid "Displays the number of a person's descendants"
 msgstr "Het aantal afstammelingen van een persoon tonen"
-

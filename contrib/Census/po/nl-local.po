@@ -37,7 +37,7 @@ msgstr ""
 "Project-Id-Version: gramps\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-02-18 10:41+0100\n"
-"PO-Revision-Date: 2010-04-10 08:42+0100\n"
+"PO-Revision-Date: 2010-05-12 18:03+0100\n"
 "Last-Translator: Erik De Richter <frederik.de.richter@pandora.be>\n"
 "Language-Team: nederlands <frederik.de.richter@googlemail.com>\n"
 "MIME-Version: 1.0\n"
@@ -192,11 +192,11 @@ msgstr "Nieuwe pagina beginnen na iedere volkstelling."
 
 #: Census/CensusReport.py:315
 msgid "The style used for the title of the page."
-msgstr "De gebruikte stijl voor de paginatitel."
+msgstr "De gebruikte stijl voor de titel van de pagina."
 
 #: Census/CensusReport.py:328
 msgid "The style used for headings."
-msgstr "De gebruikte stijl voor de hoofdingen."
+msgstr "De gebruikte stijl voor de hoofding."
 
 #: Census/CensusReport.py:338
 msgid "The style used for names."
@@ -361,7 +361,7 @@ msgstr "Religie"
 
 #: Census/census.xml.h:38
 msgid "Rural Sanitary District"
-msgstr ""
+msgstr "Gewestelelijk district"
 
 #: Census/census.xml.h:39
 msgid "Status"
@@ -385,7 +385,7 @@ msgstr "Soort dak"
 
 #: Census/census.xml.h:44
 msgid "Urban Sanitary District"
-msgstr ""
+msgstr "Stedelijke district"
 
 #: Census/census.xml.h:45
 msgid "Village"

@@ -1,11 +1,10 @@
 # translation of nl.po to nederlands
-# translation of nl.po to
 # Dutch translation of GRAMPS
 # Copyright (C) 2003 The Free Software Foundation,  Inc.
 #
 # Tino Meinen <a.t.meinen@chello.nl>, 2003, 2004, 2005.
 # Kees Bakker <kees.bakker@xs4all.nl>, 2005, 2006, 2007.
-# Erik De Richter <frederik.de.richter@pandora.be>, 2006, 2007, 2008, 2009.
+# Erik De Richter <frederik.de.richter@pandora.be>, 2006, 2007, 2008, 2009, 2010.
 # --------------------------------------------------
 # Conventies (kan later altijd nog aangepast worden)
 # --------------------------------------------------
@@ -20,7 +19,7 @@
 # record             archief/kaart
 # database           gegevensbestand (KB)
 # chart              grafiek
-# Home person        Beginpersoon : EDR/Centrale persoon/spilfiguur/basispersoon/honkpersoon
+# Home person        Beginpersoon
 # spouse             echtgenoot
 # partner            partner
 # warning            let op
@@ -29,15 +28,16 @@
 # regex              regex onvertaald laten
 # expression         uitdrukking
 # given name         voornaam
-# reference	waarnaar verwezen wordt
-# count		aantal maal
-# lineage	lijn
+# reference	     waarnaar verwezen wordt, verwijzingen
+# count		     aantal maal
+# lineage	     lijn
+# reference          enekel voor de refentiestructuur
 msgid ""
 msgstr ""
 "Project-Id-Version: gramps\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-02-17 11:30+0100\n"
-"PO-Revision-Date: 2010-03-22 08:50+0100\n"
+"PO-Revision-Date: 2010-05-12 18:03+0100\n"
 "Last-Translator: Erik De Richter <frederik.de.richter@pandora.be>\n"
 "Language-Team: nederlands <frederik.de.richter@googlemail.com>\n"
 "MIME-Version: 1.0\n"
@@ -55,7 +55,7 @@ msgstr "Aantal personen"
 #: AllNamesQuickview/AllNames.gpr.py:4
 #, fuzzy
 msgid "Display all names of all people"
-msgstr "Toon de gebeurtenissen van een persoon op een tijdslijn"
+msgstr "De gebeurtenissen van een persoon op een tijdslijn tonen"
 
 #: AllNamesQuickview/AllNames.py:50
 msgid "Name"
@@ -649,7 +649,7 @@ msgstr "Totaal aantal achternamen"
 #~ msgstr "Pagina"
 
 #~ msgid "Repository Reference"
-#~ msgstr "Bibliotheekreferentie"
+#~ msgstr "Bibliotheekverwijzing"
 
 #~ msgid "Call Number"
 #~ msgstr "Inventarisnummer"
@@ -659,7 +659,7 @@ msgstr "Totaal aantal achternamen"
 
 # Bronnen, verwijzingen, literatuurverwijzingen
 #~ msgid "Event Reference"
-#~ msgstr "Gebeurtenisreferentie"
+#~ msgstr "Gebeurtenisverwijzing"
 
 #~ msgid "Call Name"
 #~ msgstr "Roepnaam"
@@ -690,10 +690,10 @@ msgstr "Totaal aantal achternamen"
 #~ msgstr "Media-object"
 
 #~ msgid "Media Reference"
-#~ msgstr "Mediareferentie"
+#~ msgstr "Mediaverwijzing"
 
 #~ msgid "Person Reference"
-#~ msgstr "Persoonsreferentie"
+#~ msgstr "Persoonsverwijzing"
 
 #~ msgid "Person Link"
 #~ msgstr "Verwijzing naar persoon"
@@ -1429,7 +1429,7 @@ msgstr "Totaal aantal achternamen"
 #~ msgstr "%s opnieuw doen"
 
 #~ msgid "Default format (defined by Gramps preferences)"
-#~ msgstr "Standaard formaat (gedefinieerd in Gramps-voorkeuren)"
+#~ msgstr "Standaardformaat (gedefinieerd in Gramps-voorkeuren)"
 
 #~ msgid "Surname, Given Patronymic"
 #~ msgstr "Familienaam, voornaam, patroniem"
@@ -1503,6 +1503,10 @@ msgstr "Totaal aantal achternamen"
 #~ msgid "Report"
 #~ msgstr "Verslag"
 
+# het gaat om het weergeven van de voorouders of een samenvatting van de db.
+#~ msgid "Html code"
+#~ msgstr "Html-code"
+
 #~ msgid "Person Note"
 #~ msgstr "Opmerkingen persoon"
 
@@ -1529,7 +1533,7 @@ msgstr "Totaal aantal achternamen"
 
 # Bronnen, verwijzingen, literatuurverwijzingen
 #~ msgid "Event Reference Note"
-#~ msgstr "Opmerking over een gebeurtenisreferentie"
+#~ msgstr "Opmerking over een gebeurtenisverwijzing"
 
 #~ msgid "Source Note"
 #~ msgstr "Opmerking over een bron"
@@ -1545,13 +1549,13 @@ msgstr "Totaal aantal achternamen"
 #~ msgstr "Opmerking over een bibliotheek"
 
 #~ msgid "Repository Reference Note"
-#~ msgstr "Opmerking over een bibliotheekreferentie"
+#~ msgstr "Opmerking over een bibliotheekverwijzing"
 
 #~ msgid "Media Note"
 #~ msgstr "Opmerking over media"
 
 #~ msgid "Media Reference Note"
-#~ msgstr "Opmerking over mediareferentie"
+#~ msgstr "Opmerking over mediaverwijzing"
 
 #~ msgid "Child Reference Note"
 #~ msgstr "Opmerking over een verwijzing naar een kind"
@@ -2455,8 +2459,8 @@ msgstr "Totaal aantal achternamen"
 #~ msgid "Status"
 #~ msgstr "Status"
 
-#~ msgid "Last modified"
-#~ msgstr "Laatst veranderd op"
+#~ msgid "Last accessed"
+#~ msgstr "Laatst gebruikt"
 
 #~ msgid "Break the lock on the '%s' database?"
 #~ msgstr "Het slot openbreken voor het gegevensbestand %s?"
@@ -2785,6 +2789,9 @@ msgstr "Totaal aantal achternamen"
 
 #~ msgid "Family Trees"
 #~ msgstr "Familiestambomen"
+
+#~ msgid "_Add bookmark"
+#~ msgstr "Bladwijzer toevoegen"
 
 # het heilig vormsel toedienen, Vormen
 # Bevestiging
@@ -3320,11 +3327,11 @@ msgstr "Totaal aantal achternamen"
 #~ msgstr "Gebeurtenis verwijderen (%s)"
 
 #~ msgid "manual|Editing_Event_References"
-#~ msgstr "Gebeurtenisreferenties_aanpassen"
+#~ msgstr "Gebeurtenissenverwijzingen_aanpassen"
 
 # Bronnen, verwijzingen, literatuurverwijzingen
 #~ msgid "Event Reference Editor"
-#~ msgstr "Gebeurtenis referentie bewerken"
+#~ msgstr "Gebeurtenissenverwijzingen bewerken"
 
 #~ msgid "_General"
 #~ msgstr "Alge_meen"
@@ -3563,7 +3570,7 @@ msgstr "Totaal aantal achternamen"
 #~ msgstr "Media-object verwijderen"
 
 #~ msgid "Media Reference Editor"
-#~ msgstr "Bewerken van mediareferentie"
+#~ msgstr "Verwijzingen naar media-objecten bewerken"
 
 #~ msgid "Y coordinate|Y"
 #~ msgstr "Y"
@@ -3710,7 +3717,7 @@ msgstr "Totaal aantal achternamen"
 
 # Bronnen, verwijzingen, literatuurverwijzingen
 #~ msgid "Person Reference Editor"
-#~ msgstr "Persoonsreferentie bewerken"
+#~ msgstr "Personenverwijzingen bewerken"
 
 #~ msgid "No person selected"
 #~ msgstr "Geen persoon geselecteerd"
@@ -3903,7 +3910,7 @@ msgstr "Totaal aantal achternamen"
 #~ msgstr "_Referenties"
 
 #~ msgid "Edit reference"
-#~ msgstr "Bewerk referentie"
+#~ msgstr "Verwijzing bewerken"
 
 #~ msgid "%(part1)s - %(part2)s"
 #~ msgstr "%(part1)s - %(part2)s"
@@ -3998,10 +4005,10 @@ msgstr "Totaal aantal achternamen"
 #~ "sluiten."
 
 #~ msgid "Cannot share this reference"
-#~ msgstr "Kan deze referentie niet delen"
+#~ msgstr "Kan deze verwijzing niet delen"
 
 #~ msgid "Cannot edit this reference"
-#~ msgstr "Kan deze referentie niet bewerken"
+#~ msgstr "Kan deze verwijzing niet bewerken"
 
 #~ msgid "Cannot change Person"
 #~ msgstr "Kan persoon niet veranderen"
@@ -4080,7 +4087,7 @@ msgstr "Totaal aantal achternamen"
 #~ msgstr "_Namen"
 
 #~ msgid "Set as default name"
-#~ msgstr "Sla op als standaard naam"
+#~ msgstr "Als standaardnaam opslaan"
 
 #~ msgid "Yes"
 #~ msgstr "Ja"
@@ -4239,14 +4246,14 @@ msgstr "Totaal aantal achternamen"
 #~ "\n"
 #~ "To edit this source reference, you need to close the source."
 #~ msgstr ""
-#~ "Deze bronreferentie kan momenteel niet aangepast worden. Ofwel is de "
+#~ "Deze bronverwijzing kan momenteel niet aangepast worden. Ofwel is de "
 #~ "verbonden bron reeds aangepast of een bronverwijzing die ook naar deze "
 #~ "bron verwijst wordt aangepast.\n"
 #~ "\n"
 #~ "Om deze bron toch aan te passen moet u de bron sluiten."
 
 #~ msgid "Create and add a new web address"
-#~ msgstr "Maakt een nieuwe webadres aan en voeg toe"
+#~ msgstr "Een nieuwe webadres aanmaken en toevoegen"
 
 #~ msgid "Remove the existing web address"
 #~ msgstr "Het bestaande webadres verwijderen"
@@ -4261,7 +4268,7 @@ msgstr "Totaal aantal achternamen"
 #~ msgstr "Het geselecteerde webadres naar beneden verschuiven"
 
 #~ msgid "Jump to the selected web address"
-#~ msgstr "Spring naar het selecteerde webadres"
+#~ msgstr "Naar het geselecteerde webadres springen"
 
 #~ msgid "_Internet"
 #~ msgstr "_Internet"
@@ -5223,7 +5230,7 @@ msgstr "Totaal aantal achternamen"
 #~ msgstr "Kies een land om de overeenkomstige verlofdagen te zien"
 
 #~ msgid "First day of week"
-#~ msgstr "eerste dag van de week"
+#~ msgstr "Eerste dag van de week"
 
 #~ msgid "Select the first day of the week for the calendar"
 #~ msgstr "Kies de eerste dag van de week voor de kalender"
@@ -5233,7 +5240,7 @@ msgstr "Totaal aantal achternamen"
 
 #~ msgid "Wives use husband's surname (from first family listed)"
 #~ msgstr ""
-#~ "Vrouwen gebruiken achternaam echtgenoot(van de eerste familie in lijst)"
+#~ "Vrouwen gebruiken achternaam echtgenoot (van de eerste familie in lijst)"
 
 #~ msgid "Wives use husband's surname (from last family listed)"
 #~ msgstr ""
@@ -5629,17 +5636,26 @@ msgstr "Totaal aantal achternamen"
 #~ msgid "The style used for the year labels."
 #~ msgstr "De gebruikte stijl voor de jaar-labels."
 
+#~ msgid "Comma Separated Values Spreadsheet (CSV)"
+#~ msgstr "Comma Separated Values rekenblad (CSV)"
+
 #~ msgid "Comma _Separated Values Spreadsheet (CSV)"
 #~ msgstr "Comma Separated Values rekenblad (CSV)"
 
 #~ msgid "CSV is a common spreadsheet format."
 #~ msgstr "CSV is een veel gebruikt rekenbladformaat."
 
+#~ msgid "Web Family Tree"
+#~ msgstr "Web Family Tree"
+
 #~ msgid "_Web Family Tree"
 #~ msgstr "Web familiestamboom"
 
 #~ msgid "Web Family Tree format"
 #~ msgstr "Web Family Tree-formaat"
+
+#~ msgid "GEDCOM"
+#~ msgstr "GEDCOM"
 
 #~ msgid "GE_DCOM"
 #~ msgstr "GE_DCOM"
@@ -5652,11 +5668,17 @@ msgstr "Totaal aantal achternamen"
 #~ "wisselen. Vrijwel alle genealogische softwareprogramma's accepteren "
 #~ "GEDCOM-bestanden."
 
+#~ msgid "GeneWeb"
+#~ msgstr "GeneWeb"
+
 #~ msgid "_GeneWeb"
 #~ msgstr "GeneWeb"
 
 #~ msgid "GeneWeb is a web based genealogy program."
 #~ msgstr "GeneWeb is a web-gebaseerd genealogieprogramma."
+
+#~ msgid "Gramps XML Package (family tree and media)"
+#~ msgstr "Gramps _XML-pakket (familiestamboom en mediabestanden)"
 
 #~ msgid "Gra_mps XML Package (family tree and media)"
 #~ msgstr "Gramps _XML-pakket (familiestamboom en mediabestanden)"
@@ -5667,6 +5689,9 @@ msgstr "Totaal aantal achternamen"
 #~ msgstr ""
 #~ "Een Gramps-pakket bestaat uit een gearchiveerde XML familiestamboom samen "
 #~ "met de media-objectbestanden."
+
+#~ msgid "Gramps XML (family tree)"
+#~ msgstr "Gramps X_ML (familiestamboom)"
 
 #~ msgid "Gramps _XML (family tree)"
 #~ msgstr "Gramps _XML (familiestamboom)"
@@ -5680,11 +5705,18 @@ msgstr "Totaal aantal achternamen"
 #~ "reservekopieën te maken."
 
 # vAgenda
+#~ msgid "vCalendar"
+#~ msgstr "vCalendar"
+
+# vAgenda
 #~ msgid "vC_alendar"
 #~ msgstr "vKalender"
 
 #~ msgid "vCalendar is used in many calendaring and pim applications."
 #~ msgstr "vKalender wordt in veel agenda- en pim-toepassingen gebruikt."
+
+#~ msgid "vCard"
+#~ msgstr "vCard"
 
 #~ msgid "_vCard"
 #~ msgstr "vCard"
@@ -6348,9 +6380,6 @@ msgstr "Totaal aantal achternamen"
 #~ msgid "Double-click surname for details"
 #~ msgstr "Dubbelklikken op de achternaam voor meer details"
 
-#~ msgid "Total unique surnames"
-#~ msgstr "Totaal aantal unieke achternamen"
-
 #~ msgid "Number of surnames"
 #~ msgstr "Aantal achternamen"
 
@@ -6359,6 +6388,9 @@ msgstr "Totaal aantal achternamen"
 
 #~ msgid "Max font size"
 #~ msgstr "Max lettergrootte"
+
+#~ msgid "Total unique surnames"
+#~ msgstr "Totaal aantal unieke achternamen"
 
 #~ msgid "Enter text"
 #~ msgstr "Tekst ingeven"
@@ -6812,12 +6844,6 @@ msgstr "Totaal aantal achternamen"
 #~ msgid "Import data from CSV files"
 #~ msgstr "Importeer gegevens van CSV-bestanden"
 
-#~ msgid "GEDCOM"
-#~ msgstr "GEDCOM"
-
-#~ msgid "GeneWeb"
-#~ msgstr "GeneWeb"
-
 #~ msgid "Import data from GeneWeb files"
 #~ msgstr "Importeer gegevens vanuit GeneWeb-bestanden"
 
@@ -6853,9 +6879,6 @@ msgstr "Totaal aantal achternamen"
 
 #~ msgid "Import data from Pro-Gen files"
 #~ msgstr "Importeer gegevens vanuit Pro-Gen-bestanden"
-
-#~ msgid "vCard"
-#~ msgstr "vCard"
 
 #~ msgid "Import data from vCard files"
 #~ msgstr "Importeer gegevens vanuit vCard-bestanden"
@@ -10551,7 +10574,7 @@ msgstr "Totaal aantal achternamen"
 #~ msgstr "personen met mediabestanden"
 
 #~ msgid "Filtering_on|media references"
-#~ msgstr "mediareferenties"
+#~ msgstr "verwijzingen naar media-objecten"
 
 #~ msgid "Filtering_on|unique media"
 #~ msgstr "unieke media-objecten"
@@ -10728,14 +10751,14 @@ msgstr "Totaal aantal achternamen"
 #~ msgstr "Toon verwijzingen voor een %s"
 
 #~ msgid "Repository References"
-#~ msgstr "Bibliotheekreferenties"
+#~ msgstr "Bibliothekenverwijzingen"
 
 #~ msgid ""
 #~ "Display the repository reference for sources related to the active "
 #~ "repository"
 #~ msgstr ""
-#~ "Toont de bibliotheekreferentie voor bronnen die verband houden met de "
-#~ "actieve bibliotheek"
+#~ "De bibliothekenverwijzingen voor bronnen die verband houden met de "
+#~ "actieve bibliotheek tonen"
 
 #~ msgid "Same Surnames"
 #~ msgstr "Zelfde achternamen"
@@ -11786,7 +11809,7 @@ msgstr "Totaal aantal achternamen"
 #~ msgstr "Zoeken naar gebeurtenissen problemen"
 
 #~ msgid "Looking for person reference problems"
-#~ msgstr "Zoeken naar persoonsreferentie problemen"
+#~ msgstr "Naar problemen met personenverwijzingen zoeken"
 
 #~ msgid "Checking people for proper date formats"
 #~ msgstr "Controleer personen op juist datumformaat"
@@ -11795,19 +11818,19 @@ msgstr "Totaal aantal achternamen"
 #~ msgstr "Controleer families op juiste datumformaat"
 
 #~ msgid "Looking for repository reference problems"
-#~ msgstr "Zoeken naar bibliotheekreferentie problemen"
+#~ msgstr "Naar problemen van bibliothekenverwijzingen zoeken"
 
 #~ msgid "Looking for place reference problems"
-#~ msgstr "Zoeken naar locatie referentie problemen"
+#~ msgstr "Naar problemen met locatieverwijzingen zoeken"
 
 #~ msgid "Looking for source reference problems"
-#~ msgstr "Zoeken naar bron referentie problemen"
+#~ msgstr "Naar problemen met bronnenverwijzingen zoeken"
 
 #~ msgid "Looking for media object reference problems"
-#~ msgstr "Zoeken naar media-object referentieproblemen"
+#~ msgstr "Naar problemen met verwijzingen naar media-objecten zoeken"
 
 #~ msgid "Looking for note reference problems"
-#~ msgstr "Zoeken naar opmerkingen referentie problemen"
+#~ msgstr "Naar problemen met opmerkingenverwijzingen zoeken"
 
 #~ msgid "No errors were found"
 #~ msgstr "Er zijn geen fouten gevonden"
@@ -12195,7 +12218,7 @@ msgstr "Totaal aantal achternamen"
 #~ "\n"
 #~ "Een Gramps media-object is een verzameling van gegevens van het media-"
 #~ "objectbestand: de bestandsnaam en/of pad, de beschrijving, ID, "
-#~ "opmerkingen, bronreferenties, enz. Deze gegevens <b>omvatten het "
+#~ "opmerkingen, bronnenverwijzingen, enz. Deze gegevens <b>omvatten het "
 #~ "eigenlijke bestand niet</b>.\n"
 #~ "\n"
 #~ "De bestanden die beelden, geluiden, video, enz. bevatten, staan apart op "
@@ -13492,8 +13515,14 @@ msgstr "Totaal aantal achternamen"
 #~ msgid "Sealed to "
 #~ msgstr "Verzegeld met "
 
-#~ msgid "Generated by <a href = \"%(homepage)s\">Gramps</a> on %(date)s"
-#~ msgstr "Gegenereerd met <a href = \"%(homepage)s\">Gramps</a> op %(date)s"
+#~ msgid "Attribute/ Type"
+#~ msgstr "Kenmerk/ Type"
+
+#~ msgid ""
+#~ "Generated by <a href = \"%(homepage)s\">Gramps</a> %(version)s on %(date)s"
+#~ msgstr ""
+#~ "Gegenereerd met <a href = \"%(homepage)s\">Gramps</a> %(version)s op %"
+#~ "(date)s"
 
 #~ msgid " Created for <a href = \"%s\">%s</a>"
 #~ msgstr " Opgemaakt voor <a href = \"%s\">%s</a>"
@@ -13525,6 +13554,9 @@ msgstr "Totaal aantal achternamen"
 
 #~ msgid "Web Links"
 #~ msgstr "Weblinks"
+
+#~ msgid "Link/ Description"
+#~ msgstr "Verwijzing/ Beschrijving"
 
 # Vertrouwen
 #~ msgid "Confidence"
@@ -13655,6 +13687,15 @@ msgstr "Totaal aantal achternamen"
 # Filteren? ik vermoed dat het hier om het znw gaat
 #~ msgid "Mime Type"
 #~ msgstr "Mime-type"
+
+#~ msgid ""
+#~ "This page is for the user/ creator of this Family Tree/ Narrative website "
+#~ "to share a couple of files with you regarding their family.  If there are "
+#~ "any files listed below, clicking on them will allow you to download them."
+#~ msgstr ""
+#~ "Deze pagina is voor de gebruiker/ auteur van deze familiestamboom/ "
+#~ "website om een aantal bestanden met u te kunnen delen. Indien er "
+#~ "bestanden in de lijst staan, kunt u die downloaden door er op te klikken. "
 
 #~ msgid "File Name"
 #~ msgstr "Bestandsnaam"
@@ -13801,6 +13842,18 @@ msgstr "Totaal aantal achternamen"
 #~ msgid "The stylesheet to be used for the web pages"
 #~ msgstr "Welk stijlblad gebruiken voor de webpagina's"
 
+#~ msgid "Horizontal -- No Change"
+#~ msgstr "Horizontaal -- geen verandering"
+
+#~ msgid "Vertical"
+#~ msgstr "Vertikaal"
+
+#~ msgid "Navigation Layout"
+#~ msgstr "Lay-out voor navigatie"
+
+#~ msgid "Choose which layout for the Navigation Menus."
+#~ msgstr "Een lay-out voor de navigatiemenu's kiezen."
+
 #~ msgid "Include ancestor graph"
 #~ msgstr "Voorouder-grafiek bijvoegen"
 
@@ -13844,14 +13897,15 @@ msgstr "Totaal aantal achternamen"
 #~ msgid "Publisher contact note"
 #~ msgstr "Contactgegevens uitgever"
 
-#~ msgid "A note to be used as the publisher contact"
-#~ msgstr "Een opmerking gebruiken voor contact uitgever"
+#~ msgid "A note to be used as the publisher contact."
+#~ msgstr ""
+#~ "Een opmerking die kan gebruikt worden om de uitgever te contacteren."
 
 #~ msgid "Publisher contact image"
 #~ msgstr "Afbeelding uitgever"
 
-#~ msgid "An image to be used as the publisher contact"
-#~ msgstr "Een afbeelding gebruiken voor contact uitgever"
+#~ msgid "An image to be used as the publisher contact."
+#~ msgstr "Een afbeelding gebruiken om de uitgever te contacteren."
 
 #~ msgid "HTML user header"
 #~ msgstr "Zelf aangemaakte HTML-hoofding"
@@ -13938,12 +13992,6 @@ msgstr "Totaal aantal achternamen"
 #~ msgstr ""
 #~ "Al of niet een optie toevoegen om het gegevensbestand te kunnen downloaden"
 
-#~ msgid "Download page note"
-#~ msgstr "Opmerkingenpagina downloaden"
-
-#~ msgid "A note to be used on the download page"
-#~ msgstr "Een opmerking te gebruiken op de download-pagina"
-
 #~ msgid "Download Filename"
 #~ msgstr "Bestandnaam downloaden"
 
@@ -13978,11 +14026,13 @@ msgstr "Totaal aantal achternamen"
 #~ msgid "The encoding to be used for the web files"
 #~ msgstr "De gebruikte ''encodingstijl'' voor de webpagina's"
 
-#~ msgid "Include link to home person on every page"
-#~ msgstr "Een link voorzien naar de basispersoon op iedere pagina"
+#~ msgid "Include link to active person on every page"
+#~ msgstr "Een link naar de actieve persoon op iedere pagina toevoegen"
 
-#~ msgid "Whether to include a link to the home person"
-#~ msgstr "Al of niet een verwijzing naar de basispersoon toevoegen"
+#~ msgid "Include a link to the active person (if they have a webpage)"
+#~ msgstr ""
+#~ "Een link naar de actieve persoon op iedere pagina toevoegen (indien deze "
+#~ "een webpagina hebben)"
 
 #~ msgid "Include a column for birth dates on the index pages"
 #~ msgstr "Een kolom voorzien in de indexpagina's voor de geboortedatums"
@@ -14530,6 +14580,9 @@ msgstr "Totaal aantal achternamen"
 #~ msgid "Basic-Ash"
 #~ msgstr "Basic-Ash"
 
+#~ msgid "Basic-Blue"
+#~ msgstr "Basic-Blue"
+
 #~ msgid "Basic-Cypress"
 #~ msgstr "Basic-Cypress"
 
@@ -14906,9 +14959,15 @@ msgstr "Totaal aantal achternamen"
 #~ msgstr ""
 #~ "FOUT: de filter %s kan niet worden geladen. Pas eerst de filter aan!"
 
+#~ msgid "%s is"
+#~ msgstr "%s is"
+
 # voortgezet
 #~ msgid "%s contains"
 #~ msgstr "%s bevat"
+
+#~ msgid "%s is not"
+#~ msgstr "%s is niet"
 
 #~ msgid "%s does not contain"
 #~ msgstr "%s bevat niet"
@@ -14984,8 +15043,7 @@ msgstr "Totaal aantal achternamen"
 #~ msgstr "Reguliere uitdrukking:"
 
 #~ msgid "Objects having notes containing <regular expression>"
-#~ msgstr ""
-#~ "Vindt objecten met notities welke de <reguliere uitdrukking> bevatten"
+#~ msgstr "Objecten met notities welke de <reguliere uitdrukking> bevatten"
 
 #~ msgid ""
 #~ "Matches objects whose notes contain text matching a regular expression"
@@ -14994,7 +15052,7 @@ msgstr "Totaal aantal achternamen"
 #~ "uitdrukking overeenkomen"
 
 #~ msgid "Objects having notes containing <substring>"
-#~ msgstr "Vindt objecten met notities, welke de <deeltekenreeks> bevatten"
+#~ msgstr "Objecten met notities die de <deeltekenreeks> bevatten"
 
 #~ msgid "Matches objects whose notes contain text matching a substring"
 #~ msgstr ""
@@ -15009,7 +15067,7 @@ msgstr "Totaal aantal achternamen"
 #~ "Vindt media-objecten waarnaar een bepaald aantal maal verwezen wordt"
 
 #~ msgid "Objects with records containing <substring>"
-#~ msgstr "Vindt objecten waarvan de gegevens <deeltekenreeks> bevatten"
+#~ msgstr "Objecten waarvan de gegevens <deeltekenreeks> bevatten"
 
 #~ msgid "Matches objects whose records contain text matching a substring"
 #~ msgstr ""
@@ -15252,7 +15310,7 @@ msgstr "Totaal aantal achternamen"
 #~ msgstr "Vindt personen met een bepaald aantal notities"
 
 #~ msgid "People having notes containing <substring>"
-#~ msgstr "Vindt personen met notities, welke een <deeltekenreeks> bevatten"
+#~ msgstr "Personen met notities die een <deeltekenreeks> bevatten"
 
 #~ msgid "Matches people whose notes contain text matching a substring"
 #~ msgstr ""
@@ -15260,7 +15318,7 @@ msgstr "Totaal aantal achternamen"
 #~ "deeltekenreeks overeenkomen"
 
 #~ msgid "People having notes containing <regular expression>"
-#~ msgstr "Vindt personen met notities die <reguliere uitdrukking> bevatten"
+#~ msgstr "Personen met notities die <reguliere uitdrukking> bevatten"
 
 #~ msgid ""
 #~ "Matches people whose notes contain text matching a regular expression"
@@ -15283,11 +15341,11 @@ msgstr "Totaal aantal achternamen"
 #~ msgid "Family filters"
 #~ msgstr "Familiefilters"
 
-#~ msgid "People with <count> source"
+#~ msgid "People with <count> sources"
 #~ msgstr "Personen met <aantal> bronnen"
 
-#~ msgid "Matches people with a certain number of items in the source"
-#~ msgstr "Vindt personen met een bepaald aantal items in de bron"
+#~ msgid "Matches people with a certain number of sources connected to it"
+#~ msgstr "Vindt personen met een bepaald aantal bronnen"
 
 #~ msgid "People with the <source>"
 #~ msgstr "Personen met de <bron>"
@@ -15361,7 +15419,7 @@ msgstr "Totaal aantal achternamen"
 # komt overeen met de genoemde filter?
 # Vindt de filter genaamd?
 #~ msgid "Matches the default person"
-#~ msgstr "Vindt de standaarpersoon"
+#~ msgstr "De standaardpersoon zoeken"
 
 # afstammelingen
 #~ msgid "Descendant family members of <person>"
@@ -15706,7 +15764,7 @@ msgstr "Totaal aantal achternamen"
 #~ msgstr "Vindt families met een bepaald aantal notities"
 
 #~ msgid "Families having notes containing <substring>"
-#~ msgstr "Vindt families waarvan de notities die <deeltekenreeks> bevatten"
+#~ msgstr "Families waarvan de notities die <deeltekenreeks> bevatten"
 
 #~ msgid "Matches families whose notes contain text matching a substring"
 #~ msgstr ""
@@ -15714,7 +15772,7 @@ msgstr "Totaal aantal achternamen"
 #~ "overeenkomt"
 
 #~ msgid "Families having notes containing <regular expression>"
-#~ msgstr "Vindt families waarvan de notities <reguliere uitdrukking> bevatten"
+#~ msgstr "Families waarvan de notities <reguliere uitdrukking> bevatten"
 
 #~ msgid ""
 #~ "Matches families whose notes contain text matching a regular expression"
@@ -15734,11 +15792,11 @@ msgstr "Totaal aantal achternamen"
 #~ msgid "Matches families with the relationship type of a particular value"
 #~ msgstr "Vindt families met als relatietype een bepaalde waarde"
 
-#~ msgid "Families with <count> source"
+#~ msgid "Families with <count> sources"
 #~ msgstr "Families met <aantal> bronnen"
 
-#~ msgid "Matches families with a certain number of items in the source"
-#~ msgstr "Vindt families met een bepaald aantal items in de bron"
+#~ msgid "Matches families with a certain number of sources connected to it"
+#~ msgstr "Vindt families met een bepaald aantal bronnen"
 
 #~ msgid "Bookmarked families"
 #~ msgstr "Families met bladwijzers"
@@ -15884,7 +15942,7 @@ msgstr "Totaal aantal achternamen"
 #~ msgstr "Vindt gebeurtenissen met een bepaald aantal notitities"
 
 #~ msgid "Events having notes containing <substring>"
-#~ msgstr "Vindt gebeurtenissen waarvan de notities <deeltekenreeks> bevatten"
+#~ msgstr "Gebeurtenissen waarvan de notities <deeltekenreeks> bevatten"
 
 #~ msgid "Matches events whose notes contain text matching a substring"
 #~ msgstr ""
@@ -15892,8 +15950,7 @@ msgstr "Totaal aantal achternamen"
 #~ "deeltekenreeks overeenkomen"
 
 #~ msgid "Events having notes containing <regular expression>"
-#~ msgstr ""
-#~ "Vindt gebeurtenissen met notities die <reguliere uitdrukking> bevatten"
+#~ msgstr "Gebeurtenissen met notities die <reguliere uitdrukking> bevatten"
 
 #~ msgid ""
 #~ "Matches events whose notes contain text matching a regular expression"
@@ -15908,11 +15965,11 @@ msgstr "Totaal aantal achternamen"
 #~ msgstr ""
 #~ "Vindt gebeurtenissen waarnaar een bepaald aantal keer naar verwezen wordt"
 
-#~ msgid "Events with <count> source"
+#~ msgid "Events with <count> sources"
 #~ msgstr "Gebeurtenissen met <aantal> bronnen"
 
-#~ msgid "Matches events with a certain number of items in the source"
-#~ msgstr "Vindt gebeurtenissen met een bepaald aantal items in de bron"
+#~ msgid "Matches events with a certain number of sources connected to it"
+#~ msgstr "Vindt gebeurtenissen met een bepaald aantal bronnen"
 
 #~ msgid "Events with the particular type"
 #~ msgstr "Gebeurtenissen van een bepaald type"
@@ -16000,7 +16057,7 @@ msgstr "Totaal aantal achternamen"
 #~ msgstr "Vindt locaties met een bepaald aantal notities"
 
 #~ msgid "Places having notes containing <substring>"
-#~ msgstr "Vindt locaties waarvan de notities <deeltekenreeks> bevatten"
+#~ msgstr "Locaties waarvan de notities <deeltekenreeks> bevatten"
 
 #~ msgid "Matches places whose notes contain text matching a substring"
 #~ msgstr ""
@@ -16008,7 +16065,7 @@ msgstr "Totaal aantal achternamen"
 #~ "overeenkomen"
 
 #~ msgid "Places having notes containing <regular expression>"
-#~ msgstr "Vindt locaties met notities die <reguliere uitdrukking> bevatten"
+#~ msgstr "Locaties met notities die <reguliere uitdrukking> bevatten"
 
 #~ msgid ""
 #~ "Matches places whose notes contain text matching a regular expression"
@@ -16042,7 +16099,7 @@ msgstr "Totaal aantal achternamen"
 #~ msgstr "Locaties waaobjecten waarnaar <x aantal keer> naar verwezen wordt"
 
 #~ msgid "Matches places with a certain reference count"
-#~ msgstr "Locaties waarnaar een bepaald aantal maal naar verwezen wordt"
+#~ msgstr "Vindt locaties waarnaar een bepaald aantal maal naar verwezen wordt"
 
 #~ msgid "Latitude:"
 #~ msgstr "Breedtegraad:"
@@ -16135,8 +16192,7 @@ msgstr "Totaal aantal achternamen"
 #~ msgstr "Vindt bronnen met een bepaald aantal notities"
 
 #~ msgid "Sources having notes containing <regular expression>"
-#~ msgstr ""
-#~ "Vindt bronnen waarvan de notities een <reguliere uitdrukking> bevatten"
+#~ msgstr "Bronnen waarvan de notities een <reguliere uitdrukking> bevatten"
 
 #~ msgid ""
 #~ "Matches sources whose notes contain text matching a regular expression"
@@ -16145,7 +16201,7 @@ msgstr "Totaal aantal achternamen"
 #~ "uitdrukking overeenkomen"
 
 #~ msgid "Sources having notes containing <substring>"
-#~ msgstr "Vindt bronnenpersonen met notities die <deeltekenreeks> bevatten"
+#~ msgstr "Bronnen met notities die <deeltekenreeks> bevatten"
 
 #~ msgid "Matches sources whose notes contain text matching a substring"
 #~ msgstr ""
@@ -16159,7 +16215,7 @@ msgstr "Totaal aantal achternamen"
 #~ msgstr "Vindt bronnen waarnaar een bepaald aantal maal naar verwezen wordt"
 
 #~ msgid "Sources with <count> Repository references"
-#~ msgstr "Bronnen met <aantal> bibliotheekreferenties"
+#~ msgstr "Bronnen met <aantal> bibliothekenverwijzingen"
 
 #~ msgid "Matches sources with a certain number of repository references"
 #~ msgstr ""
@@ -16175,7 +16231,7 @@ msgstr "Totaal aantal achternamen"
 #~ msgstr "Publicatie:"
 
 #~ msgid "Sources matching parameters"
-#~ msgstr "Bron parameters"
+#~ msgstr "Bronnen met  parameters"
 
 #~ msgid "Matches sources with particular parameters"
 #~ msgstr "Vindt bronnen met bepaalde parameters"
@@ -16237,13 +16293,13 @@ msgstr "Totaal aantal achternamen"
 #~ msgstr "Pad:"
 
 #~ msgid "Media objects matching parameters"
-#~ msgstr "Parameters voor media-objecten"
+#~ msgstr "Media-objecten met parameters"
 
 #~ msgid "Matches media objects with particular parameters"
 #~ msgstr "Vindt media-objecten die bepaalde parameters"
 
 #~ msgid "Media objects having notes containing <substring>"
-#~ msgstr "Vindt media-objecten met notities die <deeltekenreeks> bevatten"
+#~ msgstr "Media-objecten met notities die <deeltekenreeks> bevatten"
 
 #~ msgid "Matches media objects whose notes contain text matching a substring"
 #~ msgstr ""
@@ -16251,8 +16307,7 @@ msgstr "Totaal aantal achternamen"
 #~ "deeltekenreeks overeenkomen"
 
 #~ msgid "Media objects having notes containing <regular expression>"
-#~ msgstr ""
-#~ "Vindt media-objecten met notities die <reguliere uitdrukking> bevatten"
+#~ msgstr "Media-objecten met notities die <reguliere uitdrukking> bevatten"
 
 #~ msgid ""
 #~ "Matches media objects whose notes contain text matching a regular "
@@ -16313,7 +16368,7 @@ msgstr "Totaal aantal achternamen"
 #~ msgstr "Vindt bibliotheken met een gespecificeerde Gramps ID"
 
 #~ msgid "Repositories having notes containing <substring>"
-#~ msgstr "Vindt bibliotheken met notities die <substring> bevatten"
+#~ msgstr "Bibliotheken met notities die <deeltekenreeks> bevatten"
 
 #~ msgid "Matches repositories whose notes contain text matching a substring"
 #~ msgstr ""
@@ -16322,8 +16377,7 @@ msgstr "Totaal aantal achternamen"
 
 #~ msgid "Repositories having notes containing <regular expression>"
 #~ msgstr ""
-#~ "Vindt bibliotheken waarvan de notities een <reguliere uitdrukking> "
-#~ "bevatten"
+#~ "Bibliotheken waarvan de notities een <reguliere uitdrukking> bevatten"
 
 #~ msgid ""
 #~ "Matches repositories whose notes contain text matching a regular "
@@ -16372,7 +16426,7 @@ msgstr "Totaal aantal achternamen"
 #~ msgstr "Alle opmerkingen"
 
 #~ msgid "Matches every note in the database"
-#~ msgstr "Vindt alle opmerkingen in het gegevensbestan"
+#~ msgstr "Vindt alle opmerkingen in het gegevensbestand"
 
 #~ msgid "Notes changed after <date time>"
 #~ msgstr "Opmerkingen veranderd na <datum/tijdstip>"
@@ -16400,7 +16454,7 @@ msgstr "Totaal aantal achternamen"
 #~ "Vindt alle opmerkingen waarvan de aanduiding een bepaalde waarde heeft"
 
 #~ msgid "Notes containing <substring>"
-#~ msgstr "Vindt opmerkingen die de <deeltekenreeks> bevatten"
+#~ msgstr "Opmerkingen die de <deeltekenreeks> bevatten"
 
 #~ msgid "Matches notes who contain text matching a substring"
 #~ msgstr ""
@@ -16408,7 +16462,7 @@ msgstr "Totaal aantal achternamen"
 #~ "overeenkomen"
 
 #~ msgid "Notes containing <regular expression>"
-#~ msgstr "Vindt opmerkingen die de <reguliere uitdrukking> bevatten"
+#~ msgstr "Opmerkingen die de <reguliere uitdrukking> bevatten"
 
 #~ msgid "Matches notes who contain text matching a regular expression"
 #~ msgstr ""
@@ -16418,7 +16472,7 @@ msgstr "Totaal aantal achternamen"
 #~ msgstr "Tekst:"
 
 #~ msgid "Notes matching parameters"
-#~ msgstr "Opmerkingen parameters"
+#~ msgstr "Opmerkingen met parameters"
 
 #~ msgid "Matches Notes with particular parameters"
 #~ msgstr "Vindt opmerkingen met bepaalde parameters"
@@ -16491,25 +16545,25 @@ msgstr "Totaal aantal achternamen"
 #~ msgstr "Toon vorige pagina"
 
 #~ msgid "Shows the first page"
-#~ msgstr "Toont de eerste pagina"
+#~ msgstr "De eerste pagina tonen"
 
 #~ msgid "Shows the last page"
-#~ msgstr "Toont de laatste pagina"
+#~ msgstr "De laatste pagina tonen"
 
 #~ msgid "Shows the next page"
-#~ msgstr "Toont de volgende pagina"
+#~ msgstr "De volgende pagina tonen"
 
 #~ msgid "Zooms the page in"
-#~ msgstr "Zoomt in"
+#~ msgstr "Inzoomen"
 
 #~ msgid "Zooms the page out"
-#~ msgstr "Zoomt out"
+#~ msgstr "Uitzoomen"
 
 #~ msgid "Zooms to fit the page width"
-#~ msgstr "Toont paginabreed"
+#~ msgstr "Paginabreed zoomen"
 
 #~ msgid "Zooms to fit the whole page"
-#~ msgstr "Zoomt om volledige pagina te zien"
+#~ msgstr "Volledige pagina tonen"
 
 #~ msgid "<b>General</b>"
 #~ msgstr "<b>Algemeen</b>"
@@ -16644,7 +16698,7 @@ msgstr "Totaal aantal achternamen"
 # referentie of verwijzing?
 #~ msgid "Remove object and all references to it from the database"
 #~ msgstr ""
-#~ "Object en alle referenties ernaar, verwijderen uit het gegevensbestand"
+#~ "Object en alle verwijzingen ernaar, verwijderen uit het gegevensbestand"
 
 #~ msgid "Select replacement for the missing file"
 #~ msgstr "Selecteer vervanging voor het ontbrekende bestand"
@@ -16901,7 +16955,7 @@ msgstr "Totaal aantal achternamen"
 #~ msgstr "<b>Gedeelde informatie</b>"
 
 #~ msgid "Call n_umber:"
-#~ msgstr "Telefoonnummer:"
+#~ msgstr "Identificatienummer:"
 
 #~ msgid "_Media Type:"
 #~ msgstr "_Mediatype:"
@@ -16988,12 +17042,11 @@ msgstr "Totaal aantal achternamen"
 #~ msgstr "Datum bewerken"
 
 #~ msgid ""
-#~ "<b>Note:</b> Any changes in the shared event information will be "
-#~ "reflected in the event itself, for all participants in the event."
+#~ "<b>Note:</b> Any changes in the shared media object information will be "
+#~ "reflected in the media object itself."
 #~ msgstr ""
-#~ "<b>Nota:</b> Alle veranderingen in de informatie van de gedeelde "
-#~ "gebeurtenis zal gereflecteerd worden in de gebeurtenis zelf, en voor alle "
-#~ "deelnemers aan deze gebeurtenis."
+#~ "<b>Opmerking:</b> Alle veranderingen in de informatie van gedeelde media-"
+#~ "objecten zal gereflecteerd worden in het media-object zelf."
 
 #~ msgid "<b>Referenced Region</b>"
 #~ msgstr "<b>Oppervlakte waar naar verwezen wordt</b>"
@@ -17020,6 +17073,14 @@ msgstr "Totaal aantal achternamen"
 # pad
 #~ msgid "_Path:"
 #~ msgstr "Pad:"
+
+#~ msgid ""
+#~ "<b>Note:</b> Any changes in the shared event information will be "
+#~ "reflected in the event itself, for all participants in the event."
+#~ msgstr ""
+#~ "<b>Nota:</b> Alle veranderingen in de informatie van de gedeelde "
+#~ "gebeurtenis zal gereflecteerd worden in de gebeurtenis zelf, en voor alle "
+#~ "deelnemers aan deze gebeurtenis."
 
 #~ msgid "De_scription:"
 #~ msgstr "_Beschrijving:"
@@ -17191,7 +17252,7 @@ msgstr "Totaal aantal achternamen"
 #~ msgstr "<b>Regellijst</b>"
 
 #~ msgid "<b>Selected Rule</b>"
-#~ msgstr "<b>Geselecteerd regel</b>"
+#~ msgstr "<b>Geselecteerde regel</b>"
 
 #~ msgid "<b>Values</b>"
 #~ msgstr "<b>Waarden</b>"
@@ -18080,7 +18141,7 @@ msgstr "Totaal aantal achternamen"
 #~ "being displayed, set the default language in your operating system and "
 #~ "restart Gramps."
 #~ msgstr ""
-#~ "<b>U spreekt geen engels?</b><br/>Vrijwilligers hebben Gramps vertaald in "
+#~ "<b>U spreekt geen Engels?</b><br/>Vrijwilligers hebben Gramps vertaald in "
 #~ "meer dan 20 talen. Als Gramps ondersteuning heeft voor uw taal maar deze "
 #~ "niet wordt getoond, stel dan de standaardtaal in op uw computer en start "
 #~ "Gramps opnieuw op."
@@ -18425,237 +18486,6 @@ msgstr "Totaal aantal achternamen"
 #~ msgid "Abandon"
 #~ msgstr "Annuleren"
 
-#~ msgid "Descendant Count"
-#~ msgstr "Tellen van de afstammelingen"
-
-#~ msgid "Display descendant counts for each person."
-#~ msgstr "Toont het aantal afstammelingen voor elke persoon."
-
-#~ msgid "Descendant Count Gramplet"
-#~ msgstr "'Afstammelingentelling'-gramplet"
-
-#~ msgid "Descendent Count"
-#~ msgstr "Tellen van de afstammelingen"
-
-#~ msgid "Number of Descendants"
-#~ msgstr "aantal afstammelingen"
-
-#~ msgid "There are %d people.\n"
-#~ msgstr "Er zijn %d personen.\n"
-
-#~ msgid "Number of %s's descendants"
-#~ msgstr "Het aantal afstammelingen van %s"
-
-#~ msgid "Generation"
-#~ msgstr "Generatie"
-
-#~ msgid "Seen"
-#~ msgstr "Gezien"
-
-#~ msgid "Survived"
-#~ msgstr "Overlevend"
-
-#~ msgid "Now alive"
-#~ msgstr "Nog in leven"
-
-#~ msgid "Seen = number of descendants whose birth %s has lived to see"
-#~ msgstr ""
-#~ "Gezien  het aantal afstammelingen waarvan %s de geboorte heeft meegemaakt"
-
-#~ msgid ""
-#~ "Survived = number of descendants who died while %s was still being alive"
-#~ msgstr ""
-#~ "Overlevend = aantal afstammelingen die stierven terwijl %s nog in leven "
-#~ "was"
-
-#~ msgid "Descendant count"
-#~ msgstr "Telling afstammelingen"
-
-#~ msgid "Displays the number of a person's descendants"
-#~ msgstr "Toont het aantal afstammelingen van een persoon"
-
-#~ msgid "Repositories Report Options"
-#~ msgstr "Opties voor het bibliotheekverslag"
-
-#~ msgid "Produces a textual repositories report"
-#~ msgstr "Levert een tekstverslag van de bibliotheken"
-
-#~ msgid "Repositories Report"
-#~ msgstr "Bibliothekenverslag"
-
-#~ msgid "The style used for repository title."
-#~ msgstr "De gebruikte stijl voor de bibliotheektitel"
-
-#~ msgid ""
-#~ "\n"
-#~ "Address: %s"
-#~ msgstr ""
-#~ "\n"
-#~ "Adres: %s"
-
-#~ msgid "%s. Private"
-#~ msgstr "%s. privé"
-
-#~ msgid "Author: %s"
-#~ msgstr "Auteur: %s"
-
-#~ msgid ""
-#~ "\n"
-#~ "Abbreviation: %s"
-#~ msgstr ""
-#~ "\n"
-#~ "Afkorting: %s"
-
-#~ msgid ""
-#~ "\n"
-#~ "Publication information: %s"
-#~ msgstr ""
-#~ "\n"
-#~ "Publicatie-informatie: %s"
-
-#~ msgid ""
-#~ "\n"
-#~ "Data: %s"
-#~ msgstr ""
-#~ "\n"
-#~ "Datum: %s"
-
-#~ msgid "Include repository's urls"
-#~ msgstr "Bibliotheek-url's toevoegen"
-
-#~ msgid "Whether to include urls on repository."
-#~ msgstr "Al of niet bibliotheek-url toevoegen."
-
-#~ msgid "Include repository's address"
-#~ msgstr "Bibliotheekadres toevoegen"
-
-#~ msgid "Whether to include addresses on repository."
-#~ msgstr "Al of niet de adressen van de bibliotheken toevoegen."
-
-#~ msgid "Include source's author"
-#~ msgstr "De bronauteur toevoegen"
-
-#~ msgid "Whether to include author."
-#~ msgstr "Al of niet de bronauteur toevoegen."
-
-#~ msgid "Include source's abbreviation"
-#~ msgstr "De bronafkorting toevoegen"
-
-#~ msgid "Whether to include abbreviation."
-#~ msgstr "Al of niet de afkorting toevoegen"
-
-#~ msgid "Include source's publication information"
-#~ msgstr "De publicatie-informatie van de bron toevoegen"
-
-#~ msgid "Whether to include publication information."
-#~ msgstr "Al of niet de publicatie-informatie toevoegen."
-
-#~ msgid "Include source's data"
-#~ msgstr "De brongegevens toevoegen"
-
-#~ msgid "Whether to include keys and values."
-#~ msgstr "Al of niet de sleutels en de waarden toevoegen"
-
-#~ msgid "Whether to include notes on repositories and sources."
-#~ msgstr ""
-#~ "Al of niet de opmerkingen van de bronnen en de bibliotheken toevoegen."
-
-#~ msgid "Include media"
-#~ msgstr "Media-objecten toevoegen"
-
-#~ msgid "Whether to include media on sources."
-#~ msgstr "Al of niet de media over de bronnen toevoegen."
-
-#~ msgid "Whether to include repositories and sources marked as private."
-#~ msgstr ""
-#~ "Al of niet de bibliotheken en bronnen met de aanduiding privaat toevoegen."
-
-#~ msgid "The style used for child section."
-#~ msgstr "De gebruikte stijl voor het deel van de kinderen."
-
-#~ msgid "Query Gramplet"
-#~ msgstr "Zoek-gramplet"
-
-#~ msgid "Query"
-#~ msgstr "Zoeken"
-
-#~ msgid "Query Quickview"
-#~ msgstr "Zoeken snelscherm"
-
-#~ msgid "Display data that matches a query"
-#~ msgstr "Toont gegevens die overeenkomen met een zoekopdracht"
-
-#~ msgid "Enter SQL query"
-#~ msgstr "Geef een 'SQL'-zoekopdracht in"
-
-#~ msgid "[%d rows processed]"
-#~ msgstr "[%d rijen werden verwerkt]"
-
-#~ msgid "Today"
-#~ msgstr "Vandaag"
-
-#, fuzzy
-#~ msgid "Todo Report"
-#~ msgstr "Boekverslag"
-
-#, fuzzy
-#~ msgid "Report on Notes Marked %s"
-#~ msgstr "Verslag kon niet worden aangemaakt"
-
-#, fuzzy
-#~ msgid "%(relationship_type)s on %(relationship_date)s"
-#~ msgstr " (%(birth_date)s - %(death_date)s)"
-
-#, fuzzy
-#~ msgid "date: "
-#~ msgstr "datum"
-
-#, fuzzy
-#~ msgid "place: "
-#~ msgstr "locatie"
-
-#, fuzzy
-#~ msgid "The marker type to use for the report"
-#~ msgstr "De gebruikte aanduiding voor dit verslag"
-
-#, fuzzy
-#~ msgid "Group by reference type"
-#~ msgstr "Opmerking over een bronverwijzing"
-
-#~ msgid "Timeline Pedigree"
-#~ msgstr "Tijdslijnstamboom"
-
-#~ msgid ""
-#~ "The view shows a timeline pedigree with ancestors and descendants of the "
-#~ "selected person"
-#~ msgstr ""
-#~ "Dit scherm toont een tijdslijnstamboom met voorouders en nakomelingen van "
-#~ "de geselecteerde persoon"
-
-#~ msgid "Timeline pedigree"
-#~ msgstr "Tijdslijnstamboom"
-
-#~ msgid "Order by timeline"
-#~ msgstr "Ranschik volgens tijdslijn"
-
-#~ msgid "Show lifespan"
-#~ msgstr "Toon levensperiode"
-
-#~ msgid "Mouse scroll direction"
-#~ msgstr "Richting waarin muis scrollt"
-
-#~ msgid "Top <-> Bottom"
-#~ msgstr "Boven <-> onder"
-
-#~ msgid "Left <-> Right"
-#~ msgstr "Links <-> rechts"
-
-#~ msgid "Descendant Generations"
-#~ msgstr "Afstammelingengeneraties"
-
-#~ msgid "Ancestor Generations"
-#~ msgstr "Vooroudergeneraties"
-
 #~ msgid "PlaceCompletion"
 #~ msgstr "Locatie vervolledigen"
 
@@ -18663,8 +18493,8 @@ msgstr "Totaal aantal achternamen"
 #~ "Provides a browsable list of selected places, with possibility to "
 #~ "complete/parse/set the attribute fields."
 #~ msgstr ""
-#~ "Geeft een lijst van geselecteerde locaties, met de mogelijkheid om "
-#~ "dekenmerkenvelden de vervolledigen/bekijken/veranderen."
+#~ "Geeft een lijst van geselecteerde locaties, met de mogelijkheid om/de "
+#~ "kenmerkenvelden te vervolledigen/bekijken/veranderen."
 
 #~ msgid ""
 #~ "Place Completion by parsing, file lookup and batch setting of place "
@@ -18726,7 +18556,7 @@ msgstr "Totaal aantal achternamen"
 #~ msgstr "Locatieveranderingen worden doogevoerd"
 
 #~ msgid "Change places"
-#~ msgstr "Verander locaties"
+#~ msgstr "Locaties veranderen"
 
 #~ msgid "No place record was modified."
 #~ msgstr "Er werd geen locatiegegeven veranderd."
@@ -18819,13 +18649,13 @@ msgstr "Totaal aantal achternamen"
 #~ msgstr "Geen breedte/lengte opgegeven"
 
 #~ msgid "<b>1. Look up latitude and longitude:</b>"
-#~ msgstr "1. Zoek de lengte en de breedte op:"
+#~ msgstr "<b>1. Lengte en de breedte opzoeken:</b>"
 
 #~ msgid "<b>2. Parsing and Conversion of existing title or position:</b>"
-#~ msgstr "2. Inlezen en omzetten van een bestaande titel of positie:"
+#~ msgstr "<b>2. Een bestaande titel of positie inlezen en omzetten:</b>"
 
 #~ msgid "<b>3. Set attributes of all selected places:</b>"
-#~ msgstr "3. Verander de kenmerken van alle geselecteerde locaties:"
+#~ msgstr "<b>3. De kenmerken van alle geselecteerde locaties aanpassen:</b>"
 
 #~ msgid ""
 #~ "<i>Delete to delete a row, Double-click on the row to edit place with "
@@ -18833,18 +18663,21 @@ msgstr "Totaal aantal achternamen"
 #~ "Press Tab on a row or Google Maps button to see place on a map. Press "
 #~ "Apply to do all changes automatically</i>"
 #~ msgstr ""
-#~ "Verwijder om een rij te verwijderen, dubbelklikken op een rij om locatie "
-#~ "aan te passen met de ingevulde velden, \n"
+#~ "<i>Verwijder om een rij te verwijderen, dubbelklikken op een rij om "
+#~ "locatie aan te passen met de ingevulde velden, \n"
 #~ "Druk 'Tab' op een rij of de 'Google Maps'-knop om een locatie op de kaart "
-#~ "te zien. Druk op toepassen om alle veranderingen automatisch uit te voeren"
+#~ "te zien. Druk op toepassen om alle veranderingen automatisch uit te "
+#~ "voeren</i>"
 
 #~ msgid ""
 #~ "<span size=\"large\"><b>Selection of the Places you want to complete:</"
 #~ "b></span>"
-#~ msgstr "Selectie van de locaties die u wenst te vervolledigen:"
+#~ msgstr ""
+#~ "<span size=\"large\"><b>Selectie van de locaties die u wenst te "
+#~ "vervolledigen:</b></span>"
 
 #~ msgid "Apply all suggested changes"
-#~ msgstr "Pas alle voorgestelde veranderingen toe"
+#~ msgstr "Alle voorgestelde veranderingen toepassen"
 
 #~ msgid "C_enter latitude:"
 #~ msgstr "C_entrale breedte:"
@@ -18853,10 +18686,10 @@ msgstr "Totaal aantal achternamen"
 #~ msgstr "Centrale lengte:"
 
 #~ msgid "Change title into:"
-#~ msgstr "Verander titel in:"
+#~ msgstr "Titel veranderen in:"
 
 #~ msgid "Convert lat/lon as:"
-#~ msgstr "Omzetten van lngt/brdt in:"
+#~ msgstr "Lngt/brdt omzetten in:"
 
 #~ msgid "Parish:"
 #~ msgstr "Parochie:"
@@ -18877,135 +18710,403 @@ msgstr "Totaal aantal achternamen"
 #~ msgstr "Zoeken in:"
 
 #~ msgid "Select A File"
-#~ msgstr "Selecteer een bestand"
+#~ msgstr "Een bestand selecteren"
 
 #~ msgid "_Google Maps"
 #~ msgstr "_Google Maps"
 
-#~ msgid "Calculates estimated dates for birth and death."
-#~ msgstr "Bereken geschatte datums voor geboorte en overlijden."
+#~ msgid "Repositories Report Options"
+#~ msgstr "Opties voor het bibliotheekverslag"
 
-# niet/geen
-#~ msgid "done!\n"
-#~ msgstr "gedaan!\n"
+#~ msgid "Produces a textual repositories report"
+#~ msgstr "Een tekstverslag van de bibliotheken"
 
-#~ msgid "Removed date estimates"
-#~ msgstr "De geschatte datums verwijderen"
+#~ msgid "Repositories Report"
+#~ msgstr "Bibliothekenverslag"
+
+#~ msgid "The style used for repository title."
+#~ msgstr "De gebruikte stijl voor de bibliotheektitel"
 
 #~ msgid ""
-#~ "Selecting... \n"
 #~ "\n"
+#~ "Address: %s"
 #~ msgstr ""
-#~ "Selecteren...\n"
 #~ "\n"
+#~ "Adres: %s"
 
-#~ msgid "Selecting..."
-#~ msgstr "Selecteren..."
+#~ msgid "%s. Private"
+#~ msgstr "%s. privé"
 
-#~ msgid "Add birth and death events"
-#~ msgstr "Geboorte- en overlijdensgebeurtenissen toevoegen"
+#~ msgid "Author: %s"
+#~ msgstr "Auteur: %s"
 
-#~ msgid "Add birth event"
-#~ msgstr "Geboortegebeurtenis toevoegen"
-
-#~ msgid "Add death event"
-#~ msgstr "Overlijdensgebeurtenis toevoegen"
-
-#~ msgid "No events to be added."
-#~ msgstr "Er hoeven geen gebeurtenissen toegevoegd te worden."
-
-#~ msgid "Selecting... "
-#~ msgstr "Selecteren... "
-
-#~ msgid "Adding events '%s'..."
-#~ msgstr "Gebeurtenissen toevoegen '%s'..."
-
-#~ msgid "Added birth event based on %(evidence)s, from %(name)s"
+#~ msgid ""
+#~ "\n"
+#~ "Abbreviation: %s"
 #~ msgstr ""
-#~ "Voegde geboortegebeurtenis toe gebaseerd op %(evidence)s, van %(name)s"
+#~ "\n"
+#~ "Afkorting: %s"
 
-#~ msgid "Added birth event based on %s"
-#~ msgstr "Voegde geboortegebeurtenis toe gebaseerd op %s"
-
-#~ msgid "Estimated birth date"
-#~ msgstr "Geschatte geboortedatum"
-
-#~ msgid "Added death event based on %(evidence)s, from %(person)s"
+#~ msgid ""
+#~ "\n"
+#~ "Publication information: %s"
 #~ msgstr ""
-#~ "Voegde overlijdensgebeurtenis toe gebaseerd op %(evidence)s, van %(person)"
-#~ "s"
+#~ "\n"
+#~ "Publicatie-informatie: %s"
 
-#~ msgid "Added death event based on %s"
-#~ msgstr "Voegde overlijdensgebeurtenis toe gebaseerd op %s"
+#~ msgid ""
+#~ "\n"
+#~ "Data: %s"
+#~ msgstr ""
+#~ "\n"
+#~ "Datum: %s"
 
-#~ msgid "Estimated death date"
-#~ msgstr "Geschatte overlijdensdatum"
+#~ msgid "Include repository's urls"
+#~ msgstr "Bibliotheek-url's toevoegen"
 
-#~ msgid " Done! Committing..."
-#~ msgstr " OK! Opgeslagen..."
+#~ msgid "Whether to include urls on repository."
+#~ msgstr "Al of niet bibliotheek-url toevoegen."
 
-#~ msgid "Add date estimates"
-#~ msgstr "Voeg datumschattingen toe"
+#~ msgid "Include repository's address"
+#~ msgstr "Bibliotheekadres toevoegen"
 
-#~ msgid "Added %d events."
-#~ msgstr "%d gebeurtenissen toegevoegd."
+#~ msgid "Whether to include addresses on repository."
+#~ msgstr "Al of niet de adressen van de bibliotheken toevoegen."
 
-#~ msgid "Estimated date"
-#~ msgstr "Geschatte datum"
+#~ msgid "Include source's author"
+#~ msgstr "De bronauteur toevoegen"
 
-#~ msgid "Attach Source"
-#~ msgstr "Bron toevoegen"
+#~ msgid "Whether to include author."
+#~ msgstr "Al of niet de bronauteur toevoegen."
 
-#~ msgid "Attaches a shared source to multiple objects."
-#~ msgstr "Voegt een gedeelde bron toe aan verschillende objecten."
+#~ msgid "Include source's abbreviation"
+#~ msgstr "De bronafkorting toevoegen"
 
-#~ msgid "Person Filter"
-#~ msgstr "Persoonsfilter"
+#~ msgid "Whether to include abbreviation."
+#~ msgstr "Al of niet de afkorting toevoegen"
 
-#~ msgid "Source type"
-#~ msgstr "Brontype"
+#~ msgid "Include source's publication information"
+#~ msgstr "De publicatie-informatie van de bron toevoegen"
 
-#~ msgid "New source"
-#~ msgstr "Nieuwe bron"
+#~ msgid "Whether to include publication information."
+#~ msgstr "Al of niet de publicatie-informatie toevoegen."
 
-#~ msgid "Existing source"
-#~ msgstr "Bestaande bron"
+#~ msgid "Include source's data"
+#~ msgstr "De brongegevens toevoegen"
 
-#~ msgid "Select the type of source to attach"
-#~ msgstr "Kies het brontype dat toegevoegd wordt"
+#~ msgid "Whether to include keys and values."
+#~ msgstr "Al of niet de sleutels en de waarden toevoegen"
 
-#~ msgid "New Source Title"
-#~ msgstr "Nieuwe brontitel"
+#~ msgid "Whether to include notes on repositories and sources."
+#~ msgstr ""
+#~ "Al of niet de opmerkingen van de bronnen en de bibliotheken toevoegen."
 
-#~ msgid "Text of source to attach"
-#~ msgstr "Brontekst die toegevoegd wordt"
+#~ msgid "Include media"
+#~ msgstr "Media-objecten toevoegen"
 
-#~ msgid "Existing Source ID"
-#~ msgstr "Bestaande bron-ID"
+#~ msgid "Whether to include media on sources."
+#~ msgstr "Al of niet de media over de bronnen toevoegen."
 
-#~ msgid "ID of source to attach"
-#~ msgstr "ID van de bron die toegevoegd wordt"
+#~ msgid "Whether to include repositories and sources marked as private."
+#~ msgstr ""
+#~ "Al of niet de bibliotheken en bronnen met de aanduiding privaat toevoegen."
 
-#~ msgid "Results"
-#~ msgstr "Resultaten"
+#~ msgid "The style used for child section."
+#~ msgstr "De gebruikte stijl voor het paragraaf van de kinderen."
 
-#~ msgid "Attaching sources...\n"
-#~ msgstr "Bronnen worden toegevoegd...\n"
+#~ msgid "Order"
+#~ msgstr "Volgorde"
 
-#~ msgid "Attaching sources..."
-#~ msgstr "Bronnen worden toegevoegd..."
+#~ msgid "Census Gramplet"
+#~ msgstr "Volkstelling-gramplet"
 
-#~ msgid "Done!\n"
-#~ msgstr "OK!\n"
+#~ msgid "Census details for: "
+#~ msgstr "Volkstellingdetails voor:"
 
-#~ msgid "Beta"
-#~ msgstr "Beta"
+#~ msgid "No active person set."
+#~ msgstr "Geen actieve persoon bepaald."
+
+#~ msgid "Census: %s"
+#~ msgstr "Volkstelling: %s"
+
+#~ msgid "New Census"
+#~ msgstr "Nieuwe volkstelling"
+
+#~ msgid "Edit Census"
+#~ msgstr "Volkstelling bewerken"
+
+#~ msgid "Source:"
+#~ msgstr "Bron:"
+
+#~ msgid "Reference:"
+#~ msgstr "Verwijzing:"
+
+#~ msgid "Cannot add a person to this census."
+#~ msgstr "Kan geen persoon toevoegen aan deze volkstelling."
+
+#~ msgid "First select a census from the drop-down list."
+#~ msgstr "Eerst een volkstelling uit de lijst selecteren."
+
+#~ msgid "Census Report"
+#~ msgstr "Volkstellingsverslag"
+
+#~ msgid "Report of census events for a person."
+#~ msgstr "Verslag van de volkstellingsgebeurtenissen van een persoon."
+
+#~ msgid "Census Report for %s"
+#~ msgstr "Volkstellingsverslag van %s"
+
+#~ msgid "Source Reference:"
+#~ msgstr "Bronverwijzing:"
+
+#~ msgid "Census Selection"
+#~ msgstr "Keuze volkstelling"
+
+#~ msgid "By Person"
+#~ msgstr "Volgens peroon"
+
+#~ msgid "By Source"
+#~ msgstr "Volgens bron"
+
+#~ msgid "By Person and Source"
+#~ msgstr "Volgens persoon en bron"
+
+#~ msgid "All Census records"
+#~ msgstr "Alle volkstellingsgebeurtenissen"
+
+#~ msgid "The type of report"
+#~ msgstr "Het verslagstype"
+
+#~ msgid "The selected person for the report."
+#~ msgstr "De geselecteerde persoon voor het verslag."
+
+#~ msgid "Page break after each census."
+#~ msgstr "Een  nieuwe pagina voor elke volkstelling."
+
+#~ msgid "Start a new page after each census."
+#~ msgstr "Nieuwe pagina beginnen na iedere volkstelling."
+
+#~ msgid "The style used for names."
+#~ msgstr "De gebruikte stijl voor de namen."
+
+#~ msgid "The style used for column headings."
+#~ msgstr "De gebruikte stijl voor de kolomhoofdingen."
+
+#~ msgid "The default text style."
+#~ msgstr "De standaard tekststijl."
+
+#~ msgid "Arrived since"
+#~ msgstr "Aangekomen sinds"
+
+#~ msgid "At Home"
+#~ msgstr "Thuis"
+
+#~ msgid "Can read and write"
+#~ msgstr "Kan lezen en schrijven"
+
+#~ msgid "Children Died"
+#~ msgstr "Kinderen gestorven"
+
+#~ msgid "Children Living"
+#~ msgstr "Kinderen nog in leven"
+
+#~ msgid "Children Total"
+#~ msgstr "Totaal aantal kinderen"
+
+#~ msgid "City or Borough"
+#~ msgstr "Stad of gemeente"
+
+#~ msgid "City or Municipal Borough"
+#~ msgstr "Stad of kiesdistrict"
+
+#~ msgid "Civil Parish"
+#~ msgstr "Parochie"
+
+#~ msgid "Civil Parish or Township"
+#~ msgstr "Parochie of gemeente"
+
+#~ msgid "Comments"
+#~ msgstr "Kommentaar"
+
+#~ msgid "Condition"
+#~ msgstr "Conditie"
+
+#~ msgid "Date of birth"
+#~ msgstr "Geboortedatum"
+
+#~ msgid "Disability"
+#~ msgstr "Handicap"
+
+#~ msgid "Ecclesiastical District"
+#~ msgstr "Kerkelijk district"
+
+#~ msgid "Ecclesiastical Parish or District"
+#~ msgstr "Kerkelijke parochie of district"
+
+#~ msgid "Employed"
+#~ msgstr "Tewerkgesteld"
+
+#~ msgid "Employer"
+#~ msgstr "Werkgever"
+
+#~ msgid "Employer, Worker or Own Account"
+#~ msgstr "Werkgever, zelfstandige"
+
+#~ msgid "Hamlet or Tything"
+#~ msgstr "Gehucht"
+
+#~ msgid "Local Board or Improvement Commissioners District"
+#~ msgstr "Locale raad"
+
+#~ msgid "Military"
+#~ msgstr "Militair"
+
+#~ msgid "Municipal Borough"
+#~ msgstr "Gemeentelijk district"
+
+#~ msgid "Municipal Ward"
+#~ msgstr "Stadsdistrict"
+
+#~ msgid "Nationality"
+#~ msgstr "Nationaliteit"
+
+#~ msgid "Neither"
+#~ msgstr "Noch"
+
+#~ msgid "Neither Employer nor Employed"
+#~ msgstr "Geen werkgever noch werkend"
+
+#~ msgid "Parish or Township"
+#~ msgstr "Parochie of stad"
+
+#~ msgid "Relation"
+#~ msgstr "Relatie"
+
+#~ msgid "Taxes"
+#~ msgstr "Belastingen"
+
+#~ msgid "Town"
+#~ msgstr "Stad"
+
+#~ msgid "Town, Village or Hamlet"
+#~ msgstr "Stad, dorp of gehucht"
+
+#~ msgid "Type of roof"
+#~ msgstr "Soort dak"
+
+#~ msgid "Village"
+#~ msgstr "Dorp"
+
+#~ msgid "Village or Hamlet"
+#~ msgstr "Dorp of gehucht"
+
+#~ msgid "Where Born"
+#~ msgstr "Waar geboren"
+
+#~ msgid "Work Type"
+#~ msgstr "Werktype"
+
+#~ msgid "Working at Home"
+#~ msgstr "Werkt thuis"
+
+#~ msgid "Year of birth"
+#~ msgstr "Geboortejaar"
+
+#~ msgid "Years Married"
+#~ msgstr "Aantal jaren getrouwd"
 
 #~ msgid "Clock Gramplet"
 #~ msgstr "Klok-gramplet"
 
 #~ msgid "Clock"
 #~ msgstr "Klok"
+
+#~ msgid "Raw Export"
+#~ msgstr "Ruwe export"
+
+#~ msgid "This is a raw python object dump"
+#~ msgstr "Dit is een ruwe python object dump"
+
+#~ msgid "Raw options"
+#~ msgstr "Opties"
+
+#~ msgid "Descendant Count"
+#~ msgstr "Tellen van de afstammelingen"
+
+#~ msgid "Display descendant counts for each person."
+#~ msgstr "Het aantal afstammelingen voor elke persoon tonen."
+
+#~ msgid "Descendant Count Gramplet"
+#~ msgstr "'Afstammelingentelling'-gramplet"
+
+#~ msgid "Descendent Count"
+#~ msgstr "Afstammelingen tellen"
+
+#~ msgid "Number of Descendants"
+#~ msgstr "aantal afstammelingen"
+
+#~ msgid "There are %d people.\n"
+#~ msgstr "Er zijn %d personen.\n"
+
+#~ msgid "Number of %s's descendants"
+#~ msgstr "Het aantal afstammelingen van %s"
+
+#~ msgid "Generation"
+#~ msgstr "Generatie"
+
+#~ msgid "Seen"
+#~ msgstr "Gezien"
+
+#~ msgid "Survived"
+#~ msgstr "Overlevend"
+
+#~ msgid "Now alive"
+#~ msgstr "Nog in leven"
+
+#~ msgid "Seen = number of descendants whose birth %s has lived to see"
+#~ msgstr ""
+#~ "Gezien  = het aantal afstammelingen waarvan %s de geboorte heeft "
+#~ "meegemaakt"
+
+#~ msgid ""
+#~ "Survived = number of descendants who died while %s was still being alive"
+#~ msgstr ""
+#~ "Overlevend = aantal afstammelingen die stierven terwijl %s nog in leven "
+#~ "was"
+
+#~ msgid "Descendant count"
+#~ msgstr "Telling afstammelingen"
+
+#~ msgid "Displays the number of a person's descendants"
+#~ msgstr "Het aantal afstammelingen van een persoon tonen"
+
+#~ msgid "Lines of Descendency"
+#~ msgstr "Afstammelingenlijnen"
+
+#~ msgid ""
+#~ "Prints out all descendency lines from a given ancestor to a given "
+#~ "descendent in text."
+#~ msgstr ""
+#~ "Alle afstammelingenlijnen van een bepaalde voorouder naar een "
+#~ "afstammelingen in een tekstverslag."
+
+#~ msgid "Ancestor"
+#~ msgstr "Voorouder"
+
+#~ msgid "The ancestor from which to start the line"
+#~ msgstr "De voorouder waarmee de lijn gestart wordt"
+
+#~ msgid "Descendent"
+#~ msgstr "Afstammeling"
+
+#~ msgid "The descendent to which to build the line"
+#~ msgstr "De afstammeling waarnaar de lijn opgebouwd wordt"
+
+#~ msgid "The style used for the title of a line."
+#~ msgstr "De gebruikte stijl voor de titel van een lijn."
+
+#~ msgid "Lines of Descendency from %(ancestor)s to %(descendent)s"
+#~ msgstr "Afstammelingenlijnen van %(ancestor)s naar %(descendent)s"
 
 #~ msgid "Inlaw Parents"
 #~ msgstr "Schoonouders"
@@ -19043,6 +19144,890 @@ msgstr "Totaal aantal achternamen"
 #~ msgid "People involved"
 #~ msgstr "Betrokkenen"
 
+#~ msgid "Today"
+#~ msgstr "Vandaag"
+
+#~ msgid "Headline News Gramplet"
+#~ msgstr "'Belangrijkste nieuws'-gramplet"
+
+#~ msgid "Headline News"
+#~ msgstr "Het belangrijkste nieuws"
+
+#~ msgid "Read Gramps headline news"
+#~ msgstr "Het belangrijkste Gramps-nieuws lezen"
+
+#~ msgid "GoogleEarth"
+#~ msgstr "GoogleEarth"
+
+#~ msgid "Creates data file for GoogleEarth and opens it"
+#~ msgstr "Gegevensbestand voor 'GoogleEarth' aanmaken en openen."
+
+#~ msgid "No place description"
+#~ msgstr "Geen plaatsbeschrijving"
+
+#~ msgid "GoogleEarth not installed!"
+#~ msgstr "GoogleEarth is niet geïnstalleerd!"
+
+#~ msgid ""
+#~ "Create kmz/kml file ''%s''\n"
+#~ "in user directory ''%s''?"
+#~ msgstr ""
+#~ "Een 'kmz/kml'-bestand ''%s''\n"
+#~ "in gebruikersmap ''%s'' aanmaken?"
+
+#~ msgid "Failure writing to %s"
+#~ msgstr "Fout bij schrijven naar %s"
+
+#~ msgid "Directory does not exist"
+#~ msgstr "Map bestaat niet"
+
+#~ msgid "GoogleEarth file exists!"
+#~ msgstr "'GoogleEarth'-bestand bestaat!"
+
+#~ msgid ""
+#~ "Overwrite kmz/kml file ''%s''\n"
+#~ "in user home directory ''%s''?"
+#~ msgstr ""
+#~ "'Kmz/kml'-bestand ''%s''\n"
+#~ "in gebruikersthuismap ''%s'' overschrijven?"
+
+#~ msgid "Deep Connections Gramplet"
+#~ msgstr "'Verre relaties'-gramplet"
+
+#~ msgid "Deep Connections"
+#~ msgstr "Verre relaties"
+
+#~ msgid "Pause"
+#~ msgstr "Pause"
+
+#~ msgid "sibling"
+#~ msgstr "broer of zus"
+
+#~ msgid ""
+#~ "\n"
+#~ "   who is a %s of "
+#~ msgstr ""
+#~ "\n"
+#~ "   wie is een %s van "
+
+#~ msgid "No Active Person set."
+#~ msgstr "Geen actieve persoon gekozen."
+
+#~ msgid "Looking for relationship between\n"
+#~ msgstr "Nakijken van de relatie tussen\n"
+
+#~ msgid "  <b>%s</b> (Home Person) and\n"
+#~ msgstr "  <b>%s</b> (basispersoon) en\n"
+
+#~ msgid "  <b>%s</b> (Active Person)...\n"
+#~ msgstr "  <b>%s</b> (actieve persoon)...\n"
+
+#~ msgid ""
+#~ "Found relation #%d: \n"
+#~ "   "
+#~ msgstr ""
+#~ "Relatie gevonden #%d: \n"
+#~ "   "
+
+#~ msgid ""
+#~ "Paused.\n"
+#~ "Press Continue to search for additional relations.\n"
+#~ msgstr ""
+#~ "Gestopt.\n"
+#~ "Druk verder gaan om naar bijkomende relaties te zoeken.\n"
+
+#~ msgid ""
+#~ "\n"
+#~ "Search completed. %d relations found."
+#~ msgstr ""
+#~ "\n"
+#~ "Het zoeken is gedaan. er zijn %d relaties gevonden."
+
+#~ msgid "Locations Filters Report"
+#~ msgstr "Locatiefilterverslag"
+
+#~ msgid "Produces a textual filters output"
+#~ msgstr "Tekstverslag van filterresultaat wordt aangemaakt"
+
+#~ msgid "Locations"
+#~ msgstr "Locaties"
+
+#~ msgid ""
+#~ "\n"
+#~ "Census event (Individual)\n"
+#~ msgstr ""
+#~ "\n"
+#~ "Volkstellinggebeurtenis (persoon)\n"
+
+#~ msgid ""
+#~ "\n"
+#~ "Residence event (Individual)\n"
+#~ msgstr ""
+#~ "\n"
+#~ "Residentiegebeurtenis (persoon)\n"
+
+#~ msgid ""
+#~ "\n"
+#~ "Census event (Family)\n"
+#~ msgstr ""
+#~ "\n"
+#~ "Volkstellinggebeurtenis (familie)\n"
+
+#~ msgid ""
+#~ "\n"
+#~ "Residence event (Family)\n"
+#~ msgstr ""
+#~ "\n"
+#~ "Residentiegebeurtenis (familie)\n"
+
+#~ msgid ""
+#~ "\n"
+#~ "Address filter (Person)\n"
+#~ msgstr ""
+#~ "\n"
+#~ "Adresfilter (persoon)\n"
+
+#~ msgid "The basic style used for the paragraph title."
+#~ msgstr "De gebruikte basisstijl voor de paragraaftitel."
+
+#~ msgid "Data Entry Gramplet"
+#~ msgstr "'Gegevens invoeren'-gramplet"
+
+#, fuzzy
+#~ msgid "Gramplet for quick data entry"
+#~ msgstr "Gramplet-gegevens invoeren: %s"
+
+#~ msgid "Data Entry"
+#~ msgstr "Gegevens invoeren"
+
+#~ msgid "Surname, Given"
+#~ msgstr "Achternaam, voornaam"
+
+#~ msgid "New person"
+#~ msgstr "Nieuwe persoon"
+
+#~ msgid "Add relation"
+#~ msgstr "Relatie toevoegen"
+
+#~ msgid "No relation to active person"
+#~ msgstr "Geen relatie met de actieve persoon"
+
+#~ msgid "Add as a Parent"
+#~ msgstr "Als een ouder toevoegen"
+
+#~ msgid "Add as a Spouse"
+#~ msgstr "Als een echtgeno(o)t(e) toevoegen"
+
+#~ msgid "Add as a Sibling"
+#~ msgstr "Als een broer/zus toevoegen"
+
+#~ msgid "Add as a Child"
+#~ msgstr "Als een kind toevoegen"
+
+#~ msgid "Copy Active Data"
+#~ msgstr "Kopieer de actieve gegevens"
+
+#~ msgid "in"
+#~ msgstr "in"
+
+#~ msgid "Gramplet Data Edit: %s"
+#~ msgstr "Gramplet gegevens bewerken: %s"
+
+#~ msgid "Please provide a name."
+#~ msgstr "Geef een naam op."
+
+#~ msgid "Can't add new person."
+#~ msgstr "Kan de nieuwe persoon niet toevoegen."
+
+#~ msgid "Please set an active person."
+#~ msgstr "Kies een actieve persoon."
+
+#~ msgid "Can't add new person as a parent."
+#~ msgstr "Kan de nieuwe persoon niet als ouder toevoegen."
+
+#~ msgid "Please set the new person's gender."
+#~ msgstr "Kies een geslacht voor de nieuwe persoon."
+
+#~ msgid "Can't add new person as a spouse."
+#~ msgstr "Kan de nieuwe persoon niet als echtgeno(o)t(e) toevoegen."
+
+#~ msgid "Can't add new person as a sibling."
+#~ msgstr "Kan de nieuwe persoon niet als broer/zus toevoegen."
+
+#~ msgid "Can't add new person as a child."
+#~ msgstr "Kan de nieuwe persoon niet als kind toevoegen."
+
+#~ msgid "Please set gender on Active or new person."
+#~ msgstr "Kies een gesclacht voor actieve of nieuwe persoon."
+
+#~ msgid "Same genders on Active and new person."
+#~ msgstr "Zelfde geslacht voor actieve en nieuwe persoon."
+
+#~ msgid "Please set gender on Active person."
+#~ msgstr "Kies een geslacht voor de actieve persoon."
+
+#~ msgid "Gramplet Data Entry: %s"
+#~ msgstr "Gramplet-gegevens invoeren: %s"
+
+#~ msgid "Query Gramplet"
+#~ msgstr "Zoek-gramplet"
+
+#~ msgid "Query"
+#~ msgstr "Zoeken"
+
+#~ msgid "Query Quickview"
+#~ msgstr "Snelscherm voor zoeken"
+
+#~ msgid "Display data that matches a query"
+#~ msgstr "Gegevens die overeenkomen met een zoekopdracht tonen"
+
+#~ msgid "Enter SQL query"
+#~ msgstr "Een 'SQL'-zoekopdracht ingeven"
+
+#~ msgid "[%d rows processed]"
+#~ msgstr "[%d rijen werden verwerkt]"
+
+#~ msgid "Produces a graphical family tree."
+#~ msgstr "Een grafische voorouderstamboom aanmaken."
+
+#~ msgid "Family Tree for %s"
+#~ msgstr "Familiestamboom van %s"
+
+#~ msgid "Anonymous"
+#~ msgstr "Anoniem"
+
+#~ msgid "born"
+#~ msgstr "Geboren"
+
+#~ msgid "baptised"
+#~ msgstr "gedoopd"
+
+#~ msgid "died"
+#~ msgstr "stierf"
+
+#~ msgid "buried"
+#~ msgstr "begraven"
+
+#~ msgid "cremated"
+#~ msgstr "gecremeerd"
+
+#~ msgid "married"
+#~ msgstr "getrouwd"
+
+#~ msgid "divorced"
+#~ msgstr "gescheiden"
+
+#~ msgid "resident"
+#~ msgstr "inwoner"
+
+# python-format
+#~ msgid "on %(ymd_date)s"
+#~ msgstr "op %(ymd_date)s"
+
+# python-format
+#~ msgid "in %(ym_date)s"
+#~ msgstr "in %(ym_date)s"
+
+# python-format
+#~ msgid "in %(y_date)s"
+#~ msgstr "in %(y_date)s"
+
+# python-format
+#~ msgid "on %(placeholder)s"
+#~ msgstr "op %(placeholder)s"
+
+# python-format
+#~ msgid "on %(placeholder)s (%(partial)s)"
+#~ msgstr "op %(placeholder)s (%(partial)s)"
+
+# python-format
+#~ msgid "in %(place)s"
+#~ msgstr "in %(place)s"
+
+# python-format
+#~ msgid "(%(description)s)"
+#~ msgstr "(%(description)s)"
+
+#~ msgid "The center family for the tree"
+#~ msgstr "De centrale familie voor deze stamboom"
+
+#~ msgid "Ancestor Generations"
+#~ msgstr "Vooroudergeneraties"
+
+#~ msgid "The number of ancestor generations to include in the tree"
+#~ msgstr "Het aantal vooroudergeneraties dat in de stamboom wordt opgenomen"
+
+#~ msgid "Descendant Generations"
+#~ msgstr "Afstammelingengeneraties"
+
+#~ msgid "The number of descendant generations to include in the tree"
+#~ msgstr ""
+#~ "Het aantal afstammelingengeneraties dat in de stamboom wordt opgenome"
+
+#~ msgid "Color"
+#~ msgstr "Kleur"
+
+#~ msgid "No color"
+#~ msgstr "Geen kleur"
+
+#~ msgid "First generation"
+#~ msgstr "Eerste generatie"
+
+#~ msgid "Second generation"
+#~ msgstr "Tweede generatie"
+
+#~ msgid "Male line"
+#~ msgstr "Mannelijke lijn"
+
+#~ msgid "Male line and illegitimate children"
+#~ msgstr "Mannelijke lijn en onwettige kinderen"
+
+#~ msgid "Female line"
+#~ msgstr "Vrouwelijke lijn"
+
+#~ msgid "Shuffle colors"
+#~ msgstr "Kleuren dooreen gebruiken"
+
+#~ msgid "Whether to shuffle colors or order them in rainbow fashion."
+#~ msgstr ""
+#~ "Al dan niet kleuren door mekaar gebruiken of in regenboogwijze "
+#~ "rangschikken."
+
+#~ msgid "Include Occupation"
+#~ msgstr "Beroep toevoegen"
+
+#~ msgid "Include Residence"
+#~ msgstr "Residentie toevoegen"
+
+#~ msgid "Print event data (dead person)"
+#~ msgstr "Gebeurtenissen uitdrukken (overleden persoon)"
+
+#~ msgid "Year only"
+#~ msgstr "Alleen jaar"
+
+#~ msgid "Full date"
+#~ msgstr "Volledige datum"
+
+#~ msgid "Full date and place"
+#~ msgstr "Volledige datum en locatie"
+
+#~ msgid "Print event data (living person)"
+#~ msgstr "Gebeurtenissen uitdrukken (levende personen)"
+
+#~ msgid "Fall back to baptism if birth event missing"
+#~ msgstr "Op doopsel terugvallen indien geboorte ontbreekt"
+
+#~ msgid "Fall back to burial or cremation if death event missing"
+#~ msgstr "Op begrafenis of crematie terugvallen indien overlijden ontbreekt"
+
+#~ msgid "Include event description"
+#~ msgstr "Gebeurtenisbeschrijvingen toevoegen"
+
+#~ msgid "Footer text"
+#~ msgstr "Voetnoottekst"
+
+#~ msgid "The style used for data (birth, death, marriage, divorce)."
+#~ msgstr ""
+#~ "De gebruikte stijl voor de gegevens(geboorte, overlijden, huwelijk, "
+#~ "scheiding)."
+
+#~ msgid "Relationship Split View"
+#~ msgstr "Relatieschermdeling"
+
+#~ msgid "Event Split View"
+#~ msgstr "Gebeurtenissenschermdeling"
+
+#~ msgid "Family Split View"
+#~ msgstr "Familieschermdeling"
+
+#~ msgid "Fan Chart Split View"
+#~ msgstr "Waaiergrafiekschermdeling"
+
+#~ msgid "Geo Split View"
+#~ msgstr "Kaartschermdeling"
+
+#~ msgid "Html Split View"
+#~ msgstr "Html-schermdeling"
+
+#~ msgid "Media Split View"
+#~ msgstr "Mediaschermdeling"
+
+#~ msgid "Note Split View"
+#~ msgstr "Opmerkingenschermdeling"
+
+#~ msgid "Pedigree Split View"
+#~ msgstr "Vooroudersschermdeling"
+
+#~ msgid "Person List Split View"
+#~ msgstr "Personenlijstschermdeling"
+
+#~ msgid "Person Tree Split View"
+#~ msgstr "Personenboomschermdeling"
+
+#~ msgid "Place List Split View"
+#~ msgstr "Locatielijstschermdeling"
+
+#~ msgid "Place Tree Split View"
+#~ msgstr "Locatieboomschermdeling"
+
+#~ msgid "Repository Split View"
+#~ msgstr "Bibliothekenschermdeling"
+
+#~ msgid "Source Split View"
+#~ msgstr "Bronnenschermdeling"
+
+#~ msgid "Splitviews"
+#~ msgstr "Gedeelde schermen"
+
+#~ msgid "%s with a Gramplet Pane"
+#~ msgstr "%s met een Gramplet-zijbalk"
+
+#~ msgid "Add a gramplet"
+#~ msgstr "Een Gramplet toevoegen"
+
+#~ msgid "Restore a gramplet"
+#~ msgstr "Een Gramplet herstellen"
+
+#~ msgid "Split view"
+#~ msgstr "Gedeeld scherm"
+
+#~ msgid "Horizontal views"
+#~ msgstr "Horizontale schermen"
+
+#~ msgid "Vertical views"
+#~ msgstr "Verticale schermen"
+
+#~ msgid "No split"
+#~ msgstr "Geen schermdeling"
+
+#~ msgid "Split View"
+#~ msgstr "Schermdeling"
+
+#~ msgid "Family Sheet"
+#~ msgstr "Familiepagina"
+
+#~ msgid ""
+#~ "Produces a family sheet showing full information about a person and his/"
+#~ "her partners and children."
+#~ msgstr ""
+#~ "Een familiepagina, waar de volledige informatie over een persoon en zijn/"
+#~ "haar partners en kinderen, aanmaken."
+
+#~ msgid "→ %s"
+#~ msgstr "→ %s"
+
+#~ msgid "Address (%(date)s): %(location)s"
+#~ msgstr "Adres (%(date)s): %(location)s"
+
+#~ msgid "Address: %(location)s"
+#~ msgstr "Adres: %(location)s"
+
+#~ msgid "; %(type)s: %(value)s"
+#~ msgstr ";%(type)s: %(value)s"
+
+#~ msgid "Source references:"
+#~ msgstr "Bronnenverwijzingen:"
+
+#~ msgid "%s: "
+#~ msgstr "%s: "
+
+#~ msgid ", page %s"
+#~ msgstr ", pagina %s"
+
+#~ msgid "Notes:"
+#~ msgstr "Opmerkingen:"
+
+#~ msgid "Center person"
+#~ msgstr "Centrale persoon"
+
+#~ msgid "The person whose partners and children are printed"
+#~ msgstr "De persoon waarvan de partners en de kinderen uitgeprint worden"
+
+#~ msgid "Print sheets for:"
+#~ msgstr "Pagina's uitdrukken voor:"
+
+#~ msgid "Center person only"
+#~ msgstr "Enkel de centrale persoon"
+
+#~ msgid "Center person and descendants in side branches"
+#~ msgstr "Centrale persoon en afstammelingen in zijtakken"
+
+#~ msgid "Center person and all descendants"
+#~ msgstr "Centrale  persoon en alle afstammelingen"
+
+#~ msgid "Print placeholders for missing information"
+#~ msgstr "Velden voor ontbrekende informatie voorzien"
+
+#~ msgid "The basic style used for the text display"
+#~ msgstr "De gebruikte basisstijl voor de tekstweergave"
+
+#~ msgid "The style used for the page key on the top"
+#~ msgstr "De gebruikte stijl voor de titel van de pagina"
+
+#~ msgid "The style used for names"
+#~ msgstr "De gebruikte stijl voor namen"
+
+#~ msgid "The style used for numbers"
+#~ msgstr "De gebruikte stijl voor getallen"
+
+#~ msgid "The style used for footnotes (notes and source references)"
+#~ msgstr ""
+#~ "De gebruikte stijl voor voetnoten (opmerkingen en bronnenverwijzingen)"
+
+#~ msgid "Image Metadata Gramplet"
+#~ msgstr "'Metabeeldgegevens'-gramplet"
+
+#~ msgid ""
+#~ "Enter text describing this image and who might be in the image.  It might "
+#~ "be best to enter a location for this image, especially if there is no GPS "
+#~ "Latitude/ Longitude information available."
+#~ msgstr ""
+#~ "Tekst die beschrijft wie er mogelijk op het beeld te zien is, ingeven. "
+#~ "Het is ook zinvol om een locatie in te vullen, zeker indien geen GPS "
+#~ "lengte/ breedte informatie beschikbaar is."
+
+#~ msgid "Active image"
+#~ msgstr "Actief beeld"
+
+#~ msgid "Photographer"
+#~ msgstr "Fotograaf"
+
+#~ msgid "Select Date"
+#~ msgstr "Datum kiezen"
+
+#~ msgid "Image Subject"
+#~ msgstr "Beeldonderwerp"
+
+#~ msgid "Lat. Ref"
+#~ msgstr "Brdt. Ref"
+
+#~ msgid "Long. Ref."
+#~ msgstr "Lngt. Ref."
+
+#~ msgid "Enter the name of the person who took this image."
+#~ msgstr "De naam van de persoon die het beeld maakte ingeven."
+
+#~ msgid ""
+#~ "Press the Select Date Button to bring up a calendar where you can choose "
+#~ "a date."
+#~ msgstr ""
+#~ "Druk op de 'kies datum' knop om een kalender te tonen waar u een datum "
+#~ "kunt selecteren."
+
+#~ msgid ""
+#~ "Enter the copyright information for the image.  Example: (C) 2010 Smith "
+#~ "and Wesson"
+#~ msgstr ""
+#~ "Vul de auteursrechtinformatie van het beeld in. Voorbeeld: (C) 2010  "
+#~ "Janneke en Mieke"
+
+#~ msgid ""
+#~ "Enter words that describe this image, separated by comma.\n"
+#~ "Example: Kids,house,dog,car ."
+#~ msgstr ""
+#~ "Vul woorden in die het beeld beschrijven, gebruik commaseparatie.\n"
+#~ "Voorbeeld: Kinderen,huis,hond,auto ."
+
+#~ msgid ""
+#~ "If using decimal format in Latitude, leave blank.  If using Degrees, "
+#~ "Minutes, Seconds, please enter either a "
+#~ msgstr ""
+#~ "Indien u het decimale formaat voor de breedtegraad gebruikt, niets "
+#~ "invullen. Bij gebruik van graden, minuten, seconden, vul dan ofwel een"
+
+#~ msgid " or "
+#~ msgstr " of "
+
+#~ msgid ""
+#~ "Enter the GPS Latitude as either Degrees, Minutes, Seconds or Decimal "
+#~ "formats."
+#~ msgstr ""
+#~ "GPS breedtegraad ofwel in graden, minuten en seconden ofwel in het "
+#~ "decimale formaten invullen."
+
+#~ msgid ""
+#~ "If using decimal format in Longitude, leave blank.  If using Degrees, "
+#~ "Minutes, Seconds, please enter either a "
+#~ msgstr ""
+#~ "Indien u het decimale formaat voor de lengtegraad gebruikt, niets "
+#~ "invullen. Bij gebruik van graden, minuten, seconden, vul dan ofwel een"
+
+#~ msgid ""
+#~ "Enter the GPS Longitude as either inDegrees, Minutes, Seconds or Decimal "
+#~ "formats."
+#~ msgstr ""
+#~ "Vul de GPS lengtegraad in, ofwel in graden, minuten en seconden ofwel in "
+#~ "het decimale formaat."
+
+#~ msgid "Convert GPS Coordinates"
+#~ msgstr "GPS-coördinaten omzetten"
+
+#~ msgid "Image metadata has been saved."
+#~ msgstr "De metabeeldgegevens zijn opgeslagen."
+
+#~ msgid ""
+#~ "The image file %s does NOT have write access/ permissions. If you have "
+#~ "access and rights to change the permissions, then please do it now."
+#~ msgstr ""
+#~ "Het beeldbestand %s heeft GEEN schrijf toegang/ rechten. Hebt u toch "
+#~ "toegang tot het bestand en kunt u de rechten aanpassen, doe dit dan nu."
+
+#~ msgid ""
+#~ "The image file %s does NOT have read access/ permissions. If you have "
+#~ "access and rights to change the permissions, then please do it now."
+#~ msgstr ""
+#~ "Het beeldbestand %s heeft GEEN lees toegang/ rechten. Hebt u toch toegang "
+#~ "tot het bestand en kunt u de rechten aanpassen, doe dit dan nu."
+
+#~ msgid ""
+#~ "The image file is missing.  Please select another image or edit the media "
+#~ "object to fix this problem."
+#~ msgstr ""
+#~ "Het beeldbestand ontbreekt. Een ander beeld kiezen of het media-object "
+#~ "bewerken om dit probleem op te lossen."
+
+#~ msgid "Provides a library for generic access to the database and gen.lib."
+#~ msgstr ""
+#~ "Een bibliotheek voor algemene toegang tot het gegevensbestand en 'gen."
+#~ "lib'."
+
+#~ msgid "Todo Report"
+#~ msgstr "'Nog te doen'-verslag"
+
+#~ msgid ""
+#~ "Produces a list of all the notes with a given marker along with the "
+#~ "records that it references, the Person, Family, Event, etc."
+#~ msgstr ""
+#~ "Een lijst van alle opmerkingen met een bepaalde aanduiding samen met alle "
+#~ "gegevens waarnaar verwezen wordt voor zowel personen, familie, "
+#~ "gebeurtenissen enz."
+
+# python-format
+#~ msgid "Report on Notes Marked %s"
+#~ msgstr "Verslag van de opmerkingen met aanduiding %s"
+
+# python-format
+#~ msgid "%(relationship_type)s on %(relationship_date)s"
+#~ msgstr "%(relationship_type)s op %(relationship_date)s"
+
+#~ msgid "date: "
+#~ msgstr "datum: "
+
+#~ msgid "place: "
+#~ msgstr "locatie: "
+
+#~ msgid "The marker type to use for the report"
+#~ msgstr "Het gebruikte aanduidingtype voor dit verslag"
+
+#~ msgid "Group by reference type"
+#~ msgstr "Per referentietype groeperen"
+
+#~ msgid "Group notes by Family, Person, Place, etc."
+#~ msgstr "Opmerkingen groeperen per famile, persoon, locatie, enz."
+
+#~ msgid "Timeline Pedigree"
+#~ msgstr "Tijdslijnstamboom"
+
+#~ msgid ""
+#~ "The view shows a timeline pedigree with ancestors and descendants of the "
+#~ "selected person"
+#~ msgstr ""
+#~ "Dit scherm toont een tijdslijnstamboom met voorouders en nakomelingen van "
+#~ "de geselecteerde persoon"
+
+#~ msgid "Timeline pedigree"
+#~ msgstr "Tijdslijnstamboom"
+
+#~ msgid "Order by timeline"
+#~ msgstr "Volgens tijdslijn rangschikken"
+
+#~ msgid "Show lifespan"
+#~ msgstr "Levensperiode tonen"
+
+#~ msgid "Mouse scroll direction"
+#~ msgstr "Richting waarin muis scrollt"
+
+#~ msgid "Top <-> Bottom"
+#~ msgstr "Boven <-> onder"
+
+#~ msgid "Left <-> Right"
+#~ msgstr "Links <-> rechts"
+
+#~ msgid "Number of descendants"
+#~ msgstr "Aantal afstammelingen"
+
+#~ msgid "Shows the number of descendants of the current person"
+#~ msgstr "Het aantal afstammelingen van de huidige persoon tonen"
+
+#~ msgid "Outlived"
+#~ msgstr "Overleefd"
+
+#~ msgid "Outlived = number of descendants who died while %s was still alive"
+#~ msgstr ""
+#~ "Overleefd = aantal afstammelingen die stierven terwijl %s nog in leven was"
+
+#~ msgid "Last Change Gramplet"
+#~ msgstr "'Recentste aanpassingen'-gramplet"
+
+#~ msgid "List the last ten person records that have been changed"
+#~ msgstr "Een lijst van de tien personen tonen die recent zijn aangepast"
+
+#~ msgid "Latest Changes"
+#~ msgstr "Laatste aanpassingen"
+
+#~ msgid "Last Change Report"
+#~ msgstr "Laatste aanpassingenverslag"
+
+#~ msgid "Report of the last records that have been changed"
+#~ msgstr "Verslag van de laatste gegevens die veranderd werden"
+
+#~ msgid "changed on"
+#~ msgstr "veranderd op"
+
+#~ msgid "People Changed"
+#~ msgstr "Personen aangepast"
+
+#~ msgid "Changed On"
+#~ msgstr "Veranderd op"
+
+#~ msgid "Families Changed"
+#~ msgstr "Families aangepast"
+
+#~ msgid "Family Surname"
+#~ msgstr "Familienaam"
+
+#~ msgid "%s and %s"
+#~ msgstr "%s en %s"
+
+#~ msgid "Events Changed"
+#~ msgstr "Gebeurtenissen aangepast"
+
+#~ msgid "Places Changed"
+#~ msgstr "Locaties aangepast"
+
+#~ msgid "Select From:"
+#~ msgstr "Kies uit:"
+
+#~ msgid "The style used for normal text"
+#~ msgstr "De stijl gebruikt voor de gewone tekst."
+
+#~ msgid "Python Gramplet"
+#~ msgstr "Python-Gramplet"
+
+#~ msgid "Python Shell"
+#~ msgstr "Python-shell"
+
+#~ msgid "Enter Python expressions"
+#~ msgstr "Python-uitdrukkingen invoeren"
+
+#~ msgid "Set Attribute"
+#~ msgstr "Kenmerk vastleggen"
+
+#~ msgid "Set an attribute to a given value."
+#~ msgstr "Een kenmerk een bepaalde waarde toekennen."
+
+#~ msgid "Person Filter"
+#~ msgstr "Persoonsfilter"
+
+#~ msgid "Attribute type to add or edit"
+#~ msgstr "Het kenmerktype dat toegevoegd of veranderd wordt"
+
+#~ msgid "Attribute value to add or edit"
+#~ msgstr "De kenmerkwaarde die toegevoegd of veranderd wordt"
+
+#~ msgid "Results"
+#~ msgstr "Resultaten"
+
+#~ msgid "Setting attributes..."
+#~ msgstr "Kenmerken worden aangepast..."
+
+#~ msgid ""
+#~ "Setting '%s' attributes to '%s'...\n"
+#~ "\n"
+#~ msgstr ""
+#~ "'%s' kenmerken worden aangepast naar '%s'...\n"
+#~ "\n"
+
+#~ msgid ""
+#~ "\n"
+#~ "Set %d '%s' attributes to '%s'\n"
+#~ msgstr ""
+#~ "\n"
+#~ "%d '%s' kenmerken veranderd naar '%s'\n"
+
+#~ msgid "Done!\n"
+#~ msgstr "OK!\n"
+
+#~ msgid "Beta"
+#~ msgstr "Beta"
+
+#~ msgid "Sets an attribute of a person to a given value."
+#~ msgstr "Een kenmerk van een persoon een bepaalde waarde toekennen."
+
+#~ msgid "SQLite Import"
+#~ msgstr "SQLite import"
+
+#~ msgid "SQLite is a common local database format"
+#~ msgstr "SQLite is een veel gebruikt lokaal gegevensbestandsformaat"
+
+#~ msgid "SQL import"
+#~ msgstr "SQL import"
+
+#~ msgid "Attach Source"
+#~ msgstr "Bron toevoegen"
+
+#~ msgid "Attaches a shared source to multiple objects."
+#~ msgstr "Een gedeelde bron toevoegen aan verschillende objecten."
+
+#~ msgid "Source type"
+#~ msgstr "Brontype"
+
+#~ msgid "New source"
+#~ msgstr "Nieuwe bron"
+
+#~ msgid "Existing source"
+#~ msgstr "Bestaande bron"
+
+#~ msgid "Select the type of source to attach"
+#~ msgstr "Het brontype kiezen dat toegevoegd wordt"
+
+#~ msgid "New Source Title"
+#~ msgstr "Nieuwe brontitel"
+
+#~ msgid "Text of source to attach"
+#~ msgstr "Brontekst die toegevoegd wordt"
+
+#~ msgid "Existing Source ID"
+#~ msgstr "Bestaande bron-ID"
+
+#~ msgid "ID of source to attach"
+#~ msgstr "ID van de bron die toegevoegd wordt"
+
+#~ msgid "Attaching sources...\n"
+#~ msgstr "Bronnen worden toegevoegd...\n"
+
+#~ msgid "Attaching sources..."
+#~ msgstr "Bronnen worden toegevoegd..."
+
+#~ msgid "Graph View"
+#~ msgstr "Grafiekscherm"
+
+#~ msgid "Dynamic graph of relations"
+#~ msgstr "Dynamische grafiek van de relaties"
+
+#~ msgid "Django Export"
+#~ msgstr "Django-export"
+
+#~ msgid "Django is a web framework working on a configured database"
+#~ msgstr ""
+#~ "Django is een webstructuur die draait op een geconfigureerde database"
+
+#~ msgid "Django options"
+#~ msgstr "Django-opties"
+
+#~ msgid "Django Import"
+#~ msgstr "Django-import"
+
 #~ msgid "DenominoViso"
 #~ msgstr "DenominoViso"
 
@@ -19057,9 +20042,6 @@ msgstr "Totaal aantal achternamen"
 
 #~ msgid "No Source"
 #~ msgstr "Geen bron"
-
-#~ msgid "Ancestor"
-#~ msgstr "Voorouder"
 
 #~ msgid "Descendant"
 #~ msgstr "Nakomeling"
@@ -19126,9 +20108,6 @@ msgstr "Totaal aantal achternamen"
 
 #~ msgid "Search"
 #~ msgstr "Zoeken"
-
-#~ msgid "in"
-#~ msgstr "in"
 
 #~ msgid "DenominoViso Options"
 #~ msgstr "DenominoViso-opties"
@@ -19204,592 +20183,254 @@ msgstr "Totaal aantal achternamen"
 #~ msgstr ""
 #~ "Al of niet de geboorte van kinderen in de gebeurtenissenlijst toevoegen."
 
-#~ msgid "Python Gramplet"
-#~ msgstr "Python-Gramplet"
+#~ msgid "Include death relatives"
+#~ msgstr "Overleden relaties toevoegen"
 
-#~ msgid "Python Shell"
-#~ msgstr "Python-shell"
+#, fuzzy
+#~ msgid ""
+#~ "Whether to include the death of relatives during the lifetime of person."
+#~ msgstr ""
+#~ "Al of niet de datums van verwanten [vader, moeder, echtgeno(o)t(e)] "
+#~ "toevoegen."
 
-#~ msgid "Enter Python expressions"
-#~ msgstr "Geef Python uitdrukkingen in"
-
-#~ msgid "Image Metadata Gramplet"
-#~ msgstr "Metabeeldgegevens-gramplet"
+#, fuzzy
+#~ msgid "Include witness note"
+#~ msgstr "Opmerkingsbronnen bijvoegen"
 
 #~ msgid ""
-#~ "Enter text describing this image and who might be in the image.  It might "
-#~ "be best to enter a location for this image, especially if there is no GPS "
-#~ "Latitude/ Longitude information available."
+#~ "Whether to include the note belonging to a witness (if the event_format "
+#~ "contains <witnesses>)"
 #~ msgstr ""
-#~ "Voeg een tekst bij die beschrijft wie er mogelijk op het beeld te zien "
-#~ "is. Het is ook zinvol om een locatie in te vullen, zeker indien geen GPS "
-#~ "Lengte/ Breedte informatie beschikbaar is."
+#~ "Al of niet de opmerkingen die tot de getuigen behoren, toevoegen (als "
+#~ "gebeurtenisformaat <getuigen> bevat)"
 
-#~ msgid "Active image"
-#~ msgstr "Actief beeld"
+#, fuzzy
+#~ msgid "Include Attributes"
+#~ msgstr "Kenmerken bijvoegen"
 
-#~ msgid "Photographer"
-#~ msgstr "Fotograaf"
+#, fuzzy
+#~ msgid "Whether to include a person's attributes"
+#~ msgstr "Al of niet kenmerken toevoegen."
 
-#~ msgid "Select Date"
-#~ msgstr "Kies datum"
+#, fuzzy
+#~ msgid "Include Addresses"
+#~ msgstr "Adressen bijvoegen"
 
-#~ msgid "Image Subject"
-#~ msgstr "Beeldonderwerp"
+#, fuzzy
+#~ msgid "Whether to include a person's addresses."
+#~ msgstr "Al of niet adressen toevoegen."
 
-#~ msgid "Lat. Ref"
-#~ msgstr "Brdt. Ref"
+#~ msgid "Include Note"
+#~ msgstr "Opmerking bijvoegen"
 
-#~ msgid "Long. Ref."
-#~ msgstr "Lngt. Ref."
+#~ msgid "Whether to include a person's note."
+#~ msgstr "Al of niet opmerkingen van de persoon toevoegen."
 
-#~ msgid "Enter the name of the person who took this image."
-#~ msgstr "Geef de naam van de persoon die het beeld maakte, in."
+#, fuzzy
+#~ msgid "Include URL"
+#~ msgstr "URLs bijvoegen"
+
+#, fuzzy
+#~ msgid "Whether to include a person's internet address."
+#~ msgstr "Al of niet andere namen toevoegen."
+
+#, fuzzy
+#~ msgid "Include URL description"
+#~ msgstr "Gebeurtenisbeschrijvingen toevoegen"
+
+#, fuzzy
+#~ msgid "Whether to include the description of the first URL"
+#~ msgstr "Al of niet bibliotheekpagina's toevoegen"
+
+#~ msgid "Include Sources"
+#~ msgstr "Bronnen bijvoegen"
+
+#, fuzzy
+#~ msgid "Whether to include a person's sources."
+#~ msgstr "Al of niet de media over de bronnen toevoegen."
+
+#~ msgid "Image Options"
+#~ msgstr "Beeldopties"
+
+#, fuzzy
+#~ msgid "Include Photos/Images from Gallery"
+#~ msgstr "Foto's/Afbeeldingen uit de galerie bijvoegen"
+
+#, fuzzy
+#~ msgid "Whether to include images"
+#~ msgstr "Al of niet afbeeldingen toevoegen."
+
+#~ msgid "Copy Image"
+#~ msgstr "Afbeelding kopiëren"
+
+#~ msgid "Copy the images to a designated directory."
+#~ msgstr "De beelden naar een bepaalde map kopiëren."
+
+#, fuzzy
+#~ msgid "Images with Attribute"
+#~ msgstr "Nieuw kenmerk"
+
+#, fuzzy
+#~ msgid "Include Image source references"
+#~ msgstr "Al of niet bronverwijzingen toevoegen."
+
+#, fuzzy
+#~ msgid "Whether to include references for images"
+#~ msgstr "Al of niet gebeurtenissen van de ouders toevoegen."
+
+#, fuzzy
+#~ msgid "Source reference attribute"
+#~ msgstr "Opmerking over een bronverwijzing"
+
+#~ msgid "Style Options"
+#~ msgstr "Stijlopties"
+
+#, fuzzy
+#~ msgid "Color of active person:"
+#~ msgstr "Geen actieve persoon"
+
+#~ msgid "Color of found persons:"
+#~ msgstr "Kleur voor gevonden personen:"
+
+#, fuzzy
+#~ msgid "Color of male persons:"
+#~ msgstr "Kan persoon niet opslaan"
+
+#, fuzzy
+#~ msgid "Mouse event handler"
+#~ msgstr "Sorteer gebeurtenisveranderingen"
+
+#, fuzzy
+#~ msgid "Birth relationship linestyle"
+#~ msgstr "Relatie bewerken"
+
+#, fuzzy
+#~ msgid "Source confidence color"
+#~ msgstr "Bronverwijzing bewerken"
+
+#~ msgid "Event format"
+#~ msgstr "Gebeurtenisformaat"
+
+#~ msgid "at"
+#~ msgstr "te"
+
+#~ msgid "Source format"
+#~ msgstr "Bronformaat"
+
+#, fuzzy
+#~ msgid "restricted to:"
+#~ msgstr "geschat"
+
+# dit is een soort titel in een file-selector
+#, fuzzy
+#~ msgid "to directory:"
+#~ msgstr "Selecteer media-objectmap"
+
+#~ msgid "Save images in ..."
+#~ msgstr "Beelden opslaan in ..."
+
+#~ msgid "should be"
+#~ msgstr "zou moeten zijn"
+
+#, fuzzy
+#~ msgid "Give a filename ..."
+#~ msgstr "Voornaam"
+
+#~ msgid "Relation type"
+#~ msgstr "Relatietype"
+
+#~ msgid "Use dashed linestyle"
+#~ msgstr "Streepjeslijn gebruiken"
+
+#, fuzzy
+#~ msgid "Dash length"
+#~ msgstr "Sterfmaand"
+
+#~ msgid "Calculates estimated dates for birth and death."
+#~ msgstr "Bereken geschatte datums voor geboorte en overlijden."
+
+# niet/geen
+#~ msgid "done!\n"
+#~ msgstr "gedaan!\n"
+
+#~ msgid "Removed date estimates"
+#~ msgstr "De geschatte datums verwijderen"
 
 #~ msgid ""
-#~ "Press the Select Date Button to bring up a calendar where you can choose "
-#~ "a date."
-#~ msgstr ""
-#~ "Druk op de 'kies datumknop' om een kalender te tonen waar u een kunt op "
-#~ "selecteren."
-
-#~ msgid ""
-#~ "Enter the copyright information for the image.  Example: (C) 2010 Smith "
-#~ "and Wesson"
-#~ msgstr ""
-#~ "Vul de auteursrechtinformatie van het beeld in. Voorbeeld: (C) 2010  "
-#~ "Janneke en Mieke"
-
-#~ msgid ""
-#~ "Enter words that describe this image, separated by comma.\n"
-#~ "Example: Kids,house,dog,car ."
-#~ msgstr ""
-#~ "Vul woorden in die het beeld beschrijven. gebruik commaseparatie.\n"
-#~ "Voorbeeld: Kinderen,huis,hond,auto ."
-
-#~ msgid " or "
-#~ msgstr " of "
-
-#~ msgid ""
-#~ "Enter the GPS Latitude as either Degrees, Minutes, Seconds or Decimal "
-#~ "formats."
-#~ msgstr ""
-#~ "Vul de GPS breedtegraad in ofwel in graden, minuten en seconden ofwel in "
-#~ "het decimale formaat."
-
-#~ msgid ""
-#~ "If using decimal format in Longitude, leave blank.  If using Degrees, "
-#~ "Minutes, Seconds, please enter either a "
-#~ msgstr ""
-#~ "Gebruikt u het decimale formaat voor de lengtegraad, vul dan niets in. "
-#~ "Gebruikt u graden, minuten, seconden, vul dan ofwel een "
-
-#~ msgid ""
-#~ "Enter the GPS Longitude as either inDegrees, Minutes, Seconds or Decimal "
-#~ "formats."
-#~ msgstr ""
-#~ "Vul de GPS lengtegraad in, ofwel in graden, minuten en seconden ofwel in "
-#~ "het decimale formaat."
-
-#~ msgid "Convert GPS Coordinates"
-#~ msgstr "GPS-coordinaten omzetten"
-
-#~ msgid "Image metadata has been saved."
-#~ msgstr "De metabeeldgegevens zijn opgeslagen."
-
-#~ msgid ""
-#~ "The image file %s does NOT have write access/ permissions. If you have "
-#~ "access and rights to change the permissions, then please do it now."
-#~ msgstr ""
-#~ "Het beeldbestand %s heeft GEEN schrijf toegang/ rechten. Hebt u toch "
-#~ "toegang tot en kunt u de rechten aanpassen, doe dit dan nu."
-
-#~ msgid ""
-#~ "The image file %s does NOT have read access/ permissions. If you have "
-#~ "access and rights to change the permissions, then please do it now."
-#~ msgstr ""
-#~ "Het beeldbestand %s heeft GEEN lees toegang/ rechten. Hebt u toch toegang "
-#~ "tot en kunt u de rechten aanpassen, doe dit dan nu."
-
-#~ msgid ""
-#~ "The image file is missing.  Please select another image or edit the media "
-#~ "object to fix this problem."
-#~ msgstr ""
-#~ "Het beeldbestand ontbreekt. Kies een ander beeld of bewerk het media-"
-#~ "object om dit probleem op te lossen."
-
-#~ msgid "Raw Export"
-#~ msgstr "Ruwe export"
-
-#~ msgid "This is a raw python object dump"
-#~ msgstr "Dit is een ruwe python object dump"
-
-#~ msgid "Raw options"
-#~ msgstr "Opties"
-
-#~ msgid "Django Export"
-#~ msgstr "Django-export"
-
-#~ msgid "Django is a web framework working on a configured database"
-#~ msgstr ""
-#~ "Django is een webstructuur die draait op een geconfigureerde database"
-
-#~ msgid "Django options"
-#~ msgstr "Django opties"
-
-#~ msgid "Django Import"
-#~ msgstr "Django import"
-
-#~ msgid "Data Entry Gramplet"
-#~ msgstr "Datumingave-gramplet"
-
-#~ msgid "Data Entry"
-#~ msgstr "Datumingave"
-
-#~ msgid "Surname, Given"
-#~ msgstr "Achternaam, voornaam"
-
-#~ msgid "New person"
-#~ msgstr "Nieuwe persoon"
-
-#~ msgid "Add relation"
-#~ msgstr "Realtie toevoegen"
-
-#~ msgid "No relation to active person"
-#~ msgstr "Geen relatie met de actieve persoon"
-
-#~ msgid "Add as a Parent"
-#~ msgstr "Als een ouder toevoegen"
-
-#~ msgid "Add as a Spouse"
-#~ msgstr "Als een echtgeno(o)t(e) toevoegen"
-
-#~ msgid "Add as a Sibling"
-#~ msgstr "Als een broer/zus toevoegen"
-
-#~ msgid "Add as a Child"
-#~ msgstr "Als een kind toevoegen"
-
-#~ msgid "Copy Active Data"
-#~ msgstr "Kopieer de actieve gegevens"
-
-#~ msgid "Gramplet Data Edit: %s"
-#~ msgstr "Gramplet-gegevens bewerken: %s"
-
-#~ msgid "Please provide a name."
-#~ msgstr "Geef een naam op."
-
-#~ msgid "Can't add new person."
-#~ msgstr "Kan de nieuwe persoon niet toevoegen."
-
-#~ msgid "Please set an active person."
-#~ msgstr "Kies een actieve persoon."
-
-#~ msgid "Can't add new person as a parent."
-#~ msgstr "Kan de nieuwe persoon niet als ouder toevoegen."
-
-#~ msgid "Please set the new person's gender."
-#~ msgstr "Kies een geslacht voor de nieuwe persoon."
-
-#~ msgid "Can't add new person as a spouse."
-#~ msgstr "Kan de nieuwe persoon niet als echtgeno(o)t(e) toevoegen."
-
-#~ msgid "Can't add new person as a sibling."
-#~ msgstr "Kan de nieuwe persoon niet als broer/zus toevoegen."
-
-#~ msgid "Can't add new person as a child."
-#~ msgstr "Kan de nieuwe persoon niet als kind toevoegen."
-
-#~ msgid "Please set gender on Active or new person."
-#~ msgstr "Kies een gesclacht voor actieve of nieuwe persoon."
-
-#~ msgid "Same genders on Active and new person."
-#~ msgstr "Zelfde geslacht voor actieve en nieuwe persoon."
-
-#~ msgid "Please set gender on Active person."
-#~ msgstr "Kies een geslacht voor de actieve persoon."
-
-#~ msgid "Gramplet Data Entry: %s"
-#~ msgstr "Gramplet-gegevens invoer: %s"
-
-#~ msgid "Headline News Gramplet"
-#~ msgstr "Belangrijkste nieuws-gramplet"
-
-#~ msgid "Headline News"
-#~ msgstr "Het belangrijkste nieuws"
-
-#~ msgid "Read Gramps headline news"
-#~ msgstr "Lees het belangrijkste Gramps-nieuws"
-
-#~ msgid "Graph View"
-#~ msgstr "Grafiekscherm"
-
-#~ msgid "Dynamic graph of relations"
-#~ msgstr "Dynamische grafiek van de relaties"
-
-#~ msgid "Relationship Split View"
-#~ msgstr "Relatieschermdeling"
-
-#~ msgid "Event Split View"
-#~ msgstr "Gebeurtenisschermdeling"
-
-#~ msgid "Family Split View"
-#~ msgstr "Familieschermdeling"
-
-#~ msgid "Fan Chart Split View"
-#~ msgstr "Waaiergrafiekschermdeling"
-
-#~ msgid "Geo Split View"
-#~ msgstr "Geoschermdeling"
-
-#~ msgid "Html Split View"
-#~ msgstr "Html-schermdeling"
-
-#~ msgid "Media Split View"
-#~ msgstr "Mediaschermdeling"
-
-#~ msgid "Note Split View"
-#~ msgstr "Opmerkingschermdeling"
-
-#~ msgid "Pedigree Split View"
-#~ msgstr "Stamboomschermdeling"
-
-#~ msgid "Person List Split View"
-#~ msgstr "Persoonslijstschermdeling"
-
-#~ msgid "Person Tree Split View"
-#~ msgstr "Persoonsboomschermdeling"
-
-#~ msgid "Place List Split View"
-#~ msgstr "Locatielijstschermdeling"
-
-#~ msgid "Place Tree Split View"
-#~ msgstr "Locatieboomschermdeling"
-
-#~ msgid "Repository Split View"
-#~ msgstr "Bibliotheekschermdeling"
-
-#~ msgid "Source Split View"
-#~ msgstr "Bronschermdeling"
-
-#~ msgid "Splitviews"
-#~ msgstr "Gedeelde schermen"
-
-#~ msgid "%s with a Gramplet Pane"
-#~ msgstr "%s met een Gramplet-zijbalk"
-
-#~ msgid "Add a gramplet"
-#~ msgstr "Een Gramplet toevoegen"
-
-#~ msgid "Restore a gramplet"
-#~ msgstr "Een Gramplet herstellen"
-
-#~ msgid "Split view"
-#~ msgstr "Gedeeld scherm"
-
-#~ msgid "Horizontal views"
-#~ msgstr "Horizontale schermen"
-
-#~ msgid "Vertical views"
-#~ msgstr "Vertikale schermen"
-
-#~ msgid "No split"
-#~ msgstr "Geen schermdeling"
-
-#~ msgid "Split View"
-#~ msgstr "Schermdeling"
-
-#~ msgid "Deep Connections Gramplet"
-#~ msgstr "'Verre relaties'-gramplet"
-
-#~ msgid "Deep Connections"
-#~ msgstr "Verre relaties"
-
-#~ msgid "Pause"
-#~ msgstr "Pause"
-
-#~ msgid "sibling"
-#~ msgstr "broer of zus"
-
-#~ msgid ""
+#~ "Selecting... \n"
 #~ "\n"
-#~ "   who is a %s of "
 #~ msgstr ""
+#~ "Selecteren...\n"
 #~ "\n"
-#~ "   wie is een %s van "
 
-#~ msgid "No Active Person set."
-#~ msgstr "Geen actieve persoon gekozen."
+#~ msgid "Selecting..."
+#~ msgstr "Selecteren..."
 
-#~ msgid "Looking for relationship between\n"
-#~ msgstr "Nakijken van de relatie tussen\n"
+#~ msgid "Add birth and death events"
+#~ msgstr "Geboorte- en overlijdensgebeurtenissen toevoegen"
 
-#~ msgid "  <b>%s</b> (Home Person) and\n"
-#~ msgstr "  <b>%s</b> (basispersoon) en\n"
+#~ msgid "Add birth event"
+#~ msgstr "Geboortegebeurtenis toevoegen"
 
-#~ msgid "  <b>%s</b> (Active Person)...\n"
-#~ msgstr "  <b>%s</b> (actieve persoon)...\n"
+#~ msgid "Add death event"
+#~ msgstr "Overlijdensgebeurtenis toevoegen"
 
-#~ msgid ""
-#~ "Found relation #%d: \n"
-#~ "   "
+#~ msgid "No events to be added."
+#~ msgstr "Er hoeven geen gebeurtenissen toegevoegd te worden."
+
+#~ msgid "Selecting... "
+#~ msgstr "Selecteren... "
+
+#~ msgid "Adding events '%s'..."
+#~ msgstr "Gebeurtenissen toevoegen '%s'..."
+
+#~ msgid "Added birth event based on %(evidence)s, from %(name)s"
 #~ msgstr ""
-#~ "Relatie gevonden#%d: \n"
-#~ "   "
+#~ "Voegde geboortegebeurtenis toe gebaseerd op %(evidence)s, van %(name)s"
 
-#~ msgid ""
-#~ "Paused.\n"
-#~ "Press Continue to search for additional relations.\n"
+#~ msgid "Added birth event based on %s"
+#~ msgstr "Voegde geboortegebeurtenis toe gebaseerd op %s"
+
+#~ msgid "Estimated birth date"
+#~ msgstr "Geschatte geboortedatum"
+
+#~ msgid "Added death event based on %(evidence)s, from %(person)s"
 #~ msgstr ""
-#~ "Gestopt.\n"
-#~ "Druk verder gaan om naar bijkomende relaties te zoeken.\n"
+#~ "Voegde overlijdensgebeurtenis toe gebaseerd op %(evidence)s, van %(person)"
+#~ "s"
 
-#~ msgid ""
-#~ "\n"
-#~ "Search completed. %d relations found."
-#~ msgstr ""
-#~ "\n"
-#~ "Het zoeken is gedaan. er zijn %d relaties gevonden."
+#~ msgid "Added death event based on %s"
+#~ msgstr "Voegde overlijdensgebeurtenis toe gebaseerd op %s"
 
-#~ msgid "SQLite Import"
-#~ msgstr "SQLite import"
+#~ msgid "Estimated death date"
+#~ msgstr "Geschatte overlijdensdatum"
 
-#~ msgid "SQLite is a common local database format"
-#~ msgstr "SQLite is een veel gebruikt lokaal gegevensbestandsformaat"
+#~ msgid " Done! Committing..."
+#~ msgstr " OK! Opgeslagen..."
 
-#~ msgid "SQL import"
-#~ msgstr "SQL import"
+#~ msgid "Add date estimates"
+#~ msgstr "Voeg datumschattingen toe"
 
-#~ msgid "Set Attribute"
-#~ msgstr "Bepaal kenmerk"
+#~ msgid "Added %d events."
+#~ msgstr "%d gebeurtenissen toegevoegd."
 
-#~ msgid "Set an attribute to a given value."
-#~ msgstr "Geef een kenmerk een bepaalde waarde."
+#~ msgid "Estimated date"
+#~ msgstr "Geschatte datum"
 
-#~ msgid "Attribute type to add or edit"
-#~ msgstr "Het kenmerktype dat toegevoegd of veranderd wordt"
+#~ msgid "Whether to include a link to the home person"
+#~ msgstr "Al of niet een verwijzing naar de basispersoon toevoegen"
 
-#~ msgid "Attribute value to add or edit"
-#~ msgstr "De kenmerkwaarde die toegevoegd of veranderd wordt"
+#~ msgid "Download page note"
+#~ msgstr "Opmerkingenpagina downloaden"
 
-#~ msgid "Setting attributes..."
-#~ msgstr "Kenmerken worden aangepast..."
+#~ msgid "A note to be used on the download page"
+#~ msgstr "Een opmerking te gebruiken op de download-pagina"
 
-#~ msgid ""
-#~ "Setting '%s' attributes to '%s'...\n"
-#~ "\n"
-#~ msgstr "'%s' kenmerken worden aangepast naar '%s'...\n"
+#~ msgid "Last modified"
+#~ msgstr "Laatst veranderd op"
 
-#~ msgid ""
-#~ "\n"
-#~ "Set %d '%s' attributes to '%s'\n"
-#~ msgstr ""
-#~ "\n"
-#~ "%d '%s' kenmerken veranderd naar '%s'\n"
-
-#~ msgid "Sets an attribute of a person to a given value."
-#~ msgstr "Geef een kenmerk van een persoon een bepaalde waarde."
-
-#~ msgid "GoogleEarth"
-#~ msgstr "GoogleEarth"
-
-#~ msgid "Creates data file for GoogleEarth and opens it"
-#~ msgstr ""
-#~ "Maakt een gegevensbestand aan voor 'GoogleEarth' en opent dit bestand"
-
-#~ msgid "No place description"
-#~ msgstr "Geen plaatsbeschrijving"
-
-#~ msgid "GoogleEarth not installed!"
-#~ msgstr "GoogleEarth is niet geinstalleeerd!"
-
-#~ msgid ""
-#~ "Create kmz/kml file ''%s''\n"
-#~ "in user directory ''%s''?"
-#~ msgstr ""
-#~ "Een 'kmz/kml'-bestand ''%s''\n"
-#~ "in gebruikersmap ''%s'' aanmaken?"
-
-#~ msgid "Failure writing to %s"
-#~ msgstr "Foutmelding geschreven naar %s"
-
-#~ msgid "Directory does not exist"
-#~ msgstr "Map bestaat niet"
-
-#~ msgid "GoogleEarth file exists!"
-#~ msgstr "GoogleEarth-bestand bestaat!"
-
-#~ msgid ""
-#~ "Overwrite kmz/kml file ''%s''\n"
-#~ "in user home directory ''%s''?"
-#~ msgstr ""
-#~ "Kmz/kml-bestand ''%s''\n"
-#~ "in gebruikersthuismap ''%s'' overschrijven?"
-
-#~ msgid "Order"
-#~ msgstr "Volgorde"
-
-#~ msgid "Census Gramplet"
-#~ msgstr "Volkstelling-gramplet"
-
-#~ msgid "Census details for: "
-#~ msgstr "Volktellingdetails voor:"
-
-#~ msgid "No active person set."
-#~ msgstr "Geen actieve persoon bepaald."
-
-#~ msgid "Census: %s"
-#~ msgstr "Volkstelling: %s"
-
-#~ msgid "New Census"
-#~ msgstr "Nieuwe volkstelling"
-
-#~ msgid "Edit Census"
-#~ msgstr "Volkstelling bewerken"
-
-#~ msgid "Source:"
-#~ msgstr "Bron:"
-
-#~ msgid "Reference:"
-#~ msgstr "Verwijzing:"
-
-#~ msgid "Cannot add a person to this census."
-#~ msgstr "Kan geen persoon toevoegen aan deze volkstelling."
-
-#~ msgid "First select a census from the drop-down list."
-#~ msgstr "Selecteer eerst een volkstelling uit de lijst."
-
-#~ msgid "Census Report"
-#~ msgstr "Volkstellingsverslag"
-
-#~ msgid "Report of census events for a person."
-#~ msgstr "Verslag van de volkstellinggebeurtenissen van een persoon."
-
-#~ msgid "Census Report for %s"
-#~ msgstr "Volkstellingsverslag van %s"
-
-#~ msgid "Source Reference:"
-#~ msgstr "Bronverwijzing:"
-
-#~ msgid "Census Selection"
-#~ msgstr "Keuze volkstelling"
-
-#~ msgid "By Person"
-#~ msgstr "Volgens peroon"
-
-#~ msgid "By Source"
-#~ msgstr "Volgens bron"
-
-#~ msgid "By Person and Source"
-#~ msgstr "Volgens persson en bron"
-
-#~ msgid "All Census records"
-#~ msgstr "Alle volkstellingsgebeurtenissen"
-
-#~ msgid "The type of report"
-#~ msgstr "Het verslagstype"
-
-#~ msgid "The selected person for the report."
-#~ msgstr "De geselecteerde persson voor het verslag."
-
-#~ msgid "Page break after each census."
-#~ msgstr "Een  nieuwe pagina voor elke volkstelling."
-
-#~ msgid "Start a new page after each census."
-#~ msgstr "Begin een nieuwe pagina na iedere volkstelling."
-
-#~ msgid "The style used for names."
-#~ msgstr "De gebruikte stijl voor de namen."
-
-#~ msgid "The style used for column headings."
-#~ msgstr "De gebruikte stijl voor de kolomhoofdingen."
-
-#~ msgid "The default text style."
-#~ msgstr "De standaard tekststijl."
-
-#~ msgid "Arrived since"
-#~ msgstr "Aangekomen sinds"
-
-#~ msgid "At Home"
-#~ msgstr "Thuis"
-
-#~ msgid "Can read and write"
-#~ msgstr "Kan lezen en schrijven"
-
-#~ msgid "Children Died"
-#~ msgstr "Kinderen gestorven"
-
-#~ msgid "Children Living"
-#~ msgstr "Kinderen nog in leven"
-
-#~ msgid "Children Total"
-#~ msgstr "Totaal aantal kinderen"
-
-#~ msgid "City or Borough"
-#~ msgstr "Stad of gemeente"
-
-#~ msgid "City or Municipal Borough"
-#~ msgstr "Stad of kiesdistrict"
-
-#~ msgid "Civil Parish"
-#~ msgstr "Parochie"
-
-#~ msgid "Comments"
-#~ msgstr "Kommentaar"
-
-#~ msgid "Condition"
-#~ msgstr "Conditie"
-
-#~ msgid "Date of birth"
-#~ msgstr "Geboortedatum"
-
-#~ msgid "Employed"
-#~ msgstr "Werknemer"
-
-#~ msgid "Employer"
-#~ msgstr "Werkgever"
-
-#~ msgid "Military"
-#~ msgstr "Militair"
-
-#~ msgid "Nationality"
-#~ msgstr "Nationaliteit"
-
-#~ msgid "Neither"
-#~ msgstr "Noch"
-
-#~ msgid "Neither Employer nor Employed"
-#~ msgstr "Geen werkgever noch werkend"
-
-#~ msgid "Relation"
-#~ msgstr "Relatie"
-
-#~ msgid "Taxes"
-#~ msgstr "Belastingen"
-
-#~ msgid "Town"
-#~ msgstr "Stad"
-
-#~ msgid "Type of roof"
-#~ msgstr "Soort dak"
-
-#~ msgid "Village"
-#~ msgstr "Dorp"
-
-#~ msgid "Where Born"
-#~ msgstr "Waar geboren"
-
-#~ msgid "Work Type"
-#~ msgstr "Werktype"
-
-#~ msgid "Working at Home"
-#~ msgstr "Werkt thuis"
-
-#~ msgid "Year of birth"
-#~ msgstr "Geboortejaar"
-
-#~ msgid "Years Married"
-#~ msgstr "Aantal jaren getrouwd"
+#~ msgid "Matches people with a certain number of items in the source"
+#~ msgstr "Vindt personen met een bepaald aantal items in de bron"
 
 #~ msgid "Show Repository Reference"
 #~ msgstr "Toon bibliotheekreferentie"

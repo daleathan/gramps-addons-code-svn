@@ -37,7 +37,7 @@ msgstr ""
 "Project-Id-Version: gramps\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-02-24 17:03+0100\n"
-"PO-Revision-Date: 2010-04-13 13:47+0100\n"
+"PO-Revision-Date: 2010-05-12 18:03+0100\n"
 "Last-Translator: Erik De Richter <frederik.de.richter@pandora.be>\n"
 "Language-Team: nederlands <frederik.de.richter@googlemail.com>\n"
 "MIME-Version: 1.0\n"
@@ -52,8 +52,14 @@ msgid "DenominoViso"
 msgstr "DenominoViso"
 
 #: DenominoViso/DenominoViso.gpr.py:18
-msgid "Generates a web (XHTML) page with a graphical representation of ancestors/descendants (SVG) where details about individuals become visible upon mouse-events."
-msgstr "Maakt een webpagina (XHTML) aan met een grafische voorstelling van de voorouders/nakomelingen (SVG). Persoonsdetails worden zichtbaar door met de muis te bewegen."
+msgid ""
+"Generates a web (XHTML) page with a graphical representation of ancestors/"
+"descendants (SVG) where details about individuals become visible upon mouse-"
+"events."
+msgstr ""
+"Webpagina (XHTML) met een grafische voorstelling van de "
+"voorouders/nakomelingen (SVG) aanmaken. Persoonsdetails worden zichtbaar door met de "
+"muis te bewegen."
 
 #: DenominoViso/DenominoViso.py:167
 msgid "No Source"
@@ -103,65 +109,48 @@ msgstr "van boven naar beneden"
 msgid "bottom to top"
 msgstr "van beneden naar boven"
 
-#: DenominoViso/DenominoViso.py:287
-#: DenominoViso/DenominoViso.py:962
-#: DenominoViso/DenominoViso.py:1244
-#: DenominoViso/DenominoViso.py:2722
+#: DenominoViso/DenominoViso.py:287 DenominoViso/DenominoViso.py:962
+#: DenominoViso/DenominoViso.py:1244 DenominoViso/DenominoViso.py:2722
 msgid "type"
 msgstr "type"
 
-#: DenominoViso/DenominoViso.py:288
-#: DenominoViso/DenominoViso.py:961
-#: DenominoViso/DenominoViso.py:1021
-#: DenominoViso/DenominoViso.py:1244
+#: DenominoViso/DenominoViso.py:288 DenominoViso/DenominoViso.py:961
+#: DenominoViso/DenominoViso.py:1021 DenominoViso/DenominoViso.py:1244
 #: DenominoViso/DenominoViso.py:2721
 msgid "role"
 msgstr "rol"
 
-#: DenominoViso/DenominoViso.py:289
-#: DenominoViso/DenominoViso.py:961
-#: DenominoViso/DenominoViso.py:1026
-#: DenominoViso/DenominoViso.py:1244
+#: DenominoViso/DenominoViso.py:289 DenominoViso/DenominoViso.py:961
+#: DenominoViso/DenominoViso.py:1026 DenominoViso/DenominoViso.py:1244
 #: DenominoViso/DenominoViso.py:2720
 msgid "date"
 msgstr "datum"
 
-#: DenominoViso/DenominoViso.py:290
-#: DenominoViso/DenominoViso.py:961
-#: DenominoViso/DenominoViso.py:1032
-#: DenominoViso/DenominoViso.py:1245
+#: DenominoViso/DenominoViso.py:290 DenominoViso/DenominoViso.py:961
+#: DenominoViso/DenominoViso.py:1032 DenominoViso/DenominoViso.py:1245
 #: DenominoViso/DenominoViso.py:2724
 msgid "place"
 msgstr "locatie"
 
-#: DenominoViso/DenominoViso.py:291
-#: DenominoViso/DenominoViso.py:962
-#: DenominoViso/DenominoViso.py:1041
-#: DenominoViso/DenominoViso.py:1245
+#: DenominoViso/DenominoViso.py:291 DenominoViso/DenominoViso.py:962
+#: DenominoViso/DenominoViso.py:1041 DenominoViso/DenominoViso.py:1245
 #: DenominoViso/DenominoViso.py:2723
 msgid "description"
 msgstr "beschrijving"
 
-#: DenominoViso/DenominoViso.py:292
-#: DenominoViso/DenominoViso.py:963
-#: DenominoViso/DenominoViso.py:1048
-#: DenominoViso/DenominoViso.py:1246
+#: DenominoViso/DenominoViso.py:292 DenominoViso/DenominoViso.py:963
+#: DenominoViso/DenominoViso.py:1048 DenominoViso/DenominoViso.py:1246
 msgid "witnesses"
 msgstr "getuigen"
 
-#: DenominoViso/DenominoViso.py:293
-#: DenominoViso/DenominoViso.py:310
-#: DenominoViso/DenominoViso.py:314
-#: DenominoViso/DenominoViso.py:963
-#: DenominoViso/DenominoViso.py:1053
-#: DenominoViso/DenominoViso.py:1246
-#: DenominoViso/DenominoViso.py:1342
-#: DenominoViso/DenominoViso.py:1417
+#: DenominoViso/DenominoViso.py:293 DenominoViso/DenominoViso.py:310
+#: DenominoViso/DenominoViso.py:314 DenominoViso/DenominoViso.py:963
+#: DenominoViso/DenominoViso.py:1053 DenominoViso/DenominoViso.py:1246
+#: DenominoViso/DenominoViso.py:1342 DenominoViso/DenominoViso.py:1417
 msgid "source"
 msgstr "bron"
 
-#: DenominoViso/DenominoViso.py:363
-#: DenominoViso/DenominoViso.py:2489
+#: DenominoViso/DenominoViso.py:363 DenominoViso/DenominoViso.py:2489
 #, python-format
 msgid "Failure writing %s"
 msgstr "Schrijven van %s mislukt"
@@ -195,8 +184,7 @@ msgstr "Opmerkingen"
 msgid "Sources"
 msgstr "Bronnen"
 
-#: DenominoViso/DenominoViso.py:1548
-#: DenominoViso/DenominoViso.py:2728
+#: DenominoViso/DenominoViso.py:1548 DenominoViso/DenominoViso.py:2728
 msgid "title"
 msgstr "titel"
 
@@ -314,8 +302,12 @@ msgid "Closing remarks"
 msgstr "Slotopmerkingen"
 
 #: DenominoViso/DenominoViso.py:2574
-msgid "List of strings, free text added at the bottom, for example for a copyright notice."
-msgstr "Tekenreeksen, vrije tekst onderaan toegevoegd, voor bijvoorbeeld een opmerking over het kopieerrecht."
+msgid ""
+"List of strings, free text added at the bottom, for example for a copyright "
+"notice."
+msgstr ""
+"Tekenreeksen, vrije tekst onderaan toegevoegd, voor bijvoorbeeld een "
+"opmerking over het kopieerrecht."
 
 #: DenominoViso/DenominoViso.py:2577
 msgid "Include Options"
@@ -343,45 +335,46 @@ msgstr "Geboorte kinderen toevoegen"
 
 #: DenominoViso/DenominoViso.py:2595
 msgid "Whether to include the birth of children in the list of events."
-msgstr "Al of niet de geboorte van kinderen in de gebeurtenissenlijst toevoegen."
+msgstr ""
+"Al of niet de geboorte van kinderen in de gebeurtenissenlijst toevoegen."
 
 #: DenominoViso/DenominoViso.py:2598
 msgid "Include death relatives"
 msgstr "Overleden relaties toevoegen"
 
 #: DenominoViso/DenominoViso.py:2599
-#, fuzzy
-msgid "Whether to include the death of relatives during the lifetime of person."
-msgstr "Al of niet de datums van verwanten [vader, moeder, echtgeno(o)t(e)] toevoegen."
+msgid ""
+"Whether to include the death of relatives during the lifetime of person."
+msgstr ""
+"Al of niet het overlijden van verwanten tijdens het leven van de persoon toevoegen."
 
 #: DenominoViso/DenominoViso.py:2602
-#, fuzzy
 msgid "Include witness note"
-msgstr "Opmerkingsbronnen bijvoegen"
+msgstr "Getuigenopmerkingen bijvoegen"
 
 #: DenominoViso/DenominoViso.py:2603
-msgid "Whether to include the note belonging to a witness (if the event_format contains <witnesses>)"
-msgstr "Al of niet de opmerkingen die tot de getuigen behoren, toevoegen (als gebeurtenisformaat <getuigen> bevat)"
+msgid ""
+"Whether to include the note belonging to a witness (if the event_format "
+"contains <witnesses>)"
+msgstr ""
+"Al of niet de opmerkingen die tot de getuigen behoren, toevoegen (als "
+"gebeurtenisformaat <getuigen> bevat)"
 
 #: DenominoViso/DenominoViso.py:2607
-#, fuzzy
 msgid "Include Attributes"
 msgstr "Kenmerken bijvoegen"
 
 #: DenominoViso/DenominoViso.py:2608
-#, fuzzy
 msgid "Whether to include a person's attributes"
-msgstr "Al of niet kenmerken toevoegen."
+msgstr "Al of niet persoonskenmerken toevoegen."
 
 #: DenominoViso/DenominoViso.py:2611
-#, fuzzy
 msgid "Include Addresses"
 msgstr "Adressen bijvoegen"
 
 #: DenominoViso/DenominoViso.py:2612
-#, fuzzy
 msgid "Whether to include a person's addresses."
-msgstr "Al of niet adressen toevoegen."
+msgstr "Al of niet adressen van de persoon toevoegen."
 
 #: DenominoViso/DenominoViso.py:2615
 msgid "Include Note"
@@ -392,45 +385,38 @@ msgid "Whether to include a person's note."
 msgstr "Al of niet opmerkingen van de persoon toevoegen."
 
 #: DenominoViso/DenominoViso.py:2619
-#, fuzzy
 msgid "Include URL"
 msgstr "URLs bijvoegen"
 
 #: DenominoViso/DenominoViso.py:2620
-#, fuzzy
 msgid "Whether to include a person's internet address."
-msgstr "Al of niet andere namen toevoegen."
+msgstr "Al of niet internetadressen van de persoon toevoegen."
 
 #: DenominoViso/DenominoViso.py:2623
-#, fuzzy
 msgid "Include URL description"
-msgstr "Gebeurtenisbeschrijvingen toevoegen"
+msgstr "URL-beschrijving toevoegen"
 
 #: DenominoViso/DenominoViso.py:2624
-#, fuzzy
 msgid "Whether to include the description of the first URL"
-msgstr "Al of niet bibliotheekpagina's toevoegen"
+msgstr "Al of niet de beschrijving van de eerste URL toevoegen"
 
 #: DenominoViso/DenominoViso.py:2629
 msgid "Include Sources"
 msgstr "Bronnen bijvoegen"
 
 #: DenominoViso/DenominoViso.py:2630
-#, fuzzy
 msgid "Whether to include a person's sources."
-msgstr "Al of niet de media over de bronnen toevoegen."
+msgstr "Al of niet de bronnen van de persoon toevoegen."
 
 #: DenominoViso/DenominoViso.py:2633
 msgid "Image Options"
 msgstr "Beeldopties"
 
 #: DenominoViso/DenominoViso.py:2635
-#, fuzzy
 msgid "Include Photos/Images from Gallery"
 msgstr "Foto's/Afbeeldingen uit de galerie bijvoegen"
 
 #: DenominoViso/DenominoViso.py:2636
-#, fuzzy
 msgid "Whether to include images"
 msgstr "Al of niet afbeeldingen toevoegen."
 
@@ -443,45 +429,40 @@ msgid "Copy the images to a designated directory."
 msgstr "De beelden naar een bepaalde map kopiëren."
 
 #: DenominoViso/DenominoViso.py:2646
-#, fuzzy
 msgid "Images with Attribute"
-msgstr "Nieuw kenmerk"
+msgstr "Beelden met kenmerken"
 
 #: DenominoViso/DenominoViso.py:2647
 msgid "Determine images with which attributes to in/exclude"
-msgstr ""
+msgstr "Weleke beelden met welke kenmerken toevoegen"
 
 #: DenominoViso/DenominoViso.py:2650
-#, fuzzy
 msgid "Include Image source references"
-msgstr "Al of niet bronverwijzingen toevoegen."
+msgstr "Al of niet bronnenverwijzingen van de beelden toevoegen."
 
 #: DenominoViso/DenominoViso.py:2651
-#, fuzzy
 msgid "Whether to include references for images"
-msgstr "Al of niet gebeurtenissen van de ouders toevoegen."
+msgstr "Al of niet verwijzingen van de beelden toevoegen."
 
 #: DenominoViso/DenominoViso.py:2654
-#, fuzzy
 msgid "Source reference attribute"
-msgstr "Opmerking over een bronverwijzing"
+msgstr "Kenmerk van de bronnenverwijzing"
 
 #: DenominoViso/DenominoViso.py:2655
 msgid "Image attribute that should be used as source reference"
-msgstr ""
+msgstr "Beeldkenmerk dat gebruikt wordt als bronnenverwijzing"
 
 #: DenominoViso/DenominoViso.py:2661
 msgid "Style Options"
 msgstr "Stijlopties"
 
 #: DenominoViso/DenominoViso.py:2663
-#, fuzzy
 msgid "Color of active person:"
-msgstr "Geen actieve persoon"
+msgstr "kleur voor de actieve persoon"
 
 #: DenominoViso/DenominoViso.py:2664
 msgid "RGB-color of geometric shape of the activated person."
-msgstr ""
+msgstr "RGB-kleur of meetkundige vorm voor de actieve persoon."
 
 #: DenominoViso/DenominoViso.py:2667
 msgid "Color of found persons:"
@@ -489,40 +470,39 @@ msgstr "Kleur voor gevonden personen:"
 
 #: DenominoViso/DenominoViso.py:2668
 msgid "RGB-color of geometric shape of the persons found."
-msgstr ""
+msgstr "RGB-kleur of meetkundige vorm voor de gevonden personen."
 
 #: DenominoViso/DenominoViso.py:2671
-#, fuzzy
 msgid "Color of male persons:"
-msgstr "Kan persoon niet opslaan"
+msgstr "Kleur voor de mannelijke personen:"
 
 #: DenominoViso/DenominoViso.py:2672
 msgid "RGB-color of geometric shape of the male persons."
-msgstr ""
+msgstr "RGB-kleur of meetkundige vorm voor de mannelijke personen."
 
 #: DenominoViso/DenominoViso.py:2675
 msgid "Colour of female persons:"
-msgstr ""
+msgstr "Kleur voor de vrouwelijke personen:"
 
 #: DenominoViso/DenominoViso.py:2676
 msgid "RGB-color of geometric shape of the female persons."
-msgstr ""
+msgstr "RGB-kleur of meetkundige vorm voor de vrouwelijke personen."
 
 #: DenominoViso/DenominoViso.py:2679
 msgid "Width of rectangle (hrd):"
-msgstr ""
+msgstr "Breedte van de rechthoek (hrd):"
 
 #: DenominoViso/DenominoViso.py:2683
 msgid "Height of rectangle (hrd):"
-msgstr ""
+msgstr "Hoogte van de rechthoek (hrd):"
 
 #: DenominoViso/DenominoViso.py:2687
 msgid "Vertical distance of rectangles (hrd):"
-msgstr ""
+msgstr "Vertikale afstand tussen de rechthoeken (hrd):"
 
 #: DenominoViso/DenominoViso.py:2691
 msgid "Extra style settings:"
-msgstr ""
+msgstr "Bijkomende stijlinstellingen:"
 
 #: DenominoViso/DenominoViso.py:2695
 msgid "Advanced Options"
@@ -530,38 +510,48 @@ msgstr "Gevorderde opties"
 
 #: DenominoViso/DenominoViso.py:2697
 msgid "Old browser friendly output"
-msgstr ""
+msgstr "Output ook te lezen door oude browsers"
 
 #: DenominoViso/DenominoViso.py:2698
-msgid "Whether to create an ordinary html-file that includes the xhtml-file so that deprecated browsers can be presented with content they can swallow."
+msgid ""
+"Whether to create an ordinary html-file that includes the xhtml-file so that "
+"deprecated browsers can be presented with content they can swallow."
 msgstr ""
+"Al of niet een gewoon html-bestand aanmaken, waarin het xhtml-bestand vervat is "
+"zodat ook oude browsers de inhoud ervan kunnen verwerken."
 
 #: DenominoViso/DenominoViso.py:2701
-#, fuzzy
 msgid "Mouse event handler"
-msgstr "Sorteer gebeurtenisveranderingen"
+msgstr "Muisgebeurtenissenverwerker"
 
 #: DenominoViso/DenominoViso.py:2703
 msgid "Mouse handler used to interact with visitor of webpage."
-msgstr ""
+msgstr "Muisverwerker die gebruikt wordt voor interactie met de bezoeker van de webpagina."
 
 #: DenominoViso/DenominoViso.py:2707
-#, fuzzy
 msgid "Birth relationship linestyle"
-msgstr "Relatie bewerken"
+msgstr "Lijntype voor de geboorterelatie"
 
 #: DenominoViso/DenominoViso.py:2709
-msgid "List of lists where each sublist is a list with information about the dash pattern of lines connecting children to parents."
+msgid ""
+"List of lists where each sublist is a list with information about the dash "
+"pattern of lines connecting children to parents."
 msgstr ""
+"Verzamellijst waarin elk onderdeel een informatielijst is die gegevens "
+"bevat welk stippellijn patroon gerbuikt wordt om de kinderen met de "
+"ouders te verbinden."
 
 #: DenominoViso/DenominoViso.py:2715
-#, fuzzy
 msgid "Source confidence color"
-msgstr "Bronverwijzing bewerken"
+msgstr "Kleur voor de betrouwbaarheid van de bron"
 
 #: DenominoViso/DenominoViso.py:2717
-msgid "List os lists where each sublist is a list with information on the color to use for a certain confidence level."
+msgid ""
+"List os lists where each sublist is a list with information on the color to "
+"use for a certain confidence level."
 msgstr ""
+"Verzamellijst waarin ieder onderdeel een informatielijst is die gegevns "
+"bevat welke kleur er voor een bepaald betrouwbaarheudsniveau wordt gebruikt."
 
 #: DenominoViso/DenominoViso.py:2720
 msgid "Event format"
@@ -572,27 +562,35 @@ msgid "at"
 msgstr "te"
 
 #: DenominoViso/DenominoViso.py:2725
-msgid "List os strings with placeholders for events. Known placeholders: <type>, <role>, <date>, <place>, <description>, <witnesses>, <source> and any <attribute-value>."
+msgid ""
+"List os strings with placeholders for events. Known placeholders: <type>, "
+"<role>, <date>, <place>, <description>, <witnesses>, <source> and any "
+"<attribute-value>."
 msgstr ""
+"Lijst met lettertekens voor gebeurtenissen. Zijn voorzien: <type>, "
+"<rol>, <datum>, <locatie>, <beschrijving>, <getuigen>, <bron> en "
+"<kenmerkwaarde>."
 
 #: DenominoViso/DenominoViso.py:2728
 msgid "Source format"
 msgstr "Bronformaat"
 
 #: DenominoViso/DenominoViso.py:2729
-msgid "List of strings with placeholders for sources. Known placeholders: <title>, <volume>, <author>, <publication_info> and <abbreviation>."
+msgid ""
+"List of strings with placeholders for sources. Known placeholders: <title>, "
+"<volume>, <author>, <publication_info> and <abbreviation>."
 msgstr ""
+"Lijst met lettertekens voor bronnen. Zijn voorzien: <titel>, "
+"<volume>, <auteur>, <publicatie-informatie> en <afkorting>."
 
 #: DenominoViso/DenominoViso.py:2787
-#, fuzzy
 msgid "restricted to:"
-msgstr "geschat"
+msgstr "begrensd tot"
 
 # dit is een soort titel in een file-selector
 #: DenominoViso/DenominoViso.py:2828
-#, fuzzy
 msgid "to directory:"
-msgstr "Selecteer media-objectmap"
+msgstr "naar map:"
 
 #: DenominoViso/DenominoViso.py:2830
 msgid "Save images in ..."
@@ -608,16 +606,15 @@ msgstr "zou moeten zijn"
 
 #: DenominoViso/DenominoViso.py:2922
 msgid "Name HTML-wrapper file"
-msgstr ""
+msgstr "Naam voor HTML-bestand"
 
 #: DenominoViso/DenominoViso.py:2924
 msgid "Save HTML-wrapper file as ..."
-msgstr ""
+msgstr "HTML_bestand opslaan als..."
 
 #: DenominoViso/DenominoViso.py:2951
-#, fuzzy
 msgid "Give a filename ..."
-msgstr "Voornaam"
+msgstr "Bestandsnaam opgeven..."
 
 #: DenominoViso/DenominoViso.py:3098
 msgid "Relation type"
@@ -628,13 +625,12 @@ msgid "Use dashed linestyle"
 msgstr "Streepjeslijn gebruiken"
 
 #: DenominoViso/DenominoViso.py:3108
-#, fuzzy
 msgid "Dash length"
-msgstr "Sterfmaand"
+msgstr "Streepjeslengte"
 
 #: DenominoViso/DenominoViso.py:3112
 msgid "Inter-dash length"
-msgstr ""
+msgstr "Lengte tussen de streepjes"
 
 # Vertrouwen
 #: DenominoViso/DenominoViso.py:3163
@@ -644,4 +640,3 @@ msgstr "Zekerheid"
 #: DenominoViso/DenominoViso.py:3165
 msgid "Color"
 msgstr "Kleur"
-
