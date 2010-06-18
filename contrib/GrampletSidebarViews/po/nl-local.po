@@ -37,7 +37,7 @@ msgstr ""
 "Project-Id-Version: gramps\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-03-09 12:12+0100\n"
-"PO-Revision-Date: 2010-04-11 09:37+0100\n"
+"PO-Revision-Date: 2010-06-18 08:16+0100\n"
 "Last-Translator: Erik De Richter <frederik.de.richter@pandora.be>\n"
 "Language-Team: nederlands <frederik.de.richter@googlemail.com>\n"
 "MIME-Version: 1.0\n"
@@ -114,15 +114,15 @@ msgstr "Gedeelde schermen"
 #: GrampletSidebarViews/sidebarviews.gpr.py:23
 #, python-format
 msgid "%s with a Gramplet Pane"
-msgstr "%s met een Gramplet-zijbalk"
+msgstr "%s met een gramplet-zijbalk"
 
 #: GrampletSidebarViews/sidebarviews.py:130
 msgid "Add a gramplet"
-msgstr "Een Gramplet toevoegen"
+msgstr "Een gramplet toevoegen"
 
 #: GrampletSidebarViews/sidebarviews.py:131
 msgid "Restore a gramplet"
-msgstr "Een Gramplet herstellen"
+msgstr "Een gramplet herstellen"
 
 #: GrampletSidebarViews/sidebarviews.py:166
 msgid "Split view"
