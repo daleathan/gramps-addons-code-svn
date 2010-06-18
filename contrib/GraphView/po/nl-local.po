@@ -37,7 +37,7 @@ msgstr ""
 "Project-Id-Version: gramps\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-02-19 18:04+0100\n"
-"PO-Revision-Date: 2010-03-28 10:48+0100\n"
+"PO-Revision-Date: 2010-06-18 08:18+0100\n"
 "Last-Translator: Erik De Richter <frederik.de.richter@pandora.be>\n"
 "Language-Team: nederlands <frederik.de.richter@googlemail.com>\n"
 "MIME-Version: 1.0\n"
@@ -47,7 +47,8 @@ msgstr ""
 "X-Poedit-Language: Nederlands\n"
 "X-Poedit-Country: België\n"
 
-#: GraphView/graphview.gpr.py:3 GraphView/graphview.py:90
+#: GraphView/graphview.gpr.py:3
+#: GraphView/graphview.py:90
 msgid "Graph View"
 msgstr "Grafiekscherm"
 
@@ -58,3 +59,4 @@ msgstr "Voorouders"
 #: GraphView/graphview.gpr.py:5
 msgid "Dynamic graph of relations"
 msgstr "Dynamische grafiek van de relaties"
+
