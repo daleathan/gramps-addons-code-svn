@@ -37,7 +37,7 @@ msgstr ""
 "Project-Id-Version: gramps\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-03-08 16:47+0100\n"
-"PO-Revision-Date: 2010-04-10 08:42+0100\n"
+"PO-Revision-Date: 2010-06-18 08:03+0100\n"
 "Last-Translator: Erik De Richter <frederik.de.richter@pandora.be>\n"
 "Language-Team: nederlands <frederik.de.richter@googlemail.com>\n"
 "MIME-Version: 1.0\n"
@@ -51,9 +51,10 @@ msgstr ""
 msgid "Django Export"
 msgstr "Django-export"
 
-#: Django/ExportDjango.gpr.py:26 Django/ImportDjango.gpr.py:26
+#: Django/ExportDjango.gpr.py:26
+#: Django/ImportDjango.gpr.py:26
 msgid "Django is a web framework working on a configured database"
-msgstr "Django is een webstructuur die draait op een geconfigureerde database"
+msgstr "Django is een webstructuur die draait op een geconfigureerd gegevensbestand"
 
 #: Django/ExportDjango.gpr.py:31
 msgid "Django options"
@@ -80,3 +81,4 @@ msgstr[1] "Import voltooid: %d seconden"
 #: Django/ImportDjango.py:186
 msgid "Django import"
 msgstr "Django-import"
+
