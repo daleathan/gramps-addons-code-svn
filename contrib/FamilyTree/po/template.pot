@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-04-10 21:06+0200\n"
+"POT-Creation-Date: 2010-06-18 08:06+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,271 +16,280 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: FamilyTree/FamilyTree.gpr.py:3
+#: FamilyTree//FamilyTree.gpr.py:3 FamilyTree/FamilyTree.gpr.py:3
 msgid "Family Tree"
 msgstr ""
 
-#: FamilyTree/FamilyTree.gpr.py:4
+#: FamilyTree//FamilyTree.gpr.py:4 FamilyTree/FamilyTree.gpr.py:4
 msgid "Produces a graphical family tree."
 msgstr ""
 
-#: FamilyTree/FamilyTree.py:92
+#: FamilyTree//FamilyTree.py:90 FamilyTree/FamilyTree.py:90
 #, python-format
 msgid "Family Tree for %s"
 msgstr ""
 
-#: FamilyTree/FamilyTree.py:626 FamilyTree/FamilyTree.py:631
+#: FamilyTree//FamilyTree.py:627 FamilyTree//FamilyTree.py:632
+#: FamilyTree/FamilyTree.py:627 FamilyTree/FamilyTree.py:632
 msgid "Unknown"
 msgstr ""
 
-#: FamilyTree/FamilyTree.py:633
+#: FamilyTree//FamilyTree.py:634 FamilyTree/FamilyTree.py:634
 #, python-format
 msgid "%(father)s and %(mother)s"
 msgstr ""
 
-#: FamilyTree/FamilyTree.py:641
+#: FamilyTree//FamilyTree.py:642 FamilyTree/FamilyTree.py:642
 msgid "Anonymous"
 msgstr ""
 
-#: FamilyTree/FamilyTree.py:838
+#: FamilyTree//FamilyTree.py:839 FamilyTree/FamilyTree.py:839
 msgid "born"
 msgstr ""
 
-#: FamilyTree/FamilyTree.py:840
+#: FamilyTree//FamilyTree.py:841 FamilyTree/FamilyTree.py:841
 msgid "baptised"
 msgstr ""
 
-#: FamilyTree/FamilyTree.py:842
+#: FamilyTree//FamilyTree.py:843 FamilyTree/FamilyTree.py:843
 msgid "died"
 msgstr ""
 
-#: FamilyTree/FamilyTree.py:844
+#: FamilyTree//FamilyTree.py:845 FamilyTree/FamilyTree.py:845
 msgid "buried"
 msgstr ""
 
-#: FamilyTree/FamilyTree.py:846
+#: FamilyTree//FamilyTree.py:847 FamilyTree/FamilyTree.py:847
 msgid "cremated"
 msgstr ""
 
-#: FamilyTree/FamilyTree.py:848
+#: FamilyTree//FamilyTree.py:849 FamilyTree/FamilyTree.py:849
 msgid "married"
 msgstr ""
 
-#: FamilyTree/FamilyTree.py:850
+#: FamilyTree//FamilyTree.py:851 FamilyTree/FamilyTree.py:851
 msgid "divorced"
 msgstr ""
 
-#: FamilyTree/FamilyTree.py:852
+#: FamilyTree//FamilyTree.py:853 FamilyTree/FamilyTree.py:853
 msgid "resident"
 msgstr ""
 
-#: FamilyTree/FamilyTree.py:859
+#: FamilyTree//FamilyTree.py:860 FamilyTree/FamilyTree.py:860
 #, python-format
 msgid "on %(ymd_date)s"
 msgstr ""
 
-#: FamilyTree/FamilyTree.py:861
+#: FamilyTree//FamilyTree.py:862 FamilyTree/FamilyTree.py:862
 #, python-format
 msgid "in %(ym_date)s"
 msgstr ""
 
-#: FamilyTree/FamilyTree.py:863
+#: FamilyTree//FamilyTree.py:864 FamilyTree/FamilyTree.py:864
 #, python-format
 msgid "in %(y_date)s"
 msgstr ""
 
-#: FamilyTree/FamilyTree.py:867
+#: FamilyTree//FamilyTree.py:868 FamilyTree/FamilyTree.py:868
 #, python-format
 msgid "on %(placeholder)s"
 msgstr ""
 
-#: FamilyTree/FamilyTree.py:870
+#: FamilyTree//FamilyTree.py:871 FamilyTree/FamilyTree.py:871
 #, python-format
 msgid "on %(placeholder)s (%(partial)s)"
 msgstr ""
 
-#: FamilyTree/FamilyTree.py:887
+#: FamilyTree//FamilyTree.py:888 FamilyTree/FamilyTree.py:888
 #, python-format
 msgid "in %(place)s"
 msgstr ""
 
-#: FamilyTree/FamilyTree.py:898
+#: FamilyTree//FamilyTree.py:899 FamilyTree/FamilyTree.py:899
 #, python-format
 msgid "(%(description)s)"
 msgstr ""
 
-#: FamilyTree/FamilyTree.py:975
+#: FamilyTree//FamilyTree.py:977 FamilyTree/FamilyTree.py:977
 msgid "Tree Options"
 msgstr ""
 
-#: FamilyTree/FamilyTree.py:977
+#: FamilyTree//FamilyTree.py:979 FamilyTree/FamilyTree.py:979
 msgid "Center Family"
 msgstr ""
 
-#: FamilyTree/FamilyTree.py:978
+#: FamilyTree//FamilyTree.py:980 FamilyTree/FamilyTree.py:980
 msgid "The center family for the tree"
 msgstr ""
 
-#: FamilyTree/FamilyTree.py:981
+#: FamilyTree//FamilyTree.py:983 FamilyTree/FamilyTree.py:983
 msgid "Ancestor Generations"
 msgstr ""
 
-#: FamilyTree/FamilyTree.py:982
+#: FamilyTree//FamilyTree.py:984 FamilyTree/FamilyTree.py:984
 msgid "The number of ancestor generations to include in the tree"
 msgstr ""
 
-#: FamilyTree/FamilyTree.py:985
+#: FamilyTree//FamilyTree.py:987 FamilyTree/FamilyTree.py:987
 msgid "Descendant Generations"
 msgstr ""
 
-#: FamilyTree/FamilyTree.py:986
+#: FamilyTree//FamilyTree.py:988 FamilyTree/FamilyTree.py:988
 msgid "The number of descendant generations to include in the tree"
 msgstr ""
 
-#: FamilyTree/FamilyTree.py:989
+#: FamilyTree//FamilyTree.py:991 FamilyTree/FamilyTree.py:991
 msgid "Sc_ale to fit on a single page"
 msgstr ""
 
-#: FamilyTree/FamilyTree.py:990
+#: FamilyTree//FamilyTree.py:992 FamilyTree/FamilyTree.py:992
 msgid "Whether to scale to fit on a single page."
 msgstr ""
 
-#: FamilyTree/FamilyTree.py:993
+#: FamilyTree//FamilyTree.py:995 FamilyTree/FamilyTree.py:995
 msgid "Color"
 msgstr ""
 
-#: FamilyTree/FamilyTree.py:995
+#: FamilyTree//FamilyTree.py:997 FamilyTree/FamilyTree.py:997
 msgid "No color"
 msgstr ""
 
-#: FamilyTree/FamilyTree.py:996
+#: FamilyTree//FamilyTree.py:998 FamilyTree/FamilyTree.py:998
 msgid "Generations"
 msgstr ""
 
-#: FamilyTree/FamilyTree.py:997
+#: FamilyTree//FamilyTree.py:999 FamilyTree/FamilyTree.py:999
 msgid "First generation"
 msgstr ""
 
-#: FamilyTree/FamilyTree.py:998
+#: FamilyTree//FamilyTree.py:1000 FamilyTree/FamilyTree.py:1000
 msgid "Second generation"
 msgstr ""
 
-#: FamilyTree/FamilyTree.py:999
+#: FamilyTree//FamilyTree.py:1001 FamilyTree/FamilyTree.py:1001
+msgid "Third generation"
+msgstr ""
+
+#: FamilyTree//FamilyTree.py:1002 FamilyTree/FamilyTree.py:1002
 msgid "Male line"
 msgstr ""
 
-#: FamilyTree/FamilyTree.py:1000
+#: FamilyTree//FamilyTree.py:1003 FamilyTree/FamilyTree.py:1003
 msgid "Male line and illegitimate children"
 msgstr ""
 
-#: FamilyTree/FamilyTree.py:1001
+#: FamilyTree//FamilyTree.py:1004 FamilyTree/FamilyTree.py:1004
 msgid "Female line"
 msgstr ""
 
-#: FamilyTree/FamilyTree.py:1004
+#: FamilyTree//FamilyTree.py:1007 FamilyTree/FamilyTree.py:1007
 msgid "Shuffle colors"
 msgstr ""
 
-#: FamilyTree/FamilyTree.py:1005
+#: FamilyTree//FamilyTree.py:1008 FamilyTree/FamilyTree.py:1008
 msgid "Whether to shuffle colors or order them in rainbow fashion."
 msgstr ""
 
-#: FamilyTree/FamilyTree.py:1008
+#: FamilyTree//FamilyTree.py:1011 FamilyTree/FamilyTree.py:1011
 msgid "Content"
 msgstr ""
 
-#: FamilyTree/FamilyTree.py:1010
+#: FamilyTree//FamilyTree.py:1013 FamilyTree/FamilyTree.py:1013
 msgid "Use call name"
 msgstr ""
 
-#: FamilyTree/FamilyTree.py:1012
+#: FamilyTree//FamilyTree.py:1015 FamilyTree/FamilyTree.py:1015
 msgid "Don't use call name"
 msgstr ""
 
-#: FamilyTree/FamilyTree.py:1013
+#: FamilyTree//FamilyTree.py:1016 FamilyTree/FamilyTree.py:1016
 msgid "Replace first name with call name"
 msgstr ""
 
-#: FamilyTree/FamilyTree.py:1014
+#: FamilyTree//FamilyTree.py:1017 FamilyTree/FamilyTree.py:1017
 msgid "Underline call name in first name / add call name to first name"
 msgstr ""
 
-#: FamilyTree/FamilyTree.py:1017
+#: FamilyTree//FamilyTree.py:1020 FamilyTree/FamilyTree.py:1020
 msgid "Include Occupation"
 msgstr ""
 
-#: FamilyTree/FamilyTree.py:1020
+#: FamilyTree//FamilyTree.py:1023 FamilyTree/FamilyTree.py:1023
 msgid "Include Residence"
 msgstr ""
 
-#: FamilyTree/FamilyTree.py:1023
+#: FamilyTree//FamilyTree.py:1026 FamilyTree/FamilyTree.py:1026
 msgid "Print event data (dead person)"
 msgstr ""
 
-#: FamilyTree/FamilyTree.py:1025 FamilyTree/FamilyTree.py:1033
+#: FamilyTree//FamilyTree.py:1028 FamilyTree//FamilyTree.py:1036
+#: FamilyTree/FamilyTree.py:1028 FamilyTree/FamilyTree.py:1036
 msgid "None"
 msgstr ""
 
-#: FamilyTree/FamilyTree.py:1026 FamilyTree/FamilyTree.py:1034
+#: FamilyTree//FamilyTree.py:1029 FamilyTree//FamilyTree.py:1037
+#: FamilyTree/FamilyTree.py:1029 FamilyTree/FamilyTree.py:1037
 msgid "Year only"
 msgstr ""
 
-#: FamilyTree/FamilyTree.py:1027 FamilyTree/FamilyTree.py:1035
+#: FamilyTree//FamilyTree.py:1030 FamilyTree//FamilyTree.py:1038
+#: FamilyTree/FamilyTree.py:1030 FamilyTree/FamilyTree.py:1038
 msgid "Full date"
 msgstr ""
 
-#: FamilyTree/FamilyTree.py:1028 FamilyTree/FamilyTree.py:1036
+#: FamilyTree//FamilyTree.py:1031 FamilyTree//FamilyTree.py:1039
+#: FamilyTree/FamilyTree.py:1031 FamilyTree/FamilyTree.py:1039
 msgid "Full date and place"
 msgstr ""
 
-#: FamilyTree/FamilyTree.py:1031
+#: FamilyTree//FamilyTree.py:1034 FamilyTree/FamilyTree.py:1034
 msgid "Print event data (living person)"
 msgstr ""
 
-#: FamilyTree/FamilyTree.py:1039
+#: FamilyTree//FamilyTree.py:1042 FamilyTree/FamilyTree.py:1042
 msgid "Fall back to baptism if birth event missing"
 msgstr ""
 
-#: FamilyTree/FamilyTree.py:1042
+#: FamilyTree//FamilyTree.py:1045 FamilyTree/FamilyTree.py:1045
 msgid "Fall back to burial or cremation if death event missing"
 msgstr ""
 
-#: FamilyTree/FamilyTree.py:1047
+#: FamilyTree//FamilyTree.py:1050 FamilyTree/FamilyTree.py:1050
 msgid "Print fields for missing information"
 msgstr ""
 
-#: FamilyTree/FamilyTree.py:1048
+#: FamilyTree//FamilyTree.py:1051 FamilyTree/FamilyTree.py:1051
 msgid "Whether to include fields for missing information."
 msgstr ""
 
-#: FamilyTree/FamilyTree.py:1051
+#: FamilyTree//FamilyTree.py:1054 FamilyTree/FamilyTree.py:1054
 msgid "Include event description"
 msgstr ""
 
-#: FamilyTree/FamilyTree.py:1054
+#: FamilyTree//FamilyTree.py:1057 FamilyTree/FamilyTree.py:1057
 msgid "Text Options"
 msgstr ""
 
-#: FamilyTree/FamilyTree.py:1056
+#: FamilyTree//FamilyTree.py:1059 FamilyTree/FamilyTree.py:1059
 msgid "Title text"
 msgstr ""
 
-#: FamilyTree/FamilyTree.py:1059
+#: FamilyTree//FamilyTree.py:1062 FamilyTree/FamilyTree.py:1062
 msgid "Footer text"
 msgstr ""
 
-#: FamilyTree/FamilyTree.py:1074
+#: FamilyTree//FamilyTree.py:1077 FamilyTree/FamilyTree.py:1077
 msgid "The style used for the title."
 msgstr ""
 
-#: FamilyTree/FamilyTree.py:1082
+#: FamilyTree//FamilyTree.py:1085 FamilyTree/FamilyTree.py:1085
 msgid "The style used for names."
 msgstr ""
 
-#: FamilyTree/FamilyTree.py:1090
+#: FamilyTree//FamilyTree.py:1093 FamilyTree/FamilyTree.py:1093
 msgid "The style used for data (birth, death, marriage, divorce)."
 msgstr ""
 
-#: FamilyTree/FamilyTree.py:1100
+#: FamilyTree//FamilyTree.py:1103 FamilyTree/FamilyTree.py:1103
 msgid "The style used for the footer."
 msgstr ""
