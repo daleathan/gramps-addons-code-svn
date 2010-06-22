@@ -37,7 +37,7 @@ msgstr ""
 "Project-Id-Version: gramps\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-02-19 18:09+0100\n"
-"PO-Revision-Date: 2010-04-11 11:30+0100\n"
+"PO-Revision-Date: 2010-06-22 07:50+0100\n"
 "Last-Translator: Erik De Richter <frederik.de.richter@pandora.be>\n"
 "Language-Team: nederlands <frederik.de.richter@googlemail.com>\n"
 "MIME-Version: 1.0\n"
@@ -75,7 +75,7 @@ msgstr "Datum"
 
 #: ImageMetadataGramplet/ImageMetadataGramplet.py:115
 msgid "Copyright"
-msgstr "Auteursrecht"
+msgstr "Copyright"
 
 #: ImageMetadataGramplet/ImageMetadataGramplet.py:124
 msgid "Image Subject"
@@ -103,7 +103,7 @@ msgstr "Beschrijving"
 
 #: ImageMetadataGramplet/ImageMetadataGramplet.py:204
 msgid "Enter the name of the person who took this image."
-msgstr "De naam van de persoon die het beeld maakte ingeven."
+msgstr "De naam van de persoon die het beeld maakte, ingeven."
 
 #: ImageMetadataGramplet/ImageMetadataGramplet.py:206
 msgid "Press the Select Date Button to bring up a calendar where you can choose a date."
@@ -111,7 +111,7 @@ msgstr "Druk op de 'kies datum' knop om een kalender te tonen waar u een datum k
 
 #: ImageMetadataGramplet/ImageMetadataGramplet.py:209
 msgid "Enter the copyright information for the image.  Example: (C) 2010 Smith and Wesson"
-msgstr "Vul de auteursrechtinformatie van het beeld in. Voorbeeld: (C) 2010  Janneke en Mieke"
+msgstr "De auteursrechtinformatie van het beeld invullen. Voorbeeld: (C) 2010  Janneke en Mieke"
 
 #: ImageMetadataGramplet/ImageMetadataGramplet.py:212
 msgid ""
@@ -150,7 +150,7 @@ msgstr "Opslaan"
 # is dit goed?
 #: ImageMetadataGramplet/ImageMetadataGramplet.py:234
 msgid "Clear"
-msgstr "Wissen"
+msgstr "Gewist"
 
 #: ImageMetadataGramplet/ImageMetadataGramplet.py:237
 msgid "Convert GPS Coordinates"
@@ -176,7 +176,7 @@ msgstr "Het beeldbestand ontbreekt. Een ander beeld kiezen of het media-object b
 
 #: ImageMetadataGramplet/ImageMetadataGramplet.py:689
 msgid "Invalid latitude (syntax: 18°9'"
-msgstr "Ongeldige breedtegraad (syntaxis: 18°9'"
+msgstr "Ongeldige breedtegraad (syntax: 18°9'"
 
 #: ImageMetadataGramplet/ImageMetadataGramplet.py:690
 msgid "48.21\"S, -18.2412 or -18:9:48.21)"
@@ -184,7 +184,7 @@ msgstr "48.21\"Z, -18.2412 of -18:9:48.21)"
 
 #: ImageMetadataGramplet/ImageMetadataGramplet.py:692
 msgid "Invalid longitude (syntax: 18°9'"
-msgstr "Ongeldige lengtegraad (syntaxis: 18°9'"
+msgstr "Ongeldige lengtegraad (syntax: 18°9'"
 
 #: ImageMetadataGramplet/ImageMetadataGramplet.py:693
 msgid "48.21\"E, -18.2412 or -18:9:48.21)"

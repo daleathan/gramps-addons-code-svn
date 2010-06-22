@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-06-15 08:55+0200\n"
+"POT-Creation-Date: 2010-06-22 07:52+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,125 +16,125 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: LastChange//LastChange.gpr.py:24
+#: LastChange/LastChange.gpr.py:24
 msgid "Last Change Gramplet"
 msgstr ""
 
-#: LastChange//LastChange.gpr.py:25
+#: LastChange/LastChange.gpr.py:25
 msgid "List the last ten person records that have been changed"
 msgstr ""
 
-#: LastChange//LastChange.gpr.py:34
+#: LastChange/LastChange.gpr.py:34
 msgid "Latest Changes"
 msgstr ""
 
-#: LastChange//LastChange.gpr.py:39
+#: LastChange/LastChange.gpr.py:39
 msgid "Last Change Report"
 msgstr ""
 
-#: LastChange//LastChange.gpr.py:40
+#: LastChange/LastChange.gpr.py:40
 msgid "Report of the last records that have been changed"
 msgstr ""
 
-#: LastChange//LastChangeGramplet.py:48
+#: LastChange/LastChangeGramplet.py:48
 msgid "Double-click name for details"
 msgstr ""
 
-#: LastChange//LastChangeGramplet.py:49
+#: LastChange/LastChangeGramplet.py:49
 msgid "No Family Tree loaded."
 msgstr ""
 
-#: LastChange//LastChangeGramplet.py:53
+#: LastChange/LastChangeGramplet.py:53
 msgid "Processing..."
 msgstr ""
 
-#: LastChange//LastChangeGramplet.py:65
+#: LastChange/LastChangeGramplet.py:65
 msgid "changed on"
 msgstr ""
 
-#: LastChange//LastChangeReport.py:140
+#: LastChange/LastChangeReport.py:140
 msgid "People Changed"
 msgstr ""
 
-#: LastChange//LastChangeReport.py:141 LastChange//LastChangeReport.py:156
-#: LastChange//LastChangeReport.py:187 LastChange//LastChangeReport.py:207
+#: LastChange/LastChangeReport.py:141 LastChange/LastChangeReport.py:156
+#: LastChange/LastChangeReport.py:187 LastChange/LastChangeReport.py:207
 msgid "ID"
 msgstr ""
 
-#: LastChange//LastChangeReport.py:141
+#: LastChange/LastChangeReport.py:141
 msgid "Person"
 msgstr ""
 
-#: LastChange//LastChangeReport.py:141 LastChange//LastChangeReport.py:156
-#: LastChange//LastChangeReport.py:187 LastChange//LastChangeReport.py:207
+#: LastChange/LastChangeReport.py:141 LastChange/LastChangeReport.py:156
+#: LastChange/LastChangeReport.py:187 LastChange/LastChangeReport.py:207
 msgid "Changed On"
 msgstr ""
 
-#: LastChange//LastChangeReport.py:155
+#: LastChange/LastChangeReport.py:155
 msgid "Families Changed"
 msgstr ""
 
-#: LastChange//LastChangeReport.py:156
+#: LastChange/LastChangeReport.py:156
 msgid "Family Surname"
 msgstr ""
 
-#: LastChange//LastChangeReport.py:173
+#: LastChange/LastChangeReport.py:173
 #, python-format
 msgid "%s and %s"
 msgstr ""
 
-#: LastChange//LastChangeReport.py:186
+#: LastChange/LastChangeReport.py:186
 msgid "Events Changed"
 msgstr ""
 
-#: LastChange//LastChangeReport.py:187
+#: LastChange/LastChangeReport.py:187
 msgid "Event"
 msgstr ""
 
-#: LastChange//LastChangeReport.py:206
+#: LastChange/LastChangeReport.py:206
 msgid "Places Changed"
 msgstr ""
 
-#: LastChange//LastChangeReport.py:207
+#: LastChange/LastChangeReport.py:207
 msgid "Place"
 msgstr ""
 
-#: LastChange//LastChangeReport.py:226
+#: LastChange/LastChangeReport.py:226
 msgid "Report Options"
 msgstr ""
 
-#: LastChange//LastChangeReport.py:227
+#: LastChange/LastChangeReport.py:227
 msgid "Select From:"
 msgstr ""
 
-#: LastChange//LastChangeReport.py:228
+#: LastChange/LastChangeReport.py:228
 msgid "People"
 msgstr ""
 
-#: LastChange//LastChangeReport.py:229
+#: LastChange/LastChangeReport.py:229
 msgid "Families"
 msgstr ""
 
-#: LastChange//LastChangeReport.py:230
+#: LastChange/LastChangeReport.py:230
 msgid "Places"
 msgstr ""
 
-#: LastChange//LastChangeReport.py:231
+#: LastChange/LastChangeReport.py:231
 msgid "Events"
 msgstr ""
 
-#: LastChange//LastChangeReport.py:247
+#: LastChange/LastChangeReport.py:247
 msgid "The style used for the title of the page."
 msgstr ""
 
-#: LastChange//LastChangeReport.py:262
+#: LastChange/LastChangeReport.py:262
 msgid "The style used for the section headers."
 msgstr ""
 
-#: LastChange//LastChangeReport.py:272
+#: LastChange/LastChangeReport.py:272
 msgid "The style used for normal text"
 msgstr ""
 
-#: LastChange//LastChangeReport.py:284
+#: LastChange/LastChangeReport.py:284
 msgid "The basic style used for table headings."
 msgstr ""

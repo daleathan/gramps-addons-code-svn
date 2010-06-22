@@ -37,7 +37,7 @@ msgstr ""
 "Project-Id-Version: gramps\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-04-11 18:25+0200\n"
-"PO-Revision-Date: 2010-04-11 18:28+0100\n"
+"PO-Revision-Date: 2010-05-12 18:03+0100\n"
 "Last-Translator: Erik De Richter <frederik.de.richter@pandora.be>\n"
 "Language-Team: nederlands <frederik.de.richter@googlemail.com>\n"
 "MIME-Version: 1.0\n"
@@ -52,8 +52,12 @@ msgid "Lines of Descendency"
 msgstr "Afstammelingenlijnen"
 
 #: LinesOfDescendency/lines-of-descendency.gpr.py:4
-msgid "Prints out all descendency lines from a given ancestor to a given descendent in text."
-msgstr "Alle afstammelingenlijnen van een bepaalde voorouder naar een afstammelingen in een tekstverslag."
+msgid ""
+"Prints out all descendency lines from a given ancestor to a given descendent "
+"in text."
+msgstr ""
+"Alle afstammelingenlijnen van een bepaalde voorouder naar een afstammelingen "
+"in een tekstverslag."
 
 # Mensen
 #: LinesOfDescendency/lines-of-descendency.py:16
@@ -78,7 +82,7 @@ msgstr "De afstammeling waarnaar de lijn opgebouwd wordt"
 
 #: LinesOfDescendency/lines-of-descendency.py:35
 msgid "The style used for the title of the page."
-msgstr "De gebruikte stijl voor de paginatite."
+msgstr "De gebruikte stijl voor de titel van de pagina."
 
 #: LinesOfDescendency/lines-of-descendency.py:45
 msgid "The style used for the title of a line."
@@ -97,4 +101,3 @@ msgstr "De persoon %s is niet te vinden in het gegevensbestand"
 #, python-format
 msgid "Lines of Descendency from %(ancestor)s to %(descendent)s"
 msgstr "Afstammelingenlijnen van %(ancestor)s naar %(descendent)s"
-

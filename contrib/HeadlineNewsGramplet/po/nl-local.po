@@ -37,7 +37,7 @@ msgstr ""
 "Project-Id-Version: gramps\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-02-19 18:07+0100\n"
-"PO-Revision-Date: 2010-04-11 11:20+0100\n"
+"PO-Revision-Date: 2010-05-12 18:03+0100\n"
 "Last-Translator: Erik De Richter <frederik.de.richter@pandora.be>\n"
 "Language-Team: nederlands <frederik.de.richter@googlemail.com>\n"
 "MIME-Version: 1.0\n"
@@ -62,4 +62,3 @@ msgstr "Het belangrijkste Gramps-nieuws lezen"
 #: HeadlineNewsGramplet/HeadlineNewsGramplet.py:104
 msgid "No Family Tree loaded."
 msgstr "Geen familiestamboom geladen."
-
