@@ -41,7 +41,8 @@ http://tilloy.net/cross_compile_pyexiv2.sh
 
     Fedora Core 14
     ___________
-    yum install pyexiv2, you will get pyexiv2-0.1.3, some other dependencies are required...
+   Point your browser to this address, and follow the directions here:
+   http://tilloy.net/dev/pyexiv2/download.html 
 
     Ubuntu, Debian based distros
     ____________________________
@@ -58,7 +59,7 @@ pyexiv2 depends on the following libraries:
 
  * boost.python (http://www.boost.org/libs/python/doc/index.html)
  * exiv2 (http://www.exiv2.org/)
- * expat-2.0.1-10, expat-devel-2.0.1-10
+ * expat, expat-devel
 
 It uses SCons (http://www.scons.org/) as a build system.
 
@@ -70,11 +71,11 @@ Fedora 13
 _________
 This is a typical list of build dependencies for a Fedora 13 system:
 
-* python-2.6.4-20, and python-devel-2.6.4-20
-* scons-1.2.0-3
-* exiv2-0.19-1, and exiv2-devel-0.19-1
-* expat-2.0.1-10, and expat-devel-2.0.1-10
-* boost-python-1.41.0-7
+* python, python-devel
+* scons
+* exiv2, exiv2-devel
+* expat, expat-devel
+* boost-python
 
 Ubuntu/ Debian
 ______________
@@ -100,7 +101,7 @@ The result of the build is a dynamic library, libexiv2python.so, in the build/
 directory. This is the low-level binding. It is in turn used in a higher level
 module, pyexiv2.
 The install command installs the two modules in your site-specific directory for
-Python modules (e.g. '/usr/lib/python2.6/site-packages/' on Linux).
+Python modules
 
 To use pyexiv2 in your scripts, simply import the pyexiv2 module.
 
@@ -144,7 +145,6 @@ You should have received a copy of the GNU General Public License
 along with pyexiv2; if not, write to the Free Software
 Foundation, Inc., 51 Franklin Street, 5th Floor, Boston, MA 02110-1301 USA.
 
-
 Developers
 ==========
 
@@ -163,14 +163,8 @@ To get a working copy of the latest version of the code, you need to have bazaar
 SPECIAL NOTE
 ____________
 
-This version, ImageMetadataEditorGramplet-v0.1/imageMetadataeditorgramplet.py WILL NOT
-work with the most current version of this pyexiv2 software.  You will need to use;
-the UNSTABLE, DEVELOPMENTAL version ImageMetadataEditorGramplet-v0.2, also available from:
-svn co https://gramps.svn.sourceforge.net/svnroot/gramps-addons gramps-addons
-
 Feedback, bug reports and patches are welcome!
 
 Join the pyexiv2-developers team on Launchpad to be informed of the latest
 updates and discuss changes and new features on the mailing list: register at
 https://launchpad.net/~pyexiv2-developers.
-
