@@ -338,6 +338,9 @@ class Database(object):
         self.cursor = self.db.cursor()
 
     def query(self, q, *args):
+        for i in len(args):
+            if isinstance(args[i], str):
+                args[i] = unicode(args[i])
         if q.strip().upper().startswith("DROP"):
             try:
                 self.cursor.execute(q, args)
