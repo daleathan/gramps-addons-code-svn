@@ -348,6 +348,8 @@ class DataEntryGramplet(Gramplet):
         if self._dirty:
             # Save the edits ----------------------------------
             person = self._dirty_person
+            if person is None:
+                return
             # First, get the data:
             gender = self.de_widgets["APGender"].get_active()
             if "," in self.de_widgets["APName"].get_text():
@@ -690,8 +692,6 @@ class DataEntryGramplet(Gramplet):
         # Commit changes -------------------------------------------------
         if current_person:
             self.dbstate.db.commit_person(current_person, self.trans)
-        if person:
-            self.dbstate.db.commit_person(person, self.trans)
         self.dbstate.db.transaction_commit(self.trans,
                  (_("Gramplet Data Entry: %s") %  name_displayer.display(person)))
 
