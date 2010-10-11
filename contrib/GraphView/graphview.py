@@ -106,7 +106,7 @@ class GraphView(NavigationView):
         """
         Set up callback for changes to the database
         """
-        self._change_db(db)
+        self.graph_widget.clear()
 
     def get_stock(self):
         """
@@ -155,7 +155,8 @@ class GraphView(NavigationView):
     def goto_handle(self, handle):
         "Go to a named handle"
         self.graph_widget.clear()
-        self.graph_widget.populate(self.get_active())
+        if self.get_active() is None:
+            self.graph_widget.populate(self.get_active())
 
 #-------------------------------------------------------------------------
 #
