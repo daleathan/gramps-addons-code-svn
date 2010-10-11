@@ -155,7 +155,7 @@ class GraphView(NavigationView):
     def goto_handle(self, handle):
         "Go to a named handle"
         self.graph_widget.clear()
-        if self.get_active() is None:
+        if self.get_active() is not None:
             self.graph_widget.populate(self.get_active())
 
 #-------------------------------------------------------------------------
