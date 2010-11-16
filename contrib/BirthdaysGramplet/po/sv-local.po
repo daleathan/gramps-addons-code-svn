@@ -1,22 +1,38 @@
-# Swedish translations for gramps package.
-# Copyright (C) 2010 THE gramps'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the gramps package.
-#
-# Peter Landgren <peter.talken@telia.com>, 2010.
+# translation of sv.po to svenska
+# -*- coding: utf-8 -*-
+# Svenska meddelanden i Gramps.
+# Copyright (C) 2001-2006, 2007, 2008, 2009, 2010 Free Software Foundation, Inc.
+# Några tips i översättningen:#
+# Svenska datatermgruppen: http://www.nada.kth.se/dataterm/
+# Svensk-engelskt lexikon: http://lexin.nada.kth.se/sve-eng.shtml#
+# Några tveksamma eller inte helt uppenbara översättningar:#
+# city                stad/kommun
+# county              landskap
+# location            lokalisering
+# media object        medieobjekt
+# place               plats
+# plugin              insticksmodul
+# repository          arkivinstitution
+# state               län/delstat
+# undo history        redigeringshistorik#
+# $Id: sv.po 16157 2010-11-07 21:24:35Z ldnp $
+# Bo Rosén <bo.rosen@home.se>, 2001.
+# Jens Arvidsson <jya@sverige.nu>, 2002-2005.
+# Stefan Björk <betula@users.sourceforge.net>, 2005-2006.
+# Peter Landgren <peter.talken@telia.com>, 2007, 2008, 2009, 2010.
 msgid ""
 msgstr ""
-"Project-Id-Version: gramps 32\n"
+"Project-Id-Version: sv\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-10-02 22:00+0200\n"
-"PO-Revision-Date: 2010-11-15 13:16+0100\n"
+"PO-Revision-Date: 2010-11-07 22:18+0100\n"
 "Last-Translator: Peter Landgren <peter.talken@telia.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
-"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Lokalize 1.0\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: BirthdaysGramplet/BirthdaysGramplet.gpr.py:4
 #: BirthdaysGramplet/BirthdaysGramplet.gpr.py:12
@@ -29,7 +45,7 @@ msgstr "en Gramplet, som visar födelsedagar för de närmaste n följande dagar
 
 #: BirthdaysGramplet/BirthdaysGramplet.py:34
 msgid "No Family Tree loaded."
-msgstr "Inget Släkträd laddat"
+msgstr "Inget släktträd laddat."
 
 #: BirthdaysGramplet/BirthdaysGramplet.py:54
 #: BirthdaysGramplet/BirthdaysGramplet.py:58
@@ -41,11 +57,11 @@ msgstr "Antal dagar"
 #: BirthdaysGramplet/BirthdaysGramplet.py:59
 #: BirthdaysGramplet/BirthdaysGramplet.py:63
 msgid "Maximum age"
-msgstr "Max ålder"
+msgstr "Maximiålder"
 
 #: BirthdaysGramplet/BirthdaysGramplet.py:68
 msgid "Processing..."
-msgstr "Bearbetar..."
+msgstr "Arbetar..."
 
 #: BirthdaysGramplet/BirthdaysGramplet.py:96
 #, python-format
@@ -58,4 +74,3 @@ msgstr[1] " (%d år gammal)"
 #, python-format
 msgid "%s"
 msgstr "%s"
-
