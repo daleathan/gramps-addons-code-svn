@@ -24,7 +24,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sv\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-10-02 22:00+0200\n"
+"POT-Creation-Date: 2010-11-30 12:34+0100\n"
 "PO-Revision-Date: 2010-11-07 22:18+0100\n"
 "Last-Translator: Peter Landgren <peter.talken@telia.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -40,37 +40,28 @@ msgid "Birthdays Gramplet"
 msgstr "Födelsedags-Gramplet"
 
 #: BirthdaysGramplet/BirthdaysGramplet.gpr.py:5
-msgid "a gramplet that displays the birthdays of the n following days"
+#, fuzzy
+msgid "a gramplet that displays the birthdays of the living people"
 msgstr "en Gramplet, som visar födelsedagar för de närmaste n följande dagarna"
 
-#: BirthdaysGramplet/BirthdaysGramplet.py:34
+#: BirthdaysGramplet/BirthdaysGramplet.py:36
 msgid "No Family Tree loaded."
 msgstr "Inget släktträd laddat."
 
-#: BirthdaysGramplet/BirthdaysGramplet.py:54
-#: BirthdaysGramplet/BirthdaysGramplet.py:58
-#: BirthdaysGramplet/BirthdaysGramplet.py:62
-msgid "Number of days"
-msgstr "Antal dagar"
-
-#: BirthdaysGramplet/BirthdaysGramplet.py:55
-#: BirthdaysGramplet/BirthdaysGramplet.py:59
-#: BirthdaysGramplet/BirthdaysGramplet.py:63
-msgid "Maximum age"
-msgstr "Maximiålder"
-
-#: BirthdaysGramplet/BirthdaysGramplet.py:68
+#: BirthdaysGramplet/BirthdaysGramplet.py:49
 msgid "Processing..."
 msgstr "Arbetar..."
 
-#: BirthdaysGramplet/BirthdaysGramplet.py:96
-#, python-format
-msgid " (%d year old)"
-msgid_plural " (%d years old)"
-msgstr[0] " (%d år gammal)"
-msgstr[1] " (%d år gammal)"
+#~ msgid "Number of days"
+#~ msgstr "Antal dagar"
 
-#: BirthdaysGramplet/BirthdaysGramplet.py:108
-#, python-format
-msgid "%s"
-msgstr "%s"
+#~ msgid "Maximum age"
+#~ msgstr "Maximiålder"
+
+#~ msgid " (%d year old)"
+#~ msgid_plural " (%d years old)"
+#~ msgstr[0] " (%d år gammal)"
+#~ msgstr[1] " (%d år gammal)"
+
+#~ msgid "%s"
+#~ msgstr "%s"
