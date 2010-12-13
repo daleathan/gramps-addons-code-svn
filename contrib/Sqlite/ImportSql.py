@@ -206,18 +206,20 @@ class SQLReader(object):
         handles = self.get_links(sql, from_type, from_handle, "person_ref")
         retval = []
         for ref_handle in handles:
-            rows = sql.query("select * from person_ref where handle = ?;",
+            rows = sql.query("select * from person_ref where handle_from = ? and handle_to = ?;",
+                             from_handle,
                              ref_handle)
             for row in rows:
-                (handle,
+                (handle_from,
+                 handle_to,
                  description,
                  private) = row
-                source_list = self.get_source_ref_list(sql, "person_ref", handle)
-                note_list = self.get_note_list(sql, "person_ref", handle)
+                source_list = self.get_source_ref_list(sql, "person_ref", handle_to)
+                note_list = self.get_note_list(sql, "person_ref", handle_to)
                 retval.append((private, 
                                source_list,
                                note_list,
-                               handle,
+                               handle_to,
                                description))
         return retval
 

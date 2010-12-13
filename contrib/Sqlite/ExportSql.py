@@ -253,12 +253,13 @@ def makeDB(db):
                  private BOOLEAN);""")
 
     db.query("""CREATE TABLE person_ref (
-                 handle CHARACTER(25),
+                 handle_from CHARACTER(25),
+                 handle_to CHARACTER(25),
                  description TEXT,
                  private BOOLEAN);""")
 
     db.query("""CREATE INDEX idx_person_ref_handle ON 
-                  person_ref(handle);""")
+                  person_ref(handle_from, handle_to);""")
 
     db.query("""CREATE TABLE source_ref (
                  handle CHARACTER(25) PRIMARY KEY,
@@ -392,25 +393,27 @@ def export_url_list(db, from_type, from_handle, urls):
         # finally, link this to parent
         export_link(db, from_type, from_handle, "url", handle)
 
-def export_person_ref_list(db, from_type, from_handle, person_ref_list):
+def export_person_ref_list(db, from_type, handle_from, person_ref_list):
     for person_ref in person_ref_list:
         (private, 
          source_list,
          note_list,
-         handle,
+         handle_to,
          desc) = person_ref
         db.query("""INSERT INTO person_ref (
-                    handle,
+                    handle_from,
+                    handle_to,
                     description,
-                    private) VALUES (?, ?, ?);""",
-                 handle,
+                    private) VALUES (?, ?, ?, ?);""",
+                 handle_from,
+                 handle_to,
                  desc,
                  private
                  )
-        export_list(db, "person_ref", handle, "note", note_list)
-        export_source_ref_list(db, "person_ref", handle, source_list)
+        export_list(db, "person_ref", handle_to, "note", note_list)
+        export_source_ref_list(db, "person_ref", handle_to, source_list)
         # And finally, make a link from parent to new object
-        export_link(db, from_type, from_handle, "person_ref", handle)
+        export_link(db, from_type, handle_from, "person_ref", handle_to)
 
 def export_lds(db, from_type, from_handle, data):
     (lsource_list, lnote_list, date, type, place,
