@@ -28,7 +28,6 @@ Display references for any object
 from Simple import SimpleAccess, SimpleDoc, SimpleTable, by_date
 from TransUtils import get_addon_translator
 from gen.lib.date import Today
-import DateHandler
 import Relationship
 import gen.lib
 
