@@ -253,9 +253,12 @@ def makeDB(db):
                  private BOOLEAN);""")
 
     db.query("""CREATE TABLE person_ref (
-                 handle CHARACTER(25) PRIMARY KEY,
+                 handle CHARACTER(25),
                  description TEXT,
                  private BOOLEAN);""")
+
+    db.query("""CREATE INDEX idx_person_ref_handle ON 
+                  person_ref(handle);""")
 
     db.query("""CREATE TABLE source_ref (
                  handle CHARACTER(25) PRIMARY KEY,
