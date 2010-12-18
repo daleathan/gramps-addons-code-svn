@@ -42,6 +42,7 @@ from ReportBase import MenuReportOptions
 from ReportBase import Report
 from ReportBase import ReportUtils
 from gettext import gettext as _
+from gen.lib import Date
 
 _UNKNOWN_FAMILY = "*unknown*"
 
