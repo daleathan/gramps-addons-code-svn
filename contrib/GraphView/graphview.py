@@ -509,10 +509,10 @@ class GraphvizSvgParser(object):
             stroke_color = 'black' 
             line_width = 5  # Thick box
         else:
-            line_width = 0  # No box
+            line_width = 1  # Thin box
         item = goocanvas.Polyline(parent = self.current_parent(),
                                   points = points,
-                                  close_path =True,
+                                  close_path = True,
                                   fill_color = fill_color,
                                   line_width = line_width,
                                   stroke_color = stroke_color)
