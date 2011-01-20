@@ -39,7 +39,12 @@ import re
 # -----------------------------------------------------------------------------
 
 import gtk
-
+import gobject
+if gobject.pygobject_version >= (2, 22, 0):
+    import gio
+    _MIME_TYPE = True
+else: _MIME_TYPE = False
+    
 # -----------------------------------------------------------------------------
 #
 # GRAMPS modules
@@ -219,7 +224,7 @@ class ImageMetadataGramplet(Gramplet):
         # get the pyexiv2 image
         self.plugin_image = self.get_plugin_image( self.orig_image )
 
-        if self.plugin_image:
+        if isinstance(self.plugin_image, ImageMetadata): # If self.plugin_image:
 
             # read image metadata
             self.read_image_metadata( self.plugin_image )
@@ -244,7 +249,14 @@ class ImageMetadataGramplet(Gramplet):
                              "select another image."))
             return False
 
-        self.mime_type = self.orig_image.get_mime_type()
+        if _MIME_TYPE:
+            # as of 2.20 this mime is portable - return same value on both linux and windows
+            file = gio.File(self.image_path)
+            info = file.query_info('standard::content-type')
+            self.mime_type = gio.content_type_get_mime_type(info.get_content_type())
+        else:
+            # not portable - returns diferrent values depending of os
+            self.mime_type = self.orig_image.get_mime_type()
 
         # get image mime type and split into its pieces
         if self.mime_type.startswith("image/"):
@@ -267,7 +279,7 @@ class ImageMetadataGramplet(Gramplet):
             return
 
         # Fill in current image metadata
-        image_title = self.orig_image.get_description()
+        image_title = self.orig_image.get_description().replace('&', '&amp;')
         self.exif_widgets["Active:Image"].set_text("<i>%s</i> " % image_title)
         self.exif_widgets["Active:Image"].set_use_markup(True)
 
@@ -594,7 +606,7 @@ class ImageMetadataGramplet(Gramplet):
         reads the image metadata after the pyexiv2.Image has been created
         """
 
-        if not obj or not self.readable:
+        if not isinstance(obj, ImageMetadata) or not self.readable:
             return
 
         # clear all data fields first
@@ -606,7 +618,7 @@ class ImageMetadataGramplet(Gramplet):
             obj.read()
 
             # set up image exif keys for use in this gramplet 
-            exifKeyTags = [ keyTag for keyTag in self.plugin_image.exif_keys
+            exifKeyTags = [ keyTag for keyTag in self.plugin_image.exif_keys \
                 if keyTag in _DATAMAP]
 
             for keyTag in exifKeyTags:
