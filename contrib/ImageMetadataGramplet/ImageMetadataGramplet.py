@@ -83,22 +83,19 @@ _DESCRIPTION = _( "Enter text describing this image and who might be in "
 ImageArtist        = "Exif.Image.Artist"
 ImageCopyright    = "Exif.Image.Copyright"
 ImageDateTime     = "Exif.Image.DateTime"
+ImageDescription  = "Exif.Image.ImageDescription"
 ImageLatitude     = "Exif.GPSInfo.GPSLatitude"
 ImageLatitudeRef  = "Exif.GPSInfo.GPSLatitudeRef"
 ImageLongitude    = "Exif.GPSInfo.GPSLongitude"
 ImageLongitudeRef = "Exif.GPSInfo.GPSLongitudeRef"
-ImageDescription  = "Exif.Image.ImageDescription"
-
-# set Xmp keys
-XmpSubject = "Xmp.dc.subject"
 
 # set up keys for Image IPTC keys
 IptcKeywords    = "Iptc.Application2.Keywords"
 IptcDateCreated = "Iptc.Application2.DateCreated"
 
-_DATAMAP = [ ImageArtist, ImageCopyright, ImageDateTime,
-             ImageLatitude, ImageLatitudeRef, ImageLongitude, ImageLongitudeRef,
-             ImageDescription ]
+_DATAMAP = [ ImageDescription, ImageDateTime, ImageArtist, ImageCopyright,
+             ImageLatitudeRef, ImageLatitude, ImageLongitudeRef, ImageLongitude ]
+
 
 IptcMap = [ IptcDateCreated, IptcKeywords ]
 # ------------------------------------------------------------------------
@@ -170,6 +167,10 @@ class imageMetadataGramplet(Gramplet):
 
         # manual time entry, Example: Hour Minutes Seconds
         row = gtk.HBox()
+        label = gtk.Label()
+        label.set_text(_("Time"))
+        label.show()
+        row.pack_start(label, False)  
 
         self.make_event_box(row, _("Hour"), "Hour",    [hour for hour in range(0, 24)], nhour)
         self.make_event_box(row, _("Mins"), "Minutes", [mins for mins in range(0, 60)], nminutes)
@@ -493,9 +494,7 @@ class imageMetadataGramplet(Gramplet):
                     self.Exif_widgets["Description"].set_text(
                         self._get_value( ImageDescription ) )
 
-                # Subject
-                subject = self._get_value( XmpSubject )
- 
+                #Iptc Keys used by this addon
                 for KeyTag in IptcMap:
 
                     # Keywords 
@@ -612,6 +611,22 @@ class imageMetadataGramplet(Gramplet):
             WarningDialog(_( "There is an error with this image!\n"
                 "You do not have write access..."))
 
+    def clear_date(self):
+        """
+        Will clear the date fields
+        """
+
+        for key in ["Year", "Month", "Day"]:
+            self.Exif_widgets[key].set_active(0)
+
+    def clear_time(self):
+        """
+        Will clear the time fields
+        """
+
+        for key in ["Hour", "Minutes", "Seconds"]:
+            self.Exif_widgets[key].set_active(0)
+
     def clear_data_entry(self, obj, cleartype = "All"):
         """
         clears all data fields to nothing
@@ -626,8 +641,8 @@ class imageMetadataGramplet(Gramplet):
                 "Latitude", "Longitude", "Keywords", "Description" ]:
                 self.Exif_widgets[key].set_text( "" )
 
-            for key in ["Year", "Month", "Day", "Hour", "Minutes", "Seconds"]:
-                self.Exif_widgets[key].set_active(0)
+            self.clear_date()
+            self.clear_time()
 
             self.LATitude = ""
             self.LatitudeRef = ""
@@ -635,8 +650,8 @@ class imageMetadataGramplet(Gramplet):
             self.LongitudeRef = ""
 
         else:
-            for key in ["Year", "Month", "Day", "Hour", "Minutes", "Seconds"]:
-                self.Exif_widgets[key].set_active(0)
+            self.clear_date()
+            self.clear_time()
 
     def process_date(self, tmpDate, read = True):
         """
@@ -644,8 +659,8 @@ class imageMetadataGramplet(Gramplet):
         year, month, day, hour, minutes, seconds
 
         @param: tmpDate = variable to be processed
-        @param: read -- if True, then process date from the read process...
-                     -- if False, then process date from the write process...  
+        @param: read -- if True, then process_date() is for the read process...
+                     -- if False, then process_date() is for the write process...  
         """
 
         # get date type
@@ -690,7 +705,11 @@ class imageMetadataGramplet(Gramplet):
 
                 # get the date from the string...
                 ddate, dtime = tmpDate.split(" ")
-                ryear, rmonth, rday = ddate.split(".")
+                if ":" in ddate:
+                    separator = ":"
+                else:
+                    separator = "."
+                ryear, rmonth, rday = ddate.split(separator)
 
                 # get the time from the string...
                 rhour, rminutes, rseconds = dtime.split(":")
