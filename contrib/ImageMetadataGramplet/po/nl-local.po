@@ -37,9 +37,10 @@ msgstr ""
 "Project-Id-Version: gramps\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-02-19 18:09+0100\n"
-"PO-Revision-Date: 2010-06-22 07:50+0100\n"
+"PO-Revision-Date: 2011-02-11 08:31+0100\n"
 "Last-Translator: Erik De Richter <frederik.de.richter@pandora.be>\n"
 "Language-Team: nederlands <frederik.de.richter@googlemail.com>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -107,7 +108,7 @@ msgstr "De naam van de persoon die het beeld maakte, ingeven."
 
 #: ImageMetadataGramplet/ImageMetadataGramplet.py:206
 msgid "Press the Select Date Button to bring up a calendar where you can choose a date."
-msgstr "Druk op de 'kies datum' knop om een kalender te tonen waar u een datum kunt selecteren."
+msgstr "Op de 'kies datum' knop drukken om een kalender te tonen waar u een datum kunt selecteren."
 
 #: ImageMetadataGramplet/ImageMetadataGramplet.py:209
 msgid "Enter the copyright information for the image.  Example: (C) 2010 Smith and Wesson"
@@ -118,7 +119,7 @@ msgid ""
 "Enter words that describe this image, separated by comma.\n"
 "Example: Kids,house,dog,car ."
 msgstr ""
-"Vul woorden in die het beeld beschrijven, gebruik commaseparatie.\n"
+"Woorden die het beeld beschrijven kunt u hier invullen, gebruik commaseparatie.\n"
 "Voorbeeld: Kinderen,huis,hond,auto ."
 
 #: ImageMetadataGramplet/ImageMetadataGramplet.py:215
@@ -140,7 +141,7 @@ msgstr "Indien u het decimale formaat voor de lengtegraad gebruikt, niets invull
 
 #: ImageMetadataGramplet/ImageMetadataGramplet.py:226
 msgid "Enter the GPS Longitude as either inDegrees, Minutes, Seconds or Decimal formats."
-msgstr "Vul de GPS lengtegraad in, ofwel in graden, minuten en seconden ofwel in het decimale formaat."
+msgstr "GPS-lengtegraad invullen, ofwel in graden, minuten en seconden ofwel in het decimale formaat."
 
 #: ImageMetadataGramplet/ImageMetadataGramplet.py:231
 msgid "Save"
