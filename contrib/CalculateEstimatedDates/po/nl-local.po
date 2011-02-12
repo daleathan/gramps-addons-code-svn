@@ -1,11 +1,10 @@
 # translation of nl.po to nederlands
-# translation of nl.po to
 # Dutch translation of GRAMPS
 # Copyright (C) 2003 The Free Software Foundation,  Inc.
 #
 # Tino Meinen <a.t.meinen@chello.nl>, 2003, 2004, 2005.
 # Kees Bakker <kees.bakker@xs4all.nl>, 2005, 2006, 2007.
-# Erik De Richter <frederik.de.richter@pandora.be>, 2006, 2007, 2008, 2009.
+# Erik De Richter <frederik.de.richter@pandora.be>, 2006, 2007, 2008, 2009, 2010, 2011.
 # --------------------------------------------------
 # Conventies (kan later altijd nog aangepast worden)
 # --------------------------------------------------
@@ -20,7 +19,7 @@
 # record             archief/kaart
 # database           gegevensbestand (KB)
 # chart              grafiek
-# Home person        Beginpersoon : EDR/Centrale persoon/spilfiguur/basispersoon/honkpersoon
+# Home person        Beginpersoon
 # spouse             echtgenoot
 # partner            partner
 # warning            let op
@@ -29,17 +28,19 @@
 # regex              regex onvertaald laten
 # expression         uitdrukking
 # given name         voornaam
-# reference	waarnaar verwezen wordt
-# count		aantal maal
-# lineage	lijn
+# reference	     waarnaar verwezen wordt, verwijzingen
+# count		     aantal maal
+# lineage	     lijn
+# reference          enekel voor de refentiestructuur
 msgid ""
 msgstr ""
 "Project-Id-Version: gramps\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-03-08 16:37+0100\n"
-"PO-Revision-Date: 2010-03-22 08:50+0100\n"
+"PO-Revision-Date: 2011-02-08 20:24+0100\n"
 "Last-Translator: Erik De Richter <frederik.de.richter@pandora.be>\n"
 "Language-Team: nederlands <frederik.de.richter@googlemail.com>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -68,7 +69,7 @@ msgstr "Filter"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:75
 msgid "Select filter to restrict people"
-msgstr "Filter om aantal personen te beperken, selecteren"
+msgstr "Kies een filter om aantal personen te beperken"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:79
 msgid "Filter Person"
@@ -98,7 +99,8 @@ msgstr "Eerder toegevoegde gebeurtenissen, opmerkingen en bronnen verwijderen"
 msgid ""
 "Remove calculated events, notes, and source; occurs immediately on Execute"
 msgstr ""
-"Geschatte gebeurtenissen, opmerkingen en bronnen verwijderen; dit wordt onmiddellijk uitgevoerd"
+"Verwijder geschatte gebeurtenissen, opmerkingen en bronnen; dit wordt "
+"onmiddellijk uitgevoerd"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:95
 msgid "Birth"
@@ -110,15 +112,15 @@ msgstr "Geen geboortegebeurtenissen toevoegen"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:97
 msgid "Add birth events without dates"
-msgstr "Geboortegebeurtenissen zonder datum toevoegen"
+msgstr "Geboortegebeurtenis zonder datum toevoegen"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:98
 msgid "Add birth events with dates"
-msgstr "Geboortegebeurtenissen met datums toevoegen"
+msgstr "Geboortegebeurtenis met datums toevoegen"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:99
 msgid "Add a birth events with or without estimated dates"
-msgstr "Geboortegebeurtenissen met of zonder geschatte datums toevoegen"
+msgstr "Voeg geboortegebeurtenissen toe met of zonder geschatte datums"
 
 # Gebeurtenistype: overlijden/sterven/sterfgeval/doodgaan
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:102
@@ -139,7 +141,7 @@ msgstr "Overlijdensgebeurtenissen met datums toevoegen"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:106
 msgid "Add death events with or without estimated dates"
-msgstr "Overlijdensgebeurtenissen met of zonder geschatte datums toevoegen"
+msgstr "Voeg overlijdensgebeurtenissen toe, met of zonder geschatte datums"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:110
 msgid "Maximum age"
@@ -179,7 +181,7 @@ msgstr "Uitersten (voor en na)"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:131
 msgid "Dates on events are either about or after/before"
-msgstr "Geburtenissendatums zijn ofwel ongeveer of voor/na"
+msgstr "Gebeurtenissendatums zijn ofwel ongeveer of voor/na"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:162
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:179
@@ -243,11 +245,12 @@ msgstr "Selectie wisselen"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:194
 msgid "Add Selected Events"
-msgstr "Gekozen gebeurtenissen toevoegen"
+msgstr "Gekozen gebeurtenissen toeveogen"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:200
 msgid "Remove Events, Notes, and Source and Reselect Data"
-msgstr "Gebeurtenissen, opmerkingen en bronnen verwijderen en herselecteer gegevens"
+msgstr ""
+"Verwijder gebeurtenissen, opmerkingen en bronnen en herselecteer gegevens"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:201
 msgid ""
@@ -318,7 +321,7 @@ msgstr "Oude schattingen verwijderen... "
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:248
 #, python-format
 msgid "Removing '%s'..."
-msgstr "'%s'verwijderen..."
+msgstr "Verwijder '%s'..."
 
 # niet/geen
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:302
@@ -383,7 +386,8 @@ msgstr "Geschatte geboortedatum"
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:463
 #, python-format
 msgid "Added death event based on %(evidence)s, from %(person)s"
-msgstr "Overlijdensgebeurtenis toegevoegd gebaseerd op %(evidence)s, van %(person)s"
+msgstr ""
+"Overlijdensgebeurtenis toegevoegd gebaseerd op %(evidence)s, van %(person)s"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:466
 #, python-format
