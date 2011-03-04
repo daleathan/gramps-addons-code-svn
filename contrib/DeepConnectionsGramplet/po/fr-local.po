@@ -42,7 +42,7 @@ msgstr "Continuer"
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:80
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:96
 msgid "child"
-msgstr "enfant"
+msgstr "l'enfant"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:85
 msgid "husband"
@@ -54,11 +54,11 @@ msgstr "la femme"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:101
 msgid "father"
-msgstr "père"
+msgstr "le père"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:105
 msgid "mother"
-msgstr "mère"
+msgstr "la mère"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:123
 #, python-format
@@ -79,7 +79,10 @@ msgstr "Aucun individu actif défini."
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:143
 msgid "self"
-msgstr "L'individu actif"
+msgstr "l'individu actif"
+
+msgid "sibling"
+msgstr "le frère ou la soeur"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:147
 msgid "Looking for relationship between\n"
