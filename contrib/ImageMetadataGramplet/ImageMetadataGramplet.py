@@ -28,7 +28,8 @@ import os, sys
 from datetime import datetime, date
 import time
 from decimal import Decimal
-from fractions import Fraction
+
+import calendar
 
 # abilty to escape certain characters from html output...
 from xml.sax.saxutils import escape as _html_escape
@@ -100,12 +101,11 @@ ImageDescription  = "Exif.Image.ImageDescription"
 # set up keys for Image IPTC keys
 IptcKeywords = "Iptc.Application2.Keywords"
 
-_DATAMAP = [ ImageArtist, ImageCopyright, ImageDateTime,
-             ImageLatitude, ImageLatitudeRef, ImageLongitude, ImageLongitudeRef,
-             ImageDescription ]
+_DATAMAP = [ImageArtist, ImageCopyright, ImageDateTime,
+    ImageLatitude, ImageLatitudeRef, ImageLongitude, ImageLongitudeRef,
+    ImageDescription]
 
 _allmonths = list( [ _dd.short_months[i], _dd.long_months[i], i ] for i in range(1, 13) )
-
 
 def _return_month(month):
     """
@@ -278,6 +278,9 @@ class imageMetadataGramplet(Gramplet):
             if not found:
                 self._mark_dirty_write(self.orig_image)
                 return
+        else:
+            # prevent non mime images from attempting to write to non MIME images...
+            self._mark_dirty_write(self.orig_image)
 
         # clear all data entry fields
         self.clear_metadata(self.orig_image)
@@ -286,7 +289,7 @@ class imageMetadataGramplet(Gramplet):
         self.plugin_image = ImageMetadata(self.image_path)
 
         # read the image metadata
-        self.read_metadata(self.orig_image)
+        self.read_metadata(self.plugin_image)
 
     def make_row(self, pos, text, choices=None, readonly=False, callback_list=[],
                  mark_dirty=False, default=0, source=None):
@@ -483,13 +486,13 @@ class imageMetadataGramplet(Gramplet):
                 KeyValue = ""
         return KeyValue
 
-    def read_metadata(self, obj):
+    def read_metadata(self, imgobj):
         """
         reads the image metadata after the pyexiv2.Image has been created
         """
 
         # reads the media metadata into this addon
-        self.plugin_image.read()
+        imgobj.read()
 
         # setup initial values in case there is no image metadata to be read?
         self.artist, self.copyright, self.description = "", "", ""
@@ -516,7 +519,7 @@ class imageMetadataGramplet(Gramplet):
             # media image DateTime
             elif KeyTag == ImageDateTime:
 
-                # date1 may come from the image metadata
+                # date1 comes from the image metadata
                 # date2 may come from the Gramps database 
                 date1 = self._get_value(KeyTag)
                 date2 = self.orig_image.get_date_object()
@@ -524,8 +527,6 @@ class imageMetadataGramplet(Gramplet):
                 use_date = date1 or date2
                 if use_date:
                     self.process_date(use_date)
-                else:
-                    self.process_date(None)
 
             # Latitude and Latitude Reference
             elif KeyTag == ImageLatitude:
@@ -549,12 +550,11 @@ class imageMetadataGramplet(Gramplet):
 
                         # Latitude Direction Reference
                         LatitudeRef = self._get_value(ImageLatitudeRef)
+                        # Longitude Direction Reference
+                        LongitudeRef = self._get_value(ImageLongitudeRef)
 
                         self.exif_widgets["Latitude"].set_text(
                             """%s° %s′ %s″ %s""" % (latdeg, latmin, latsec, LatitudeRef) )
-
-                        # Longitude Direction Reference
-                        LongitudeRef = self._get_value(ImageLongitudeRef)
 
                         self.exif_widgets["Longitude"].set_text(
                             """%s° %s′ %s″ %s""" % (longdeg, longmin, longsec, LongitudeRef) )
@@ -629,7 +629,7 @@ class imageMetadataGramplet(Gramplet):
                 self._set_value(ImageCopyright, copyright)
 
             # get date from data field for saving
-            wdate = _write_date( self.exif_widgets["NewDate"].get_text(),
+            wdate = self._write_date( self.exif_widgets["NewDate"].get_text(),
                                  self.exif_widgets["NewTime"].get_text() )
             if wdate is not False: 
                 self._set_value(ImageDateTime, wdate)
@@ -711,6 +711,84 @@ class imageMetadataGramplet(Gramplet):
         else:
             WarningDialog(_("There is an error with this image!\n"
                 "You may not have write access or privileges for this image?"))
+
+#------------------------------------------------
+# Process Date/ Time fields for saving to image
+#------------------------------------------------
+    def _write_date(self, wdate, wtime):
+        """
+        process the date/ time for writing to image
+
+        @param: wdate -- date from the interface
+        @param: wtime -- time from the interface
+        """
+
+        # if date is in proper format: 1826-Apr-12 or 1826-April-12
+        if (wdate and wdate.count("-") == 2):
+            wyear, wmonth, wday = _split_values(wdate)
+        elif not wdate:
+            wyear, wmonth, wday = False, False, False   
+
+        # if time is in proper format: 14:06:00
+        if (wtime and wtime.count(":") == 2):
+            hour, minutes, seconds = _split_values(wtime)
+        elif not wtime:
+            hour, minutes, seconds = False, False, False
+
+        # if any value for date or time is False, then do not save date
+        bad_datetime = any(value == False for value in [wyear, wmonth, wday, hour, minutes, seconds] )
+        if not bad_datetime:
+
+            # convert each value for date/ time
+            wyear, wday = int(wyear), int(wday)
+            hour, minutes, seconds = int(hour), int(minutes), int(seconds)
+
+            # do some error trapping...
+            if wday == 0:
+                wday = 1
+            if hour >= 24:
+                hour = 0
+            if minutes > 59:
+                minutes = 59
+            if seconds > 59:
+                seconds = 59
+
+            # convert month, and do error trapping
+            try:
+                wmonth = int(wmonth)
+            except ValueError:
+                wmonth = _return_month(wmonth)
+            if wmonth > 12:
+                wmonth = 12
+
+            # get the number of days in wyear of all months
+            numdays = [0] + [calendar.monthrange(year, month)[1] for year 
+                in [wyear] for month in range(1, 13) ]
+
+            if wday > numdays[wmonth]:
+                wday = numdays[wmonth]
+
+            # ExifImage Year must be greater than 1900
+            # if not, we save it as a string
+            if wyear < 1900:
+                wdate = "%04d-%s-%02d %02d:%02d:%02d" % (
+                    wyear, _dd.long_months[wmonth], wday, hour, minutes, seconds)
+
+            # year -> or equal to 1900
+            else:
+                wdate = datetime(wyear, wmonth, wday, hour, minutes, seconds)
+
+        else:
+            wdate = False
+
+        if wdate is not False:
+            self.exif_widgets["NewDate"].set_text("%04d-%s-%02d" % (
+                wyear, _dd.long_months[wmonth], wday) )
+            self.exif_widgets["NewTime"].set_text("%02d:%02d:%02d" % (
+                hour, minutes, seconds) )
+
+        # return the modified date/ time
+        return wdate
 
 #------------------------------------------------
 #     Date/ Time functions
@@ -1039,69 +1117,3 @@ def rational_to_dms(coords, ValueType = False):
                 min = convert_value(min)
                 sec = convert_value(sec)
     return deg, min, sec
-
-#------------------------------------------------
-# Process Date/ Time fields for saving to image
-#------------------------------------------------
-def _write_date(wdate, wtime):
-    """
-    process the date/ time for writing to image
-
-    @param: wdate -- date from the interface
-    @param: wtime -- time from the interface
-    """
-
-    # if date is in proper format: 1826-Apr-12 or 1826-April-12
-    if (wdate and wdate.count("-") == 2):
-        year, month, day = _split_values(wdate)
-    elif not wdate:
-        year, month, day = False, False, False   
-
-    # if time is in proper format: 14:06:00
-    if (wtime and wtime.count(":") == 2):
-        hour, minutes, seconds = _split_values(wtime)
-    elif not wtime:
-        hour, minutes, seconds = False, False, False
-
-    # if any value for date or time is False, then do not save date
-    bad_datetime = any(value == False for value in [year, month, day, hour, minutes, seconds] )
-    if not bad_datetime:
-
-        # convert each value for date/ time
-        year, day = int(year), int(day)
-        hour, minutes, seconds = int(hour), int(minutes), int(seconds)
-
-        # do some error trapping...
-        if year < 1826:  year = 1826
-        if day == 0:  day = 1
-        if hour >= 24: hour = 0
-        if minutes > 59:  minutes = 59
-        if seconds > 59:  seconds = 59
-
-        # convert month, and do error trapping
-        try:
-            month = int(month)
-        except ValueError:
-            month = _return_month(month)
-        if month > 12:  month = 12
-
-        # ExifImage Year must be greater than 1900
-        # if not, we save it as a string
-        if year < 1900:
-            wdate = "%04d-%s-%02d %02d:%02d:%02d" % (
-                    year, _dd.long_months[month], day, hour, minutes, seconds)
-
-        # year -> or equal to 1900
-        else:
-
-            # check to make sure all values are valid for datetime?
-            # if not, date becomes False and will not be saved?  
-            try:
-                wdate = datetime(year, month, day, hour, minutes, seconds)
-            except ValueError:
-                    wdate = False
-    else:
-        wdate = False
-
-    # return the modified date/ time
-    return wdate
