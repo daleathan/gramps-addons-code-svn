@@ -39,6 +39,6 @@ register(GRAMPLET,
          status=UNSTABLE,
          fname="ImageMetadataGramplet.py",
          help_url="Image Metadata Gramplet",
+        author_name = ['robhealey1@gmail.com'],
+        author_email = ['robhealey1@gmail.com'],
          )
-
-
