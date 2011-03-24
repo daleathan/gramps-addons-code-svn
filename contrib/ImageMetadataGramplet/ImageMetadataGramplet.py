@@ -102,8 +102,6 @@ ImageLatitudeRef  = "Exif.GPSInfo.GPSLatitudeRef"
 ImageLongitude    = "Exif.GPSInfo.GPSLongitude"
 ImageLongitudeRef = "Exif.GPSInfo.GPSLongitudeRef"
 
-IptcKeywords = "Iptc.Application2.Keywords"
-
 _DATAMAP = [ImageDescription, ImageDateTime, ImageArtist, ImageCopyright,
             ImageLatitudeRef, ImageLatitude, ImageLongitudeRef, ImageLongitude]
 
@@ -192,10 +190,7 @@ class imageMetadataGramplet(Gramplet):
   
             # Latitude and Longitude for this image 
             ("Latitude",        _("Latitude"),     None, False, [],  True,  0, None),
-	    ("Longitude",       _("Longitude"),    None, False, [],  True,  0, None),
-
-            # keywords describing your image
-            ("Keywords",        _("Keywords"),     None, False, [],  True,  0, None) ]:
+	    ("Longitude",       _("Longitude"),    None, False, [],  True,  0, None) ]:
 
             pos, text, choices, readonly, callback, dirty, default, source = items
             row = self.make_row(pos, text, choices, readonly, callback, dirty, default, source)
@@ -411,10 +406,6 @@ class imageMetadataGramplet(Gramplet):
             "your image,\n"
             "Example: 10.396378, 10 23 46 E, 105° 6′ 6″ W, -105 6 6"))
 
-        # Keywords
-        self.exif_widgets["Keywords"].set_tooltip_text(_("Enter keywords that describe this image "
-            "seprated by a comma."))
-
 # -----------------------------------------------
 # Error Checking functions
 # -----------------------------------------------
@@ -439,9 +430,7 @@ class imageMetadataGramplet(Gramplet):
 
         # clear all data fields
         if cleartype == "All":
-            for key in ["Author", "Copyright", "NewDate", "NewTime",
-                        "Latitude", "Longitude", "Keywords", "Description"]:
-
+            for key in ["Author", "Copyright", "NewDate", "NewTime",  "Latitude", "Longitude", "Description"]:
                 self.exif_widgets[key].set_text("")
 
         # clear only the date and time fields
@@ -497,10 +486,17 @@ class imageMetadataGramplet(Gramplet):
 
         # reads the media metadata into this addon
         # LesserVersion would only be True when pyexiv2-to 0.1.3 is installed
-        if not LesserVersion:
-            self.plugin_image.read()
+        if LesserVersion:
+            try:
+                self.plugin_image.readMetadata()
+            except IOError:
+                return
+ 
         else:
-            self.plugin_image.readMetadata()
+            try:  
+                self.plugin_image.read()
+            except IOError:
+                return
 
         # setup initial values in case there is no image metadata to be read?
         self.artist, self.copyright, self.description = "", "", ""
@@ -567,18 +563,6 @@ class imageMetadataGramplet(Gramplet):
             elif KeyTag == ImageDescription:
                 self.description = self._get_value(ImageDescription)
                 self.exif_widgets["Description"].set_text(self.description)
-
-            # image Keywords
-            words = ""
-            keyWords = self._get_value(IptcKeywords)
-            if keyWords:
-                index = 1 
-                for word in keyWords:
-                    words += word
-                    if index is not len(keyWords):
-                        words += "," 
-                        index += 1 
-                self.exif_widgets["Keywords"].set_text(words)
 
     def _set_value(self, KeyTag, KeyValue):
         """
@@ -696,10 +680,6 @@ class imageMetadataGramplet(Gramplet):
                 # convert (degrees, minutes, seconds) to Rational for saving
                 self._set_value(ImageLongitude, coords_to_rational(longitude))
                 self._set_value(ImageLongitudeRef, LongitudeRef)
-
-            # keywords data field
-            keywords = [word for word in self.exif_widgets["Keywords"].get_text().split(",") if word]
-            self._set_value(IptcKeywords, keywords)
 
             # description data field
             start = self.exif_widgets["Description"].get_start_iter()
