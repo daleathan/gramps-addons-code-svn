@@ -26,10 +26,8 @@
 # *****************************************************************************
 import os, sys
 from datetime import datetime, date
-import time
-from decimal import Decimal
-
-import calendar
+import time, calendar
+from decimal import *
 
 # abilty to escape certain characters from html output...
 from xml.sax.saxutils import escape as _html_escape
@@ -445,12 +443,39 @@ class imageMetadataGramplet(Gramplet):
         @param: KeyTag -- image metadata key
         """
 
-        if LesserVersion:
-            human_value = self.plugin_image.interpretedExifValue(KeyTag)
+        # set default value to ""
+        KeyValue = ""
+
+        # LesserVersion would only be True when pyexiv2-to 0.1.3 is installed
+        if not LesserVersion:
+
+            if "Exif" in KeyTag:
+                try:
+                    KeyValue = self.plugin_image[KeyTag].value
+                    self.ValueType = 0 
+                except KeyError:
+                    KeyValue = self.plugin_image[KeyTag].raw_value
+                    self.ValueType = 1
+                except ValueError:
+                    pass
+                except AttributeError:
+                    pass
+
+            # Iptc KeyTag
+            else:
+                try:
+                    KeyValue = self.plugin_image[KeyTag].value
+                except KeyError:
+                    pass
+                except ValueError:
+                    pass
+                except AttributeError:
+                    pass 
 
         else:
-            human_value = metadata.interpretedExifValue(KeyTag)
-         return human_value
+            KeyValue = self.plugin_image[KeyTag]
+ 
+        return KeyValue
 
     def read_metadata(self, obj):
         """
@@ -464,23 +489,17 @@ class imageMetadataGramplet(Gramplet):
                 self.plugin_image.readMetadata()
             except IOError:
                 return
+            imageKeyTags = [KeyTag for KeyTag in self.plugin_image.exifKeys() if KeyTag in _DATAMAP ]
  
         else:
             try:  
                 self.plugin_image.read()
             except IOError:
                 return
+            imageKeyTags = [KeyTag for KeyTag in self.plugin_image.exif_keys if KeyTag in _DATAMAP ]
 
         # setup initial values in case there is no image metadata to be read?
         self.artist, self.copyright, self.description = "", "", ""
-
-        if LesserVersion:
-            imageKeyTags = [KeyTag for KeyTag in self.plugin_image.exifKeys()
-                if KeyTag in _DATAMAP ]
-
-        else:
-            imageKeyTags = [KeyTag for KeyTag in self.plugin_image.exif_keys
-                if KeyTag in _DATAMAP ]
 
         for KeyTag in imageKeyTags:
 
@@ -1084,7 +1103,8 @@ def rational_to_dms(coords, ValueType = False):
             min, rest = min.split("/")
             sec, rest = sec.split("/")
 
-            sec = str( ( Decimal(sec) / Decimal(rest) ) )
+            getcontext().prec = 4
+            sec = str( (Decimal(sec) / Decimal(rest)) )
 
         # coordinates look like:
         #     [Rational(38, 1), Rational(38, 1), Rational(150, 50)]
