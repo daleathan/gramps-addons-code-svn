@@ -445,39 +445,12 @@ class imageMetadataGramplet(Gramplet):
         @param: KeyTag -- image metadata key
         """
 
-        # set default value to ""
-        KeyValue = ""
-
-        # LesserVersion would only be True when pyexiv2-to 0.1.3 is installed
-        if not LesserVersion:
-
-            if "Exif" in KeyTag:
-                try:
-                    KeyValue = self.plugin_image[KeyTag].value
-                    self.ValueType = 0 
-                except KeyError:
-                    KeyValue = self.plugin_image[KeyTag].raw_value
-                    self.ValueType = 1
-                except ValueError:
-                    pass
-                except AttributeError:
-                    pass
-
-            # Iptc KeyTag
-            else:
-                try:
-                    KeyValue = self.plugin_image[KeyTag].value
-                except KeyError:
-                    pass
-                except ValueError:
-                    pass
-                except AttributeError:
-                    pass 
+        if LesserVersion:
+            human_value = self.plugin_image.interpretedExifValue(KeyTag)
 
         else:
-            KeyValue = self.plugin_image[KeyTag]
- 
-        return KeyValue
+            human_value = metadata.interpretedExifValue(KeyTag)
+         return human_value
 
     def read_metadata(self, obj):
         """
@@ -501,7 +474,14 @@ class imageMetadataGramplet(Gramplet):
         # setup initial values in case there is no image metadata to be read?
         self.artist, self.copyright, self.description = "", "", ""
 
-        imageKeyTags = [KeyTag for KeyTag in self.plugin_image.exif_keys if KeyTag in _DATAMAP]
+        if LesserVersion:
+            imageKeyTags = [KeyTag for KeyTag in self.plugin_image.exifKeys()
+                if KeyTag in _DATAMAP ]
+
+        else:
+            imageKeyTags = [KeyTag for KeyTag in self.plugin_image.exif_keys
+                if KeyTag in _DATAMAP ]
+
         for KeyTag in imageKeyTags:
 
             # Media image Author/ Artist
