@@ -19,7 +19,7 @@
 {'d': 'Gramplet interface for census data', 'g': '3.3', 'i': 'Census Gramplet', 'n': 'Census Gramplet', 't': u'Gramplet', 'v': '1.0.6', 'z': 'Census.addon.tgz'}
 {'d': 'Report of census events for a person.', 'g': '3.3', 'i': 'census_report', 'n': 'Census Report', 't': u'Report', 'v': '1.0.6', 'z': 'Census.addon.tgz'}
 {'d': "Display a person's events on a timeline", 'g': '3.3', 'i': 'timelinequickview', 'n': 'Linea temporale', 't': u'Quickreport', 'v': '1.0.6', 'z': 'TimelineQuickview.addon.tgz'}
-{'d': 'This is a raw python object dump', 'g': '3.3', 'i': 'Raw Export', 'n': 'Raw Export', 't': u'Exporter', 'v': '1.0.5', 'z': 'ExportRaw.addon.tgz'}
+{'d': 'This is a raw python object dump', 'g': '3.3', 'i': 'Raw Export', 'n': 'Raw Export', 't': u'Exporter', 'v': '1.0.7', 'z': 'ExportRaw.addon.tgz'}
 {'d': 'Gramplet for grouping items', 'g': '3.3', 'i': 'Clipboard Gramplet', 'n': 'Clipboard Gramplet', 't': u'Gramplet', 'v': '1.0.9', 'z': 'ClipboardGramplet.addon.tgz'}
 {'d': 'Gramplet for importing text', 'g': '3.3', 'i': 'Import Gramplet', 'n': 'Import Gramplet', 't': u'Gramplet', 'v': '1.0.4', 'z': 'ImportGramplet.addon.tgz'}
 {'d': 'Gramplet to edit and save media Exif metadata', 'g': '3.3.0', 'i': 'Image Metadata Gramplet', 'n': 'Image Metadata Gramplet', 't': u'Gramplet', 'v': '1.4.20', 'z': 'ImageMetadataGramplet.addon.tgz'}
