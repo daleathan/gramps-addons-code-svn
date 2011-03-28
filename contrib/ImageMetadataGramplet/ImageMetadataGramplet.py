@@ -43,45 +43,54 @@ import gtk
 from TransUtils import get_addon_translator
 _ = get_addon_translator().ugettext
 
+from QuestionDialog import OkDialog, WarningDialog
+
+from gen.plug import Gramplet
+from DateHandler import displayer as _dd
+
+import gen.lib
+import Utils
+from PlaceUtils import conv_lat_lon
+
 # pyexiv2 download page (C) Olivier Tilloy
 _DOWNLOAD_LINK = "http://tilloy.net/dev/pyexiv2/download.html"
 
 # make sure the pyexiv2 library is installed and at least a minimum version
-pyexiv2_req_install = True
+software_version = False
 Min_VERSION = (0, 1, 3)
 Min_VERSION_str = "pyexiv2-%d.%d.%d" % Min_VERSION
-PrefVersion_str = "pyexiv2-%d.%d.%d" % (0, 3, 0)
+Pref_VERSION_str = "pyexiv2-%d.%d.%d" % (0, 3, 0)
 
 # to be able for people that have pyexiv2-0.1.3 to be able to use this addon also...
 LesserVersion = False
 
 try:
     import pyexiv2
-    if pyexiv2.version_info < Min_VERSION:
-        pyexiv2_req_install = False
+    software_version = pyexiv2.version_info
 
-except ImportError:
-    pyexiv2_req_install = False
+except ImportError, msg:
+    WarningDialog(_("You need to install, %s or greater, for this addon to work...\n"
+                    "I would recommend installing, %s, and it may be downloaded from here: \n%s") % (
+                        Min_VERSION_str, Pref_VERSION_str, _DOWNLOAD_LINK), str(msg))
+    raise Exception(_("Failed to load 'Image Metadata Gramplet/ Addon'..."))
                
+# This only happends if the user only has pyexiv2-0.1.3 installed on their computer...
+# it requires the use of a few different things, which you will see when this variable is in aa conditional,
+# to still use this addon...
 except AttributeError:
     LesserVersion = True
 
 # the library is either not installed or does not meet 
 # minimum required version for this addon....
-if not pyexiv2_req_install:
-    raise Exception(_("The minimum required version for pyexiv2 must be %s \n"
+if (software_version and (software_version < Min_VERSION)):
+    msg = _("The minimum required version for pyexiv2 must be %s \n"
         "or greater.  Or you do not have the python library installed yet.  "
         "You may download it from here: %s\n\n  I recommend getting, %s") % (
-         Min_VERSION_str, _DOWNLOAD_LINK, PrefVersion_str) )
+         Min_VERSION_str, _DOWNLOAD_LINK, Pref_VERSION_str)
+    raise Exception(msg)
 
-from gen.plug import Gramplet
-from DateHandler import displayer as _dd
-
-from QuestionDialog import OkDialog, ErrorDialog
-
-import gen.lib
-import Utils
-from PlaceUtils import conv_lat_lon
+    WarningDialog(msg)
+    raise Exception(msg)
 
 # -----------------------------------------------------------------------------
 # Constants
@@ -95,10 +104,10 @@ ImageCopyright    = "Exif.Image.Copyright"
 ImageDateTime     = "Exif.Image.DateTime"
 ImageDescription  = "Exif.Image.ImageDescription"
 
-ImageLatitude     = "Exif.GPSInfo.GPSLatitude"
 ImageLatitudeRef  = "Exif.GPSInfo.GPSLatitudeRef"
-ImageLongitude    = "Exif.GPSInfo.GPSLongitude"
+ImageLatitude     = "Exif.GPSInfo.GPSLatitude"
 ImageLongitudeRef = "Exif.GPSInfo.GPSLongitudeRef"
+ImageLongitude    = "Exif.GPSInfo.GPSLongitude"
 
 _DATAMAP = [ImageDescription, ImageDateTime, ImageArtist, ImageCopyright,
             ImageLatitudeRef, ImageLatitude, ImageLongitudeRef, ImageLongitude]
@@ -153,6 +162,7 @@ class imageMetadataGramplet(Gramplet):
         self.exif_widgets = {}
 
         # set all dirty variables to False to begin this addon...
+        self._dirty = False
         self._dirty_image = False
         self._dirty_write = False
 
@@ -164,34 +174,34 @@ class imageMetadataGramplet(Gramplet):
         for items in [
 
             # Author field
-            ("Author",          _("Artist/ Author"), None, False, [],  True,  0, None),
+            ("Author",          _("Artist/ Author"), None, False, [],  True,  0),
 
             # copyright field
-            ("Copyright",       _("Copyright"),    None, False, [],  True,  0, None),
+            ("Copyright",       _("Copyright"),    None, False, [],  True,  0),
 
             # calendar date clickable entry
             ("Date",   "",                         None, True,
             [("Select",         _("Select Date"),  "button", self.select_date)],
-                                                                     True,  0, None),
+                                                                     True,  0),
 
             # Manual Date Entry, Example: 1826-Apr-12
-            ("NewDate",         _("Date"),         None, False,  [], True,  0, None),
+            ("NewDate",         _("Date"),         None, False,  [], True,  0),
 
             # Manual Time entry, Example: 14:06:00
-            ("NewTime",         _("Time"),         None, False,  [], True,  0, None),
+            ("NewTime",         _("Time"),         None, False,  [], True,  0),
 
             # Convert GPS Coordinates
             ("GPSFormat",       _("Convert GPS"),    None, True,
             [("Decimal",        _("Decimal"),        "button", self.convert2decimal),
              ("DMS",            _("Deg. Min. Sec."), "button", self.convert2dms)], 
-                                                                     False, 0, None),    
+                                                                     False, 0),    
   
             # Latitude and Longitude for this image 
-            ("Latitude",        _("Latitude"),     None, False, [],  True,  0, None),
-	    ("Longitude",       _("Longitude"),    None, False, [],  True,  0, None) ]:
+            ("Latitude",        _("Latitude"),     None, False, [],  True,  0),
+	    ("Longitude",       _("Longitude"),    None, False, [],  True,  0) ]:
 
-            pos, text, choices, readonly, callback, dirty, default, source = items
-            row = self.make_row(pos, text, choices, readonly, callback, dirty, default, source)
+            pos, text, choices, readonly, callback, dirty, default = items
+            row = self.make_row(pos, text, choices, readonly, callback, dirty, default)
             rows.pack_start(row, False)
 
         # separator before description textbox
@@ -213,17 +223,16 @@ class imageMetadataGramplet(Gramplet):
         # provide tooltips for this gramplet
         self.setup_tooltips(self.orig_image)
 
-        # Save and Abandon
+        # Save and Clear
         row = gtk.HBox()
-        button = gtk.Button(_("Save"))
+        button = gtk.Button(stock=gtk.STOCK_SAVE)
         button.set_tooltip_text(_("Saves the information entered here to the image metadata.  "
             "WARNING: Metadata values will be removed if you save blank data..."))
-
         button.connect("clicked", self.save_metadata)
         row.pack_start(button, True)
-        button = gtk.Button(_("Abandon"))
-        button.set_tooltip_text(_("Clears the metadata from these fields."))
 
+        button = gtk.Button(stock=gtk.STOCK_CLEAR)
+        button.set_tooltip_text(_("Clears the metadata from these fields."))
         button.connect("clicked", self.clear_metadata)
         row.pack_start(button, True)
         rows.pack_start(row, False)
@@ -247,46 +256,39 @@ class imageMetadataGramplet(Gramplet):
 
         # get media object from database
         self.orig_image = self.dbstate.db.get_object_from_handle(self.active_media)
-        if not self.orig_image:
+
+        # get the media full path
+        full_path = Utils.media_path_full(self.dbstate.db, self.orig_image.get_path() )
+
+        # check to see if it is readable?
+        if not os.access(full_path, os.R_OK):
             return
 
-        # get image's full path on local filesystem
-        self.image_path = Utils.media_path_full( self.dbstate.db, self.orig_image.get_path() )
-        if not self.image_path:
-            return
-
-        if not os.access(self.image_path, os.R_OK):
-            return
-
-        if not os.access(self.image_path, os.W_OK):
+        # check to see if it is writable?
+        if not os.access(full_path, os.W_OK):
             self._mark_dirty_write(self.orig_image)
 
         # get image mime type
         mime_type = self.orig_image.get_mime_type()
-        self.mtype = gen.mime.get_description(mime_type)
-        if mime_type and mime_type.startswith("image"):
-            _type, _imgtype = mime_type.split("/")
+        if mime_type:
+            if mime_type.startswith("image"):
+                _type, _imgtype = mime_type.split("/")
 
-            found = any(_imgtype == filetype for filetype in _valid_types)
-            if not found:
-                self._mark_dirty_write(self.orig_image)
-                return
-        else:
-            # prevent non mime images from attempting to write to non MIME images...
-            self._mark_dirty_write(self.orig_image)
-            return
+                found = any(_imgtype == filetype for filetype in _valid_types)
+                if not found:
+                    self._dirty = True
+            else:
+                # prevent non mime images from attempting to write
+                self._dirty = True
 
         # clear all data entry fields
         self.clear_metadata(self.orig_image)
 
-        # get the pyexiv2 metadata instance
-        self.plugin_image = pyexiv2.ImageMetadata(self.image_path)
-
-        # read the image metadata
-        self.read_metadata(self.plugin_image)
+        # get the plugin image and read the image metadata
+        self.display_exif_tags(full_path)
 
     def make_row(self, pos, text, choices=None, readonly=False, callback_list=[],
-                 mark_dirty=False, default=0, source=None):
+                 mark_dirty=False, default=0):
 
         # Data Entry:
         row = gtk.HBox()
@@ -308,7 +310,7 @@ class imageMetadataGramplet(Gramplet):
             if choices == None:
                 self.exif_widgets[pos] = gtk.Entry()
                 if mark_dirty:
-                    self.exif_widgets[pos].connect("changed", self._mark_dirty_image)
+                    self.exif_widgets[pos].connect("changed", self._mark_dirty)
                 row.pack_start(label, False)
                 row.pack_start(self.exif_widgets[pos], True)
             else:
@@ -319,22 +321,9 @@ class imageMetadataGramplet(Gramplet):
                     self.exif_widgets[pos].append_text(add_type)
                 self.exif_widgets[pos].set_active(default) 
                 if mark_dirty:
-                    self.exif_widgets[pos].connect("changed", self._mark_dirty_image)
+                    self.exif_widgets[pos].connect("changed", self._mark_dirty)
                 row.pack_start(label, False)
                 row.pack_start(eventBox, True)
-            if source:
-                label = gtk.Label()
-                label.set_text("%s: " % source[0])
-                label.set_width_chars(self.de_source_width)
-                label.set_alignment(1.0, 0.5) 
-                self.exif_widgets[source[1] + ":Label"] = label
-                self.exif_widgets[source[1]] = gtk.Entry()
-                if mark_dirty:
-                    self.exif_widgets[source[1]].connect("changed", self._mark_dirty_image)
-                row.pack_start(label, False)
-                row.pack_start(self.exif_widgets[source[1]], True)
-                if not self.show_source:
-                    self.exif_widgets[source[1]].hide()
         for name, text, cbtype, callback in callback_list:
             if cbtype == "button":
                 label = gtk.Label()
@@ -408,8 +397,12 @@ class imageMetadataGramplet(Gramplet):
 # Error Checking functions
 # -----------------------------------------------
     def _clear_image(self, obj):
+        self._dirty = False
         self._dirty_image = False
         self._dirty_write = False
+
+    def _mark_dirty(self, obj):
+        self._dirty = True
 
     def _mark_dirty_image(self, obj):
         self._dirty_image = True
@@ -447,55 +440,62 @@ class imageMetadataGramplet(Gramplet):
         KeyValue = ""
 
         # LesserVersion would only be True when pyexiv2-to 0.1.3 is installed
-        if not LesserVersion:
+        if LesserVersion:
+            KeyValue = self.plugin_image[KeyTag]
 
-            if "Exif" in KeyTag:
+        else:
+            if ("Exif.Image" in KeyTag) or ("Exif.GPSInfo" in KeyTag):
                 try:
                     KeyValue = self.plugin_image[KeyTag].value
-                    self.ValueType = 0 
+                    self.ValueType = 1
                 except KeyError:
                     KeyValue = self.plugin_image[KeyTag].raw_value
-                    self.ValueType = 1
-                except ValueError:
+                    self.ValueType = 0
+                except (ValueError, AttributeError):
                     pass
-                except AttributeError:
+
+            elif "Exif.Photo" in KeyTag:
+                try:
+                    KeyValue = self.plugin_image[KeyTag]
+                except (KeyError, ValueError, AttributeError):
                     pass
 
             # Iptc KeyTag
             else:
                 try:
                     KeyValue = self.plugin_image[KeyTag].value
-                except KeyError:
+                except (KeyError, ValueError, AttributeError):
                     pass
-                except ValueError:
-                    pass
-                except AttributeError:
-                    pass 
 
-        else:
-            KeyValue = self.plugin_image[KeyTag]
- 
         return KeyValue
 
-    def read_metadata(self, obj):
+    def display_exif_tags(self, mediapath):
         """
         reads the image metadata after the pyexiv2.Image has been created
         """
 
         # reads the media metadata into this addon
         # LesserVersion would only be True when pyexiv2-to 0.1.3 is installed
-        if LesserVersion:
+        if LesserVersion: # prior to v0.2.0
             try:
-                self.plugin_image.readMetadata()
-            except IOError:
+                self.plugin_image = pyexiv2.Image(mediapath)
+
+            except (IOError, OSError), msg:
+                WarningDialog(_("Please select a different image object..."), str(msg))
                 return
+
+            self.plugin_image.readMetadata()
             imageKeyTags = [KeyTag for KeyTag in self.plugin_image.exifKeys() if KeyTag in _DATAMAP ]
- 
-        else:
-            try:  
+
+        else: # v0.2.0 and above
+            self.plugin_image = pyexiv2.ImageMetadata(mediapath)
+            try:
                 self.plugin_image.read()
-            except IOError:
+
+            except (IOError, OSError), msg:
+                WarningDialog(_("Please select a different image object..."), str(msg))
                 return
+
             imageKeyTags = [KeyTag for KeyTag in self.plugin_image.exif_keys if KeyTag in _DATAMAP ]
 
         # setup initial values in case there is no image metadata to be read?
@@ -516,12 +516,13 @@ class imageMetadataGramplet(Gramplet):
             # media image DateTime
             elif KeyTag == ImageDateTime:
 
-                # date1 comes from the image metadata
-                # date2 may come from the Gramps database 
-                date1 = self._get_value(KeyTag)
-                date2 = self.orig_image.get_date_object()
+                # date1 and date2 comes from the image metadata
+                # date3 may come from the Gramps database 
+                date1 = self._get_value("Exif.Photo.DateTimeOriginal")
+                date2 = self._get_value(KeyTag)
+                date3 = self.orig_image.get_date_object()
 
-                use_date = date1 or date2
+                use_date = date1 or date2 or date3
                 if use_date:
                     self.process_date(use_date)
 
@@ -571,29 +572,31 @@ class imageMetadataGramplet(Gramplet):
         @param: KeyValue -- value to be saved
         """
 
-        # LesserVersion would only be True when pyexiv2-to 0.1.3 is installed
-        if not LesserVersion:
-
+        # for pyexiv2-0.1.3 users
+        if LesserVersion:
+            self.plugin_image[KeyTag] = KeyValue 
+        else:
             # Exif KeyValue family?
             if "Exif" in KeyTag:
                 try:
                     self.plugin_image[KeyTag].value = KeyValue
+
                 except KeyError:
                     self.plugin_image[KeyTag] = pyexiv2.ExifTag(KeyTag, KeyValue)
-                except ValueError, AttributeError:
+
+                except (ValueError, AttributeError):
                     pass
 
             # Iptc KeyValue family?
             else:
                 try:
                     self.plugin_image[KeyTag].values = KeyValue
+
                 except KeyError:
                     self.plugin_image[KeyTag] = pyexiv2.IptcTag(KeyTag, KeyValue)
-                except ValueError, AttributeError:
-                    pass
 
-        else:
-            self.plugin_image[KeyTag] = KeyValue 
+                except (ValueError, AttributeError):
+                    pass
 
 #------------------------------------------------
 #     Writes/ saves metadata to image
@@ -698,7 +701,7 @@ class imageMetadataGramplet(Gramplet):
             OkDialog(_("Image metadata has been saved."))
 
         else:
-            ErrorDialog(_("There is an error with this image!\n"
+            WarningDialog(_("There is an error with this image!\n"
                 "You may not have write access or privileges for this image?"))
 
 #------------------------------------------------
@@ -784,7 +787,7 @@ class imageMetadataGramplet(Gramplet):
 
         else:
 
-            ErrorDialog(_("There was a problem with either the date and/ or time."))
+            WarningDialog(_("There was a problem with either the date and/ or time."))
 
         # return the modified date/ time
         return wdate
@@ -1088,32 +1091,30 @@ def rational_to_dms(coords, ValueType = False):
     takes a rational set of coordinates and returns (degrees, minutes, seconds)
 
     @param: ValueType -- how did the coordinates come into this addon
-            0 = [Fraction(40, 1), Fraction(0, 1), Fraction(1079, 20)]
-            1 = '105/1 16/1 1396/100 
+            0 = '105/1 16/1 1396/100'
+            1 = [Fraction(40, 1), Fraction(0, 1), Fraction(1079, 20)]
     """
 
     deg, min, sec = False, False, False
-    if ValueType is not False:
+    # coordinates look like: '38/1 38/1 318/100'  
+    if ValueType == 0:
 
-        # coordinates look like: '38/1 38/1 318/100'  
-        if ValueType == 1:
+        deg, min, sec = coords.split(" ")
+        deg, rest = deg.split("/")
+        min, rest = min.split("/")
+        sec, rest = sec.split("/")
 
-            deg, min, sec = coords.split(" ")
-            deg, rest = deg.split("/")
-            min, rest = min.split("/")
-            sec, rest = sec.split("/")
+        getcontext().prec = 5
+        sec = str( (Decimal(sec) / Decimal(rest)) )
 
-            getcontext().prec = 4
-            sec = str( (Decimal(sec) / Decimal(rest)) )
-
-        # coordinates look like:
-        #     [Rational(38, 1), Rational(38, 1), Rational(150, 50)]
-        # or [Fraction(38, 1), Fraction(38, 1), Fraction(318, 100)]   
-        elif (ValueType == 0 and isinstance(coords, list) ):
+    # coordinates look like:
+    #     [Rational(38, 1), Rational(38, 1), Rational(150, 50)]
+    # or [Fraction(38, 1), Fraction(38, 1), Fraction(318, 100)]   
+    elif (ValueType == 1 and isinstance(coords, list) ):
     
-            if len(coords) == 3:
-                deg, min, sec = coords[0], coords[1], coords[2]
-                deg = convert_value(deg)
-                min = convert_value(min)
-                sec = convert_value(sec)
+        if len(coords) == 3:
+            deg, min, sec = coords[0], coords[1], coords[2]
+            deg = convert_value(deg)
+            min = convert_value(min)
+            sec = convert_value(sec)
     return deg, min, sec
