@@ -3,13 +3,13 @@
 # Copyright (C) 2010 THE gramps'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the gramps package.
 #
-# Peter Landgren <peter.talken@telia.com>, 2010.
+# Peter Landgren <peter.talken@telia.com>, 2010, 2011.
 msgid ""
 msgstr ""
 "Project-Id-Version: gramps 32\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-03-02 20:32+0100\n"
-"PO-Revision-Date: 2010-03-02 20:46+0100\n"
+"POT-Creation-Date: 2011-03-28 15:00+0200\n"
+"PO-Revision-Date: 2011-03-28 15:17+0200\n"
 "Last-Translator: Peter Landgren <peter.talken@telia.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
@@ -19,165 +19,283 @@ msgstr ""
 "X-Generator: Lokalize 1.0\n"
 
 #: ImageMetadataGramplet/ImageMetadataGramplet.gpr.py:29
-#: ImageMetadataGramplet/ImageMetadataGramplet.gpr.py:33
 msgid "Image Metadata Gramplet"
 msgstr "Gramplet för bild-metadata"
 
+#: ImageMetadataGramplet/ImageMetadataGramplet.gpr.py:30
+msgid "Gramplet to edit and save media Exif metadata"
+msgstr "Gramplet för att redigera och spara Exif metadata för media"
+
+#: ImageMetadataGramplet/ImageMetadataGramplet.gpr.py:34
+msgid "Image Metadata"
+msgstr "Bild-metadata"
+
 #: ImageMetadataGramplet/ImageMetadataGramplet.py:72
+#, python-format
 msgid ""
-"Enter text describing this image and who might be in the image.  It might be "
-"best to enter a location for this image, especially if there is no GPS "
-"Latitude/ Longitude information available."
+"You need to install, %s or greater, for this addon to work...\n"
+"I would recommend installing, %s, and it may be downloaded from here: \n"
+"%s"
 msgstr ""
-"Skriv in text, som beskriver denna bild och vilka som kan vara på den. "
-"Det är nog bäst att skriva in en plats för bilden, speciellt om det saknas "
-"GPS-latitude/longitud-information."
+"Du måste installeral, %s eller högre, för att detta tillägg skall fungera..."
+"\n"
+"Rekommenderad installatio: %s och den kan laddas ner härifrån: \n"
+"%s"
 
-#: ImageMetadataGramplet/ImageMetadataGramplet.py:109
-msgid "Active image"
-msgstr "Aktiv bild"
+#: ImageMetadataGramplet/ImageMetadataGramplet.py:75
+msgid "Failed to load 'Image Metadata Gramplet/ Addon'..."
+msgstr "Misslycakde med att ladda ner 'Image Metadata Gramplet'-tillägg..."
 
-#: ImageMetadataGramplet/ImageMetadataGramplet.py:110
-msgid "Photographer"
-msgstr "Fotograf"
+#: ImageMetadataGramplet/ImageMetadataGramplet.py:86
+#, python-format
+msgid ""
+"The minimum required version for pyexiv2 must be %s \n"
+"or greater.  Or you do not have the python library installed yet.  You may "
+"download it from here: %s\n"
+"\n"
+"  I recommend getting, %s"
+msgstr ""
+"Minsta krävd version för pyexiv2 är %s\n eller högre\n"
+"Eller du har inte installerat python-biblioteket ännu.\n"
+"Du kan ladda ner det härifrån: %s\n"
+"\n"
+"Rekommenderar: %s"
 
-#: ImageMetadataGramplet/ImageMetadataGramplet.py:111
-#: ImageMetadataGramplet/ImageMetadataGramplet.py:604
-msgid "Select Date"
-msgstr "Välj datum"
+#: ImageMetadataGramplet/ImageMetadataGramplet.py:177
+msgid "Artist/ Author"
+msgstr "Artist/författare"
 
-#: ImageMetadataGramplet/ImageMetadataGramplet.py:112
-msgid "Date"
-msgstr "Datum"
-
-#: ImageMetadataGramplet/ImageMetadataGramplet.py:113
+#: ImageMetadataGramplet/ImageMetadataGramplet.py:180
 msgid "Copyright"
 msgstr "Copyright"
 
-#: ImageMetadataGramplet/ImageMetadataGramplet.py:122
+#: ImageMetadataGramplet/ImageMetadataGramplet.py:184
+#: ImageMetadataGramplet/ImageMetadataGramplet.py:884
+msgid "Select Date"
+msgstr "Välj datum"
+
+#: ImageMetadataGramplet/ImageMetadataGramplet.py:188
+msgid "Date"
+msgstr "Datum"
+
+#: ImageMetadataGramplet/ImageMetadataGramplet.py:191
+msgid "Time"
+msgstr "Tid"
+
+#: ImageMetadataGramplet/ImageMetadataGramplet.py:194
+msgid "Convert GPS"
+msgstr "Omvandla GPS"
+
+#: ImageMetadataGramplet/ImageMetadataGramplet.py:195
+msgid "Decimal"
+msgstr "Decimal"
+
+#: ImageMetadataGramplet/ImageMetadataGramplet.py:196
+msgid "Deg. Min. Sec."
+msgstr "Deg. Min. Sek."
+
+#: ImageMetadataGramplet/ImageMetadataGramplet.py:200
 msgid "Latitude"
 msgstr "Latitud"
 
-#: ImageMetadataGramplet/ImageMetadataGramplet.py:133
-msgid "Lat. Ref"
-msgstr "Lat. Ref"
-
-#: ImageMetadataGramplet/ImageMetadataGramplet.py:148
+#: ImageMetadataGramplet/ImageMetadataGramplet.py:201
 msgid "Longitude"
 msgstr "Longitud"
 
-#: ImageMetadataGramplet/ImageMetadataGramplet.py:159
-msgid "Long. Ref."
-msgstr "Long. Ref."
-
-#: ImageMetadataGramplet/ImageMetadataGramplet.py:177
+#: ImageMetadataGramplet/ImageMetadataGramplet.py:212
 msgid "Description"
 msgstr "Beskrivning"
 
-#: ImageMetadataGramplet/ImageMetadataGramplet.py:190
-msgid "Enter the name of the person who took this image."
-msgstr "Skriv in namn på den person, som tog bilden."
-
-#: ImageMetadataGramplet/ImageMetadataGramplet.py:192
+#: ImageMetadataGramplet/ImageMetadataGramplet.py:229
 msgid ""
-"Press the Select Date Button to bring up a calendar where you can choose a "
-"date."
+"Saves the information entered here to the image metadata.  WARNING: Metadata "
+"values will be removed if you save blank data..."
 msgstr ""
-"Tryck på knappen \"Välj datum\" så kommer en almanacka fram, där du kan "
-"välja datum."
+"Sparar den inmatade informationen i bildens metadata. Varning: "
+"metadata-värden tas bort om du sparar blanka data..."
 
-#: ImageMetadataGramplet/ImageMetadataGramplet.py:195
+#: ImageMetadataGramplet/ImageMetadataGramplet.py:235
+msgid "Clears the metadata from these fields."
+msgstr "Rensar metadata från dessa fält."
+
+#: ImageMetadataGramplet/ImageMetadataGramplet.py:358
 msgid ""
-"Enter the copyright information for the image.  Example: (C) 2010 Smith and "
+"Enter the Artist/ Author of this image.  The person's name or the company "
+"who is responsible for the creation of this image."
+msgstr ""
+"Skriv in artist/författare av denna bild. Den persons namn eller företag, "
+"som är ansvarig för skapelsen av denna bild."
+
+#: ImageMetadataGramplet/ImageMetadataGramplet.py:362
+msgid ""
+"Enter the copyright information for the image.  xample: (C) 2010 Smith and "
 "Wesson"
 msgstr ""
 "Skriv in upphovsrättsinformation för bilden. T. ex. (C) Pettersson & Bendel"
 
-#: ImageMetadataGramplet/ImageMetadataGramplet.py:198
+#: ImageMetadataGramplet/ImageMetadataGramplet.py:366
 msgid ""
-"If using decimal format in Latitude, leave blank.  If using Degrees, "
-"Minutes, Seconds, please enter either a "
+"Allows you to select a date from a pop-up window calendar.  You will still "
+"need to enter the time..."
 msgstr ""
-"Om du använder decimalt format på latitud, lämna ett mellanslag. "
-"Om du använder grader, minuter, sekunder skriv in antingen ett "
+"Ger dig möjlighet att välja datum från ett kalenderfönster. Du måste "
+"emellertid skriva in klockslag..."
 
-#: ImageMetadataGramplet/ImageMetadataGramplet.py:199
-#: ImageMetadataGramplet/ImageMetadataGramplet.py:206
-msgid " or "
-msgstr " eller "
-
-#: ImageMetadataGramplet/ImageMetadataGramplet.py:202
+#: ImageMetadataGramplet/ImageMetadataGramplet.py:370
 msgid ""
-"Enter the GPS Latitude as either Degrees, Minutes, Seconds or Decimal "
-"formats."
+"Manual Date Entry, \n"
+"Example: 1826-Apr-12 or 1826-April-12"
 msgstr ""
-"Skriv in GPS latitude som Grader, minuter, sekunder eller decimala grader."
+"Manuell datuminmatning, \n"
+"Exempel: 1826-apr-12 or 1826-april-12"
 
-#: ImageMetadataGramplet/ImageMetadataGramplet.py:205
+#: ImageMetadataGramplet/ImageMetadataGramplet.py:374
 msgid ""
-"If using decimal format in Longitude, leave blank.  If using Degrees, "
-"Minutes, Seconds, please enter either a "
+"Manual Time entry, \n"
+"Example: 14:06:00"
 msgstr ""
-"Om du använder decimalt format på longitud, lämna ett mellanslag. "
-"Om du använder grader, minuter, sekunder skriv in antingen ett "
+"Manuell tidsinmatning, \n"
+"Exempel: 14:06:00"
 
-#: ImageMetadataGramplet/ImageMetadataGramplet.py:209
+#: ImageMetadataGramplet/ImageMetadataGramplet.py:378
 msgid ""
-"Enter the GPS Longitude as either inDegrees, Minutes, Seconds or Decimal "
-"formats."
+"Converts Degree, Minutes, Seconds GPS Coordinates to a Decimal "
+"representation."
 msgstr ""
-"Skriv in GPS longtitud som Grader, minuter, sekunder eller decimala grader."
+"Omvandlar GPS-koordinater  i grader, minuter sekunder till decimal "
+"representation."
 
-#: ImageMetadataGramplet/ImageMetadataGramplet.py:214
-msgid "Save"
-msgstr "Spara"
+#: ImageMetadataGramplet/ImageMetadataGramplet.py:382
+msgid ""
+"Converts Decimal GPS Coordinates to a Degrees, Minutes, Seconds "
+"representation."
+msgstr "Omvandlar decimala GPS-koordinater till grader, minuter, sekunder."
 
-#: ImageMetadataGramplet/ImageMetadataGramplet.py:217
-msgid "Clear"
-msgstr "Rensa"
+#: ImageMetadataGramplet/ImageMetadataGramplet.py:387
+msgid ""
+"Enter the GPS Latitude Coordinates for your image,\n"
+"Example: 43.722965, 43 43 22 N, 38° 38′ 03″ N, 38 38 3"
+msgstr ""
+"Skriv in GPS-latitudkoordinaten för din bild,\n"
+"Exempel: 43.722965, 43 43 22 N, 38° 38′ 03″ N, 38 38 3"
 
-#: ImageMetadataGramplet/ImageMetadataGramplet.py:220
-msgid "Convert GPS"
-msgstr "Omvandla GPS"
+#: ImageMetadataGramplet/ImageMetadataGramplet.py:392
+msgid ""
+"Enter the GPS Longitude Coordinates for your image,\n"
+"Example: 10.396378, 10 23 46 E, 105° 6′ 6″ W, -105 6 6"
+msgstr ""
+"Skriv in GPS-longitudkoordinaten för din bild,\n"
+"Exempel: 10.396378, 10 23 46 E, 105° 6′ 6″ W, -105 6 6"
 
-#: ImageMetadataGramplet/ImageMetadataGramplet.py:451
+#: ImageMetadataGramplet/ImageMetadataGramplet.py:484
+#: ImageMetadataGramplet/ImageMetadataGramplet.py:496
+msgid "Please select a different image object..."
+msgstr "Välj ett annat bildobjekt..."
+
+#: ImageMetadataGramplet/ImageMetadataGramplet.py:701
 msgid "Image metadata has been saved."
 msgstr "Bild-metadata har sparats."
 
-#: ImageMetadataGramplet/ImageMetadataGramplet.py:455
-#, python-format
+#: ImageMetadataGramplet/ImageMetadataGramplet.py:704
 msgid ""
-"The image file %s does NOT have write access/ permissions. If you have "
-"access and rights to change the permissions, then please do it now."
-msgstr "Bildfilen %s är skrivskyddad. Ändra detta nu om du vill spara."
-
-#: ImageMetadataGramplet/ImageMetadataGramplet.py:589
-#, python-format
-msgid ""
-"The image file %s does NOT have read access/ permissions. If you have access "
-"and rights to change the permissions, then please do it now."
+"There is an error with this image!\n"
+"You may not have write access or privileges for this image?"
 msgstr ""
-"Bildfilen %s är skyddad mot läsning. Ändra detta nu, om du har möjlighet."
+"Det finns ett fel i denna bild!\n"
+"Du kanske inte har skrivbehörighet för denna bild?"
 
-#: ImageMetadataGramplet/ImageMetadataGramplet.py:595
-msgid ""
-"The image file is missing.  Please select another image or edit the media "
-"object to fix this problem."
-msgstr "Bildfilen saknas. Välj en annan bild eller rätta mediaobjektet."
+#: ImageMetadataGramplet/ImageMetadataGramplet.py:790
+msgid "There was a problem with either the date and/ or time."
+msgstr "Det är ett problem med antingen datum eller tid."
 
-#: ImageMetadataGramplet/ImageMetadataGramplet.py:629
-msgid "Invalid latitude (syntax: 18°9'"
-msgstr "Ogiltig latitud (syntax: 18°9'"
+#: ImageMetadataGramplet/ImageMetadataGramplet.py:880
+msgid "Double click a date to return the date."
+msgstr "Dubbelklicka på datum så får du datumet."
 
-#: ImageMetadataGramplet/ImageMetadataGramplet.py:630
-msgid "48.21\"S, -18.2412 or -18:9:48.21)"
-msgstr "48.21\"S, -18.2412 or -18:9:48.21)"
+#~ msgid ""
+#~ "Enter text describing this image and who might be in the image.  It might "
+#~ "be best to enter a location for this image, especially if there is no GPS "
+#~ "Latitude/ Longitude information available."
+#~ msgstr ""
+#~ "Skriv in text, som beskriver denna bild och vilka som kan vara på den. "
+#~ "Det är nog bäst att skriva in en plats för bilden, speciellt om det "
+#~ "saknas GPS-latitude/longitud-information."
 
-#: ImageMetadataGramplet/ImageMetadataGramplet.py:632
-msgid "Invalid longitude (syntax: 18°9'"
-msgstr "Ogiltig longitud (syntax: 18°9'"
+#~ msgid "Active image"
+#~ msgstr "Aktiv bild"
 
-#: ImageMetadataGramplet/ImageMetadataGramplet.py:633
-msgid "48.21\"E, -18.2412 or -18:9:48.21)"
-msgstr "48.21\"E, -18.2412 or -18:9:48.21)"
+#~ msgid "Photographer"
+#~ msgstr "Fotograf"
 
+#~ msgid "Lat. Ref"
+#~ msgstr "Lat. Ref"
+
+#~ msgid "Long. Ref."
+#~ msgstr "Long. Ref."
+
+#~ msgid "Enter the name of the person who took this image."
+#~ msgstr "Skriv in namn på den person, som tog bilden."
+
+#~ msgid ""
+#~ "Press the Select Date Button to bring up a calendar where you can choose "
+#~ "a date."
+#~ msgstr ""
+#~ "Tryck på knappen \"Välj datum\" så kommer en almanacka fram, där du kan "
+#~ "välja datum."
+
+#~ msgid ""
+#~ "If using decimal format in Latitude, leave blank.  If using Degrees, "
+#~ "Minutes, Seconds, please enter either a "
+#~ msgstr ""
+#~ "Om du använder decimalt format på latitud, lämna ett mellanslag. Om du "
+#~ "använder grader, minuter, sekunder skriv in antingen ett "
+
+#~ msgid " or "
+#~ msgstr " eller "
+
+#~ msgid ""
+#~ "Enter the GPS Latitude as either Degrees, Minutes, Seconds or Decimal "
+#~ "formats."
+#~ msgstr ""
+#~ "Skriv in GPS latitude som Grader, minuter, sekunder eller decimala grader."
+
+#~ msgid ""
+#~ "If using decimal format in Longitude, leave blank.  If using Degrees, "
+#~ "Minutes, Seconds, please enter either a "
+#~ msgstr ""
+#~ "Om du använder decimalt format på longitud, lämna ett mellanslag. Om du "
+#~ "använder grader, minuter, sekunder skriv in antingen ett "
+
+#~ msgid "Save"
+#~ msgstr "Spara"
+
+#~ msgid "Clear"
+#~ msgstr "Rensa"
+
+#~ msgid ""
+#~ "The image file %s does NOT have write access/ permissions. If you have "
+#~ "access and rights to change the permissions, then please do it now."
+#~ msgstr "Bildfilen %s är skrivskyddad. Ändra detta nu om du vill spara."
+
+#~ msgid ""
+#~ "The image file %s does NOT have read access/ permissions. If you have "
+#~ "access and rights to change the permissions, then please do it now."
+#~ msgstr ""
+#~ "Bildfilen %s är skyddad mot läsning. Ändra detta nu, om du har möjlighet."
+
+#~ msgid ""
+#~ "The image file is missing.  Please select another image or edit the media "
+#~ "object to fix this problem."
+#~ msgstr "Bildfilen saknas. Välj en annan bild eller rätta mediaobjektet."
+
+#~ msgid "Invalid latitude (syntax: 18°9'"
+#~ msgstr "Ogiltig latitud (syntax: 18°9'"
+
+#~ msgid "48.21\"S, -18.2412 or -18:9:48.21)"
+#~ msgstr "48.21\"S, -18.2412 or -18:9:48.21)"
+
+#~ msgid "Invalid longitude (syntax: 18°9'"
+#~ msgstr "Ogiltig longitud (syntax: 18°9'"
+
+#~ msgid "48.21\"E, -18.2412 or -18:9:48.21)"
+#~ msgstr "48.21\"E, -18.2412 or -18:9:48.21)"
