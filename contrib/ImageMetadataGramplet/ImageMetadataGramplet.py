@@ -173,6 +173,9 @@ class imageMetadataGramplet(Gramplet):
         rows = gtk.VBox()
         for items in [
 
+            # Image filename field
+            ("Filename",        "",                  None, True,  [],  True,  0),
+
             # Author field
             ("Author",          _("Artist/ Author"), None, False, [],  True,  0),
 
@@ -276,13 +279,21 @@ class imageMetadataGramplet(Gramplet):
 
                 found = any(_imgtype == filetype for filetype in _valid_types)
                 if not found:
-                    self._dirty = True
+                    return
             else:
                 # prevent non mime images from attempting to write
-                self._dirty = True
+                self._mark_dirty_write(self.orig_image)
+                return
 
-        # clear all data entry fields
+        else:
+            self._mark_dirty_write(self.orig_image)
+            return
+
+   # clear all data entry fields
         self.clear_metadata(self.orig_image)
+
+        # display image description
+        self.exif_widgets["Filename"].set_text(self.orig_image.get_description() )
 
         # get the plugin image and read the image metadata
         self.display_exif_tags(full_path)
@@ -480,8 +491,7 @@ class imageMetadataGramplet(Gramplet):
             try:
                 self.plugin_image = pyexiv2.Image(mediapath)
 
-            except (IOError, OSError), msg:
-                WarningDialog(_("Please select a different image object..."), str(msg))
+            except (IOError, OSError):
                 return
 
             self.plugin_image.readMetadata()
@@ -492,8 +502,7 @@ class imageMetadataGramplet(Gramplet):
             try:
                 self.plugin_image.read()
 
-            except (IOError, OSError), msg:
-                WarningDialog(_("Please select a different image object..."), str(msg))
+            except (IOError, OSError):
                 return
 
             imageKeyTags = [KeyTag for KeyTag in self.plugin_image.exif_keys if KeyTag in _DATAMAP ]
