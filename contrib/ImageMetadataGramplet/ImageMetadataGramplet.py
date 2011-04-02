@@ -169,6 +169,7 @@ class imageMetadataGramplet(Gramplet):
         self.orig_image   = False
         self.image_path   = False
         self.plugin_image = False
+        self.artist, self.copyright, self.description = "", "", ""
 
         rows = gtk.VBox()
         for items in [
@@ -507,9 +508,6 @@ class imageMetadataGramplet(Gramplet):
 
             imageKeyTags = [KeyTag for KeyTag in self.plugin_image.exif_keys if KeyTag in _DATAMAP ]
 
-        # setup initial values in case there is no image metadata to be read?
-        self.artist, self.copyright, self.description = "", "", ""
-
         for KeyTag in imageKeyTags:
 
             # Media image Author/ Artist
@@ -716,7 +714,7 @@ class imageMetadataGramplet(Gramplet):
 #------------------------------------------------
 # Process Date/ Time fields for saving to image
 #------------------------------------------------
-    def _write_date(self, wdate = False, wtime = False):
+    def _write_date(self, wdate =False, wtime =False):
         """
         process the date/ time for writing to image
 
@@ -724,35 +722,43 @@ class imageMetadataGramplet(Gramplet):
         @param: wtime -- time from the interface
         """
 
-        # set to initial values, so if it is something wrong,
-        # so we can catch it...?
-        wyear, wmonth, wday = False, False, False
-        hour, minutes, seconds = False, False, False
+        # check for presence of date and time fields?
+        if (wtime and not wdate):
+            WarningDialog(_("There is a time, but no date.  Date/ time will not be saved."))
+            return False
 
-        # if date is in proper format: 1826-Apr-12 or 1826-April-12
-        if (wdate and wdate.count("-") == 2):
-            wyear, wmonth, wday = _split_values(wdate)
+        elif (not wdate and not wtime):
+            return False
 
-        # if time is in proper format: 14:06:00
-        if (wtime and wtime.count(":") == 2):
-            hour, minutes, seconds = _split_values(wtime)
+        elif (wdate and wtime):
 
-        # if any value for date or time is False, then do not save date
-        bad_datetime = any(value == False for value in [wyear, wmonth, wday, hour, minutes, seconds] )
-        if not bad_datetime:
+            # set initial values, so if there is something wrong,
+            # we can catch it...?
+            wyear, wmonth, wday = False, False, False
+            hour, minutes, seconds = False, False, False
 
-            # convert each value for date/ time
-            try:
-                wyear, wday = int(wyear), int(wday)
-            except ValueError:
-                pass
+            # if date is in proper format: 1826-Apr-12 or 1826-April-12
+            if wdate.count("-") == 2:
+                wyear, wmonth, wday = _split_values(wdate)
 
-            try:
-                hour, minutes, seconds = int(hour), int(minutes), int(seconds)
-            except ValueError:
-                pass
+            # if time is in proper format: 14:06:00
+            if wtime.count(":") == 2:
+                hour, minutes, seconds = _split_values(wtime)
 
-            if wdate is not False:
+            # if any value for date or time is False, then do not save date
+            bad_datetime = any(value == False for value in [wyear, wmonth, wday, hour, minutes, seconds] )
+            if not bad_datetime:
+
+                # convert each value for date/ time
+                try:
+                    wyear, wday = int(wyear), int(wday)
+                except ValueError:
+                    pass
+
+                try:
+                    hour, minutes, seconds = int(hour), int(minutes), int(seconds)
+                except ValueError:
+                    pass
 
                 # do some error trapping...
                 if wday == 0:
@@ -769,37 +775,36 @@ class imageMetadataGramplet(Gramplet):
                     wmonth = int(wmonth)
                 except ValueError:
                     wmonth = _return_month(wmonth)
-                if wmonth > 12:
-                    wmonth = 12
+                    if wmonth > 12:
+                        wmonth = 12
 
                 # get the number of days in wyear of all months
                 numdays = [0] + [calendar.monthrange(year, month)[1] for year 
                     in [wyear] for month in range(1, 13) ]
 
-            if wday > numdays[wmonth]:
-                wday = numdays[wmonth]
+                if wday > numdays[wmonth]:
+                    wday = numdays[wmonth]
 
-            # ExifImage Year must be greater than 1900
-            # if not, we save it as a string
-            if wyear < 1900:
-                wdate = "%04d-%s-%02d %02d:%02d:%02d" % (
-                    wyear, _dd.long_months[wmonth], wday, hour, minutes, seconds)
+                # ExifImage Year must be greater than 1900
+                # if not, we save it as a string
+                if wyear < 1900:
+                    wdate = "%04d-%s-%02d %02d:%02d:%02d" % (
+                        wyear, _dd.long_months[wmonth], wday, hour, minutes, seconds)
 
-            # year -> or equal to 1900
-            else:
-                wdate = datetime(wyear, wmonth, wday, hour, minutes, seconds)
+                # year -> or equal to 1900
+                else:
+                    wdate = datetime(wyear, wmonth, wday, hour, minutes, seconds)
 
-            self.exif_widgets["NewDate"].set_text("%04d-%s-%02d" % (
-                wyear, _dd.long_months[wmonth], wday) )
-            self.exif_widgets["NewTime"].set_text("%02d:%02d:%02d" % (
-                hour, minutes, seconds) )
+                self.exif_widgets["NewDate"].set_text("%04d-%s-%02d" % (
+                    wyear, _dd.long_months[wmonth], wday))
+                self.exif_widgets["NewTime"].set_text("%02d:%02d:%02d" % (
+                    hour, minutes, seconds))
 
-        else:
+                # return the modified date/ time
+                return wdate
 
-            WarningDialog(_("There was a problem with either the date and/ or time."))
-
-        # return the modified date/ time
-        return wdate
+            # return bad date/ time
+            return False
 
 #------------------------------------------------
 #     Date/ Time functions
