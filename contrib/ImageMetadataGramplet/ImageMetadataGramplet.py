@@ -46,6 +46,7 @@ import gtk
 # GRAMPS modules
 # -----------------------------------------------------------------------------
 from QuestionDialog import OkDialog, WarningDialog
+from ListModel import ListModel, NOSORT
 
 from gen.plug import Gramplet
 from DateHandler import displayer as _dd
@@ -148,12 +149,19 @@ def _split_values(text):
     splits a variable into its pieces
     """
 
+    # a hypen
     if "-" in text:
         separator = "-"
+
+    # a period
     elif "." in text:
         separator = "."
+
+    # a colon
     elif ":" in text:
         separator = ":"
+
+    # a space
     else:
         separator = " "
     return [value for value in text.split(separator)]
@@ -199,7 +207,7 @@ class imageMetadataGramplet(Gramplet):
 
         button = gtk.Button(_("Copy to Edit Area"))
         button.connect("clicked", self.copy_to)
-#        button.set_sensitive(False)
+        button.set_sensitive(False)
         self.exif_widgets["CopyTo"] = button
         button_box.add( self.exif_widgets["CopyTo"] )
 
@@ -207,7 +215,7 @@ class imageMetadataGramplet(Gramplet):
         button = gtk.Button(stock=gtk.STOCK_CLEAR)
         button.set_tooltip_text(_("Clears the metadata from these fields."))
         button.connect("clicked", self.clear_metadata)
-#        button.set_sensitive(False) 
+        button.set_sensitive(False) 
         self.exif_widgets["Clear"] = button
         button_box.add( self.exif_widgets["Clear"] )
 
@@ -268,7 +276,7 @@ class imageMetadataGramplet(Gramplet):
         button.set_tooltip_text(_("Saves the information entered here to the image metadata.  "
             "WARNING: Metadata values will be removed if you save blank data..."))
         button.connect("clicked", self.save_metadata)
-#        button.set_sensitive(False)
+        button.set_sensitive(False)
         self.exif_widgets["Save"] = button
         button_box.add( self.exif_widgets["Save"] )
 
@@ -507,16 +515,27 @@ class imageMetadataGramplet(Gramplet):
             self.plugin_image.readMetadata()
 
             # get all KeyTags for this section of tags and if there is a value?
-            MediaDataTags = [KeyTag for KeyTag in self.plugin_image.exifKeys()
-                    if KeyTag in _DATAMAP.keys() ]
+            MediaDataTags = [KeyTag for KeyTag in self.plugin_image.exifKeys() ]
+            MediaDataTags.append( [KeyTag for KeyTag in self.plugin_image.xmpKeys()] )
+            MediaDataTags.append( [KeyTag for KeyTag in self.plugin_image.iptcKeys()] )
+
+            # get Thumbnail Data
+            ttype, tdata = self.plugin_image.getThumbnailData()  
 
         else: # pyexiv2-0.2.0 and above
             self.plugin_image = pyexiv2.ImageMetadata(full_path)
             self.plugin_image.read()
 
             # get all KeyTags for this section of tags and if there is a value?
-            MediaDataTags = [KeyTag for KeyTag in self.plugin_image.exif_keys
-                    if KeyTag in _DATAMAP.keys() ]
+            MediaDataTags = [KeyTag for KeyTag in self.plugin_image.exif_keys ]
+            MediaDataTags.append( [KeyTag for KeyTag in self.plugin_image.xmp_keys ] )
+            MediaDataTags.append( [KeyTag for KeyTag in self.plugin_image.iptc_keys ] )
+
+            # get Thumbnail data if any?
+            previews = self.plugin_image.previews
+            if previews:
+                preview = previews[0]
+                print(preview.data)
 
         # check to see if we got metadata from media object?
         for KeyTag in MediaDataTags:
