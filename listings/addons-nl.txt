@@ -30,7 +30,7 @@
 {'d': 'Grafische familiestamboom wordt aangemaakt.', 'g': '3.3', 'i': 'FamilyTree', 'n': 'Familiestamboom', 't': u'Report', 'v': '3.3.5', 'z': 'FamilyTree.addon.tgz'}
 {'d': 'Collection of Web sites for the FR (requires libwebconnect)', 'g': '3.3', 'i': 'FR Web Connect Pack', 'n': 'FR Web Connect Pack', 't': u'Plugin lib', 'v': '1.0.6', 'z': 'FRWebConnectPack.addon.tgz'}
 {'d': 'Gramplet toont de verwanten in een relatie', 'g': '3.3', 'i': 'Related Relatives Gramplet', 'n': 'Aanverwantengramplet', 't': u'Gramplet', 'v': '1.0.5', 'z': 'RelatedRelativesGramplet.addon.tgz'}
-{'d': 'Gramplet to edit and save media Exif metadata', 'g': '3.3.0', 'i': 'Image Metadata Gramplet', 'n': 'Metabeeldgegevensgramplet', 't': u'Gramplet', 'v': '1.5.2', 'z': 'ImageMetadataGramplet.addon.tgz'}
+{'d': 'Gramplet to edit and save media Exif metadata', 'g': '3.3.0', 'i': 'Image Metadata Gramplet', 'n': 'Metabeeldgegevensgramplet', 't': u'Gramplet', 'v': '1.5.1', 'z': 'ImageMetadataGramplet.addon.tgz'}
 {'d': 'Gramplet om tekst te importeren', 'g': '3.3', 'i': 'Import Gramplet', 'n': 'Importgramplet', 't': u'Gramplet', 'v': '1.0.4', 'z': 'ImportGramplet.addon.tgz'}
 {'d': "Gegevensbestand voor 'GoogleEarth' aanmaken en openen.", 'g': '3.3', 'i': 'GoogleEarth', 'n': 'GoogleEarth', 't': u'Map service', 'v': '1.0.11', 'z': 'GoogleEarthWriteKML.addon.tgz'}
 {'d': 'een gramplet dat de verjaardagen van de nog in leven zijnde personen toont', 'g': '3.3', 'i': 'Birthdays', 'n': 'Verjaardagsgramplet', 't': u'Gramplet', 'v': '1.0.11', 'z': 'BirthdaysGramplet.addon.tgz'}
@@ -42,7 +42,6 @@
 {'d': 'Aantal afstammelingen van de actieve persoon wordt getoond', 'g': '3.3', 'i': 'NumberOfDescendantsQuickview', 'n': 'Aantal afstammelingen', 't': u'Quickreport', 'v': '3.3.5', 'z': 'NumberOfDescendantsQuickview.addon.tgz'}
 {'d': "Gramplet om de grafische mogelijkheden van 'Cairo' te tonen", 'g': '3.3', 'i': 'Clock Gramplet', 'n': 'Klokgramplet', 't': u'Gramplet', 'v': '0.0.6', 'z': 'ClockGramplet.addon.tgz'}
 {'d': 'Interactieve Python-interpreter', 'g': '3.3', 'i': 'Python Gramplet', 'n': 'Pythongramplet', 't': u'Gramplet', 'v': '1.0.5', 'z': 'PythonGramplet.addon.tgz'}
-{'d': 'Aanduiding een bepaalde waarde toekennen.', 'g': '3.3', 'i': 'SetMarker', 'n': 'Aanduiding ingeven', 't': u'Tool', 'v': '0.0.6', 'z': 'SetMarkerTool.addon.tgz'}
 {'d': "Een bibliotheek voor algemene toegang tot het gegevensbestand en 'gen.lib'.", 'g': '3.3', 'i': 'libaccess', 'n': 'Generic DB Access lib', 't': u'Plugin lib', 'v': '1.0.5', 'z': 'libaccess.addon.tgz'}
 {'d': "Verzameling van websites voor 'VK' (libwebconnect is nodig)", 'g': '3.3', 'i': 'UK Web Connect Pack', 'n': 'V.K. Web Connect Pack', 't': u'Plugin lib', 'v': '1.0.12', 'z': 'UKWebConnectPack.addon.tgz'}
 {'d': 'Gramplet die de verre relatie tussen twee de actieve en de thuispersoon toont', 'g': '3.3', 'i': 'Deep Connections Gramplet', 'n': "'Verre relaties'-gramplet", 't': u'Gramplet', 'v': '1.0.9', 'z': 'DeepConnectionsGramplet.addon.tgz'}

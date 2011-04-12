@@ -110,8 +110,8 @@ _valid_types = ["jpeg", "jpg", "exv", "tiff", "dng", "nef", "pef", "pgf", "png",
 # set up Exif keys for Image.exif_keys
 _DATAMAP = {
     "Exif.Image.ImageDescription"  : "Description",
-    "Exif.Image.DateTime"          : "DateTime",
-    "Exif.Photo.DateTimeOriginal"  : "DateTime",
+    "Exif.Image.DateTime"          : "ModDateTime",
+    "Exif.Photo.DateTimeOriginal"  : "OrigDateTime",
     "Exif.Image.Artist"            : "Artist",
     "Exif.Image.Copyright"         : "Copyright",
     "Exif.GPSInfo.GPSLatitudeRef"  : "LatitudeRef",
@@ -242,7 +242,7 @@ class imageMetadataGramplet(Gramplet):
                                                                      True,  0),
 
             # Manual Date/ Time Entry, 1826-April-12 14:06:00
-            ("DateTime",         _("Date/ Time"),    None, False,  [], True,  0),
+            ("ModDateTime",         _("Date | Time"),    None, False,  [], True,  0),
 
             # Author field
             ("Artist",          _("Artist/ Author"), None, False, [],  True,  0),
@@ -440,7 +440,7 @@ class imageMetadataGramplet(Gramplet):
             "pop-up window calendar.  You will still need to enter the time..."))
 
         # Manual Date Entry 
-        self.exif_widgets[ "DateTime"].set_tooltip_text(_("Manual Date Entry, \n"
+        self.exif_widgets[ "ModDateTime"].set_tooltip_text(_("Manual Date Entry, \n"
             "Example: 1826-Apr-12 or 1826-April-12"))
 
         # Convert Decimal button
@@ -479,7 +479,7 @@ class imageMetadataGramplet(Gramplet):
 
         # clear all data fields
         if cleartype == "All":
-            for key in ["Artist", "Copyright", "DateTime",  "Latitude", "Longitude",
+            for key in ["Artist", "Copyright", "ModDateTime",  "Latitude", "Longitude",
                     "Description"]:
                 self.exif_widgets[key].set_text("")
 
@@ -487,7 +487,7 @@ class imageMetadataGramplet(Gramplet):
 
         # clear only the date and time fields
         else:
-             self.exif_widgets["DateTime"].set_text("")
+             self.exif_widgets["ModDateTime"].set_text("")
 
     def _get_value(self, KeyTag):
         """
@@ -602,20 +602,20 @@ class imageMetadataGramplet(Gramplet):
 
                 if widgetsName in ["Description", "Artist", "Copyright"]:
                     self.exif_widgets[widgetsName].set_text(tagValue)
-                elif widgetsName == "DateTime":
+
+                elif widgetsName == "ModDateTime":
                     # date1 comes from the Original Date of the image
                     # date2 comes from the Modification Date of the image
                     # date3 comes from the date that the image was digitized
                     # date4 comes from the date inside of Gramps
-                    date1 = self._get_value("Exif.Photo.DateTimeOriginal")
-                    date2 = self._get_value("Exif.Image.DateTime")
+                    date1 = self._get_value(_DATAMAP["OrigDateTime"] )
+                    date2 = self._get_value(_DATAMAP["ModDateTime"] )
                     date3 = self._get_value("Exif.Photo.DateTimeDigitized")
                     date4 = self.orig_image.get_date_object()
 
                     use_date = date1 or date2 or date3 or date4
                     if use_date:
-                        self.exif_widgets[widgetsName].set_text(
-                                _process_date(use_date) )
+                        self.exif_widgets[widgetsName].set_text( _process_date(use_date) )
 
                 # Latitude and Latitude Reference
                 elif widgetsName == "Latitude":
@@ -696,13 +696,18 @@ class imageMetadataGramplet(Gramplet):
         and sets the keytag = keyvalue image metadata
         """
 
-
-        for widgetsName in ["Description", "DateTime", "Artist", "Copyright"]:
+        for widgetsName in ["Description", "Artist", "Copyright"]:
 
             tag = self.plugin_image[_DATAMAP[widgetsName] ]
             tagValue = self.exif_widgets[widgetsName].get_text()
             if tagValue:
                 self._set_value(_DATAMAP[widgetsName], tagValue, tag)
+
+        # write date/ time to Exif metadata
+        tmpDate = _write_date( self.exif_widgets["ModDateTime"].get_text() )
+        if (tmpDate is not False and tmpDate is not ""):
+            tag = self.plugin_image[_DATAMAP["ModDateTime"] ]
+            self._set_value(_DATAMAP["ModDateTime"], tmpDate, tag)
 
         # get Latitude/ Longitude from this addon...
         latitude  =  self.exif_widgets["Latitude"].get_text()
@@ -799,7 +804,7 @@ class imageMetadataGramplet(Gramplet):
         now = time.localtime()
 
         year, month, day = self.exif_widgets["Calendar"].get_date()
-        self.exif_widgets["DateTime"].set_text(
+        self.exif_widgets["ModDateTime"].set_text(
                 "%04d-%s-%02d %02d:%02d:%02d" % (
             year, _dd.long_months[month + 1], day, now[3], now[4], now[5]) )
 
@@ -1052,6 +1057,47 @@ def _get_date_format(datestr):
 
     return tmpDate
 
+def _write_date(wdatetime):
+    """
+    handle the ModDateTime field for saing
+    """
+
+    datestr = _get_date_format(wdatetime)
+    if datestr is not False:
+        wyear, wmonth, day, hour, minutes, seconds = datestr[0:6]
+
+    else:
+        wyear, wmonth, day, hour, minutes, seconds = False, False, False, False, False, False
+
+        # do some error trapping...
+        if wmonth > 12: wmonth = 12
+        if day == 0: day = 1
+        if hour >= 24: hour = 0
+        if minutes > 59: minutes = 59
+        if seconds > 59: seconds = 59
+
+        # get the number of days in year for all months
+        numdays = [0] + [calendar.monthrange(year, month)[1] for year
+                        in [wyear] for month in range(1, 13) ]
+
+        if day > numdays[wmonth]:
+            day = numdays[wmonth]
+
+    if wyear < 1900:
+        try:
+            tmpDate = "%04d-%s-%02d %02d:%02d:%02d" % (wyear, _dd.long_months[wmonth], day,
+                                                hour, minutes, seconds)
+        except ValueError:
+            tmpDate = ""
+    else:
+        try:
+            tmpDate = datetime(wyear, wmonth, day, hour, minutes, seconds)
+
+        except ValueError:
+            tmpDate = False
+
+    return tmpDate
+    
 def _process_date(tmpDate):
     """
     will attempt to parse the date/ time Exif metadata entry into its pieces...

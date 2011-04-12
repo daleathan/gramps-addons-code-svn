@@ -30,7 +30,7 @@
 {'d': 'Skapar ett grafiskt sl\xc3\xa4kttr\xc3\xa4d.', 'g': '3.3', 'i': 'FamilyTree', 'n': 'Sl\xc3\xa4kttr\xc3\xa4d', 't': u'Report', 'v': '3.3.5', 'z': 'FamilyTree.addon.tgz'}
 {'d': 'Collection of Web sites for the FR (requires libwebconnect)', 'g': '3.3', 'i': 'FR Web Connect Pack', 'n': 'FR Web Connect Pack', 't': u'Plugin lib', 'v': '1.0.6', 'z': 'FRWebConnectPack.addon.tgz'}
 {'d': 'Gramplet showing relatives in a relation', 'g': '3.3', 'i': 'Related Relatives Gramplet', 'n': 'Related Relatives Gramplet', 't': u'Gramplet', 'v': '1.0.5', 'z': 'RelatedRelativesGramplet.addon.tgz'}
-{'d': 'Gramplet f\xc3\xb6r att redigera och spara Exif metadata f\xc3\xb6r media', 'g': '3.3.0', 'i': 'Image Metadata Gramplet', 'n': 'Gramplet f\xc3\xb6r bild-metadata', 't': u'Gramplet', 'v': '1.5.2', 'z': 'ImageMetadataGramplet.addon.tgz'}
+{'d': 'Gramplet f\xc3\xb6r att redigera och spara Exif metadata f\xc3\xb6r media', 'g': '3.3.0', 'i': 'Image Metadata Gramplet', 'n': 'Gramplet f\xc3\xb6r bild-metadata', 't': u'Gramplet', 'v': '1.5.1', 'z': 'ImageMetadataGramplet.addon.tgz'}
 {'d': 'Gramplet for importing text', 'g': '3.3', 'i': 'Import Gramplet', 'n': 'Import Gramplet', 't': u'Gramplet', 'v': '1.0.4', 'z': 'ImportGramplet.addon.tgz'}
 {'d': 'Skapar datafil f\xc3\xb6r GoogleEarth och \xc3\xb6ppnar den', 'g': '3.3', 'i': 'GoogleEarth', 'n': 'GoogleEarth', 't': u'Map service', 'v': '1.0.11', 'z': 'GoogleEarthWriteKML.addon.tgz'}
 {'d': 'en Gramplet, som visar f\xc3\xb6delsedagarna f\xc3\xb6r levande personer', 'g': '3.3', 'i': 'Birthdays', 'n': 'F\xc3\xb6delsedags-Gramplet', 't': u'Gramplet', 'v': '1.0.11', 'z': 'BirthdaysGramplet.addon.tgz'}
@@ -42,7 +42,6 @@
 {'d': 'Shows the number of descendants of the current person', 'g': '3.3', 'i': 'NumberOfDescendantsQuickview', 'n': 'Number of descendants', 't': u'Quickreport', 'v': '3.3.5', 'z': 'NumberOfDescendantsQuickview.addon.tgz'}
 {'d': 'Gramplet for demonstrating Cairo graphics', 'g': '3.3', 'i': 'Clock Gramplet', 'n': 'Klock-Gramplet', 't': u'Gramplet', 'v': '0.0.6', 'z': 'ClockGramplet.addon.tgz'}
 {'d': 'Interactive Python interpreter', 'g': '3.3', 'i': 'Python Gramplet', 'n': 'Gramplet med Python', 't': u'Gramplet', 'v': '1.0.5', 'z': 'PythonGramplet.addon.tgz'}
-{'d': 'Set Marker to a given value.', 'g': '3.3', 'i': 'SetMarker', 'n': 'Set Marker', 't': u'Tool', 'v': '0.0.6', 'z': 'SetMarkerTool.addon.tgz'}
 {'d': 'Provides a library for generic access to the database and gen.lib.', 'g': '3.3', 'i': 'libaccess', 'n': 'Generic DB Access lib', 't': u'Plugin lib', 'v': '1.0.5', 'z': 'libaccess.addon.tgz'}
 {'d': 'Collection of Web sites for the UK (requires libwebconnect)', 'g': '3.3', 'i': 'UK Web Connect Pack', 'n': 'UK Web Connect Pack', 't': u'Plugin lib', 'v': '1.0.12', 'z': 'UKWebConnectPack.addon.tgz'}
 {'d': 'Gramplet visande ett l\xc3\xa5ng sl\xc3\xa4ktskap mellan aktiv och hem person', 'g': '3.3', 'i': 'Deep Connections Gramplet', 'n': 'Gramplet f\xc3\xb6r l\xc3\xa5nga sl\xc3\xa4ktskap', 't': u'Gramplet', 'v': '1.0.9', 'z': 'DeepConnectionsGramplet.addon.tgz'}
