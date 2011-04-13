@@ -39,9 +39,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-01-15 20:17+0100\n"
-"PO-Revision-Date: 2011-01-15 20:32+0100\n"
-"Last-Translator: Erik De Richter <frederik.de.richter@telenet.be>\n"
+"POT-Creation-Date: 2011-04-13 19:56+0200\n"
+"PO-Revision-Date: 2011-04-13 20:23+0100\n"
+"Last-Translator: Erik De Richter <frederik.de.richter@pandora.be>\n"
 "Language-Team: nederlands <frederik.de.richter@googlemail.com>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
@@ -52,172 +52,215 @@ msgstr ""
 "X-Poedit-Country: België\n"
 
 #: ImageMetadataGramplet/ImageMetadataGramplet.gpr.py:29
-#: ImageMetadataGramplet/ImageMetadataGramplet.gpr.py:34
 msgid "Image Metadata Gramplet"
 msgstr "Metabeeldgegevensgramplet"
 
 #: ImageMetadataGramplet/ImageMetadataGramplet.gpr.py:30
-msgid "Gramplet for editing image EXIF metadata"
-msgstr "Gramplet om de 'exif'-metagegevens van een beeld te bewerken"
+msgid "Gramplet to edit and save media Exif metadata"
+msgstr "Gramplet om beeld Exif-metagegevens te bewerken en op te slaan"
 
-#: ImageMetadataGramplet/ImageMetadataGramplet.py:60
-msgid ""
-"The, pyexiv2, python binding library, to exiv2 is not installed on this computer.\n"
-" It can be downloaded either from your ocal repository or from here\n"
-msgstr ""
-"De 'pyexiv2'-bibliotheek is niet geïnstalleerd op deze computer.\n"
-" Deze bibliotheek kunt ophalen via uw plaatselijke pakketbronnen of hier\n"
+#: ImageMetadataGramplet/ImageMetadataGramplet.gpr.py:34
+msgid "Image Metadata"
+msgstr "Metabeeldgegevens"
 
 #: ImageMetadataGramplet/ImageMetadataGramplet.py:81
-msgid "Enter text describing this image and who might be in the image.  It might be best to enter a location for this image, especially if there is no GPS Latitude/ Longitude information available."
-msgstr "Tekst die beschrijft wie er mogelijk op het beeld te zien is toevoegen. Het is ook zinvol om een locatie in te vullen, zeker indien geen GPS Lengte/ Breedte informatie beschikbaar is."
+#, python-format
+msgid ""
+"You need to install, %s or greater, for this addon to work...\n"
+"I would recommend installing, %s, and it may be downloaded from here: \n"
+"%s"
+msgstr ""
+"U dient %s of hoger te installeren om deze 'addon'...\n"
+"Bij voorkeur versie %s die hier kan gedownload kan worden: \n"
+"%s"
 
-#: ImageMetadataGramplet/ImageMetadataGramplet.py:122
-msgid "Active image"
-msgstr "Actief beeld"
+#: ImageMetadataGramplet/ImageMetadataGramplet.py:84
+msgid "Failed to load 'Image Metadata Gramplet/ Addon'..."
+msgstr "'Metabeeldgegevens'-gramplet/ addon kon niet geladen worden..."
 
-#: ImageMetadataGramplet/ImageMetadataGramplet.py:123
-msgid "Photographer"
-msgstr "Fotograaf"
+#: ImageMetadataGramplet/ImageMetadataGramplet.py:95
+#, python-format
+msgid ""
+"The minimum required version for pyexiv2 must be %s \n"
+"or greater.  Or you do not have the python library installed yet.  You may download it from here: %s\n"
+"\n"
+"  I recommend getting, %s"
+msgstr ""
+"De minimum vereiste versie voor pyexiv2 moet %s zijn \n"
+"of hoger. Of u hebt nog niet de juiste Python-bibliotheek geïnstalleerd. Hier kunt u deze versie ophalen: %s\n"
+"\n"
+"  Het is aangewezen %s te installeren"
 
-#: ImageMetadataGramplet/ImageMetadataGramplet.py:124
-msgid "Copyright"
-msgstr "Auteursrecht"
+# dit is een soort titel in een file-selector
+#: ImageMetadataGramplet/ImageMetadataGramplet.py:200
+msgid "Click a media object to begin..."
+msgstr "Een media-object selecteren om te starten..."
 
-#: ImageMetadataGramplet/ImageMetadataGramplet.py:127
-#: ImageMetadataGramplet/ImageMetadataGramplet.py:601
-msgid "Select Date"
-msgstr "Datum kizen"
+#: ImageMetadataGramplet/ImageMetadataGramplet.py:209
+msgid "Key"
+msgstr "Sleutel"
 
-#: ImageMetadataGramplet/ImageMetadataGramplet.py:128
-msgid "Media Date"
-msgstr "Mediadatum"
+#: ImageMetadataGramplet/ImageMetadataGramplet.py:212
+msgid "Value"
+msgstr "Waarde"
 
-#: ImageMetadataGramplet/ImageMetadataGramplet.py:130
-msgid "Latitude"
-msgstr "Breedtegraad"
+#: ImageMetadataGramplet/ImageMetadataGramplet.py:218
+msgid "Copy to Edit Area"
+msgstr "Naar bewerkingzone kopiëren"
 
-#: ImageMetadataGramplet/ImageMetadataGramplet.py:131
-msgid "Longitude"
-msgstr "Lengtegraad"
+#: ImageMetadataGramplet/ImageMetadataGramplet.py:226
+msgid "Clears the metadata from these fields."
+msgstr "De metagegevens voor deze velden wissen."
 
-#: ImageMetadataGramplet/ImageMetadataGramplet.py:140
-msgid "Subject"
-msgstr "Onderwerp"
-
-#: ImageMetadataGramplet/ImageMetadataGramplet.py:155
+#: ImageMetadataGramplet/ImageMetadataGramplet.py:237
 msgid "Description"
 msgstr "Beschrijving"
 
-#: ImageMetadataGramplet/ImageMetadataGramplet.py:168
-msgid "Enter the name of the person who took this image."
-msgstr "Naam van de persoon die het beeld maakte, ingeven."
+#: ImageMetadataGramplet/ImageMetadataGramplet.py:241
+#: ImageMetadataGramplet/ImageMetadataGramplet.py:790
+msgid "Select Date"
+msgstr "Datum kizen"
 
-#: ImageMetadataGramplet/ImageMetadataGramplet.py:171
+#: ImageMetadataGramplet/ImageMetadataGramplet.py:245
+msgid "Date | Time"
+msgstr "Datum | tijd"
+
+#: ImageMetadataGramplet/ImageMetadataGramplet.py:248
+msgid "Artist/ Author"
+msgstr "Artist/ auteur"
+
+#: ImageMetadataGramplet/ImageMetadataGramplet.py:251
+msgid "Copyright"
+msgstr "Copyright"
+
+#: ImageMetadataGramplet/ImageMetadataGramplet.py:254
+msgid "Convert GPS"
+msgstr "GPS-coordinaten omzetten"
+
+#: ImageMetadataGramplet/ImageMetadataGramplet.py:255
+msgid "Decimal"
+msgstr "Decimaal"
+
+#: ImageMetadataGramplet/ImageMetadataGramplet.py:256
+msgid "Deg. Min. Sec."
+msgstr "Graden min. sec."
+
+#: ImageMetadataGramplet/ImageMetadataGramplet.py:260
+msgid "Latitude"
+msgstr "Breedtegraad"
+
+#: ImageMetadataGramplet/ImageMetadataGramplet.py:261
+msgid "Longitude"
+msgstr "Lengtegraad"
+
+#: ImageMetadataGramplet/ImageMetadataGramplet.py:264
+msgid "Altitude"
+msgstr "Hoogte"
+
+#: ImageMetadataGramplet/ImageMetadataGramplet.py:279
+msgid "Will bring up a Wiki manual page to help you with this gramplet."
+msgstr "Een Wiki-pagina van het handboek voor verdere hulp van deze gramplet."
+
+#: ImageMetadataGramplet/ImageMetadataGramplet.py:286
+msgid "Saves the information entered here to the image metadata.  WARNING: Metadata values will be removed if you save blank data..."
+msgstr "De ingegeven informatie wordt opgeslagen als metabeeldgegeven. WAARSCHUWING: metagevens worden verwijderd indien u lege velden opslaat... "
+
+#: ImageMetadataGramplet/ImageMetadataGramplet.py:431
+msgid "Enter the Artist/ Author of this image.  The person's name or the company who is responsible for the creation of this image."
+msgstr "Artist/ auteur van het beeld invullen. De naam van de persoon of het bedrijf dat verantwoordelijk is voor de creatie van dit beeld."
+
+#: ImageMetadataGramplet/ImageMetadataGramplet.py:435
 msgid "Enter the copyright information for the image.  xample: (C) 2010 Smith and Wesson"
 msgstr "Auteursrechtinformatie van het beeld ingeven. Voorbeeld: (C) 2010  Janneke en Mieke"
 
-#: ImageMetadataGramplet/ImageMetadataGramplet.py:174
+#: ImageMetadataGramplet/ImageMetadataGramplet.py:439
+msgid "Allows you to select a date from a pop-up window calendar.  You will still need to enter the time..."
+msgstr "U kunt hier een datum selecteren uit de getoonde kalender. U dient nog wel een tijdstip in te vullen..."
+
+#: ImageMetadataGramplet/ImageMetadataGramplet.py:443
 msgid ""
-"Enter words that describe this image, separated by comma.\n"
-"  Example: Kids,house,dog,car"
+"Manual Date Entry, \n"
+"Example: 1826-Apr-12 or 1826-April-12"
 msgstr ""
-"Woorden die het beeld beschrijven, invullen. Gebruik commaseparatie.\n"
-" Voorbeeld: Kinderen,huis,hond,auto."
+"Manuele datumingave, \n"
+"Voorbeeld: 1826-Apr-12 of 1826-April-12"
 
-#: ImageMetadataGramplet/ImageMetadataGramplet.py:178
-msgid "Enter the GPS Latitude as decimal format "
-msgstr "GPS-breedtegraad in het decimale formaat invullen"
+#: ImageMetadataGramplet/ImageMetadataGramplet.py:447
+msgid "Converts Degree, Minutes, Seconds GPS Coordinates to a Decimal representation."
+msgstr "GPS-coördinaten in graden, minuten en seconden omvormen naar een decimale notatie."
 
-#: ImageMetadataGramplet/ImageMetadataGramplet.py:181
-msgid "Enter the GPS Longitude as decimal format "
-msgstr "GPS-lengtegraad in het decimale formaat invullen"
+#: ImageMetadataGramplet/ImageMetadataGramplet.py:451
+msgid "Converts Decimal GPS Coordinates to a Degrees, Minutes, Seconds representation."
+msgstr "GPS-coördinaten in decimale vorm omvormen naar graden, minuten en seconden."
 
-#: ImageMetadataGramplet/ImageMetadataGramplet.py:186
-msgid "Save"
-msgstr "Opslaan"
+#: ImageMetadataGramplet/ImageMetadataGramplet.py:456
+msgid ""
+"Enter the GPS Latitude Coordinates for your image,\n"
+"Example: 43.722965, 43 43 22 N, 38° 38′ 03″ N, 38 38 3"
+msgstr ""
+"GPS breedte-coördinaten van uw beeld,\n"
+"Voorbeeld: 43.722965, 43 43 22 N, 38° 38′ 03″ N, 38 38 3"
 
-# zie ook uncleared.
-# is dit goed?
-#: ImageMetadataGramplet/ImageMetadataGramplet.py:189
-msgid "Clear"
-msgstr "Gewist"
+#: ImageMetadataGramplet/ImageMetadataGramplet.py:461
+msgid ""
+"Enter the GPS Longitude Coordinates for your image,\n"
+"Example: 10.396378, 10 23 46 E, 105° 6′ 6″ W, -105 6 6"
+msgstr ""
+"GPS lengte-coördinaten van uw beeld,\n"
+"Voorbeeld: 10.396378, 10 23 46 E, 105° 6′ 6″ W, -105 6 6"
 
-#: ImageMetadataGramplet/ImageMetadataGramplet.py:286
-#: ImageMetadataGramplet/ImageMetadataGramplet.py:537
-msgid "There are errors with this image!"
-msgstr "Dit beeld bevat fouten!"
+#: ImageMetadataGramplet/ImageMetadataGramplet.py:578
+msgid "There is no metadata for this image..."
+msgstr "Dit beeld bevat geen metagegevens..."
 
-#: ImageMetadataGramplet/ImageMetadataGramplet.py:441
-msgid "There is an error with this image!"
-msgstr "Dit beeld bevat een fout! "
-
-#: ImageMetadataGramplet/ImageMetadataGramplet.py:484
-msgid "You have etered Latitude, but not longitude.  Please enter Longitude..."
-msgstr "U heeft een breedteligging maar geen lengteligging opgegeven. Lengteligging ingeven..."
-
-#: ImageMetadataGramplet/ImageMetadataGramplet.py:486
-msgid "You have etered Longitude, but not Latitude.  Please enter Latitude..."
-msgstr "U heeft een lengteligging maar geen breedteligging opgegeven. Breedteligging ingeven..."
-
-#: ImageMetadataGramplet/ImageMetadataGramplet.py:534
+#: ImageMetadataGramplet/ImageMetadataGramplet.py:776
 msgid "Image metadata has been saved."
 msgstr "De metabeeldgegevens zijn opgeslagen."
 
-#: ImageMetadataGramplet/ImageMetadataGramplet.py:575
-msgid "This image not readable."
-msgstr "Het beeld is niet leesbaar."
+#: ImageMetadataGramplet/ImageMetadataGramplet.py:786
+msgid "Double click a date to return the date."
+msgstr "Dubbelklikken op een datum om de datum op te geven."
 
-#: ImageMetadataGramplet/ImageMetadataGramplet.py:686
-msgid "There is an ERROR in Latitude/ Longitude conversion."
-msgstr "Er is iets FOUTS met de lengte/ breedte omzetting."
+#: ImageMetadataGramplet/ImageMetadataGramplet.py:1031
+#, python-format
+msgid "%(date)s %(time)s"
+msgstr "%(date)s %(time)s"
 
-#~ msgid "Date"
-#~ msgstr "Datum"
-#~ msgid "Lat. Ref"
-#~ msgstr "Brdt. Ref"
-#~ msgid "Long. Ref."
-#~ msgstr "Lngt. Ref."
 #~ msgid ""
-#~ "Press the Select Date Button to bring up a calendar where you can choose "
-#~ "a date."
+#~ "The, pyexiv2, python binding library, to exiv2 is not installed on this "
+#~ "computer.\n"
+#~ " It can be downloaded either from your ocal repository or from here\n"
 #~ msgstr ""
-#~ "Druk op de 'kies datumknop' om een kalender te tonen waar u een kunt op "
-#~ "selecteren."
-#~ msgid " or "
-#~ msgstr " of "
+#~ "De 'pyexiv2'-bibliotheek is niet geïnstalleerd op deze computer.\n"
+#~ " Deze bibliotheek kunt ophalen via uw plaatselijke pakketbronnen of hier\n"
 #~ msgid ""
-#~ "If using decimal format in Longitude, leave blank.  If using Degrees, "
-#~ "Minutes, Seconds, please enter either a "
+#~ "Enter text describing this image and who might be in the image.  It might "
+#~ "be best to enter a location for this image, especially if there is no GPS "
+#~ "Latitude/ Longitude information available."
 #~ msgstr ""
-#~ "Gebruikt u het decimale formaat voor de lengtegraad, vul dan niets in. "
-#~ "Gebruikt u graden, minuten, seconden, vul dan ofwel een "
-#~ msgid "Convert GPS Coordinates"
-#~ msgstr "GPS-coordinaten omzetten"
+#~ "Tekst die beschrijft wie er mogelijk op het beeld te zien is toevoegen. "
+#~ "Het is ook zinvol om een locatie in te vullen, zeker indien geen GPS "
+#~ "Lengte/ Breedte informatie beschikbaar is."
+#~ msgid "Active image"
+#~ msgstr "Actief beeld"
+#~ msgid "Photographer"
+#~ msgstr "Fotograaf"
+#~ msgid "Media Date"
+#~ msgstr "Mediadatum"
+#~ msgid "Subject"
+#~ msgstr "Onderwerp"
+#~ msgid "Enter the name of the person who took this image."
+#~ msgstr "Naam van de persoon die het beeld maakte, ingeven."
 #~ msgid ""
-#~ "The image file %s does NOT have write access/ permissions. If you have "
-#~ "access and rights to change the permissions, then please do it now."
+#~ "Enter words that describe this image, separated by comma.\n"
+#~ "  Example: Kids,house,dog,car"
 #~ msgstr ""
-#~ "Het beeldbestand %s heeft GEEN schrijf toegang/ rechten. Hebt u toch "
-#~ "toegang tot en kunt u de rechten aanpassen, doe dit dan nu."
-#~ msgid ""
-#~ "The image file %s does NOT have read access/ permissions. If you have "
-#~ "access and rights to change the permissions, then please do it now."
-#~ msgstr ""
-#~ "Het beeldbestand %s heeft GEEN lees toegang/ rechten. Hebt u toch toegang "
-#~ "tot en kunt u de rechten aanpassen, doe dit dan nu."
-#~ msgid ""
-#~ "The image file is missing.  Please select another image or edit the media "
-#~ "object to fix this problem."
-#~ msgstr ""
-#~ "Het beeldbestand ontbreekt. Kies een ander beeld of bewerk het media-"
-#~ "object om dit probleem op te lossen."
-#~ msgid "Invalid latitude (syntax: 18°9'"
-#~ msgstr "Ongeldige breedtegraad (syntax: 18°9'"
-#~ msgid "48.21\"S, -18.2412 or -18:9:48.21)"
-#~ msgstr "48.21\"Z, -18.2412 of -18:9:48.21)"
-#~ msgid "Invalid longitude (syntax: 18°9'"
-#~ msgstr "Ongeldige lengtegraad (syntax: 18°9'"
-#~ msgid "48.21\"E, -18.2412 or -18:9:48.21)"
-#~ msgstr "48.21\"O, -18.2412 of -18:9:48.21)"
+#~ "Woorden die het beeld beschrijven, invullen. Gebruik commaseparatie.\n"
+#~ " Voorbeeld: Kinderen,huis,hond,auto."
+#~ msgid "Enter the GPS Latitude as decimal format "
+#~ msgstr "GPS-breedtegraad in het decimale formaat invullen"
+#~ msgid "Enter the GPS Longitude as decimal format "
+#~ msgstr "GPS-lengtegraad in het decimale formaat invullen"
+#~ msgid "Save"
+#~ msgstr "Opslaan"
 
