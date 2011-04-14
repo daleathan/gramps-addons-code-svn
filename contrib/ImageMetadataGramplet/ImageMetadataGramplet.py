@@ -96,7 +96,6 @@ if (software_version and (software_version < Min_VERSION)):
         "or greater.  Or you do not have the python library installed yet.  "
         "You may download it from here: %s\n\n  I recommend getting, %s") % (
          Min_VERSION_str, _DOWNLOAD_LINK, Pref_VERSION_str)
-    raise Exception(msg)
 
     WarningDialog(msg)
     raise Exception(msg)
@@ -120,7 +119,8 @@ _DATAMAP = {
     "Exif.GPSInfo.GPSLongitude"    : "Longitude",
     "Exif.GPSInfo.GPSAltitudeRef"  : "AltitudeRef",
     "Exif.GPSInfo.GPSAltitude"     : "Altitude"}
-_DATAMAP = dict( chain(_DATAMAP.iteritems(), ((val, key) for key, val in _DATAMAP.iteritems() )))
+_DATAMAP  = dict( (key, val) for key, val in _DATAMAP.items() )
+_DATAMAP.update( (val, key) for key, val in _DATAMAP.items() )
 
 def _help_page(obj):
     """
@@ -145,12 +145,10 @@ def _return_month(month):
 
     except ValueError:
         for sm, lm, index in _allmonths:
-            found = any(month == value for value in [sm, lm])
-            if found:
+            if month == sm or month == lm:
                 month = int(index)
                 break
-            else:
-                if str(month) == index:
+            elif str(month) == index:
                     month = lm
                     break
     return month
@@ -200,7 +198,11 @@ class imageMetadataGramplet(Gramplet):
         self.exif_widgets["Media:Label"] = gtk.Label(_("Click a media object to begin...") )
         self.exif_widgets["Media:Label"].set_alignment(0.0, 0.0)
         medialabel.pack_start(self.exif_widgets["Media:Label"], expand =False)
-        rows.pack_start(medialabel, expand =False)
+
+        messagearea = gtk.HBox(False)
+        self.exif_widgets["Message:Area"] = gtk.Label()
+        self.exif_widgets["Message:Area"].set_alignment(0.0, 0.0)
+        messagearea.pack_start(self.exif_widgets["Message:Area"], expand =False)
 
         self.model = gtk.ListStore(object, str, str)
         view = gtk.TreeView(self.model)
@@ -210,26 +212,22 @@ class imageMetadataGramplet(Gramplet):
 
         # Value Column
         view.append_column( self.__create_column(_("Value"), 2) )
-        rows.pack_start(view, padding =10)
 
-        button_box = gtk.HButtonBox()
-        button_box.set_layout(gtk.BUTTONBOX_START)
+        copyclear = gtk.HButtonBox()
+        copyclear.set_layout(gtk.BUTTONBOX_START)
 
-        button = gtk.Button(_("Copy to Edit Area"))
-        button.connect("clicked", self.copy_to)
-        button.set_sensitive(False)
-        self.exif_widgets["CopyTo"] = button
-        button_box.add( self.exif_widgets["CopyTo"] )
+        # Copy To button...
+        copyclear.add( self.__create_button(
+            "CopyTo", _("Copy to Edit Area"), self.copy_to, False, False) )
 
         # Clear button...
-        button = gtk.Button(stock=gtk.STOCK_CLEAR)
-        button.set_tooltip_text(_("Clears the metadata from these fields."))
-        button.connect("clicked", self.clear_metadata)
-        button.set_sensitive(False) 
-        self.exif_widgets["Clear"] = button
-        button_box.add( self.exif_widgets["Clear"] )
+        copyclear.add( self.__create_button(
+            "Clear", False, self.clear_metadata, gtk.STOCK_CLEAR) )
 
-        rows.pack_start(button_box, expand =False, fill =False)
+        rows.pack_start(medialabel, expand =False)
+        rows.pack_start(messagearea, expand =False)
+        rows.pack_start(view, padding =10)
+        rows.pack_start(copyclear, expand =False, fill =False)
 
         for items in [
 
@@ -258,7 +256,7 @@ class imageMetadataGramplet(Gramplet):
   
             # Latitude and Longitude for this image 
             ("Latitude",        _("Latitude"),       None, False, [],  True,  0),
-	    ("Longitude",       _("Longitude"),      None, False, [],  True,  0),
+            ("Longitude",       _("Longitude"),      None, False, [],  True,  0),
 
             # GPS Altitude
             ("Altitude",        _("Altitude"),       None, False, [],  True,  0) ]:
@@ -267,32 +265,24 @@ class imageMetadataGramplet(Gramplet):
             row = self.make_row(pos, text, choices, readonly, callback, dirty, default)
             rows.pack_start(row, False)
 
-        # provide tooltips for this gramplet
-        self.setup_tooltips(self.orig_image)
-
-        button_box = gtk.HButtonBox()
-        button_box.set_layout(gtk.BUTTONBOX_START)
-        rows.pack_start(button_box, expand =False, fill =False)
+        helpsave = gtk.HButtonBox()
+        helpsave.set_layout(gtk.BUTTONBOX_START)
 
         # Help button...
-        button = gtk.Button(stock=gtk.STOCK_HELP)
-        button.set_tooltip_text(_("Will bring up a Wiki manual page to help you with this gramplet."))
-        button.connect("clicked", _help_page)
-        self.exif_widgets["Help"] = button
-        button_box.add( self.exif_widgets["Help"] )
+        helpsave.add( self.__create_button(
+            "Help", False, _help_page, gtk.STOCK_HELP) )
 
         # Save button...
-        button = gtk.Button(stock=gtk.STOCK_SAVE)
-        button.set_tooltip_text(_("Saves the information entered here to the image metadata.  "
-            "WARNING: Metadata values will be removed if you save blank data..."))
-        button.connect("clicked", self.save_metadata)
-        button.set_sensitive(False)
-        self.exif_widgets["Save"] = button
-        button_box.add( self.exif_widgets["Save"] )
+        helpsave.add( self.__create_button(
+            "Save", False, self.save_metadata, gtk.STOCK_SAVE, False) )
+        rows.pack_start(helpsave, expand =False, fill =False)
 
         self.gui.get_container_widget().remove(self.gui.textview)
         self.gui.get_container_widget().add_with_viewport(rows)
         rows.show_all()
+
+        # provide tooltips for all fields and buttons...
+        self.setup_tooltips(self.orig_image)
 
     def __create_column(self, name, colnum, fixed =True):
         """
@@ -314,6 +304,24 @@ class imageMetadataGramplet(Gramplet):
         column.set_sort_column_id(colnum)
 
         return column
+
+    def __create_button(self, pos, text, callback, icon =False, sensitive = True):
+        """
+        creates and returns a button for display
+        """
+
+        if (icon and not text):
+            button = gtk.Button(stock=icon)
+        else:
+            button = gtk.Button(text)
+
+        button.connect("clicked", callback)
+
+        if not sensitive:
+            button.set_sensitive(False)
+        self.exif_widgets[pos] = button
+
+        return button
 
     def main(self): # return false finishes
         """
@@ -427,41 +435,44 @@ class imageMetadataGramplet(Gramplet):
         setup tooltips for each field
         """
 
-        # Author
-        self.exif_widgets["Artist"].set_tooltip_text(_("Enter the Artist/ Author of this image.  "
-            "The person's name or the company who is responsible for the creation of this image."))
+        _TOOLTIPS = {
+            "Artist": _("Enter the Artist/ Author of this image.  The person's name or "
+                "the company who is responsible for the creation of this image."),
 
-        # Copyright
-        self.exif_widgets["Copyright"].set_tooltip_text(_("Enter the copyright"
-            " information for the image.  xample: (C) 2010 Smith and Wesson"))
+            "Copyright": _("Enter the copyright information for this image. \n"
+                "Example: (C) 2010 Smith and Wesson"),
 
-        # Select Data button
-        self.exif_widgets["Date:Select"].set_tooltip_text(_("Allows you to select a date from a "
-            "pop-up window calendar.  You will still need to enter the time..."))
+            "Date:Select": _("Allows you to select a date from a pop-up window calendar. \n"
+                "Warning:  You will still need to edit the time..."),
 
-        # Manual Date Entry 
-        self.exif_widgets[ "ModDateTime"].set_tooltip_text(_("Manual Date Entry, \n"
-            "Example: 1826-Apr-12 or 1826-April-12"))
+             "ModDateTime": _("Manual Date/ Time Entry, \n"
+                "Example: 1826-Apr-12 14:30:00, 1826-April-12, 1998-01-31 13:30:00"),
 
-        # Convert Decimal button
-        self.exif_widgets["GPSFormat:Decimal"].set_tooltip_text(_("Converts Degree, Minutes, Seconds "
-            "GPS Coordinates to a Decimal representation."))
+            "GPSFormat:Decimal": _("Converts Degree, Minutes, Seconds GPS Coordinates to a "
+                "Decimal representation."),
 
-        # Degrees, Minutes, Seconds button
-        self.exif_widgets["GPSFormat:DMS"].set_tooltip_text(_("Converts Decimal "
-            "GPS Coordinates to a Degrees, Minutes, Seconds representation."))
+            "GPSFormat:DMS": _("Converts Decimal GPS Coordinates "
+                "to a Degrees, Minutes, Seconds representation."),
 
-        # Leaning Tower of Pisa, Pisa, Italy
-        # GPS Latitude Coordinates
-        self.exif_widgets["Latitude"].set_tooltip_text(_("Enter the GPS Latitude Coordinates for "
-            "your image,\n"
-            "Example: 43.722965, 43 43 22 N, 38° 38′ 03″ N, 38 38 3"))
+            # Leaning Tower of Pisa, Pisa, Italy
+            "Latitude": _("Enter the GPS Latitude Coordinates for your image,\n"
+                "Example: 43.722965, 43 43 22 N, 38° 38′ 03″ N, 38 38 3"),
 
-        # GPS Longitude Coordinate
-        self.exif_widgets["Longitude"].set_tooltip_text(_("Enter the GPS Longitude Coordinates for "
-            "your image,\n"
-            "Example: 10.396378, 10 23 46 E, 105° 6′ 6″ W, -105 6 6"))
+            "Longitude": _("Enter the GPS Longitude Coordinates for your image,\n"
+                "Example: 10.396378, 10 23 46 E, 105° 6′ 6″ W, -105 6 6"),
 
+            "CopyTo": _("Copies information from display area to edit area."),
+
+            "Clear": _("Clears the Exif metadata from Display and Edit Areas"),
+
+            "Help": _("Displays the Gramps Wiki Help page for 'Image Metadata Gramplet' "),
+
+            "Save": _("Saves the information entered here to the image Exif metadata. \n"
+                "WARNING: Exif metadata will be erased if you save blank items...") }
+
+        for widget, tooltip in _TOOLTIPS.items():
+            self.exif_widgets[widget].set_tooltip_text(tooltip)
+ 
 # -----------------------------------------------
 # Error Checking functions
 # -----------------------------------------------
@@ -480,10 +491,8 @@ class imageMetadataGramplet(Gramplet):
         # clear all data fields
         if cleartype == "All":
             for key in ["Artist", "Copyright", "ModDateTime",  "Latitude", "Longitude",
-                    "Description"]:
+                    "Description", "Altitude"]:
                 self.exif_widgets[key].set_text("")
-
-            self.model.clear()
 
         # clear only the date and time fields
         else:
@@ -524,9 +533,11 @@ class imageMetadataGramplet(Gramplet):
             self.plugin_image.readMetadata()
 
             # get all KeyTags for this Media object for diplay only...
-            MediaDataTags = [KeyTag for KeyTag in self.plugin_image.exifKeys() ]
-            MediaDataTags.append( [KeyTag for KeyTag in self.plugin_image.xmpKeys()] )
-            MediaDataTags.append( [KeyTag for KeyTag in self.plugin_image.iptcKeys()] )
+            MediaDataTags = [KeyTag for KeyTag in chain(
+                                self.plugin_image.exifKeys(),
+                                self.plugin_image.xmpKeys(),
+                                self.plugin_image.iptcKeys())
+                            ]
 
             # get Thumbnail Data
             # ttype, tdata = self.plugin_image.getThumbnailData()  
@@ -536,9 +547,11 @@ class imageMetadataGramplet(Gramplet):
             self.plugin_image.read()
 
             # get all KeyTags for this Media object for diplay only...
-            MediaDataTags = [KeyTag for KeyTag in self.plugin_image.exif_keys ]
-            MediaDataTags.append( [KeyTag for KeyTag in self.plugin_image.xmp_keys ] )
-            MediaDataTags.append( [KeyTag for KeyTag in self.plugin_image.iptc_keys ] )
+            MediaDataTags = [KeyTag for KeyTag in chain(
+                                self.plugin_image.exif_keys,
+                                self.plugin_image.xmp_keys,
+                                self.plugin_image.iptc_keys)
+                            ]
 
             # get Thumbnail data if any?
             # previews = self.plugin_image.previews
@@ -558,9 +571,12 @@ class imageMetadataGramplet(Gramplet):
                         human_value = self.plugin_image.interpretedExifValue(KeyTag)
 
                     else:  # pyexiv2-0.2.0 and above
-                        tag = self.plugin_image[KeyTag]
-                        label = tag.label
-                        human_value = tag.human_value
+                        try:
+                            tag = self.plugin_image[KeyTag]
+                            label = tag.label
+                            human_value = tag.human_value
+                        except AttributeError:
+                            label = human_value = ""
 
                     if KeyTag in ("Exif.Image.DateTime",
                         "Exif.Photo.DateTimeOriginal",
@@ -582,15 +598,11 @@ class imageMetadataGramplet(Gramplet):
         reads the image metadata after the pyexiv2.Image has been created
         """
 
-        # reads the media metadata into this addon
-        # LesserVersion would only be True when pyexiv2-to 0.1.3 is installed
-        if LesserVersion: # prior to v0.2.0
-            imageKeyTags = [KeyTag for KeyTag in self.plugin_image.exifKeys()
-                    if KeyTag in _DATAMAP ]
+        if LesserVersion: # prior to pyexiv2-0.2.0
+            imageKeyTags = [KeyTag for KeyTag in self.plugin_image.exifKeys() if KeyTag in _DATAMAP]
 
-        else: # v0.2.0 and above
-            imageKeyTags = [KeyTag for KeyTag in self.plugin_image.exif_keys
-                    if KeyTag in _DATAMAP ]
+        else: # pyexiv2-0.2.0 and above
+            imageKeyTags = [KeyTag for KeyTag in self.plugin_image.exif_keys if KeyTag in _DATAMAP]
 
         for KeyTag in imageKeyTags:
 
@@ -598,7 +610,7 @@ class imageMetadataGramplet(Gramplet):
             widgetsName = _DATAMAP[KeyTag]
 
             tagValue = self._get_value(KeyTag)
-            if tagValue:  
+            if tagValue:
 
                 if widgetsName in ["Description", "Artist", "Copyright"]:
                     self.exif_widgets[widgetsName].set_text(tagValue)
@@ -665,7 +677,7 @@ class imageMetadataGramplet(Gramplet):
         # activate the Save button after metadata has been "Copied to Edit Area"...
         self.exif_widgets["Save"].set_sensitive(True)
 
-    def _set_value(self, KeyTag, KeyValue, tag =False):
+    def _set_value(self, KeyTag, KeyValue):
         """
         sets the value for the metadata keytags
         """
@@ -674,15 +686,11 @@ class imageMetadataGramplet(Gramplet):
             self.plugin_image[KeyTag] = KeyValue
 
         else:  # pyexiv2-0.2.0 and above
-
             try:  # tag is being modified...
                 self.plugin_image[KeyTag].value = KeyValue
 
             except KeyError:  # tag has not been set...
-                if tag is not False:
-                    self.plugin_image[KeyTag] = pyexiv2.ExifTag(KeyTag, KeyValue, tag)
-                else:
-                    self.plugin_image[KeyTag] = pyexiv2.ExifTag(KeyTag, KeyValue)
+                self.plugin_image[KeyTag] = pyexiv2.ExifTag(KeyTag, KeyValue)
 
             except (ValueError, AttributeError):  # there is an issue with either KeyTag or KeyValue
                 pass
@@ -698,48 +706,52 @@ class imageMetadataGramplet(Gramplet):
 
         for widgetsName in ["Description", "Artist", "Copyright"]:
 
-            tag = self.plugin_image[_DATAMAP[widgetsName] ]
-            tagValue = self.exif_widgets[widgetsName].get_text()
-            if tagValue:
-                self._set_value(_DATAMAP[widgetsName], tagValue, tag)
+            widgetsValue = self.exif_widgets[widgetsName].get_text()
+            self._set_value(_DATAMAP[widgetsName], widgetsValue)
 
         # write date/ time to Exif metadata
-        tmpDate = _write_date( self.exif_widgets["ModDateTime"].get_text() )
-        if (tmpDate is not False and tmpDate is not ""):
-            tag = self.plugin_image[_DATAMAP["ModDateTime"] ]
-            self._set_value(_DATAMAP["ModDateTime"], tmpDate, tag)
+        tmpDate = self.exif_widgets["ModDateTime"].get_text()
+        tmpDate = _write_date(tmpDate) if tmpDate else ""
+         
+        if tmpDate is not False:
+            self._set_value(_DATAMAP["ModDateTime"], tmpDate)
+
+        # check to see if there is an Original DateTime or not?
+        origdatetime = self._get_value(_DATAMAP["OrigDateTime"] )
+        if ((origdatetime == False or origdatetime == "") and tmpDate is not False):
+            self._set_value(_DATAMAP["OrigDateTime"], tmpDate)
 
         # get Latitude/ Longitude from this addon...
         latitude  =  self.exif_widgets["Latitude"].get_text()
         longitude = self.exif_widgets["Longitude"].get_text()
 
-        # check to see if Latitude/ Longitude exists?
-        if (latitude and longitude):
+        # if there are no values for latitude/ longitude, erase them?
+        if (not latitude and not longitude):
+            latitude, longitude = "", ""
+            LatitudeRef, LongitudeRef = "", ""
 
-            # complete some error checking to prevent crashes...
+        elif (latitude and longitude):
+
             # if "?" character exist, remove it?
-            if ("?" in latitude or "?" in longitude):
+            if "?" in latitude:
                 latitude = latitude.replace("?", "")
+            if "?" in longitude:
                 longitude = longitude.replace("?", "")
 
             # if "," character exists, remove it?
-            if ("," in latitude or "," in longitude): 
+            if "," in latitude: 
                 latitude = latitude.replace(",", "")
+            if "," in longitude:
                 longitude = longitude.replace(",", "") 
 
             # if it is in decimal format, convert it to DMS?
-            # if not, then do nothing?
-            self.convert2dms(self.plugin_image)
-
-            # get Latitude/ Longitude from the data fields
-            latitude  =  self.exif_widgets["Latitude"].get_text()
-            longitude = self.exif_widgets["Longitude"].get_text()
+            # or if Directional Reference is missing, add it?
+            latitude, longitude = self.convert2dms(latitude, longitude)
 
             # will add (degrees, minutes, seconds) symbols if needed?
-            # if not, do nothing...
             latitude, longitude = self.addsymbols2gps(latitude, longitude)
 
-            # set up display
+            # set display for modified/ corrected Latitude/ Longitude...
             self.exif_widgets["Latitude"].set_text(latitude)
             self.exif_widgets["Longitude"].set_text(longitude)
 
@@ -756,15 +768,19 @@ class imageMetadataGramplet(Gramplet):
             LongitudeRef = LongitudeRef.replace(" ", "")
 
             # remove symbols for saving Latitude/ Longitude GPS Coordinates
-            latitude, longitude = _removesymbols4saving(latitude, longitude) 
+            latitude, longitude = removesymbols4saving(latitude, longitude) 
 
             # convert (degrees, minutes, seconds) to Rational for saving
-            self._set_value(_DATAMAP["Latitude"], coords_to_rational(latitude))
-            self._set_value(_DATAMAP["LatitudeRef"], LatitudeRef)
+            latitude = coords_to_rational(latitude)
+            longitude = coords_to_rational(longitude)
 
-            # convert (degrees, minutes, seconds) to Rational for saving
-            self._set_value(_DATAMAP["Longitude"], coords_to_rational(longitude))
-            self._set_value(_DATAMAP["LongitudeRef"], LongitudeRef)
+        # save Latitude and Latitude Reference to image...
+        self._set_value(_DATAMAP["Latitude"], latitude)
+        self._set_value(_DATAMAP["LatitudeRef"], LatitudeRef)
+
+        # save Longitude and Longitude Reference to image...
+        self._set_value(_DATAMAP["Longitude"], longitude)
+        self._set_value(_DATAMAP["LongitudeRef"], LongitudeRef)
 
         if LesserVersion:  # prior to pyexiv2-0.2.0
             self.plugin_image.writeMetadata()
@@ -824,55 +840,47 @@ class imageMetadataGramplet(Gramplet):
 # -------------------------------------------------------------------
 #          GPS Coordinates functions
 # -------------------------------------------------------------------
-    def addsymbols2gps(self, latitude =False, longitude =False):
+    def addsymbols2gps(self, latitude, longitude):
         """
         converts a degrees, minutes, seconds representation of Latitude/ Longitude
         without their symbols to having them...
 
-        @param: latitude -- Latitude GPS Coordinates
-        @param: longitude -- Longitude GPS Coordinates
+        The Degrees, Minutes, Seconds symbols are required for
+        conversion to decimal and nice for display purposes...
         """
-        LatitudeRef, LongitudeRef = "N", "E"
-
         # check to see if Latitude/ Longitude exits?
         if (latitude and longitude):
 
-            if (latitude.count(".") == 1 and longitude.count(".") == 1):
-                self.convert2dms(self.plugin_image)
+            # break into its pieces before checking for symbols...
+            latdeg, latmin, latsec, LatRef = latitude.split(" ")
+            longdeg, longmin, longsec, LongRef = longitude.split(" ")
 
-                # get Latitude/ Longitude from data fields
-                # after the conversion
-                latitude  =  self.exif_widgets["Latitude"].get_text()
-                longitude = self.exif_widgets["Longitude"].get_text()
+            # add degrees symbol if necessary?
+            if (latdeg and latdeg[-1] is not "°"):
+                latdeg += "°"
+            if (longdeg and longdeg[-1] is not "°"):
+                longdeg += "°"
 
-            # add DMS symbols if necessary?
-            # the conversion to decimal format, require the DMS symbols
-            elif ( (latitude.count("°") == 0 and longitude.count("°") == 0) and
-                (latitude.count("′") == 0 and longitude.count("′") == 0) and
-                (latitude.count('″') == 0 and longitude.count('″') == 0) ):
+            # add minutes' symbol if necessary?
+            if (latmin and latmin[-1] is not "′"):
+                latmin += "′"
+            if (longmin and longmin[-1] is not "′"):
+                longmin += "′"
 
-                # is there a direction element here?
-                if (latitude.count("N") == 1 or latitude.count("S") == 1):
-                    latdeg, latmin, latsec, LatitudeRef = latitude.split(" ", 3)
-                else:
-                    atitudeRef = "N"
-                    latdeg, latmin, latsec = latitude.split(" ", 2)
-                    if latdeg[0] == "-":
-                        latdeg = latdeg.replace("-", "")
-                        LatitudeRef = "S"
+            # add seconds' symbol if necessary?
+            if (latsec and latsec[-1] is not '″'):
+                latsec += '″'
+            if (longsec and longsec[-1] is not '″'):
+                longsec += '″'
 
-                # is there a direction element here?
-                if (longitude.count("E") == 1 or longitude.count("W") == 1):
-                    longdeg, longmin, longsec, LongitudeRef = longitude.split(" ", 3)
-                else:
-                    ongitudeRef = "E"
-                    longdeg, longmin, longsec = longitude.split(" ", 2)
-                    if longdeg[0] == "-":
-                        longdeg = longdeg.replace("-", "")
-                        LongitudeRef = "W"
+            # re-assemble Latitude
+            latitude  = ("""%(degrees)s %(minutes)s %(seconds)s %(dirRef)s""") % {
+                'degrees' : latdeg, 'minutes' : latmin, 'seconds' : latsec, 'dirRef' : LatRef}
 
-                latitude  = """%s° %s′ %s″ %s""" % (latdeg, latmin, latsec, LatitudeRef)
-                longitude = """%s° %s′ %s″ %s""" % (longdeg, longmin, longsec, LongitudeRef)
+            # re-assemble Longitude
+            longitude  = ("""%(degrees)s %(minutes)s %(seconds)s %(dirRef)s""") % {
+                'degrees' : longdeg, 'minutes' : longmin, 'seconds' : longsec, 'dirRef' : LongRef}
+
         return latitude, longitude
 
     def convert2decimal(self, obj):
@@ -891,10 +899,10 @@ class imageMetadataGramplet(Gramplet):
             if (latitude.count(" ") >= 2 and longitude.count(" ") >= 2): 
 
                 # add DMS symbols if necessary?
-                # the conversion to decimal format, require the DMS symbols 
-                if ( (latitude.count("°") == 0 and longitude.count("°") == 0) and
-                    (latitude.count("′") == 0 and longitude.count("′") == 0) and
-                    (latitude.count('″') == 0 and longitude.count('″') == 0) ):
+                # the conversion to decimal format, require the DMS symbols
+                if not any(latitude.count(sym) or longitude.count(sym)
+                            for sym in ("°", "′", '″')
+                          ):
 
                     latitude, longitude = self.addsymbols2gps(latitude, longitude)
 
@@ -905,44 +913,62 @@ class imageMetadataGramplet(Gramplet):
                 self.exif_widgets["Latitude"].set_text(latitude)
                 self.exif_widgets["Longitude"].set_text(longitude)
 
-    def convert2dms(self, obj):
+    def convert2dms(self, latitude =False, longitude =False):
         """
         will convert a decimal GPS Coordinates into degrees, minutes, seconds
-        for display only
+
+        will add direction Reference if it is missing...
         """
 
-        # get Latitude/ Longitude from the data fields
-        latitude = self.exif_widgets["Latitude"].get_text()
-        longitude = self.exif_widgets["Longitude"].get_text()
+        # if lat/ long are False, get from data fields...
+        if (not latitude and not longitude):
+            latitude = self.exif_widgets["Latitude"].get_text()
+            longitude = self.exif_widgets["Longitude"].get_text()
 
         # if Latitude/ Longitude exists?
         if (latitude and longitude):
 
             # if coordinates are in decimal format?
-            if (latitude.count(".") == 1 and longitude.count(".") == 1):
+            if (latitude[0] == longitude[0] == "."):
 
                 # convert latitude and longitude to a DMS with separator of ":"
                 latitude, longitude = conv_lat_lon(latitude, longitude, "DEG-:")
  
-                # remove negative symbol if there is one?
-                LatitudeRef = "N"
-                if latitude[0] == "-":
-                    latitude = latitude.replace("-", "")
-                    LatitudeRef = "S"
                 latdeg, latmin, latsec = latitude.split(":", 2)
+                latitude = """%s° %s′ %s″""" % (latdeg, latmin, latsec)
 
-               # remove negative symbol if there is one?
-                LongitudeRef = "E"
-                if longitude[0] == "-":
-                    longitude = longitude.replace("-", "")
-                    LongitudeRef = "W"
                 longdeg, longmin, longsec = longitude.split(":", 2)
+                longitude = """%s° %s′ %s″""" % (longdeg, longmin, longsec)
 
-                self.exif_widgets["Latitude"].set_text(
-                    """%s° %s′ %s″ %s""" % (latdeg, latmin, latsec, LatitudeRef) )
+            LatitudeRef = False
+            if (latitude[0] == "-" and latitude[-1] is not "S"):
+                latitude = latitude.replace("-", "")
+                LatitudeRef = " S"
+            elif (latitude[0] is not "-" and latitude[-1] is not "N"):
+                LatitudeRef = " N"
 
-                self.exif_widgets["Longitude"].set_text(
-                    """%s° %s′ %s″ %s""" % (longdeg, longmin, longsec, LongitudeRef) )
+            # Add Latitude Reference if missing?
+            if LatitudeRef:
+                latitude += LatitudeRef
+                 
+            LongitudeRef = False
+            if (longitude[0] == "-" and longitude[-1] is not "W"):
+                longitude = longitude.replace("-", "")
+                LongitudeRef = " W"
+            elif (longitude[0] is not "-" and longitude[-1] is not "E"):
+                LongitudeRef = " E"
+
+            # Add Longitude Reference if missing?
+            if LongitudeRef:
+                longitude += LongitudeRef
+
+            # display modified latitude
+            self.exif_widgets["Latitude"].set_text(latitude)
+
+            # display modified longitude 
+            self.exif_widgets["Longitude"].set_text(longitude)
+
+            return latitude, longitude
 
 def string_to_rational(coordinate):
     """
@@ -955,7 +981,7 @@ def string_to_rational(coordinate):
     else:
         return pyexiv2.Rational(int(coordinate), 1)
 
-def _removesymbols4saving(latitude =False, longitude =False):
+def removesymbols4saving(latitude =False, longitude =False):
     """
     will recieve a DMS with symbols and return it without them
 
@@ -967,16 +993,19 @@ def _removesymbols4saving(latitude =False, longitude =False):
     if (latitude and longitude):
 
         # remove degrees symbol if it exist?
-        latitude = latitude.replace("°", "")
-        longitude = longitude.replace("°", "")
+        if (latitude.count("°") == longitude.count("°") == 1):
+            latitude = latitude.replace("°", "")
+            longitude = longitude.replace("°", "")
 
         # remove minutes symbol if it exist?
-        latitude = latitude.replace("′", "")
-        longitude = longitude.replace("′", "")
+        if (latitude.count("′") == longitude.count("′") == 1):
+            latitude = latitude.replace("′", "")
+            longitude = longitude.replace("′", "")
 
         # remove seconds symbol if it exist?
-        latitude = latitude.replace('″', "")
-        longitude = longitude.replace('″', "")
+        if (latitude.count('″') == longitude.count('″') == 1):
+            latitude = latitude.replace('″', "")
+            longitude = longitude.replace('″', "")
 
     return latitude, longitude
 
@@ -992,7 +1021,7 @@ def convert_value(value):
     will take a value from the coordinates and return its value
     """
 
-    if (isinstance(value, Fraction) or isinstance(value, pyexiv2.Rational)):
+    if isinstance(value, (Fraction, pyexiv2.Rational)):
 
         return str( ( Decimal(value.numerator) / Decimal(value.denominator) ) )
 
@@ -1003,15 +1032,14 @@ def rational_to_dms(coords):
     [Fraction(40, 1), Fraction(0, 1), Fraction(1079, 20)]
     """
 
-    deg, min, sec = False, False, False
+    deg, min, sec =     False, False, False
     # coordinates look like:
     #     [Rational(38, 1), Rational(38, 1), Rational(150, 50)]
     # or [Fraction(38, 1), Fraction(38, 1), Fraction(318, 100)]   
     if isinstance(coords, list):
     
         if len(coords) == 3:
-            deg, min, sec = coords[0], coords[1], coords[2]
-            return [convert_value(coordinate) for coordinate in [deg, min, sec] ]
+            return [convert_value(coordinate) for coordinate in coords]
 
     return deg, min, sec
 
@@ -1067,7 +1095,7 @@ def _write_date(wdatetime):
         wyear, wmonth, day, hour, minutes, seconds = datestr[0:6]
 
     else:
-        wyear, wmonth, day, hour, minutes, seconds = False, False, False, False, False, False
+        wyear, wmonth, day, hour, minutes, seconds = [False]*6
 
         # do some error trapping...
         if wmonth > 12: wmonth = 12
@@ -1136,7 +1164,7 @@ def _process_date(tmpDate):
             pyear, pmonth, day, hour, minutes, seconds = datestr[0:6]
 
         else:
-            pyear, pmonth, day, hour, minutes, seconds = False, False, False, False, False, False
+            pyear, pmonth, day, hour, minutes, seconds = [False]*6
 
         # do some error trapping...
         if pmonth > 12: pmonth = 12
