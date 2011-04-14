@@ -106,6 +106,55 @@ if (software_version and (software_version < Min_VERSION)):
 # available image types for exiv2
 _valid_types = ["jpeg", "jpg", "exv", "tiff", "dng", "nef", "pef", "pgf", "png", "psd", "jp2"]
 
+# define tooltips for all entries and buttons...
+_TOOLTIPS = {
+
+    # CopyTo button...
+    "CopyTo"            : _("Copies information from the Display area to the Edit area."),
+
+    # Clear Edit Area button... 
+    "Clear"             : _("Clears the Exif metadata from the Edit area."),
+
+    # Artist 
+    "Artist"            : _("Enter the Artist/ Author of this image.  The person's name or "
+        "the company who is responsible for the creation of this image."),
+
+    # Copyright
+    "Copyright"         : _("Enter the copyright information for this image. \n"
+        "Example: (C) 2010 Smith and Wesson"),
+
+    # Calendar date select...
+    "Date:Select"       : _("Allows you to select a date from a pop-up window calendar. \n"
+        "Warning:  You will still need to edit the time..."),
+
+    # Manual Date/ Time... 
+    "ModDateTime"       : _("Manual Date/ Time Entry, \n"
+        "Example: 1826-Apr-12 14:30:00, 1826-April-12, 1998-01-31 13:30:00"),
+
+    # Convert to decimal button...
+    "GPSFormat:Decimal" : _("Converts Degree, Minutes, Seconds GPS Coordinates to a "
+        "Decimal representation."),
+
+    # convert to degrees, minutes, seconds button...
+    "GPSFormat:DMS"     : _("Converts Decimal GPS Coordinates "
+        "to a Degrees, Minutes, Seconds representation."),
+
+    # GPS Latitude...
+    "Latitude"          : _("Enter the GPS Latitude Coordinates for your image,\n"
+        "Example: 43.722965, 43 43 22 N, 38° 38′ 03″ N, 38 38 3"),
+
+    # GPS Longitude...
+    "Longitude"         : _("Enter the GPS Longitude Coordinates for your image,\n"
+        "Example: 10.396378, 10 23 46 E, 105° 6′ 6″ W, -105 6 6"),
+
+    # Wiki Help button...
+    "Help"              : _("Displays the Gramps Wiki Help page for 'Image Metadata Gramplet' "
+        "in your web browser."),
+
+    # Save Exif Metadata button...
+    "Save"              : _("Saves/ writes the Exif metadata to this image.\n"
+        "WARNING: Exif metadata will be erased if you save a blank entry field...") }.items()
+
 # set up Exif keys for Image.exif_keys
 _DATAMAP = {
     "Exif.Image.ImageDescription"  : "Description",
@@ -131,6 +180,8 @@ def _help_page(obj):
 
     GrampsDisplay.help(webpage = 'Image Metadata Gramplet')
 
+_allmonths = list([_dd.short_months[i], _dd.long_months[i], i] for i in range(1, 13))
+
 def _return_month(month):
     """
     returns either an integer of the month number or the abbreviated month name
@@ -138,7 +189,6 @@ def _return_month(month):
     @param: rmonth -- can be one of:
         10, "10", "Oct", or "October"
     """
-    _allmonths = list([_dd.short_months[i], _dd.long_months[i], i] for i in range(1, 13))
 
     try:
         month = int(month)
@@ -363,21 +413,22 @@ class imageMetadataGramplet(Gramplet):
         self.exif_widgets["Media:Label"].set_text(
             _html_escape(self.orig_image.get_description() ) )
 
-        # get media mime type
+        # get mime type information...
         mime_type = self.orig_image.get_mime_type()
         self.__mtype = gen.mime.get_description(mime_type)
-        self.exif_widgets["Message:Area"].set_text(self.__mtype)
 
+        # determine if it is a mime image object?
         if (mime_type and mime_type.startswith("image") ):
+            self.exif_widgets["Message:Area"].set_text(self.__mtype)
 
-                # set up tooltips text for all buttons
-                self.setup_tooltips(self.orig_image)
-
-                # read the media metadata and display it
-                self.display_exif_tags(self.image_path)
+            # read the media metadata and display it
+            self.display_exif_tags(self.image_path)
 
         # disable all buttons of "CopyTo", "Clear", and "Save"...
         else:
+            self.exif_widgets["Message:Area"].set_text("%s, %s" % (self.__mtype,
+                _("Please choose another media object...") ) )
+
             self.exif_widgets["CopyTo"].set_sensitive(False)
             self.exif_widgets["Clear"].set_sensitive(False)
             self.exif_widgets["Save"].set_sensitive(False)
@@ -450,42 +501,7 @@ class imageMetadataGramplet(Gramplet):
         setup tooltips for each field
         """
 
-        _TOOLTIPS = {
-            "Artist": _("Enter the Artist/ Author of this image.  The person's name or "
-                "the company who is responsible for the creation of this image."),
-
-            "Copyright": _("Enter the copyright information for this image. \n"
-                "Example: (C) 2010 Smith and Wesson"),
-
-            "Date:Select": _("Allows you to select a date from a pop-up window calendar. \n"
-                "Warning:  You will still need to edit the time..."),
-
-             "ModDateTime": _("Manual Date/ Time Entry, \n"
-                "Example: 1826-Apr-12 14:30:00, 1826-April-12, 1998-01-31 13:30:00"),
-
-            "GPSFormat:Decimal": _("Converts Degree, Minutes, Seconds GPS Coordinates to a "
-                "Decimal representation."),
-
-            "GPSFormat:DMS": _("Converts Decimal GPS Coordinates "
-                "to a Degrees, Minutes, Seconds representation."),
-
-            # Leaning Tower of Pisa, Pisa, Italy
-            "Latitude": _("Enter the GPS Latitude Coordinates for your image,\n"
-                "Example: 43.722965, 43 43 22 N, 38° 38′ 03″ N, 38 38 3"),
-
-            "Longitude": _("Enter the GPS Longitude Coordinates for your image,\n"
-                "Example: 10.396378, 10 23 46 E, 105° 6′ 6″ W, -105 6 6"),
-
-            "CopyTo": _("Copies information from display area to edit area."),
-
-            "Clear": _("Clears the Exif metadata from Display and Edit Areas"),
-
-            "Help": _("Displays the Gramps Wiki Help page for 'Image Metadata Gramplet' "),
-
-            "Save": _("Saves the information entered here to the image Exif metadata. \n"
-                "WARNING: Exif metadata will be erased if you save blank items...") }
-
-        for widget, tooltip in _TOOLTIPS.items():
+        for widget, tooltip in _TOOLTIPS:
             self.exif_widgets[widget].set_tooltip_text(tooltip)
  
 # -----------------------------------------------
@@ -977,7 +993,7 @@ class imageMetadataGramplet(Gramplet):
         if (latitude and longitude):
 
             # if coordinates are in decimal format?
-            if (latitude[0] == longitude[0] == "."):
+            if (latitude[0] == "." and longitude[0] == "."):
 
                 # convert latitude and longitude to a DMS with separator of ":"
                 latitude, longitude = conv_lat_lon(latitude, longitude, "DEG-:")
@@ -988,27 +1004,27 @@ class imageMetadataGramplet(Gramplet):
                 longdeg, longmin, longsec = longitude.split(":", 2)
                 longitude = """%s° %s′ %s″""" % (longdeg, longmin, longsec)
 
-            LatitudeRef = False
+            LatRef = False
             if (latitude[0] == "-" and latitude[-1] is not "S"):
-                latitude = latitude.replace("-", "")
-                LatitudeRef = " S"
+                latitude = latitude[1:]
+                LatRef = "S"
             elif (latitude[0] is not "-" and latitude[-1] is not "N"):
-                LatitudeRef = " N"
+                LatRef = "N"
 
             # Add Latitude Reference if missing?
-            if LatitudeRef:
-                latitude += LatitudeRef
+            if LatRef:
+                latitude += " " + LatRef
                  
-            LongitudeRef = False
+            LongRef = False
             if (longitude[0] == "-" and longitude[-1] is not "W"):
-                longitude = longitude.replace("-", "")
-                LongitudeRef = " W"
+                longitude = longitude[1:]
+                LongRef = "W"
             elif (longitude[0] is not "-" and longitude[-1] is not "E"):
-                LongitudeRef = " E"
+                LongRef = "E"
 
             # Add Longitude Reference if missing?
-            if LongitudeRef:
-                longitude += LongitudeRef
+            if LongRef:
+                longitude += " " + LongRef
 
             # display modified latitude
             self.exif_widgets["Latitude"].set_text(latitude)
