@@ -339,6 +339,8 @@ class imageMetadataGramplet(Gramplet):
 
         self.orig_image = db.get_object_from_handle(active_handle)
         if not self.orig_image:
+            self.exif_widgets["Message:Area"].set_text(_("Image is missing or deleted.  "
+                "Choose another media object..."))
             return
 
         # get media full path
@@ -348,18 +350,24 @@ class imageMetadataGramplet(Gramplet):
         _readable = os.access(self.image_path, os.R_OK)
         _writable = os.access(self.image_path, os.W_OK)
         if not _readable:
+            self.exif_widgets["Message:Area"].set_text(_("This image is not readable.  "
+                "Choose another media object..."))
             return
 
         # if media object is not writable, disable Save Button?
         if not _writable:
+            self.exif_widgets["Message:Area"].set_text(_("This image is not writable..."))
             self.exif_widgets["Save"].set_sensitive(False)
 
         # display file description/ title...
-        self.exif_widgets["Media:Label"].set_text(self.orig_image.get_description())
+        self.exif_widgets["Media:Label"].set_text(
+            _html_escape(self.orig_image.get_description() ) )
 
         # get media mime type
         mime_type = self.orig_image.get_mime_type()
         self.__mtype = gen.mime.get_description(mime_type)
+        self.exif_widgets["Message:Area"].set_text(self.__mtype)
+
         if (mime_type and mime_type.startswith("image") ):
 
                 # set up tooltips text for all buttons
@@ -367,6 +375,13 @@ class imageMetadataGramplet(Gramplet):
 
                 # read the media metadata and display it
                 self.display_exif_tags(self.image_path)
+
+        # disable all buttons of "CopyTo", "Clear", and "Save"...
+        else:
+            self.exif_widgets["CopyTo"].set_sensitive(False)
+            self.exif_widgets["Clear"].set_sensitive(False)
+            self.exif_widgets["Save"].set_sensitive(False)
+            return
 
     def make_row(self, pos, text, choices=None, readonly=False, callback_list=[],
                  mark_dirty=False, default=0):
@@ -704,9 +719,12 @@ class imageMetadataGramplet(Gramplet):
         and sets the keytag = keyvalue image metadata
         """
 
+        SavedEntries = []
         for widgetsName in ["Description", "Artist", "Copyright"]:
 
             widgetsValue = self.exif_widgets[widgetsName].get_text()
+            if widgetsValue is not "":
+                SavedEntries.append( [widgetsName] )
             self._set_value(_DATAMAP[widgetsName], widgetsValue)
 
         # write date/ time to Exif metadata
@@ -714,11 +732,16 @@ class imageMetadataGramplet(Gramplet):
         tmpDate = _write_date(tmpDate) if tmpDate else ""
          
         if tmpDate is not False:
+            if tmpDate is not "":
+                SavedEntries.append( ["ModDateTime"] )
             self._set_value(_DATAMAP["ModDateTime"], tmpDate)
 
         # check to see if there is an Original DateTime or not?
-        origdatetime = self._get_value(_DATAMAP["OrigDateTime"] )
-        if ((origdatetime == False or origdatetime == "") and tmpDate is not False):
+        OrigDateTime = self._get_value(_DATAMAP["OrigDateTime"] )
+
+        if ((OrigDateTime == False or OrigDateTime == "") and tmpDate is not False):
+            if (tmpDate is not "" and OrigDateTime is not ""):
+                SavedEntries.append( ["OrigDateTime"] )
             self._set_value(_DATAMAP["OrigDateTime"], tmpDate)
 
         # get Latitude/ Longitude from this addon...
@@ -777,19 +800,44 @@ class imageMetadataGramplet(Gramplet):
         # save Latitude and Latitude Reference to image...
         self._set_value(_DATAMAP["Latitude"], latitude)
         self._set_value(_DATAMAP["LatitudeRef"], LatitudeRef)
+        if (latitude is not "" and LatitudeRef is not ""):
+            SavedEntries.append( ["Latitude"] )
 
         # save Longitude and Longitude Reference to image...
         self._set_value(_DATAMAP["Longitude"], longitude)
         self._set_value(_DATAMAP["LongitudeRef"], LongitudeRef)
+        if (longitude is not "" and LongitudeRef is not ""):
+            SavedEntries.append( ["Longitude"] ) 
 
         if LesserVersion:  # prior to pyexiv2-0.2.0
-            self.plugin_image.writeMetadata()
+            MediaDataTags = [KeyTag for KeyTag in chain(
+                                self.plugin_image.exifKeys(),
+                                self.plugin_image.xmpKeys(),
+                                self.plugin_image.iptcKeys() )
+                            ]
+        else:  # pyexiv2-0.2.0 and above
+            # get all KeyTags for this Media object for diplay only...
+            MediaDataTags = [KeyTag for KeyTag in chain(
+                                self.plugin_image.exif_keys,
+                                self.plugin_image.xmp_keys,
+                                self.plugin_image.iptc_keys )
+                            ]
 
+        if SavedEntries:
+            # Notify the user of successful write...
+            OkDialog(_("Image Exif metadata has been saved..."))
+#        else:
+#            for KeyTag in MediaDataTags:
+#                self._set_value(KeyTag, "")
+
+#           # All Exif Metadata has been cleared...
+#           OkDialog(_("All Exif metadata has been cleared from this image..."))
+
+        # writes all Exif Metadata to image...
+        if LesserVersion:  # prior to pyexiv2-0.2.0
+            self.plugin_image.writeMetadata()
         else:  # pyexiv2-0.2.0 and above
             self.plugin_image.write()
-
-        # notify the user of successful write...
-        OkDialog(_("Image metadata has been saved."))
 
 # -----------------------------------------------
 #              Date Calendar functions
