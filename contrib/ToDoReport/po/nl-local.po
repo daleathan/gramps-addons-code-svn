@@ -39,9 +39,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-01-16 20:18+0100\n"
-"PO-Revision-Date: 2011-01-16 20:20+0100\n"
-"Last-Translator: Erik De Richter <frederik.de.richter@telenet.be>\n"
+"POT-Creation-Date: 2011-04-14 20:10+0200\n"
+"PO-Revision-Date: 2011-04-12 20:28+0100\n"
+"Last-Translator: Erik De Richter <frederik.de.richter@pandora.be>\n"
 "Language-Team: nederlands <frederik.de.richter@googlemail.com>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
@@ -56,8 +56,13 @@ msgid "Todo Report"
 msgstr "'Nog te doen'-verslag"
 
 #: ToDoReport/TodoReport.gpr.py:25
-msgid "Produces a list of all the notes with a given tag along with the records that it references, the Person, Family, Event, etc."
-msgstr "Een lijst van opmerkingen met een bepaalde aanduiding wordt aangemaakt, samen met de gegevens waarnaar verwezen wordt, de persoon, familie, gegeven, enz. ."
+msgid ""
+"Produces a list of all the notes with a given tag along with the records "
+"that it references, the Person, Family, Event, etc."
+msgstr ""
+"Een lijst van opmerkingen met een bepaalde aanduiding wordt aangemaakt, "
+"samen met de gegevens waarnaar verwezen wordt, de persoon, familie, gegeven, "
+"enz. ."
 
 #: ToDoReport/TodoReport.py:80
 msgid "ToDo Report"
@@ -65,7 +70,8 @@ msgstr "'Nog-te-doen'-verslag"
 
 #: ToDoReport/TodoReport.py:81
 msgid "You must first create a tag before running this report."
-msgstr "U dient eerst een tag aan te maken vooraleer u dit verslag kunt draaien."
+msgstr ""
+"U dient eerst een tag aan te maken vooraleer u dit verslag kunt draaien."
 
 #: ToDoReport/TodoReport.py:89
 #, python-format
@@ -97,8 +103,7 @@ msgstr "locatie:"
 msgid "Report Options"
 msgstr "Verslagopties"
 
-#: ToDoReport/TodoReport.py:486
-#: ToDoReport/TodoReport.py:490
+#: ToDoReport/TodoReport.py:486 ToDoReport/TodoReport.py:490
 msgid "Tag"
 msgstr "Tag"
 
@@ -136,4 +141,3 @@ msgstr "De gebruikte basisstijl voor de weergave van opmerkingen."
 
 #~ msgid "Marker"
 #~ msgstr "Aanduiding"
-
