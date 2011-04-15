@@ -98,9 +98,13 @@ if (software_version and (software_version < Min_VERSION)):
         "or greater.  Or you do not have the python library installed yet.  "
         "You may download it from here: %s\n\n  I recommend getting, %s") % (
          Min_VERSION_str, _DOWNLOAD_LINK, Pref_VERSION_str)
-
     WarningDialog(msg)
     raise Exception(msg)
+
+if os.sys.platform == "win32":
+    _MAGICK_FOUND = Utils.search_for("ImageMagick.exe")
+else:
+    _MAGICK_FOUND = Utils.search_for("ImageMagick")
 
 # -----------------------------------------------------------------------------
 # Constants
@@ -174,12 +178,7 @@ _TOOLTIPS = {
 
     # Save Exif Metadata button...
     "Save"              : _("Saves/ writes the Exif metadata to this image.\n"
-        "WARNING: Exif metadata will be erased if you save a blank entry field...")
-
-    # Erase Exif metadata button...
-    "Exifmetadata"      : "WARNING!  You are about to permanently erase/ wipe all Exif "
-        "metadata for this image...\n  Are you sure that you want to remove all "
-        "Exif metadata? [Yes/ No]") }.items()
+        "WARNING: Exif metadata will be erased if you save a blank entry field...") }.items()
 
 def _help_page(obj):
     """
@@ -336,9 +335,17 @@ class imageMetadataGramplet(Gramplet):
         button_box.add( self.__create_button(
             "Save", False, self.save_metadata, gtk.STOCK_SAVE, False) )
 
-        # Erase Exif Metadata button...
-        button_box.add( self.__create_button(
-            "Exifmetadata", _("Erase Exif metadata"), self._wipe_metadata, False) )
+        # Is ImageMagick installed on this computer?
+        if _MAGICK_FOUND:
+
+            # Erase Exif Metadata button...
+            button_box.add( self.__create_button(
+                "Exifmetadata", _("Erase Exif metadata"), self._wipe_metadata, False) )
+
+            # Erase Exif metadata button...
+            self.exif_widgets["Exifmetadata"].set_tooltip_text(_("WARNING!  You are about "
+                "to permanently erase/ wipe all Exif metadata for this image...\n"
+                "Are you sure that you want to remove all Exif metadata? [Yes/ No]"))
         rows.pack_start(button_box, expand =False, fill =False)
 
         self.gui.get_container_widget().remove(self.gui.textview)
