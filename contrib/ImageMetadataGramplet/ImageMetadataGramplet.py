@@ -156,7 +156,7 @@ _TOOLTIPS = {
         "WARNING: Exif metadata will be erased if you save a blank entry field...") }.items()
 
 # set up Exif keys for Image.exif_keys
-_DATAMAP = {
+_DATAMAP  = dict( (key, val) for key, val in {
     "Exif.Image.ImageDescription"  : "Description",
     "Exif.Image.DateTime"          : "ModDateTime",
     "Exif.Photo.DateTimeOriginal"  : "OrigDateTime",
@@ -167,9 +167,11 @@ _DATAMAP = {
     "Exif.GPSInfo.GPSLongitudeRef" : "LongitudeRef",
     "Exif.GPSInfo.GPSLongitude"    : "Longitude",
     "Exif.GPSInfo.GPSAltitudeRef"  : "AltitudeRef",
-    "Exif.GPSInfo.GPSAltitude"     : "Altitude"}
-_DATAMAP  = dict( (key, val) for key, val in _DATAMAP.items() )
-_DATAMAP.update( (val, key) for key, val in _DATAMAP.items() )
+    "Exif.GPSInfo.GPSAltitude"     : "Altitude",
+    "Exif.Image.XResolution"       : "ImageWidth",
+    "Exif.Image.YResolution"       : "ImageHeight",
+    "Exif.Image.ResolutionUnit"    : "ResolutionUnit"}.items() )
+_DATAMAP.update( (val, key) for key, val in _DATAMAP)
 
 def _help_page(obj):
     """
@@ -807,10 +809,11 @@ class imageMetadataGramplet(Gramplet):
             LongitudeRef = LongitudeRef.replace(" ", "")
 
             # remove symbols for saving Latitude/ Longitude GPS Coordinates
-            latitude, longitude = removesymbols4saving(latitude, longitude) 
+            latitude  =  removesymbols4saving(latitude)
+            longitude = removesymbols4saving(longitude)
 
             # convert (degrees, minutes, seconds) to Rational for saving
-            latitude = coords_to_rational(latitude)
+            latitude  =  coords_to_rational(latitude)
             longitude = coords_to_rational(longitude)
 
         # save Latitude and Latitude Reference to image...
@@ -1045,33 +1048,27 @@ def string_to_rational(coordinate):
     else:
         return pyexiv2.Rational(int(coordinate), 1)
 
-def removesymbols4saving(latitude =False, longitude =False):
+def removesymbols4saving(dmsStr):
     """
     will recieve a DMS with symbols and return it without them
-
-    @param: latitude -- Latitude GPS Coordinates
-    @param: longitude -- GPS Longitude Coordinates
     """
 
-    # check to see if latitude/ longitude exist?
-    if (latitude and longitude):
+    # make sure that the variable has DMS...
+    if dmsStr:       
 
-        # remove degrees symbol if it exist?
-        if (latitude.count("°") == longitude.count("°") == 1):
-            latitude = latitude.replace("°", "")
-            longitude = longitude.replace("°", "")
+        # remove degrees' symbol if it exist?
+        if dmsStr.count("°") == 1:
+            dmsStr = dmsStr.replace("°", "")
 
-        # remove minutes symbol if it exist?
-        if (latitude.count("′") == longitude.count("′") == 1):
-            latitude = latitude.replace("′", "")
-            longitude = longitude.replace("′", "")
+        # remove minutes' symbol if it exist?
+        if dmsStr.count("′") == 1:
+            dmsStr = dmsStr.replace("′", "")
 
-        # remove seconds symbol if it exist?
-        if (latitude.count('″') == longitude.count('″') == 1):
-            latitude = latitude.replace('″', "")
-            longitude = longitude.replace('″', "")
+        # remove seconds' symbol if it exist?
+        if dmsStr.count('″') == 1:
+            dmsStr = dmsStr.replace('″', "")
 
-    return latitude, longitude
+    return dmsStr
 
 def coords_to_rational(Coordinates):
     """
