@@ -28,6 +28,8 @@ import os, sys
 from datetime import datetime, date
 import time, calendar
 
+import subprocess
+
 # abilty to escape certain characters from html output...
 from xml.sax.saxutils import escape as _html_escape
 
@@ -106,6 +108,25 @@ if (software_version and (software_version < Min_VERSION)):
 # available image types for exiv2
 _valid_types = ["jpeg", "jpg", "exv", "tiff", "dng", "nef", "pef", "pgf", "png", "psd", "jp2"]
 
+# set up Exif keys for Image.exif_keys
+_DATAMAP  = {
+    "Exif.Image.ImageDescription"  : "Description",
+    "Exif.Image.DateTime"          : "ModDateTime",
+    "Exif.Photo.DateTimeOriginal"  : "OrigDateTime",
+    "Exif.Image.Artist"            : "Artist",
+    "Exif.Image.Copyright"         : "Copyright",
+    "Exif.GPSInfo.GPSLatitudeRef"  : "LatitudeRef",
+    "Exif.GPSInfo.GPSLatitude"     : "Latitude",
+    "Exif.GPSInfo.GPSLongitudeRef" : "LongitudeRef",
+    "Exif.GPSInfo.GPSLongitude"    : "Longitude",
+    "Exif.GPSInfo.GPSAltitudeRef"  : "AltitudeRef",
+    "Exif.GPSInfo.GPSAltitude"     : "Altitude",
+    "Exif.Image.XResolution"       : "ImageWidth",
+    "Exif.Image.YResolution"       : "ImageHeight",
+    "Exif.Image.ResolutionUnit"    : "ResolutionUnit"}
+_DATAMAP = dict( (key, val) for key, val in _DATAMAP.items() )
+_DATAMAP.update( (val, key) for key, val in _DATAMAP.items() )
+
 # define tooltips for all entries and buttons...
 _TOOLTIPS = {
 
@@ -153,25 +174,12 @@ _TOOLTIPS = {
 
     # Save Exif Metadata button...
     "Save"              : _("Saves/ writes the Exif metadata to this image.\n"
-        "WARNING: Exif metadata will be erased if you save a blank entry field...") }.items()
+        "WARNING: Exif metadata will be erased if you save a blank entry field...")
 
-# set up Exif keys for Image.exif_keys
-_DATAMAP  = dict( (key, val) for key, val in {
-    "Exif.Image.ImageDescription"  : "Description",
-    "Exif.Image.DateTime"          : "ModDateTime",
-    "Exif.Photo.DateTimeOriginal"  : "OrigDateTime",
-    "Exif.Image.Artist"            : "Artist",
-    "Exif.Image.Copyright"         : "Copyright",
-    "Exif.GPSInfo.GPSLatitudeRef"  : "LatitudeRef",
-    "Exif.GPSInfo.GPSLatitude"     : "Latitude",
-    "Exif.GPSInfo.GPSLongitudeRef" : "LongitudeRef",
-    "Exif.GPSInfo.GPSLongitude"    : "Longitude",
-    "Exif.GPSInfo.GPSAltitudeRef"  : "AltitudeRef",
-    "Exif.GPSInfo.GPSAltitude"     : "Altitude",
-    "Exif.Image.XResolution"       : "ImageWidth",
-    "Exif.Image.YResolution"       : "ImageHeight",
-    "Exif.Image.ResolutionUnit"    : "ResolutionUnit"}.items() )
-_DATAMAP.update( (val, key) for key, val in _DATAMAP)
+    # Erase Exif metadata button...
+    "Exifmetadata"      : "WARNING!  You are about to permanently erase/ wipe all Exif "
+        "metadata for this image...\n  Are you sure that you want to remove all "
+        "Exif metadata? [Yes/ No]") }.items()
 
 def _help_page(obj):
     """
@@ -317,17 +325,21 @@ class imageMetadataGramplet(Gramplet):
             row = self.make_row(pos, text, choices, readonly, callback, dirty, default)
             rows.pack_start(row, False)
 
-        helpsave = gtk.HButtonBox()
-        helpsave.set_layout(gtk.BUTTONBOX_START)
+        button_box = gtk.HButtonBox()
+        button_box.set_layout(gtk.BUTTONBOX_START)
 
         # Help button...
-        helpsave.add( self.__create_button(
+        button_box.add( self.__create_button(
             "Help", False, _help_page, gtk.STOCK_HELP) )
 
         # Save button...
-        helpsave.add( self.__create_button(
+        button_box.add( self.__create_button(
             "Save", False, self.save_metadata, gtk.STOCK_SAVE, False) )
-        rows.pack_start(helpsave, expand =False, fill =False)
+
+        # Erase Exif Metadata button...
+        button_box.add( self.__create_button(
+            "Exifmetadata", _("Erase Exif metadata"), self._wipe_metadata, False) )
+        rows.pack_start(button_box, expand =False, fill =False)
 
         self.gui.get_container_widget().remove(self.gui.textview)
         self.gui.get_container_widget().add_with_viewport(rows)
@@ -420,20 +432,20 @@ class imageMetadataGramplet(Gramplet):
         self.__mtype = gen.mime.get_description(mime_type)
 
         # determine if it is a mime image object?
-        if (mime_type and mime_type.startswith("image") ):
+        if mime_type:
             self.exif_widgets["Message:Area"].set_text(self.__mtype)
 
-            # read the media metadata and display it
-            self.display_exif_tags(self.image_path)
+            if mime_type.startswith("image"):
+
+                # read the media metadata and display it
+                self.display_exif_tags(self.image_path)
+            else:
+                return   
 
         # disable all buttons of "CopyTo", "Clear", and "Save"...
         else:
             self.exif_widgets["Message:Area"].set_text("%s, %s" % (self.__mtype,
                 _("Please choose another media object...") ) )
-
-            self.exif_widgets["CopyTo"].set_sensitive(False)
-            self.exif_widgets["Clear"].set_sensitive(False)
-            self.exif_widgets["Save"].set_sensitive(False)
             return
 
     def make_row(self, pos, text, choices=None, readonly=False, callback_list=[],
@@ -622,9 +634,10 @@ class imageMetadataGramplet(Gramplet):
                 # set CopyTo and Clear buttons to active state...
                 self.exif_widgets["CopyTo"].set_sensitive(True)
                 self.exif_widgets["Clear"].set_sensitive(True)
-
         else:
-            self.exif_widgets["Media:Label"].set_text(_("There is no metadata for this image..."))
+            self.exif_widgets["Message:Area"].set_text(_("There is no Exif metadata "
+                "for this image..."))
+            self.exif_widgets["Save"].set_sensitive(True)
 
     def copy_to(self, obj):
         """
@@ -857,6 +870,21 @@ class imageMetadataGramplet(Gramplet):
             self.plugin_image.writeMetadata()
         else:  # pyexiv2-0.2.0 and above
             self.plugin_image.write()
+
+    def _wipe_metadata(self, obj):
+        """
+        Attempt to remove/ erase all Exif metadata from this image.
+        """
+
+        wipe = subprocess.check_call( ["convert", self.image_path, "-strip", self.image_path] )
+        wipe_results = str(wipe)
+
+        if wipe_results:
+            self.exif_widgets["Message:Area"].set_text(_("You have sucessfully ERASED "
+                "all Exif metadata from this media object!"))
+        else:
+            self.exif_widgets["Message:Area"].set_text(_("An error has occurred with "
+                "the strip/ erase Exif metadata process!"))
 
 # -----------------------------------------------
 #              Date Calendar functions
