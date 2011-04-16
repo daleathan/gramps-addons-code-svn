@@ -28,8 +28,6 @@ import os, sys
 from datetime import datetime, date
 import time, calendar
 
-import subprocess
-
 # abilty to escape certain characters from html output...
 from xml.sax.saxutils import escape as _html_escape
 
@@ -39,6 +37,7 @@ from decimal import *
 getcontext().prec = 4
 from fractions import Fraction
 
+import subprocess
 #------------------------------------------------
 # Internaturilation
 #------------------------------------------------
@@ -98,38 +97,21 @@ if (software_version and (software_version < Min_VERSION)):
         "or greater.  Or you do not have the python library installed yet.  "
         "You may download it from here: %s\n\n  I recommend getting, %s") % (
          Min_VERSION_str, _DOWNLOAD_LINK, Pref_VERSION_str)
+
     WarningDialog(msg)
     raise Exception(msg)
 
+# determine if the ImageMagick's convert program is installed on this computer?
 if os.sys.platform == "win32":
-    _MAGICK_FOUND = Utils.search_for("ImageMagick.exe")
+    _MAGICK_FOUND = Utils.search_for("convert.exe")
 else:
-    _MAGICK_FOUND = Utils.search_for("ImageMagick")
+    _MAGICK_FOUND = Utils.search_for("convert")
 
 # -----------------------------------------------------------------------------
 # Constants
 # -----------------------------------------------------------------------------
 # available image types for exiv2
 _valid_types = ["jpeg", "jpg", "exv", "tiff", "dng", "nef", "pef", "pgf", "png", "psd", "jp2"]
-
-# set up Exif keys for Image.exif_keys
-_DATAMAP  = {
-    "Exif.Image.ImageDescription"  : "Description",
-    "Exif.Image.DateTime"          : "ModDateTime",
-    "Exif.Photo.DateTimeOriginal"  : "OrigDateTime",
-    "Exif.Image.Artist"            : "Artist",
-    "Exif.Image.Copyright"         : "Copyright",
-    "Exif.GPSInfo.GPSLatitudeRef"  : "LatitudeRef",
-    "Exif.GPSInfo.GPSLatitude"     : "Latitude",
-    "Exif.GPSInfo.GPSLongitudeRef" : "LongitudeRef",
-    "Exif.GPSInfo.GPSLongitude"    : "Longitude",
-    "Exif.GPSInfo.GPSAltitudeRef"  : "AltitudeRef",
-    "Exif.GPSInfo.GPSAltitude"     : "Altitude",
-    "Exif.Image.XResolution"       : "ImageWidth",
-    "Exif.Image.YResolution"       : "ImageHeight",
-    "Exif.Image.ResolutionUnit"    : "ResolutionUnit"}
-_DATAMAP = dict( (key, val) for key, val in _DATAMAP.items() )
-_DATAMAP.update( (val, key) for key, val in _DATAMAP.items() )
 
 # define tooltips for all entries and buttons...
 _TOOLTIPS = {
@@ -178,7 +160,25 @@ _TOOLTIPS = {
 
     # Save Exif Metadata button...
     "Save"              : _("Saves/ writes the Exif metadata to this image.\n"
-        "WARNING: Exif metadata will be erased if you save a blank entry field...") }.items()
+        "WARNING: Exif metadata will be erased if you save a blank entry field..."),
+
+    # Erase/ Delete/ Wipe Exif metadata button...
+    "Exif:metadata"     : _("WARNING:  This button will permanently and irrevocably "
+         "erase all Exif metadata.  Are you sure that you want to do this?") }.items()
+
+# set up Exif keys for Image.exif_keys
+_DATAMAP = {
+    "Exif.Image.ImageDescription"  : "Description",
+    "Exif.Image.DateTime"          : "ModDateTime",
+    "Exif.Photo.DateTimeOriginal"  : "OrigDateTime",
+    "Exif.Image.Artist"            : "Artist",
+    "Exif.Image.Copyright"         : "Copyright",
+    "Exif.GPSInfo.GPSLatitudeRef"  : "LatitudeRef",
+    "Exif.GPSInfo.GPSLatitude"     : "Latitude",
+    "Exif.GPSInfo.GPSLongitudeRef" : "LongitudeRef",
+    "Exif.GPSInfo.GPSLongitude"    : "Longitude"}
+_DATAMAP  = dict( (key, val) for key, val in _DATAMAP.items() )
+_DATAMAP.update( (val, key) for key, val in _DATAMAP.items() )
 
 def _help_page(obj):
     """
@@ -247,9 +247,10 @@ class imageMetadataGramplet(Gramplet):
         # set all dirty variables to False to begin this addon...
         self._dirty = False
 
-        self.orig_image   = False
-        self.image_path   = False
-        self.plugin_image = False
+        self.orig_image    = False
+        self.image_path    = False
+        self.plugin_image  = False
+        self.MediaDataTags = False
 
         rows = gtk.VBox()
 
@@ -315,38 +316,27 @@ class imageMetadataGramplet(Gramplet):
   
             # Latitude and Longitude for this image 
             ("Latitude",        _("Latitude"),       None, False, [],  True,  0),
-            ("Longitude",       _("Longitude"),      None, False, [],  True,  0),
-
-            # GPS Altitude
-            ("Altitude",        _("Altitude"),       None, False, [],  True,  0) ]:
+            ("Longitude",       _("Longitude"),      None, False, [],  True,  0) ]:
 
             pos, text, choices, readonly, callback, dirty, default = items
             row = self.make_row(pos, text, choices, readonly, callback, dirty, default)
             rows.pack_start(row, False)
 
-        button_box = gtk.HButtonBox()
-        button_box.set_layout(gtk.BUTTONBOX_START)
+        helpsave = gtk.HButtonBox()
+        helpsave.set_layout(gtk.BUTTONBOX_START)
 
         # Help button...
-        button_box.add( self.__create_button(
+        helpsave.add( self.__create_button(
             "Help", False, _help_page, gtk.STOCK_HELP) )
 
         # Save button...
-        button_box.add( self.__create_button(
+        helpsave.add( self.__create_button(
             "Save", False, self.save_metadata, gtk.STOCK_SAVE, False) )
 
-        # Is ImageMagick installed on this computer?
-        if _MAGICK_FOUND:
-
-            # Erase Exif Metadata button...
-            button_box.add( self.__create_button(
-                "Exifmetadata", _("Erase Exif metadata"), self._wipe_metadata, False) )
-
-            # Erase Exif metadata button...
-            self.exif_widgets["Exifmetadata"].set_tooltip_text(_("WARNING!  You are about "
-                "to permanently erase/ wipe all Exif metadata for this image...\n"
-                "Are you sure that you want to remove all Exif metadata? [Yes/ No]"))
-        rows.pack_start(button_box, expand =False, fill =False)
+        # Erase All Metadata
+        helpsave.add( self.__create_button(
+            "Exif:metadata", False, self._wipe_metadata, gtk.STOCK_DELETE, False) )
+        rows.pack_start(helpsave, expand =False, fill =False)
 
         self.gui.get_container_widget().remove(self.gui.textview)
         self.gui.get_container_widget().add_with_viewport(rows)
@@ -439,20 +429,20 @@ class imageMetadataGramplet(Gramplet):
         self.__mtype = gen.mime.get_description(mime_type)
 
         # determine if it is a mime image object?
-        if mime_type:
+        if (mime_type and mime_type.startswith("image") ):
             self.exif_widgets["Message:Area"].set_text(self.__mtype)
 
-            if mime_type.startswith("image"):
-
-                # read the media metadata and display it
-                self.display_exif_tags(self.image_path)
-            else:
-                return   
+            # read the media metadata and display it
+            self.display_exif_tags(self.image_path)
 
         # disable all buttons of "CopyTo", "Clear", and "Save"...
         else:
             self.exif_widgets["Message:Area"].set_text("%s, %s" % (self.__mtype,
                 _("Please choose another media object...") ) )
+
+            self.exif_widgets["CopyTo"].set_sensitive(False)
+            self.exif_widgets["Clear"].set_sensitive(False)
+            self.exif_widgets["Save"].set_sensitive(False)
             return
 
     def make_row(self, pos, text, choices=None, readonly=False, callback_list=[],
@@ -543,7 +533,7 @@ class imageMetadataGramplet(Gramplet):
         # clear all data fields
         if cleartype == "All":
             for key in ["Artist", "Copyright", "ModDateTime",  "Latitude", "Longitude",
-                    "Description", "Altitude"]:
+                    "Description"]:
                 self.exif_widgets[key].set_text("")
 
         # clear only the date and time fields
@@ -585,7 +575,7 @@ class imageMetadataGramplet(Gramplet):
             self.plugin_image.readMetadata()
 
             # get all KeyTags for this Media object for diplay only...
-            MediaDataTags = [KeyTag for KeyTag in chain(
+            self.MediaDataTags = [KeyTag for KeyTag in chain(
                                 self.plugin_image.exifKeys(),
                                 self.plugin_image.xmpKeys(),
                                 self.plugin_image.iptcKeys())
@@ -599,7 +589,7 @@ class imageMetadataGramplet(Gramplet):
             self.plugin_image.read()
 
             # get all KeyTags for this Media object for diplay only...
-            MediaDataTags = [KeyTag for KeyTag in chain(
+            self.MediaDataTags = [KeyTag for KeyTag in chain(
                                 self.plugin_image.exif_keys,
                                 self.plugin_image.xmp_keys,
                                 self.plugin_image.iptc_keys)
@@ -612,8 +602,12 @@ class imageMetadataGramplet(Gramplet):
             #    thumbData = preview.data
 
         # check to see if we got metadata from media object?
-        if MediaDataTags:
-            for KeyTag in MediaDataTags:
+        if self.MediaDataTags:
+
+            # enable Delete Exif metadata button...
+            self.exif_widgets["Exif:metadata"].set_sensitive(True)
+
+            for KeyTag in self.MediaDataTags:
 
                 tagValue = self._get_value(KeyTag)
                 if tagValue:
@@ -641,10 +635,9 @@ class imageMetadataGramplet(Gramplet):
                 # set CopyTo and Clear buttons to active state...
                 self.exif_widgets["CopyTo"].set_sensitive(True)
                 self.exif_widgets["Clear"].set_sensitive(True)
+
         else:
-            self.exif_widgets["Message:Area"].set_text(_("There is no Exif metadata "
-                "for this image..."))
-            self.exif_widgets["Save"].set_sensitive(True)
+            self.exif_widgets["Message:Area"].set_text(_("There is no metadata for this image..."))
 
     def copy_to(self, obj):
         """
@@ -716,18 +709,7 @@ class imageMetadataGramplet(Gramplet):
                             self.exif_widgets["Longitude"].set_text(
                                 """%s° %s′ %s″ %s""" % (longdeg, longmin, longsec, LongitudeRef) )
 
-                # GPS Altitude and Altitude Reference...
-                elif widgetsName == "Altitude":
-                    deg, min, sec = rational_to_dms(tagValue)
-
-                    altitudeRef = self._get_value(_DATAMAP["AltitudeRef"] )
-                    if altitudeRef:
-                        value = """%s° %s′ %s″ %s""" % (deg, min, sec, altitudeRef)
-                    else:
-                        value = """%s° %s′ %s″""" % (deg, min, sec)
-                    self.exif_widgets[widgetsName].set_text(value)
-
-        # activate the Save button after metadata has been "Copied to Edit Area"...
+        # enable Save button after metadata has been "Copied to Edit Area"...
         self.exif_widgets["Save"].set_sensitive(True)
 
     def _set_value(self, KeyTag, KeyValue):
@@ -829,11 +811,10 @@ class imageMetadataGramplet(Gramplet):
             LongitudeRef = LongitudeRef.replace(" ", "")
 
             # remove symbols for saving Latitude/ Longitude GPS Coordinates
-            latitude  =  removesymbols4saving(latitude)
-            longitude = removesymbols4saving(longitude)
+            latitude, longitude = removesymbols4saving(latitude, longitude) 
 
             # convert (degrees, minutes, seconds) to Rational for saving
-            latitude  =  coords_to_rational(latitude)
+            latitude = coords_to_rational(latitude)
             longitude = coords_to_rational(longitude)
 
         # save Latitude and Latitude Reference to image...
@@ -880,18 +861,35 @@ class imageMetadataGramplet(Gramplet):
 
     def _wipe_metadata(self, obj):
         """
-        Attempt to remove/ erase all Exif metadata from this image.
+        Will completely and irrevocably erase all Exif metadata from this image.
         """
 
-        wipe = subprocess.check_call( ["convert", self.image_path, "-strip", self.image_path] )
-        wipe_results = str(wipe)
+        if _MAGICK_FOUND:
+            erase = subprocess.check_call( ["convert", self.image_path, "-strip", self.image_path] )
+            erase_results = str(erase)
 
-        if wipe_results:
-            self.exif_widgets["Message:Area"].set_text(_("You have sucessfully ERASED "
-                "all Exif metadata from this media object!"))
         else:
-            self.exif_widgets["Message:Area"].set_text(_("An error has occurred with "
-                "the strip/ erase Exif metadata process!"))
+            if self.MediaDataTags: 
+                for KeyTag in self.MediaDataTags:
+                    del self.plugin_image[KeyTag]
+
+                if LesserVersion:  # prior to pyexiv2-0.2.0
+                    self.plugin_image.writeMetadata()
+
+                else:  # pyexiv2-0.2.0 and above
+                    self.plugin_image.write()
+                erase_results = True
+
+        if erase_results:
+
+            # Clear the Display and Edit Areas
+            self.clear_metadata(self.plugin_image)
+            self.model.clear()
+
+            # Notify the User...
+            OkDialog(_("All Exif metadata has been removed from this image..."))
+
+            self.update()
 
 # -----------------------------------------------
 #              Date Calendar functions
@@ -1083,27 +1081,33 @@ def string_to_rational(coordinate):
     else:
         return pyexiv2.Rational(int(coordinate), 1)
 
-def removesymbols4saving(dmsStr):
+def removesymbols4saving(latitude =False, longitude =False):
     """
     will recieve a DMS with symbols and return it without them
+
+    @param: latitude -- Latitude GPS Coordinates
+    @param: longitude -- GPS Longitude Coordinates
     """
 
-    # make sure that the variable has DMS...
-    if dmsStr:       
+    # check to see if latitude/ longitude exist?
+    if (latitude and longitude):
 
-        # remove degrees' symbol if it exist?
-        if dmsStr.count("°") == 1:
-            dmsStr = dmsStr.replace("°", "")
+        # remove degrees symbol if it exist?
+        if (latitude.count("°") == longitude.count("°") == 1):
+            latitude = latitude.replace("°", "")
+            longitude = longitude.replace("°", "")
 
-        # remove minutes' symbol if it exist?
-        if dmsStr.count("′") == 1:
-            dmsStr = dmsStr.replace("′", "")
+        # remove minutes symbol if it exist?
+        if (latitude.count("′") == longitude.count("′") == 1):
+            latitude = latitude.replace("′", "")
+            longitude = longitude.replace("′", "")
 
-        # remove seconds' symbol if it exist?
-        if dmsStr.count('″') == 1:
-            dmsStr = dmsStr.replace('″', "")
+        # remove seconds symbol if it exist?
+        if (latitude.count('″') == longitude.count('″') == 1):
+            latitude = latitude.replace('″', "")
+            longitude = longitude.replace('″', "")
 
-    return dmsStr
+    return latitude, longitude
 
 def coords_to_rational(Coordinates):
     """
