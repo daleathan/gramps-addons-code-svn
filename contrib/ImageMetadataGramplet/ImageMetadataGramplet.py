@@ -122,13 +122,8 @@ _TOOLTIPS = {
     # Clear Edit Area button... 
     "Clear"             : _("Clears the Exif metadata from the Edit area."),
 
-    # Artist 
-    "Artist"            : _("Enter the Artist/ Author of this image.  The person's name or "
-        "the company who is responsible for the creation of this image."),
-
-    # Copyright
-    "Copyright"         : _("Enter the copyright information for this image. \n"
-        "Example: (C) 2010 Smith and Wesson"),
+    # Description...
+    "Description"       : _("Describe this media object..."),
 
     # Calendar date select...
     "Date:Select"       : _("Allows you to select a date from a pop-up window calendar. \n"
@@ -137,6 +132,24 @@ _TOOLTIPS = {
     # Manual Date/ Time... 
     "ModDateTime"       : _("Manual Date/ Time Entry, \n"
         "Example: 1826-Apr-12 14:30:00, 1826-April-12, 1998-01-31 13:30:00"),
+
+    # Artist 
+    "Artist"            : _("Enter the Artist/ Author of this image.  The person's name or "
+        "the company who is responsible for the creation of this image."),
+
+    # Copyright
+    "Copyright"         : _("Enter the copyright information for this image. \n"
+        "Example: (C) 2010 Smith and Wesson"),
+
+    # Image Width...
+    "ImageWidth"        : _("What is the width of this media object..."),
+
+    # Image Height...
+    "ImageHeight"       : _("What is the height of this media object..."),
+
+    # Size Reference Unit...
+    "SizeUnit"          : _("What is the size resolution unit \n"
+        "Example: inches, pixels, etc..."),
 
     # Convert to decimal button...
     "GPSFormat:Decimal" : _("Converts Degree, Minutes, Seconds GPS Coordinates to a "
@@ -173,6 +186,9 @@ _DATAMAP = {
     "Exif.Photo.DateTimeOriginal"  : "OrigDateTime",
     "Exif.Image.Artist"            : "Artist",
     "Exif.Image.Copyright"         : "Copyright",
+    "Exif.Image.XResolution"       : "ImageWidth",
+    "Exif.Image.YResolution"       : "ImageHeight",
+    "Exif.Image.ResolutionUnit"    : "SizeUnit",
     "Exif.GPSInfo.GPSLatitudeRef"  : "LatitudeRef",
     "Exif.GPSInfo.GPSLatitude"     : "Latitude",
     "Exif.GPSInfo.GPSLongitudeRef" : "LongitudeRef",
@@ -695,22 +711,20 @@ class imageMetadataGramplet(Gramplet):
             tagValue = self._get_value(KeyTag)
             if tagValue:
 
-                if widgetsName in ["Description", "Artist", "Copyright"]:
+                if widgetsName in ["Description", "Artist", "Copyright", 
+                        "ImageWidth", "ImageHeight", "SizeUnit"]:
                     self.exif_widgets[widgetsName].set_text(tagValue)
 
                 elif widgetsName == "ModDateTime":
                     # date1 comes from the Original Date of the image
-                    # date2 comes from the Modification Date of the image
-                    # date3 comes from the date that the image was digitized
                     # date4 comes from the date inside of Gramps
                     date1 = self._get_value(_DATAMAP["OrigDateTime"] )
-                    date2 = self._get_value(_DATAMAP["ModDateTime"] )
-                    date3 = self._get_value("Exif.Photo.DateTimeDigitized")
-                    date4 = self.orig_image.get_date_object()
+                    date2 = self.orig_image.get_date_object()
 
-                    use_date = date1 or date2 or date3 or date4
+                    use_date = date1 or date2
                     if use_date:
-                        self.exif_widgets[widgetsName].set_text( _process_date(use_date) )
+                        self.exif_widgets[widgetsName].set_text(
+                                _process_date(use_date) )
 
                 # Latitude and Latitude Reference
                 elif widgetsName == "Latitude":
@@ -795,7 +809,7 @@ class imageMetadataGramplet(Gramplet):
                     tmpDate = _write_date(widgetsValue)
                     if (tmpDate is not False and tmpDate is not ""):
                         SavedEntries.append([widgetsName])
-                        self._set_value(widgetsName, tmpDate)
+                        self._set_value(_DATAMAP[widgetsName], tmpDate)
          
                     # check to see if there is an Original DateTime or not?
                     OrigDateTime = self._get_value(_DATAMAP["OrigDateTime"])
