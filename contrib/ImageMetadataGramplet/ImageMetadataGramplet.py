@@ -62,6 +62,9 @@ import gen.lib
 import Utils
 from PlaceUtils import conv_lat_lon
 
+#####################################################################
+#               pyexiv2 check for library...?
+#####################################################################
 # pyexiv2 download page (C) Olivier Tilloy
 _DOWNLOAD_LINK = "http://tilloy.net/dev/pyexiv2/download.html"
 
@@ -97,18 +100,25 @@ if (software_version and (software_version < Min_VERSION)):
         "or greater.  Or you do not have the python library installed yet.  "
         "You may download it from here: %s\n\n  I recommend getting, %s") % (
          Min_VERSION_str, _DOWNLOAD_LINK, Pref_VERSION_str)
-
     WarningDialog(msg)
     raise Exception(msg)
 
-# determine if the ImageMagick's convert program is installed on this computer?
-# make sure if jhead is installed on this computer?
+# *******************************************************************
+#         Determine if we have access to outside Programs
+#
+# The programs are ImageMagick, jhead, and delete...
+# * ImageMagick -- Convert and Erase...
+# * jhead       -- re-initialize a jpeg image...
+# * del         -- delete the image after converting to Jpeg...
+#********************************************************************
 if os.sys.platform == "win32":
     _MAGICK_FOUND = Utils.search_for("convert.exe")
     _JHEAD_FOUND = Utils.search_for("jhead.exe")
+    _DEL_FOUND = Utils.search_for("del.exe")
 else:
     _MAGICK_FOUND = Utils.search_for("convert")
     _JHEAD_FOUND = Utils.search_for("jhead")
+    _DEL_FOUND = Utils.search_for("del")
 
 # -----------------------------------------------------------------------------
 # Constants
@@ -124,6 +134,9 @@ _TOOLTIPS = {
 
     # Clear Edit Area button... 
     "Clear"             : _("Clears the Exif metadata from the Edit area."),
+
+    # Convert to jpeg button...
+    "Convert2Jpeg"      : _("If your image is not a jpeg format image, convert it to jpeg?"),
 
     # Description...
     "Description"       : _("Describe this media object..."),
@@ -278,36 +291,45 @@ class imageMetadataGramplet(Gramplet):
         self.exif_widgets["Media:Label"] = gtk.Label()
         self.exif_widgets["Media:Label"].set_alignment(0.0, 0.0)
         medialabel.pack_start(self.exif_widgets["Media:Label"], expand =False)
+        rows.pack_start(medialabel, expand =False)
+
+        mimetype = gtk.HBox(False)
+        self.exif_widgets["Mime:Type"] = gtk.Label()
+        self.exif_widgets["Mime:Type"].set_alignment(0.0, 0.0)
+        mimetype.pack_start(self.exif_widgets["Mime:Type"], expand =False)
+        rows.pack_start(mimetype, expand =False)
 
         messagearea = gtk.HBox(False)
         self.exif_widgets["Message:Area"] = gtk.Label(_("Click an image to begin..."))
         self.exif_widgets["Message:Area"].set_alignment(0.5, 0.0)
         messagearea.pack_start(self.exif_widgets["Message:Area"], expand =False)
+        rows.pack_start(messagearea, expand =False)
 
         self.model = gtk.ListStore(object, str, str)
         view = gtk.TreeView(self.model)
 
         # Key Column
         view.append_column( self.__create_column(_("Key"), 1) )
+        rows.pack_start(view, padding =10)
 
         # Value Column
         view.append_column( self.__create_column(_("Value"), 2) )
 
-        copyclear = gtk.HButtonBox()
-        copyclear.set_layout(gtk.BUTTONBOX_START)
+        button_box = gtk.HButtonBox()
+        button_box.set_layout(gtk.BUTTONBOX_START)
 
-        # Copy To button...
-        copyclear.add( self.__create_button(
-            "CopyTo", _("Copy to Edit Area"), self.copy_to, False, False) )
+        # Copy To Edit Area button...
+        button_box.add( self.__create_button(
+            "CopyTo", False, self.CopyTo, gtk.STOCK_COPY, False) )
 
         # Clear button...
-        copyclear.add( self.__create_button(
+        button_box.add( self.__create_button(
             "Clear", False, self.clear_metadata, gtk.STOCK_CLEAR) )
 
-        rows.pack_start(medialabel, expand =False)
-        rows.pack_start(messagearea, expand =False)
-        rows.pack_start(view, padding =10)
-        rows.pack_start(copyclear, expand =False, fill =False)
+        # Convert2Jpeg button...
+        button_box.add( self.__create_button(
+            "Convert2Jpeg", False, self.convert2Jpeg, gtk.STOCK_CONVERT, False) )
+        rows.pack_start(button_box, expand =False, fill =False)
 
         for items in [
 
@@ -480,13 +502,13 @@ class imageMetadataGramplet(Gramplet):
         # get mime type information...
         mime_type = self.orig_image.get_mime_type()
         self.__mtype = gen.mime.get_description(mime_type)
+        self.exif_widgets["Mime:Type"].set_text(self.__mtype)
 
         # determine if it is a mime image object?
         if mime_type:
-            self.exif_widgets["Message:Area"].set_text(self.__mtype)
             if mime_type.startswith("image"):
 
-                # will create the image and read it too...
+                # will create the image and read it...
                 self.setup_image(True)
 
                 # displays the imge Exif metadata
@@ -506,6 +528,8 @@ class imageMetadataGramplet(Gramplet):
         """
         will return an image instance and read the Exif metadata.
 
+        if createimage is True, it will create the pyexiv2 image instance...
+
         LesserVersion -- prior to pyexiv2-0.2.0 is installed
                       -- pyexiv2-0.2.0 and above...
         """
@@ -520,6 +544,11 @@ class imageMetadataGramplet(Gramplet):
             self.plugin_image.readMetadata()
         else:
             self.plugin_image.read()
+
+        if (self.image_path and os.path.isfile(self.image_path)):
+            basename, extension = os.path.splitext(self.image_path)
+            if (extension not in ["jpeg", "jpg"] and _MAGICK_FOUND):
+                self.exif_widgets["Convert2Jpeg"].set_sensitive(True)
    
     def make_row(self, pos, text, choices=None, readonly=False, callback_list=[],
                  mark_dirty=False, default=0):
@@ -596,25 +625,6 @@ class imageMetadataGramplet(Gramplet):
 # -----------------------------------------------
     def _mark_dirty(self, obj):
         pass
-
-    def clear_metadata(self, obj, cleartype = "All"):
-        """
-        clears all data fields to nothing
-
-        @param: cleartype -- 
-            "Date" = clears only Date entry fields
-            "All" = clears all data fields
-        """
-
-        # clear all data fields
-        if cleartype == "All":
-            for key in ["Artist", "Copyright", "ModDateTime",  "Latitude", "Longitude",
-                    "Description"]:
-                self.exif_widgets[key].set_text("")
-
-        # clear only the date and time fields
-        else:
-             self.exif_widgets["ModDateTime"].set_text("")
 
     def _get_value(self, KeyTag):
         """
@@ -700,7 +710,7 @@ class imageMetadataGramplet(Gramplet):
             self.exif_widgets["Save"].set_sensitive(True)
             self.exif_widgets["Delete"].set_sensitive(True)
 
-    def copy_to(self, obj):
+    def CopyTo(self, obj):
         """
         reads the image metadata after the pyexiv2.Image has been created
         """
@@ -770,15 +780,55 @@ class imageMetadataGramplet(Gramplet):
         # enable Save button after metadata has been "Copied to Edit Area"...
         self.exif_widgets["Save"].set_sensitive(True)
 
+    def clear_metadata(self, obj, cleartype = "All"):
+        """
+        clears all data fields to nothing
+
+        @param: cleartype -- 
+            "Date" = clears only Date entry fields
+            "All" = clears all data fields
+        """
+
+        # clear all data fields
+        if cleartype == "All":
+            for key in ["Artist", "Copyright", "ModDateTime",  "Latitude", "Longitude",
+                    "Description"]:
+                self.exif_widgets[key].set_text("")
+
+        # clear only the date and time fields
+        else:
+             self.exif_widgets["ModDateTime"].set_text("")
+
+    def convert2Jpeg(self, obj):
+        """
+        Will attempt to convert an image to jpeg if it is not?
+        """
+
+        filepath, basename = os.path.split(self.image_path)
+        basename, oldext = os.path.splitext(self.image_path)
+        newextension = ".jpeg"
+
+        change = subprocess.check_call( ["convert", self.image_path, 
+                os.path.join(filepath, basename + newextension) ] )
+        if str(change):
+            self.exif_widgets["Message:Area"].set_text(_("Your image is now a jpeg image."))
+            self.exif_widgets["Convert2Jpeg"].set_sensitive(False)
+
+            if _DEL_FOUND:
+                deleted = subprocess.check_call( ["del", self.image_path] )
+                if str(deleted):
+                    self.exif_widgets["Message:Area"].set_text(_("Original image has "
+                        "been deleted!"))
+
     def _set_value(self, KeyTag, KeyValue):
         """
         sets the value for the metadata keytags
         """
 
-        if LesserVersion:  # prior to pyexiv2-0.2.0
+        if LesserVersion:
             self.plugin_image[KeyTag] = KeyValue
 
-        else:  # pyexiv2-0.2.0 and above
+        else:
             try:  # tag is being modified...
                 self.plugin_image[KeyTag].value = KeyValue
 
@@ -937,14 +987,14 @@ class imageMetadataGramplet(Gramplet):
             self.model.clear()
 
             # Notify the User...
-            OkDialog(_("All Exif metadata has been removed from this image..."))
+            self.exif_widgets["Message:Area"].set_text(_("All Exif metadata has been "
+                    "removed from this image..."))
 
             self.update()
 
             # re- initialize the image...
             if _JHEAD_FOUND:
                 reinit = subprocess.check_call( ["jhead", "-purejpg", self.image_path] )
-                print("jhead purejpeg has been initialized...")
 
 # -----------------------------------------------
 #              Date Calendar functions
