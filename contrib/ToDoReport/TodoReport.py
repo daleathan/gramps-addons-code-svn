@@ -405,6 +405,9 @@ class TodoReport(Report):
         self.doc.write_text(place.get_title())
         self.doc.end_paragraph()
         self.doc.end_cell()
+
+        self.doc.end_row()
+
     #
     # Sort Functions
     #
