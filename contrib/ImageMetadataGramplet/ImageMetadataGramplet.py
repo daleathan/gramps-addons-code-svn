@@ -53,7 +53,6 @@ import gtk
 # GRAMPS modules
 # -----------------------------------------------------------------------------
 from QuestionDialog import OkDialog, WarningDialog
-from ListModel import ListModel, NOSORT
 
 from gen.plug import Gramplet
 from DateHandler import displayer as _dd
@@ -133,8 +132,8 @@ else:
 # -----------------------------------------------------------------------------
 # Constants
 # -----------------------------------------------------------------------------
-# available image types for exiv2
-_valid_types = ["jpeg", "jpg", "exv", "tiff", "dng", "nef", "pef", "pgf", "png", "psd", "jp2"]
+# available image types for exiv2 and pyexiv2
+# ["jpeg", "jpg", "exv", "tiff", "dng", "nef", "pef", "pgf", "png", "psd", "jp2"]
 
 # define tooltips for all entries and buttons...
 _TOOLTIPS = {
@@ -149,11 +148,7 @@ _TOOLTIPS = {
     "Convert2Jpeg"      : _("If your image is not a jpeg format image, convert it to jpeg?"),
 
     # Description...
-    "Description"       : _("Describe this media object..."),
-
-    # Modify Date/ Time... 
-    "ModDateTime"       : _("Modify Date/ Time Entry, \n"
-        "Modify Date/ Time will become the local time of saving the image Exif metadata.\n"),
+    "Description"       : _("Provide a short descripion for this image."),
 
     # Artist 
     "Artist"            : _("Enter the Artist/ Author of this image.  The person's name or "
@@ -168,9 +163,7 @@ _TOOLTIPS = {
         "Warning:  You will still need to edit the time..."),
 
     # Original Date/ Time... 
-    "OrigDateTime"      : _("Original Date/ Time Entry, \n"
-        "If there is no Original Date/ Time, then the modify Date/ Time will become the "
-        "Original Date/ Time \n"
+    "OrigDateTime"      : _("Original Date/ Time of this image.\n"
         "Example: 1826-Apr-12 14:30:00, 1826-April-12, 1998-01-31 13:30:00"),
 
     # Convert to decimal button...
@@ -341,9 +334,6 @@ class imageMetadataGramplet(Gramplet):
             # Image Description
             ("Description",     _("Description"),     None, False, [],  True,  0),
 
-            # Modify Date/ Time
-            ("ModDateTime",         _("Mod. Date/Time"), None,    True,  [], True, 0),
-
             # Artist/ Author field
             ("Artist",          _("Artist/ Author"),  None, False, [],  True,  0),
 
@@ -355,7 +345,7 @@ class imageMetadataGramplet(Gramplet):
             [("Select",         _("Select Date"),  "button", self.select_date)],
                                                                      True,  0),
             # Original Date/ Time Entry, 1826-April-12 14:06:00
-            ("OrigDateTime",         _("Date/Time"), None, False, [], True, 0),
+            ("OrigDateTime",         _("Original Date/ Time"), None, False, [], True, 0),
 
             # Convert GPS Coordinates
             ("GPSFormat",       _("Convert GPS"),     None, True,
@@ -586,7 +576,7 @@ class imageMetadataGramplet(Gramplet):
     def _mark_dirty(self, obj):
         pass
 
-    def _get_value(self, KeyTag):
+    def _get_exif_KeyTag(self, KeyTag):
         """
         gets the value from the Exif Key, and returns it...
 
@@ -594,11 +584,8 @@ class imageMetadataGramplet(Gramplet):
         """
 
         KeyValue = ""
-
-        # LesserVersion would only be True when pyexiv2-to 0.1.3 is installed
         if LesserVersion:
             KeyValue = self.plugin_image[KeyTag]
-
         else:
             try:
                 KeyValue = self.plugin_image[KeyTag].value
@@ -631,11 +618,14 @@ class imageMetadataGramplet(Gramplet):
         # check to see if we got metadata from the media object?
         if self.MediaDataTags:
 
+            # clears all Message Area labels...
+            self.exif_widgets["Message:Area"].set_text("")
+
             # activate CopyTo button...
             self.activate_buttons(["CopyTo"])
 
             for KeyTag in self.MediaDataTags:
-                tagValue = self._get_value(KeyTag)
+                tagValue = self._get_exif_KeyTag(KeyTag)
                 if tagValue:
                     if LesserVersion:
                         label = self.plugin_image.tagDetails(KeyTag)[0]
@@ -649,10 +639,9 @@ class imageMetadataGramplet(Gramplet):
                             human_value = False
 
                     if human_value is not False:
-                        if KeyTag in ("Exif.Image.DateTime",
-                            "Exif.Photo.DateTimeOriginal",
+                        if KeyTag in ("Exif.Image.DateTime", "Exif.Photo.DateTimeOriginal",
                             "Exif.Photo.DateTimeDigitized"):
-                            human_value = _process_date( self._get_value(KeyTag) )
+                            human_value = _process_date( self._get_exif_KeyTag(KeyTag) )
 
                         self.model.append( (self.plugin_image, label, human_value) )
         else:
@@ -688,27 +677,23 @@ class imageMetadataGramplet(Gramplet):
         else:
             imageKeyTags = [KeyTag for KeyTag in self.plugin_image.exif_keys if KeyTag in _DATAMAP]
 
+        if imageKeyTags:
+            self.exif_widgets["Message:Area"].set_text(_("Copying Exif metadata to the Edit Area..."))
+
         for KeyTag in imageKeyTags:
 
             # name for matching to exif_widgets 
             widgetsName = _DATAMAP[KeyTag]
 
-            tagValue = self._get_value(KeyTag)
+            tagValue = self._get_exif_KeyTag(KeyTag)
             if tagValue:
 
                 if widgetsName in ["Description", "Artist", "Copyright"]:
                     self.exif_widgets[widgetsName].set_text(tagValue)
 
-                # Modify Date of the image...
-                elif widgetsName == "ModDateTime":
-                    use_date = self._get_value(KeyTag)
-                    use_date = _process_date(use_date) if use_date else False
-                    if use_date is not False:
-                        self.exif_widgets[widgetsName].set_text(use_date)
-
                 # Original Date of the image...
                 elif widgetsName == "OrigDateTime":
-                    use_date = self._get_value(KeyTag)
+                    use_date = self._get_exif_KeyTag(KeyTag)
                     use_date = _process_date(use_date) if use_date else False
                     if use_date is not False:
                         self.exif_widgets[widgetsName].set_text(use_date)
@@ -716,8 +701,8 @@ class imageMetadataGramplet(Gramplet):
                 # LatitudeRef, Latitude, LongitudeRef, Longitude...
                 elif widgetsName == "Latitude":
 
-                    latitude  =  self._get_value(KeyTag)
-                    longitude = self._get_value(_DATAMAP["Longitude"] )
+                    latitude  =  self._get_exif_KeyTag(KeyTag)
+                    longitude = self._get_exif_KeyTag(_DATAMAP["Longitude"] )
 
                     # if latitude and longitude exist, display them?
                     if (latitude and longitude):
@@ -734,10 +719,10 @@ class imageMetadataGramplet(Gramplet):
                         if (not latfail and not longfail):
 
                             # Latitude Direction Reference
-                            LatitudeRef = self._get_value(_DATAMAP["LatitudeRef"] )
+                            LatitudeRef = self._get_exif_KeyTag(_DATAMAP["LatitudeRef"] )
 
                             # Longitude Direction Reference
-                            LongitudeRef = self._get_value(_DATAMAP["LongitudeRef"] )
+                            LongitudeRef = self._get_exif_KeyTag(_DATAMAP["LongitudeRef"] )
 
                             # set display for Latitude GPS Coordinates
                             self.exif_widgets["Latitude"].set_text(
@@ -750,6 +735,9 @@ class imageMetadataGramplet(Gramplet):
         # enable Save button after metadata has been "Copied to Edit Area"...
         self.activate_buttons(["Save", "Delete"])
 
+        # Clear the Message Area...
+        self.exif_widgets["Message:Area"].set_text("")
+
     def clear_metadata(self, obj, cleartype = "All"):
         """
         clears all data fields to nothing
@@ -759,40 +747,52 @@ class imageMetadataGramplet(Gramplet):
             "All" = clears all data fields
         """
 
+        # set Message Area text...
+        self.exif_widgets["Message:Area"].set_text(_("Edit area has been cleared..."))
+
         # clear all data fields
         if cleartype == "All":
-            for widgetsName in ["Description", "OrigDateTime", "ModDateTime", "Artist", "Copyright",
+            for widgetsName in ["Description", "OrigDateTime", "Artist", "Copyright",
                 "Latitude", "Longitude"]:  
                 self.exif_widgets[widgetsName].set_text("")
 
         # clear only the date and time fields
         else:
-             self.exif_widgets["ModDateTime"].set_text("")
+             self.exif_widgets["OrigDateTime"].set_text("")
+
+        # Clear Message Area...
+        self.exif_widgets["Message:Area"].set_text("")
 
     def convert2Jpeg(self, obj):
         """
         Will attempt to convert an image to jpeg if it is not?
         """
 
-        filepath, basename = os.path.split(self.image_path)
-        basename, oldext = os.path.splitext(self.image_path)
-        newextension = ".jpeg"
+        # if ImageMagick's convert is installed...
+        if _MAGICK_FOUND:
+            self.exif_widgets["Message:Area"].set_text(_("Converting image to a jpeg image..."))
 
-        change = subprocess.check_call( ["convert", self.image_path, 
-                os.path.join(filepath, basename + newextension) ] )
-        if str(change):
-            self.exif_widgets["Message:Area"].set_text(_("Your image is now a jpeg image."))
-            self.disable_button(["Convert2Jpeg"])
+            filepath, basename = os.path.split(self.image_path)
+            basename, oldext = os.path.splitext(self.image_path)
+            newextension = ".jpeg"
 
-            if _DEL_FOUND:
-                deleted = subprocess.check_call( ["del", self.image_path] )
-                if str(deleted):
-                    self.exif_widgets["Message:Area"].set_text(_("Original image has "
-                        "been deleted!"))
+            change = subprocess.check_call( ["convert", self.image_path, 
+                    os.path.join(filepath, basename + newextension) ] )
+            if str(change):
+                self.disable_button(["Convert2Jpeg"])
 
-    def _set_value(self, KeyTag, KeyValue):
+                if _DEL_FOUND:
+                    deleted = subprocess.check_call( ["del", self.image_path] )
+                    if str(deleted):
+                        self.exif_widgets["Message:Area"].set_text(_("Original image has "
+                            "been deleted!"))
+
+            # Clear the Message Area...
+            self.exif_widgets["Message:Area"].set_text("")
+
+    def _set_exif_KeyTag(self, KeyTag, KeyValue):
         """
-        sets the value for the metadata keytags
+        sets the value for the metadata KeyTags
         """
 
         if LesserVersion:
@@ -800,7 +800,7 @@ class imageMetadataGramplet(Gramplet):
 
         else:
             try:  # tag is being modified...
-                self.plugin_image[KeyTag].value = KeyValue
+                self.plugin_image[KeyTag] = KeyValue
 
             except KeyError:  # tag has not been set...
                 self.plugin_image[KeyTag] = pyexiv2.ExifTag(KeyTag, KeyValue)
@@ -873,6 +873,7 @@ class imageMetadataGramplet(Gramplet):
 
                 latitude  = """%s° %s′ %s″ %s""" % (latdeg, latmin, latsec, LatitudeRef)
                 longitude = """%s° %s′ %s″ %s""" % (longdeg, longmin, longsec, LongitudeRef)
+
         return latitude, longitude
 
     def convert2decimal(self, obj):
@@ -953,22 +954,24 @@ class imageMetadataGramplet(Gramplet):
     def save_metadata(self, obj):
         """
         gets the information from the plugin data fields
-        and sets the keytag = keyvalue image metadata
+        and sets the KeyTag = keyvalue image metadata
         """
 
-        # Description data field
-        self._set_value(_DATAMAP["Description"], self.exif_widgets["Description"].get_text() )
+        # set Message Area for saving...
+        self.exif_widgets["Message:Area"].set_text(_("Saving Exif metadata to image..."))
 
-        # Modify Date/ Time data field
+        # Description data field
+        self._set_exif_KeyTag(_DATAMAP["Description"], self.exif_widgets["Description"].get_text() )
+
+        # Modify Date/ Time... not a data field, but saved anyway...
         ModDateTime = _format_datetime(datetime.now() )
-        self.exif_widgets["ModDateTime"].set_text(ModDateTime)
-        self._set_value(_DATAMAP["ModDateTime"], _write_date(ModDateTime) )
+        self._set_exif_KeyTag(_DATAMAP["ModDateTime"], _write_date(ModDateTime) )
  
         # Artist/ Author data field
-        self._set_value(_DATAMAP["Artist"], self.exif_widgets["Artist"].get_text() )
+        self._set_exif_KeyTag(_DATAMAP["Artist"], self.exif_widgets["Artist"].get_text() )
 
         # Copyright data field
-        self._set_value(_DATAMAP["Copyright"], self.exif_widgets["Copyright"].get_text() )
+        self._set_exif_KeyTag(_DATAMAP["Copyright"], self.exif_widgets["Copyright"].get_text() )
 
         # Original Date/ Time data field
         OrigDateTime = self.exif_widgets["OrigDateTime"].get_text()
@@ -978,7 +981,7 @@ class imageMetadataGramplet(Gramplet):
                 
             if type(OrigDateTime) == datetime:
                 self.exif_widgets["OrigDateTime"].set_text(_format_datetime(OrigDateTime) )
-        self._set_value(_DATAMAP["OrigDateTime"], _write_date(OrigDateTime) )
+        self._set_exif_KeyTag(_DATAMAP["OrigDateTime"], _write_date(OrigDateTime) )
 
         # Latitude/ Longitude data fields
         latitude  =  self.exif_widgets["Latitude"].get_text()
@@ -1032,12 +1035,12 @@ class imageMetadataGramplet(Gramplet):
             latitude, longitude = _removesymbols4saving(latitude, longitude) 
 
             # convert (degrees, minutes, seconds) to Rational for saving
-            self._set_value(_DATAMAP["LatitudeRef"], LatitudeRef)
-            self._set_value(_DATAMAP["Latitude"], coords_to_rational(latitude))
+            self._set_exif_KeyTag(_DATAMAP["LatitudeRef"], LatitudeRef)
+            self._set_exif_KeyTag(_DATAMAP["Latitude"], coords_to_rational(latitude))
 
             # convert (degrees, minutes, seconds) to Rational for saving
-            self._set_value(_DATAMAP["LongitudeRef"], LongitudeRef)
-            self._set_value(_DATAMAP["Longitude"], coords_to_rational(longitude))
+            self._set_exif_KeyTag(_DATAMAP["LongitudeRef"], LongitudeRef)
+            self._set_exif_KeyTag(_DATAMAP["Longitude"], coords_to_rational(longitude))
 
         # notify the user of successful write...
         OkDialog(_("Image Exif metadata has been saved."))
@@ -1048,10 +1051,16 @@ class imageMetadataGramplet(Gramplet):
         # Activate Delete button...
         self.activate_buttons(["Delete"])
 
+        # clears message area...
+        self.exif_widgets["Message:Area"].set_text("")
+
     def _wipe_metadata(self, obj):
         """
         Will completely and irrevocably erase all Exif metadata from this image.
         """
+
+        # set Message Area for deleting...
+        self.exif_widgets["Message:Area"].set_text(_("Deleting all Exif metadata..."))
 
         if _MAGICK_FOUND:
             erase = subprocess.check_call( ["convert", self.image_path, "-strip", self.image_path] )
@@ -1082,6 +1091,9 @@ class imageMetadataGramplet(Gramplet):
             if _JHEAD_FOUND:
                 reinit = subprocess.check_call( ["jhead", "-purejpg", self.image_path] )
 
+        # clear message area...
+        self.exif_widgets["Message:Area"].set_text("")
+
 # -----------------------------------------------
 #              Date Calendar functions
 # -----------------------------------------------
@@ -1090,7 +1102,7 @@ class imageMetadataGramplet(Gramplet):
         will allow you to choose a date from the calendar widget
         """
  
-        tip = _("Double click a date to return the date.")
+        tip = _("Double click a day to return the date.")
 
         self.app = gtk.Window(gtk.WINDOW_TOPLEVEL)
         self.app.tooltip = tip
@@ -1111,8 +1123,7 @@ class imageMetadataGramplet(Gramplet):
         now = time.localtime()
 
         year, month, day = self.exif_widgets["Calendar"].get_date()
-        self.exif_widgets["ModDateTime"].set_text(
-                "%04d-%s-%02d %02d:%02d:%02d" % (
+        self.exif_widgets["OrigDateTime"].set_text( "%04d-%s-%02d %02d:%02d:%02d" % (
             year, _dd.long_months[month + 1], day, now[3], now[4], now[5]) )
 
         # close this window
@@ -1242,7 +1253,7 @@ def _get_date_format(datestr):
 
 def _write_date(wdatetime):
     """
-    handle the ModDateTime field for saing
+    handle thes Original Date/ Time field for saving
     """
 
     datestr = _get_date_format(wdatetime)
