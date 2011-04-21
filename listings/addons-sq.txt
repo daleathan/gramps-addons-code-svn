@@ -14,11 +14,11 @@
 {'d': "Gramplet for editing active person's notes", 'g': '3.3', 'i': 'Note Gramplet', 'n': 'Note Gramplet', 't': u'Gramplet', 'v': '1.0.7', 'z': 'NoteGramplet.addon.tgz'}
 {'d': 'Django is a web framework working on a configured database', 'g': '3.3', 'i': 'export_django', 'n': 'Django Export', 't': u'Exporter', 'v': '1.0.6', 'z': 'Django.addon.tgz'}
 {'d': 'Django is a web framework working on a configured database', 'g': '3.3', 'i': 'import_django', 'n': 'Django Import', 't': u'Importer', 'v': '1.0.6', 'z': 'Django.addon.tgz'}
-{'d': 'Gramplet for quick data entry', 'g': '3.3.0', 'i': 'Data Entry Gramplet', 'n': 'Data Entry Gramplet', 't': u'Gramplet', 'v': '1.0.13', 'z': 'DataEntryGramplet.addon.tgz'}
-{'d': 'Gramplet to edit and save media Exif metadata', 'g': '3.3.0', 'i': 'Image Metadata Gramplet', 'n': 'Image Metadata Gramplet', 't': u'Gramplet', 'v': '1.5.2', 'z': 'ImageMetadataGramplet.addon.tgz'}
+{'d': 'Gramplet for quick data entry', 'g': '3.3', 'i': 'Data Entry Gramplet', 'n': 'Data Entry Gramplet', 't': u'Gramplet', 'v': '1.0.13', 'z': 'DataEntryGramplet.addon.tgz'}
+{'d': 'Gramplet to edit and save media Exif metadata', 'g': '3.3', 'i': 'Image Metadata Gramplet', 'n': 'Image Metadata Gramplet', 't': u'Gramplet', 'v': '1.5.3', 'z': 'ImageMetadataGramplet.addon.tgz'}
 {'d': 'Interactive Python interpreter', 'g': '3.3', 'i': 'Python Gramplet', 'n': 'Python Gramplet', 't': u'Gramplet', 'v': '1.0.5', 'z': 'PythonGramplet.addon.tgz'}
 {'d': 'Shows the number of descendants of the current person', 'g': '3.3', 'i': 'NumberOfDescendantsQuickview', 'n': 'Number of descendants', 't': u'Quickreport', 'v': '3.3.5', 'z': 'NumberOfDescendantsQuickview.addon.tgz'}
-{'d': 'Produces a list of all the notes with a given tag along with the records that it references, the Person, Family, Event, etc.', 'g': '3.3', 'i': 'TodoReport', 'n': 'Todo Report', 't': u'Report', 'v': '1.2.5', 'z': 'ToDoReport.addon.tgz'}
+{'d': 'Produces a list of all the notes with a given tag along with the records that it references, the Person, Family, Event, etc.', 'g': '3.3', 'i': 'TodoReport', 'n': 'Todo Report', 't': u'Report', 'v': '1.2.6', 'z': 'ToDoReport.addon.tgz'}
 {'d': 'Logaitje t\xc3\xab datave t\xc3\xab vlersuara p\xc3\xabr lindje dhe vdekje.', 'g': '3.3', 'i': 'calculateestimateddates', 'n': 'Logarit datat e vlersuara', 't': u'Tool', 'v': '0.90.5', 'z': 'CalculateEstimatedDates.addon.tgz'}
 {'d': "Display a person's events on a timeline", 'g': '3.3', 'i': 'timelinequickview', 'n': 'Timeline', 't': u'Quickreport', 'v': '1.0.6', 'z': 'TimelineQuickview.addon.tgz'}
 {'d': 'Produces a textual repositories report', 'g': '3.3', 'i': 'Repositories Report Options', 'n': 'Repositories Report Options', 't': u'Report', 'v': '0.2.6', 'z': 'RepositoriesReport.addon.tgz'}

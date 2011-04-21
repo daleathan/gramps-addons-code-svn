@@ -52,7 +52,8 @@ import gtk
 # -----------------------------------------------------------------------------
 # GRAMPS modules
 # -----------------------------------------------------------------------------
-from QuestionDialog import OkDialog, WarningDialog
+import GrampsDisplay
+from QuestionDialog import OkDialog, WarningDialog, QuestionDialog
 
 from gen.plug import Gramplet
 from DateHandler import displayer as _dd
@@ -84,16 +85,13 @@ except ImportError, msg:
     WarningDialog(_("You need to install, %s or greater, for this addon to work...\n"
                     "I would recommend installing, %s, and it may be downloaded from here: \n%s") % (
                         Min_VERSION_str, Pref_VERSION_str, _DOWNLOAD_LINK), str(msg))
-    raise Exception(_("Failed to load 'Image Metadata Gramplet/ Addon'..."))
+    raise Exception(_("Failed to load 'Image Metadata Gramplet'..."))
                
-# This only happends if the user only has pyexiv2-0.1.3 installed on their computer...
-# it requires the use of a few different things, which you will see when this variable is in aa conditional,
-# to still use this addon...
+# This only happends if the user has pyexiv2-0.1.3 installed on their computer...
 except AttributeError:
     LesserVersion = True
 
-# the library is either not installed or does not meet 
-# minimum required version for this addon....
+# the library is either not installed or does not meet minimum required version for this addon....
 if (software_version and (software_version < Min_VERSION)):
     msg = _("The minimum required version for pyexiv2 must be %s \n"
         "or greater.  Or you do not have the python library installed yet.  "
@@ -105,8 +103,8 @@ if (software_version and (software_version < Min_VERSION)):
 # *******************************************************************
 #         Determine if we have access to outside Programs
 #
-# The programs are ImageMagick, jhead, and delete...
-# * ImageMagick -- Convert and Erase...
+# The programs are ImageMagick, and jhead
+# * ImageMagick -- Convert and Delete all Exif metadata...
 # * jhead       -- re-initialize a jpeg image...
 # * del         -- delete the image after converting to Jpeg...
 #********************************************************************
@@ -116,18 +114,21 @@ if system_platform == "win32":
     _MAGICK_FOUND = Utils.search_for("convert.exe")
     _JHEAD_FOUND = Utils.search_for("jhead.exe")
     _DEL_FOUND = Utils.search_for("del.exe")
+    __del_command = "del.exe"
 
 # all Linux systems
 elif system_platform == "Linux2":
     _MAGICK_FOUND = Utils.search_for("convert")
     _JHEAD_FOUND = Utils.search_for("jhead")
     _DEL_FOUND = Utils.search_for("rm")
+    __del_command = "rm"
 
 # Windows 64bit systems
 else:
     _MAGICK_FOUND = Utils.search_for("convert")
     _JHEAD_FOUND = Utils.search_for("jhead")
     _DEL_FOUND = Utils.search_for("del")
+    __del_command = "del"
 
 # -----------------------------------------------------------------------------
 # Constants
@@ -184,13 +185,13 @@ _TOOLTIPS = {
 
     # Wiki Help button...
     "Help"              : _("Displays the Gramps Wiki Help page for 'Image Metadata Gramplet' "
-        "in your web browser."),
+        "in your web bvboxer."),
 
     # Save Exif Metadata button...
     "Save"              : _("Saves/ writes the Exif metadata to this image.\n"
         "WARNING: Exif metadata will be erased if you save a blank entry field..."),
 
-    # Erase/ Delete/ Wipe Exif metadata button...
+    # Delete/Erase/ Wipe Exif metadata button...
     "Delete"     : _("WARNING:  This will permanently and irrevocably erase all "
         "Exif metadata from this image!  Are you sure that you want to do this?") }.items()
 
@@ -212,8 +213,6 @@ def _help_page(obj):
     """
     will bring up a Wiki help page.
     """
-
-    import GrampsDisplay
 
     GrampsDisplay.help(webpage = 'Image Metadata Gramplet')
 
@@ -270,7 +269,7 @@ class imageMetadataGramplet(Gramplet):
 
     def init(self):
 
-        self.exif_column_width = 15
+        self.exif_column_width = 12
         self.exif_widgets = {}
 
         # set all dirty variables to False to begin this addon...
@@ -281,7 +280,7 @@ class imageMetadataGramplet(Gramplet):
         self.plugin_image  = False
         self.MediaDataTags = False
 
-        rows = gtk.VBox()
+        vbox = gtk.VBox()
 
         medialabel = gtk.HBox(False)
         self.exif_widgets["Media:Label"] = gtk.Label()
@@ -308,26 +307,26 @@ class imageMetadataGramplet(Gramplet):
         view.append_column( self.__create_column(_("Value"), 2) )
 
         # Help, Clear, Convert horizontal box
-        hcc_box = gtk.HButtonBox()
-        hcc_box.set_layout(gtk.BUTTONBOX_START)
+        ccc_box = gtk.HButtonBox()
+        ccc_box.set_layout(gtk.BUTTONBOX_START)
 
-        # Help button...
-        hcc_box.add( self.__create_button(
-            "Help", False, _help_page, gtk.STOCK_HELP) )
+        # Copy To Edit Area button...
+        ccc_box.add( self.__create_button(
+            "CopyTo", False, self.CopyTo, gtk.STOCK_COPY, False) )
 
         # Clear button...
-        hcc_box.add( self.__create_button(
+        ccc_box.add( self.__create_button(
             "Clear", False, self.clear_metadata, gtk.STOCK_CLEAR, False) )
 
         # Convert button...
-        hcc_box.add( self.__create_button(
+        ccc_box.add( self.__create_button(
             "Convert", False, self.convert2Jpeg, gtk.STOCK_CONVERT, False) )
 
         # bring all items together above the data fields
-        rows.pack_start(medialabel, expand =False)
-        rows.pack_start(mimetype, expand =False)
-        rows.pack_start(messagearea, expand =False)
-        rows.pack_start(hcc_box, expand =False, fill =False)
+        vbox.pack_start(medialabel, expand =False)
+        vbox.pack_start(mimetype, expand =False)
+        vbox.pack_start(messagearea, expand =False)
+        vbox.pack_start(ccc_box, expand =False, fill =False, padding =10)
 
         for items in [
 
@@ -359,34 +358,103 @@ class imageMetadataGramplet(Gramplet):
 
             pos, text, choices, readonly, callback, dirty, default = items
             row = self.make_row(pos, text, choices, readonly, callback, dirty, default)
-            rows.pack_start(row, False)
+            vbox.pack_start(row, False)
 
         # Copy, Save, Delete horizontal box
-        csd_box = gtk.HButtonBox()
-        csd_box.set_layout(gtk.BUTTONBOX_START)
+        hsd_box = gtk.HButtonBox()
+        hsd_box.set_layout(gtk.BUTTONBOX_START)
 
-        # Copy To Edit Area button...
-        csd_box.add( self.__create_button(
-            "CopyTo", False, self.CopyTo, gtk.STOCK_COPY, False) )
+        # Help button...
+        hsd_box.add( self.__create_button(
+            "Help", False, _help_page, gtk.STOCK_HELP) )
 
         # Save button...
-        csd_box.add( self.__create_button(
-            "Save", False, self.save_metadata, gtk.STOCK_SAVE, False) )
+        hsd_box.add( self.__create_button(
+            "Save", False, self.__save_dialog, gtk.STOCK_SAVE, False) )
 
-        # Delete All Metadata
-        csd_box.add( self.__create_button(
-            "Delete", False, self._wipe_metadata, gtk.STOCK_DELETE, False) )
-        rows.pack_start(csd_box, expand =False, fill =False)
+        # Delete All Metadata button...
+        hsd_box.add( self.__create_button(
+            "Delete", False, self.__delete_dialog, gtk.STOCK_DELETE, False) )
+        vbox.pack_start(hsd_box, expand =False, fill =False, padding =10)
 
         # adds Exif Viewing Area
-        rows.pack_start(view, padding =10)
+        vbox.pack_start(view, padding =10)
 
         self.gui.get_container_widget().remove(self.gui.textview)
-        self.gui.get_container_widget().add_with_viewport(rows)
-        rows.show_all()
+        self.gui.get_container_widget().add_with_viewport(vbox)
+        vbox.show_all()
 
         # provide tooltips for all fields and buttons...
         _setup_widget_tooltips(self.exif_widgets)
+
+    def main(self): # return false finishes
+        """
+        get the active media, mime type, and reads the image metadata
+        """
+        db = self.dbstate.db
+
+        # clear Display and Edit Areas
+        self.clear_metadata(self.orig_image)
+        self.model.clear()
+
+        # De-activate the buttons except for Help...
+        self.deactivate_buttons(["CopyTo", "Clear", "Convert", "Save", "Delete"])
+
+        # Re-post initial image message...
+        self.exif_widgets["Message:Area"].set_text(_("Select an image to begin..."))
+
+        active_handle = self.get_active("Media")
+        if not active_handle:
+            return
+
+        self.orig_image = db.get_object_from_handle(active_handle)
+        self.image_path = Utils.media_path_full(db, self.orig_image.get_path() )
+        if (not self.orig_image or not os.path.isfile(self.image_path)):
+            self.exif_widgets["Message:Area"].set_text(_("Image is either missing or deleted,\n"
+                "Choose a different image..."))
+            return
+
+        # check image read privileges...
+        _readable = os.access(self.image_path, os.R_OK)
+        if not _readable:
+            self.exif_widgets["Message:Area"].set_text(_("Image is NOT readable,\n"
+                "Choose a different image..."))
+            return
+
+        # check image write privileges...
+        _writable = os.access(self.image_path, os.W_OK)
+        if not _writable:
+            self.exif_widgets["Message:Area"].set_text(_("Image is NOT writable,\n"
+                "You will NOT be able to save Exif metadata...."))
+
+        # Mime type information...
+        mime_type = self.orig_image.get_mime_type()
+        _mtype = gen.mime.get_description(mime_type)
+        self.exif_widgets["Mime:Type"].set_text(_mtype)
+
+        # determine if it is a mime image object?
+        if (mime_type and mime_type.startswith("image") ):
+
+            # display file description/ title...
+            self.exif_widgets["Media:Label"].set_text( _html_escape(
+                self.orig_image.get_description() ) )
+
+            # will create the image and read it...
+            self.setup_image(self.image_path, True)
+
+            # Checks to make sure that ImageMagick is installed on this computer and
+            # the image is NOT a jpeg image...
+            if _MAGICK_FOUND:
+                basename, extension = os.path.splitext(self.image_path)
+                if extension not in [".jpeg", ".jpg", ".jfif"]:
+                    self.activate_buttons(["Convert"])
+
+            # displays the imge Exif metadata
+            self.display_exif_tags(self.image_path)
+
+        else:
+            self.exif_widgets["Message:Area"].set_text(_("Choose a different image..."))
+            return
 
     def __create_column(self, name, colnum, fixed =True):
         """
@@ -427,73 +495,22 @@ class imageMetadataGramplet(Gramplet):
 
         return button
 
-    def main(self): # return false finishes
+    def __save_dialog(self, obj):
         """
-        get the active media, mime type, and reads the image metadata
+        Handles the Save question Dialog...
         """
 
-        # clear Display and Edit Areas
-        self.clear_metadata(self.orig_image)
-        self.model.clear()
+        QuestionDialog(_("Image Metadata Gramplet"), _("Save Exif metadata to this image?"),
+                _("Save"), self.save_metadata)
 
-        # De-activate the buttons except for Help...
-        self.deactivate_buttons(["CopyTo", "Clear", "Convert", "Save", "Delete"])
+    def __delete_dialog(self, obj):
+        """
+        Handles the Delete Dialog...
+        """
 
-        # Re-post initial image message...
-        self.exif_widgets["Message:Area"].set_text(_("Click an image to begin..."))
-
-        active_handle = self.get_active("Media")
-        if not active_handle:
-            return
-
-        self.orig_image = self.dbstate.db.get_object_from_handle(active_handle)
-        self.image_path = Utils.media_path_full(self.dbstate.db, self.orig_image.get_path() )
-        if (not self.orig_image or not os.path.isfile(self.image_path)):
-            self.exif_widgets["Message:Area"].set_text(_("Image is either missing or deleted,\n"
-                "Choose a different image..."))
-            return
-
-        # check image read/ write privileges...
-        _readable = os.access(self.image_path, os.R_OK)
-        if not _readable:
-            self.exif_widgets["Message:Area"].set_text(_("Image is NOT readable,\n"
-                "Choose a different image..."))
-            return
-
-        # if media object is not writable, disable Save Button?
-        _writable = os.access(self.image_path, os.W_OK)
-        if not _writable:
-            self.exif_widgets["Message:Area"].set_text(_("Image is NOT writable,\n"
-                "You will NOT be able to save Exif metadata...."))
-
-        # get mime type information...
-        mime_type = self.orig_image.get_mime_type()
-        _mtype = gen.mime.get_description(mime_type)
-        self.exif_widgets["Mime:Type"].set_text(_mtype)
-
-        # determine if it is a mime image object?
-        if (mime_type and mime_type.startswith("image") ):
-
-            # display file description/ title...
-            self.exif_widgets["Media:Label"].set_text( _html_escape(
-                self.orig_image.get_description() ) )
-
-            # will create the image and read it...
-            self.setup_image(self.image_path, True)
-
-            # Checks to make sure that ImageMagick is installed on this computer and
-            # the image is NOT a jpeg image...
-            if _MAGICK_FOUND:
-                basename, extension = os.path.splitext(self.image_path)
-                if extension not in [".jpeg", ".jpg", ".jfif"]:
-                    self.activate_buttons(["Convert"])
-
-            # displays the imge Exif metadata
-            self.display_exif_tags(self.image_path)
-
-        else:
-            self.exif_widgets["Message:Area"].set_text(_("Choose a different image..."))
-            return
+        QuestionDialog(_("Image Metadata Gramplet"), _("WARNING!  You are about to completely "
+            "delete the Exif metadata from this image?"), _("Delete"),
+                self.strip_metadata)
 
     def setup_image(self, full_path, createimage =False):
         """
@@ -785,13 +802,10 @@ class imageMetadataGramplet(Gramplet):
                 self.disable_button(["Convert"])
 
                 if _DEL_FOUND:
-                    deleted = subprocess.check_call( ["del", self.image_path] )
+                    deleted = subprocess.check_call( [_del_command, self.image_path] )
                     if str(deleted):
                         self.exif_widgets["Message:Area"].set_text(_("Original image has "
                             "been deleted!"))
-
-            # Clear the Message Area...
-            self.exif_widgets["Message:Area"].set_text("")
 
     def _set_exif_KeyTag(self, KeyTag, KeyValue):
         """
@@ -952,9 +966,9 @@ class imageMetadataGramplet(Gramplet):
                     """%s° %s′ %s″ %s""" % (longdeg, longmin, longsec, LongitudeRef) )
 
 #------------------------------------------------
-#     Writes/ saves metadata to image
+#     Writes/ saves Exif metadata to image
 #------------------------------------------------
-    def save_metadata(self, obj):
+    def save_metadata(self):
         """
         gets the information from the plugin data fields
         and sets the KeyTag = keyvalue image metadata
@@ -1057,13 +1071,10 @@ class imageMetadataGramplet(Gramplet):
         # clears message area...
         self.exif_widgets["Message:Area"].set_text("")
 
-    def _wipe_metadata(self, obj):
+    def strip_metadata(self):
         """
         Will completely and irrevocably erase all Exif metadata from this image.
         """
-
-        # set Message Area for deleting...
-        self.exif_widgets["Message:Area"].set_text(_("Deleting all Exif metadata..."))
 
         if _MAGICK_FOUND:
             erase = subprocess.check_call( ["convert", self.image_path, "-strip", self.image_path] )
@@ -1080,22 +1091,22 @@ class imageMetadataGramplet(Gramplet):
 
         if erase_results:
 
+            # set Message Area for deleting...
+            self.exif_widgets["Message:Area"].set_text(_("Deleting all Exif metadata..."))
+
             # Clear the Display and Edit Areas
             self.clear_metadata(self.plugin_image)
             self.model.clear()
 
             # Notify the User...
             self.exif_widgets["Message:Area"].set_text(_("All Exif metadata has been "
-                    "removed from this image..."))
+                    "deleted from this image..."))
 
             self.update()
 
             # re- initialize the image...
             if _JHEAD_FOUND:
                 reinit = subprocess.check_call( ["jhead", "-purejpg", self.image_path] )
-
-        # clear message area...
-        self.exif_widgets["Message:Area"].set_text("")
 
 # -----------------------------------------------
 #              Date Calendar functions
