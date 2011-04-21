@@ -144,8 +144,8 @@ _TOOLTIPS = {
     # Clear Edit Area button... 
     "Clear"             : _("Clears the Exif metadata from the Edit area."),
 
-    # Convert to jpeg button...
-    "Convert2Jpeg"      : _("If your image is not a jpeg format image, convert it to jpeg?"),
+    # Convert to .Jpeg button...
+    "Convert"           : _("If your image is not a jpeg format image, convert it to jpeg?"),
 
     # Description...
     "Description"       : _("Provide a short descripion for this image."),
@@ -163,7 +163,7 @@ _TOOLTIPS = {
         "Warning:  You will still need to edit the time..."),
 
     # Original Date/ Time... 
-    "OrigDateTime"      : _("Original Date/ Time of this image.\n"
+    "DateTime"      : _("Original Date/ Time of this image.\n"
         "Example: 1826-Apr-12 14:30:00, 1826-April-12, 1998-01-31 13:30:00"),
 
     # Convert to decimal button...
@@ -200,7 +200,7 @@ _DATAMAP = {
     "Exif.Image.DateTime"          : "ModDateTime",
     "Exif.Image.Artist"            : "Artist",
     "Exif.Image.Copyright"         : "Copyright",
-    "Exif.Photo.DateTimeOriginal"  : "OrigDateTime",
+    "Exif.Photo.DateTimeOriginal"  : "DateTime",
     "Exif.GPSInfo.GPSLatitudeRef"  : "LatitudeRef",
     "Exif.GPSInfo.GPSLatitude"     : "Latitude",
     "Exif.GPSInfo.GPSLongitudeRef" : "LongitudeRef",
@@ -307,35 +307,35 @@ class imageMetadataGramplet(Gramplet):
         # Value Column
         view.append_column( self.__create_column(_("Value"), 2) )
 
-        ccc_box = gtk.HButtonBox()
-        ccc_box.set_layout(gtk.BUTTONBOX_START)
+        # Help, Clear, Convert horizontal box
+        hcc_box = gtk.HButtonBox()
+        hcc_box.set_layout(gtk.BUTTONBOX_START)
 
-        # Copy To Edit Area button...
-        ccc_box.add( self.__create_button(
-            "CopyTo", False, self.CopyTo, gtk.STOCK_COPY, False) )
+        # Help button...
+        hcc_box.add( self.__create_button(
+            "Help", False, _help_page, gtk.STOCK_HELP) )
 
         # Clear button...
-        ccc_box.add( self.__create_button(
+        hcc_box.add( self.__create_button(
             "Clear", False, self.clear_metadata, gtk.STOCK_CLEAR, False) )
 
-        # Convert2Jpeg button...
-        ccc_box.add( self.__create_button(
-            "Convert2Jpeg", False, self.convert2Jpeg, gtk.STOCK_CONVERT, False) )
+        # Convert button...
+        hcc_box.add( self.__create_button(
+            "Convert", False, self.convert2Jpeg, gtk.STOCK_CONVERT, False) )
 
         # bring all items together above the data fields
         rows.pack_start(medialabel, expand =False)
         rows.pack_start(mimetype, expand =False)
         rows.pack_start(messagearea, expand =False)
-        rows.pack_start(view, padding =10)
-        rows.pack_start(ccc_box, expand =False, fill =False)
+        rows.pack_start(hcc_box, expand =False, fill =False)
 
         for items in [
 
             # Image Description
             ("Description",     _("Description"),     None, False, [],  True,  0),
 
-            # Artist/ Author field
-            ("Artist",          _("Artist/ Author"),  None, False, [],  True,  0),
+            # Artist field
+            ("Artist",          _("Artist"),          None, False, [],  True,  0),
 
             # copyright field
             ("Copyright",       _("Copyright"),       None, False, [],  True,  0),
@@ -345,7 +345,7 @@ class imageMetadataGramplet(Gramplet):
             [("Select",         _("Select Date"),  "button", self.select_date)],
                                                                      True,  0),
             # Original Date/ Time Entry, 1826-April-12 14:06:00
-            ("OrigDateTime",         _("Original Date/ Time"), None, False, [], True, 0),
+            ("DateTime",         _("Date/ Time"),     None, False, [], True, 0),
 
             # Convert GPS Coordinates
             ("GPSFormat",       _("Convert GPS"),     None, True,
@@ -361,21 +361,25 @@ class imageMetadataGramplet(Gramplet):
             row = self.make_row(pos, text, choices, readonly, callback, dirty, default)
             rows.pack_start(row, False)
 
-        hse_box = gtk.HButtonBox()
-        hse_box.set_layout(gtk.BUTTONBOX_START)
+        # Copy, Save, Delete horizontal box
+        csd_box = gtk.HButtonBox()
+        csd_box.set_layout(gtk.BUTTONBOX_START)
 
-        # Help button...
-        hse_box.add( self.__create_button(
-            "Help", False, _help_page, gtk.STOCK_HELP) )
+        # Copy To Edit Area button...
+        csd_box.add( self.__create_button(
+            "CopyTo", False, self.CopyTo, gtk.STOCK_COPY, False) )
 
         # Save button...
-        hse_box.add( self.__create_button(
+        csd_box.add( self.__create_button(
             "Save", False, self.save_metadata, gtk.STOCK_SAVE, False) )
 
-        # Erase All Metadata
-        hse_box.add( self.__create_button(
+        # Delete All Metadata
+        csd_box.add( self.__create_button(
             "Delete", False, self._wipe_metadata, gtk.STOCK_DELETE, False) )
-        rows.pack_start(hse_box, expand =False, fill =False)
+        rows.pack_start(csd_box, expand =False, fill =False)
+
+        # adds Exif Viewing Area
+        rows.pack_start(view, padding =10)
 
         self.gui.get_container_widget().remove(self.gui.textview)
         self.gui.get_container_widget().add_with_viewport(rows)
@@ -432,82 +436,98 @@ class imageMetadataGramplet(Gramplet):
         self.clear_metadata(self.orig_image)
         self.model.clear()
 
+        # De-activate the buttons except for Help...
+        self.deactivate_buttons(["CopyTo", "Clear", "Convert", "Save", "Delete"])
+
+        # Re-post initial image message...
+        self.exif_widgets["Message:Area"].set_text(_("Click an image to begin..."))
+
         active_handle = self.get_active("Media")
         if not active_handle:
             return
 
         self.orig_image = self.dbstate.db.get_object_from_handle(active_handle)
-        if not self.orig_image:
-            self.exif_widgets["Message:Area"].set_text(_("Image is missing "
-                "or deleted.\n Choose another media object..."))
+        self.image_path = Utils.media_path_full(self.dbstate.db, self.orig_image.get_path() )
+        if (not self.orig_image or not os.path.isfile(self.image_path)):
+            self.exif_widgets["Message:Area"].set_text(_("Image is either missing or deleted,\n"
+                "Choose a different image..."))
             return
 
-        # get media full path
-        self.image_path = Utils.media_path_full(self.dbstate.db, self.orig_image.get_path() )
-
-        # check media read/ write privileges...
+        # check image read/ write privileges...
         _readable = os.access(self.image_path, os.R_OK)
         if not _readable:
-            self.exif_widgets["Message:Area"].set_text(_("This image is not readable.\n"
-                "Choose another media object..."))
+            self.exif_widgets["Message:Area"].set_text(_("Image is NOT readable,\n"
+                "Choose a different image..."))
             return
 
         # if media object is not writable, disable Save Button?
         _writable = os.access(self.image_path, os.W_OK)
         if not _writable:
-            self.exif_widgets["Message:Area"].set_text(_("This image is not writable.\n"
-                "You will NOT be able to save Exif metadata to this image."))
-
-        # display file description/ title...
-        self.exif_widgets["Media:Label"].set_text(
-            _html_escape(self.orig_image.get_description() ) )
+            self.exif_widgets["Message:Area"].set_text(_("Image is NOT writable,\n"
+                "You will NOT be able to save Exif metadata...."))
 
         # get mime type information...
         mime_type = self.orig_image.get_mime_type()
-        self.__mtype = gen.mime.get_description(mime_type)
-        self.exif_widgets["Mime:Type"].set_text(self.__mtype)
+        _mtype = gen.mime.get_description(mime_type)
+        self.exif_widgets["Mime:Type"].set_text(_mtype)
 
         # determine if it is a mime image object?
-        if mime_type:
-            if mime_type.startswith("image"):
+        if (mime_type and mime_type.startswith("image") ):
 
-                # will create the image and read it...
-                self.setup_image(True)
+            # display file description/ title...
+            self.exif_widgets["Media:Label"].set_text( _html_escape(
+                self.orig_image.get_description() ) )
 
-                # displays the imge Exif metadata
-                self.display_exif_tags(self.image_path)
-            else:
-                self.exif_widgets["Message:Area"].set_text("%s,\n %s" % (self.__mtype,
-                    _("Please choose another image.") ) )
+            # will create the image and read it...
+            self.setup_image(self.image_path, True)
+
+            # Checks to make sure that ImageMagick is installed on this computer and
+            # the image is NOT a jpeg image...
+            if _MAGICK_FOUND:
+                basename, extension = os.path.splitext(self.image_path)
+                if extension not in [".jpeg", ".jpg", ".jfif"]:
+                    self.activate_buttons(["Convert"])
+
+            # displays the imge Exif metadata
+            self.display_exif_tags(self.image_path)
+
         else:
+            self.exif_widgets["Message:Area"].set_text(_("Choose a different image..."))
             return
 
-    def setup_image(self, createimage =False):
+    def setup_image(self, full_path, createimage =False):
         """
         will return an image instance and read the Exif metadata.
 
         if createimage is True, it will create the pyexiv2 image instance...
 
-        LesserVersion -- prior to pyexiv2-0.2.0 is installed
+        LesserVersion -- prior to pyexiv2-0.2.0
                       -- pyexiv2-0.2.0 and above...
         """
 
         if createimage:
             if LesserVersion:
-                self.plugin_image = pyexiv2.Image(self.image_path)
+                self.plugin_image = pyexiv2.Image(full_path)
             else:
-                self.plugin_image = pyexiv2.ImageMetadata(self.image_path)
+                self.plugin_image = pyexiv2.ImageMetadata(full_path)
 
         if LesserVersion:
             self.plugin_image.readMetadata()
+
+            # get all KeyTags for this image for diplay only...
+            self.MediaDataTags = [KeyTag for KeyTag in chain(
+                                self.plugin_image.exifKeys(),
+                                self.plugin_image.xmpKeys(),
+                                self.plugin_image.iptcKeys() ) ]
         else:
             self.plugin_image.read()
 
-        if (self.image_path and os.path.isfile(self.image_path)):
-            basename, extension = os.path.splitext(self.image_path)
-            if (extension not in [".jpeg", ".jpg"] and _MAGICK_FOUND):
-                self.activate_buttons(["Convert2Jpeg"])
-   
+            # get all KeyTags for this image for diplay only...
+            self.MediaDataTags = [KeyTag for KeyTag in chain(
+                                self.plugin_image.exif_keys,
+                                self.plugin_image.xmp_keys,
+                                self.plugin_image.iptc_keys) ]
+
     def make_row(self, pos, text, choices=None, readonly=False, callback_list=[],
                  mark_dirty=False, default=0):
 
@@ -601,20 +621,6 @@ class imageMetadataGramplet(Gramplet):
             all of the image Exif metadata...
         """
 
-        if LesserVersion:
-            # get all KeyTags for this Media object for diplay only...
-            self.MediaDataTags = [KeyTag for KeyTag in chain(
-                                self.plugin_image.exifKeys(),
-                                self.plugin_image.xmpKeys(),
-                                self.plugin_image.iptcKeys() )
-                            ]
-        else:
-            # get all KeyTags for this Media object for diplay only...
-            self.MediaDataTags = [KeyTag for KeyTag in chain(
-                                self.plugin_image.exif_keys,
-                                self.plugin_image.xmp_keys,
-                                self.plugin_image.iptc_keys)
-                            ]
         # check to see if we got metadata from the media object?
         if self.MediaDataTags:
 
@@ -646,9 +652,9 @@ class imageMetadataGramplet(Gramplet):
                         self.model.append( (self.plugin_image, label, human_value) )
         else:
             # display "No Exif metadata" message...
-            self.exif_widgets["Message:Area"].set_text(_("There is no metadata for this image..."))
+            self.exif_widgets["Message:Area"].set_text(_("No Exif metadata for this image..."))
 
-        # enable Save and Delete Exif metadata buttons...
+        # Activate Clear and Save buttons..
         self.activate_buttons(["Clear", "Save"])
 
     def activate_buttons(self, ButtonList):
@@ -659,7 +665,7 @@ class imageMetadataGramplet(Gramplet):
         for ButtonName in ButtonList:
             self.exif_widgets[ButtonName].set_sensitive(True)
 
-    def disable_buttons(self, ButtonList):
+    def deactivate_buttons(self, ButtonList):
         """
         disable/ de-activate buttons in ButtonList
         """
@@ -692,7 +698,7 @@ class imageMetadataGramplet(Gramplet):
                     self.exif_widgets[widgetsName].set_text(tagValue)
 
                 # Original Date of the image...
-                elif widgetsName == "OrigDateTime":
+                elif widgetsName == "DateTime":
                     use_date = self._get_exif_KeyTag(KeyTag)
                     use_date = _process_date(use_date) if use_date else False
                     if use_date is not False:
@@ -752,16 +758,13 @@ class imageMetadataGramplet(Gramplet):
 
         # clear all data fields
         if cleartype == "All":
-            for widgetsName in ["Description", "OrigDateTime", "Artist", "Copyright",
+            for widgetsName in ["Description", "Artist", "Copyright", "DateTime",
                 "Latitude", "Longitude"]:  
                 self.exif_widgets[widgetsName].set_text("")
 
-        # clear only the date and time fields
+        # clear only the date/ time field
         else:
-             self.exif_widgets["OrigDateTime"].set_text("")
-
-        # Clear Message Area...
-        self.exif_widgets["Message:Area"].set_text("")
+             self.exif_widgets["DateTime"].set_text("")
 
     def convert2Jpeg(self, obj):
         """
@@ -779,7 +782,7 @@ class imageMetadataGramplet(Gramplet):
             change = subprocess.check_call( ["convert", self.image_path, 
                     os.path.join(filepath, basename + newextension) ] )
             if str(change):
-                self.disable_button(["Convert2Jpeg"])
+                self.disable_button(["Convert"])
 
                 if _DEL_FOUND:
                     deleted = subprocess.check_call( ["del", self.image_path] )
@@ -974,14 +977,14 @@ class imageMetadataGramplet(Gramplet):
         self._set_exif_KeyTag(_DATAMAP["Copyright"], self.exif_widgets["Copyright"].get_text() )
 
         # Original Date/ Time data field
-        OrigDateTime = self.exif_widgets["OrigDateTime"].get_text()
-        if OrigDateTime:
-            if type(OrigDateTime) is not datetime:
-                OrigDateTime = _process_date(OrigDateTime)
+        DateTime = self.exif_widgets["DateTime"].get_text()
+        if DateTime:
+            if type(DateTime) is not datetime:
+                DateTime = _process_date(DateTime)
                 
-            if type(OrigDateTime) == datetime:
-                self.exif_widgets["OrigDateTime"].set_text(_format_datetime(OrigDateTime) )
-        self._set_exif_KeyTag(_DATAMAP["OrigDateTime"], _write_date(OrigDateTime) )
+            if type(DateTime) == datetime:
+                self.exif_widgets["DateTime"].set_text(_format_datetime(DateTime) )
+        self._set_exif_KeyTag(_DATAMAP["DateTime"], _write_date(DateTime) )
 
         # Latitude/ Longitude data fields
         latitude  =  self.exif_widgets["Latitude"].get_text()
@@ -1123,7 +1126,7 @@ class imageMetadataGramplet(Gramplet):
         now = time.localtime()
 
         year, month, day = self.exif_widgets["Calendar"].get_date()
-        self.exif_widgets["OrigDateTime"].set_text( "%04d-%s-%02d %02d:%02d:%02d" % (
+        self.exif_widgets["DateTime"].set_text( "%04d-%s-%02d %02d:%02d:%02d" % (
             year, _dd.long_months[month + 1], day, now[3], now[4], now[5]) )
 
         # close this window
