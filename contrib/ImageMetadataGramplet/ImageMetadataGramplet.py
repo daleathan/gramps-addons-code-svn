@@ -28,7 +28,7 @@ import os, sys
 from datetime import datetime, date
 import time, calendar
 
-# abilty to escape certain characters from html output...
+# abilty to escape certain characters from output...
 from xml.sax.saxutils import escape as _html_escape
 
 from itertools import chain
