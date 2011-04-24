@@ -203,7 +203,7 @@ _BUTTONTIPS = {
 
     # Save Exif Metadata button...
     "Save"              : _("Saves/ writes the Exif metadata to this image.\n"
-        "WARNING: Exif metadata will be erased if you save a blank entry field...") }.items()
+        "WARNING: Exif metadata will be erased if you save a blank entry field...") }
 
 # if ImageMagick is installed on this computer then, add button tooltips for these two buttons...
 if _MAGICK_FOUND:
@@ -214,7 +214,7 @@ if _MAGICK_FOUND:
 
         # Delete/ Erase/ Wipe Exif metadata button...
         "Delete"     : _("WARNING:  This will completely erase all Exif metadata "
-            "from this image!  Are you sure that you want to do this?") }.items() )
+            "from this image!  Are you sure that you want to do this?") } )
 
 def _help_page(obj):
     """
@@ -1404,5 +1404,5 @@ def _setup_widget_tooltips(Exif_widgets):
         Exif_widgets[widget].set_tooltip_text(tooltip)
 
     # add tooltips for the buttons...
-    for widget, tooltip in _BUTTONTIPS:
+    for widget, tooltip in _BUTTONTIPS.items():
         Exif_widgets[widget].set_tooltip_text(tooltip)
