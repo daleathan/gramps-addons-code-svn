@@ -286,6 +286,7 @@ class EditExifMetadata(Gramplet):
         self.image_path    = False
         self.plugin_image  = False
         self.MediaDataTags = False
+        self.SavedEntries  = False
 
         vbox = gtk.VBox()
 
@@ -510,7 +511,12 @@ class EditExifMetadata(Gramplet):
         Handles the Save question Dialog...
         """
 
-        QuestionDialog(_("Image Metadata Gramplet"), _("Save Exif metadata to this image?"),
+        self.SavedEntries = [self.exif_widgets[widget].get_text() for widget in [
+            "Description", "Artist", "Copyright", "DateTime", "Latitude", "Longitude"] ]
+        self.SavedEntries = [entry for entry in self.SavedEntries if entry]
+        if self.SavedEntries:
+
+            QuestionDialog(_("Image Metadata Gramplet"), _("Save Exif metadata to this image?"),
                 _("Save"), self.save_metadata)
 
     def __delete_dialog(self, obj):
@@ -987,9 +993,6 @@ class EditExifMetadata(Gramplet):
         and sets the KeyTag = keyvalue image metadata
         """
 
-        # set Message Area for saving...
-        self.exif_widgets["Message:Area"].set_text(_("Saving Exif metadata to image..."))
-
         # Description data field
         self._set_exif_KeyTag(_DATAMAP["Description"], self.exif_widgets["Description"].get_text() )
 
@@ -1072,10 +1075,17 @@ class EditExifMetadata(Gramplet):
             self._set_exif_KeyTag(_DATAMAP["LongitudeRef"], LongitudeRef)
             self._set_exif_KeyTag(_DATAMAP["Longitude"], coords_to_rational(longitude))
 
-        # notify the user of successful write...
-        OkDialog(_("Image Exif metadata has been saved."))
+        if self.SavedEntries:
+            # set Message Area for saving...
+            self.exif_widgets["Message:Area"].set_text(_("Saving Exif metadata to image..."))
 
-        # writes all Exif Metadata to image...
+            # notify the user of successful write...
+            OkDialog(_("Image Exif metadata has been saved."))
+        else:
+            # message area message
+            self.exif_widgets["Message:Area"].set_text(_("Image fields have been cleared..."))
+
+        # writes all Exif Metadata to image even if the fields are all empty...
         self.write_metadata(self.plugin_image)
 
         # Activate Delete button...
