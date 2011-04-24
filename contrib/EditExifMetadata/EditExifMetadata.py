@@ -136,17 +136,8 @@ else:
 # available image types for exiv2 and pyexiv2
 # ["jpeg", "jpg", "exv", "tiff", "dng", "nef", "pef", "pgf", "png", "psd", "jp2"]
 
-# define tooltips for all entries and buttons...
+# define tooltips for all entries
 _TOOLTIPS = {
-
-    # CopyTo button...
-    "CopyTo"            : _("Copies information from the Display area to the Edit area."),
-
-    # Clear Edit Area button... 
-    "Clear"             : _("Clears the Exif metadata from the Edit area."),
-
-    # Convert to .Jpeg button...
-    "Convert"           : _("If your image is not a jpeg format image, convert it to jpeg?"),
 
     # Description...
     "Description"       : _("Provide a short descripion for this image."),
@@ -181,19 +172,7 @@ _TOOLTIPS = {
 
     # GPS Longitude...
     "Longitude"         : _("Enter the GPS Longitude Coordinates for your image,\n"
-        "Example: 10.396378, 10 23 46 E, 105° 6′ 6″ W, -105 6 6"),
-
-    # Wiki Help button...
-    "Help"              : _("Displays the Gramps Wiki Help page for 'Image Metadata Gramplet' "
-        "in your web bvboxer."),
-
-    # Save Exif Metadata button...
-    "Save"              : _("Saves/ writes the Exif metadata to this image.\n"
-        "WARNING: Exif metadata will be erased if you save a blank entry field..."),
-
-    # Delete/Erase/ Wipe Exif metadata button...
-    "Delete"     : _("WARNING:  This will permanently and irrevocably erase all "
-        "Exif metadata from this image!  Are you sure that you want to do this?") }.items()
+        "Example: 10.396378, 10 23 46 E, 105° 6′ 6″ W, -105 6 6") }.items()
 
 # set up Exif keys for Image.exif_keys
 _DATAMAP = {
@@ -208,6 +187,34 @@ _DATAMAP = {
     "Exif.GPSInfo.GPSLongitude"    : "Longitude"}
 _DATAMAP  = dict( (key, val) for key, val in _DATAMAP.items() )
 _DATAMAP.update( (val, key) for key, val in _DATAMAP.items()  )
+
+# Toolt tips for the buttons in the gramplet...
+_BUTTONTIPS = {
+
+    # CopyTo button...
+    "CopyTo"            : _("Copies information from the Display area to the Edit area."),
+
+    # Clear Edit Area button... 
+    "Clear"             : _("Clears the Exif metadata from the Edit area."),
+
+    # Wiki Help button...
+    "Help"              : _("Displays the Gramps Wiki Help page for 'Edit Exif Metadata' "
+        "in your web bvboxer."),
+
+    # Save Exif Metadata button...
+    "Save"              : _("Saves/ writes the Exif metadata to this image.\n"
+        "WARNING: Exif metadata will be erased if you save a blank entry field...") }.items()
+
+# if ImageMagick is installed on this computer then, add button tooltips for these two buttons...
+if _MAGICK_FOUND:
+    _BUTTONTIPS.update( {
+
+        # Convert to .Jpeg button...
+        "Convert"           : _("If your image is not a jpeg image, convert it to jpeg?"),
+
+        # Delete/ Erase/ Wipe Exif metadata button...
+        "Delete"     : _("WARNING:  This will completely erase all Exif metadata "
+            "from this image!  Are you sure that you want to do this?") }.items() )
 
 def _help_page(obj):
     """
@@ -286,16 +293,19 @@ class EditExifMetadata(Gramplet):
         self.exif_widgets["Media:Label"] = gtk.Label()
         self.exif_widgets["Media:Label"].set_alignment(0.0, 0.0)
         medialabel.pack_start(self.exif_widgets["Media:Label"], expand =False)
+        vbox.pack_start(medialabel, expand =False)
 
         mimetype = gtk.HBox(False)
         self.exif_widgets["Mime:Type"] = gtk.Label()
         self.exif_widgets["Mime:Type"].set_alignment(0.0, 0.0)
         mimetype.pack_start(self.exif_widgets["Mime:Type"], expand =False)
+        vbox.pack_start(mimetype, expand =False)
 
         messagearea = gtk.HBox(False)
         self.exif_widgets["Message:Area"] = gtk.Label(_("Click an image to begin..."))
         self.exif_widgets["Message:Area"].set_alignment(0.5, 0.0)
         messagearea.pack_start(self.exif_widgets["Message:Area"], expand =False)
+        vbox.pack_start(messagearea, expand =False)
 
         self.model = gtk.ListStore(object, str, str)
         view = gtk.TreeView(self.model)
@@ -306,9 +316,10 @@ class EditExifMetadata(Gramplet):
         # Value Column
         view.append_column( self.__create_column(_("Value"), 2) )
 
-        # Help, Clear, Convert horizontal box
+        # CopyTo, Clear, Convert horizontal box
         ccc_box = gtk.HButtonBox()
         ccc_box.set_layout(gtk.BUTTONBOX_START)
+        vbox.pack_start(ccc_box, expand =False, fill =False, padding =10)
 
         # Copy To Edit Area button...
         ccc_box.add( self.__create_button(
@@ -318,15 +329,10 @@ class EditExifMetadata(Gramplet):
         ccc_box.add( self.__create_button(
             "Clear", False, self.clear_metadata, gtk.STOCK_CLEAR, False) )
 
-        # Convert button...
-        ccc_box.add( self.__create_button(
-            "Convert", False, self.convert2Jpeg, gtk.STOCK_CONVERT, False) )
-
-        # bring all items together above the data fields
-        vbox.pack_start(medialabel, expand =False)
-        vbox.pack_start(mimetype, expand =False)
-        vbox.pack_start(messagearea, expand =False)
-        vbox.pack_start(ccc_box, expand =False, fill =False, padding =10)
+        if _MAGICK_FOUND:
+            # Convert button...
+            ccc_box.add( self.__create_button(
+                "Convert", False, self.convert2Jpeg, gtk.STOCK_CONVERT, False) )
 
         for items in [
 
@@ -360,9 +366,10 @@ class EditExifMetadata(Gramplet):
             row = self.make_row(pos, text, choices, readonly, callback, dirty, default)
             vbox.pack_start(row, False)
 
-        # Copy, Save, Delete horizontal box
+        # Help, Save, Delete horizontal box
         hsd_box = gtk.HButtonBox()
         hsd_box.set_layout(gtk.BUTTONBOX_START)
+        vbox.pack_start(hsd_box, expand =False, fill =False, padding =10)
 
         # Help button...
         hsd_box.add( self.__create_button(
@@ -372,12 +379,12 @@ class EditExifMetadata(Gramplet):
         hsd_box.add( self.__create_button(
             "Save", False, self.__save_dialog, gtk.STOCK_SAVE, False) )
 
-        # Delete All Metadata button...
-        hsd_box.add( self.__create_button(
-            "Delete", False, self.__delete_dialog, gtk.STOCK_DELETE, False) )
-        vbox.pack_start(hsd_box, expand =False, fill =False, padding =10)
+        if _MAGICK_FOUND:
+            # Delete All Metadata button...
+            hsd_box.add( self.__create_button(
+                "Delete", False, self.__delete_dialog, gtk.STOCK_DELETE, False) )
 
-        # adds Exif Viewing Area
+        # adds Exif Metadata Viewing Area
         vbox.pack_start(view, padding =10)
 
         self.gui.get_container_widget().remove(self.gui.textview)
@@ -398,7 +405,10 @@ class EditExifMetadata(Gramplet):
         self.model.clear()
 
         # De-activate the buttons except for Help...
-        self.deactivate_buttons(["CopyTo", "Clear", "Convert", "Save", "Delete"])
+        self.deactivate_buttons(["CopyTo", "Clear", "Save"])
+
+        if _MAGICK_FOUND:
+            self.deactivate_buttons(["Convert", "Delete"])
 
         # Re-post initial image message...
         self.exif_widgets["Message:Area"].set_text(_("Select an image to begin..."))
@@ -756,7 +766,10 @@ class EditExifMetadata(Gramplet):
                                 """%s° %s′ %s″ %s""" % (longdeg, longmin, longsec, LongitudeRef) )
 
         # enable Save button after metadata has been "Copied to Edit Area"...
-        self.activate_buttons(["Save", "Delete"])
+        self.activate_buttons(["Save"])
+
+        if _MAGICK_FOUND:
+            self.activate_buttons(["Delete"])
 
         # Clear the Message Area...
         self.exif_widgets["Message:Area"].set_text("")
@@ -1066,10 +1079,8 @@ class EditExifMetadata(Gramplet):
         self.write_metadata(self.plugin_image)
 
         # Activate Delete button...
-        self.activate_buttons(["Delete"])
-
-        # clears message area...
-        self.exif_widgets["Message:Area"].set_text("")
+        if _MAGICK_FOUND:
+            self.activate_buttons(["Delete"])
 
     def strip_metadata(self):
         """
@@ -1388,5 +1399,10 @@ def _setup_widget_tooltips(Exif_widgets):
     setup tooltips for each entry field and button.
     """
 
+    # add tooltips for the data entry fields...
     for widget, tooltip in _TOOLTIPS:
+        Exif_widgets[widget].set_tooltip_text(tooltip)
+
+    # add tooltips for the buttons...
+    for widget, tooltip in _BUTTONTIPS:
         Exif_widgets[widget].set_tooltip_text(tooltip)
