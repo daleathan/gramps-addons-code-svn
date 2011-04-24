@@ -1,4 +1,4 @@
-#!/usr/bin/python
+ #!/usr/bin/python
 # -*- coding: utf-8 -*-
 #
 # Gramps - a GTK+/GNOME based genealogy program
@@ -265,7 +265,7 @@ def _split_values(text):
 # ------------------------------------------------------------------------
 # Gramplet class
 # ------------------------------------------------------------------------
-class imageMetadataGramplet(Gramplet):
+class EditExifMetadata(Gramplet):
 
     def init(self):
 
