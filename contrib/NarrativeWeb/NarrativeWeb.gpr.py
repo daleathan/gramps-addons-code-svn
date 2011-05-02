@@ -27,14 +27,14 @@
 #------------------------------------------------------------------------
 
 plg = newplugin()
-plg.id    = 'navwebpage1.0.1'
+plg.id    = 'navwebpage 1.0.1'
 plg.name  = _("Narrated Web Site") + " 1.0.1"
 plg.description =  _("Produces web (HTML) pages for individuals, or a set of "
                      "individuals")
 plg.version = '1.0.1'
 plg.gramps_target_version = '3.2'
 plg.status = STABLE
-plg.fname = 'NarrativeWeb.py'
+plg.fname = 'NarrativeWeb101.py'
 plg.ptype = REPORT
 plg.authors = ["Donald N. Allingham", "Rob G. Healey"]
 plg.authors_email = ["don@gramps-project.org", "robhealey1@gmail.com"]
