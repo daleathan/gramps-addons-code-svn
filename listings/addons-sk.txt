@@ -44,6 +44,6 @@
 {'d': 'Generates thumbnails for media files', 'g': '3.3', 'i': 'thumbgen', 'n': 'Thumbnail Generator', 't': u'Tool', 'v': '1.0.1', 'z': 'ThumbnailGenerator.addon.tgz'}
 {'d': 'Gramplet for demonstrating Cairo graphics', 'g': '3.3', 'i': 'Clock Gramplet', 'n': 'Gramplet Hodiny', 't': u'Gramplet', 'v': '0.0.6', 'z': 'ClockGramplet.addon.tgz'}
 {'d': 'Merge primary objects via the command line.', 'g': '3.3', 'i': 'climerge', 'n': 'Command Line Merge', 't': u'Tool', 'v': '1.0.1', 'z': 'CliMerge.addon.tgz'}
-{'d': 'Gramplet for importing text', 'g': '3.3', 'i': 'Import Gramplet', 'n': 'Import Gramplet', 't': u'Gramplet', 'v': '1.0.4', 'z': 'ImportGramplet.addon.tgz'}
+{'d': 'Gramplet for importing text', 'g': '3.3', 'i': 'Import Gramplet', 'n': 'Import Gramplet', 't': u'Gramplet', 'v': '1.0.5', 'z': 'ImportGramplet.addon.tgz'}
 {'d': 'Prints out all descendency lines from a given ancestor to a given descendent in text.', 'g': '3.3', 'i': 'LinesOfDescendency', 'n': 'Lines of Descendency', 't': u'Report', 'v': '1.1.5', 'z': 'LinesOfDescendency.addon.tgz'}
 {'d': 'a gramplet that displays the birthdays of the living people', 'g': '3.3', 'i': 'Birthdays', 'n': 'Birthdays Gramplet', 't': u'Gramplet', 'v': '1.0.11', 'z': 'BirthdaysGramplet.addon.tgz'}
