@@ -1,5 +1,5 @@
 {'d': 'Calcula les dates estimades de naixement i defunci\xc3\xb3.', 'g': '3.3', 'i': 'calculateestimateddates', 'n': 'Calcular Dates Estimades', 't': u'Tool', 'v': '0.90.5', 'z': 'CalculateEstimatedDates.addon.tgz'}
-{'d': 'Collection of Web sites for the US (requires libwebconnect)', 'g': '3.3', 'i': 'US Web Connect Pack', 'n': 'US Web Connect Pack', 't': u'Plugin lib', 'v': '1.0.14', 'z': 'USWebConnectPack.addon.tgz'}
+{'d': 'Collection of Web sites for the US (requires libwebconnect)', 'g': '3.3', 'i': 'US Web Connect Pack', 'n': 'US Web Connect Pack', 't': u'Plugin lib', 'v': '1.0.16', 'z': 'USWebConnectPack.addon.tgz'}
 {'d': 'Gramplet for quick data entry', 'g': '3.3', 'i': 'Data Entry Gramplet', 'n': "Gramplet d'Introducci\xc3\xb3 de Dades", 't': u'Gramplet', 'v': '1.0.13', 'z': 'DataEntryGramplet.addon.tgz'}
 {'d': 'Collection of Web sites for the FR (requires libwebconnect)', 'g': '3.3', 'i': 'FR Web Connect Pack', 'n': 'FR Web Connect Pack', 't': u'Plugin lib', 'v': '1.0.6', 'z': 'FRWebConnectPack.addon.tgz'}
 {'d': 'Provides a library for generic access to the database and gen.lib.', 'g': '3.3', 'i': 'libaccess', 'n': 'Generic DB Access lib', 't': u'Plugin lib', 'v': '1.0.5', 'z': 'libaccess.addon.tgz'}

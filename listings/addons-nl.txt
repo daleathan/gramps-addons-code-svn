@@ -1,5 +1,5 @@
 {'d': 'Geschatte datums voor geboorte en overlijden berekenen.', 'g': '3.3', 'i': 'calculateestimateddates', 'n': 'Geschatte datums berekenen', 't': u'Tool', 'v': '0.90.5', 'z': 'CalculateEstimatedDates.addon.tgz'}
-{'d': "Verzameling van websites voor 'VS' (libwebconnect is nodig)", 'g': '3.3', 'i': 'US Web Connect Pack', 'n': 'V.S. Web Connect Pack', 't': u'Plugin lib', 'v': '1.0.14', 'z': 'USWebConnectPack.addon.tgz'}
+{'d': "Verzameling van websites voor 'VS' (libwebconnect is nodig)", 'g': '3.3', 'i': 'US Web Connect Pack', 'n': 'V.S. Web Connect Pack', 't': u'Plugin lib', 'v': '1.0.16', 'z': 'USWebConnectPack.addon.tgz'}
 {'d': 'Gramplet om gegevens snel in te voeren', 'g': '3.3', 'i': 'Data Entry Gramplet', 'n': 'Gegevensingave-gramplet', 't': u'Gramplet', 'v': '1.0.13', 'z': 'DataEntryGramplet.addon.tgz'}
 {'d': 'Collection of Web sites for the FR (requires libwebconnect)', 'g': '3.3', 'i': 'FR Web Connect Pack', 'n': 'FR Web Connect Pack', 't': u'Plugin lib', 'v': '1.0.6', 'z': 'FRWebConnectPack.addon.tgz'}
 {'d': "Een bibliotheek voor algemene toegang tot het gegevensbestand en 'gen.lib'.", 'g': '3.3', 'i': 'libaccess', 'n': 'Generic DB Access lib', 't': u'Plugin lib', 'v': '1.0.5', 'z': 'libaccess.addon.tgz'}
