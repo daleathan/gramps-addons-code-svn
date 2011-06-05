@@ -22,8 +22,8 @@
 {'d': 'Een lijst van opmerkingen met een bepaalde aanduiding wordt aangemaakt, samen met de gegevens waarnaar verwezen wordt, de persoon, familie, gegeven, enz. .', 'g': '3.3', 'i': 'TodoReport', 'n': "'Nog te doen'-verslag", 't': u'Report', 'v': '1.2.6', 'z': 'ToDoReport.addon.tgz'}
 {'d': "Een 'xhtml'-webpagina met een grafische voorstelling van de voorouders/afstammelingen (svg) wordt aangemaakt. Individuele details worden door muisacties zichtbaar. ", 'g': '3.3', 'i': 'denominoviso', 'n': 'DenominoViso', 't': u'Report', 'v': '2.3.2', 'z': 'DenominoViso.addon.tgz'}
 {'d': 'Gramplet om gegevens te groeperen', 'g': '3.3', 'i': 'Clipboard Gramplet', 'n': 'Klembordgramplet', 't': u'Gramplet', 'v': '1.0.11', 'z': 'ClipboardGramplet.addon.tgz'}
-{'d': 'Gramplet interface for census data', 'g': '3.3', 'i': 'Census Gramplet', 'n': 'Volkstelling-gramplet', 't': u'Gramplet', 'v': '1.0.6', 'z': 'Census.addon.tgz'}
-{'d': 'Verslag van de volkstellinggebeurtenissen van een persoon.', 'g': '3.3', 'i': 'census_report', 'n': 'Volkstellingsverslag', 't': u'Report', 'v': '1.0.6', 'z': 'Census.addon.tgz'}
+{'d': 'Gramplet interface for census data', 'g': '3.3', 'i': 'Census Gramplet', 'n': 'Volkstelling-gramplet', 't': u'Gramplet', 'v': '1.0.7', 'z': 'Census.addon.tgz'}
+{'d': 'Verslag van de volkstellinggebeurtenissen van een persoon.', 'g': '3.3', 'i': 'census_report', 'n': 'Volkstellingsverslag', 't': u'Report', 'v': '1.0.7', 'z': 'Census.addon.tgz'}
 {'d': "Verzameling van websites voor 'VK' (libwebconnect is nodig)", 'g': '3.3', 'i': 'UK Web Connect Pack', 'n': 'V.K. Web Connect Pack', 't': u'Plugin lib', 'v': '1.0.12', 'z': 'UKWebConnectPack.addon.tgz'}
 {'d': 'Grafische familiestamboom wordt aangemaakt.', 'g': '3.3', 'i': 'FamilyTree', 'n': 'Familiestamboom', 't': u'Report', 'v': '3.3.5', 'z': 'FamilyTree.addon.tgz'}
 {'d': 'Een familiepagina die de volledige informatie over een persoon en zijn/haar partners en kinderen, toont.', 'g': '3.3', 'i': 'FamilySheet', 'n': 'Familiepagina', 't': u'Report', 'v': '3.3.7', 'z': 'FamilySheet.addon.tgz'}

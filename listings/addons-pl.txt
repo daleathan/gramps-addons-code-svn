@@ -22,8 +22,8 @@
 {'d': 'Produces a list of all the notes with a given tag along with the records that it references, the Person, Family, Event, etc.', 'g': '3.3', 'i': 'TodoReport', 'n': 'Todo Report', 't': u'Report', 'v': '1.2.6', 'z': 'ToDoReport.addon.tgz'}
 {'d': 'Generuje stron\xc4\x99 (XHTML) z geograficzn\xc4\x85 reprezentacj\xc4\x85 przodk\xc3\xb3w/potomk\xc3\xb3w (SVG) gdzie szczeg\xc3\xb3\xc5\x82y danej osoby s\xc4\x85 widoczne po najechaniu na ni\xc4\x85 myszk\xc4\x85.', 'g': '3.3', 'i': 'denominoviso', 'n': 'DenominoViso', 't': u'Report', 'v': '2.3.2', 'z': 'DenominoViso.addon.tgz'}
 {'d': 'Gramplet for grouping items', 'g': '3.3', 'i': 'Clipboard Gramplet', 'n': 'Clipboard Gramplet', 't': u'Gramplet', 'v': '1.0.11', 'z': 'ClipboardGramplet.addon.tgz'}
-{'d': 'Gramplet interface for census data', 'g': '3.3', 'i': 'Census Gramplet', 'n': 'Census Gramplet', 't': u'Gramplet', 'v': '1.0.6', 'z': 'Census.addon.tgz'}
-{'d': 'Report of census events for a person.', 'g': '3.3', 'i': 'census_report', 'n': 'Census Report', 't': u'Report', 'v': '1.0.6', 'z': 'Census.addon.tgz'}
+{'d': 'Gramplet interface for census data', 'g': '3.3', 'i': 'Census Gramplet', 'n': 'Census Gramplet', 't': u'Gramplet', 'v': '1.0.7', 'z': 'Census.addon.tgz'}
+{'d': 'Report of census events for a person.', 'g': '3.3', 'i': 'census_report', 'n': 'Census Report', 't': u'Report', 'v': '1.0.7', 'z': 'Census.addon.tgz'}
 {'d': 'Collection of Web sites for the UK (requires libwebconnect)', 'g': '3.3', 'i': 'UK Web Connect Pack', 'n': 'UK Web Connect Pack', 't': u'Plugin lib', 'v': '1.0.12', 'z': 'UKWebConnectPack.addon.tgz'}
 {'d': 'Produces a graphical family tree.', 'g': '3.3', 'i': 'FamilyTree', 'n': 'Family Tree', 't': u'Report', 'v': '3.3.5', 'z': 'FamilyTree.addon.tgz'}
 {'d': 'Produces a family sheet showing full information about a person and his/her partners and children.', 'g': '3.3', 'i': 'FamilySheet', 'n': 'Family Sheet', 't': u'Report', 'v': '3.3.7', 'z': 'FamilySheet.addon.tgz'}
