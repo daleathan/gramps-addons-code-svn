@@ -43,5 +43,5 @@
 {'d': 'Ce Gramplet affiche les anniversaires des personnes en vie', 'g': '3.3', 'i': 'Birthdays', 'n': 'Gramplet Anniversaires', 't': u'Gramplet', 'v': '1.0.11', 'z': 'BirthdaysGramplet.addon.tgz'}
 {'d': 'Produit un rapport textuel des d\xc3\xa9p\xc3\xb4ts', 'g': '3.3', 'i': 'Repositories Report Options', 'n': 'Rapport des d\xc3\xa9p\xc3\xb4ts avec options', 't': u'Report', 'v': '0.2.6', 'z': 'RepositoriesReport.addon.tgz'}
 {'d': 'Produit un rapport textuel des d\xc3\xa9p\xc3\xb4ts', 'g': '3.3', 'i': 'Repositories Report', 'n': 'Rapport des d\xc3\xa9p\xc3\xb4ts', 't': u'Report', 'v': '1.0.6', 'z': 'RepositoriesReport.addon.tgz'}
-{'d': 'Gramplet pour importer du texte', 'g': '3.3', 'i': 'Import Gramplet', 'n': 'Gramplet Importation', 't': u'Gramplet', 'v': '1.0.5', 'z': 'ImportGramplet.addon.tgz'}
+{'d': 'Gramplet pour importer du texte', 'g': '3.3', 'i': 'Import Gramplet', 'n': 'Gramplet Importation', 't': u'Gramplet', 'v': '1.0.6', 'z': 'ImportGramplet.addon.tgz'}
 {'d': "Cette vue affiche une ligne temporelle dans l'arbre avec ascendants et descendants de l'individu s\xc3\xa9lectionn\xc3\xa9", 'g': '3.3', 'i': 'TimelinePedigreeView', 'n': 'Arbre au fil du temps', 't': u'Gramps View', 'v': '0.1.13', 'z': 'TimelinePedigreeView.addon.tgz'}
