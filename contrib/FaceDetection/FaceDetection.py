@@ -166,7 +166,7 @@ class FaceDetection(Gramplet):
         self.photo.photo.set_from_pixmap(pixmap, mask)
 
     def draw_rectangle(self, cm, pixmap, t_width, t_height, 
-                       x, y, width, color):
+                       x, y, width, height, color):
         cmcolor = cm.alloc_color("white")
         gc = pixmap.new_gc(foreground=cmcolor)
         pixmap.draw_rectangle(gc, False, # fill it?
