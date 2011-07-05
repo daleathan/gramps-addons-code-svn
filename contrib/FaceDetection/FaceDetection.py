@@ -158,10 +158,10 @@ class FaceDetection(Gramplet):
         t_width, t_height = [float(t) for t in self.photo.photo.size_request()]
         # percents:
         for (x, y, width, height) in references:
-            self.draw_rectangle(self, cm, pixmap, t_width, t_height,
+            self.draw_rectangle(cm, pixmap, t_width, t_height,
                                 x, y, width, height, "blue")
         for (x, y, width, height) in faces:
-            self.draw_rectangle(self, cm, pixmap, t_width, t_height,
+            self.draw_rectangle(cm, pixmap, t_width, t_height,
                                 x, y, width, height, "red")
         self.photo.photo.set_from_pixmap(pixmap, mask)
 
