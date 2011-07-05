@@ -140,12 +140,12 @@ class FaceDetection(Gramplet):
                                      1.2, 2, cv.CV_HAAR_DO_CANNY_PRUNING, 
                                      min_face_size)
         references = self.find_references()
-        faces = []
+        rects = []
         o_width, o_height = [float(t) for t in (self.cv_image.width, self.cv_image.height)]
         for ((x, y, width, height), neighbors) in faces:
             # percentages:
-            faces.append((x/o_width, y/o_height, width/o_width, height/o_height))
-        self.draw_rectangles(faces, references)
+            rects.append((x/o_width, y/o_height, width/o_width, height/o_height))
+        self.draw_rectangles(rects, references)
 
     def draw_rectangles(self, faces, references):
         # reset image:
