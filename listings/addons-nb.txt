@@ -8,7 +8,7 @@
 {'d': 'Gramplet for grouping items', 'g': '3.3', 'i': 'Clipboard Gramplet', 'n': 'Clipboard Gramplet', 't': u'Gramplet', 'v': '1.0.11', 'z': 'ClipboardGramplet.addon.tgz'}
 {'d': 'Produces descendants lines of a person', 'g': '3.3', 'i': 'Descendants Lines', 'n': 'Descendants Lines', 't': u'Report', 'v': '0.1.4', 'z': 'DescendantsLines.addon.tgz'}
 {'d': 'Shows the number of descendants of the current person', 'g': '3.3', 'i': 'NumberOfDescendantsQuickview', 'n': 'Number of descendants', 't': u'Quickreport', 'v': '3.3.6', 'z': 'NumberOfDescendantsQuickview.addon.tgz'}
-{'d': 'Generates a web (XHTML) page with a graphical representation of ancestors/descendants (SVG) where details about individuals become visible upon mouse-events.', 'g': '3.3', 'i': 'denominoviso', 'n': 'DenominoViso', 't': u'Report', 'v': '2.3.2', 'z': 'DenominoViso.addon.tgz'}
+{'d': 'Generates a web (XHTML) page with a graphical representation of ancestors/descendants (SVG) where details about individuals become visible upon mouse-events.', 'g': '3.3', 'i': 'denominoviso', 'n': 'DenominoViso', 't': u'Report', 'v': '2.3.3', 'z': 'DenominoViso.addon.tgz'}
 {'d': 'Display descendant counts for each person.', 'g': '3.3', 'i': 'Descendant Count Quickview', 'n': 'Descendant Count', 't': u'Quickreport', 'v': '1.0.5', 'z': 'DescendantCount.addon.tgz'}
 {'d': 'Gramplet for showing people and descendant counts', 'g': '3.3', 'i': 'Descendant Count Gramplet', 'n': 'Descendant Count Gramplet', 't': u'Gramplet', 'v': '1.0.6', 'z': 'DescendantCount.addon.tgz'}
 {'d': "Gramplet for editing active person's notes", 'g': '3.3', 'i': 'Note Gramplet', 'n': 'Notat Sm\xc3\xa5gramps', 't': u'Gramplet', 'v': '1.0.7', 'z': 'NoteGramplet.addon.tgz'}
