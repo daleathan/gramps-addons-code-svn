@@ -45,4 +45,4 @@
 {'d': 'Produeix un informe de repositoris en text', 'g': '3.3', 'i': 'Repositories Report Options', 'n': 'Repositories Report Options', 't': u'Report', 'v': '0.2.6', 'z': 'RepositoriesReport.addon.tgz'}
 {'d': 'Produeix un informe de repositoris en text', 'g': '3.3', 'i': 'Repositories Report', 'n': 'Informe de Repositoris', 't': u'Report', 'v': '1.0.6', 'z': 'RepositoriesReport.addon.tgz'}
 {'d': 'Gramplet for importing text', 'g': '3.3', 'i': 'Import Gramplet', 'n': 'Import Gramplet', 't': u'Gramplet', 'v': '1.0.6', 'z': 'ImportGramplet.addon.tgz'}
-{'d': 'The view shows a timeline pedigree with ancestors and descendants of the selected person', 'g': '3.3', 'i': 'TimelinePedigreeView', 'n': 'Timeline Pedigree', 't': u'Gramps View', 'v': '0.1.16', 'z': 'TimelinePedigreeView.addon.tgz'}
+{'d': 'The view shows a timeline pedigree with ancestors and descendants of the selected person', 'g': '3.3', 'i': 'TimelinePedigreeView', 'n': 'Timeline Pedigree', 't': u'Gramps View', 'v': '0.1.17', 'z': 'TimelinePedigreeView.addon.tgz'}

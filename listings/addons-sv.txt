@@ -45,4 +45,4 @@
 {'d': 'Skapar en textbaserad rapport \xc3\xb6ver arkivplatser', 'g': '3.3', 'i': 'Repositories Report Options', 'n': 'Arkivplatsrapportalternativ', 't': u'Report', 'v': '0.2.6', 'z': 'RepositoriesReport.addon.tgz'}
 {'d': 'Skapar en textbaserad rapport \xc3\xb6ver arkivplatser', 'g': '3.3', 'i': 'Repositories Report', 'n': 'Arkivplatsrapport', 't': u'Report', 'v': '1.0.6', 'z': 'RepositoriesReport.addon.tgz'}
 {'d': 'Gramplet for importing text', 'g': '3.3', 'i': 'Import Gramplet', 'n': 'Import Gramplet', 't': u'Gramplet', 'v': '1.0.6', 'z': 'ImportGramplet.addon.tgz'}
-{'d': 'Vyn visar en tidslinje med anor och \xc3\xa4ttlingar f\xc3\xb6r den valda personen', 'g': '3.3', 'i': 'TimelinePedigreeView', 'n': 'Antavla med tidslinje', 't': u'Gramps View', 'v': '0.1.16', 'z': 'TimelinePedigreeView.addon.tgz'}
+{'d': 'Vyn visar en tidslinje med anor och \xc3\xa4ttlingar f\xc3\xb6r den valda personen', 'g': '3.3', 'i': 'TimelinePedigreeView', 'n': 'Antavla med tidslinje', 't': u'Gramps View', 'v': '0.1.17', 'z': 'TimelinePedigreeView.addon.tgz'}

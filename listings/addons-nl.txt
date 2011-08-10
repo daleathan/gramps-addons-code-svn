@@ -45,4 +45,4 @@
 {'d': 'Tekstverslag van de bibliotheken wordt opgemaakt', 'g': '3.3', 'i': 'Repositories Report Options', 'n': 'Opties voor het bibliotheekverslag', 't': u'Report', 'v': '0.2.6', 'z': 'RepositoriesReport.addon.tgz'}
 {'d': 'Tekstverslag van de bibliotheken wordt opgemaakt', 'g': '3.3', 'i': 'Repositories Report', 'n': 'Bibliothekenverslag', 't': u'Report', 'v': '1.0.6', 'z': 'RepositoriesReport.addon.tgz'}
 {'d': 'Gramplet om tekst te importeren', 'g': '3.3', 'i': 'Import Gramplet', 'n': 'Import-gramplet', 't': u'Gramplet', 'v': '1.0.6', 'z': 'ImportGramplet.addon.tgz'}
-{'d': 'Dit scherm toont een tijdslijnstamboom met voorouders en nakomelingen van de geselecteerde persoon', 'g': '3.3', 'i': 'TimelinePedigreeView', 'n': 'Tijdslijnstamboom', 't': u'Gramps View', 'v': '0.1.16', 'z': 'TimelinePedigreeView.addon.tgz'}
+{'d': 'Dit scherm toont een tijdslijnstamboom met voorouders en nakomelingen van de geselecteerde persoon', 'g': '3.3', 'i': 'TimelinePedigreeView', 'n': 'Tijdslijnstamboom', 't': u'Gramps View', 'v': '0.1.17', 'z': 'TimelinePedigreeView.addon.tgz'}
