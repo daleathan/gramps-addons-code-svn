@@ -12,7 +12,7 @@
 {'d': 'Het aantal afstammelingen voor elke persoon tonen.', 'g': '3.3', 'i': 'Descendant Count Quickview', 'n': 'Afstammelingen tellen', 't': u'Quickreport', 'v': '1.0.5', 'z': 'DescendantCount.addon.tgz'}
 {'d': 'Gramplet om personen en afstammelingentelling te tonen', 'g': '3.3', 'i': 'Descendant Count Gramplet', 'n': "'Afstammelingen telling'-gramplet", 't': u'Gramplet', 'v': '1.0.6', 'z': 'DescendantCount.addon.tgz'}
 {'d': 'Gramplet om de opmerkingen van de actieve persoon te bewerken', 'g': '3.3', 'i': 'Note Gramplet', 'n': 'Opmerkingen-gramplet', 't': u'Gramplet', 'v': '1.0.7', 'z': 'NoteGramplet.addon.tgz'}
-{'d': 'Een gedeelde bron aan verschillende objecten toevoegen.', 'g': '3.3', 'i': 'AttachSource', 'n': 'Bron toevoegen', 't': u'Tool', 'v': '0.0.7', 'z': 'AttachSourceTool.addon.tgz'}
+{'d': 'Een gedeelde bron aan verschillende objecten toevoegen.', 'g': '3.3', 'i': 'AttachSource', 'n': 'Bron toevoegen', 't': u'Tool', 'v': '0.0.8', 'z': 'AttachSourceTool.addon.tgz'}
 {'d': "Verzameling van websites voor 'VK' (libwebconnect is nodig)", 'g': '3.3', 'i': 'UK Web Connect Pack', 'n': 'V.K. Web Connect Pack', 't': u'Plugin lib', 'v': '1.0.13', 'z': 'UKWebConnectPack.addon.tgz'}
 {'d': 'Gramplet toont het laatste Gramps-nieuws', 'g': '3.3', 'i': 'Headline News Gramplet', 'n': "'Belangrijkste nieuws'-gramplet", 't': u'Gramplet', 'v': '1.0.7', 'z': 'HeadlineNewsGramplet.addon.tgz'}
 {'d': 'Collection of Web sites for the FR (requires libwebconnect)', 'g': '3.3', 'i': 'FR Web Connect Pack', 'n': 'FR Web Connect Pack', 't': u'Plugin lib', 'v': '1.0.6', 'z': 'FRWebConnectPack.addon.tgz'}

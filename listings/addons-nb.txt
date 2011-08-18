@@ -12,7 +12,7 @@
 {'d': 'Display descendant counts for each person.', 'g': '3.3', 'i': 'Descendant Count Quickview', 'n': 'Descendant Count', 't': u'Quickreport', 'v': '1.0.5', 'z': 'DescendantCount.addon.tgz'}
 {'d': 'Gramplet for showing people and descendant counts', 'g': '3.3', 'i': 'Descendant Count Gramplet', 'n': 'Descendant Count Gramplet', 't': u'Gramplet', 'v': '1.0.6', 'z': 'DescendantCount.addon.tgz'}
 {'d': "Gramplet for editing active person's notes", 'g': '3.3', 'i': 'Note Gramplet', 'n': 'Notat Sm\xc3\xa5gramps', 't': u'Gramplet', 'v': '1.0.7', 'z': 'NoteGramplet.addon.tgz'}
-{'d': 'Attaches a shared source to multiple objects.', 'g': '3.3', 'i': 'AttachSource', 'n': 'Attach Source', 't': u'Tool', 'v': '0.0.7', 'z': 'AttachSourceTool.addon.tgz'}
+{'d': 'Attaches a shared source to multiple objects.', 'g': '3.3', 'i': 'AttachSource', 'n': 'Attach Source', 't': u'Tool', 'v': '0.0.8', 'z': 'AttachSourceTool.addon.tgz'}
 {'d': 'Collection of Web sites for the UK (requires libwebconnect)', 'g': '3.3', 'i': 'UK Web Connect Pack', 'n': 'UK Web Connect Pack', 't': u'Plugin lib', 'v': '1.0.13', 'z': 'UKWebConnectPack.addon.tgz'}
 {'d': 'Gramplet for showing latest the Gramps news', 'g': '3.3', 'i': 'Headline News Gramplet', 'n': 'Siste nyheter Sm\xc3\xa5gramps', 't': u'Gramplet', 'v': '1.0.7', 'z': 'HeadlineNewsGramplet.addon.tgz'}
 {'d': 'Collection of Web sites for the FR (requires libwebconnect)', 'g': '3.3', 'i': 'FR Web Connect Pack', 'n': 'FR Web Connect Pack', 't': u'Plugin lib', 'v': '1.0.6', 'z': 'FRWebConnectPack.addon.tgz'}
