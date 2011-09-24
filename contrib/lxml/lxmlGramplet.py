@@ -311,12 +311,17 @@ class lxmlGramplet(Gramplet):
         [(k1, v1),(k2, v2)] = log
         self.g.write('    <log date="%s" version="%s"/>\n' % (v1, v2))
         self.g.write('    <surnames title="%s">\n' % self.surnames_title)
+        surnames.sort()
+        cnt = []
         for surname in surnames:
-            self.g.write('        <surname>')
-            self.g.write(str(surname))
-            self.g.write('</surname>\n')
+            if surname not in cnt:
+                self.g.write('        <surname>')
+                self.g.write(str(surname))
+                self.g.write('</surname>\n')
+                cnt.append(surname)
         self.g.write('    </surnames>\n')
         self.g.write('    <places title="%s">\n' % self.places_title)
+        places.sort()
         for place in places:
             self.g.write('        <place>')
             self.g.write(str(place))
