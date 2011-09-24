@@ -41,6 +41,7 @@ from TransUtils import get_addon_translator
 _ = get_addon_translator(__file__).ugettext
 import const
 import Utils
+import GrampsDisplay
 
 #-------------------------------------------------------------------------
 #
@@ -55,8 +56,8 @@ except:
     
 #-------------------------------------------------------------------------
 #
-# Try to detect the presence of lxml (only for using XSL)
-# else import elementtree.ElementTree as etree
+# Try to detect the presence of lxml (only for using XPATH/XSLT)
+# else import elementtree.ElementTree as etree (default python)
 #
 #-------------------------------------------------------------------------
 try:
@@ -76,11 +77,13 @@ class lxmlGramplet(Gramplet):
     """
     Gramplet for testing lxml
     """
+    
     def init(self):
         """
         Constructs the GUI, consisting of an entry, and 
         a Run button.
-        """       
+        """  
+             
         # filename and selector
         self.__base_path = const.USER_HOME
         self.__file_name = "test.gramps"
@@ -107,7 +110,10 @@ class lxmlGramplet(Gramplet):
         vbox.show_all()
         
     def __select_file(self, obj):
-        """ Call back function to handle the open button press """
+        """
+        Call back function to handle the open button press
+        """
+        
         my_action = gtk.FILE_CHOOSER_ACTION_SAVE
         
         dialog = gtk.FileChooserDialog('lxml',
@@ -127,7 +133,10 @@ class lxmlGramplet(Gramplet):
         dialog.destroy()
 
     def set_filename(self, path):
-        """ Set the currently selected dialog. """
+        """ 
+        Set the currently selected dialog.
+        """
+        
         if not path:
             return
         if os.path.dirname(path):
@@ -174,8 +183,8 @@ class lxmlGramplet(Gramplet):
         filename = os.path.join(const.USER_PLUGINS, 'lxml', 'test.xml')
         if LXML_OK and os.name == 'posix':
             print('###################################################')
-            sys.stdout.write(_('From:\n %s\n to:\n %s.') % (entry, filename))
             os.system('gunzip < %s > %s' % (entry, filename))
+            sys.stdout.write(_('From:\n "%s"\n to:\n "%s".') % (entry, filename))
             print('\n###################################################')
         else:
             return
@@ -183,7 +192,8 @@ class lxmlGramplet(Gramplet):
         # TODO    
         #self.check_valid(entry)
         
-        tree = etree.ElementTree(file=filename)
+        #tree = etree.ElementTree(file=filename)
+        tree = etree.parse(filename)
         root = tree.getroot()
 
         # namespace issues and 'surname' only on 1.4.0!
@@ -211,16 +221,16 @@ class lxmlGramplet(Gramplet):
         #tags = []
         places = []
         surnames = []
-        for kid in root.getchildren():
-            #(tag, item) = kid.tag, kid.items()
+        for one in root.getchildren():
+            #(tag, item) = one.tag, one.items()
             #print(tag, item)
             
-            for greatchild in kid.getchildren():
+            for two in one.getchildren():
                 #tags.append(greatchild.tag)  
-                msg.append(greatchild.items())
+                msg.append(two.items())
                 
                 # search ptitle
-                for three in greatchild.getchildren():
+                for three in two.getchildren():
                     
                     # with namespace ...
                     if three.tag == '{http://gramps-project.org/xml/1.4.0/}ptitle':
@@ -312,7 +322,7 @@ class lxmlGramplet(Gramplet):
         self.g.close()
         
         print('#######################################################')
-        sys.stdout.write(_('Generate:\n %s.') % query)
+        sys.stdout.write(_('Generate:\n "%s".') % query)
         print('\n#######################################################')
         
         self.XSLTransform(query)
@@ -337,9 +347,9 @@ class lxmlGramplet(Gramplet):
     
         # This is the end !
         
-        sys.stdout.write(_('Generate:\n %s.') % html)
+        sys.stdout.write(_('Generate:\n "%s".') % html)
         print('\n#######################################################')
-        print(_('End'))
-
+        GrampsDisplay.url(html)
+        print(_('Try to open\n "%s"\n into your prefered web navigator ...') % html)
         
 
