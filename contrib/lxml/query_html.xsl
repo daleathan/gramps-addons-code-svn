@@ -32,6 +32,7 @@ GNU General Public License 2, or (at your option) any later version.
         </table>
         <div align="right"><xsl:value-of select="query/@footer"/>-<xsl:value-of select="query/log/@version"/></div>
         <div align="right">(<i><xsl:value-of select="query/log/@date"/></i>)</div>
+        <div align="left"><b><xsl:value-of select="query/@date"/></b></div>
     </body>
 </html>
 

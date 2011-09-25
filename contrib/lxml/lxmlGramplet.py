@@ -301,7 +301,6 @@ class lxmlGramplet(Gramplet):
         self.surnames_title = _('Surnames')
         self.places_title = _('Places')
         time = date.Today()
-        query = os.path.join(const.USER_PLUGINS, 'lxml', str(time) + '_query.xml')
                 
         xml = etree.Element("query")
         xml.set("title", self.title)
