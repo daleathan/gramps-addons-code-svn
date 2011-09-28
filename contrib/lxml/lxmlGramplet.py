@@ -109,6 +109,7 @@ class lxmlGramplet(Gramplet):
         self.gui.get_container_widget().add_with_viewport(vbox)
         vbox.show_all()
         
+        
     def __select_file(self, obj):
         """
         Call back function to handle the open button press
@@ -131,6 +132,7 @@ class lxmlGramplet(Gramplet):
         if status == gtk.RESPONSE_OK:
             self.set_filename(Utils.get_unicode_path_from_file_chooser(dialog.get_filename()))
         dialog.destroy()
+        
 
     def set_filename(self, path):
         """ 
@@ -146,9 +148,11 @@ class lxmlGramplet(Gramplet):
             self.__base_path = os.getcwd()
             self.__file_name = path
         self.entry.set_text(os.path.join(self.__base_path, self.__file_name))
+        
 
     def post_init(self):
         self.disconnect("active-changed")
+        
 
     def run(self, obj):
         """
@@ -157,6 +161,7 @@ class lxmlGramplet(Gramplet):
         
         entry = self.entry.get_text()
         self.ReadXML(entry)
+        
         
     def ReadXML(self, entry):
         """
@@ -226,7 +231,7 @@ class lxmlGramplet(Gramplet):
             #print(tag, item)
             
             for two in one.getchildren():
-                #tags.append(greatchild.tag)  
+                #tags.append(two.tag)  
                 msg.append(two.items())
                 
                 # search ptitle
@@ -241,7 +246,8 @@ class lxmlGramplet(Gramplet):
                         
                         # with namespace ...
                         if four.tag == '{http://gramps-project.org/xml/1.4.0/}surname':
-                            surnames.append(four.text)  
+                            surnames.append(four.text)
+                            
                     
         #print(etree.tostring(root, pretty_print=True))
 
@@ -282,7 +288,8 @@ class lxmlGramplet(Gramplet):
         print(_('Note objects'), nb_notes)
                 
         self.WriteXML(log, surnames, places)
-        self.WriteBackXML(filename, tree)
+        self.WriteBackXML(filename, root, surnames, places)
+        
         
     def check_valid(self, entry):
         """
@@ -291,6 +298,7 @@ class lxmlGramplet(Gramplet):
         """    
         
         # TODO: validity check against scheme for file format    
+        
                     
     def WriteXML(self, log, surnames, places):
         """
@@ -310,7 +318,7 @@ class lxmlGramplet(Gramplet):
         xml.set("footer", self.footer)
         xml.set("date", str(time))
 
-        # for info
+        # only for info
         doc = etree.ElementTree(xml)
         
         [(k1, v1),(k2, v2)] = log
@@ -348,6 +356,9 @@ class lxmlGramplet(Gramplet):
         outfile = open(html, 'w')
         outdoc.write(outfile)
         outfile.close()
+        
+        # clear the etree
+        root.clear()
     
         # This is the end !
         
@@ -356,19 +367,43 @@ class lxmlGramplet(Gramplet):
         GrampsDisplay.url(html)
         print(_('Try to open\n "%s"\n into your prefered web navigator ...') % html)
         
-    def WriteBackXML(self, filename, tree):
+        
+    def WriteBackXML(self, filename, root, surnames, places):
         """
         Write the result of the query back into the XML file (Gramps scheme)
         """
         
-        # Modify the copy of the .gramps
+        # Modify the XML copy of the .gramps
         
         outfile = open(filename, 'w')
         self.outfile = codecs.getwriter("utf8")(outfile)
         
-        # in progress (currently write complete tree back)
+        # clear the etree
+        root.clear()
+               
+        ## people/person/name/surname
         
-        self.outfile.write(etree.tostring(tree, encoding="UTF-8"))
+        people = etree.SubElement(root, "people")
+        for s in surnames:
+            person = etree.SubElement(people, "person")
+            name = etree.SubElement(person, "name")
+            surname = etree.SubElement(name, "surname")
+            surname.text = unicode(s)
+        
+        ## places/placeobj/ptitle
+        
+        pl = etree.SubElement(root, "places")
+        for p in places:
+            place = etree.SubElement(pl, "placeobj")
+            ptitle = etree.SubElement(place, "ptitle")
+            ptitle.text = unicode(p)
+
+        # write and close the etree
+        
+        self.outfile.write(etree.tostring(root, encoding="UTF-8"))
         self.outfile.close()
+        
+        # clear the etree
+        root.clear()
         
 
