@@ -194,14 +194,20 @@ class lxmlGramplet(Gramplet):
         else:
             return
         
-        # TODO    
-        #self.check_valid(entry)
+        # DTD validation
+           
+        self.check_valid(entry)
         
         #tree = etree.ElementTree(file=filename)
         tree = etree.parse(filename)
         root = tree.getroot()
+        
+        # RNG validation
+        
+        self.RNGValidation(tree)
 
         # namespace issues and 'surname' only on 1.4.0!
+        namespace = root.nsmap
         surname_tag = etree.SubElement(root, '{http://gramps-project.org/xml/1.4.0/}surname')
         ptitle_tag = etree.SubElement(root, '{http://gramps-project.org/xml/1.4.0/}ptitle')
         
@@ -297,8 +303,34 @@ class lxmlGramplet(Gramplet):
         Code for 1.4.0 and later (previous versions 'surname' was 'last')
         """    
         
-        # TODO: validity check against scheme for file format    
+        # validity check against DTD for file format
         
+        dtd = os.path.join(const.USER_PLUGINS, 'lxml', 'grampsxml.dtd')
+        try:
+            os.system('xmllint --loaddtd file://%s --noout %s' % (dtd, entry))
+            print('###################################################')
+        except:
+            print(_('Skip DTD validation'))
+            print('\n###################################################')
+    
+    
+    def RNGValidation(self, tree):
+        """
+        RNG Validation with ElementTree
+        """    
+        
+        # validity check against scheme for file format
+        
+        rng = os.path.join(const.USER_PLUGINS, 'lxml', 'grampsxml.rng')
+        
+        valid = etree.ElementTree(file=rng)
+        schema = etree.RelaxNG(valid)
+        
+        # TODO: print more informations
+        
+        print(_('RNG validation:'), schema.validate(tree))
+        print('###################################################')
+                
                     
     def WriteXML(self, log, surnames, places):
         """
@@ -354,8 +386,9 @@ class lxmlGramplet(Gramplet):
         outdoc = transform(root)
         html = os.path.join(const.USER_PLUGINS, 'lxml', 'query.html')
         outfile = open(html, 'w')
-        outdoc.write(outfile)
-        outfile.close()
+        self.outfile = codecs.getwriter("utf8")(outfile)
+        outdoc.write(self.outfile)
+        self.outfile.close()
         
         # clear the etree
         root.clear()
