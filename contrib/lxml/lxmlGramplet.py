@@ -325,10 +325,10 @@ class lxmlGramplet(Gramplet):
         
         valid = etree.ElementTree(file=rng)
         schema = etree.RelaxNG(valid)
-        
-        # TODO: print more informations
-        
+                
         print(_('RNG validation:'), schema.validate(tree))
+        if schema.error_log.last_error:
+            print(schema.error_log)
         print('###################################################')
                 
                     
