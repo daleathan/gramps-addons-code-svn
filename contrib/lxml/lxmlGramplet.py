@@ -165,7 +165,7 @@ class lxmlGramplet(Gramplet):
         
     def ReadXML(self, entry):
         """
-        Read and parse the .gramps
+        Read the .gramps
         """
         
         #if GZIP_OK:
@@ -194,23 +194,31 @@ class lxmlGramplet(Gramplet):
         else:
             return
         
-        # DTD validation
+        # DTD syntax
            
         self.check_valid(entry)
-
-        #try:
-            #tree = etree.parse(filename)
-            #self.RNGValidation(tree)
-        #except:
-            #...    
-        
-        #tree = etree.ElementTree(file=filename)
-        tree = etree.parse(filename)
-        root = tree.getroot()
         
         # RNG validation
+
+        try:
+            #tree = etree.ElementTree(file=filename)
+            tree = etree.parse(filename)
+            if self.RNGValidation(tree) == True:
+                self.ParseXML(tree)
+            else:
+                print(_('Cannot validate "%s" via RelaxNG schema') % filename)
+                return
+        except:
+            print(_('Cannot parse and validate "%s"') % filename)
+            return
+            
         
-        self.RNGValidation(tree)
+    def ParseXML(self, tree):
+        """
+        Parse the validated .gramps
+        """
+        
+        root = tree.getroot()
 
         # namespace issues and 'surname' only on 1.4.0!
         namespace = root.nsmap
@@ -314,15 +322,15 @@ class lxmlGramplet(Gramplet):
         Code for 1.4.0 and later (previous versions 'surname' was 'last')
         """    
         
-        # validity check against DTD for file format
-        # xmllint --loaddtd --dtdvalid --shell --noout ..
+        # syntax check against DTD for file format
+        # xmllint --loaddtd --dtdvalid --valid --shell --noout ...
         
         dtd = os.path.join(const.USER_PLUGINS, 'lxml', 'grampsxml.dtd')
         try:
             os.system('xmllint --loaddtd file://%s --noout %s' % (dtd, entry))
             print('###################################################')
         except:
-            print(_('Skip DTD validation'))
+            print(_('xmllint: skip DTD validation'))
             print('\n###################################################')
     
     
@@ -338,10 +346,10 @@ class lxmlGramplet(Gramplet):
         valid = etree.ElementTree(file=rng)
         schema = etree.RelaxNG(valid)
                 
-        print(_('RNG validation:'), schema.validate(tree))
         if schema.error_log.last_error:
-            print(schema.error_log)
-        print('###################################################')
+            sys.stdout.write(schema.error_log)
+        
+        return(schema.validate(tree))
                 
                     
     def WriteXML(self, log, surnames, places):
