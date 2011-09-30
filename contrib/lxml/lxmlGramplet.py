@@ -197,6 +197,12 @@ class lxmlGramplet(Gramplet):
         # DTD validation
            
         self.check_valid(entry)
+
+        #try:
+            #tree = etree.parse(filename)
+            #self.RNGValidation(tree)
+        #except:
+            #...    
         
         #tree = etree.ElementTree(file=filename)
         tree = etree.parse(filename)
