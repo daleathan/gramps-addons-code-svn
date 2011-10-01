@@ -18,43 +18,32 @@ GNU General Public License 2, or (at your option) any later version.
     </head>
     <body>
         <h1><xsl:value-of select="query/@title"/></h1>
-        <table border="in">
-            <th class="surnames">
-                <h2><xsl:value-of select="query/surnames/@title"/>
-                (<xsl:value-of select="$surname-count"/>):</h2>
-                <a name="surnames"/><xsl:apply-templates select="query/surnames"/>
-            </th>
-            <th class="places">
-                 <h2><xsl:value-of select="query/places/@title"/>
-                 (<xsl:value-of select="$place-count"/>):</h2>
-                 <a name="places"/><xsl:apply-templates select="query/places"/>
-            </th>
-        </table>
+        <h2><xsl:value-of select="query/surnames/@title"/>:<xsl:value-of select="$surname-count"/></h2>
+        <form>
+        <select name="slist">
+           <xsl:for-each select="query/surnames/surname">
+              <option>
+                 <xsl:value-of select="."/>
+              </option>
+           </xsl:for-each>
+        </select>
+        </form>
+        <h2><xsl:value-of select="query/places/@title"/>:<xsl:value-of select="$place-count"/></h2>
+        <form>
+        <select name="plist">
+           <xsl:for-each select="query/places/place">
+              <option>
+                 <xsl:value-of select="."/>
+              </option>
+           </xsl:for-each>
+        </select>
+        </form>
         <div align="right"><xsl:value-of select="query/@footer"/>-<xsl:value-of select="query/log/@version"/></div>
         <div align="right">(<i><xsl:value-of select="query/log/@date"/></i>)</div>
         <div align="left"><b><xsl:value-of select="query/@date"/></b></div>
     </body>
 </html>
 
-</xsl:template>
-
-<xsl:template match="query/surnames">
-    <xsl:for-each select="surname">
-        <p><a href="#surnames">
-        <i><b><xsl:value-of select="."/></b></i></a></p>
-    </xsl:for-each>
-</xsl:template>
-
-<xsl:template match="query/places">
-<xsl:choose>
-    <xsl:when test="place">
-        <xsl:for-each select="place">
-            <p><a href="#places">
-            <xsl:number value="position()" format="1"/>:
-            <i><b><xsl:value-of select="."/></b></i></a></p>
-        </xsl:for-each>
-    </xsl:when>
-</xsl:choose>
 </xsl:template>
 
 </xsl:stylesheet>
