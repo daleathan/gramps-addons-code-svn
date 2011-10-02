@@ -204,7 +204,7 @@ class lxmlGramplet(Gramplet):
             #tree = etree.ElementTree(file=filename)
             tree = etree.parse(filename)
             if self.RNGValidation(tree) == True:
-                self.ParseXML(tree)
+                self.ParseXML(tree, filename)
             else:
                 print(_('Cannot validate "%s" via RelaxNG schema') % filename)
                 return
@@ -213,7 +213,7 @@ class lxmlGramplet(Gramplet):
             return
             
         
-    def ParseXML(self, tree):
+    def ParseXML(self, tree, filename):
         """
         Parse the validated .gramps
         """
@@ -438,13 +438,13 @@ class lxmlGramplet(Gramplet):
             p1 = etree.SubElement(p, "place")
             p1.text = unicode(place)     
         
-        root = etree.XML(etree.tostring(xml, encoding="UTF-8"))
+        content = etree.XML(etree.tostring(xml, encoding="UTF-8"))
         
         # XSLT process
         
         xslt_doc = etree.parse(os.path.join(const.USER_PLUGINS, 'lxml', 'query_html.xsl'))
         transform = etree.XSLT(xslt_doc)
-        outdoc = transform(root)
+        outdoc = transform(content)
         html = os.path.join(const.USER_PLUGINS, 'lxml', 'query.html')
         outfile = open(html, 'w')
         self.outfile = codecs.getwriter("utf8")(outfile)
@@ -452,7 +452,7 @@ class lxmlGramplet(Gramplet):
         self.outfile.close()
                 
         # clear the etree
-        root.clear()
+        content.clear()
     
         # This is the end !
         
@@ -466,7 +466,7 @@ class lxmlGramplet(Gramplet):
         """
         Write the result of the query back into the XML file (Gramps scheme)
         """
-        
+               
         # Modify the XML copy of the .gramps
         
         outfile = open(filename, 'w')
