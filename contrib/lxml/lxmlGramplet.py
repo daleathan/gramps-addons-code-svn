@@ -197,9 +197,9 @@ class lxmlGramplet(Gramplet):
         # DTD syntax
            
         self.check_valid(entry)
-        
+                       
         # RNG validation
-
+                
         try:
             #tree = etree.ElementTree(file=filename)
             tree = etree.parse(filename)
@@ -373,6 +373,47 @@ class lxmlGramplet(Gramplet):
         # only for info
         doc = etree.ElementTree(xml)
         
+        # custom countries list (re-use some Gramps translations ...) ;)
+        
+        countries = ['',
+                    _('Australia'),
+                    _('Brazil'),
+                    _('Bulgaria'),
+                    _('Canada'),
+                    _('Chile'),
+                    _('China'),
+                    _('Croatia'),
+                    _('Czech Republic'),
+                    _('England'),
+                    _('Finland'),
+                    _('France'),
+                    _('Germany'),
+                    _('India'),
+                    _('Japan'),
+                    _('Norway'),
+                    _('Portugal'),
+                    _('Russia'),
+                    _('Sweden'),
+                    _('United States of America'),
+                    ]
+                    
+        c = etree.SubElement(xml, "clist")
+        self.ptitle = _('Title')
+        self.city = _('City')
+        self.county = _('County')
+        self.state = _('State')
+        self.country = _('Country')
+        c.set("ptitle", self.ptitle)
+        c.set("city", self.city)
+        c.set("county", self.county)
+        c.set("state", self.state)
+        c.set("country", self.country)
+        for country in countries:
+            c1 = etree.SubElement(c, "country")
+            c1.text = unicode(country)
+        
+        # data log
+        
         [(k1, v1),(k2, v2)] = log
         l = etree.SubElement(xml, "log")
         l.set("date", v1)
@@ -409,7 +450,7 @@ class lxmlGramplet(Gramplet):
         self.outfile = codecs.getwriter("utf8")(outfile)
         outdoc.write(self.outfile)
         self.outfile.close()
-        
+                
         # clear the etree
         root.clear()
     
