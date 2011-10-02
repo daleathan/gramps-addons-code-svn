@@ -13,29 +13,43 @@ GNU General Public License 2, or (at your option) any later version.
 <xsl:template match="/">
 
 <html>
+    <xsl:attribute name="lang">
+       <xsl:value-of select="query/@lang"/>
+    </xsl:attribute>
     <head>
         <link rel="stylesheet" type="text/css" href="catalogue.css"/>
     </head>
     <body>
         <h1><xsl:value-of select="query/@title"/></h1>
-        <h2><xsl:value-of select="query/surnames/@title"/>:<xsl:value-of select="$surname-count"/></h2>
+        <h2><xsl:value-of select="query/surnames/@title"/><xsl:text>:</xsl:text>
+        <xsl:value-of select="$surname-count"/></h2>
         <form xmlns="http://www.w3.org/1999/xhtml">
         <select name="slist">
            <xsl:for-each select="query/surnames/surname">
               <option>
+                 <xsl:attribute name="value">
+                    <xsl:value-of select="."/>
+                </xsl:attribute>
                  <xsl:value-of select="."/>
               </option>
            </xsl:for-each>
         </select>
         </form>
-        <h2><xsl:value-of select="query/places/@title"/>:<xsl:value-of select="$place-count"/></h2>
+        <h2><xsl:value-of select="query/places/@title"/><xsl:text>:</xsl:text>
+        <xsl:value-of select="$place-count"/></h2>
         <form xmlns="http://www.w3.org/1999/xhtml">
+           <xsl:attribute name="xml:lang">
+              <xsl:value-of select="query/@lang"/>
+           </xsl:attribute>
            <div>
               <label for="/database/places/placeobj[1]/ptitle" class="element">
               <xsl:value-of select="query/clist/@ptitle"/></label><xsl:text>:</xsl:text>
               <select name="plist">
                  <xsl:for-each select="query/places/place">
                     <option>
+                       <xsl:attribute name="value">
+                          <xsl:value-of select="."/>
+                       </xsl:attribute>
                        <xsl:value-of select="."/>
                     </option>
                  </xsl:for-each>
@@ -59,6 +73,9 @@ GNU General Public License 2, or (at your option) any later version.
               <select name="clist">
                  <xsl:for-each select="query/clist/country">
                     <option>
+                       <xsl:attribute name="value">
+                          <xsl:value-of select="."/>
+                       </xsl:attribute>
                        <xsl:value-of select="."/>
                     </option>
                  </xsl:for-each>
@@ -68,6 +85,7 @@ GNU General Public License 2, or (at your option) any later version.
         <div align="right"><xsl:value-of select="query/@footer"/>-<xsl:value-of select="query/log/@version"/></div>
         <div align="right">(<i><xsl:value-of select="query/log/@date"/></i>)</div>
         <div align="left"><b><xsl:value-of select="query/@date"/></b></div>
+        <div align="left"><b><xsl:value-of select="query/@lang"/></b></div>
     </body>
 </html>
 
