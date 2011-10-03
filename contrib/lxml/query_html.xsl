@@ -18,12 +18,18 @@ GNU General Public License 2, or (at your option) any later version.
     </xsl:attribute>
     <head>
         <link rel="stylesheet" type="text/css" href="catalogue.css"/>
+        <script type ="text/javascript">function next()
+             {
+             alert("Submit cancelled, only for testing!");
+             return false
+             }
+        </script>
     </head>
     <body>
         <h1><xsl:value-of select="query/@title"/></h1>
         <h2><xsl:value-of select="query/surnames/@title"/><xsl:text>:</xsl:text>
         <xsl:value-of select="$surname-count"/></h2>
-        <form xmlns="http://www.w3.org/1999/xhtml" action="." method="get" target="self">
+        <form xmlns="http://www.w3.org/1999/xhtml" action="." method="get" onsubmit="next()">
         <select name="slist">
            <xsl:for-each select="query/surnames/surname">
               <option>
@@ -44,7 +50,7 @@ GNU General Public License 2, or (at your option) any later version.
         </form>
         <h2><xsl:value-of select="query/places/@title"/><xsl:text>:</xsl:text>
         <xsl:value-of select="$place-count"/></h2>
-        <form xmlns="http://www.w3.org/1999/xhtml" action="." method="get" target="self">
+        <form xmlns="http://www.w3.org/1999/xhtml" action="." method="get" onsubmit="next()">
            <xsl:attribute name="xml:lang">
               <xsl:value-of select="query/@lang"/>
            </xsl:attribute>
