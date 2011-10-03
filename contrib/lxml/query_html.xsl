@@ -23,21 +23,28 @@ GNU General Public License 2, or (at your option) any later version.
         <h1><xsl:value-of select="query/@title"/></h1>
         <h2><xsl:value-of select="query/surnames/@title"/><xsl:text>:</xsl:text>
         <xsl:value-of select="$surname-count"/></h2>
-        <form xmlns="http://www.w3.org/1999/xhtml">
+        <form xmlns="http://www.w3.org/1999/xhtml" target="self">
         <select name="slist">
            <xsl:for-each select="query/surnames/surname">
               <option>
                  <xsl:attribute name="value">
                     <xsl:value-of select="."/>
-                </xsl:attribute>
+                 </xsl:attribute>
                  <xsl:value-of select="."/>
               </option>
            </xsl:for-each>
         </select>
+        <div align="right">
+        <input type="submit">
+           <xsl:attribute name="value">
+              <xsl:value-of select="query/@title"/>
+           </xsl:attribute>
+        </input>
+        </div>
         </form>
         <h2><xsl:value-of select="query/places/@title"/><xsl:text>:</xsl:text>
         <xsl:value-of select="$place-count"/></h2>
-        <form xmlns="http://www.w3.org/1999/xhtml">
+        <form xmlns="http://www.w3.org/1999/xhtml" target="self">
            <xsl:attribute name="xml:lang">
               <xsl:value-of select="query/@lang"/>
            </xsl:attribute>
@@ -80,6 +87,13 @@ GNU General Public License 2, or (at your option) any later version.
                     </option>
                  </xsl:for-each>
               </select>
+           </div>
+           <div align="right"> 
+           <input type="submit">
+              <xsl:attribute name="value">
+                 <xsl:value-of select="query/@title"/>
+              </xsl:attribute>
+           </input>
            </div>
         </form>
         <div align="right"><xsl:value-of select="query/@footer"/>-<xsl:value-of select="query/log/@version"/></div>
