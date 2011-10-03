@@ -23,7 +23,7 @@ GNU General Public License 2, or (at your option) any later version.
         <h1><xsl:value-of select="query/@title"/></h1>
         <h2><xsl:value-of select="query/surnames/@title"/><xsl:text>:</xsl:text>
         <xsl:value-of select="$surname-count"/></h2>
-        <form xmlns="http://www.w3.org/1999/xhtml" target="self">
+        <form xmlns="http://www.w3.org/1999/xhtml" action="." method="get" target="self">
         <select name="slist">
            <xsl:for-each select="query/surnames/surname">
               <option>
@@ -44,7 +44,7 @@ GNU General Public License 2, or (at your option) any later version.
         </form>
         <h2><xsl:value-of select="query/places/@title"/><xsl:text>:</xsl:text>
         <xsl:value-of select="$place-count"/></h2>
-        <form xmlns="http://www.w3.org/1999/xhtml" target="self">
+        <form xmlns="http://www.w3.org/1999/xhtml" action="." method="get" target="self">
            <xsl:attribute name="xml:lang">
               <xsl:value-of select="query/@lang"/>
            </xsl:attribute>
@@ -84,10 +84,10 @@ GNU General Public License 2, or (at your option) any later version.
               <label for="/database/places/placeobj[1]/location[1]/@country" class="attribute">
               <xsl:value-of select="query/clist/@country"/></label><xsl:text>:</xsl:text>
               <select name="clist">
-                 <xsl:for-each select="query/clist/country">             
+                 <xsl:for-each select="query/clist/country">
                     <option>
                        <xsl:attribute name="value">
-                          <xsl:value-of select="."/>
+                          <xsl:number value="position()" format="1"/>
                        </xsl:attribute>
                        <xsl:value-of select="."/>
                     </option>
