@@ -17,7 +17,7 @@ GNU General Public License 2, or (at your option) any later version.
        <xsl:value-of select="query/@lang"/>
     </xsl:attribute>
     <head>
-        <link rel="stylesheet" type="text/css" href="catalogue.css"/>
+        <link rel="stylesheet" type="text/css" href="lxml.css"/>
         <script type ="text/javascript">function next()
              {
              alert("Submit cancelled, only for testing!");
