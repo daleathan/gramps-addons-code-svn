@@ -52,6 +52,12 @@ GNU General Public License 2, or (at your option) any later version.
               <label for="/database/places/placeobj[1]/ptitle" class="element">
               <xsl:value-of select="query/clist/@ptitle"/></label><xsl:text>:</xsl:text>
               <select name="plist">
+                 <option>
+                    <xsl:attribute name="value">
+                          <xsl:value-of select="None"/>
+                       </xsl:attribute>
+                    <xsl:text></xsl:text>
+                 </option>
                  <xsl:for-each select="query/places/place">
                     <option>
                        <xsl:attribute name="value">
@@ -78,7 +84,7 @@ GNU General Public License 2, or (at your option) any later version.
               <label for="/database/places/placeobj[1]/location[1]/@country" class="attribute">
               <xsl:value-of select="query/clist/@country"/></label><xsl:text>:</xsl:text>
               <select name="clist">
-                 <xsl:for-each select="query/clist/country">
+                 <xsl:for-each select="query/clist/country">             
                     <option>
                        <xsl:attribute name="value">
                           <xsl:value-of select="."/>
