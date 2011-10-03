@@ -37,6 +37,7 @@ import gtk
 #------------------------------------------------------------------------
 from gen.plug import Gramplet
 from gen.lib import date
+import DateHandler
 from TransUtils import get_addon_translator
 _ = get_addon_translator(__file__).ugettext
 import const
@@ -369,7 +370,7 @@ class lxmlGramplet(Gramplet):
         xml.set("lang", self.lang)
         xml.set("title", self.title)
         xml.set("footer", self.footer)
-        xml.set("date", str(time))
+        xml.set("date", DateHandler.displayer.display(time))
 
         # only for info
         doc = etree.ElementTree(xml)
