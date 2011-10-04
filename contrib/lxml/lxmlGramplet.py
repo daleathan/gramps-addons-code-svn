@@ -228,9 +228,6 @@ class lxmlGramplet(Gramplet):
         
         # variable
         expr = "//*[local-name() = $name]"
-        
-        # find text function
-        find_text = etree.XPath("//text()", smart_strings=False)
 
         # count function
         # float and seems to also count the parent tag: name[0] !
@@ -238,7 +235,6 @@ class lxmlGramplet(Gramplet):
         
         # textual children strings function
         desc = etree.XPath('descendant-or-self::text()')
-        
         
         # TODO: cleanup !
         # quick but not a nice method ...
@@ -463,6 +459,8 @@ class lxmlGramplet(Gramplet):
         GrampsDisplay.url(html)
         print(_('Try to open\n "%s"\n into your prefered web navigator ...') % html)
         
+        self.post(html)
+        
         
     def WriteBackXML(self, filename, root, surnames, places):
         """
@@ -502,4 +500,24 @@ class lxmlGramplet(Gramplet):
         # clear the etree
         root.clear()
         
-
+        
+    def post(self, html):
+        """
+        Try to play with request ...
+        """
+        
+        import urllib2
+        
+        response = urllib2.urlopen('file://%s' % html)
+        data = response.read()
+        
+        post = etree.HTML(data)
+        
+        # find text function
+        find_text = etree.XPath("//text()", smart_strings=False)
+        
+        print('#######################################################')
+        print(_('HTML page content:'))
+        print(find_text(post))
+        
+        post.clear()
