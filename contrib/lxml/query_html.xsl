@@ -27,7 +27,7 @@ GNU General Public License 2, or (at your option) any later version.
     </head>
     <body>
         <h1><xsl:value-of select="query/@title"/></h1>
-        <h2><xsl:value-of select="query/surnames/@title"/><xsl:text>:</xsl:text>
+        <h2><xsl:value-of select="query/surnames/@title"/><xsl:text> : </xsl:text>
         <xsl:value-of select="$surname-count"/></h2>
         <form xmlns="http://www.w3.org/1999/xhtml" action="." method="get" onsubmit="next()">
         <select name="slist">
@@ -48,7 +48,7 @@ GNU General Public License 2, or (at your option) any later version.
         </input>
         </div>
         </form>
-        <h2><xsl:value-of select="query/places/@title"/><xsl:text>:</xsl:text>
+        <h2><xsl:value-of select="query/places/@title"/><xsl:text> : </xsl:text>
         <xsl:value-of select="$place-count"/></h2>
         <form xmlns="http://www.w3.org/1999/xhtml" action="." method="get" onsubmit="next()">
            <xsl:attribute name="xml:lang">
@@ -56,7 +56,7 @@ GNU General Public License 2, or (at your option) any later version.
            </xsl:attribute>
            <div>
               <label for="/database/places/placeobj[1]/ptitle" class="element">
-              <xsl:value-of select="query/clist/@ptitle"/></label><xsl:text>:</xsl:text>
+              <xsl:value-of select="query/clist/@ptitle"/></label><xsl:text> : </xsl:text>
               <select name="plist">
                  <option>
                     <xsl:attribute name="value">
@@ -76,19 +76,19 @@ GNU General Public License 2, or (at your option) any later version.
            </div>
            <div>
               <label for="/database/places/placeobj[1]/location[1]/@city" class="attribute">
-              <xsl:value-of select="query/clist/@city"/></label><xsl:text>:</xsl:text>
+              <xsl:value-of select="query/clist/@city"/></label><xsl:text> : </xsl:text>
            </div>
            <div>
               <label for="/database/places/placeobj[1]/location[1]/@county" class="attribute">
-              <xsl:value-of select="query/clist/@county"/></label><xsl:text>:</xsl:text>
+              <xsl:value-of select="query/clist/@county"/></label><xsl:text> : </xsl:text>
            </div>
            <div>
               <label for="/database/places/placeobj[1]/location[1]/@state" class="attribute">
-              <xsl:value-of select="query/clist/@state"/></label><xsl:text>:</xsl:text>
+              <xsl:value-of select="query/clist/@state"/></label><xsl:text> : </xsl:text>
            </div>
            <div>
               <label for="/database/places/placeobj[1]/location[1]/@country" class="attribute">
-              <xsl:value-of select="query/clist/@country"/></label><xsl:text>:</xsl:text>
+              <xsl:value-of select="query/clist/@country"/></label><xsl:text> : </xsl:text>
               <select name="clist">
                  <xsl:for-each select="query/clist/country">
                     <option>
