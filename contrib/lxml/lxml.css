@@ -26,14 +26,14 @@ GRAMPS. If not, see <http://www.gnu.org/licenses/>.
 General Text
 ----------------------------------------------------------------------*/
 h1 {
-    font-weight: large;
+    font-weight: bold;
     font-style: italic;
     margin-left: 1em;
     }
 
 h2 {
     font-weight: normal;
-    font-style: bold;
+    font-style: oblique;
     margin-left: 2em;
     }
     
