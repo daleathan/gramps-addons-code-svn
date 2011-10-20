@@ -30,13 +30,13 @@ _ = get_addon_translator(__file__).ugettext
 # http://gramps-project.org/wiki/index.php?title=Resources_and_related_sites#German_information_sites
 
 WEBSITES = [
-    ["Person", u"Bielefeld Academic Search", _("Bielefeld Academic Search"), "http://www.base-search.net/Search/Results?lookfor=%(surname)s,+%(given)s&type=all&lem=0&lem=1&refid=dcbasde"],
-    ["Person", "Geneanet", "Geneanet", "http://search.geneanet.org/result.php?lang=fr&name=%(surname)s"],
-    ["Person", "FamilySearch", _("FamilySearch.org"), "https://www.familysearch.org/s/search/index/record-search#searchType=records&filtered=false&fed=true&collectionId=&advanced=false&givenName=%(given)s&surname=%(surname)s&birthYear=%(birth)s&birthLocation=&deathYear=%(death)s&deathLocation="],
-    ["Person", "Archive.org", "Archive.org", '''http://www.archive.org/search.php?query="%(surname)s,+%(given)s"'''],
-    ["Person", "GeneaBook", "GeneaBook", "http://www.geneabook.org/genealogie/1/ouvrages.php?nom=%(surname)s&x=20&y=1"],
-    ["Person", "Google Archives", _("Google Archives"), "http://news.google.de/archivesearch?q=%(surname)s"],
-    ["Person", "DE-Google", _("DE Google"), '''http://www.google.de/#hl=de&q="%(surname)s,+%(given)s"'''],
+    ["Person", u"Bielefeld Academic Search", _("Bielefeld Academic Search"), u"http://www.base-search.net/Search/Results?lookfor=%(surname)s,+%(given)s&type=all&lem=0&lem=1&refid=dcbasde"],
+    ["Person", "Geneanet", "Geneanet", u"http://search.geneanet.org/result.php?lang=de&name=%(surname)s"],
+    ["Person", "FamilySearch", _("FamilySearch.org"), u"https://www.familysearch.org/s/search/index/record-search#searchType=records&filtered=false&fed=true&collectionId=&advanced=false&givenName=%(given)s&surname=%(surname)s&birthYear=%(birth)s&birthLocation=&deathYear=%(death)s&deathLocation="],
+    ["Person", "Archive.org", "Archive.org", '''http://www.archive.org/search.php?query=u"%(surname)s,+%(given)s"'''],
+    ["Person", "GeneaBook", "GeneaBook", u"http://www.geneabook.org/genealogie/1/ouvrages.php?nom=%(surname)s&x=20&y=1"],
+    ["Person", "Google Archives", _("Google Archives"), u"http://news.google.de/archivesearch?q=%(surname)s"],
+    ["Person", "DE-Google", _("DE Google"), '''http://www.google.de/#hl=de&q=u"%(surname)s,+%(given)s"'''],
     ]
 
 def load_on_reg(dbstate, uistate, pdata):
