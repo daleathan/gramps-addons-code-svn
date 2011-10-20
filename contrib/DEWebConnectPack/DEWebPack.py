@@ -33,10 +33,10 @@ WEBSITES = [
     ["Person", u"Bielefeld Academic Search", _("Bielefeld Academic Search"), u"http://www.base-search.net/Search/Results?lookfor=%(surname)s,+%(given)s&type=all&lem=0&lem=1&refid=dcbasde"],
     ["Person", "Geneanet", "Geneanet", u"http://search.geneanet.org/result.php?lang=de&name=%(surname)s"],
     ["Person", "FamilySearch", _("FamilySearch.org"), u"https://www.familysearch.org/s/search/index/record-search#searchType=records&filtered=false&fed=true&collectionId=&advanced=false&givenName=%(given)s&surname=%(surname)s&birthYear=%(birth)s&birthLocation=&deathYear=%(death)s&deathLocation="],
-    ["Person", "Archive.org", "Archive.org", '''http://www.archive.org/search.php?query=u"%(surname)s,+%(given)s"'''],
+    ["Person", "Archive.org", "Archive.org", u'''http://www.archive.org/search.php?query="%(surname)s,+%(given)s"'''],
     ["Person", "GeneaBook", "GeneaBook", u"http://www.geneabook.org/genealogie/1/ouvrages.php?nom=%(surname)s&x=20&y=1"],
     ["Person", "Google Archives", _("Google Archives"), u"http://news.google.de/archivesearch?q=%(surname)s"],
-    ["Person", "DE-Google", _("DE Google"), '''http://www.google.de/#hl=de&q=u"%(surname)s,+%(given)s"'''],
+    ["Person", "DE-Google", _("DE Google"), u'''http://www.google.de/#hl=de&q="%(surname)s,+%(given)s"'''],
     ]
 
 def load_on_reg(dbstate, uistate, pdata):
