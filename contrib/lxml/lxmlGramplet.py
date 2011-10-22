@@ -355,7 +355,7 @@ class lxmlGramplet(Gramplet):
         
         dtd = os.path.join(const.USER_PLUGINS, 'lxml', 'grampsxml.dtd')
         try:
-            os.system('xmllint --loaddtd file://%s --noout --dropdtd %s' % (dtd, filename))
+            os.system('xmllint --dtdvalid file://%s --noout --dropdtd %s' % (dtd, filename))
         except:
             print(_('xmllint: skip DTD validation'))
             print('\n###################################################')
