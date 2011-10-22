@@ -193,25 +193,34 @@ class lxmlGramplet(Gramplet):
         if LXML_OK and os.name == 'posix':
             try:
                 os.system('gunzip < %s > %s' % (entry, filename))
-                sys.stdout.write(_('From:\n "%s"\n to:\n "%s".') % (entry, filename))
             except:
                 ErrorDialog('Is it a compressed .gramps ?', _('Cannot uncompress "%s"') % entry)
+                return
+            sys.stdout.write(_('From:\n "%s"\n to:\n "%s"\n.') % (entry, filename))
         else:
             return
         
         # DTD syntax
-        
-        try:   
-            self.check_valid(entry)
+               
+        try:
+            self.check_valid(filename)
         except:
-            ErrorDialog('xmllint', _('Cannot validate "%s" !') % entry)
+            ErrorDialog('DTD validation (xmllint)', _('Cannot validate "%s" !') % entry)
                        
         # RNG validation
+        
+        rng = os.path.join(const.USER_PLUGINS, 'lxml', 'grampsxml.rng')
+        
+        try:
+            os.system('xmllint --relaxng file://%s --noout %s' % (rng, filename))
+        except:
+            print(_('xmllint: skip RelaxNG validation for "%s"') % entry)
                 
         try:
             #tree = etree.ElementTree(file=filename)
             tree = etree.parse(filename)
-            if self.RNGValidation(tree) == True:
+            doctype = tree.docinfo.doctype
+            if self.RNGValidation(tree, rng) == True:
                 try:
                     self.ParseXML(tree, filename)
                 except:
@@ -335,7 +344,7 @@ class lxmlGramplet(Gramplet):
         self.WriteBackXML(filename, root, surnames, places, sources)
         
         
-    def check_valid(self, entry):
+    def check_valid(self, filename):
         """
         Look at schema, validation, conform, etc...
         Code for 1.4.0 and later (previous versions 'surname' was 'last')
@@ -346,21 +355,19 @@ class lxmlGramplet(Gramplet):
         
         dtd = os.path.join(const.USER_PLUGINS, 'lxml', 'grampsxml.dtd')
         try:
-            os.system('xmllint --dtdvalid file://%s --noout %s' % (dtd, entry))
+            os.system('xmllint --loaddtd file://%s --noout --dropdtd %s' % (dtd, filename))
         except:
             print(_('xmllint: skip DTD validation'))
             print('\n###################################################')
     
     
-    def RNGValidation(self, tree):
+    def RNGValidation(self, tree, rng):
         """
         RNG Validation with ElementTree
         """    
         
         # validity check against scheme for file format
-        
-        rng = os.path.join(const.USER_PLUGINS, 'lxml', 'grampsxml.rng')
-        
+                
         valid = etree.ElementTree(file=rng)          
         schema = etree.RelaxNG(valid)
                 
