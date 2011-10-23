@@ -117,23 +117,24 @@ GENDER has values of M, F, or U.
 -->
 <!ELEMENT gender  (#PCDATA)>
 
-<!ELEMENT name    (type?, sort?, display?, first?, call?, surname*, call?, suffix?, title?, nick?,    
-                  familynick?, group?, (daterange|datespan|dateval|datestr)?, noteref*, sourceref*)>
+<!ELEMENT name    (first?, call?, surname*, suffix?, title?, nick?, familynick?, group?,
+                  (daterange|datespan|dateval|datestr)?, noteref*, sourceref*)>
 <!ATTLIST name    
         alt       (0|1) #IMPLIED
-        priv      (0|1) #IMPLIED
         type      CDATA #IMPLIED
+        priv      (0|1) #IMPLIED
         sort      CDATA #IMPLIED
         display   CDATA #IMPLIED
-        first     CDATA #IMPLIED
-        call      CDATA #IMPLIED
-        suffix    CDATA #IMPLIED
-        title     CDATA #IMPLIED
-        nick      CDATA #IMPLIED
-        familynick CDATA #IMPLIED
-        group     CDATA #IMPLIED
 >
-
+        
+<!ELEMENT first      (#PCDATA)>
+<!ELEMENT call       (#PCDATA)>
+<!ELEMENT suffix     (#PCDATA)>
+<!ELEMENT title      (#PCDATA)>
+<!ELEMENT nick       (#PCDATA)>
+<!ELEMENT familynick (#PCDATA)>
+<!ELEMENT group      (#PCDATA)>
+<!ELEMENT surname    (#PCDATA)>
 <!ATTLIST surname
         prefix      CDATA #IMPLIED
         prim        (1|0) #IMPLIED
