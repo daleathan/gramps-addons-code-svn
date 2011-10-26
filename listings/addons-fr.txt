@@ -32,7 +32,7 @@
 {'d': 'Gramplet for detecting and assigning faces', 'g': '3.3', 'i': 'Face Detection', 'n': 'Face Detection', 't': u'Gramplet', 'v': '1.0.6', 'z': 'FaceDetection.addon.tgz'}
 {'d': 'Gramplet pour d\xc3\xa9montrer les graphiques Cairo', 'g': '3.3', 'i': 'Clock Gramplet', 'n': 'Gramplet Horloge', 't': u'Gramplet', 'v': '0.0.6', 'z': 'ClockGramplet.addon.tgz'}
 {'d': "Gramplet pour l'\xc3\xa9dition des notes de l'individu actif", 'g': '3.3', 'i': 'Note Gramplet', 'n': 'Gramplet Note', 't': u'Gramplet', 'v': '1.0.7', 'z': 'NoteGramplet.addon.tgz'}
-{'d': 'G\xc3\xa9n\xc3\xa8re une page internet (XHTML) avec une repr\xc3\xa9sentation graphique des ascendants/descendants (SVG) dont les d\xc3\xa9tails des individus deviennent visibles avec les actions de la souris.', 'g': '3.3', 'i': 'denominoviso', 'n': 'DenominoViso', 't': u'Report', 'v': '2.3.4', 'z': 'DenominoViso.addon.tgz'}
+{'d': 'G\xc3\xa9n\xc3\xa8re une page internet (XHTML) avec une repr\xc3\xa9sentation graphique des ascendants/descendants (SVG) dont les d\xc3\xa9tails des individus deviennent visibles avec les actions de la souris.', 'g': '3.3', 'i': 'denominoviso', 'n': 'DenominoViso', 't': u'Report', 'v': '2.3.5', 'z': 'DenominoViso.addon.tgz'}
 {'d': 'Un interpr\xc3\xa9teur python interactif', 'g': '3.3', 'i': 'Python Gramplet', 'n': 'Gramplet Python', 't': u'Gramplet', 'v': '1.0.5', 'z': 'PythonGramplet.addon.tgz'}
 {'d': 'Merge primary objects via the command line.', 'g': '3.3', 'i': 'climerge', 'n': 'Command Line Merge', 't': u'Tool', 'v': '1.0.1', 'z': 'CliMerge.addon.tgz'}
 {'d': 'Liste les dix derniers individus modifi\xc3\xa9s', 'g': '3.3', 'i': 'LastChangeGramplet', 'n': 'Gramplet Derni\xc3\xa8res modifications', 't': u'Gramplet', 'v': '0.0.9', 'z': 'LastChange.addon.tgz'}
