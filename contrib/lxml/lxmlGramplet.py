@@ -29,6 +29,7 @@ import codecs
 import sys
 import os
 import gtk
+#import subprocess
 
 #------------------------------------------------------------------------
 #
@@ -171,30 +172,38 @@ class lxmlGramplet(Gramplet):
         Read the .gramps
         """
         
-        #if GZIP_OK:
-            #use_gzip = 1
-            #try:
-                #test = gzip.open(entry, "r")
-                #test.read(1)
-                #test.close()
-            #except IOError, msg:
-                #use_gzip = 0
-            #except ValueError, msg:
-                #use_gzip = 1
-        #else:
-            #use_gzip = 0
+        if GZIP_OK:
+            use_gzip = 1
+            try:
+                test = gzip.open(entry, "r")
+                test.read(1)
+                test.close()
+            except IOError, msg:
+                use_gzip = 0
+            except ValueError, msg:
+                use_gzip = 1
+        else:
+            use_gzip = 0
          
-        # lazy ... only compressed .gramps !
+        # lazy ...
         if os.name != 'posix':
             ErrorDialog('For posix only ...', _('Sorry, no support for your OS yet!'))
             return
         
         filename = os.path.join(const.USER_PLUGINS, 'lxml', 'test.xml')
-        if LXML_OK and os.name == 'posix':
+        
+        if LXML_OK and use_gzip == 1:
             try:
                 os.system('gunzip < %s > %s' % (entry, filename))
             except:
                 ErrorDialog('Is it a compressed .gramps ?', _('Cannot uncompress "%s"') % entry)
+                return
+            sys.stdout.write(_('From:\n "%s"\n to:\n "%s"\n.') % (entry, filename))
+        elif LXML_OK and use_gzip == 0:
+            try:
+                os.system('cp %s %s' % (entry, filename))
+            except:
+                ErrorDialog('Is it a .gramps ?', _('Cannot copy "%s"') % entry)
                 return
             sys.stdout.write(_('From:\n "%s"\n to:\n "%s"\n.') % (entry, filename))
         else:
@@ -227,10 +236,10 @@ class lxmlGramplet(Gramplet):
                     ErrorDialog('RelaxNG validation', _('Cannot validate "%s" via RelaxNG schema') % filename)
                     return
             else:
-                ErrorDialog('Parsing issue', _('Cannot parse content of "%s"') % filename)
+                ErrorDialog('Parsing issue', _('Cannot parse content of "%s"') % entry)
                 return
         except:
-            ErrorDialog('Parsing issue', _('Cannot parse "%s" via etree') % filename)
+            ErrorDialog('File issue', _('Cannot parse "%s" via etree') % entry)
             return
             
         
