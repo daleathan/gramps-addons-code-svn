@@ -11,7 +11,7 @@
 {'d': 'Produit un rapport textuel des d\xc3\xa9p\xc3\xb4ts', 'g': '3.3', 'i': 'Repositories Report Options', 'n': 'Rapport des d\xc3\xa9p\xc3\xb4ts avec options', 't': u'Report', 'v': '0.2.6', 'z': 'RepositoriesReport.addon.tgz'}
 {'d': 'Produit un rapport textuel des d\xc3\xa9p\xc3\xb4ts', 'g': '3.3', 'i': 'Repositories Report', 'n': 'Rapport des d\xc3\xa9p\xc3\xb4ts', 't': u'Report', 'v': '1.0.6', 'z': 'RepositoriesReport.addon.tgz'}
 {'d': 'Produit un arbre familial sous forme graphique.', 'g': '3.3', 'i': 'FamilyTree', 'n': 'Arbre familial', 't': u'Report', 'v': '3.3.5', 'z': 'FamilyTree.addon.tgz'}
-{'d': 'Searches the entire database and attempts to fix capitalization of the given names.', 'g': '3.3', 'i': 'chgivenname', 'n': 'Fix Capitalization of Given Names', 't': u'Tool', 'v': '1.0.1', 'z': 'ChangeGivenNames.addon.tgz'}
+{'d': 'Searches the entire database and attempts to fix capitalization of the given names.', 'g': '3.3', 'i': 'chgivenname', 'n': 'Fix Capitalization of Given Names', 't': u'Tool', 'v': '1.0.2', 'z': 'ChangeGivenNames.addon.tgz'}
 {'d': 'Gramplet pour des requ\xc3\xaates SQL-like', 'g': '3.3', 'i': 'Query Gramplet', 'n': 'Gramplet Requ\xc3\xaate', 't': u'Gramplet', 'v': '1.0.4', 'z': 'Query.addon.tgz'}
 {'d': 'Rapport express pour du SQL-like fonctionnant avec requ\xc3\xaates', 'g': '3.3', 'i': 'Query Quickview', 'n': 'Rapport express Requ\xc3\xaate', 't': u'Quickreport', 'v': '1.0.4', 'z': 'Query.addon.tgz'}
 {'d': 'Django is a web framework working on a configured database', 'g': '3.3', 'i': 'import_django', 'n': 'Django Import', 't': u'Importer', 'v': '1.0.9', 'z': 'Django.addon.tgz'}

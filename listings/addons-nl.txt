@@ -11,7 +11,7 @@
 {'d': 'Tekstverslag van de bibliotheken wordt opgemaakt', 'g': '3.3', 'i': 'Repositories Report Options', 'n': 'Opties voor het bibliotheekverslag', 't': u'Report', 'v': '0.2.6', 'z': 'RepositoriesReport.addon.tgz'}
 {'d': 'Tekstverslag van de bibliotheken wordt opgemaakt', 'g': '3.3', 'i': 'Repositories Report', 'n': 'Bibliothekenverslag', 't': u'Report', 'v': '1.0.6', 'z': 'RepositoriesReport.addon.tgz'}
 {'d': 'Grafische familiestamboom wordt aangemaakt.', 'g': '3.3', 'i': 'FamilyTree', 'n': 'Familiestamboom', 't': u'Report', 'v': '3.3.5', 'z': 'FamilyTree.addon.tgz'}
-{'d': 'Searches the entire database and attempts to fix capitalization of the given names.', 'g': '3.3', 'i': 'chgivenname', 'n': 'Fix Capitalization of Given Names', 't': u'Tool', 'v': '1.0.1', 'z': 'ChangeGivenNames.addon.tgz'}
+{'d': 'Searches the entire database and attempts to fix capitalization of the given names.', 'g': '3.3', 'i': 'chgivenname', 'n': 'Fix Capitalization of Given Names', 't': u'Tool', 'v': '1.0.2', 'z': 'ChangeGivenNames.addon.tgz'}
 {'d': "Gramplet om 'sql'-achtige zoekopdrachten in te geven", 'g': '3.3', 'i': 'Query Gramplet', 'n': 'Zoek-gramplet', 't': u'Gramplet', 'v': '1.0.4', 'z': 'Query.addon.tgz'}
 {'d': "Snelscherm om 'sql'-achtige zoekopdrachten in te geven", 'g': '3.3', 'i': 'Query Quickview', 'n': 'Snelscherm voor zoeken', 't': u'Quickreport', 'v': '1.0.4', 'z': 'Query.addon.tgz'}
 {'d': 'Django is a web framework working on a configured database', 'g': '3.3', 'i': 'import_django', 'n': 'Django Import', 't': u'Importer', 'v': '1.0.9', 'z': 'Django.addon.tgz'}
