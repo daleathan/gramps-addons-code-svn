@@ -33,7 +33,7 @@
 {'d': 'Gramplet for detecting and assigning faces', 'g': '3.3', 'i': 'Face Detection', 'n': 'Face Detection', 't': u'Gramplet', 'v': '1.0.6', 'z': 'FaceDetection.addon.tgz'}
 {'d': 'Gramplet for demonstrating Cairo graphics', 'g': '3.3', 'i': 'Clock Gramplet', 'n': 'Sm\xc3\xa5gramps for klokke', 't': u'Gramplet', 'v': '0.0.6', 'z': 'ClockGramplet.addon.tgz'}
 {'d': "Gramplet for editing active person's notes", 'g': '3.3', 'i': 'Note Gramplet', 'n': 'Notat Sm\xc3\xa5gramps', 't': u'Gramplet', 'v': '1.0.7', 'z': 'NoteGramplet.addon.tgz'}
-{'d': 'Generates a web (XHTML) page with a graphical representation of ancestors/descendants (SVG) where details about individuals become visible upon mouse-events.', 'g': '3.3', 'i': 'denominoviso', 'n': 'DenominoViso', 't': u'Report', 'v': '2.3.5', 'z': 'DenominoViso.addon.tgz'}
+{'d': 'Generates a web (XHTML) page with a graphical representation of ancestors/descendants (SVG) where details about individuals become visible upon mouse-events.', 'g': '3.3', 'i': 'denominoviso', 'n': 'DenominoViso', 't': u'Report', 'v': '2.3.6', 'z': 'DenominoViso.addon.tgz'}
 {'d': 'Interactive Python interpreter', 'g': '3.3', 'i': 'Python Gramplet', 'n': 'Python sm\xc3\xa5gramps', 't': u'Gramplet', 'v': '1.0.5', 'z': 'PythonGramplet.addon.tgz'}
 {'d': 'Merge primary objects via the command line.', 'g': '3.3', 'i': 'climerge', 'n': 'Command Line Merge', 't': u'Tool', 'v': '1.0.1', 'z': 'CliMerge.addon.tgz'}
 {'d': 'List the last ten person records that have been changed', 'g': '3.3', 'i': 'LastChangeGramplet', 'n': 'Last Change Gramplet', 't': u'Gramplet', 'v': '0.0.9', 'z': 'LastChange.addon.tgz'}

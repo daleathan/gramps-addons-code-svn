@@ -33,7 +33,7 @@
 {'d': 'Gramplet for detecting and assigning faces', 'g': '3.3', 'i': 'Face Detection', 'n': 'Face Detection', 't': u'Gramplet', 'v': '1.0.6', 'z': 'FaceDetection.addon.tgz'}
 {'d': 'Gramplet for demonstrating Cairo graphics', 'g': '3.3', 'i': 'Clock Gramplet', 'n': 'Klock-Gramplet', 't': u'Gramplet', 'v': '0.0.6', 'z': 'ClockGramplet.addon.tgz'}
 {'d': "Gramplet for editing active person's notes", 'g': '3.3', 'i': 'Note Gramplet', 'n': 'Gramplet f\xc3\xb6r notis', 't': u'Gramplet', 'v': '1.0.7', 'z': 'NoteGramplet.addon.tgz'}
-{'d': 'Skapar en hemsida (XHTML) med grafisk representation av f\xc3\xb6rf\xc3\xa4der/\xc3\xa4ttlingar (SVG) d\xc3\xa4r detaljer om individier blir synliga via mush\xc3\xa4ndelser.', 'g': '3.3', 'i': 'denominoviso', 'n': 'DenominoViso', 't': u'Report', 'v': '2.3.5', 'z': 'DenominoViso.addon.tgz'}
+{'d': 'Skapar en hemsida (XHTML) med grafisk representation av f\xc3\xb6rf\xc3\xa4der/\xc3\xa4ttlingar (SVG) d\xc3\xa4r detaljer om individier blir synliga via mush\xc3\xa4ndelser.', 'g': '3.3', 'i': 'denominoviso', 'n': 'DenominoViso', 't': u'Report', 'v': '2.3.6', 'z': 'DenominoViso.addon.tgz'}
 {'d': 'Interactive Python interpreter', 'g': '3.3', 'i': 'Python Gramplet', 'n': 'Gramplet med Python', 't': u'Gramplet', 'v': '1.0.5', 'z': 'PythonGramplet.addon.tgz'}
 {'d': 'Merge primary objects via the command line.', 'g': '3.3', 'i': 'climerge', 'n': 'Command Line Merge', 't': u'Tool', 'v': '1.0.1', 'z': 'CliMerge.addon.tgz'}
 {'d': 'Lista de tio personposterna, som har \xc3\xa4ndrats', 'g': '3.3', 'i': 'LastChangeGramplet', 'n': 'Gramplet med de senaste \xc3\xa4ndringarna', 't': u'Gramplet', 'v': '0.0.9', 'z': 'LastChange.addon.tgz'}
