@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-12-30 12:26+0100\n"
-"PO-Revision-Date: 2011-12-30 15:41+0100\n"
+"PO-Revision-Date: 2011-12-30 15:51+0100\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
@@ -24,11 +24,11 @@ msgstr ""
 
 #: PedigreeChart//PedigreeChart.gpr.py:24
 msgid "Pedigree Chart"
-msgstr ""
+msgstr "Ahnentafelgrafik"
 
 #: PedigreeChart//PedigreeChart.gpr.py:25
 msgid "Alternate version of the traditional pedigree chart."
-msgstr ""
+msgstr "Alternative Version zur traditionellen Ahnentafelgrafik."
 
 #: PedigreeChart//PedigreeChart.py:378
 #, python-format
@@ -42,7 +42,7 @@ msgstr "Mutter"
 #: PedigreeChart//PedigreeChart.py:385
 #, python-format
 msgid "Pedigree Chart for %s"
-msgstr ""
+msgstr "Ahnentafelgrafik für %s"
 
 #: PedigreeChart//PedigreeChart.py:532
 msgid "Father"
@@ -51,7 +51,7 @@ msgstr "Vater"
 #: PedigreeChart//PedigreeChart.py:534
 #, python-format
 msgid "Page %d"
-msgstr ""
+msgstr "Seite %d"
 
 #: PedigreeChart//PedigreeChart.py:641
 msgid "Tree Options"
@@ -79,7 +79,7 @@ msgstr "Zeige Mutter/Vater Überschriften"
 
 #: PedigreeChart//PedigreeChart.py:652
 msgid "Show the title of mother or father beside each ancestor's box."
-msgstr ""
+msgstr "Zeige den Titel von Mutter oder Vater neben jedem Ahnenkästchen."
 
 #: PedigreeChart//PedigreeChart.py:664
 msgid "The basic style used for the text display."
@@ -91,5 +91,6 @@ msgstr "Der Basisstil, der für die Titelanzeige verwendet wird."
 
 #: PedigreeChart//PedigreeChart.py:682
 msgid "Style used for labels and captions"
-msgstr ""
+msgstr "Der Stil der für Etketten und Überschriften verwendet wird"
+
 
