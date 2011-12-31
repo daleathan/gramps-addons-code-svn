@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-12-04 00:48+0100\n"
-"PO-Revision-Date: 2011-12-08 23:18+0100\n"
+"PO-Revision-Date: 2011-12-31 13:03+0100\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
@@ -23,9 +23,8 @@ msgstr ""
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 
 #: Census//Census.py:55
-#, fuzzy
 msgid "Order"
-msgstr "Ränder"
+msgstr "Reihenfolge"
 
 #: Census//Census.py:58
 msgid "Census"
@@ -204,16 +203,15 @@ msgstr "1. Haus"
 
 #: Census//census.xml.h:4
 msgid "1. Name of Occupier"
-msgstr ""
+msgstr "1. Name des Besitzers"
 
 #: Census//census.xml.h:5
-#, fuzzy
 msgid "1. Names of Inmates"
-msgstr "Namensformat"
+msgstr "1. Namen der Insassen"
 
 #: Census//census.xml.h:6
 msgid "1. No. of family in order of visitation"
-msgstr ""
+msgstr "1. Nr. der Familie in der Reihenfolge der Besuche"
 
 #: Census//census.xml.h:7
 msgid "1. Vessels"
@@ -246,11 +244,11 @@ msgstr "10. Verheiratet oder Single"
 
 #: Census//census.xml.h:14
 msgid "10. Number of rooms in house or institution for each famiy"
-msgstr ""
+msgstr "10. Anzahl der Räume im Haus oder Einrichtung für jede Familie"
 
 #: Census//census.xml.h:15
 msgid "10. Racial or tribal origin"
-msgstr ""
+msgstr "10. Herkunfts Rasse oder Stamm"
 
 #: Census//census.xml.h:16
 msgid "10. Relationship to Head of Family"
@@ -278,7 +276,7 @@ msgstr "11. Land oder Ort der Geburt"
 
 #: Census//census.xml.h:22
 msgid "11. Indians, if any"
-msgstr ""
+msgstr "11. Indianer, gegebenenfalls"
 
 #: Census//census.xml.h:23
 msgid "11. Location: Township"
@@ -286,7 +284,7 @@ msgstr ""
 
 #: Census//census.xml.h:24
 msgid "11. Number of inmates in institution"
-msgstr ""
+msgstr "11. Anzahl der Insassen in der Einrichtung"
 
 #: Census//census.xml.h:25
 msgid "11. Religion"
@@ -294,7 +292,7 @@ msgstr "11. Religion"
 
 #: Census//census.xml.h:26
 msgid "11. Single, married, widowed, divorced or legally separated"
-msgstr ""
+msgstr "11. Ledig, verheiratet, verwitwet, geschieden oder juristisch getrennt"
 
 #: Census//census.xml.h:27
 msgid "11. Wheat: Produce Bsh."
@@ -314,7 +312,7 @@ msgstr "12. Gerste: Morgen"
 
 #: Census//census.xml.h:31
 msgid "12. FrenchCanadian"
-msgstr ""
+msgstr "12. Frankokanadier(in)"
 
 #: Census//census.xml.h:32
 #, fuzzy
@@ -335,7 +333,7 @@ msgstr "12. Religion"
 
 #: Census//census.xml.h:36
 msgid "12. Residents: Members, Male"
-msgstr ""
+msgstr "12. Bewohner: Angehörigen, Männlich"
 
 #: Census//census.xml.h:37
 msgid "12. Widows"
@@ -343,7 +341,7 @@ msgstr "12. Witwen"
 
 #: Census//census.xml.h:38
 msgid "12. Year of immigration to Canada, if an immigrant"
-msgstr ""
+msgstr "12. Jahr der Einwanderung nach Kanada, wenn Einwanderer"
 
 #: Census//census.xml.h:39
 msgid "13. Barley: Produce Bsh."
@@ -379,7 +377,7 @@ msgstr ""
 
 #: Census//census.xml.h:47
 msgid "13. Residents: Members, Female"
-msgstr ""
+msgstr "13. Bewohner: Angehörigen, Weiblich"
 
 #: Census//census.xml.h:48
 msgid "13. Year of naturalization, if formerly an alien"
@@ -395,7 +393,7 @@ msgstr "14. Kann schreiben"
 
 #: Census//census.xml.h:51
 msgid "14. Livestock: Horses, all ages"
-msgstr ""
+msgstr "14. Nutztiere: Pferde, allen Alters"
 
 #: Census//census.xml.h:52
 msgid "14. Members: Male"
@@ -407,7 +405,7 @@ msgstr ""
 
 #: Census//census.xml.h:54
 msgid "14. Racial or tribal origin"
-msgstr ""
+msgstr "14. Herkunfts Rasse oder Stamm"
 
 #: Census//census.xml.h:55
 msgid "14. Real Estate Owned: Number of dwelling houses"
@@ -521,24 +519,23 @@ msgstr ""
 
 #: Census//census.xml.h:82
 msgid "17. Employers"
-msgstr ""
+msgstr "17. Arbeitgeber"
 
 #: Census//census.xml.h:83
 msgid "17. Going to school"
-msgstr ""
+msgstr "17. Geht zur Schule"
 
 #: Census//census.xml.h:84
 msgid "17. Members Absent: Female"
-msgstr ""
+msgstr "17. Angehörige abwesend: Weiblich"
 
 #: Census//census.xml.h:85
-#, fuzzy
 msgid "17. Nationality"
-msgstr "Nationale Herkunft"
+msgstr "17. Nationalität"
 
 #: Census//census.xml.h:86
 msgid "17. Not Members: Female"
-msgstr ""
+msgstr "17. Keine Angehörigen: Weiblich"
 
 #: Census//census.xml.h:87
 msgid "17. Peas: Produce Bsh."
@@ -554,11 +551,11 @@ msgstr ""
 
 #: Census//census.xml.h:90
 msgid "17. Sheep and lambs, all ages"
-msgstr ""
+msgstr "17. Schafe und Lämmer, allen Alters"
 
 #: Census//census.xml.h:91
 msgid "18. Blind"
-msgstr ""
+msgstr "18. Blind"
 
 #: Census//census.xml.h:92
 msgid "18. Deaf and Dumb: Male"
@@ -570,7 +567,7 @@ msgstr ""
 
 #: Census//census.xml.h:94
 msgid "18. Hogs and pigs, all ages"
-msgstr ""
+msgstr "18. Ferkel und Schweine, allen Alters"
 
 #: Census//census.xml.h:95
 msgid "18. Living on own means"
@@ -3753,16 +3750,15 @@ msgstr ""
 
 #: Census//census.xml.h:857
 msgid "Village"
-msgstr ""
+msgstr "Dorf"
 
 #: Census//census.xml.h:858
 msgid "Village or Hamlet"
-msgstr ""
+msgstr "Dorf oder Weiler"
 
 #: Census//census.xml.h:859
-#, fuzzy
 msgid "Wages"
-msgstr "Bilder"
+msgstr "Lohn"
 
 #: Census//census.xml.h:860
 msgid "Weeks out of work in 1909"
@@ -3784,7 +3780,7 @@ msgstr ""
 
 #: Census//census.xml.h:864
 msgid "WheatAcres"
-msgstr ""
+msgstr "WeizenMorgen"
 
 #: Census//census.xml.h:865
 msgid "WheatBsh"
@@ -3811,9 +3807,8 @@ msgid "Whether defective and name of defect"
 msgstr ""
 
 #: Census//census.xml.h:871
-#, fuzzy
 msgid "White persons blind"
-msgstr "die Person"
+msgstr "Weiße Person blind"
 
 #: Census//census.xml.h:872
 msgid "White persons deaf/dumb 14-24"
@@ -3840,40 +3835,36 @@ msgid "White persons insane and idiots at public charge"
 msgstr ""
 
 #: Census//census.xml.h:878
-#, fuzzy
 msgid "Widowed, divorced"
-msgstr "geschieden"
+msgstr "Verwitwet, geschieden"
 
 #: Census//census.xml.h:879
 msgid "Widowers"
-msgstr ""
+msgstr "Witwer"
 
 #: Census//census.xml.h:880
 msgid "Widows"
-msgstr "Fenster"
+msgstr "Witwen"
 
 #: Census//census.xml.h:881
-#, fuzzy
 msgid "WindowRooms"
-msgstr "_Fenster"
+msgstr "Räume mit Fenstern"
 
 #: Census//census.xml.h:882
 msgid "WoolLbs."
-msgstr ""
+msgstr "WollePfund"
 
 #: Census//census.xml.h:883
-#, fuzzy
 msgid "Work Type"
-msgstr "Linkart:"
+msgstr "Art der Arbeit"
 
 #: Census//census.xml.h:884
 msgid "Working at Home"
 msgstr "Arbeitet Zuhause"
 
 #: Census//census.xml.h:885
-#, fuzzy
 msgid "WorshipPlaces"
-msgstr "GeoOrte"
+msgstr "KultOrte"
 
 #: Census//census.xml.h:886
 msgid "Write"
@@ -3901,8 +3892,7 @@ msgid "Years of present marriage"
 msgstr "Längste beendete Ehe"
 
 #: Census//census.xml.h:892
-#, fuzzy
 msgid "of the said"
-msgstr "Tipp des Tages"
+msgstr "besagte"
 
 
