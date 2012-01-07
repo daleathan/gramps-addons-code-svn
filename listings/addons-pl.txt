@@ -33,7 +33,7 @@
 {'d': 'Gramplet for detecting and assigning faces', 'g': '3.3', 'i': 'Face Detection', 'n': 'Face Detection', 't': u'Gramplet', 'v': '1.0.6', 'z': 'FaceDetection.addon.tgz'}
 {'d': 'Gramplet for demonstrating Cairo graphics', 'g': '3.3', 'i': 'Clock Gramplet', 'n': 'Gramplet Zegara', 't': u'Gramplet', 'v': '0.0.6', 'z': 'ClockGramplet.addon.tgz'}
 {'d': "Gramplet for editing active person's notes", 'g': '3.3', 'i': 'Note Gramplet', 'n': 'Gramplet Notatki', 't': u'Gramplet', 'v': '1.0.7', 'z': 'NoteGramplet.addon.tgz'}
-{'d': 'Generuje stron\xc4\x99 (XHTML) z geograficzn\xc4\x85 reprezentacj\xc4\x85 przodk\xc3\xb3w/potomk\xc3\xb3w (SVG) gdzie szczeg\xc3\xb3\xc5\x82y danej osoby s\xc4\x85 widoczne po najechaniu na ni\xc4\x85 myszk\xc4\x85.', 'g': '3.3', 'i': 'denominoviso', 'n': 'DenominoViso', 't': u'Report', 'v': '2.3.6', 'z': 'DenominoViso.addon.tgz'}
+{'d': 'Generuje stron\xc4\x99 (XHTML) z geograficzn\xc4\x85 reprezentacj\xc4\x85 przodk\xc3\xb3w/potomk\xc3\xb3w (SVG) gdzie szczeg\xc3\xb3\xc5\x82y danej osoby s\xc4\x85 widoczne po najechaniu na ni\xc4\x85 myszk\xc4\x85.', 'g': '3.3', 'i': 'denominoviso', 'n': 'DenominoViso', 't': u'Report', 'v': '2.3.7', 'z': 'DenominoViso.addon.tgz'}
 {'d': 'Interactive Python interpreter', 'g': '3.3', 'i': 'Python Gramplet', 'n': 'Gramplet konsoli Pythona', 't': u'Gramplet', 'v': '1.0.5', 'z': 'PythonGramplet.addon.tgz'}
 {'d': 'Merge primary objects via the command line.', 'g': '3.3', 'i': 'climerge', 'n': 'Command Line Merge', 't': u'Tool', 'v': '1.0.1', 'z': 'CliMerge.addon.tgz'}
 {'d': 'List the last ten person records that have been changed', 'g': '3.3', 'i': 'LastChangeGramplet', 'n': 'Last Change Gramplet', 't': u'Gramplet', 'v': '0.0.9', 'z': 'LastChange.addon.tgz'}

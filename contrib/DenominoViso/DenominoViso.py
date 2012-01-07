@@ -3067,6 +3067,7 @@ class GuiTableOption(gtk.ScrolledWindow):
 
     def create_treeview(self, lstore, list_of_lists, editable_column = None):
         treeview = gtk.TreeView(lstore)
+        treeview.set_size_request(-1, 70)
         treeview.set_rules_hint(True)
         treeview.get_selection().set_mode(gtk.SELECTION_SINGLE)
         for i,v in enumerate(list_of_lists[0]):
