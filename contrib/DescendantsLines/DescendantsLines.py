@@ -17,6 +17,33 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 #
+# This program is based on the program located at
+# http://offog.org/darcs/misccode/familytree. The license for that
+# program is found at http://offog.org/darcs/misccode/NOTES.
+# Distributed under the terms of the X11 license:
+#
+#  Copyright 1998, 1999, 2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007,
+#    2008, 2009, 2010, 2011 Adam Sampson <ats@offog.org>
+#
+#  Permission is hereby granted, free of charge, to any person obtaining a
+#  copy of this software and associated documentation files (the
+#  "Software"), to deal in the Software without restriction, including
+#  without limitation the rights to use, copy, modify, merge, publish,
+#  distribute, sublicense, and/or sell copies of the Software, and to
+#  permit persons to whom the Software is furnished to do so, subject to
+#  the following conditions:
+#
+#  The above copyright notice and this permission notice shall be included
+#  in all copies or substantial portions of the Software.
+#
+#  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+#  OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+#  MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+#  IN NO EVENT SHALL ADAM SAMPSON BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+#  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+#  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+#  DEALINGS IN THE SOFTWARE.
+#
 """
 Print Descendants Lines (experimental migration, UNSTABLE)
 """
@@ -29,6 +56,7 @@ import cairo
 import gtk
 import gzip
 import xml.dom.minidom
+import xml.sax.saxutils
 import getopt
 import sys
 import codecs
@@ -40,7 +68,8 @@ import os.path
 #-------------------------------------------------------------------------
 
 import DateHandler
-from gen.plug.menu import NumberOption, PersonOption, FilterOption
+from gen.plug.menu import NumberOption, PersonOption, FilterOption, \
+                            DestinationOption, BooleanOption
 from gen.plug.report import Report
 from gen.plug.report import utils as ReportUtils
 from gui.plug.report import MenuReportOptions
@@ -73,6 +102,7 @@ SP_PAD = 10
 MIN_C_WIDTH = 40
 TEXT_PAD = 2
 TEXT_LINE_PAD = 2
+INC_PLACES = False
 
 ctx = None
 font_name = 'sans-serif'
@@ -106,23 +136,59 @@ class DescendantsLinesReport(Report):
         This report needs the following parameters (class variables)
         that come in the options class.
 
-        ?    - S_DOWN.
-        ?    - S_UP.
-        ?    - S_VPAD.
-        ?    - FL_PAD.
-        ?    - OL_PAD.
-        ?    - O_DOWN.
-        ?    - C_PAD.
-        ?    - F_PAD.
-        ?    - C_UP.
-        ?    - SP_PAD
-        ?    - MIN_C_WIDTH
-        ?    - TEXT_PAD
-        ?    - TEXT_LINE_PAD
+        S_DOWN - The length of the vertical edge from descendant to spouse-bar
+        S_UP - The length of the vertical edge from spouse-bar to spouse
+        S_VPAD
+        FL_PAD
+        OL_PAD
+        O_DOWN - The length of the vertical edge from spouse-bar to child-bar
+        C_PAD
+        F_PAD
+        C_UP - The length of the vertical edge from child to child-bar
+        SP_PAD
+        MIN_C_WIDTH
+        TEXT_PAD
+        TEXT_LINE_PAD
         """
 
         Report.__init__(self, database, options_class)
+        self.options = {}
+        menu = options_class.menu
         self.database = database
+        for name in menu.get_all_option_names():
+            self.options[name] = menu.get_option_by_name(name).get_value()
+
+        global S_DOWN
+        global S_UP
+        global S_VPAD
+        global FL_PAD
+        global OL_PAD
+        global O_DOWN
+        global C_PAD
+        global F_PAD
+        global C_UP
+        global SP_PAD
+        global MIN_C_WIDTH
+        global TEXT_PAD
+        global TEXT_LINE_PAD
+        S_DOWN = self.options["S_DOWN"]
+        S_UP = self.options["S_UP"]
+        S_VPAD = self.options["S_VPAD"]
+        FL_PAD = self.options["FL_PAD"]
+        OL_PAD = self.options["OL_PAD"]
+        O_DOWN = self.options["O_DOWN"]
+        C_PAD = self.options["C_PAD"]
+        F_PAD = self.options["F_PAD"]
+        C_UP = self.options["C_UP"]
+        SP_PAD = self.options["SP_PAD"]
+        MIN_C_WIDTH = self.options["MIN_C_WIDTH"]
+        TEXT_PAD = self.options["TEXT_PAD"]
+        TEXT_LINE_PAD = self.options["TEXT_LINE_PAD"]
+
+        self.output_fn = self.options['output_fn']
+        self.inc_places = self.options['inc_places']
+        global INC_PLACES
+        INC_PLACES = self.inc_places
 
     def write_report(self):
         """
@@ -181,14 +247,14 @@ class DescendantsLinesReport(Report):
         #PYTHONPATH
         
         input_fn = os.path.join(const.USER_PLUGINS, 'DescendantsLines', 'DescendantsLines.xml')
-        output_fn = os.path.join(const.USER_HOME, 'DescendantsLines.png')
+        #output_fn = os.path.join(const.USER_HOME, 'DescendantsLines.png')
         
         # Pass 2  
           
         global font_name, base_font_size
 
         p = load_gramps(input_fn, pid)
-        draw_file(p, output_fn, PNGWriter())
+        draw_file(p, self.output_fn, PNGWriter())
         
     def write_tmp_data(self, ind_list):
         """
@@ -235,9 +301,7 @@ class DescendantsLinesReport(Report):
         for child in ind_list:
             person = self.database.get_person_from_handle(child)
             
-            # only family where person is the child
-            
-            for handle in person.get_parent_family_handle_list():
+            for handle in person.get_family_handle_list():
                 fam = self.database.get_family_from_handle(handle)
                 if handle in fams:
                     self.write_xml_family(fam)
@@ -264,6 +328,11 @@ class DescendantsLinesReport(Report):
         event = find_event(self.database, event_ref.ref)
         etype = event.get_type().xml_str()
         date = event.get_date_object()
+        if self.inc_places:
+            placeh = event.get_place_handle()
+            place_title = None
+            if placeh:
+                place_title = self.database.get_place_from_handle(placeh).get_title()
         local_date = DateHandler.displayer.display(date)
         
         self.xml_file.write('<event id="%s" handle="%s">\n' % (event.get_gramps_id(), event.handle))
@@ -272,7 +341,11 @@ class DescendantsLinesReport(Report):
             
             # DTD needs date object, use translated date for report 
             
-            self.xml_file.write('<dateval val="%s"/>\n' % local_date)
+            self.xml_file.write('<dateval val=%s/>\n' % \
+                    xml.sax.saxutils.quoteattr(local_date))
+        if self.inc_places and place_title:
+            self.xml_file.write('<placetval val=%s/>\n' % \
+                    xml.sax.saxutils.quoteattr(place_title))
         self.xml_file.write('</event>\n')
         
     def write_xml_person(self, identifiant, child, gender, first, surname, event_list):
@@ -284,9 +357,11 @@ class DescendantsLinesReport(Report):
         self.xml_file.write('<gender>%s</gender>\n' % gender)
         self.xml_file.write('<name>\n')
         if first:
-            self.xml_file.write('<first>%s</first>\n' % first)
+            self.xml_file.write('<first>%s</first>\n' % \
+                    xml.sax.saxutils.escape(first))
         if surname:
-            self.xml_file.write('<last>%s</last>\n' % surname)
+            self.xml_file.write('<last>%s</last>\n' % \
+                    xml.sax.saxutils.escape(surname))
         self.xml_file.write('</name>\n')
         for event_ref in event_list:
                 if event_ref.get_role() == gen.lib.EventRoleType.PRIMARY:
@@ -718,14 +793,36 @@ def load_gramps(fn, start):
         po = tpeople[p_id]
         etype = get_text(ev.getElementsByTagName('type'))
         dvs = ev.getElementsByTagName('dateval')
-        if len(dvs) == 0:
+        date = None
+        if len(dvs) > 0:
+            date = ev.getElementsByTagName('dateval')[0].getAttribute('val')
+        else:
             print 'Undated event: ' + ev.getAttribute('handle')
+
+        if INC_PLACES:
+            ptv = ev.getElementsByTagName('placetval')
+            placet = None
+            if len(ptv) > 0:
+                placet = ev.getElementsByTagName('placetval')[0].getAttribute('val')
+            else:
+                print 'Unplacetd event: ' + ev.getAttribute('handle')
+
+            if len(dvs) == 0 and len(ptv) == 0:
+                continue
+
+        elif len(dvs) == 0:
             continue
-        date = ev.getElementsByTagName('dateval')[0].getAttribute('val')
+
         if etype == 'Birth':
             po.birth = date
+            if INC_PLACES:
+                if placet:
+                    po.birth += ' - ' + placet
         elif etype == 'Death':
             po.death = date
+            if INC_PLACES:
+                if placet:
+                    po.death += ' - ' + placet
         else:
             print 'Unknown event type: ' + etype
 
@@ -849,19 +946,6 @@ class DescendantsLinesOptions(MenuReportOptions):
     def __init__(self, name, dbase):
         self.__db = dbase
         self.__pid = None
-        self.__S_DOWN = 20
-        self.__S_UP = 10
-        self.__S_VPAD = 10
-        self.__FL_PAD = 20
-        self.__OL_PAD = 10
-        self.__O_DOWN = 30
-        self.__C_PAD = 10
-        self.__F_PAD = 20
-        self.__C_UP = 15
-        self.__SP_PAD = 10
-        self.__MIN_C_WIDTH = 40
-        self.__TEXT_PAD = 2
-        self.__TEXT_LINE_PAD = 2
         MenuReportOptions.__init__(self, name, dbase)
 
     def add_menu_options(self, menu):
@@ -871,73 +955,81 @@ class DescendantsLinesOptions(MenuReportOptions):
 
         category_name = _('Report Options')
 
-        self.__pid = PersonOption(_('Center Person'))
-        self.__pid.set_help(_('The center person for the report'))
-        menu.add_option(category_name, 'pid', self.__pid)
+        pid = PersonOption(_('Center Person'))
+        pid.set_help(_('The center person for the report'))
+        menu.add_option(category_name, 'pid', pid)
+
+        output_fn = DestinationOption(_("Destination"),
+            os.path.join(const.USER_HOME,"DescendantsLines.png"))
+        output_fn.set_help(_("The destination file for the png-content."))
+        menu.add_option(category_name, "output_fn", output_fn)
+
+        inc_places = BooleanOption(_('Include event places'), False)
+        inc_places.set_help(_('Whether to include event places in the output.'))
+        menu.add_option(category_name, 'inc_places', inc_places)
 
         category_name = _('Options S')
        
-        self.__S_DOWN = NumberOption(_("S_DOWN"), 20, 0, 50)
-        self.__S_DOWN.set_help(_("The number of ??? down"))
-        menu.add_option(category_name, "S_DOWN", self.__S_DOWN)
+        s_down = NumberOption(_("S_DOWN"), 20, 0, 50)
+        s_down.set_help(_("The length of the vertical edge from descendant to spouse-bar."))
+        menu.add_option(category_name, "S_DOWN", s_down)
         
-        self.__S_UP = NumberOption(_("S_UP"), 10, 0, 50)
-        self.__S_UP.set_help(_("The number of ??? up"))
-        menu.add_option(category_name, "S_UP", self.__S_UP)
+        s_up = NumberOption(_("S_UP"), 10, 0, 50)
+        s_up.set_help(_("The length of the vertical edge from spouse-bar to spouse."))
+        menu.add_option(category_name, "S_UP", s_up)
         
-        self.__S_VPAD = NumberOption(_("S_VPAD"), 10, 0, 50)
-        self.__S_VPAD.set_help(_("The number of ??? vpad"))
-        menu.add_option(category_name, "S_VPAD", self.__S_VPAD)
+        s_vpad = NumberOption(_("S_VPAD"), 10, 0, 50)
+        s_vpad.set_help(_("The number of ??? vpad"))
+        menu.add_option(category_name, "S_VPAD", s_vpad)
         
-        self.__SP_PAD = NumberOption(_("SP_PAD"), 10, 0, 50)
-        self.__SP_PAD.set_help(_("The number of ??? pad"))
-        menu.add_option(category_name, "SP_PAD", self.__SP_PAD)
+        sp_pad = NumberOption(_("SP_PAD"), 10, 0, 50)
+        sp_pad.set_help(_("The number of ??? pad"))
+        menu.add_option(category_name, "SP_PAD", sp_pad)
         
         category_name = _('Options F')
         
-        self.__F_PAD = NumberOption(_("F_PAD"), 20, 0, 50)
-        self.__F_PAD.set_help(_("The number of ??? pad"))
-        menu.add_option(category_name, "F_PAD", self.__F_PAD)
+        f_pad = NumberOption(_("F_PAD"), 20, 0, 50)
+        f_pad.set_help(_("The number of ??? pad"))
+        menu.add_option(category_name, "F_PAD", f_pad)
         
-        self.__FL_PAD = NumberOption(_("FL_PAD"), 20, 0, 50)
-        self.__FL_PAD.set_help(_("The number of ??? pad"))
-        menu.add_option(category_name, "FL_PAD", self.__FL_PAD)
+        fl_pad = NumberOption(_("FL_PAD"), 20, 0, 50)
+        fl_pad.set_help(_("The number of ??? pad"))
+        menu.add_option(category_name, "FL_PAD", fl_pad)
         
         category_name = _('Options O')
         
-        self.__OL_PAD = NumberOption(_("OL_PAD"), 10, 0, 50)
-        self.__OL_PAD.set_help(_("The number of ??? pad"))
-        menu.add_option(category_name, "OL_PAD", self.__OL_PAD)
+        ol_pad = NumberOption(_("OL_PAD"), 10, 0, 50)
+        ol_pad.set_help(_("The number of ??? pad"))
+        menu.add_option(category_name, "OL_PAD", ol_pad)
         
-        self.__O_DOWN = NumberOption(_("O_DOWN"), 30, 0, 50)
-        self.__O_DOWN.set_help(_("The number of ??? down"))
-        menu.add_option(category_name, "O_DOWN", self.__O_DOWN)
+        o_down = NumberOption(_("O_DOWN"), 30, 0, 50)
+        o_down.set_help(_("The length of the vertical edge from spouse-bar to child-bar."))
+        menu.add_option(category_name, "O_DOWN", o_down)
         
         category_name = _('Options C')
         
-        self.__C_PAD = NumberOption(_("C_PAD"), 10, 0, 50)
-        self.__C_PAD.set_help(_("The number of ??? pad"))
-        menu.add_option(category_name, "C_PAD", self.__C_PAD)
+        c_pad = NumberOption(_("C_PAD"), 10, 0, 50)
+        c_pad.set_help(_("The number of ??? pad"))
+        menu.add_option(category_name, "C_PAD", c_pad)
     
-        self.__C_UP = NumberOption(_("C_UP"), 15, 0, 50)
-        self.__C_UP.set_help(_("The number of ??? up"))
-        menu.add_option(category_name, "C_UP", self.__C_UP)
+        c_up = NumberOption(_("C_UP"), 15, 0, 50)
+        c_up.set_help(_("The length of the vertical edge from child to child-bar."))
+        menu.add_option(category_name, "C_UP", c_up)
         
-        self.__MIN_C_WIDTH = NumberOption(_("MIN_C_WIDTH"), 40, 0, 50)
-        self.__MIN_C_WIDTH.set_help(_("The number of ??? min width"))
-        menu.add_option(category_name, "MIN_C_WIDTH", self.__MIN_C_WIDTH)
+        min_c_width = NumberOption(_("MIN_C_WIDTH"), 40, 0, 50)
+        min_c_width.set_help(_("The number of ??? min width"))
+        menu.add_option(category_name, "MIN_C_WIDTH", min_c_width)
         
         category_name = _('Options Text')
         
-        self.__TEXT_PAD = NumberOption(_("TEXT_PAD"), 2, 0, 50)
-        self.__TEXT_PAD.set_help(_("The number of text pad ???"))
-        menu.add_option(category_name, "TEXT_PAD", self.__TEXT_PAD)
+        text_pad = NumberOption(_("TEXT_PAD"), 2, 0, 50)
+        text_pad.set_help(_("The number of text pad ???"))
+        menu.add_option(category_name, "TEXT_PAD", text_pad)
         
-        self.__TEXT_LINE_PAD = NumberOption(_("TEXT_LINE_PAD"), 2, 0, 50)
-        self.__TEXT_LINE_PAD.set_help(_("The number of text line pad ??? "))
-        menu.add_option(category_name, "TEXT_LINE_PAD", self.__TEXT_LINE_PAD)
+        text_line_pad = NumberOption(_("TEXT_LINE_PAD"), 2, 0, 50)
+        text_line_pad.set_help(_("The number of text line pad ??? "))
+        menu.add_option(category_name, "TEXT_LINE_PAD", text_line_pad)
         
-
     def make_default_style(self, default_style):
         """Make the default output style"""
 
