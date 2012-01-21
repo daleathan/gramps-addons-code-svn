@@ -1,7 +1,9 @@
 #
 # Gramps - a GTK+/GNOME based genealogy program
 #
-# Copyright (C) 2010 ats-familytree@offog.org
+# Copyright (C) 2010 Adam Sampson <ats-familytree@offog.org>
+# Copyright (C) 2010 Jerome Rapinat <romjerome@yahoo.fr>
+# Copyright (C) 2010, 2012 lcc <lcc.mailaddress@gmail.com>
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -106,6 +108,10 @@ TEXT_PAD = 2
 TEXT_LINE_PAD = 2
 INC_PLACES = False
 INC_MARRIAGES = False
+MAX_GENERATION = 0
+
+# Static variable for do_person()
+CUR_GENERATION = 0
 
 ctx = None
 font_name = 'sans-serif'
@@ -152,6 +158,9 @@ class DescendantsLinesReport(Report):
         MIN_C_WIDTH
         TEXT_PAD
         TEXT_LINE_PAD
+        max_gen - Maximum number of generations to include.
+        inc_places - Whether to include event places in the output.
+        inc_marriages - Whether to include marriage information in the output.
         """
 
         Report.__init__(self, database, options_class)
@@ -189,10 +198,13 @@ class DescendantsLinesReport(Report):
         TEXT_LINE_PAD = self.options["TEXT_LINE_PAD"]
 
         self.output_fn = self.options['output_fn']
+        self.max_gen = self.options['max_gen']
         self.inc_places = self.options['inc_places']
         self.inc_marriages = self.options['inc_marriages']
+        global MAX_GENERATION
         global INC_PLACES
         global INC_MARRIAGES
+        MAX_GENERATION = self.max_gen
         INC_PLACES = self.inc_places
         INC_MARRIAGES = self.inc_marriages
 
@@ -206,16 +218,20 @@ class DescendantsLinesReport(Report):
         
         self.center_person = self.database.get_person_from_gramps_id(pid)
         
-        # Who is missing on filter ?
-        # Descendant Families of ID
-        #filter_class = GenericFilterFactory('Person')
-        #filter = filter_class()
-        #filter.add_rule(Rules.Person.IsDescendantFamilysOf([pid, 1]))
+        # Person.IsDescendantFamilyOf ID
+        # ("Matches people that are descendants or the spouse
+        #  of a descendant of a specified person")
+        # Matches all that is used currently, families are collected later
+        filter_class = GenericFilterFactory('Person')
+        filter = filter_class()
+        filter.add_rule(Rules.Person.IsDescendantFamilyOf([pid, 1]))
+
         #filter.add_rule(Rules.Person.IsDescendantOf([pid, 1]))
         
         plist = self.database.get_person_handles()
         
-        #ind_list = filter.apply(self.database, plist)
+        ind_list = filter.apply(self.database, plist)
+
         #filter.add_rule(Rules.Person.IsSpouseOfFilterMatch(ind_list))
         #slist = filter.apply(self.database, ind_list)
         #filter.add_rule(Rules.Person.IsAncestorOf([pid, 0]))
@@ -224,7 +240,7 @@ class DescendantsLinesReport(Report):
         #blist = filter.apply(self.database, slist)
         #ind_list = ind_list + slist + alist + blist
         
-        ind_list = plist
+        #ind_list = plist
                 
         # Pass 1
         
@@ -253,7 +269,6 @@ class DescendantsLinesReport(Report):
         #PYTHONPATH
         
         input_fn = os.path.join(const.USER_PLUGINS, 'DescendantsLines', 'DescendantsLines.xml')
-        #output_fn = os.path.join(const.USER_HOME, 'DescendantsLines.png')
         
         # Pass 2  
           
@@ -274,14 +289,6 @@ class DescendantsLinesReport(Report):
         self.xml_file = codecs.getwriter("utf8")(xml_file)
         self.write_xml_head()
         
-        self.xml_file.write('<events>\n')
-        for child in ind_list:
-            person = self.database.get_person_from_handle(child)
-            for event_ref in person.get_event_ref_list():
-                if event_ref.get_role() == gen.lib.EventRoleType.PRIMARY:
-                    self.write_xml_event(event_ref)
-        self.xml_file.write('</events>\n')
-        
         self.xml_file.write('<people>\n')
         for child in ind_list:
             person = self.database.get_person_from_handle(child)
@@ -296,7 +303,7 @@ class DescendantsLinesReport(Report):
             first = name.get_first_name()
             surname = name.get_surname()
             event_list = person.get_event_ref_list()
-            self.write_xml_person(identifiant, child, gender, first, surname, event_list)
+            self.write_xml_person(person, identifiant, child, gender, first, surname, event_list)
         self.xml_file.write('</people>\n')
         
         self.xml_file.write('<families>\n')
@@ -320,41 +327,15 @@ class DescendantsLinesReport(Report):
     def write_xml_head(self):
         """
         Writes the header part of the xml file.
+        NOTE: This xml file is not following the Gramps XML
+        specification.
         """
         self.xml_file.write('<?xml version="1.0" encoding="UTF-8"?>\n')
         self.xml_file.write('<!DOCTYPE database PUBLIC "-//GRAMPS//DTD GRAMPS XML 1.4.0//EN"\n')
         self.xml_file.write('"http://gramps-project.org/xml/1.4.0/grampsxml.dtd">\n')
         self.xml_file.write('<database xmlns="http://gramps-project.org/xml/1.4.0/">\n')
 
-    def write_xml_event(self, event_ref):
-        """
-        Writes the event part of the xml file.
-        """
-        
-        event = find_event(self.database, event_ref.ref)
-        etype = event.get_type().xml_str()
-        date = event.get_date_object()
-        if self.inc_places:
-            placeh = event.get_place_handle()
-            place_title = None
-            if placeh:
-                place_title = self.database.get_place_from_handle(placeh).get_title()
-        local_date = DateHandler.displayer.display(date)
-        
-        self.xml_file.write('<event id="%s" handle="%s">\n' % (event.get_gramps_id(), event.handle))
-        self.xml_file.write('<type>%s</type>\n' % etype)
-        if date:
-            
-            # DTD needs date object, use translated date for report 
-            
-            self.xml_file.write('<dateval val=%s/>\n' % \
-                    xml.sax.saxutils.quoteattr(local_date))
-        if self.inc_places and place_title:
-            self.xml_file.write('<placetval val=%s/>\n' % \
-                    xml.sax.saxutils.quoteattr(place_title))
-        self.xml_file.write('</event>\n')
-        
-    def write_xml_person(self, identifiant, child, gender, first, surname, event_list):
+    def write_xml_person(self, person, identifiant, child, gender, first, surname, event_list):
         """
         Writes the person part of the xml file.
         """
@@ -369,6 +350,12 @@ class DescendantsLinesReport(Report):
             self.xml_file.write('<last>%s</last>\n' % \
                     xml.sax.saxutils.escape(surname))
         self.xml_file.write('</name>\n')
+        self.xml_file.write('<birth_sval val=%s/>\n' % \
+                xml.sax.saxutils.quoteattr(self.__date_place(
+                    get_birth_or_fallback(self.database, person))))
+        self.xml_file.write('<death_sval val=%s/>\n' % \
+                xml.sax.saxutils.quoteattr(self.__date_place(
+                    get_death_or_fallback(self.database, person))))
         for event_ref in event_list:
                 if event_ref.get_role() == gen.lib.EventRoleType.PRIMARY:
                     event = find_event(self.database, event_ref.ref)
@@ -403,7 +390,7 @@ class DescendantsLinesReport(Report):
         """
         self.xml_file.write('</database>\n')
         
-    # Method below from plugins/textreport/DescendReport.py
+    # Method below from plugins/textreport/DescendReport.py, modified
     def __date_place(self,event):
         if event:
             date = DateHandler.get_date(event)
@@ -749,8 +736,8 @@ def load_gramps(fn, start):
             self.first = None
             self.prefix = None
             self.last = None
-            self.birth = None
-            self.death = None
+            self.birth_s = None
+            self.death_s = None
             self.marriage_s = None
 
         def text(self, expected_last=None):
@@ -785,12 +772,13 @@ def load_gramps(fn, start):
                 s = [(first_size, col, self.first), (last_size,
                      last_col, last)]
 
-            if self.birth is not None:
-                s.append((life_size, life_col, _('b. ') + self.birth))
-            if self.death is not None:
-                s.append((life_size, life_col, _('d. ') + self.death))
+            if self.birth_s:
+                s.append((life_size, life_col, self.birth_s))
+            if self.death_s:
+                s.append((life_size, life_col, self.death_s))
 
             if self.marriage_s is not None:
+                # Spouse
                 s.append((life_size, life_col, '(' + self.marriage_s + ')'))
 
             return s
@@ -817,48 +805,17 @@ def load_gramps(fn, start):
             po.prefix = ls[0].getAttribute('prefix')
         for er in p.getElementsByTagName('eventref'):
             eventtoid[er.getAttribute('hlink')] = id
+        bsv = p.getElementsByTagName('birth_sval')
+        if len(bsv) > 0:
+            po.birth_s = bsv[0].getAttribute('val')
+        else:
+            print 'No birth event information found: ' + handle
+        dsv = p.getElementsByTagName('death_sval')
+        if len(dsv) > 0:
+            po.death_s = dsv[0].getAttribute('val')
+        else:
+            print 'No death event information found: ' + handle
         tpeople[id] = po
-
-    events = x.getElementsByTagName('events')[0]
-    for ev in events.getElementsByTagName('event'):
-        p_id = eventtoid.get(ev.getAttribute('handle'))
-        if p_id is None:
-            continue
-        po = tpeople[p_id]
-        etype = get_text(ev.getElementsByTagName('type'))
-        dvs = ev.getElementsByTagName('dateval')
-        date = None
-        if len(dvs) > 0:
-            date = ev.getElementsByTagName('dateval')[0].getAttribute('val')
-        else:
-            print 'Undated event: ' + ev.getAttribute('handle')
-
-        if INC_PLACES:
-            ptv = ev.getElementsByTagName('placetval')
-            placet = None
-            if len(ptv) > 0:
-                placet = ev.getElementsByTagName('placetval')[0].getAttribute('val')
-            else:
-                print 'Unplacetd event: ' + ev.getAttribute('handle')
-
-            if len(dvs) == 0 and len(ptv) == 0:
-                continue
-
-        elif len(dvs) == 0:
-            continue
-
-        if etype == 'Birth':
-            po.birth = date
-            if INC_PLACES:
-                if placet:
-                    po.birth += ' - ' + placet
-        elif etype == 'Death':
-            po.death = date
-            if INC_PLACES:
-                if placet:
-                    po.death += ' - ' + placet
-        else:
-            print 'Unknown event type: ' + etype
 
 
     class InFamily:
@@ -902,6 +859,8 @@ def load_gramps(fn, start):
         tfamilies[id] = fo
 
     def do_person(p_id, expected_last=None):
+        global CUR_GENERATION
+        CUR_GENERATION += 1
         po = tpeople[p_id]
         p = Person(po.text(expected_last))
         if p_id in parents:
@@ -917,9 +876,11 @@ def load_gramps(fn, start):
                 else:
                     print 'Unknown spouse:', p_id
                     fm = Family(p, Person(Unknown.text()))
-                for cpid in fo.children:
-                    cpo = tpeople[cpid]
-                    fm.add_child(do_person(cpid, last))
+                if MAX_GENERATION == 0 or CUR_GENERATION < MAX_GENERATION:
+                    for cpid in fo.children:
+                        cpo = tpeople[cpid]
+                        fm.add_child(do_person(cpid, last))
+        CUR_GENERATION -= 1
         return p
 
     return do_person(start)
@@ -1005,6 +966,10 @@ class DescendantsLinesOptions(MenuReportOptions):
             os.path.join(const.USER_HOME,"DescendantsLines.png"))
         output_fn.set_help(_("The destination file for the png-content."))
         menu.add_option(category_name, "output_fn", output_fn)
+
+        max_gen = NumberOption(_("Generations"), 10, 0, 25)
+        max_gen.set_help(_("The number of generations to include in the report"))
+        menu.add_option(category_name, "max_gen", max_gen)
 
         inc_places = BooleanOption(_('Include event places'), False)
         inc_places.set_help(_('Whether to include event places in the output.'))
