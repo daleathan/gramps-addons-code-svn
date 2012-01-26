@@ -63,6 +63,7 @@ import getopt
 import sys
 import codecs
 import os.path
+import copy
 #-------------------------------------------------------------------------
 #
 # gramps modules
@@ -108,6 +109,7 @@ TEXT_PAD = 2
 TEXT_LINE_PAD = 2
 OUTPUT_FMT = 'PNG'
 OUTPUT_FN = None
+USE_COLORS = False
 INC_PLACES = False
 INC_MARRIAGES = False
 MAX_GENERATION = 0
@@ -161,7 +163,8 @@ class DescendantsLinesReport(Report):
         TEXT_LINE_PAD
         output_fmt - The output format
         output_fn - The output filename
-        max_gen - Maximum number of generations to include.
+        max_gen - Maximum number of generations to include. (0 for unlimited)
+        use_colors - Whether to use colored names indicating person gender in the output.
         inc_places - Whether to include event places in the output.
         inc_marriages - Whether to include marriage information in the output.
         """
@@ -203,16 +206,19 @@ class DescendantsLinesReport(Report):
         self.output_fmt = self.options['output_fmt']
         self.output_fn = self.options['output_fn']
         self.max_gen = self.options['max_gen']
+        self.use_colors = self.options['use_colors']
         self.inc_places = self.options['inc_places']
         self.inc_marriages = self.options['inc_marriages']
         global OUTPUT_FMT
         global OUTPUT_FN
         global MAX_GENERATION
+        global USE_COLORS
         global INC_PLACES
         global INC_MARRIAGES
         OUTPUT_FMT = self.output_fmt
         OUTPUT_FN = self.output_fn
         MAX_GENERATION = self.max_gen
+        USE_COLORS = self.use_colors
         INC_PLACES = self.inc_places
         INC_MARRIAGES = self.inc_marriages
 
@@ -307,11 +313,8 @@ class DescendantsLinesReport(Report):
                 gender = 'F'
             else:
                 gender = 'U'
-            name = person.get_primary_name()
-            first = name.get_first_name()
-            surname = name.get_surname()
             event_list = person.get_event_ref_list()
-            self.write_xml_person(person, identifiant, child, gender, first, surname, event_list)
+            self.write_xml_person(person, identifiant, child, gender, event_list)
         self.xml_file.write('</people>\n')
         
         self.xml_file.write('<families>\n')
@@ -343,21 +346,16 @@ class DescendantsLinesReport(Report):
         self.xml_file.write('"http://gramps-project.org/xml/1.4.0/grampsxml.dtd">\n')
         self.xml_file.write('<database xmlns="http://gramps-project.org/xml/1.4.0/">\n')
 
-    def write_xml_person(self, person, identifiant, child, gender, first, surname, event_list):
+    def write_xml_person(self, person, identifiant, child, gender, event_list):
         """
         Writes the person part of the xml file.
         """
                  
         self.xml_file.write('<person id="%s" handle="%s">\n' % (identifiant, child))
         self.xml_file.write('<gender>%s</gender>\n' % gender)
-        self.xml_file.write('<name>\n')
-        if first:
-            self.xml_file.write('<first>%s</first>\n' % \
-                    xml.sax.saxutils.escape(first))
-        if surname:
-            self.xml_file.write('<last>%s</last>\n' % \
-                    xml.sax.saxutils.escape(surname))
-        self.xml_file.write('</name>\n')
+        self.xml_file.write('<name>%s</name>\n' % \
+                xml.sax.saxutils.escape(
+                    name_displayer.display_formal(person)))
         self.xml_file.write('<birth_sval val=%s/>\n' % \
                 xml.sax.saxutils.quoteattr(self.__date_place(
                     get_birth_or_fallback(self.database, person))))
@@ -741,44 +739,48 @@ def load_gramps(fn, start):
 
         def __init__(self):
             self.gender = None
-            self.first = None
-            self.prefix = None
-            self.last = None
+            self.name = None
             self.birth_s = None
             self.death_s = None
             self.marriage_s = None
 
-        def text(self, expected_last=None):
-            first_size = 1.0
-            last_size = 0.95
+        def text(self):
+            name_size = 1.0
             life_size = 0.90
 
-            if self.gender == 'M':
-                col = (0, 0, 0.5)
-            elif self.gender == 'F':
-                col = (0.5, 0, 0)
+            if USE_COLORS:
+                if self.gender == 'M':
+                    col = (0, 0, 0.5)
+                elif self.gender == 'F':
+                    col = (0.5, 0, 0)
+                else:
+                    col = (0, 0.5, 0)
             else:
-                col = (0, 0.5, 0)
-            last_col = (0, 0, 0)
+                col = (0, 0, 0)
             life_col = (0.2, 0.2, 0.2)
 
-            last = self.last
+#            last = self.last
 #            if last == expected_last:
 #                last = None
-            if last is not None:
-                if self.prefix is not None:
-                    last = self.prefix + ' ' + last
+#            if last is not None:
+#                if self.prefix is not None:
+#                    last = self.prefix + ' ' + last
 #                last = last.upper()
-            if self.first is None and last is None:
+#            if self.first is None and last is None:
+#                s = []
+#            elif self.first is None:
+#                s = [(first_size, col, '?'), (last_size, last_col,
+#                     last)]
+#            elif last is None:
+#                s = [(first_size, col, self.first)]
+#            else:
+#                s = [(first_size, col, self.first), (last_size,
+#                     last_col, last)]
+
+            if self.name is None:
                 s = []
-            elif self.first is None:
-                s = [(first_size, col, '?'), (last_size, last_col,
-                     last)]
-            elif last is None:
-                s = [(first_size, col, self.first)]
             else:
-                s = [(first_size, col, self.first), (last_size,
-                     last_col, last)]
+                s = [(name_size, col, self.name)]
 
             if self.birth_s:
                 s.append((life_size, life_col, self.birth_s))
@@ -793,7 +795,7 @@ def load_gramps(fn, start):
 
 
     Unknown = InPerson()
-    Unknown.first = _('Unknown')
+    Unknown.name = _('Unknown')
 
     handletoid = {}
     eventtoid = {}
@@ -803,14 +805,10 @@ def load_gramps(fn, start):
         id = p.getAttribute('id')
         handle = p.getAttribute('handle')
         handletoid[handle] = id
-        name = p.getElementsByTagName('name')[0]
+        name = get_text(p.getElementsByTagName('name'))
         po = InPerson()
         po.gender = get_text(p.getElementsByTagName('gender'))
-        po.first = get_text(name.getElementsByTagName('first'))
-        po.last = get_text(name.getElementsByTagName('last'))
-        ls = name.getElementsByTagName('last')
-        if ls != []:
-            po.prefix = ls[0].getAttribute('prefix')
+        po.name = name
         for er in p.getElementsByTagName('eventref'):
             eventtoid[er.getAttribute('hlink')] = id
         bsv = p.getElementsByTagName('birth_sval')
@@ -866,28 +864,25 @@ def load_gramps(fn, start):
             fo.children.append(handletoid[p.getAttribute('hlink')])
         tfamilies[id] = fo
 
-    def do_person(p_id, expected_last=None):
+    def do_person(p_id):
         global CUR_GENERATION
         CUR_GENERATION += 1
         po = tpeople[p_id]
-        p = Person(po.text(expected_last))
+        p = Person(po.text())
         if p_id in parents:
             for fid in parents[p_id]:
                 fo = tfamilies[fid]
-                last = po.last
                 if fo.spouse(p_id):
                     spo = tpeople[fo.spouse(p_id)]
                     spo.marriage_s = fo.marriage_s
                     fm = Family(p, Person(spo.text()))
-                    if spo.gender == 'M':
-                        last = spo.last
                 else:
                     print 'Unknown spouse:', p_id
                     fm = Family(p, Person(Unknown.text()))
                 if MAX_GENERATION == 0 or CUR_GENERATION < MAX_GENERATION:
                     for cpid in fo.children:
                         cpo = tpeople[cpid]
-                        fm.add_child(do_person(cpid, last))
+                        fm.add_child(do_person(cpid))
         CUR_GENERATION -= 1
         return p
 
@@ -1006,8 +1001,13 @@ class DescendantsLinesOptions(MenuReportOptions):
         menu.add_option(category_name, "output_fn", output_fn)
 
         max_gen = NumberOption(_("Generations"), 10, 0, 25)
-        max_gen.set_help(_("The number of generations to include in the report"))
+        max_gen.set_help(_("The number of generations to include in the report." \
+                " (0 for unlimited)"))
         menu.add_option(category_name, "max_gen", max_gen)
+
+        use_colors = BooleanOption(_('Use colors'), False)
+        use_colors.set_help(_('Whether to use colored names indicating person gender in the output.'))
+        menu.add_option(category_name, 'use_colors', use_colors)
 
         inc_places = BooleanOption(_('Include event places'), False)
         inc_places.set_help(_('Whether to include event places in the output.'))

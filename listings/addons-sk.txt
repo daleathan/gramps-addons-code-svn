@@ -42,7 +42,7 @@
 {'d': 'SQLite is a common local database format', 'g': '3.3', 'i': 'ex_sqlite', 'n': 'SQLite Export', 't': u'Exporter', 'v': '1.0.8', 'z': 'Sqlite.addon.tgz'}
 {'d': 'List the last ten person records that have been changed', 'g': '3.3', 'i': 'LastChangeGramplet', 'n': 'Last Change Gramplet', 't': u'Gramplet', 'v': '0.0.9', 'z': 'LastChange.addon.tgz'}
 {'d': 'Report of the last records that have been changed', 'g': '3.3', 'i': 'LastChangeReport', 'n': 'Last Change Report', 't': u'Report', 'v': '0.0.9', 'z': 'LastChange.addon.tgz'}
-{'d': 'Produces descendants lines of a person', 'g': '3.3', 'i': 'Descendants Lines', 'n': 'Descendants Lines', 't': u'Report', 'v': '0.1.8', 'z': 'DescendantsLines.addon.tgz'}
+{'d': 'Produces descendants lines of a person', 'g': '3.3', 'i': 'Descendants Lines', 'n': 'Descendants Lines', 't': u'Report', 'v': '0.1.9', 'z': 'DescendantsLines.addon.tgz'}
 {'d': 'Gramplet for quick data entry', 'g': '3.3', 'i': 'Data Entry Gramplet', 'n': 'Gramplet Z\xc3\xa1pis d\xc3\xa1t', 't': u'Gramplet', 'v': '1.0.13', 'z': 'DataEntryGramplet.addon.tgz'}
 {'d': 'This is a raw python object dump', 'g': '3.3', 'i': 'Raw Export', 'n': 'Raw Export', 't': u'Exporter', 'v': '1.0.7', 'z': 'ExportRaw.addon.tgz'}
 {'d': 'Django is a web framework working on a configured database', 'g': '3.3', 'i': 'import_django', 'n': 'Django Import', 't': u'Importer', 'v': '1.0.9', 'z': 'Django.addon.tgz'}
