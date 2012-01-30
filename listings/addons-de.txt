@@ -42,7 +42,7 @@
 {'d': 'SQLite is a common local database format', 'g': '3.3', 'i': 'ex_sqlite', 'n': 'SQLite Export', 't': u'Exporter', 'v': '1.0.8', 'z': 'Sqlite.addon.tgz'}
 {'d': 'Listet die letzten zehn ge\xc3\xa4nderten Personendatens\xc3\xa4tze', 'g': '3.3', 'i': 'LastChangeGramplet', 'n': 'Letzte \xc3\x84nderung Gramplet', 't': u'Gramplet', 'v': '0.0.9', 'z': 'LastChange.addon.tgz'}
 {'d': 'Bericht der letzten Datens\xc3\xa4tze die ge\xc3\xa4ndert wurden', 'g': '3.3', 'i': 'LastChangeReport', 'n': 'Letzte \xc3\x84nderungen Bericht', 't': u'Report', 'v': '0.0.9', 'z': 'LastChange.addon.tgz'}
-{'d': 'Erstellt Nachkommenlinien einer Person', 'g': '3.3', 'i': 'Descendants Lines', 'n': 'Nachkommen Linien', 't': u'Report', 'v': '0.1.12', 'z': 'DescendantsLines.addon.tgz'}
+{'d': 'Erstellt Nachkommenlinien einer Person', 'g': '3.3', 'i': 'Descendants Lines', 'n': 'Nachkommen Linien', 't': u'Report', 'v': '0.1.13', 'z': 'DescendantsLines.addon.tgz'}
 {'d': 'Gramplet zur schnellen Dateneingabe', 'g': '3.3', 'i': 'Data Entry Gramplet', 'n': 'Dateneingabe Gramplet', 't': u'Gramplet', 'v': '1.0.13', 'z': 'DataEntryGramplet.addon.tgz'}
 {'d': 'Dies ist eine Rohdaten Pythonobjekt Ausgabe', 'g': '3.3', 'i': 'Raw Export', 'n': 'Rohdaten Export', 't': u'Exporter', 'v': '1.0.7', 'z': 'ExportRaw.addon.tgz'}
 {'d': 'Django ist ein Web Programmger\xc3\xbcst das auf einer konfigurierten Datenbank arbeitet', 'g': '3.3', 'i': 'import_django', 'n': 'Django Import', 't': u'Importer', 'v': '1.0.9', 'z': 'Django.addon.tgz'}

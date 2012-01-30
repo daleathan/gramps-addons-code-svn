@@ -42,7 +42,7 @@
 {'d': 'SQLite est un format courant de base de donn\xc3\xa9es locale', 'g': '3.3', 'i': 'ex_sqlite', 'n': 'SQLite Export', 't': u'Exporter', 'v': '1.0.8', 'z': 'Sqlite.addon.tgz'}
 {'d': 'Liste les dix derniers individus modifi\xc3\xa9s', 'g': '3.3', 'i': 'LastChangeGramplet', 'n': 'Gramplet Derni\xc3\xa8res modifications', 't': u'Gramplet', 'v': '0.0.9', 'z': 'LastChange.addon.tgz'}
 {'d': 'Rapport pour les derniers enregistrements modifi\xc3\xa9s', 'g': '3.3', 'i': 'LastChangeReport', 'n': 'Rapport Derni\xc3\xa8res modifications', 't': u'Report', 'v': '0.0.9', 'z': 'LastChange.addon.tgz'}
-{'d': "Produit les lignes de descendants de l'individu", 'g': '3.3', 'i': 'Descendants Lines', 'n': 'Lignes des descendants', 't': u'Report', 'v': '0.1.12', 'z': 'DescendantsLines.addon.tgz'}
+{'d': "Produit les lignes de descendants de l'individu", 'g': '3.3', 'i': 'Descendants Lines', 'n': 'Lignes des descendants', 't': u'Report', 'v': '0.1.13', 'z': 'DescendantsLines.addon.tgz'}
 {'d': 'Gramplet pour une saisie rapide des donn\xc3\xa9es', 'g': '3.3', 'i': 'Data Entry Gramplet', 'n': 'Gramplet Formulaire', 't': u'Gramplet', 'v': '1.0.13', 'z': 'DataEntryGramplet.addon.tgz'}
 {'d': "Ceci est une image brute d'objet python", 'g': '3.3', 'i': 'Raw Export', 'n': 'Export brut', 't': u'Exporter', 'v': '1.0.7', 'z': 'ExportRaw.addon.tgz'}
 {'d': 'Django is a web framework working on a configured database', 'g': '3.3', 'i': 'import_django', 'n': 'Django Import', 't': u'Importer', 'v': '1.0.9', 'z': 'Django.addon.tgz'}
