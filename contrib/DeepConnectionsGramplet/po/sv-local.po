@@ -2,13 +2,13 @@
 # Copyright (C) 2009 THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 #
-# Peter Landgren <peter.talken@telia.com>, 2010, 2011.
+# Peter Landgren <peter.talken@telia.com>, 2010, 2011, 2012.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-03-30 19:02+0200\n"
-"PO-Revision-Date: 2011-03-30 19:03+0200\n"
+"PO-Revision-Date: 2012-04-26 16:07+0200\n"
 "Last-Translator: Peter Landgren <peter.talken@telia.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
@@ -23,7 +23,8 @@ msgstr "Gramplet för långa släktskap"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.gpr.py:4
 msgid "Gramplet showing a deep relationship between active and home people"
-msgstr "Gramplet visande ett lång släktskap mellan aktiv och hem person"
+msgstr ""
+"Gramplet visande ett lång släktskap mellan aktiv person och hemperson"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.gpr.py:10
 msgid "Deep Connections"
@@ -106,7 +107,7 @@ msgstr "  <b>%s</b> (huvudperson) och\n"
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:181
 #, python-format
 msgid "  <b>%s</b> (Active Person)...\n"
-msgstr "Aktiv person: <b>%s</b>\n"
+msgstr "  <b>%s</b> (aktiv person)...\n"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:191
 #, python-format
@@ -123,7 +124,7 @@ msgid ""
 "Press Continue to search for additional relations.\n"
 msgstr ""
 "Paus.\n"
-"Tryck Fortsätt för att leta efter ytterligare släktsakp.\n"
+"Tryck Fortsätt för att leta efter ytterligare släktskap.\n"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:216
 #, python-format
@@ -133,4 +134,5 @@ msgid ""
 msgstr ""
 "\n"
 "Sökning avslutad. %d släktskap hittade."
+
 
