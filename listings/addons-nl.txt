@@ -15,7 +15,7 @@
 {'d': 'Gramplet interface for census data', 'g': '3.4', 'i': 'Census Gramplet', 'n': 'Volkstelling-gramplet', 't': u'Gramplet', 'v': '1.0.13', 'z': 'Census.addon.tgz'}
 {'d': 'De namen van alle personen tonen', 'g': '3.4', 'i': 'allnames', 'n': 'Alle namen van alle personen', 't': u'Quickreport', 'v': '1.0.5', 'z': 'AllNamesQuickview.addon.tgz'}
 {'d': 'Geschatte datums voor geboorte en overlijden berekenen.', 'g': '3.4', 'i': 'calculateestimateddates', 'n': 'Geschatte datums berekenen', 't': u'Tool', 'v': '0.90.6', 'z': 'CalculateEstimatedDates.addon.tgz'}
-{'d': 'Searches the entire database and attempts to fix capitalization of the given names.', 'g': '3.4', 'i': 'chgivenname', 'n': 'Fix Capitalization of Given Names', 't': u'Tool', 'v': '1.0.2', 'z': 'ChangeGivenNames.addon.tgz'}
+{'d': 'Searches the entire database and attempts to fix capitalization of the given names.', 'g': '3.4', 'i': 'chgivenname', 'n': 'Fix Capitalization of Given Names', 't': u'Tool', 'v': '1.0.3', 'z': 'ChangeGivenNames.addon.tgz'}
 {'d': 'Gramplet showing details of a person', 'g': '3.4', 'i': 'MediaBrowser', 'n': 'Media Browser', 't': u'Gramplet', 'v': '1.0.2', 'z': 'MediaBrowser.addon.tgz'}
 {'d': 'Een gedeelde bron aan verschillende objecten toevoegen.', 'g': '3.4', 'i': 'AttachSource', 'n': 'Bron toevoegen', 't': u'Tool', 'v': '0.0.9', 'z': 'AttachSourceTool.addon.tgz'}
 {'d': 'Gramplet toont de verwanten in een relatie', 'g': '3.4', 'i': 'Related Relatives Gramplet', 'n': 'Aanverwanten-gramplet', 't': u'Gramplet', 'v': '1.0.6', 'z': 'RelatedRelativesGramplet.addon.tgz'}
@@ -24,7 +24,7 @@
 {'d': "Een 'xhtml'-webpagina met een grafische voorstelling van de voorouders/afstammelingen (svg) wordt aangemaakt. Individuele details worden door muisacties zichtbaar. ", 'g': '3.4', 'i': 'denominoviso', 'n': 'DenominoViso', 't': u'Report', 'v': '2.3.6', 'z': 'DenominoViso.addon.tgz'}
 {'d': 'een gramplet dat de verjaardagen van de nog in leven zijnde personen toont', 'g': '3.4', 'i': 'Birthdays', 'n': 'Verjaardagsgramplet', 't': u'Gramplet', 'v': '1.0.12', 'z': 'BirthdaysGramplet.addon.tgz'}
 {'d': 'Alle afstammelingslijnen van een bepaalde voorouder tot een bepaalde afstammeling worden in tekst afgedrukt.', 'g': '3.4', 'i': 'LinesOfDescendency', 'n': 'Lines of Descendency Report', 't': u'Report', 'v': '1.1.10', 'z': 'LinesOfDescendency.addon.tgz'}
-{'d': 'Set Tag to a given value.', 'g': '3.4', 'i': 'SetTag', 'n': 'Set Tag', 't': u'Tool', 'v': '0.1.0', 'z': 'SetTagTool.addon.tgz'}
+{'d': 'Set Tag to a given value.', 'g': '3.4', 'i': 'SetTag', 'n': 'Set Tag', 't': u'Tool', 'v': '0.1.1', 'z': 'SetTagTool.addon.tgz'}
 {'d': 'Gramplet om tekst te importeren', 'g': '3.4', 'i': 'Import Gramplet', 'n': 'Import-gramplet', 't': u'Gramplet', 'v': '1.0.8', 'z': 'ImportGramplet.addon.tgz'}
 {'d': "Gegevensbestand voor 'GoogleEarth' aanmaken en openen.", 'g': '3.4', 'i': 'GoogleEarth', 'n': 'GoogleEarth', 't': u'Map service', 'v': '1.0.12', 'z': 'GoogleEarthWriteKML.addon.tgz'}
 {'d': 'De tien laatst gewijzigde persoonsgegevens worden gelijst', 'g': '3.4', 'i': 'LastChangeGramplet', 'n': "'Laatste-wijziging'-gramplet", 't': u'Gramplet', 'v': '0.0.11', 'z': 'LastChange.addon.tgz'}

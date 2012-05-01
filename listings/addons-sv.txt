@@ -15,7 +15,7 @@
 {'d': 'Gramplet interface for census data', 'g': '3.4', 'i': 'Census Gramplet', 'n': 'Census Gramplet', 't': u'Gramplet', 'v': '1.0.13', 'z': 'Census.addon.tgz'}
 {'d': 'Visa samtliga namn f\xc3\xb6r alla personer', 'g': '3.4', 'i': 'allnames', 'n': 'Samtliga namn f\xc3\xb6r alla personer', 't': u'Quickreport', 'v': '1.0.5', 'z': 'AllNamesQuickview.addon.tgz'}
 {'d': 'Ber\xc3\xa4kna uppskattningar av datum f\xc3\xb6r f\xc3\xb6delse och d\xc3\xb6d.', 'g': '3.4', 'i': 'calculateestimateddates', 'n': 'Ber\xc3\xa4knade uppskattade datum', 't': u'Tool', 'v': '0.90.6', 'z': 'CalculateEstimatedDates.addon.tgz'}
-{'d': 'Searches the entire database and attempts to fix capitalization of the given names.', 'g': '3.4', 'i': 'chgivenname', 'n': 'Fix Capitalization of Given Names', 't': u'Tool', 'v': '1.0.2', 'z': 'ChangeGivenNames.addon.tgz'}
+{'d': 'Searches the entire database and attempts to fix capitalization of the given names.', 'g': '3.4', 'i': 'chgivenname', 'n': 'Fix Capitalization of Given Names', 't': u'Tool', 'v': '1.0.3', 'z': 'ChangeGivenNames.addon.tgz'}
 {'d': 'Gramplet showing details of a person', 'g': '3.4', 'i': 'MediaBrowser', 'n': 'Media Browser', 't': u'Gramplet', 'v': '1.0.2', 'z': 'MediaBrowser.addon.tgz'}
 {'d': 'Attaches a shared source to multiple objects.', 'g': '3.4', 'i': 'AttachSource', 'n': 'Attach Source', 't': u'Tool', 'v': '0.0.9', 'z': 'AttachSourceTool.addon.tgz'}
 {'d': 'Gramplet showing relatives in a relation', 'g': '3.4', 'i': 'Related Relatives Gramplet', 'n': 'Related Relatives Gramplet', 't': u'Gramplet', 'v': '1.0.6', 'z': 'RelatedRelativesGramplet.addon.tgz'}
@@ -24,7 +24,7 @@
 {'d': 'Skapar en hemsida (XHTML) med grafisk representation av f\xc3\xb6rf\xc3\xa4der/\xc3\xa4ttlingar (SVG) d\xc3\xa4r detaljer om individier blir synliga via mush\xc3\xa4ndelser.', 'g': '3.4', 'i': 'denominoviso', 'n': 'DenominoViso', 't': u'Report', 'v': '2.3.6', 'z': 'DenominoViso.addon.tgz'}
 {'d': 'en Gramplet, som visar f\xc3\xb6delsedagarna f\xc3\xb6r levande personer', 'g': '3.4', 'i': 'Birthdays', 'n': 'F\xc3\xb6delsedags-Gramplet', 't': u'Gramplet', 'v': '1.0.12', 'z': 'BirthdaysGramplet.addon.tgz'}
 {'d': 'Prints out all descendency lines from a given ancestor to a given descendent in text.', 'g': '3.4', 'i': 'LinesOfDescendency', 'n': 'Lines of Descendency Report', 't': u'Report', 'v': '1.1.10', 'z': 'LinesOfDescendency.addon.tgz'}
-{'d': 'Set Tag to a given value.', 'g': '3.4', 'i': 'SetTag', 'n': 'Set Tag', 't': u'Tool', 'v': '0.1.0', 'z': 'SetTagTool.addon.tgz'}
+{'d': 'Set Tag to a given value.', 'g': '3.4', 'i': 'SetTag', 'n': 'Set Tag', 't': u'Tool', 'v': '0.1.1', 'z': 'SetTagTool.addon.tgz'}
 {'d': 'Gramplet for importing text', 'g': '3.4', 'i': 'Import Gramplet', 'n': 'Import Gramplet', 't': u'Gramplet', 'v': '1.0.8', 'z': 'ImportGramplet.addon.tgz'}
 {'d': 'Skapar datafil f\xc3\xb6r GoogleEarth och \xc3\xb6ppnar den', 'g': '3.4', 'i': 'GoogleEarth', 'n': 'GoogleEarth', 't': u'Map service', 'v': '1.0.12', 'z': 'GoogleEarthWriteKML.addon.tgz'}
 {'d': 'Lista de tio personposterna, som har \xc3\xa4ndrats', 'g': '3.4', 'i': 'LastChangeGramplet', 'n': 'Gramplet med de senaste \xc3\xa4ndringarna', 't': u'Gramplet', 'v': '0.0.11', 'z': 'LastChange.addon.tgz'}

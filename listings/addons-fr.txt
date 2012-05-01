@@ -15,7 +15,7 @@
 {'d': "Gramplet servant d'interface aux donn\xc3\xa9es de recensement", 'g': '3.4', 'i': 'Census Gramplet', 'n': 'Gramplet Recensement', 't': u'Gramplet', 'v': '1.0.13', 'z': 'Census.addon.tgz'}
 {'d': 'Affiche tous les noms de tous les individus', 'g': '3.4', 'i': 'allnames', 'n': 'Tous les noms pour tous les individus', 't': u'Quickreport', 'v': '1.0.5', 'z': 'AllNamesQuickview.addon.tgz'}
 {'d': 'Calcul des dates estim\xc3\xa9es pour les naissances et d\xc3\xa9c\xc3\xa8s.', 'g': '3.4', 'i': 'calculateestimateddates', 'n': 'Calcul des dates estim\xc3\xa9es', 't': u'Tool', 'v': '0.90.6', 'z': 'CalculateEstimatedDates.addon.tgz'}
-{'d': 'Searches the entire database and attempts to fix capitalization of the given names.', 'g': '3.4', 'i': 'chgivenname', 'n': 'Fix Capitalization of Given Names', 't': u'Tool', 'v': '1.0.2', 'z': 'ChangeGivenNames.addon.tgz'}
+{'d': 'Searches the entire database and attempts to fix capitalization of the given names.', 'g': '3.4', 'i': 'chgivenname', 'n': 'Fix Capitalization of Given Names', 't': u'Tool', 'v': '1.0.3', 'z': 'ChangeGivenNames.addon.tgz'}
 {'d': "Gramplet affichant les d\xc3\xa9tails de l'individu", 'g': '3.4', 'i': 'MediaBrowser', 'n': 'Navigateur Media', 't': u'Gramplet', 'v': '1.0.2', 'z': 'MediaBrowser.addon.tgz'}
 {'d': 'Attache une source partag\xc3\xa9e \xc3\xa0 des objets multiples', 'g': '3.4', 'i': 'AttachSource', 'n': 'Attacher une source', 't': u'Tool', 'v': '0.0.9', 'z': 'AttachSourceTool.addon.tgz'}
 {'d': 'Gramplet affichant les parent\xc3\xa9s dans une relation', 'g': '3.4', 'i': 'Related Relatives Gramplet', 'n': 'Gramplet Parent\xc3\xa9s', 't': u'Gramplet', 'v': '1.0.6', 'z': 'RelatedRelativesGramplet.addon.tgz'}
@@ -24,7 +24,7 @@
 {'d': 'G\xc3\xa9n\xc3\xa8re une page internet (XHTML) avec une repr\xc3\xa9sentation graphique des ascendants/descendants (SVG) dont les d\xc3\xa9tails des individus deviennent visibles avec les actions de la souris.', 'g': '3.4', 'i': 'denominoviso', 'n': 'DenominoViso', 't': u'Report', 'v': '2.3.6', 'z': 'DenominoViso.addon.tgz'}
 {'d': 'Ce Gramplet affiche les anniversaires des personnes en vie', 'g': '3.4', 'i': 'Birthdays', 'n': 'Gramplet Anniversaires', 't': u'Gramplet', 'v': '1.0.12', 'z': 'BirthdaysGramplet.addon.tgz'}
 {'d': "Affiche toutes les lignes de descendants d'un anc\xc3\xaatre donn\xc3\xa9 \xc3\xa0 un descendant choisi dans un format textuel.", 'g': '3.4', 'i': 'LinesOfDescendency', 'n': 'Lines of Descendency Report', 't': u'Report', 'v': '1.1.10', 'z': 'LinesOfDescendency.addon.tgz'}
-{'d': 'Set Tag to a given value.', 'g': '3.4', 'i': 'SetTag', 'n': 'Set Tag', 't': u'Tool', 'v': '0.1.0', 'z': 'SetTagTool.addon.tgz'}
+{'d': 'Set Tag to a given value.', 'g': '3.4', 'i': 'SetTag', 'n': 'Set Tag', 't': u'Tool', 'v': '0.1.1', 'z': 'SetTagTool.addon.tgz'}
 {'d': 'Gramplet pour importer du texte', 'g': '3.4', 'i': 'Import Gramplet', 'n': 'Gramplet Importation', 't': u'Gramplet', 'v': '1.0.8', 'z': 'ImportGramplet.addon.tgz'}
 {'d': 'Cr\xc3\xa9\xc3\xa9 un fichier de donn\xc3\xa9es pouvant \xc3\xaatre ouvert dans GoogleEarth', 'g': '3.4', 'i': 'GoogleEarth', 'n': 'GoogleEarth', 't': u'Map service', 'v': '1.0.12', 'z': 'GoogleEarthWriteKML.addon.tgz'}
 {'d': 'Liste les dix derniers individus modifi\xc3\xa9s', 'g': '3.4', 'i': 'LastChangeGramplet', 'n': 'Gramplet Derni\xc3\xa8res modifications', 't': u'Gramplet', 'v': '0.0.11', 'z': 'LastChange.addon.tgz'}

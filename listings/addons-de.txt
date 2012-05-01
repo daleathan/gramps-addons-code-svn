@@ -15,7 +15,7 @@
 {'d': 'Gramplet Schnittstelle f\xc3\xbcr Zensusdaten', 'g': '3.4', 'i': 'Census Gramplet', 'n': 'Zensus Gramplet', 't': u'Gramplet', 'v': '1.0.13', 'z': 'Census.addon.tgz'}
 {'d': 'Zeigt alle Namen aller Personen', 'g': '3.4', 'i': 'allnames', 'n': 'Alle Namen aller Personen', 't': u'Quickreport', 'v': '1.0.5', 'z': 'AllNamesQuickview.addon.tgz'}
 {'d': 'Berechnet gesch\xc3\xa4tzte Daten f\xc3\xbcr Geburt und Tod.', 'g': '3.4', 'i': 'calculateestimateddates', 'n': 'Gesch\xc3\xa4tzte Daten berechnen', 't': u'Tool', 'v': '0.90.6', 'z': 'CalculateEstimatedDates.addon.tgz'}
-{'d': 'Durchsucht die gesamte Datenbank und versucht Gro\xc3\x9fschreibung von Vornamen zu korrigieren.', 'g': '3.4', 'i': 'chgivenname', 'n': 'Gro\xc3\x9fschreibung von Vornamen korrigieren', 't': u'Tool', 'v': '1.0.2', 'z': 'ChangeGivenNames.addon.tgz'}
+{'d': 'Durchsucht die gesamte Datenbank und versucht Gro\xc3\x9fschreibung von Vornamen zu korrigieren.', 'g': '3.4', 'i': 'chgivenname', 'n': 'Gro\xc3\x9fschreibung von Vornamen korrigieren', 't': u'Tool', 'v': '1.0.3', 'z': 'ChangeGivenNames.addon.tgz'}
 {'d': 'Gramplet showing details of a person', 'g': '3.4', 'i': 'MediaBrowser', 'n': 'Media Browser', 't': u'Gramplet', 'v': '1.0.2', 'z': 'MediaBrowser.addon.tgz'}
 {'d': 'F\xc3\xbcgt verteilte Quellen mehreren Objekten hinzu.', 'g': '3.4', 'i': 'AttachSource', 'n': 'Quelle hinzuf\xc3\xbcgen', 't': u'Tool', 'v': '0.0.9', 'z': 'AttachSourceTool.addon.tgz'}
 {'d': 'Gramplet zeigt die Beziehung zwischen Verwandten', 'g': '3.4', 'i': 'Related Relatives Gramplet', 'n': 'Verbundene Verwandte Gramplet', 't': u'Gramplet', 'v': '1.0.6', 'z': 'RelatedRelativesGramplet.addon.tgz'}
@@ -24,7 +24,7 @@
 {'d': 'Erstellt eine Web (XHTML) Seite mit einer Grafischen Darstellung von Ahnen/ Nachkommen (SVG) auf der Details \xc3\xbcber Personen durch Mausereignisse sichtbar werden.', 'g': '3.4', 'i': 'denominoviso', 'n': 'DenominoViso', 't': u'Report', 'v': '2.3.6', 'z': 'DenominoViso.addon.tgz'}
 {'d': 'ein Gramplet welches die Geburtstage von lebenden Personen zeigt', 'g': '3.4', 'i': 'Birthdays', 'n': 'Geburtstags Gramplet', 't': u'Gramplet', 'v': '1.0.12', 'z': 'BirthdaysGramplet.addon.tgz'}
 {'d': 'Prints out all descendency lines from a given ancestor to a given descendent in text.', 'g': '3.4', 'i': 'LinesOfDescendency', 'n': 'Lines of Descendency Report', 't': u'Report', 'v': '1.1.10', 'z': 'LinesOfDescendency.addon.tgz'}
-{'d': 'Set Tag to a given value.', 'g': '3.4', 'i': 'SetTag', 'n': 'Set Tag', 't': u'Tool', 'v': '0.1.0', 'z': 'SetTagTool.addon.tgz'}
+{'d': 'Set Tag to a given value.', 'g': '3.4', 'i': 'SetTag', 'n': 'Set Tag', 't': u'Tool', 'v': '0.1.1', 'z': 'SetTagTool.addon.tgz'}
 {'d': 'Gramplet zum Textimport', 'g': '3.4', 'i': 'Import Gramplet', 'n': 'Import Gramplet', 't': u'Gramplet', 'v': '1.0.8', 'z': 'ImportGramplet.addon.tgz'}
 {'d': 'Erstellt Datendatei f\xc3\xbcr GoogleEarth und \xc3\xb6ffnet sie', 'g': '3.4', 'i': 'GoogleEarth', 'n': 'GoogleEarth', 't': u'Map service', 'v': '1.0.12', 'z': 'GoogleEarthWriteKML.addon.tgz'}
 {'d': 'Listet die letzten zehn ge\xc3\xa4nderten Personendatens\xc3\xa4tze', 'g': '3.4', 'i': 'LastChangeGramplet', 'n': 'Letzte \xc3\x84nderung Gramplet', 't': u'Gramplet', 'v': '0.0.11', 'z': 'LastChange.addon.tgz'}
