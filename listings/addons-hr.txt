@@ -29,7 +29,7 @@
 {'d': 'Creates data file for GoogleEarth and opens it', 'g': '3.4', 'i': 'GoogleEarth', 'n': 'GoogleEarth', 't': u'Map service', 'v': '1.0.12', 'z': 'GoogleEarthWriteKML.addon.tgz'}
 {'d': 'List the last ten person records that have been changed', 'g': '3.4', 'i': 'LastChangeGramplet', 'n': 'Last Change Gramplet', 't': u'Gramplet', 'v': '0.0.11', 'z': 'LastChange.addon.tgz'}
 {'d': 'Report of the last records that have been changed', 'g': '3.4', 'i': 'LastChangeReport', 'n': 'Last Change Report', 't': u'Report', 'v': '0.0.11', 'z': 'LastChange.addon.tgz'}
-{'d': 'The view shows a timeline pedigree with ancestors and descendants of the selected person', 'g': '3.4', 'i': 'TimelinePedigreeView', 'n': 'Timeline Pedigree', 't': u'Gramps View', 'v': '0.1.17', 'z': 'TimelinePedigreeView.addon.tgz'}
+{'d': 'The view shows a timeline pedigree with ancestors and descendants of the selected person', 'g': '3.4', 'i': 'TimelinePedigreeView', 'n': 'Timeline Pedigree', 't': u'Gramps View', 'v': '0.1.18', 'z': 'TimelinePedigreeView.addon.tgz'}
 {'d': 'Interactive Python interpreter', 'g': '3.4', 'i': 'Python Gramplet', 'n': 'gramplet: Python', 't': u'Gramplet', 'v': '1.0.6', 'z': 'PythonGramplet.addon.tgz'}
 {'d': 'Gramplet for quick data entry', 'g': '3.4', 'i': 'Data Entry Gramplet', 'n': 'gramplet: Unos podataka', 't': u'Gramplet', 'v': '1.0.14', 'z': 'DataEntryGramplet.addon.tgz'}
 {'d': 'Shows the number of descendants of the current person', 'g': '3.4', 'i': 'NumberOfDescendantsQuickview', 'n': 'Number of descendants', 't': u'Quickreport', 'v': '3.4.6', 'z': 'NumberOfDescendantsQuickview.addon.tgz'}

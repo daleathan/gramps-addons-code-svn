@@ -29,7 +29,7 @@
 {'d': 'Erstellt Datendatei f\xc3\xbcr GoogleEarth und \xc3\xb6ffnet sie', 'g': '3.4', 'i': 'GoogleEarth', 'n': 'GoogleEarth', 't': u'Map service', 'v': '1.0.12', 'z': 'GoogleEarthWriteKML.addon.tgz'}
 {'d': 'Listet die letzten zehn ge\xc3\xa4nderten Personendatens\xc3\xa4tze', 'g': '3.4', 'i': 'LastChangeGramplet', 'n': 'Letzte \xc3\x84nderung Gramplet', 't': u'Gramplet', 'v': '0.0.11', 'z': 'LastChange.addon.tgz'}
 {'d': 'Bericht der letzten Datens\xc3\xa4tze die ge\xc3\xa4ndert wurden', 'g': '3.4', 'i': 'LastChangeReport', 'n': 'Letzte \xc3\x84nderungen Bericht', 't': u'Report', 'v': '0.0.11', 'z': 'LastChange.addon.tgz'}
-{'d': 'Diese Ansicht zeigt einen Zeitleistenstammbaum mit Vorfahren und Nachkommen der gew\xc3\xa4hlten Person', 'g': '3.4', 'i': 'TimelinePedigreeView', 'n': 'Zeitleistestammbaum', 't': u'Gramps View', 'v': '0.1.17', 'z': 'TimelinePedigreeView.addon.tgz'}
+{'d': 'Diese Ansicht zeigt einen Zeitleistenstammbaum mit Vorfahren und Nachkommen der gew\xc3\xa4hlten Person', 'g': '3.4', 'i': 'TimelinePedigreeView', 'n': 'Zeitleistestammbaum', 't': u'Gramps View', 'v': '0.1.18', 'z': 'TimelinePedigreeView.addon.tgz'}
 {'d': 'Interactive Python interpreter', 'g': '3.4', 'i': 'Python Gramplet', 'n': 'Python Gramplet', 't': u'Gramplet', 'v': '1.0.6', 'z': 'PythonGramplet.addon.tgz'}
 {'d': 'Gramplet zur schnellen Dateneingabe', 'g': '3.4', 'i': 'Data Entry Gramplet', 'n': 'Dateneingabe Gramplet', 't': u'Gramplet', 'v': '1.0.14', 'z': 'DataEntryGramplet.addon.tgz'}
 {'d': 'Zeigt die Anzahl der Nachkommen der aktuellen Person an', 'g': '3.4', 'i': 'NumberOfDescendantsQuickview', 'n': 'Anzahl der Nachkommen', 't': u'Quickreport', 'v': '3.4.6', 'z': 'NumberOfDescendantsQuickview.addon.tgz'}

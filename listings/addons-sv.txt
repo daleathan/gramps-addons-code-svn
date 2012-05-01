@@ -29,7 +29,7 @@
 {'d': 'Skapar datafil f\xc3\xb6r GoogleEarth och \xc3\xb6ppnar den', 'g': '3.4', 'i': 'GoogleEarth', 'n': 'GoogleEarth', 't': u'Map service', 'v': '1.0.12', 'z': 'GoogleEarthWriteKML.addon.tgz'}
 {'d': 'Lista de tio personposterna, som har \xc3\xa4ndrats', 'g': '3.4', 'i': 'LastChangeGramplet', 'n': 'Gramplet med de senaste \xc3\xa4ndringarna', 't': u'Gramplet', 'v': '0.0.11', 'z': 'LastChange.addon.tgz'}
 {'d': 'Rapport \xc3\xb6ver de poster, som har \xc3\xa4ndrats senast', 'g': '3.4', 'i': 'LastChangeReport', 'n': 'Rapport \xc3\xb6ver senaste \xc3\xa4ndringar', 't': u'Report', 'v': '0.0.11', 'z': 'LastChange.addon.tgz'}
-{'d': 'Vyn visar en tidslinje med anor och \xc3\xa4ttlingar f\xc3\xb6r den valda personen', 'g': '3.4', 'i': 'TimelinePedigreeView', 'n': 'Antavla med tidslinje', 't': u'Gramps View', 'v': '0.1.17', 'z': 'TimelinePedigreeView.addon.tgz'}
+{'d': 'Vyn visar en tidslinje med anor och \xc3\xa4ttlingar f\xc3\xb6r den valda personen', 'g': '3.4', 'i': 'TimelinePedigreeView', 'n': 'Antavla med tidslinje', 't': u'Gramps View', 'v': '0.1.18', 'z': 'TimelinePedigreeView.addon.tgz'}
 {'d': 'Interactive Python interpreter', 'g': '3.4', 'i': 'Python Gramplet', 'n': 'Gramplet med Python', 't': u'Gramplet', 'v': '1.0.6', 'z': 'PythonGramplet.addon.tgz'}
 {'d': 'Gramplet for quick data entry', 'g': '3.4', 'i': 'Data Entry Gramplet', 'n': 'Gramplet f\xc3\xb6r datainmatning', 't': u'Gramplet', 'v': '1.0.14', 'z': 'DataEntryGramplet.addon.tgz'}
 {'d': 'Visar antal \xc3\xa4ttlingar till aktuell person', 'g': '3.4', 'i': 'NumberOfDescendantsQuickview', 'n': 'Antal \xc3\xa4ttlingar', 't': u'Quickreport', 'v': '3.4.6', 'z': 'NumberOfDescendantsQuickview.addon.tgz'}

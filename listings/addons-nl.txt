@@ -29,7 +29,7 @@
 {'d': "Gegevensbestand voor 'GoogleEarth' aanmaken en openen.", 'g': '3.4', 'i': 'GoogleEarth', 'n': 'GoogleEarth', 't': u'Map service', 'v': '1.0.12', 'z': 'GoogleEarthWriteKML.addon.tgz'}
 {'d': 'De tien laatst gewijzigde persoonsgegevens worden gelijst', 'g': '3.4', 'i': 'LastChangeGramplet', 'n': "'Laatste-wijziging'-gramplet", 't': u'Gramplet', 'v': '0.0.11', 'z': 'LastChange.addon.tgz'}
 {'d': 'Verslag van de laatst gewijzigde gegevens', 'g': '3.4', 'i': 'LastChangeReport', 'n': 'Verslag laatste wijziging', 't': u'Report', 'v': '0.0.11', 'z': 'LastChange.addon.tgz'}
-{'d': 'Dit scherm toont een tijdslijnstamboom met voorouders en nakomelingen van de geselecteerde persoon', 'g': '3.4', 'i': 'TimelinePedigreeView', 'n': 'Tijdslijnstamboom', 't': u'Gramps View', 'v': '0.1.17', 'z': 'TimelinePedigreeView.addon.tgz'}
+{'d': 'Dit scherm toont een tijdslijnstamboom met voorouders en nakomelingen van de geselecteerde persoon', 'g': '3.4', 'i': 'TimelinePedigreeView', 'n': 'Tijdslijnstamboom', 't': u'Gramps View', 'v': '0.1.18', 'z': 'TimelinePedigreeView.addon.tgz'}
 {'d': 'Interactieve Python-interpreter', 'g': '3.4', 'i': 'Python Gramplet', 'n': 'Python-gramplet', 't': u'Gramplet', 'v': '1.0.6', 'z': 'PythonGramplet.addon.tgz'}
 {'d': 'Gramplet om gegevens snel in te voeren', 'g': '3.4', 'i': 'Data Entry Gramplet', 'n': 'Gegevensingave-gramplet', 't': u'Gramplet', 'v': '1.0.14', 'z': 'DataEntryGramplet.addon.tgz'}
 {'d': 'Aantal afstammelingen van de actieve persoon wordt getoond', 'g': '3.4', 'i': 'NumberOfDescendantsQuickview', 'n': 'Aantal afstammelingen', 't': u'Quickreport', 'v': '3.4.6', 'z': 'NumberOfDescendantsQuickview.addon.tgz'}
