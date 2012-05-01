@@ -27,14 +27,14 @@
 {'d': 'Set Tag to a given value.', 'g': '3.4', 'i': 'SetTag', 'n': 'Set Tag', 't': u'Tool', 'v': '0.1.0', 'z': 'SetTagTool.addon.tgz'}
 {'d': 'Gramplet pour importer du texte', 'g': '3.4', 'i': 'Import Gramplet', 'n': 'Gramplet Importation', 't': u'Gramplet', 'v': '1.0.8', 'z': 'ImportGramplet.addon.tgz'}
 {'d': 'Cr\xc3\xa9\xc3\xa9 un fichier de donn\xc3\xa9es pouvant \xc3\xaatre ouvert dans GoogleEarth', 'g': '3.4', 'i': 'GoogleEarth', 'n': 'GoogleEarth', 't': u'Map service', 'v': '1.0.12', 'z': 'GoogleEarthWriteKML.addon.tgz'}
-{'d': 'Liste les dix derniers individus modifi\xc3\xa9s', 'g': '3.4', 'i': 'LastChangeGramplet', 'n': 'Gramplet Derni\xc3\xa8res modifications', 't': u'Gramplet', 'v': '0.0.10', 'z': 'LastChange.addon.tgz'}
-{'d': 'Rapport pour les derniers enregistrements modifi\xc3\xa9s', 'g': '3.4', 'i': 'LastChangeReport', 'n': 'Rapport Derni\xc3\xa8res modifications', 't': u'Report', 'v': '0.0.10', 'z': 'LastChange.addon.tgz'}
+{'d': 'Liste les dix derniers individus modifi\xc3\xa9s', 'g': '3.4', 'i': 'LastChangeGramplet', 'n': 'Gramplet Derni\xc3\xa8res modifications', 't': u'Gramplet', 'v': '0.0.11', 'z': 'LastChange.addon.tgz'}
+{'d': 'Rapport pour les derniers enregistrements modifi\xc3\xa9s', 'g': '3.4', 'i': 'LastChangeReport', 'n': 'Rapport Derni\xc3\xa8res modifications', 't': u'Report', 'v': '0.0.11', 'z': 'LastChange.addon.tgz'}
 {'d': "Cette vue affiche une ligne temporelle dans l'arbre avec ascendants et descendants de l'individu s\xc3\xa9lectionn\xc3\xa9", 'g': '3.4', 'i': 'TimelinePedigreeView', 'n': 'Arbre au fil du temps', 't': u'Gramps View', 'v': '0.1.17', 'z': 'TimelinePedigreeView.addon.tgz'}
 {'d': 'Un interpr\xc3\xa9teur python interactif', 'g': '3.4', 'i': 'Python Gramplet', 'n': 'Gramplet Python', 't': u'Gramplet', 'v': '1.0.6', 'z': 'PythonGramplet.addon.tgz'}
 {'d': 'Gramplet pour une saisie rapide des donn\xc3\xa9es', 'g': '3.4', 'i': 'Data Entry Gramplet', 'n': 'Gramplet Formulaire', 't': u'Gramplet', 'v': '1.0.14', 'z': 'DataEntryGramplet.addon.tgz'}
 {'d': "Affiche le nombre de descendants de l'individu actif", 'g': '3.4', 'i': 'NumberOfDescendantsQuickview', 'n': 'Nombre de descendants', 't': u'Quickreport', 'v': '3.4.6', 'z': 'NumberOfDescendantsQuickview.addon.tgz'}
 {'d': 'G\xc3\xa9n\xc3\xa8re des miniatures de nos fichiers media', 'g': '3.4', 'i': 'thumbgen', 'n': 'G\xc3\xa9n\xc3\xa9rateur de miniature', 't': u'Tool', 'v': '1.0.1', 'z': 'ThumbnailGenerator.addon.tgz'}
-{'d': "Produit une liste de toutes les notes avec une \xc3\xa9tiquette donn\xc3\xa9e ainsi que les enregistrements qui les r\xc3\xa9f\xc3\xa9rencent, l'individu, la famille, l'\xc3\xa9v\xc3\xa9nement, etc.", 'g': '3.4', 'i': 'TodoReport', 'n': 'Rapport \xc3\x80 Faire', 't': u'Report', 'v': '1.2.7', 'z': 'ToDoReport.addon.tgz'}
+{'d': "Produit une liste de toutes les notes avec une \xc3\xa9tiquette donn\xc3\xa9e ainsi que les enregistrements qui les r\xc3\xa9f\xc3\xa9rencent, l'individu, la famille, l'\xc3\xa9v\xc3\xa9nement, etc.", 'g': '3.4', 'i': 'TodoReport', 'n': 'Rapport \xc3\x80 Faire', 't': u'Report', 'v': '1.2.8', 'z': 'ToDoReport.addon.tgz'}
 {'d': 'Graphique dynamique des relations', 'g': '3.4', 'i': 'graphview', 'n': 'Vue Graphique', 't': u'Gramps View', 'v': '1.0.21', 'z': 'GraphView.addon.tgz'}
 {'d': 'Merge primary objects via the command line.', 'g': '3.4', 'i': 'climerge', 'n': 'Command Line Merge', 't': u'Tool', 'v': '1.0.3', 'z': 'CliMerge.addon.tgz'}
 {'d': 'Affiche le total des descendants pour chaque individu', 'g': '3.4', 'i': 'Descendant Count Quickview', 'n': 'Calcul des descendants', 't': u'Quickreport', 'v': '1.0.6', 'z': 'DescendantCount.addon.tgz'}
@@ -50,7 +50,7 @@
 {'d': "Ceci est une image brute d'objet python", 'g': '3.4', 'i': 'Raw Export', 'n': 'Export brut', 't': u'Exporter', 'v': '1.0.9', 'z': 'ExportRaw.addon.tgz'}
 {'d': 'Collection de sites internet pour les fran\xc3\xa7ais (n\xc3\xa9cessite libwebconnect)', 'g': '3.4', 'i': 'FR Web Connect Pack', 'n': 'Ensemble de liens internet francophones', 't': u'Plugin lib', 'v': '1.0.8', 'z': 'FRWebConnectPack.addon.tgz'}
 {'d': "Version alternative de l'arbre graphique traditionnel.", 'g': '3.4', 'i': 'PedigreeChart', 'n': 'Arbre graphique', 't': u'Report', 'v': '1.0.9', 'z': 'PedigreeChart.addon.tgz'}
-{'d': 'Produit un rapport textuel des d\xc3\xa9p\xc3\xb4ts', 'g': '3.4', 'i': 'Repositories Report Options', 'n': 'Rapport des d\xc3\xa9p\xc3\xb4ts avec options', 't': u'Report', 'v': '0.3.0', 'z': 'RepositoriesReport.addon.tgz'}
-{'d': 'Produit un rapport textuel des d\xc3\xa9p\xc3\xb4ts', 'g': '3.4', 'i': 'Repositories Report', 'n': 'Rapport des d\xc3\xa9p\xc3\xb4ts', 't': u'Report', 'v': '1.1.0', 'z': 'RepositoriesReport.addon.tgz'}
+{'d': 'Produit un rapport textuel des d\xc3\xa9p\xc3\xb4ts', 'g': '3.4', 'i': 'Repositories Report Options', 'n': 'Rapport des d\xc3\xa9p\xc3\xb4ts avec options', 't': u'Report', 'v': '0.3.1', 'z': 'RepositoriesReport.addon.tgz'}
+{'d': 'Produit un rapport textuel des d\xc3\xa9p\xc3\xb4ts', 'g': '3.4', 'i': 'Repositories Report', 'n': 'Rapport des d\xc3\xa9p\xc3\xb4ts', 't': u'Report', 'v': '1.1.1', 'z': 'RepositoriesReport.addon.tgz'}
 {'d': 'SQLite est un format courant de base de donn\xc3\xa9es locale', 'g': '3.4', 'i': 'im_sqlite', 'n': 'Importation SQLite', 't': u'Importer', 'v': '1.0.11', 'z': 'Sqlite.addon.tgz'}
 {'d': 'SQLite est un format courant de base de donn\xc3\xa9es locale', 'g': '3.4', 'i': 'ex_sqlite', 'n': 'Exportation SQLite', 't': u'Exporter', 'v': '1.0.10', 'z': 'Sqlite.addon.tgz'}
