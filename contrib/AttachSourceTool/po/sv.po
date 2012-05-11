@@ -1,0 +1,100 @@
+# Swedish translations for gramps package.
+# Copyright (C) 2012 THE gramps'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the gramps package.
+# Peter Landgren <peter.talken@telia.com>, 2012.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gramps 34\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-05-11 17:01+0200\n"
+"PO-Revision-Date: 2012-05-11 17:01+0200\n"
+"Last-Translator: Peter Landgren <peter.talken@telia.com>\n"
+"Language-Team: Swedish\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: AttachSourceTool/AttachSourceTool.gpr.py:25
+#: AttachSourceTool/AttachSourceTool.py:134
+#: AttachSourceTool/AttachSourceTool.py:151
+msgid "Attach Source"
+msgstr ""
+
+#: AttachSourceTool/AttachSourceTool.gpr.py:26
+msgid "Attaches a shared source to multiple objects."
+msgstr ""
+
+#: AttachSourceTool/AttachSourceTool.py:64
+#: AttachSourceTool/AttachSourceTool.py:137
+msgid "Options"
+msgstr ""
+
+#: AttachSourceTool/AttachSourceTool.py:66
+msgid "Person Filter"
+msgstr ""
+
+#: AttachSourceTool/AttachSourceTool.py:67
+msgid "Select filter to restrict people"
+msgstr ""
+
+#: AttachSourceTool/AttachSourceTool.py:71
+msgid "Filter Person"
+msgstr ""
+
+#: AttachSourceTool/AttachSourceTool.py:72
+msgid "The center person for the filter"
+msgstr ""
+
+#: AttachSourceTool/AttachSourceTool.py:78
+msgid "Source type"
+msgstr ""
+
+#: AttachSourceTool/AttachSourceTool.py:79
+msgid "New source"
+msgstr ""
+
+#: AttachSourceTool/AttachSourceTool.py:80
+msgid "Existing source"
+msgstr ""
+
+#: AttachSourceTool/AttachSourceTool.py:81
+msgid "Select the type of source to attach"
+msgstr ""
+
+#: AttachSourceTool/AttachSourceTool.py:86
+msgid "New Source Title"
+msgstr ""
+
+#: AttachSourceTool/AttachSourceTool.py:87
+msgid "Text of source to attach"
+msgstr ""
+
+#: AttachSourceTool/AttachSourceTool.py:91
+msgid "Existing Source ID"
+msgstr ""
+
+#: AttachSourceTool/AttachSourceTool.py:92
+msgid "ID of source to attach"
+msgstr ""
+
+#: AttachSourceTool/AttachSourceTool.py:152
+msgid "Results"
+msgstr ""
+
+#: AttachSourceTool/AttachSourceTool.py:153
+msgid "Processing...\n"
+msgstr ""
+
+#: AttachSourceTool/AttachSourceTool.py:170
+msgid "Attaching sources...\n"
+msgstr ""
+
+#: AttachSourceTool/AttachSourceTool.py:171
+msgid "Attaching sources..."
+msgstr ""
+
+#: AttachSourceTool/AttachSourceTool.py:190
+msgid "Done!\n"
+msgstr ""
