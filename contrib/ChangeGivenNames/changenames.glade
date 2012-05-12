@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <interface>
   <!-- interface-requires gtk+ 2.12 -->
   <!-- interface-naming-policy toplevel-contextual -->
@@ -11,7 +11,6 @@
       <object class="GtkVBox" id="vbox2">
         <property name="visible">True</property>
         <property name="border_width">6</property>
-        <property name="orientation">vertical</property>
         <child>
           <object class="GtkLabel" id="title">
             <property name="visible">True</property>
@@ -27,9 +26,9 @@
           <object class="GtkLabel" id="info">
             <property name="visible">True</property>
             <property name="ypad">10</property>
-            <property name="label" translatable="yes">Below is a list of the family names that 
+            <property name="label" translatable="yes">Below is a list of the given names that 
 Gramps can convert to correct capitalization. 
-Select the names you wish Gramps to convert. </property>
+Select the given names you wish Gramps to convert. </property>
           </object>
           <packing>
             <property name="expand">False</property>
