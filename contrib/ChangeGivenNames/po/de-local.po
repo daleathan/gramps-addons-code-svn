@@ -1,22 +1,26 @@
-# German translations for gramps package.
-# Copyright (C) 2011 THE gramps'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the gramps package.
+# translation of de.po to Deutsch
+# German GRAMPS Translation
 #
-# Mirko Leonhäuser <mirko@leonhaeuser.de>, 2011.
+# Anton Huber <anton_huber@gmx.de>, 2005,2006.
+# Sebastian Vöcking <sebastian_voecking@gmx.de>, 2005.
+# Sebastian Vöcking <voeck@web.de>, 2005.
+# Martin Hawlisch <martin@hawlisch.de>, 2005, 2006.
+# Alex Roitman <shura@gramps-project.org>, 2006.
+# Mirko Leonhäuser <mirko@leonhaeuser.de>, 2007, 2008, 2009, 2010, 2011, 2012.
 msgid ""
 msgstr ""
-"Project-Id-Version: gramps 33\n"
+"Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-20 19:53+0100\n"
-"PO-Revision-Date: 2011-12-20 21:06+0100\n"
+"POT-Creation-Date: 2012-05-18 21:44+0200\n"
+"PO-Revision-Date: 2012-05-18 21:45+0200\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 1.2\n"
+"X-Generator: Lokalize 1.4\n"
+"Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 
 #: ChangeGivenNames//ChangeGivenNames.gpr.py:36
 msgid "Fix Capitalization of Given Names"
@@ -37,7 +41,7 @@ msgstr "Großschreibung_von_Vornamen_korrigieren"
 #: ChangeGivenNames//ChangeGivenNames.py:76
 #: ChangeGivenNames//ChangeGivenNames.py:246
 msgid "Capitalization changes"
-msgstr "Großschreibung Änderungen"
+msgstr "Änderungen der Großschreibung"
 
 #: ChangeGivenNames//ChangeGivenNames.py:88
 msgid "Checking Given Names"
@@ -49,33 +53,33 @@ msgstr "Suche Vornamen"
 
 #: ChangeGivenNames//ChangeGivenNames.py:146
 msgid "No modifications made"
-msgstr "Keine Änderungen durchgeführt"
+msgstr "Keine Veränderungen gemacht"
 
 #: ChangeGivenNames//ChangeGivenNames.py:147
 msgid "No capitalization changes were detected."
-msgstr "Keine Großschreibung Änderungen festgestellt."
+msgstr "Es wurden keine Änderungen der Großschreibung entdeckt."
 
 #: ChangeGivenNames//ChangeGivenNames.py:206
 msgid "Select"
-msgstr "Wähle"
+msgstr "Auswählen"
 
 #: ChangeGivenNames//ChangeGivenNames.py:209
 msgid "Original Name"
-msgstr "Original Name"
+msgstr "Ursprünglicher Name"
 
 #: ChangeGivenNames//ChangeGivenNames.py:213
 msgid "Capitalization Change"
-msgstr "Großschreibung Änderung"
+msgstr "Änderungen der Großschreibung"
 
 #: ChangeGivenNames//ChangeGivenNames.py:220
 msgid "Building display"
-msgstr "Erstelle Anzeige"
+msgstr "Anzeige wird erstellt"
 
 #: ChangeGivenNames//changenames.glade.h:1
 msgid ""
-"Below is a list of the family names that \n"
+"Below is a list of the given names that \n"
 "Gramps can convert to correct capitalization. \n"
-"Select the names you wish Gramps to convert. "
+"Select the given names you wish Gramps to convert. "
 msgstr ""
 "Unten ist eine Liste der Vornamen die \n"
 "Gramps in die korrekte Schreibweise ändern kann.\n"
@@ -83,5 +87,5 @@ msgstr ""
 
 #: ChangeGivenNames//changenames.glade.h:4
 msgid "_Accept changes and close"
-msgstr "_Änderungen übernehmen und beenden"
+msgstr "Änderungen _akzeptieren und schließen"
 
