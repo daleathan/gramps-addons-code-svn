@@ -18,12 +18,12 @@
 {'d': 'Durchsucht die gesamte Datenbank und versucht Gro\xc3\x9fschreibung von Vornamen zu korrigieren.', 'g': '3.4', 'i': 'chgivenname', 'n': 'Gro\xc3\x9fschreibung von Vornamen korrigieren', 't': u'Tool', 'v': '1.0.4', 'z': 'ChangeGivenNames.addon.tgz'}
 {'d': 'Gramplet zeigt die Beziehung zwischen Verwandten', 'g': '3.4', 'i': 'Related Relatives Gramplet', 'n': 'Verbundene Verwandte Gramplet', 't': u'Gramplet', 'v': '1.0.7', 'z': 'RelatedRelativesGramplet.addon.tgz'}
 {'d': 'Set an attribute to a given value.', 'g': '3.4', 'i': 'SetAttribute', 'n': 'Set Attribute', 't': u'Tool', 'v': '0.0.7', 'z': 'SetAttributeTool.addon.tgz'}
-{'d': 'Dynamischer Beziehungengraph', 'g': '3.4', 'i': 'graphview', 'n': 'Graphenansicht', 't': u'Gramps View', 'v': '1.0.25', 'z': 'GraphView.addon.tgz'}
+{'d': 'Dynamischer Beziehungengraph', 'g': '3.4', 'i': 'graphview', 'n': 'Graphenansicht', 't': u'Gramps View', 'v': '1.0.26', 'z': 'GraphView.addon.tgz'}
 {'d': 'Generates thumbnails for media files', 'g': '3.4', 'i': 'thumbgen', 'n': 'Thumbnail Generator', 't': u'Tool', 'v': '1.0.2', 'z': 'ThumbnailGenerator.addon.tgz'}
 {'d': 'Alternative Version zur traditionellen Ahnentafelgrafik.', 'g': '3.4', 'i': 'PedigreeChart', 'n': 'Ahnentafelgrafik', 't': u'Report', 'v': '1.0.10', 'z': 'PedigreeChart.addon.tgz'}
 {'d': 'Listet die letzten zehn ge\xc3\xa4nderten Personendatens\xc3\xa4tze', 'g': '3.4', 'i': 'LastChangeGramplet', 'n': 'Letzte \xc3\x84nderung Gramplet', 't': u'Gramplet', 'v': '0.0.12', 'z': 'LastChange.addon.tgz'}
 {'d': 'Bericht der letzten Datens\xc3\xa4tze die ge\xc3\xa4ndert wurden', 'g': '3.4', 'i': 'LastChangeReport', 'n': 'Letzte \xc3\x84nderungen Bericht', 't': u'Report', 'v': '0.0.12', 'z': 'LastChange.addon.tgz'}
-{'d': 'Gramplet showing details of a person', 'g': '3.4', 'i': 'MediaBrowser', 'n': 'Media Browser', 't': u'Gramplet', 'v': '1.0.3', 'z': 'MediaBrowser.addon.tgz'}
+{'d': 'Gramplet showing details of a person', 'g': '3.4', 'i': 'MediaBrowser', 'n': 'Media Browser', 't': u'Gramplet', 'v': '1.0.4', 'z': 'MediaBrowser.addon.tgz'}
 {'d': 'Gramplet zum bearbeiten der Notizen der aktiven Person', 'g': '3.4', 'i': 'Note Gramplet', 'n': 'Notiz Gramplet', 't': u'Gramplet', 'v': '1.0.9', 'z': 'NoteGramplet.addon.tgz'}
 {'d': 'Produces a textual repositories report', 'g': '3.4', 'i': 'Repositories Report Options', 'n': 'Repositories Report Options', 't': u'Report', 'v': '0.3.2', 'z': 'RepositoriesReport.addon.tgz'}
 {'d': 'Produces a textual repositories report', 'g': '3.4', 'i': 'Repositories Report', 'n': 'Repositories Report', 't': u'Report', 'v': '1.1.2', 'z': 'RepositoriesReport.addon.tgz'}

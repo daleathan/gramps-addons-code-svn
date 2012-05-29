@@ -18,12 +18,12 @@
 {'d': 'Searches the entire database and attempts to fix capitalization of the given names.', 'g': '3.4', 'i': 'chgivenname', 'n': 'Fix Capitalization of Given Names', 't': u'Tool', 'v': '1.0.4', 'z': 'ChangeGivenNames.addon.tgz'}
 {'d': 'Gramplet showing relatives in a relation', 'g': '3.4', 'i': 'Related Relatives Gramplet', 'n': 'Related Relatives Gramplet', 't': u'Gramplet', 'v': '1.0.7', 'z': 'RelatedRelativesGramplet.addon.tgz'}
 {'d': 'Set an attribute to a given value.', 'g': '3.4', 'i': 'SetAttribute', 'n': 'Set Attribute', 't': u'Tool', 'v': '0.0.7', 'z': 'SetAttributeTool.addon.tgz'}
-{'d': 'Dynamic graph of relations', 'g': '3.4', 'i': 'graphview', 'n': 'Graph View', 't': u'Gramps View', 'v': '1.0.25', 'z': 'GraphView.addon.tgz'}
+{'d': 'Dynamic graph of relations', 'g': '3.4', 'i': 'graphview', 'n': 'Graph View', 't': u'Gramps View', 'v': '1.0.26', 'z': 'GraphView.addon.tgz'}
 {'d': 'Generates thumbnails for media files', 'g': '3.4', 'i': 'thumbgen', 'n': 'Thumbnail Generator', 't': u'Tool', 'v': '1.0.2', 'z': 'ThumbnailGenerator.addon.tgz'}
 {'d': 'Alternate version of the traditional pedigree chart.', 'g': '3.4', 'i': 'PedigreeChart', 'n': 'Pedigree Chart', 't': u'Report', 'v': '1.0.10', 'z': 'PedigreeChart.addon.tgz'}
 {'d': 'List the last ten person records that have been changed', 'g': '3.4', 'i': 'LastChangeGramplet', 'n': 'Last Change Gramplet', 't': u'Gramplet', 'v': '0.0.12', 'z': 'LastChange.addon.tgz'}
 {'d': 'Report of the last records that have been changed', 'g': '3.4', 'i': 'LastChangeReport', 'n': 'Last Change Report', 't': u'Report', 'v': '0.0.12', 'z': 'LastChange.addon.tgz'}
-{'d': 'Gramplet showing details of a person', 'g': '3.4', 'i': 'MediaBrowser', 'n': 'Media Browser', 't': u'Gramplet', 'v': '1.0.3', 'z': 'MediaBrowser.addon.tgz'}
+{'d': 'Gramplet showing details of a person', 'g': '3.4', 'i': 'MediaBrowser', 'n': 'Media Browser', 't': u'Gramplet', 'v': '1.0.4', 'z': 'MediaBrowser.addon.tgz'}
 {'d': "Gramplet for editing active person's notes", 'g': '3.4', 'i': 'Note Gramplet', 'n': 'Notat Sm\xc3\xa5gramps', 't': u'Gramplet', 'v': '1.0.9', 'z': 'NoteGramplet.addon.tgz'}
 {'d': 'Lager en tekstbasert rapport over oppbevaringssteder', 'g': '3.4', 'i': 'Repositories Report Options', 'n': 'Repositories Report Options', 't': u'Report', 'v': '0.3.2', 'z': 'RepositoriesReport.addon.tgz'}
 {'d': 'Lager en tekstbasert rapport over oppbevaringssteder', 'g': '3.4', 'i': 'Repositories Report', 'n': 'Oppbevaringsstedsrapport', 't': u'Report', 'v': '1.1.2', 'z': 'RepositoriesReport.addon.tgz'}

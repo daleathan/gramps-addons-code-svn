@@ -18,12 +18,12 @@
 {'d': 'Searches the entire database and attempts to fix capitalization of the given names.', 'g': '3.4', 'i': 'chgivenname', 'n': 'Fix Capitalization of Given Names', 't': u'Tool', 'v': '1.0.4', 'z': 'ChangeGivenNames.addon.tgz'}
 {'d': 'Gramplet showing relatives in a relation', 'g': '3.4', 'i': 'Related Relatives Gramplet', 'n': 'Related Relatives Gramplet', 't': u'Gramplet', 'v': '1.0.7', 'z': 'RelatedRelativesGramplet.addon.tgz'}
 {'d': 'S\xc3\xa4tt ett attribut till ett givet v\xc3\xa4rde.', 'g': '3.4', 'i': 'SetAttribute', 'n': 'S\xc3\xa4tt attribut', 't': u'Tool', 'v': '0.0.7', 'z': 'SetAttributeTool.addon.tgz'}
-{'d': 'Levande sl\xc3\xa4ktskapsdiagram', 'g': '3.4', 'i': 'graphview', 'n': 'Diagramvy', 't': u'Gramps View', 'v': '1.0.25', 'z': 'GraphView.addon.tgz'}
+{'d': 'Levande sl\xc3\xa4ktskapsdiagram', 'g': '3.4', 'i': 'graphview', 'n': 'Diagramvy', 't': u'Gramps View', 'v': '1.0.26', 'z': 'GraphView.addon.tgz'}
 {'d': 'Generates thumbnails for media files', 'g': '3.4', 'i': 'thumbgen', 'n': 'Thumbnail Generator', 't': u'Tool', 'v': '1.0.2', 'z': 'ThumbnailGenerator.addon.tgz'}
 {'d': 'Antavlealternativ', 'g': '3.4', 'i': 'PedigreeChart', 'n': 'Antavla', 't': u'Report', 'v': '1.0.10', 'z': 'PedigreeChart.addon.tgz'}
 {'d': 'Lista de tio personposterna, som har \xc3\xa4ndrats', 'g': '3.4', 'i': 'LastChangeGramplet', 'n': 'Gramplet med de senaste \xc3\xa4ndringarna', 't': u'Gramplet', 'v': '0.0.12', 'z': 'LastChange.addon.tgz'}
 {'d': 'Rapport \xc3\xb6ver de poster, som har \xc3\xa4ndrats senast', 'g': '3.4', 'i': 'LastChangeReport', 'n': 'Rapport \xc3\xb6ver senaste \xc3\xa4ndringar', 't': u'Report', 'v': '0.0.12', 'z': 'LastChange.addon.tgz'}
-{'d': 'Gramplet showing details of a person', 'g': '3.4', 'i': 'MediaBrowser', 'n': 'Media Browser', 't': u'Gramplet', 'v': '1.0.3', 'z': 'MediaBrowser.addon.tgz'}
+{'d': 'Gramplet showing details of a person', 'g': '3.4', 'i': 'MediaBrowser', 'n': 'Media Browser', 't': u'Gramplet', 'v': '1.0.4', 'z': 'MediaBrowser.addon.tgz'}
 {'d': "Gramplet for editing active person's notes", 'g': '3.4', 'i': 'Note Gramplet', 'n': 'Gramplet f\xc3\xb6r notis', 't': u'Gramplet', 'v': '1.0.9', 'z': 'NoteGramplet.addon.tgz'}
 {'d': 'Skapar en textbaserad rapport \xc3\xb6ver arkivplatser', 'g': '3.4', 'i': 'Repositories Report Options', 'n': 'Arkivplatsrapportalternativ', 't': u'Report', 'v': '0.3.2', 'z': 'RepositoriesReport.addon.tgz'}
 {'d': 'Skapar en textbaserad rapport \xc3\xb6ver arkivplatser', 'g': '3.4', 'i': 'Repositories Report', 'n': 'Arkivplatsrapport', 't': u'Report', 'v': '1.1.2', 'z': 'RepositoriesReport.addon.tgz'}
