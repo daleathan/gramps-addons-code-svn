@@ -45,7 +45,7 @@ import os
 if "GRAMPSPATH" in os.environ:
     GRAMPSPATH = os.environ["GRAMPSPATH"]
 else:
-    GRAMPSPATH = "../../.."
+    GRAMPSPATH = "../../../.."
 
 if not os.path.isdir(GRAMPSPATH + "/po"):
     raise ValueError("Where is GRAMPSPATH/po: '%s/po'? Use 'GRAMPSPATH=path python make.py ...'" % GRAMPSPATH)
