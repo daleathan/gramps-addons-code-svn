@@ -1,7 +1,7 @@
 {'d': "Display a person's events on a timeline", 'g': '3.4', 'i': 'timelinequickview', 'n': 'Zeitleiste', 't': u'Quickreport', 'v': '1.0.9', 'z': 'TimelineQuickview.addon.tgz'}
 {'d': 'Dies ist eine Rohdaten Pythonobjekt Ausgabe', 'g': '3.4', 'i': 'Raw Export', 'n': 'Rohdaten Export', 't': u'Exporter', 'v': '1.0.10', 'z': 'ExportRaw.addon.tgz'}
 {'d': 'Set an attribute to a given value.', 'g': '3.4', 'i': 'SetAttribute', 'n': 'Set Attribute', 't': u'Tool', 'v': '0.0.7', 'z': 'SetAttributeTool.addon.tgz'}
-{'d': 'Gramplet zum gruppieren von Elementen', 'g': '3.4', 'i': 'Clipboard Gramplet', 'n': 'Zwischenablage Gramplet', 't': u'Gramplet', 'v': '1.0.11', 'z': 'ClipboardGramplet.addon.tgz'}
+{'d': 'Gramplet zum gruppieren von Elementen', 'g': '3.4', 'i': 'Clipboard Gramplet', 'n': 'Zwischenablage Gramplet', 't': u'Gramplet', 'v': '1.0.12', 'z': 'ClipboardGramplet.addon.tgz'}
 {'d': 'Gramplet zeigt eine tief gehende Beziehung zwischen aktiver und Hauptperson', 'g': '3.4', 'i': 'Deep Connections Gramplet', 'n': 'Tief gehende Beziehungen Gramplet', 't': u'Gramplet', 'v': '1.0.13', 'z': 'DeepConnectionsGramplet.addon.tgz'}
 {'d': 'SQLite is a common local database format', 'g': '3.4', 'i': 'im_sqlite', 'n': 'SQLite Import', 't': u'Importer', 'v': '1.0.15', 'z': 'Sqlite.addon.tgz'}
 {'d': 'SQLite is a common local database format', 'g': '3.4', 'i': 'ex_sqlite', 'n': 'SQLite Export', 't': u'Exporter', 'v': '1.0.14', 'z': 'Sqlite.addon.tgz'}

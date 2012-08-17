@@ -67,7 +67,7 @@ class ClipboardListView(ScratchPadListView):
     """
     Subclass ScratchPadListView to override remove_invalid_objects.
     """
-    def remove_invalid_objects(self, dummy=None):
+    def refresh_objects(self, dummy=None):
         def update_rows(model, path, iter):
             """
             Update the rows of a model.
