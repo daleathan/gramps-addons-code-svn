@@ -28,7 +28,7 @@
 {'d': 'Gramplet toont het laatste Gramps-nieuws', 'g': '3.4', 'i': 'Headline News Gramplet', 'n': "'Belangrijkste nieuws'-gramplet", 't': u'Gramplet', 'v': '1.0.9', 'z': 'HeadlineNewsGramplet.addon.tgz'}
 {'d': 'Tekstverslag van de bibliotheken wordt opgemaakt', 'g': '3.4', 'i': 'Repositories Report Options', 'n': 'Opties voor het bibliotheekverslag', 't': u'Report', 'v': '0.3.2', 'z': 'RepositoriesReport.addon.tgz'}
 {'d': 'Tekstverslag van de bibliotheken wordt opgemaakt', 'g': '3.4', 'i': 'Repositories Report', 'n': 'Bibliothekenverslag', 't': u'Report', 'v': '1.1.2', 'z': 'RepositoriesReport.addon.tgz'}
-{'d': 'Geschatte datums voor geboorte en overlijden berekenen.', 'g': '3.4', 'i': 'calculateestimateddates', 'n': 'Geschatte datums berekenen', 't': u'Tool', 'v': '0.90.7', 'z': 'CalculateEstimatedDates.addon.tgz'}
+{'d': 'Geschatte datums voor geboorte en overlijden berekenen.', 'g': '3.4', 'i': 'calculateestimateddates', 'n': 'Geschatte datums berekenen', 't': u'Tool', 'v': '0.90.8', 'z': 'CalculateEstimatedDates.addon.tgz'}
 {'d': 'Miniaturen voor mediabestanden aanmaken', 'g': '3.4', 'i': 'thumbgen', 'n': 'Miniaturen aanmaken', 't': u'Tool', 'v': '1.0.2', 'z': 'ThumbnailGenerator.addon.tgz'}
 {'d': 'Gramplet om de opmerkingen van de actieve persoon te bewerken', 'g': '3.4', 'i': 'Note Gramplet', 'n': 'Opmerkingen-gramplet', 't': u'Gramplet', 'v': '1.0.9', 'z': 'NoteGramplet.addon.tgz'}
 {'d': "Bibliotheek voor 'webstek'-verzamelingen", 'g': '3.4', 'i': 'libwebconnect', 'n': 'libwebconnect', 't': u'Plugin lib', 'v': '1.0.7', 'z': 'libwebconnect.addon.tgz'}

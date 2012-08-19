@@ -28,7 +28,7 @@
 {'d': 'Gramplet for showing latest the Gramps news', 'g': '3.4', 'i': 'Headline News Gramplet', 'n': 'Nyhetsrubriker med Gramplet', 't': u'Gramplet', 'v': '1.0.9', 'z': 'HeadlineNewsGramplet.addon.tgz'}
 {'d': 'Skapar en textbaserad rapport \xc3\xb6ver arkivplatser', 'g': '3.4', 'i': 'Repositories Report Options', 'n': 'Arkivplatsrapportalternativ', 't': u'Report', 'v': '0.3.2', 'z': 'RepositoriesReport.addon.tgz'}
 {'d': 'Skapar en textbaserad rapport \xc3\xb6ver arkivplatser', 'g': '3.4', 'i': 'Repositories Report', 'n': 'Arkivplatsrapport', 't': u'Report', 'v': '1.1.2', 'z': 'RepositoriesReport.addon.tgz'}
-{'d': 'Ber\xc3\xa4kna uppskattningar av datum f\xc3\xb6r f\xc3\xb6delse och d\xc3\xb6d.', 'g': '3.4', 'i': 'calculateestimateddates', 'n': 'Ber\xc3\xa4knade uppskattade datum', 't': u'Tool', 'v': '0.90.7', 'z': 'CalculateEstimatedDates.addon.tgz'}
+{'d': 'Ber\xc3\xa4kna uppskattningar av datum f\xc3\xb6r f\xc3\xb6delse och d\xc3\xb6d.', 'g': '3.4', 'i': 'calculateestimateddates', 'n': 'Ber\xc3\xa4knade uppskattade datum', 't': u'Tool', 'v': '0.90.8', 'z': 'CalculateEstimatedDates.addon.tgz'}
 {'d': 'Generates thumbnails for media files', 'g': '3.4', 'i': 'thumbgen', 'n': 'Thumbnail Generator', 't': u'Tool', 'v': '1.0.2', 'z': 'ThumbnailGenerator.addon.tgz'}
 {'d': "Gramplet for editing active person's notes", 'g': '3.4', 'i': 'Note Gramplet', 'n': 'Gramplet f\xc3\xb6r notis', 't': u'Gramplet', 'v': '1.0.9', 'z': 'NoteGramplet.addon.tgz'}
 {'d': 'Library for web site collections', 'g': '3.4', 'i': 'libwebconnect', 'n': 'libwebconnect', 't': u'Plugin lib', 'v': '1.0.7', 'z': 'libwebconnect.addon.tgz'}

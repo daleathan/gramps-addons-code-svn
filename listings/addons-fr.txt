@@ -28,7 +28,7 @@
 {'d': 'Gramplet pour afficher les derni\xc3\xa8res nouvelles de Gramps', 'g': '3.4', 'i': 'Headline News Gramplet', 'n': 'Gramplet R\xc3\xa9sum\xc3\xa9', 't': u'Gramplet', 'v': '1.0.9', 'z': 'HeadlineNewsGramplet.addon.tgz'}
 {'d': 'Produit un rapport textuel des d\xc3\xa9p\xc3\xb4ts', 'g': '3.4', 'i': 'Repositories Report Options', 'n': 'Rapport des d\xc3\xa9p\xc3\xb4ts avec options', 't': u'Report', 'v': '0.3.2', 'z': 'RepositoriesReport.addon.tgz'}
 {'d': 'Produit un rapport textuel des d\xc3\xa9p\xc3\xb4ts', 'g': '3.4', 'i': 'Repositories Report', 'n': 'Rapport des d\xc3\xa9p\xc3\xb4ts', 't': u'Report', 'v': '1.1.2', 'z': 'RepositoriesReport.addon.tgz'}
-{'d': 'Calcul des dates estim\xc3\xa9es pour les naissances et d\xc3\xa9c\xc3\xa8s.', 'g': '3.4', 'i': 'calculateestimateddates', 'n': 'Calcul des dates estim\xc3\xa9es', 't': u'Tool', 'v': '0.90.7', 'z': 'CalculateEstimatedDates.addon.tgz'}
+{'d': 'Calcul des dates estim\xc3\xa9es pour les naissances et d\xc3\xa9c\xc3\xa8s.', 'g': '3.4', 'i': 'calculateestimateddates', 'n': 'Calcul des dates estim\xc3\xa9es', 't': u'Tool', 'v': '0.90.8', 'z': 'CalculateEstimatedDates.addon.tgz'}
 {'d': 'G\xc3\xa9n\xc3\xa8re des miniatures de nos fichiers media', 'g': '3.4', 'i': 'thumbgen', 'n': 'G\xc3\xa9n\xc3\xa9rateur de miniature', 't': u'Tool', 'v': '1.0.2', 'z': 'ThumbnailGenerator.addon.tgz'}
 {'d': "Gramplet pour l'\xc3\xa9dition des notes de l'individu actif", 'g': '3.4', 'i': 'Note Gramplet', 'n': 'Gramplet Note', 't': u'Gramplet', 'v': '1.0.9', 'z': 'NoteGramplet.addon.tgz'}
 {'d': 'Biblioth\xc3\xa8que pour les collections de liens internet', 'g': '3.4', 'i': 'libwebconnect', 'n': 'libwebconnect', 't': u'Plugin lib', 'v': '1.0.7', 'z': 'libwebconnect.addon.tgz'}

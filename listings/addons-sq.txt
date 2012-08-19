@@ -28,7 +28,7 @@
 {'d': 'Gramplet for showing latest the Gramps news', 'g': '3.4', 'i': 'Headline News Gramplet', 'n': 'Headline News Gramplet', 't': u'Gramplet', 'v': '1.0.9', 'z': 'HeadlineNewsGramplet.addon.tgz'}
 {'d': 'Produces a textual repositories report', 'g': '3.4', 'i': 'Repositories Report Options', 'n': 'Repositories Report Options', 't': u'Report', 'v': '0.3.2', 'z': 'RepositoriesReport.addon.tgz'}
 {'d': 'Produces a textual repositories report', 'g': '3.4', 'i': 'Repositories Report', 'n': 'Repositories Report', 't': u'Report', 'v': '1.1.2', 'z': 'RepositoriesReport.addon.tgz'}
-{'d': 'Logaitje t\xc3\xab datave t\xc3\xab vlersuara p\xc3\xabr lindje dhe vdekje.', 'g': '3.4', 'i': 'calculateestimateddates', 'n': 'Logarit datat e vlersuara', 't': u'Tool', 'v': '0.90.7', 'z': 'CalculateEstimatedDates.addon.tgz'}
+{'d': 'Logaitje t\xc3\xab datave t\xc3\xab vlersuara p\xc3\xabr lindje dhe vdekje.', 'g': '3.4', 'i': 'calculateestimateddates', 'n': 'Logarit datat e vlersuara', 't': u'Tool', 'v': '0.90.8', 'z': 'CalculateEstimatedDates.addon.tgz'}
 {'d': 'Generates thumbnails for media files', 'g': '3.4', 'i': 'thumbgen', 'n': 'Thumbnail Generator', 't': u'Tool', 'v': '1.0.2', 'z': 'ThumbnailGenerator.addon.tgz'}
 {'d': "Gramplet for editing active person's notes", 'g': '3.4', 'i': 'Note Gramplet', 'n': 'Note Gramplet', 't': u'Gramplet', 'v': '1.0.9', 'z': 'NoteGramplet.addon.tgz'}
 {'d': 'Library for web site collections', 'g': '3.4', 'i': 'libwebconnect', 'n': 'libwebconnect', 't': u'Plugin lib', 'v': '1.0.7', 'z': 'libwebconnect.addon.tgz'}

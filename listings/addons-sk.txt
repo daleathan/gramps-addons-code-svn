@@ -28,7 +28,7 @@
 {'d': 'Gramplet for showing latest the Gramps news', 'g': '3.4', 'i': 'Headline News Gramplet', 'n': 'Gramplet Novinky', 't': u'Gramplet', 'v': '1.0.9', 'z': 'HeadlineNewsGramplet.addon.tgz'}
 {'d': 'Poskytuje textov\xc3\xba spr\xc3\xa1vu o arch\xc3\xadvoch', 'g': '3.4', 'i': 'Repositories Report Options', 'n': 'Repositories Report Options', 't': u'Report', 'v': '0.3.2', 'z': 'RepositoriesReport.addon.tgz'}
 {'d': 'Poskytuje textov\xc3\xba spr\xc3\xa1vu o arch\xc3\xadvoch', 'g': '3.4', 'i': 'Repositories Report', 'n': 'Spr\xc3\xa1va o arch\xc3\xadvoch', 't': u'Report', 'v': '1.1.2', 'z': 'RepositoriesReport.addon.tgz'}
-{'d': 'Vypo\xc4\x8d\xc3\xadta pribli\xc5\xben\xc3\xa9 d\xc3\xa1tumy narodenia a \xc3\xbamrtia.', 'g': '3.4', 'i': 'calculateestimateddates', 'n': 'Vypo\xc4\x8d\xc3\xadta\xc5\xa5 odhadovan\xc3\xa9 d\xc3\xa1tumy', 't': u'Tool', 'v': '0.90.7', 'z': 'CalculateEstimatedDates.addon.tgz'}
+{'d': 'Vypo\xc4\x8d\xc3\xadta pribli\xc5\xben\xc3\xa9 d\xc3\xa1tumy narodenia a \xc3\xbamrtia.', 'g': '3.4', 'i': 'calculateestimateddates', 'n': 'Vypo\xc4\x8d\xc3\xadta\xc5\xa5 odhadovan\xc3\xa9 d\xc3\xa1tumy', 't': u'Tool', 'v': '0.90.8', 'z': 'CalculateEstimatedDates.addon.tgz'}
 {'d': 'Generates thumbnails for media files', 'g': '3.4', 'i': 'thumbgen', 'n': 'Thumbnail Generator', 't': u'Tool', 'v': '1.0.2', 'z': 'ThumbnailGenerator.addon.tgz'}
 {'d': "Gramplet for editing active person's notes", 'g': '3.4', 'i': 'Note Gramplet', 'n': 'Gramplet Pozn\xc3\xa1mka', 't': u'Gramplet', 'v': '1.0.9', 'z': 'NoteGramplet.addon.tgz'}
 {'d': 'Library for web site collections', 'g': '3.4', 'i': 'libwebconnect', 'n': 'libwebconnect', 't': u'Plugin lib', 'v': '1.0.7', 'z': 'libwebconnect.addon.tgz'}
