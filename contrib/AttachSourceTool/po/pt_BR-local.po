@@ -1,0 +1,101 @@
+# Brazilian Portuguese translations for addons-gramps package.
+# Copyright (C) 2012 THE addons-gramps'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the addons-gramps package.
+# André Marcelo Alvarenga <andrealvarenga@gmx.net>, 2012.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: addons-gramps 34\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-08-19 23:12-0300\n"
+"PO-Revision-Date: 2012-08-19 23:12-0300\n"
+"Last-Translator: André Marcelo Alvarenga <andrealvarenga@gmx.net>\n"
+"Language-Team: Brazilian Portuguese\n"
+"Language: pt_BR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: AttachSourceTool/AttachSourceTool.gpr.py:25
+#: AttachSourceTool/AttachSourceTool.py:134
+#: AttachSourceTool/AttachSourceTool.py:151
+msgid "Attach Source"
+msgstr "Anexar fonte"
+
+#: AttachSourceTool/AttachSourceTool.gpr.py:26
+msgid "Attaches a shared source to multiple objects."
+msgstr "Anexa uma fonte comum a vários objetos"
+
+#: AttachSourceTool/AttachSourceTool.py:64
+#: AttachSourceTool/AttachSourceTool.py:137
+msgid "Options"
+msgstr "Opções"
+
+#: AttachSourceTool/AttachSourceTool.py:66
+msgid "Person Filter"
+msgstr "Filtro de pessoas"
+
+#: AttachSourceTool/AttachSourceTool.py:67
+msgid "Select filter to restrict people"
+msgstr "Selecione o filtro para restringir as pessoas"
+
+#: AttachSourceTool/AttachSourceTool.py:71
+msgid "Filter Person"
+msgstr "Pessoa do filtro"
+
+#: AttachSourceTool/AttachSourceTool.py:72
+msgid "The center person for the filter"
+msgstr "Pessoa principal utilizada pelo filtro"
+
+#: AttachSourceTool/AttachSourceTool.py:78
+msgid "Source type"
+msgstr "Tipo de fonte"
+
+#: AttachSourceTool/AttachSourceTool.py:79
+msgid "New source"
+msgstr "Nova fonte"
+
+#: AttachSourceTool/AttachSourceTool.py:80
+msgid "Existing source"
+msgstr "Fonte existente"
+
+#: AttachSourceTool/AttachSourceTool.py:81
+msgid "Select the type of source to attach"
+msgstr "Selecione o tipo de fonte a anexar"
+
+#: AttachSourceTool/AttachSourceTool.py:86
+msgid "New Source Title"
+msgstr "Novo título da fonte"
+
+#: AttachSourceTool/AttachSourceTool.py:87
+msgid "Text of source to attach"
+msgstr "Texto da fonte a anexar"
+
+#: AttachSourceTool/AttachSourceTool.py:91
+msgid "Existing Source ID"
+msgstr "ID da fonte existente"
+
+#: AttachSourceTool/AttachSourceTool.py:92
+msgid "ID of source to attach"
+msgstr "ID da fonte a anexar"
+
+#: AttachSourceTool/AttachSourceTool.py:152
+msgid "Results"
+msgstr "Resultados"
+
+#: AttachSourceTool/AttachSourceTool.py:153
+msgid "Processing...\n"
+msgstr "Processando...\n"
+
+#: AttachSourceTool/AttachSourceTool.py:170
+msgid "Attaching sources...\n"
+msgstr "Anexando fontes...\n"
+
+#: AttachSourceTool/AttachSourceTool.py:171
+msgid "Attaching sources..."
+msgstr "Anexando fontes..."
+
+#: AttachSourceTool/AttachSourceTool.py:190
+msgid "Done!\n"
+msgstr "Concluído!\n"
