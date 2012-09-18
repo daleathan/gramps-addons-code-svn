@@ -1,0 +1,81 @@
+The 'Filtered Descendant Report' is directly based on the 'Detailed Descendant Report'.  As such, it
+includes all the options (which make sense) in addition to some new ones.  Because multiple
+family branches can be included, the Henry and d'Aboville numbering systems options were removed
+(considering that people common to more than one branch will get the number assigned to them when they
+are first found).
+
+The main difference is that a filter can be used to determine who to include in the report (so that
+you can have several family branches) instead of basing all the descendants from a single person.  The
+key is to find at least one common person to all the rules in the filter.  If at least one common
+person is found, the generations can be aligned so that it doesn't matter if the head of each branch
+is in the same generation.  Note that only custom filters are used (some of the built-in filters
+don't make sense and it was just easier to exclude them).
+
+CAVEAT: the filter is meant to be an OR filter (At least one rule must apply), meaning that we are
+expecting the report to consist of one or more family branches, where each rule dictates the start of a branch.
+This plugin has NOT been stress tested over different varieties of rules.  It does work with one or more
+rules and will treat the filter as if 'At least one rule must apply' is set (even if not).  The plugin
+will complain if no common people are found across all rules.
+
+CAVEAT: the only supported output file format currently is 'OpenDocument Text Enhanced'.  Running
+the plugin with any other output format will cause an error (because the other format backends haven't
+been updated to support the needed enhancements).
+
+CAVEAT: this is a third version, and as such has much missing that people might want.  One obvious one
+is support for ALL backend report formats, not just ODF.  Also, not currently possible to get the
+photo date to put into the caption.  Also, no translation for messages (everything is currently English-only).
+This version is being released for Gramps v3.4 and to see if there is any interest besides myself :-{}.
+
+DIFFERENCES
+===========
+
+Differences from 'Detailed Descendant Report' are as follows:
+
+1) Instead of a 'Center Person' to start descendants from, there is now a 'Filter'.
+
+As explained above, the filter can have one or more rules to allow multiple branches to be in the same
+report.  A person, common to ALL rules will align the generations.  If no common person is found, an
+error will be issued.
+
+2) Report Title
+
+An added option allows the user to specify the report title.  For 'Detailed Descendant Report', this
+is automatically set based on the name of the 'Center Person'.  For 'Filtered Descendant Report', this is
+automatically set to the name of the selected filter, but can be overridden by the user.
+
+3) Turn URLs into real links
+
+This option (on the Content tab) tells the plugin whether to turn any http, https, or mailto links found
+in text (i.e. notes, endnotes, etc.) to be real clickable links.  Turning this option off results in the
+behavior found in 'Detailed Descendant Report' (that is, no URLs are made clickable).  Turning it on will
+cause those URLs found to be clickable in the output file (if possible).
+
+4) Do not include information marked private
+
+This option (on the Content tab) tells the plugin whether to add information to the report that has
+been marked 'private'.  Turning this option off results in the behavior found in
+'Detailed Descendant Report' (that is, all information is included in the report).  Turning it on
+will cause the plugin to NOT include anything marked private.  After all, what good is the private
+flag if it's not respected?
+
+5) Include partners
+
+Just a label change for the modern age.
+
+6) Add caption under image from Gallery
+
+This option (on the new Caption tab) tells the plugin whether to include captions under photos or not.
+
+7) Caption Format
+
+This option (on the new Caption tab) specifies what should be in photo captions.  For full
+details on what can be specified, see:
+
+    http://ander882.110mb.com/index.php?p=gramps.display4
+
+8) Image cropping
+
+Images now appear in the report document exactly how they appear within the Gramps UI.  That is, if an image
+has been cropped, it will be cropped the same way in the report.  The 'Detailed Descendant Report'
+behavior was to just insert the image so that the report showed the entire image.
+
