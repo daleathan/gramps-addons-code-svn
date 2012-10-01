@@ -47,7 +47,6 @@
 {'d': 'Tekstverslag van de bibliotheken wordt opgemaakt', 'g': '3.4', 'i': 'Repositories Report Options', 'n': 'Opties voor het bibliotheekverslag', 't': u'Report', 'v': '0.3.2', 'z': 'RepositoriesReport.addon.tgz'}
 {'d': 'Tekstverslag van de bibliotheken wordt opgemaakt', 'g': '3.4', 'i': 'Repositories Report', 'n': 'Bibliothekenverslag', 't': u'Report', 'v': '1.1.2', 'z': 'RepositoriesReport.addon.tgz'}
 {'d': 'Gebeurtenissen van een persoon worden op een tijdslijn getoond', 'g': '3.4', 'i': 'timelinequickview', 'n': 'Tijdlijn', 't': u'Quickreport', 'v': '1.0.9', 'z': 'TimelineQuickview.addon.tgz'}
-{'d': 'The view shows a quilt chart visualisation of a family tree', 'g': '3.4', 'i': 'QuiltView', 'n': 'Quilt Chart', 't': u'Gramps View', 'v': '0.0.1', 'z': 'QuiltView.addon.tgz'}
 {'d': 'Een gedeelde bron aan verschillende objecten toevoegen.', 'g': '3.4', 'i': 'AttachSource', 'n': 'Bron toevoegen', 't': u'Tool', 'v': '0.0.13', 'z': 'AttachSourceTool.addon.tgz'}
 {'d': "Verzameling van websites voor 'VK' (libwebconnect is nodig)", 'g': '3.4', 'i': 'UK Web Connect Pack', 'n': 'V.K. Web Connect Pack', 't': u'Plugin lib', 'v': '1.0.15', 'z': 'UKWebConnectPack.addon.tgz'}
 {'d': "Gramplet om de grafische mogelijkheden van 'Cairo' te tonen", 'g': '3.4', 'i': 'Clock Gramplet', 'n': 'Klokgramplet', 't': u'Gramplet', 'v': '0.0.8', 'z': 'ClockGramplet.addon.tgz'}

@@ -47,7 +47,6 @@
 {'d': 'Generuje tekstowy raport o repozytoriach', 'g': '3.4', 'i': 'Repositories Report Options', 'n': 'Repositories Report Options', 't': u'Report', 'v': '0.3.2', 'z': 'RepositoriesReport.addon.tgz'}
 {'d': 'Generuje tekstowy raport o repozytoriach', 'g': '3.4', 'i': 'Repositories Report', 'n': 'Raport repozytori\xc3\xb3w', 't': u'Report', 'v': '1.1.2', 'z': 'RepositoriesReport.addon.tgz'}
 {'d': "Display a person's events on a timeline", 'g': '3.4', 'i': 'timelinequickview', 'n': 'O\xc5\x9b czasu', 't': u'Quickreport', 'v': '1.0.9', 'z': 'TimelineQuickview.addon.tgz'}
-{'d': 'The view shows a quilt chart visualisation of a family tree', 'g': '3.4', 'i': 'QuiltView', 'n': 'Quilt Chart', 't': u'Gramps View', 'v': '0.0.1', 'z': 'QuiltView.addon.tgz'}
 {'d': 'Attaches a shared source to multiple objects.', 'g': '3.4', 'i': 'AttachSource', 'n': 'Attach Source', 't': u'Tool', 'v': '0.0.13', 'z': 'AttachSourceTool.addon.tgz'}
 {'d': 'Collection of Web sites for the UK (requires libwebconnect)', 'g': '3.4', 'i': 'UK Web Connect Pack', 'n': 'UK Web Connect Pack', 't': u'Plugin lib', 'v': '1.0.15', 'z': 'UKWebConnectPack.addon.tgz'}
 {'d': 'Gramplet for demonstrating Cairo graphics', 'g': '3.4', 'i': 'Clock Gramplet', 'n': 'Gramplet Zegara', 't': u'Gramplet', 'v': '0.0.8', 'z': 'ClockGramplet.addon.tgz'}

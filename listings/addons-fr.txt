@@ -47,7 +47,6 @@
 {'d': 'Produit un rapport textuel des d\xc3\xa9p\xc3\xb4ts', 'g': '3.4', 'i': 'Repositories Report Options', 'n': 'Rapport des d\xc3\xa9p\xc3\xb4ts avec options', 't': u'Report', 'v': '0.3.2', 'z': 'RepositoriesReport.addon.tgz'}
 {'d': 'Produit un rapport textuel des d\xc3\xa9p\xc3\xb4ts', 'g': '3.4', 'i': 'Repositories Report', 'n': 'Rapport des d\xc3\xa9p\xc3\xb4ts', 't': u'Report', 'v': '1.1.2', 'z': 'RepositoriesReport.addon.tgz'}
 {'d': "Affiche les \xc3\xa9v\xc3\xa9nements d'une personne tout au long de sa vie", 'g': '3.4', 'i': 'timelinequickview', 'n': 'Graphique temporel', 't': u'Quickreport', 'v': '1.0.9', 'z': 'TimelineQuickview.addon.tgz'}
-{'d': 'The view shows a quilt chart visualisation of a family tree', 'g': '3.4', 'i': 'QuiltView', 'n': 'Quilt Chart', 't': u'Gramps View', 'v': '0.0.1', 'z': 'QuiltView.addon.tgz'}
 {'d': 'Attache une source partag\xc3\xa9e \xc3\xa0 des objets multiples', 'g': '3.4', 'i': 'AttachSource', 'n': 'Attacher une source', 't': u'Tool', 'v': '0.0.13', 'z': 'AttachSourceTool.addon.tgz'}
 {'d': 'Collection de sites internet pour le Royaume-uni (n\xc3\xa9cessite libwebconnect)', 'g': '3.4', 'i': 'UK Web Connect Pack', 'n': 'Ensemble de liens internet anglo-saxons', 't': u'Plugin lib', 'v': '1.0.15', 'z': 'UKWebConnectPack.addon.tgz'}
 {'d': 'Gramplet pour d\xc3\xa9montrer les graphiques Cairo', 'g': '3.4', 'i': 'Clock Gramplet', 'n': 'Gramplet Horloge', 't': u'Gramplet', 'v': '0.0.8', 'z': 'ClockGramplet.addon.tgz'}
