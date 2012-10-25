@@ -55,6 +55,7 @@ import ThumbNails
 import Utils
 from gui.editors import EditPerson, EditFamily
 import Errors
+import DateHandler
 
 try:
     import cairo
@@ -90,6 +91,8 @@ class GraphView(NavigationView):
     #settings in the config file
     CONFIGSETTINGS = (
         ('interface.graphview-show-images', True),
+        ('interface.graphview-show-full-dates', False),
+        ('interface.graphview-show-places', False),
         ('interface.graphview-highlight-home-person', True),
         ('interface.graphview-home-person-color', '#bbe68a'),
         )
@@ -100,6 +103,9 @@ class GraphView(NavigationView):
                                       Bookmarks.PersonBookmarks, nav_group)
 
         self.show_images = self._config.get('interface.graphview-show-images')
+        self.show_full_dates = self._config.get(
+                            'interface.graphview-show-full-dates')
+        self.show_places = self._config.get('interface.graphview-show-places')
         self.highlight_home_person = self._config.get(
                                   'interface.graphview-highlight-home-person')
         self.home_person_color = self._config.get(
@@ -211,6 +217,26 @@ class GraphView(NavigationView):
             self.show_images = False
         self.graph_widget.populate(self.get_active())
 
+    def cb_update_show_full_dates(self, client, cnxn_id, entry, data):
+        """
+        Called when the configuration menu changes the date setting. 
+        """
+        if entry == 'True':
+            self.show_full_dates = True
+        else:
+            self.show_full_dates = False
+        self.graph_widget.populate(self.get_active())
+
+    def cb_update_show_places(self, client, cnxn_id, entry, data):
+        """
+        Called when the configuration menu changes the place setting. 
+        """
+        if entry == 'True':
+            self.show_places = True
+        else:
+            self.show_places = False
+        self.graph_widget.populate(self.get_active())
+
     def cb_update_highlight_home_person(self, client, cnxn_id, entry, data):
         """
         Called when the configuration menu changes the highlight home
@@ -237,6 +263,10 @@ class GraphView(NavigationView):
         """
         self._config.connect('interface.graphview-show-images',
                           self.cb_update_show_images)
+        self._config.connect('interface.graphview-show-full-dates',
+                          self.cb_update_show_full_dates)
+        self._config.connect('interface.graphview-show-places',
+                          self.cb_update_show_places)
         self._config.connect('interface.graphview-highlight-home-person',
                           self.cb_update_highlight_home_person)
         self._config.connect('interface.graphview-home-person-color',
@@ -265,8 +295,14 @@ class GraphView(NavigationView):
                 _('Show images'), 
                 0, 'interface.graphview-show-images')
         configdialog.add_checkbox(table, 
+                _('Show full dates'), 
+                1, 'interface.graphview-show-full-dates')
+        configdialog.add_checkbox(table, 
+                _('Show places'), 
+                2, 'interface.graphview-show-places')
+        configdialog.add_checkbox(table, 
                 _('Highlight the home person'), 
-                1, 'interface.graphview-highlight-home-person')
+                3, 'interface.graphview-highlight-home-person')
 
         return _('Layout'), table
 
@@ -721,7 +757,7 @@ class GraphvizSvgParser(object):
                 is_dashed = True
             else:
                 is_dashed = False
-        
+
         if is_dashed:
             item = goocanvas.Path(parent = self.current_parent(),
                                   data = p_data,
@@ -733,7 +769,7 @@ class GraphvizSvgParser(object):
                                   data = p_data,
                                   stroke_color = stroke_color,
                                   line_width = 1)
-      
+
         self.item_hier.append(item)
 
     def stop_path(self, tag):
@@ -826,9 +862,9 @@ class GraphvizSvgParser(object):
         """
         if self.func:
             self.func(''.join(self.tlist))
-        self.func_index -= 1    
+        self.func_index -= 1
         self.func, self.tlist = self.func_list[self.func_index]
-        
+
     def characters(self, data):
         """
         Generic parsing function for tag data.
@@ -883,13 +919,18 @@ class DotGenerator(object):
         so that it can layout the data in a graph and produce an SVG form
         of the graph.
         """
-        
+
         self.dbstate = dbstate
         self.database = dbstate.db
         self.dot = StringIO()
 
         self.view = view
-        self.show_images = self.view._config.get('interface.graphview-show-images')
+        self.show_images = self.view._config.get(
+                                     'interface.graphview-show-images')
+        self.show_full_dates = self.view._config.get(
+                                     'interface.graphview-show-full-dates')
+        self.show_places = self.view._config.get(
+                                     'interface.graphview-show-places')
 
         self.colors = {
             'male_fill'      : '#b9cfe7',
@@ -903,10 +944,11 @@ class DotGenerator(object):
         }
         self.arrowheadstyle = 'none'
         self.arrowtailstyle = 'none'
-        
+
         dpi        = 72
         fontfamily = ""
-        fontsize   = 9 
+        fontsize   = 9
+        self.fontsizebig = fontsize+2
         nodesep    = 0.20
         pagedir    = "BL"
         rankdir    = "TB"
@@ -953,7 +995,7 @@ class DotGenerator(object):
         if active_person:
             self.person_handles = []
             self.find_descendants(active_person)
-            
+
             if len(self.person_handles) > 0:
                 self.add_persons_and_families()
                 self.add_child_links_to_families()
@@ -997,7 +1039,7 @@ class DotGenerator(object):
          children"
         # Hash people in a dictionary for faster inclusion checking
         person_dict = dict([handle, 1] for handle in self.person_handles)
-            
+
         for person_handle in self.person_handles:
             person = self.database.get_person_from_handle(person_handle)
             for fam_handle in person.get_parent_family_handle_list():
@@ -1034,7 +1076,7 @@ class DotGenerator(object):
             style = 'dotted'
         self.add_link(family.handle, p_id, style,  
                       self.arrowheadstyle, self.arrowtailstyle )
-        
+
     def add_parent_link(self, p_id, parent_handle, rel):
         "Links the child to a parent"
         style = 'solid'
@@ -1042,32 +1084,32 @@ class DotGenerator(object):
             style = 'dotted'
         self.add_link(parent_handle, p_id, style,
                       self.arrowheadstyle, self.arrowtailstyle )
-        
+
     def add_persons_and_families(self):
         "adds nodes for persons and their families"
         # variable to communicate with get_person_label
-        self.is_html_output = False
+        #self.is_html_output = False
         url = ""
-            
+
         # The list of families for which we have output the node,
         # so we don't do it twice
         families_done = {}
         for person_handle in self.person_handles:
-            self.is_html_output = True
+            #self.is_html_output = True
             person = self.database.get_person_from_handle(person_handle)
             # Output the person's node
             label = self.get_person_label(person)
             (shape, style, color, fill) = self.get_gender_style(person)
-                
+
             self.add_node(person_handle, label, shape, color, style, fill, url)
-  
+
             # Output families where person is a parent
             family_list = person.get_family_handle_list()
             for fam_handle in family_list:
                 if fam_handle not in families_done:
                     families_done[fam_handle] = 1
                     self.__add_family(fam_handle)
-                        
+
     def __add_family(self, fam_handle):
         """Add a node for a family and optionally link the spouses to it"""
         fam = self.database.get_family_from_handle(fam_handle)
@@ -1084,7 +1126,7 @@ class DotGenerator(object):
         fill = self.colors['family_fill']
         style = "filled"
         self.add_node(fam_handle, label, "ellipse", color, style, fill)
-        
+
         # If subgraphs are used then we add both spouses here and Graphviz
         # will attempt to position both spouses closely together.
         # A person who is a parent in more than one family may only be
@@ -1095,7 +1137,7 @@ class DotGenerator(object):
         m_handle = fam.get_mother_handle()
         if f_handle:
             self.add_link(f_handle,
-                          fam_handle, "", 
+                          fam_handle, "",
                           self.arrowheadstyle,
                           self.arrowtailstyle)
             # Include spouses from other marriage not selected by filter
@@ -1103,7 +1145,7 @@ class DotGenerator(object):
                 self.person_handles.append(f_handle)
         if m_handle:
             self.add_link(m_handle,
-                          fam_handle, "", 
+                          fam_handle, "",
                           self.arrowheadstyle,
                           self.arrowtailstyle)
             # Include spouses from other marriage not selected by filter
@@ -1135,7 +1177,7 @@ class DotGenerator(object):
         "return person label string"
         # see if we have an image to use for this person
         image_path = None
-        if self.show_images and self.is_html_output:
+        if self.show_images:# and self.is_html_output:
             media_list = person.get_media_list()
             if len(media_list) > 0:
                 media_handle = media_list[0].get_reference_handle()
@@ -1151,50 +1193,54 @@ class DotGenerator(object):
                     image_path = Utils.find_file(image_path)
 
         label = u""
-        line_delimiter = '\\n'
+        line_delimiter = '<BR/>'
 
-        # If we have an image, then start an HTML table; remember to close
-        # the table afterwards!
-        #
         # This isn't a free-form HTML format here...just a few keywords that
-        # happen to be
-        # similar to keywords commonly seen in HTML.  For additional
-        # information on what
-        # is allowed, see:
-        #
+        # happen to be similar to keywords commonly seen in HTML.
+        # For additional information on what is allowed, see:
         #       http://www.graphviz.org/info/shapes.html#html
-        #
-        if self.is_html_output and image_path:
-            line_delimiter = '<BR/>'
-            label += '<TABLE BORDER="0" CELLSPACING="2" CELLPADDING="0" CELLBORDER="0"><TR><TD></TD><TD><IMG SRC="%s"/></TD><TD></TD>'  % image_path
+        label += '<TABLE BORDER="0" CELLSPACING="2" CELLPADDING="0" CELLBORDER="0"><TR><TD></TD><TD>'
+        if image_path:
+            label += '<IMG SRC="%s"/></TD><TD></TD>'  % image_path
             #trick it into not stretching the image
             label += '</TR><TR><TD COLSPAN="3">'
-        else :
-            #no need for html label with this person
-            self.is_html_output = False
 
         # at the very least, the label must have the person's name
         name = displayer.display_name(person.get_primary_name())
+        name = name.center(len(name) + 10)
 
-        # Need to pad the label because of a bug in the SVG output of Graphviz
-        # which causes the width of the text to exceed the bounding box.
-        if self.is_html_output :
-            # avoid < and > in the name, as this is html text
-            label += name.replace('<', '&#60;').replace('>', '&#62;')
-        else :
-            name = name.center(len(name) + 10)
-            label += name
+        # avoid < and > in the name, as this is html text
+        label += name.replace('<', '&#60;').replace('>', '&#62;')
+
+        label += line_delimiter
+
         birth, death = self.get_date_strings(person)
-        label = label + '%s(%s - %s)' % (line_delimiter, birth, death)
-            
-        # see if we have a table that needs to be terminated
-        if self.is_html_output:
-            label += '</TD></TR></TABLE>'
-            return label
-        else :
-            # non html label is enclosed by "" so escape other "
-            return label.replace('"', '\\\"')
-    
+
+        if birth:
+            if self.show_full_dates or self.show_places:
+                label += '%s ' % _('b.') # Short for "born" (could be "*")
+            label += birth
+            label += self.add_padding(birth)
+
+        if death:
+            if self.show_full_dates or self.show_places:
+                label += line_delimiter
+                label += _('d.') # Short for "died" (could be "+")
+                label += ' '
+            else:
+                label += ' - '
+            label += death
+            label += self.add_padding(death)
+
+        label += '</TD></TR></TABLE>'
+        return label
+
+    def add_padding(self, string):
+        "Need to pad the label because of a bug in the SVG output of Graphviz"
+        "which causes the width of the text to exceed the bounding box."
+        nb_of_pads = len(string) / 30
+        return  '&nbsp;' * nb_of_pads
+
     def get_date_strings(self, person):
         "returns tuple of birth/christening and death/burying date strings"
         birth_event = get_birth_or_fallback(self.database, person)
@@ -1213,8 +1259,8 @@ class DotGenerator(object):
 
     def get_event_string(self, event):
         """
-        return string for for an event label.
-        
+        return string for an event label.
+
         Based on the data availability and preferences, we select one
         of the following for a given event:
             year only
@@ -1223,13 +1269,26 @@ class DotGenerator(object):
             empty string
         """
         if event:
+            # A date
             if event.get_date_object().get_year_valid():
-                return '%i' % event.get_date_object().get_year()
+                if self.show_full_dates and DateHandler.get_date_valid(event):
+                    return_string = '%s' % DateHandler.get_date(event)
+                elif event.get_date_object().get_year_valid():
+                    return_string = '%i' % event.get_date_object().get_year()
+                # Shall we add the place?
+                if self.show_places:
+                    place_handle = event.get_place_handle()
+                    place = self.database.get_place_from_handle(place_handle)
+                    if place and place.get_title():
+                        return_string += ' - %s' % place.get_title()
+                return return_string
+            # A place
             else:
                 place_handle = event.get_place_handle()
                 place = self.database.get_place_from_handle(place_handle)
                 if place and place.get_title():
                     return place.get_title()
+        # An empty string
         return ''
 
     def add_link(self, id1, id2, style="", head="", tail="", comment=""):
@@ -1239,17 +1298,17 @@ class DotGenerator(object):
         that begin with a number.
         """
         self.write('  _%s -> _%s' % (id1, id2))
-        
+
         if style or head or tail:
             self.write(' [')
-            
+
             if style:
                 self.write(' style=%s' % style)
             if head:
                 self.write(' arrowhead=%s' % head)
             if tail:
                 self.write(' arrowtail=%s' % tail)
-                
+
             self.write(' ]')
 
         self.write(';')
@@ -1271,10 +1330,10 @@ class DotGenerator(object):
 
         if shape:
             text += ' shape="%s"'       % shape
-            
+
         if color:
             text += ' color="%s"'       % color
-            
+
         if fillcolor:
             text += ' fillcolor="%s"'   % fillcolor
 
@@ -1300,7 +1359,7 @@ class DotGenerator(object):
         self.write('  subgraph cluster_%s\n' % graph_id)
         self.write('  {\n')
         self.write('  style="invis";\n') # no border around subgraph (#0002176)
-    
+
     def end_subgraph(self):
         """ Closes a subgraph section """
         self.write('  }\n')
