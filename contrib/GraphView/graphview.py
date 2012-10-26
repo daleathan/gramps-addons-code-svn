@@ -32,8 +32,7 @@
 #
 #-------------------------------------------------------------------------
 import os
-import sys
-from xml.parsers.expat import ExpatError, ParserCreate
+from xml.parsers.expat import ParserCreate
 from TransUtils import get_addon_translator
 _ = get_addon_translator().ugettext
 import gtk
@@ -702,7 +701,7 @@ class GraphvizSvgParser(object):
         Parse </polygon> tags.
         """
         self.item_hier.pop()
-        
+
     def start_ellipse(self, attrs):
         """
         Parse <ellipse> tags. These define the family nodes of the graph
@@ -1088,14 +1087,14 @@ class DotGenerator(object):
     def add_persons_and_families(self):
         "adds nodes for persons and their families"
         # variable to communicate with get_person_label
-        #self.is_html_output = False
+        self.is_html_output = False
         url = ""
 
         # The list of families for which we have output the node,
         # so we don't do it twice
         families_done = {}
         for person_handle in self.person_handles:
-            #self.is_html_output = True
+            self.is_html_output = True
             person = self.database.get_person_from_handle(person_handle)
             # Output the person's node
             label = self.get_person_label(person)
@@ -1177,7 +1176,7 @@ class DotGenerator(object):
         "return person label string"
         # see if we have an image to use for this person
         image_path = None
-        if self.show_images:# and self.is_html_output:
+        if self.show_images and self.is_html_output:
             media_list = person.get_media_list()
             if len(media_list) > 0:
                 media_handle = media_list[0].get_reference_handle()
@@ -1193,24 +1192,40 @@ class DotGenerator(object):
                     image_path = Utils.find_file(image_path)
 
         label = u""
-        line_delimiter = '<BR/>'
+        line_delimiter = '\\n'
 
+        # If we have an image, then start an HTML table; remember to close
+        # the table afterwards!
+        #
         # This isn't a free-form HTML format here...just a few keywords that
         # happen to be similar to keywords commonly seen in HTML.
         # For additional information on what is allowed, see:
         #       http://www.graphviz.org/info/shapes.html#html
-        label += '<TABLE BORDER="0" CELLSPACING="2" CELLPADDING="0" CELLBORDER="0"><TR><TD></TD><TD>'
-        if image_path:
-            label += '<IMG SRC="%s"/></TD><TD></TD>'  % image_path
-            #trick it into not stretching the image
-            label += '</TR><TR><TD COLSPAN="3">'
+        if self.is_html_output and image_path:
+            line_delimiter = '<BR/>'
+            label += '<TABLE BORDER="0" CELLSPACING="2" CELLPADDING="0" CELLBORDER="0">'
+            # Trick it into not stretching the image, and having long names not
+            # to exceed the bounding box.
+            label += '<TR><TD></TD><TD><IMG SRC="%s"/></TD><TD></TD></TR>' % image_path
+            label += '<TR><TD COLSPAN="3">'
+        else :
+            #no need for html label with this person
+            self.is_html_output = False
 
         # at the very least, the label must have the person's name
         name = displayer.display_name(person.get_primary_name())
-        name = name.center(len(name) + 10)
 
-        # avoid < and > in the name, as this is html text
-        label += name.replace('<', '&#60;').replace('>', '&#62;')
+        if self.is_html_output :
+            # avoid <, >, " and & in the name, as this is html text
+            name = name.replace('<', '&#60;').replace('>', '&#62;')
+            name = name.replace('"', '&quot;').replace('&', '&amp;')
+            label += '<FONT POINT-SIZE="%i">%s</FONT>' % (self.fontsizebig, name)
+        else:
+            # Need to pad the label because of a bug in the SVG output of
+            # Graphviz which causes the width of the text to exceed the bounding
+            # box.
+            name = name.center(len(name) + 10)
+            label += name
 
         label += line_delimiter
 
@@ -1220,7 +1235,6 @@ class DotGenerator(object):
             if self.show_full_dates or self.show_places:
                 label += '%s ' % _('b.') # Short for "born" (could be "*")
             label += birth
-            label += self.add_padding(birth)
 
         if death:
             if self.show_full_dates or self.show_places:
@@ -1230,16 +1244,14 @@ class DotGenerator(object):
             else:
                 label += ' - '
             label += death
-            label += self.add_padding(death)
 
-        label += '</TD></TR></TABLE>'
+        # see if we have a table that needs to be terminated
+        if self.is_html_output:
+            label += '</TD></TR></TABLE>'
+        else :
+            # non html label is enclosed by "" so escape other "
+            label = label.replace('"', '\\\"')
         return label
-
-    def add_padding(self, string):
-        "Need to pad the label because of a bug in the SVG output of Graphviz"
-        "which causes the width of the text to exceed the bounding box."
-        nb_of_pads = len(string) / 30
-        return  '&nbsp;' * nb_of_pads
 
     def get_date_strings(self, person):
         "returns tuple of birth/christening and death/burying date strings"
