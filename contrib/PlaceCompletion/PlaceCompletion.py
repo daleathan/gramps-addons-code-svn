@@ -95,7 +95,7 @@ class PlaceCompletion(Tool.Tool, ManagedWindow.ManagedWindow):
         glade_file = base + os.sep + "placecompletion.glade"
         
         if constfunc.lin():
-            import locale, const
+            import locale
             locale.setlocale(locale.LC_ALL, '')
             # This is needed to make gtk.Builder work by specifying the
             # translations directory
