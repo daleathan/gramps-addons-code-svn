@@ -59,6 +59,7 @@ import Utils
 from QuestionDialog import OkDialog, WarningDialog
 import PlaceUtils
 import Errors
+import constfunc
 
 from TransUtils import get_addon_translator
 _ = get_addon_translator(__file__).gettext
@@ -89,11 +90,24 @@ class PlaceCompletion(Tool.Tool, ManagedWindow.ManagedWindow):
                              " batch setting of place attributes")
 
         ManagedWindow.ManagedWindow.__init__(self, uistate, [], self.__class__)
+        
         base = os.path.dirname(__file__)
         glade_file = base + os.sep + "placecompletion.glade"
-
-        self.glade = Glade(glade_file)
-
+        
+        if constfunc.lin():
+            import locale, const
+            locale.setlocale(locale.LC_ALL, '')
+            # This is needed to make gtk.Builder work by specifying the
+            # translations directory
+            locale.bindtextdomain("addon", base + "/locale")
+            
+            self.glade = gtk.Builder()
+            self.glade.set_translation_domain("addon")
+         
+            self.glade.add_from_file(glade_file)
+        else:
+            self.glade = Glade(glade_file)
+               
         window = self.glade.get_object("top")
         
         self.tree = self.glade.get_object("tree1")
