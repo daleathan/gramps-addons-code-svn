@@ -39,7 +39,7 @@
 {'d': "Collection de sites internet pour l'Allemagne (n\xc3\xa9cessite libwebconnect)", 'g': '3.4', 'i': 'DE Web Connect Pack', 'n': 'Ensemble de liens internet allemands', 't': u'Plugin lib', 'v': '0.0.2', 'z': 'DEWebConnectPack.addon.tgz'}
 {'d': 'Un interpr\xc3\xa9teur python interactif', 'g': '3.4', 'i': 'Python Gramplet', 'n': 'Gramplet Python', 't': u'Gramplet', 'v': '1.0.7', 'z': 'PythonGramplet.addon.tgz'}
 {'d': 'Gramplet affichant les relations \xc3\xa9troites entre la souche et les autres individus', 'g': '3.4', 'i': 'Deep Connections Gramplet', 'n': 'Gramplet Connexions approfondies', 't': u'Gramplet', 'v': '1.0.13', 'z': 'DeepConnectionsGramplet.addon.tgz'}
-{'d': 'Attache une source partag\xc3\xa9e \xc3\xa0 des objets multiples', 'g': '3.4', 'i': 'AttachSource', 'n': 'Attacher une source', 't': u'Tool', 'v': '0.0.13', 'z': 'AttachSourceTool.addon.tgz'}
+{'d': 'Attache une source partag\xc3\xa9e \xc3\xa0 des objets multiples', 'g': '3.4', 'i': 'AttachSource', 'n': 'Attacher une source', 't': u'Tool', 'v': '0.0.14', 'z': 'AttachSourceTool.addon.tgz'}
 {'d': "D\xc3\xa9finir une valeur pour l'\xc3\xa9tiquette.", 'g': '3.4', 'i': 'SetTag', 'n': "Assigner l'\xc3\xa9tiquette", 't': u'Tool', 'v': '0.1.3', 'z': 'SetTagTool.addon.tgz'}
 {'d': "Gramplet pour l'\xc3\xa9dition des notes de l'individu actif", 'g': '3.4', 'i': 'Note Gramplet', 'n': 'Gramplet Note', 't': u'Gramplet', 'v': '1.0.9', 'z': 'NoteGramplet.addon.tgz'}
 {'d': "Version alternative de l'arbre graphique traditionnel.", 'g': '3.4', 'i': 'PedigreeChart', 'n': 'Arbre graphique', 't': u'Report', 'v': '1.0.10', 'z': 'PedigreeChart.addon.tgz'}

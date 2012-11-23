@@ -39,7 +39,7 @@
 {'d': 'Collection of Web sites for the DE (requires libwebconnect)', 'g': '3.4', 'i': 'DE Web Connect Pack', 'n': 'DE Web Connect Pack', 't': u'Plugin lib', 'v': '0.0.2', 'z': 'DEWebConnectPack.addon.tgz'}
 {'d': 'Interactive Python interpreter', 'g': '3.4', 'i': 'Python Gramplet', 'n': 'Gramplet med Python', 't': u'Gramplet', 'v': '1.0.7', 'z': 'PythonGramplet.addon.tgz'}
 {'d': 'Gramplet visande ett l\xc3\xa5ng sl\xc3\xa4ktskap mellan aktiv person och hemperson', 'g': '3.4', 'i': 'Deep Connections Gramplet', 'n': 'Gramplet f\xc3\xb6r l\xc3\xa5nga sl\xc3\xa4ktskap', 't': u'Gramplet', 'v': '1.0.13', 'z': 'DeepConnectionsGramplet.addon.tgz'}
-{'d': 'Attaches a shared source to multiple objects.', 'g': '3.4', 'i': 'AttachSource', 'n': 'Attach Source', 't': u'Tool', 'v': '0.0.13', 'z': 'AttachSourceTool.addon.tgz'}
+{'d': 'Attaches a shared source to multiple objects.', 'g': '3.4', 'i': 'AttachSource', 'n': 'Attach Source', 't': u'Tool', 'v': '0.0.14', 'z': 'AttachSourceTool.addon.tgz'}
 {'d': 'Set Tag to a given value.', 'g': '3.4', 'i': 'SetTag', 'n': 'Set Tag', 't': u'Tool', 'v': '0.1.3', 'z': 'SetTagTool.addon.tgz'}
 {'d': "Gramplet for editing active person's notes", 'g': '3.4', 'i': 'Note Gramplet', 'n': 'Gramplet f\xc3\xb6r notis', 't': u'Gramplet', 'v': '1.0.9', 'z': 'NoteGramplet.addon.tgz'}
 {'d': 'Antavlealternativ', 'g': '3.4', 'i': 'PedigreeChart', 'n': 'Antavla', 't': u'Report', 'v': '1.0.10', 'z': 'PedigreeChart.addon.tgz'}

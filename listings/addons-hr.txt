@@ -39,7 +39,7 @@
 {'d': 'Collection of Web sites for the DE (requires libwebconnect)', 'g': '3.4', 'i': 'DE Web Connect Pack', 'n': 'DE Web Connect Pack', 't': u'Plugin lib', 'v': '0.0.2', 'z': 'DEWebConnectPack.addon.tgz'}
 {'d': 'Interactive Python interpreter', 'g': '3.4', 'i': 'Python Gramplet', 'n': 'gramplet: Python', 't': u'Gramplet', 'v': '1.0.7', 'z': 'PythonGramplet.addon.tgz'}
 {'d': 'Gramplet showing a deep relationship between active and home people', 'g': '3.4', 'i': 'Deep Connections Gramplet', 'n': 'gramplet: duboka povezanost', 't': u'Gramplet', 'v': '1.0.13', 'z': 'DeepConnectionsGramplet.addon.tgz'}
-{'d': 'Attaches a shared source to multiple objects.', 'g': '3.4', 'i': 'AttachSource', 'n': 'Attach Source', 't': u'Tool', 'v': '0.0.13', 'z': 'AttachSourceTool.addon.tgz'}
+{'d': 'Attaches a shared source to multiple objects.', 'g': '3.4', 'i': 'AttachSource', 'n': 'Attach Source', 't': u'Tool', 'v': '0.0.14', 'z': 'AttachSourceTool.addon.tgz'}
 {'d': 'Set Tag to a given value.', 'g': '3.4', 'i': 'SetTag', 'n': 'Set Tag', 't': u'Tool', 'v': '0.1.3', 'z': 'SetTagTool.addon.tgz'}
 {'d': "Gramplet for editing active person's notes", 'g': '3.4', 'i': 'Note Gramplet', 'n': 'gramplet: Zabilje\xc5\xa1ke', 't': u'Gramplet', 'v': '1.0.9', 'z': 'NoteGramplet.addon.tgz'}
 {'d': 'Alternate version of the traditional pedigree chart.', 'g': '3.4', 'i': 'PedigreeChart', 'n': 'Pedigree Chart', 't': u'Report', 'v': '1.0.10', 'z': 'PedigreeChart.addon.tgz'}
