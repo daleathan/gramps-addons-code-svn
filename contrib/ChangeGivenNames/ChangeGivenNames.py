@@ -39,7 +39,7 @@ import gtk
 #
 #-------------------------------------------------------------------------
 from gen.db import DbTxn
-import const
+import const, constfunc
 from gui.utils import ProgressMeter
 import GrampsDisplay
 import ManagedWindow
@@ -137,18 +137,49 @@ class ChangeGivenNames(tool.BatchTool, ManagedWindow.ManagedWindow):
 
     def display(self):
 
-        self.top = Glade("changenames.glade")
-        window = self.top.toplevel
-        self.top.connect_signals({
-            "destroy_passed_object" : self.close,
-            "on_ok_clicked" : self.on_ok_clicked,
-            "on_help_clicked" : self.on_help_clicked,
-            "on_edit_clicked" : self.on_edit_clicked,
-            "on_delete_event"   : self.close,
-            })
+        if constfunc.lin():
+            import locale, os
+            locale.setlocale(locale.LC_ALL, '')
+            # This is needed to make gtk.Builder work by specifying the
+            # translations directory
+            base = os.path.dirname(__file__)
+            locale.bindtextdomain("addon", base + "/locale")
+            
+            self.glade = gtk.Builder()
+            self.glade.set_translation_domain("addon")
+            
+            path = base + "/changenames.glade"
+            self.glade.add_from_file(path)
+            
+            gobject.gobject.__init__(path)
+                        
+            self.top = self.glade.get_object('changenames')
+            
+            self.glade.connect_signals({
+                "destroy_passed_object" : self.close,
+                "on_ok_clicked" : self.on_ok_clicked,
+                "on_help_clicked" : self.on_help_clicked,
+                "on_edit_clicked" : self.on_edit_clicked,
+                "on_delete_event"   : self.close,
+                })
+                
+            self.list = self.glade.get_object("list")
+            self.set_window(self.top, self.glade.get_object('title'), self.label)
+
+        else:
+            self.top = Glade("changenames.glade")
         
-        self.list = self.top.get_object("list")
-        self.set_window(window,self.top.get_object('title'),self.label)
+            window = self.top.toplevel
+            self.top.connect_signals({
+                "destroy_passed_object" : self.close,
+                "on_ok_clicked" : self.on_ok_clicked,
+                "on_help_clicked" : self.on_help_clicked,
+                "on_edit_clicked" : self.on_edit_clicked,
+                "on_delete_event"   : self.close,
+                })
+        
+            self.list = self.top.get_object("list")
+            self.set_window(window,self.top.get_object('title'),self.label)
 
         # selected, original name, changed, count
         self.model = gtk.ListStore(gobject.TYPE_BOOLEAN, gobject.TYPE_STRING, 
