@@ -1,0 +1,462 @@
+# translation of de.po to Deutsch
+# German GRAMPS Translation
+#
+# Anton Huber <anton_huber@gmx.de>, 2005,2006.
+# Sebastian Vöcking <sebastian_voecking@gmx.de>, 2005.
+# Sebastian Vöcking <voeck@web.de>, 2005.
+# Martin Hawlisch <martin@hawlisch.de>, 2005, 2006.
+# Alex Roitman <shura@gramps-project.org>, 2006.
+# Mirko Leonhäuser <mirko@leonhaeuser.de>, 2007, 2008, 2009, 2010, 2011, 2012.
+msgid ""
+msgstr ""
+"Project-Id-Version: de\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-12-30 13:43+0100\n"
+"PO-Revision-Date: 2012-12-30 14:10+0100\n"
+"Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
+"Language-Team: German <kde-i18n-de@kde.org>\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.5\n"
+"Plural-Forms:  nplurals=2; plural=(n != 1);\n"
+
+#: FilteredReports/DescendantReport.gpr.py:25
+msgid "Filtered Descendant Report"
+msgstr "Gefilterter Nachkommenbericht"
+
+#: FilteredReports/DescendantReport.gpr.py:26
+msgid "Produces a descendant report using a filter"
+msgstr "Erstellt einen Nachkommenübersicht unter Verwendung eines Filter"
+
+#: FilteredReports/DescendantReport.py:231
+#, python-format
+msgid "Generation %d"
+msgstr "Generation %d"
+
+#: FilteredReports/DescendantReport.py:316
+#, python-format
+msgid "%(name)s is the same person as [%(id_str)s]."
+msgstr "%(name)s ist die gleiche Person wie [%(id_str)s]."
+
+#: FilteredReports/DescendantReport.py:366
+#, python-format
+msgid "%(date)s, %(place)s"
+msgstr "%(date)s, %(place)s"
+
+#: FilteredReports/DescendantReport.py:369
+#, python-format
+msgid "%(date)s"
+msgstr "%(date)s"
+
+#: FilteredReports/DescendantReport.py:371
+#, python-format
+msgid "%(place)s"
+msgstr "%(place)s"
+
+#: FilteredReports/DescendantReport.py:383
+#, python-format
+msgid "%(event_name)s: %(event_text)s"
+msgstr "%(event_name)s: %(event_text)s"
+
+#: FilteredReports/DescendantReport.py:400
+#: FilteredReports/DescendantReport.py:631
+#: FilteredReports/DescendantReport.py:781
+#, python-format
+msgid "%(type)s: %(value)s%(endnotes)s"
+msgstr "%(type)s: %(value)s%(endnotes)s"
+
+#: FilteredReports/DescendantReport.py:484
+#, python-format
+msgid "Spouse: %s"
+msgstr "Partner(in): %s"
+
+#: FilteredReports/DescendantReport.py:486
+#, python-format
+msgid "Relationship with: %s"
+msgstr "Beziehung mit: %s"
+
+#: FilteredReports/DescendantReport.py:500
+#: FilteredReports/DescendantReport.py:507
+msgid "unknown"
+msgstr "unbekannt"
+
+#: FilteredReports/DescendantReport.py:522
+#, python-format
+msgid "Children of %(mother_name)s and %(father_name)s"
+msgstr "Kinder von %(mother_name)s und %(father_name)s"
+
+#: FilteredReports/DescendantReport.py:580
+#, python-format
+msgid "Notes for %(mother_name)s and %(father_name)s:"
+msgstr "Notizen für %(mother_name)s und %(father_name)s:"
+
+#: FilteredReports/DescendantReport.py:604
+#: FilteredReports/DescendantReport.py:623
+#, python-format
+msgid "More about %(mother_name)s and %(father_name)s:"
+msgstr "Mehr über %(mother_name)s und %(father_name)s:"
+
+#: FilteredReports/DescendantReport.py:702
+#, python-format
+msgid "Notes for %s"
+msgstr "Notizen für %s"
+
+#: FilteredReports/DescendantReport.py:716
+#: FilteredReports/DescendantReport.py:734
+#: FilteredReports/DescendantReport.py:745
+#: FilteredReports/DescendantReport.py:769
+#, python-format
+msgid "More about %(person_name)s:"
+msgstr "Mehr über %(person_name)s:"
+
+#: FilteredReports/DescendantReport.py:723
+#, python-format
+msgid "%(name_kind)s: %(name)s%(endnotes)s"
+msgstr "%(name_kind)s: %(name)s%(endnotes)s"
+
+#: FilteredReports/DescendantReport.py:758
+msgid "Address: "
+msgstr "Adresse: "
+
+#: FilteredReports/DescendantReport.py:827
+msgid "no common person found between filter rules to synchronize generations"
+msgstr ""
+"keine gemeinsame Person zwischen den Filterregeln gefunden um die "
+"Generationen zu synchronisieren"
+
+#: FilteredReports/DescendantReport.py:856
+#, python-format
+msgid "can't determine generation for '%s'"
+msgstr "Kann Generation für '%s' nicht bestimmen"
+
+#: FilteredReports/DescendantReport.py:911
+#, python-format
+msgid "no person found with ID '%s'"
+msgstr "keine Person mit ID '%S' gefunden"
+
+#: FilteredReports/DescendantReport.py:933
+msgid "Report Options"
+msgstr "Berichtsoptionen"
+
+#: FilteredReports/DescendantReport.py:935
+msgid "Filter"
+msgstr "Filter"
+
+#: FilteredReports/DescendantReport.py:937
+msgid "Determines what people are included in the report"
+msgstr "Legt fest welche Personen im Bericht enthalten sind"
+
+#: FilteredReports/DescendantReport.py:943
+msgid "no custom filters found -- can only use custom filters with this report"
+msgstr ""
+"keine Anwenderfilter gefunden -- kann nur Anwenderfilter mit diesem Bericht "
+"verwenden"
+
+#: FilteredReports/DescendantReport.py:946
+msgid "Generations"
+msgstr "Generationen"
+
+#: FilteredReports/DescendantReport.py:948
+msgid "The number of generations to include in the report"
+msgstr "Anzahl der im Bericht enthaltenen Generationen"
+
+#: FilteredReports/DescendantReport.py:952
+msgid "Page break between generations"
+msgstr "Seitenumbruch zwischen Generationen"
+
+#: FilteredReports/DescendantReport.py:954
+msgid "Whether to start a new page after each generation."
+msgstr "Ob nach jeder Generation eine neue Seite begonnen wird."
+
+#: FilteredReports/DescendantReport.py:957
+msgid "Page break before end notes"
+msgstr "Seitenumbruch vor Endnotiz"
+
+#: FilteredReports/DescendantReport.py:959
+msgid "Whether to start a new page before the end notes."
+msgstr "Ob vor der Endnotiz eine neue Seite begonnen wird."
+
+#: FilteredReports/DescendantReport.py:962
+msgid "Report title"
+msgstr "Berichttitel"
+
+#: FilteredReports/DescendantReport.py:963
+msgid "This text will be used as the report title"
+msgstr "Dieser Text wird als Berichtstitel verwendet"
+
+#: FilteredReports/DescendantReport.py:966
+msgid "Translation"
+msgstr "Übersetzung"
+
+#: FilteredReports/DescendantReport.py:968
+msgid "Default"
+msgstr "Vorgabe"
+
+#: FilteredReports/DescendantReport.py:971
+msgid "The translation to be used for the report."
+msgstr "Die Übersetzung, die für den Bericht verwendet wird."
+
+#: FilteredReports/DescendantReport.py:976
+msgid "Content"
+msgstr "Inhalt"
+
+#: FilteredReports/DescendantReport.py:978
+msgid "Use callname for common name"
+msgstr "Benutze Rufnamen für Namen"
+
+#: FilteredReports/DescendantReport.py:979
+msgid "Whether to use the call name as the first name."
+msgstr "Ob der Rufname als Vorname benutzt wird."
+
+#: FilteredReports/DescendantReport.py:982
+msgid "Use full dates instead of only the year"
+msgstr "Volles Datum statt nur das Jahr verwenden"
+
+#: FilteredReports/DescendantReport.py:984
+msgid "Whether to use full dates instead of just year."
+msgstr "Ob volles Datum statt nur das Jahr verwendet wird."
+
+#: FilteredReports/DescendantReport.py:987
+msgid "List children"
+msgstr "Kinder auflisten"
+
+#: FilteredReports/DescendantReport.py:988
+msgid "Whether to list children."
+msgstr "Ob Kinder aufgelistet werden."
+
+#: FilteredReports/DescendantReport.py:991
+msgid "Compute death age"
+msgstr "Alter bei Tot berechnen"
+
+#: FilteredReports/DescendantReport.py:992
+msgid "Whether to compute a person's age at death."
+msgstr "Ob das Alter einer Person beim Tot berechnet wird."
+
+#: FilteredReports/DescendantReport.py:995
+msgid "Omit duplicate ancestors"
+msgstr "Doppelte Vorfahren weglassen"
+
+#: FilteredReports/DescendantReport.py:996
+msgid "Whether to omit duplicate ancestors."
+msgstr "Ob doppelte Vorfahren weglassen werden."
+
+#: FilteredReports/DescendantReport.py:999
+msgid "Use complete sentences"
+msgstr "Benutze vollständige Sätze"
+
+#: FilteredReports/DescendantReport.py:1001
+msgid "Whether to use complete sentences or succinct language."
+msgstr "Ob vollständige Sätze oder knappe Sprache benutzt wird."
+
+#: FilteredReports/DescendantReport.py:1004
+msgid "Add descendant reference in child list"
+msgstr "Verweis auf Nachfahren in die Liste der Kinder aufnehmen"
+
+#: FilteredReports/DescendantReport.py:1007
+msgid "Whether to add descendant references in child list."
+msgstr "Ob Verweis auf Nachfahren in die Liste der Kinder aufgenommen wird."
+
+#: FilteredReports/DescendantReport.py:1010
+msgid "Turn URLs into real links"
+msgstr "Verwandle URLs in echte Verknüpfungen"
+
+#: FilteredReports/DescendantReport.py:1011
+msgid ""
+"Turn any URLs starting with 'http', 'https', or 'mailto' into clickable links"
+msgstr ""
+"Verwandle jede URL die mit 'http', 'https' oder 'mailto' beginnt in "
+"anklickbare Links"
+
+#: FilteredReports/DescendantReport.py:1014
+msgid "Do not include information marked private"
+msgstr "Als vertraulich markierte Informationen nicht aufnehmen"
+
+#: FilteredReports/DescendantReport.py:1015
+msgid "Whether to honor the private flag setting"
+msgstr "Ob die Vertraulichmarkierung beachtet wird"
+
+#: FilteredReports/DescendantReport.py:1018
+msgid "Include"
+msgstr "Einbeziehen"
+
+#: FilteredReports/DescendantReport.py:1020
+msgid "Include notes"
+msgstr "Notizen aufnehmen"
+
+#: FilteredReports/DescendantReport.py:1021
+msgid "Whether to include notes."
+msgstr "Ob Notizen aufgenommen werden."
+
+#: FilteredReports/DescendantReport.py:1024
+msgid "Include attributes"
+msgstr "Attribute aufnehmen"
+
+#: FilteredReports/DescendantReport.py:1025
+msgid "Whether to include attributes."
+msgstr "Ob Attribute aufgenommen werden."
+
+#: FilteredReports/DescendantReport.py:1028
+msgid "Include Photo/Images from Gallery"
+msgstr "Fotos/Bilder aus der Galerie aufnehmen"
+
+#: FilteredReports/DescendantReport.py:1029
+msgid "Whether to include images."
+msgstr "Ob Bilder aufgenommen werden."
+
+#: FilteredReports/DescendantReport.py:1033
+msgid "Include alternative names"
+msgstr "Alternative Namen mit einbeziehen"
+
+#: FilteredReports/DescendantReport.py:1034
+msgid "Whether to include other names."
+msgstr "Ob andere Namen aufgenommen werden."
+
+#: FilteredReports/DescendantReport.py:1037
+msgid "Include events"
+msgstr "Ereignisse aufnehmen"
+
+#: FilteredReports/DescendantReport.py:1038
+msgid "Whether to include events."
+msgstr "Ob Ereignisse aufgenommen werden."
+
+#: FilteredReports/DescendantReport.py:1041
+msgid "Include addresses"
+msgstr "Adressen einbeziehen"
+
+#: FilteredReports/DescendantReport.py:1042
+msgid "Whether to include addresses."
+msgstr "Ob Adressen aufgenommen werden."
+
+#: FilteredReports/DescendantReport.py:1045
+msgid "Include sources"
+msgstr "Quellen einbeziehen"
+
+#: FilteredReports/DescendantReport.py:1046
+msgid "Whether to include source references."
+msgstr "Ob Quellenangaben einbezogen werden."
+
+#: FilteredReports/DescendantReport.py:1049
+msgid "Include sources notes"
+msgstr "Quellennotizen einbeziehen"
+
+#: FilteredReports/DescendantReport.py:1050
+msgid ""
+"Whether to include source notes in the Endnotes section. Only works if "
+"Include sources is selected."
+msgstr ""
+"Ob Quellennotizen in die Schlussnotizen aufgenommen werden. Funktioniert nur "
+"wenn Quellen aufnehmen gewählt ist."
+
+#: FilteredReports/DescendantReport.py:1054
+msgid "Include partners"
+msgstr "Partner aufnehmen"
+
+#: FilteredReports/DescendantReport.py:1055
+msgid "Whether to include detailed partner information."
+msgstr "Ob detaillierte Informationen über den Partner enthalten sind."
+
+#: FilteredReports/DescendantReport.py:1058
+msgid "Include sign of succession ('+') in child-list"
+msgstr "Mit Nachkommenzeichen ('+') in Kinderliste"
+
+#: FilteredReports/DescendantReport.py:1060
+msgid ""
+"Whether to include a sign ('+') before the descendant number in the child-"
+"list to indicate a child has succession."
+msgstr ""
+"Ob ein Zeichen ('+') vor der Nachkommennummer in der Kinderliste angezeigt "
+"wird, um anzuzeigen, das ein Kind Nachkommen hat."
+
+#: FilteredReports/DescendantReport.py:1065
+msgid "Include path to start-person"
+msgstr "Mit Weg zur Start-Person"
+
+#: FilteredReports/DescendantReport.py:1066
+msgid ""
+"Whether to include the path of descendancy from the start-person to each "
+"descendant."
+msgstr ""
+"Ob der Pfad der Nachkommenschaft von der Startperson zu jedem Nachkommen "
+"enthalten ist."
+
+#: FilteredReports/DescendantReport.py:1070
+msgid "Caption"
+msgstr "Beschriftung"
+
+#: FilteredReports/DescendantReport.py:1072
+msgid "Add caption under image from Gallery"
+msgstr "Beschriftung unter den Bildern aus der Galerie hinzufügen"
+
+#: FilteredReports/DescendantReport.py:1073
+msgid "Whether to add captions underneath images."
+msgstr "Ob Beschriftungen unter den Bildern aufgenommen werden."
+
+#: FilteredReports/DescendantReport.py:1076
+msgid "Caption Format"
+msgstr "Beschriftungsformat"
+
+#: FilteredReports/DescendantReport.py:1077
+msgid "Display format for the caption."
+msgstr "Anzeigeformat für die Beschriftung."
+
+#: FilteredReports/DescendantReport.py:1082
+msgid "Missing information"
+msgstr "Fehlende Informationen"
+
+#: FilteredReports/DescendantReport.py:1084
+msgid "Replace missing places with ______"
+msgstr "Ersetze fehlende Orte durch ______"
+
+#: FilteredReports/DescendantReport.py:1085
+msgid "Whether to replace missing Places with blanks."
+msgstr "Ob fehlende Orte durch Lücken ersetzt werden."
+
+#: FilteredReports/DescendantReport.py:1088
+msgid "Replace missing dates with ______"
+msgstr "Ersetze fehlende Daten durch ______"
+
+#: FilteredReports/DescendantReport.py:1089
+msgid "Whether to replace missing Dates with blanks."
+msgstr "Ob fehlende Daten durch Lücken ersetzt werden."
+
+#: FilteredReports/DescendantReport.py:1102
+msgid "The style used for the title of the page."
+msgstr "Der Stil, der für den Seitentitel verwendet wird."
+
+#: FilteredReports/DescendantReport.py:1112
+msgid "The style used for the generation header."
+msgstr "Der Stil, der für die Überschriften der Generation verwendet wird."
+
+#: FilteredReports/DescendantReport.py:1122
+msgid "The style used for the children list title."
+msgstr "Der Stil, der für den Titel der Kinderliste verwendet wird."
+
+#: FilteredReports/DescendantReport.py:1132
+msgid "The style used for the children list."
+msgstr "Der Stil, der für die Kinderliste verwendet wird."
+
+#: FilteredReports/DescendantReport.py:1148
+msgid "The basic style used for the text display."
+msgstr "Der Basisstil, der für die Textanzeige verwendet wird."
+
+#: FilteredReports/DescendantReport.py:1155
+msgid "The style used for the first personal entry."
+msgstr "Der Stil, der für den ersten persönlichen Eintrag verwendet wird."
+
+#: FilteredReports/DescendantReport.py:1165
+msgid "The style used for the More About header and for headers of mates."
+msgstr ""
+"Der Stil, der für die \"Mehr über\" Kopfzeile und Kopfzeile von Partnern "
+"verwendet wird."
+
+#: FilteredReports/DescendantReport.py:1176
+msgid "The style used for additional detail data."
+msgstr "Der Stil, der für die sonstigen genauen Daten verwendet wird."
+
+#: FilteredReports/DescendantReport.py:1184
+msgid "The style used for photo captions."
+msgstr "Der Stil, der für die Foto Beschriftung verwendet wird."
+
+
