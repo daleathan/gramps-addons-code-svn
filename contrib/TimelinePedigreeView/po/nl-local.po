@@ -40,8 +40,8 @@ msgstr ""
 "Project-Id-Version: gramps\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-04-14 20:10+0200\n"
-"PO-Revision-Date: 2011-04-12 20:28+0100\n"
-"Last-Translator: Erik De Richter <frederik.de.richter@pandora.be>\n"
+"PO-Revision-Date: 2013-01-28 21:13+0100\n"
+"Last-Translator: Erik De Richter <frederik.de.richter@googlemail.com>\n"
 "Language-Team: nederlands <frederik.de.richter@googlemail.com>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
@@ -60,12 +60,8 @@ msgid "Ancestry"
 msgstr "Voorouders"
 
 #: TimelinePedigreeView/TimelinePedigreeView.gpr.py:35
-msgid ""
-"The view shows a timeline pedigree with ancestors and descendants of the "
-"selected person"
-msgstr ""
-"Dit scherm toont een tijdslijnstamboom met voorouders en nakomelingen van de "
-"geselecteerde persoon"
+msgid "The view shows a timeline pedigree with ancestors and descendants of the selected person"
+msgstr "Dit scherm toont een tijdslijnstamboom met voorouders en nakomelingen van de geselecteerde persoon"
 
 #: TimelinePedigreeView/TimelinePedigreeView.py:79
 msgid "short for born|b."
@@ -179,8 +175,9 @@ msgstr "Nieuwe ouders toevoegen..."
 
 #: TimelinePedigreeView/TimelinePedigreeView.py:1885
 msgid "Related"
-msgstr "Heeft Relatie"
+msgstr "Verwantschap"
 
 #: TimelinePedigreeView/TimelinePedigreeView.py:1934
 msgid "Family Menu"
 msgstr "Familiemenu"
+

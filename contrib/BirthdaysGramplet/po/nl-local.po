@@ -40,7 +40,7 @@ msgstr ""
 "Project-Id-Version: gramps\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-04-09 19:53+0200\n"
-"PO-Revision-Date: 2011-04-08 08:19+0100\n"
+"PO-Revision-Date: 2013-01-28 20:08+0100\n"
 "Last-Translator: Erik De Richter <frederik.de.richter@googlemail.com>\n"
 "Language-Team: nederlands <frederik.de.richter@googlemail.com>\n"
 "Language: \n"
@@ -54,12 +54,11 @@ msgstr ""
 #: BirthdaysGramplet/BirthdaysGramplet.gpr.py:4
 #: BirthdaysGramplet/BirthdaysGramplet.gpr.py:12
 msgid "Birthdays Gramplet"
-msgstr "Verjaardagsgramplet"
+msgstr "Verjaardagen"
 
 #: BirthdaysGramplet/BirthdaysGramplet.gpr.py:5
 msgid "a gramplet that displays the birthdays of the living people"
-msgstr ""
-"een gramplet dat de verjaardagen van de nog in leven zijnde personen toont"
+msgstr "een gramplet dat de verjaardagen van de nog in leven zijnde personen toont"
 
 #: BirthdaysGramplet/BirthdaysGramplet.py:36
 msgid "No Family Tree loaded."
@@ -68,3 +67,4 @@ msgstr "Geen familiestamboom geladen."
 #: BirthdaysGramplet/BirthdaysGramplet.py:49
 msgid "Processing..."
 msgstr "Wordt verwerkt..."
+

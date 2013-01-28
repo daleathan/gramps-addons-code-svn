@@ -40,8 +40,8 @@ msgstr ""
 "Project-Id-Version: gramps\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-04-13 15:04+0200\n"
-"PO-Revision-Date: 2011-04-13 15:09+0100\n"
-"Last-Translator: Erik De Richter <frederik.de.richter@pandora.be>\n"
+"PO-Revision-Date: 2013-01-28 20:50+0100\n"
+"Last-Translator: Erik De Richter <frederik.de.richter@googlemail.com>\n"
 "Language-Team: nederlands <frederik.de.richter@googlemail.com>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
@@ -211,7 +211,7 @@ msgstr "Mannelijke lijn"
 
 #: FamilyTree/FamilyTree.py:1001
 msgid "Male line and illegitimate children"
-msgstr "Mannelijke lijne en onwettige kinderen"
+msgstr "Mannelijke lijn en onwettige kinderen"
 
 #: FamilyTree/FamilyTree.py:1002
 msgid "Female line"
@@ -251,11 +251,11 @@ msgstr "Beroep toevoegen"
 
 #: FamilyTree/FamilyTree.py:1021
 msgid "Include Residence"
-msgstr "Adres toevoegen"
+msgstr "Residentie toevoegen"
 
 #: FamilyTree/FamilyTree.py:1024
 msgid "Print event data (dead person)"
-msgstr "Gebeurtenisgegevens overleden persoon) afdrukken"
+msgstr "Gebeurtenisgegevens (overleden persoon) afdrukken"
 
 # niet/geen
 #: FamilyTree/FamilyTree.py:1026
@@ -292,11 +292,11 @@ msgstr "Op begrafenis of crematie terugvallen als overlijdensgebeurtenis ontbree
 
 #: FamilyTree/FamilyTree.py:1048
 msgid "Print fields for missing information"
-msgstr "Druk velden af voor ontbrekende informatie"
+msgstr "Velden voor ontbrekende informatie afdrukken"
 
 #: FamilyTree/FamilyTree.py:1049
 msgid "Whether to include fields for missing information."
-msgstr "Al of niet velden voorzien voor ontbrekende informatie."
+msgstr "Al of niet velden voor ontbrekende informatie voorzien."
 
 #: FamilyTree/FamilyTree.py:1052
 msgid "Include event description"

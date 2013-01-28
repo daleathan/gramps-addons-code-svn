@@ -40,8 +40,8 @@ msgstr ""
 "Project-Id-Version: gramps\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-04-10 08:50+0200\n"
-"PO-Revision-Date: 2011-04-10 08:58+0100\n"
-"Last-Translator: Erik De Richter <frederik.de.richter@pandora.be>\n"
+"PO-Revision-Date: 2013-01-28 20:20+0100\n"
+"Last-Translator: Erik De Richter <frederik.de.richter@googlemail.com>\n"
 "Language-Team: nederlands <frederik.de.richter@googlemail.com>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
@@ -53,7 +53,7 @@ msgstr ""
 
 #: DataEntryGramplet/DataEntryGramplet.gpr.py:8
 msgid "Data Entry Gramplet"
-msgstr "Gegevensingave-gramplet"
+msgstr "Gegevensinvoer"
 
 #: DataEntryGramplet/DataEntryGramplet.gpr.py:9
 msgid "Gramplet for quick data entry"
@@ -138,23 +138,23 @@ msgstr "Relatie toevoegen"
 
 #: DataEntryGramplet/DataEntryGramplet.py:87
 msgid "No relation to active person"
-msgstr "Geen relatie met de actieve persoon"
+msgstr "Geen verwantschap met de actieve persoon"
 
 #: DataEntryGramplet/DataEntryGramplet.py:88
 msgid "Add as a Parent"
-msgstr "Als een ouder toevoegen"
+msgstr "Als ouder toevoegen"
 
 #: DataEntryGramplet/DataEntryGramplet.py:89
 msgid "Add as a Spouse"
-msgstr "Als een echtgeno(o)t(e) toevoegen"
+msgstr "Als echtgeno(o)t(e) toevoegen"
 
 #: DataEntryGramplet/DataEntryGramplet.py:90
 msgid "Add as a Sibling"
-msgstr "Als een broer/zus toevoegen"
+msgstr "Als broer/zus toevoegen"
 
 #: DataEntryGramplet/DataEntryGramplet.py:91
 msgid "Add as a Child"
-msgstr "Als een kind toevoegen"
+msgstr "Als kind toevoegen"
 
 #: DataEntryGramplet/DataEntryGramplet.py:105
 msgid "Add"
@@ -247,4 +247,3 @@ msgstr "Een geslacht voor de actieve persoon kiezen."
 
 #~ msgid "Gramplet Data Entry: %s"
 #~ msgstr "Gramplet-gegevens invoer: %s"
-

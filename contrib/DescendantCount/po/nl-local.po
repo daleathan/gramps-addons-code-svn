@@ -40,8 +40,8 @@ msgstr ""
 "Project-Id-Version: gramps\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-04-10 08:51+0200\n"
-"PO-Revision-Date: 2011-04-10 09:00+0100\n"
-"Last-Translator: Erik De Richter <frederik.de.richter@pandora.be>\n"
+"PO-Revision-Date: 2013-01-28 20:41+0100\n"
+"Last-Translator: Erik De Richter <frederik.de.richter@googlemail.com>\n"
 "Language-Team: nederlands <frederik.de.richter@googlemail.com>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
@@ -62,7 +62,7 @@ msgstr "Het aantal afstammelingen voor elke persoon tonen."
 
 #: DescendantCount/DescendantCount.gpr.py:17
 msgid "Descendant Count Gramplet"
-msgstr "'Afstammelingen telling'-gramplet"
+msgstr "Afstammelingentelling"
 
 #: DescendantCount/DescendantCount.gpr.py:18
 msgid "Gramplet for showing people and descendant counts"
@@ -87,25 +87,32 @@ msgstr "Er zijn %d personen.\n"
 
 #~ msgid "Number of %s's descendants"
 #~ msgstr "%s afstammelingen"
+
 #~ msgid "Generation"
 #~ msgstr "Generatie"
+
 #~ msgid "Total"
 #~ msgstr "Totaal"
+
 #~ msgid "Seen"
 #~ msgstr "Gezien"
+
 #~ msgid "Survived"
 #~ msgstr "Overlevend"
+
 #~ msgid "Now alive"
 #~ msgstr "Nog in leven"
+
 #~ msgid "Seen = number of descendants whose birth %s has lived to see"
 #~ msgstr ""
 #~ "Gezien = aantal afstammelingen waarvan %s de geboorte kan meegemaakt "
 #~ "hebben"
+
 #~ msgid ""
 #~ "Survived = number of descendants who died while %s was still being alive"
 #~ msgstr ""
 #~ "Overlevend = aantal afstammelingen die stierven terwijl %s nog in leven "
 #~ "was"
+
 #~ msgid "Descendant count"
 #~ msgstr "Afstammelingen tellen"
-

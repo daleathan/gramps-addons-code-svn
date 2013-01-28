@@ -40,8 +40,8 @@ msgstr ""
 "Project-Id-Version: gramps\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-04-14 20:08+0200\n"
-"PO-Revision-Date: 2011-04-14 20:23+0100\n"
-"Last-Translator: Erik De Richter <frederik.de.richter@pandora.be>\n"
+"PO-Revision-Date: 2013-01-28 21:01+0100\n"
+"Last-Translator: Erik De Richter <frederik.de.richter@googlemail.com>\n"
 "Language-Team: nederlands <frederik.de.richter@googlemail.com>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
@@ -143,7 +143,7 @@ msgstr "Locatieveranderingen worden doorgevoerd"
 #: PlaceCompletion/PlaceCompletion.py:770
 #: PlaceCompletion/PlaceCompletion.py:780
 msgid "Change places"
-msgstr "Verander locaties"
+msgstr "Locaties veranderen"
 
 #: PlaceCompletion/PlaceCompletion.py:775
 msgid "No place record was modified."

@@ -40,8 +40,8 @@ msgstr ""
 "Project-Id-Version: gramps\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-04-14 20:09+0200\n"
-"PO-Revision-Date: 2011-04-14 20:26+0100\n"
-"Last-Translator: Erik De Richter <frederik.de.richter@pandora.be>\n"
+"PO-Revision-Date: 2013-01-28 21:05+0100\n"
+"Last-Translator: Erik De Richter <frederik.de.richter@googlemail.com>\n"
 "Language-Team: nederlands <frederik.de.richter@googlemail.com>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
@@ -53,11 +53,11 @@ msgstr ""
 
 #: RelatedRelativesGramplet/RelatedRelativesGramplet.gpr.py:3
 msgid "Related Relatives Gramplet"
-msgstr "Aanverwanten-gramplet"
+msgstr "Aanverwanten"
 
 #: RelatedRelativesGramplet/RelatedRelativesGramplet.gpr.py:4
 msgid "Gramplet showing relatives in a relation"
-msgstr "Gramplet toont de verwanten in een relatie"
+msgstr "Gramplet die de verwanten in een verwantschap toont"
 
 #: RelatedRelativesGramplet/RelatedRelativesGramplet.gpr.py:10
 msgid "Related Relatives"
@@ -69,7 +69,7 @@ msgstr "Geen familiestamboom geladen."
 
 #: RelatedRelativesGramplet/RelatedRelativesGramplet.py:90
 msgid "Relations of related people in your database:"
-msgstr "Relaties van aanverante personen in uw gegevensbestand:"
+msgstr "Verwantschappen van de aanverwante personen in uw gegevensbestand:"
 
 #: RelatedRelativesGramplet/RelatedRelativesGramplet.py:213
 msgid "and"
@@ -85,7 +85,7 @@ msgstr "Gemeenschappelijk voorouder"
 
 #: RelatedRelativesGramplet/RelatedRelativesGramplet.py:247
 msgid "No relatives in a relation found"
-msgstr "Geen aanverwanten in een realtie gevonden"
+msgstr "Geen aanverwanten gevonden"
 
 #: RelatedRelativesGramplet/RelatedRelativesGramplet.py:248
 msgid "END"

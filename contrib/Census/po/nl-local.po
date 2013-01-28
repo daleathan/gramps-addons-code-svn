@@ -40,7 +40,7 @@ msgstr ""
 "Project-Id-Version: gramps\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-04-09 20:00+0200\n"
-"PO-Revision-Date: 2011-04-08 08:19+0100\n"
+"PO-Revision-Date: 2013-01-28 20:13+0100\n"
 "Last-Translator: Erik De Richter <frederik.de.richter@googlemail.com>\n"
 "Language-Team: nederlands <frederik.de.richter@googlemail.com>\n"
 "Language: \n"
@@ -59,28 +59,31 @@ msgstr "Volgorde"
 msgid "Census"
 msgstr "Volkstelling"
 
-#: Census/CensusGramplet.gpr.py:31 Census/CensusGramplet.gpr.py:42
+#: Census/CensusGramplet.gpr.py:31
+#: Census/CensusGramplet.gpr.py:42
 msgid "Census Gramplet"
-msgstr "Volkstelling-gramplet"
+msgstr "Volkstelling"
 
 #: Census/CensusGramplet.gpr.py:32
-#, fuzzy
 msgid "Gramplet interface for census data"
-msgstr "Gramplet die de bronnen van een gebeurtenis toont"
+msgstr "Gramplet ingavevensterdie voor volkstellinggegevens"
 
 #: Census/CensusGramplet.py:81
 msgid "Census details for: "
 msgstr "Volktellingdetails voor:"
 
-#: Census/CensusGramplet.py:92 Census/CensusReport.py:296
+#: Census/CensusGramplet.py:92
+#: Census/CensusReport.py:296
 msgid "Source"
 msgstr "Bron"
 
-#: Census/CensusGramplet.py:95 Census/census.xml.h:454
+#: Census/CensusGramplet.py:95
+#: Census/census.xml.h:454
 msgid "Date"
 msgstr "Datum"
 
-#: Census/CensusGramplet.py:98 Census/census.xml.h:736
+#: Census/CensusGramplet.py:98
+#: Census/census.xml.h:736
 msgid "Place"
 msgstr "Locatie"
 
@@ -105,7 +108,8 @@ msgstr "Volkstelling bewerken"
 msgid "Source:"
 msgstr "Bron:"
 
-#: Census/CensusGramplet.py:311 Census/CensusReport.py:162
+#: Census/CensusGramplet.py:311
+#: Census/CensusReport.py:162
 msgid "Date:"
 msgstr "Datum:"
 
@@ -117,11 +121,13 @@ msgstr "Verwijzing:"
 msgid "Place:"
 msgstr "Locatie:"
 
-#: Census/CensusGramplet.py:515 Census/CensusGramplet.py:546
+#: Census/CensusGramplet.py:515
+#: Census/CensusGramplet.py:546
 msgid "Cannot add a person to this census."
 msgstr "Kan geen persoon toevoegen aan deze volkstelling."
 
-#: Census/CensusGramplet.py:516 Census/CensusGramplet.py:547
+#: Census/CensusGramplet.py:516
+#: Census/CensusGramplet.py:547
 msgid "First select a census from the drop-down list."
 msgstr "Selecteer eerst een volkstelling uit de lijst."
 
@@ -131,7 +137,7 @@ msgstr "Persoon selecteren"
 
 #: Census/CensusReport.gpr.py:31
 msgid "Census Report"
-msgstr "Volkstellingsverslag"
+msgstr "Volkstelling"
 
 #: Census/CensusReport.gpr.py:32
 msgid "Report of census events for a person."
@@ -151,7 +157,8 @@ msgstr "Volkstellingsverslag van %s"
 msgid "Source Reference:"
 msgstr "Bronverwijzing:"
 
-#: Census/CensusReport.py:169 Census/CensusReport.py:171
+#: Census/CensusReport.py:169
+#: Census/CensusReport.py:171
 msgid "Address:"
 msgstr "Adres:"
 
@@ -515,9 +522,7 @@ msgid "16. Going to school"
 msgstr ""
 
 #: Census/census.xml.h:71
-msgid ""
-"16. Infirmities: a. blind; b. deaf and dumb; c. idotic or silly; d. crazy or "
-"lunatic"
+msgid "16. Infirmities: a. blind; b. deaf and dumb; c. idotic or silly; d. crazy or lunatic"
 msgstr ""
 
 #: Census/census.xml.h:72
@@ -1125,8 +1130,7 @@ msgid "31. Can speak English"
 msgstr ""
 
 #: Census/census.xml.h:219
-msgid ""
-"31. Houses: Brick, Stone, Frame, Log, Shanty, or other kinds of residence"
+msgid "31. Houses: Brick, Stone, Frame, Log, Shanty, or other kinds of residence"
 msgstr ""
 
 #: Census/census.xml.h:220
@@ -1256,9 +1260,7 @@ msgid "37."
 msgstr ""
 
 #: Census/census.xml.h:251
-msgid ""
-"37. Cost of education in 1910 for persons over 16 years of age at College, "
-"Convent or University"
+msgid "37. Cost of education in 1910 for persons over 16 years of age at College, Convent or University"
 msgstr ""
 
 #: Census/census.xml.h:252
@@ -1290,8 +1292,7 @@ msgid "39. Deaf and dumb"
 msgstr ""
 
 #: Census/census.xml.h:259
-msgid ""
-"39. Information on Mills, Factories etc., their cost, power, produce, etc."
+msgid "39. Information on Mills, Factories etc., their cost, power, produce, etc."
 msgstr ""
 
 #: Census/census.xml.h:260
@@ -2875,9 +2876,7 @@ msgid "Male citizen 21 and over"
 msgstr ""
 
 #: Census/census.xml.h:633
-msgid ""
-"Male citizen 21 and over where right to vote is denied on grounds other than "
-"rebellion or other crime"
+msgid "Male citizen 21 and over where right to vote is denied on grounds other than rebellion or other crime"
 msgstr ""
 
 #: Census/census.xml.h:634
@@ -3993,3 +3992,4 @@ msgstr "Langst durend huwelijk"
 #, fuzzy
 msgid "of the said"
 msgstr "Tip van de dag"
+

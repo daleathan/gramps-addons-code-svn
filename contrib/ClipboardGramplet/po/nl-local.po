@@ -40,7 +40,7 @@ msgstr ""
 "Project-Id-Version: gramps\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-04-09 20:03+0200\n"
-"PO-Revision-Date: 2011-04-08 08:19+0100\n"
+"PO-Revision-Date: 2013-01-28 15:44+0100\n"
 "Last-Translator: Erik De Richter <frederik.de.richter@googlemail.com>\n"
 "Language-Team: nederlands <frederik.de.richter@googlemail.com>\n"
 "Language: \n"
@@ -53,7 +53,7 @@ msgstr ""
 
 #: ClipboardGramplet/ClipboardGramplet.gpr.py:9
 msgid "Clipboard Gramplet"
-msgstr "Klembordgramplet"
+msgstr "Klembord"
 
 #: ClipboardGramplet/ClipboardGramplet.gpr.py:10
 msgid "Gramplet for grouping items"
@@ -69,3 +69,4 @@ msgstr "Klembord"
 #, python-format
 msgid "Clipboard Gramplet: %s"
 msgstr "Klembordgramplet: %s"
+

@@ -40,8 +40,8 @@ msgstr ""
 "Project-Id-Version: gramps\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-01-16 10:55+0100\n"
-"PO-Revision-Date: 2011-01-16 10:58+0100\n"
-"Last-Translator: Erik De Richter <frederik.de.richter@telenet.be>\n"
+"PO-Revision-Date: 2013-01-28 21:07+0100\n"
+"Last-Translator: Erik De Richter <frederik.de.richter@googlemail.com>\n"
 "Language-Team: nederlands <frederik.de.richter@googlemail.com>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
@@ -89,7 +89,7 @@ msgstr "Aanduiding"
 
 #: SetMarkerTool/SetMarkerTool.py:82
 msgid "Marker value to add or edit"
-msgstr "Aanduisingswaarde die toegevoegd of veranderd wordt"
+msgstr "Aanduidingswaarde die toegevoegd of veranderd wordt"
 
 #: SetMarkerTool/SetMarkerTool.py:121
 msgid "Results"

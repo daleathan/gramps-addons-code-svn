@@ -40,8 +40,8 @@ msgstr ""
 "Project-Id-Version: gramps\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-04-13 15:04+0200\n"
-"PO-Revision-Date: 2011-04-12 20:28+0100\n"
-"Last-Translator: Erik De Richter <frederik.de.richter@pandora.be>\n"
+"PO-Revision-Date: 2013-01-28 20:48+0100\n"
+"Last-Translator: Erik De Richter <frederik.de.richter@googlemail.com>\n"
 "Language-Team: nederlands <frederik.de.richter@googlemail.com>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
@@ -56,14 +56,11 @@ msgid "Family Sheet"
 msgstr "Familiepagina"
 
 #: FamilySheet/FamilySheet.gpr.py:4
-msgid ""
-"Produces a family sheet showing full information about a person and his/her "
-"partners and children."
-msgstr ""
-"Een familiepagina die de volledige informatie over een persoon en zijn/haar "
-"partners en kinderen, toont."
+msgid "Produces a family sheet showing full information about a person and his/her partners and children."
+msgstr "Een familiepagina die de volledige informatie over een persoon en zijn/haar partners en kinderen, toont."
 
-#: FamilySheet/FamilySheet.py:213 FamilySheet/FamilySheet.py:256
+#: FamilySheet/FamilySheet.py:213
+#: FamilySheet/FamilySheet.py:256
 #, python-format
 msgid "→ %s"
 msgstr "→ %s"
@@ -126,7 +123,8 @@ msgstr "op %(placeholder)s"
 msgid "on %(placeholder)s (%(partial)s)"
 msgstr "op %(placeholder)s (%(partial)s)"
 
-#: FamilySheet/FamilySheet.py:787 FamilySheet/FamilySheet.py:789
+#: FamilySheet/FamilySheet.py:787
+#: FamilySheet/FamilySheet.py:789
 #, python-format
 msgid "in %(place)s"
 msgstr "te %(place)s"
@@ -161,15 +159,15 @@ msgstr "Centrale persoon en al de afstammelingen"
 
 #: FamilySheet/FamilySheet.py:831
 msgid "Use call name"
-msgstr "Gebruik roepnaam"
+msgstr "Roepnaam gebruiken"
 
 #: FamilySheet/FamilySheet.py:833
 msgid "Don't use call name"
-msgstr "Gebruik de roepnaam niet"
+msgstr "Roepnaam niet gebruiken"
 
 #: FamilySheet/FamilySheet.py:834
 msgid "Replace first name with call name"
-msgstr "Vervang de voornaam door de roepnaam"
+msgstr "Voornaam door roepnaam vervangen"
 
 #: FamilySheet/FamilySheet.py:835
 msgid "Underline call name in first name / add call name to first name"
@@ -206,3 +204,4 @@ msgstr "De stijl gebruikt voor nummers"
 #: FamilySheet/FamilySheet.py:897
 msgid "The style used for footnotes (notes and source references)"
 msgstr "De stijl gebruikt voor voetnoten (opmerkingen bronverwijzingen)"
+

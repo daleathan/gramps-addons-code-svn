@@ -40,8 +40,8 @@ msgstr ""
 "Project-Id-Version: gramps\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-04-14 20:08+0200\n"
-"PO-Revision-Date: 2011-01-16 10:37+0100\n"
-"Last-Translator: Erik De Richter <frederik.de.richter@telenet.be>\n"
+"PO-Revision-Date: 2013-01-28 21:00+0100\n"
+"Last-Translator: Erik De Richter <frederik.de.richter@googlemail.com>\n"
 "Language-Team: nederlands <frederik.de.richter@googlemail.com>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
@@ -57,14 +57,15 @@ msgstr "Stamboomgrafiek"
 
 #: PedigreeChart//PedigreeChart.gpr.py:25
 msgid "Alternate version of the traditional pedigree chart."
-msgstr "Alternatieve versie van de traditionele stamboomgrafiek"
+msgstr "Alternatieve versie van de traditionele stamboomgrafiek."
 
 #: PedigreeChart//PedigreeChart.py:378
 #, python-format
 msgid "Person %s is not in the Database"
 msgstr "De persoon %s is niet te vinden in het gegevensbestand"
 
-#: PedigreeChart//PedigreeChart.py:381 PedigreeChart//PedigreeChart.py:529
+#: PedigreeChart//PedigreeChart.py:381
+#: PedigreeChart//PedigreeChart.py:529
 msgid "Mother"
 msgstr "Moeder"
 
@@ -88,7 +89,7 @@ msgstr "Stamboomopties"
 
 #: PedigreeChart//PedigreeChart.py:643
 msgid "Center Person"
-msgstr "Centraal persoon"
+msgstr "Centrale persoon"
 
 #: PedigreeChart//PedigreeChart.py:644
 msgid "The center person for the tree"
@@ -121,3 +122,4 @@ msgstr "De gebruikte basisstijl voor de titelweergave."
 #: PedigreeChart//PedigreeChart.py:682
 msgid "Style used for labels and captions"
 msgstr "De gebruikte stijl voor opschriften en etiketten."
+

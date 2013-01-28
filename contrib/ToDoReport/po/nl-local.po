@@ -40,8 +40,8 @@ msgstr ""
 "Project-Id-Version: gramps\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-01-16 20:18+0100\n"
-"PO-Revision-Date: 2011-01-16 20:20+0100\n"
-"Last-Translator: Erik De Richter <frederik.de.richter@telenet.be>\n"
+"PO-Revision-Date: 2013-01-28 21:15+0100\n"
+"Last-Translator: Erik De Richter <frederik.de.richter@googlemail.com>\n"
 "Language-Team: nederlands <frederik.de.richter@googlemail.com>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
@@ -53,15 +53,15 @@ msgstr ""
 
 #: ToDoReport/TodoReport.gpr.py:24
 msgid "Todo Report"
-msgstr "'Nog te doen'-verslag"
+msgstr "Nog te doen"
 
 #: ToDoReport/TodoReport.gpr.py:25
 msgid "Produces a list of all the notes with a given tag along with the records that it references, the Person, Family, Event, etc."
-msgstr "Een lijst van opmerkingen met een bepaalde aanduiding wordt aangemaakt, samen met de gegevens waarnaar verwezen wordt, de persoon, familie, gegeven, enz. ."
+msgstr "Een lijst van opmerkingen met een bepaalde tag wordt aangemaakt, samen met de gegevens waarnaar verwezen wordt, de persoon, familie, gegeven, enz. ."
 
 #: ToDoReport/TodoReport.py:80
 msgid "ToDo Report"
-msgstr "'Nog-te-doen'-verslag"
+msgstr "Nog-te-doen"
 
 #: ToDoReport/TodoReport.py:81
 msgid "You must first create a tag before running this report."
@@ -136,4 +136,3 @@ msgstr "De gebruikte basisstijl voor de weergave van opmerkingen."
 
 #~ msgid "Marker"
 #~ msgstr "Aanduiding"
-

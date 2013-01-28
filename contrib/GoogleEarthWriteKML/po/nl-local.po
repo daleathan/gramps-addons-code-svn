@@ -40,8 +40,8 @@ msgstr ""
 "Project-Id-Version: gramps\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-04-13 19:56+0200\n"
-"PO-Revision-Date: 2011-04-12 20:28+0100\n"
-"Last-Translator: Erik De Richter <frederik.de.richter@pandora.be>\n"
+"PO-Revision-Date: 2013-01-28 20:51+0100\n"
+"Last-Translator: Erik De Richter <frederik.de.richter@googlemail.com>\n"
 "Language-Team: nederlands <frederik.de.richter@googlemail.com>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
@@ -57,7 +57,7 @@ msgstr "GoogleEarth"
 
 #: GoogleEarthWriteKML/GoogleEarthWriteKML.gpr.py:35
 msgid "Creates data file for GoogleEarth and opens it"
-msgstr "Gegevensbestand voor 'GoogleEarth' aanmaken en openen."
+msgstr "Gegevensbestand voor 'GoogleEarth' aanmaken en openen"
 
 #: GoogleEarthWriteKML/GoogleEarthWriteKML.py:89
 msgid "No place description"
@@ -108,3 +108,4 @@ msgid ""
 msgstr ""
 "'Kmz/kml'-bestand ''%s''\n"
 "in gebruikersthuismap ''%s'' overschrijven?"
+

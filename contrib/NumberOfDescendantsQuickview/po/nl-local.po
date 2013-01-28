@@ -40,8 +40,8 @@ msgstr ""
 "Project-Id-Version: gramps\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-04-14 20:08+0200\n"
-"PO-Revision-Date: 2011-04-12 20:28+0100\n"
-"Last-Translator: Erik De Richter <frederik.de.richter@pandora.be>\n"
+"PO-Revision-Date: 2013-01-28 20:59+0100\n"
+"Last-Translator: Erik De Richter <frederik.de.richter@googlemail.com>\n"
 "Language-Team: nederlands <frederik.de.richter@googlemail.com>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
@@ -57,7 +57,7 @@ msgstr "Aantal afstammelingen"
 
 #: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.gpr.py:4
 msgid "Shows the number of descendants of the current person"
-msgstr "Aantal afstammelingen van de actieve persoon wordt getoond"
+msgstr "Aantal afstammelingen van de actieve persoon tonen"
 
 #: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:57
 #, python-format
@@ -92,11 +92,10 @@ msgstr "Nog in leven"
 #: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:117
 #, python-format
 msgid "Seen = number of descendants whose birth %s has lived to see"
-msgstr ""
-"Gezien = aantal afstammelingen waarvan %s de geboorte kan meegemaakt hebben"
+msgstr "Gezien = aantal afstammelingen waarvan %s de geboorte kan meegemaakt hebben"
 
 #: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:119
 #, python-format
 msgid "Outlived = number of descendants who died while %s was still alive"
-msgstr ""
-"Overlevend = aantal afstammelingen die stierven terwijl %s nog in leven was"
+msgstr "Overlevend = aantal afstammelingen die stierven terwijl %s nog in leven was"
+
