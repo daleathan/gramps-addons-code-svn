@@ -1,0 +1,94 @@
+# Dutch translations for gramps package.
+# Copyright (C) 2013 THE gramps'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the gramps package.
+# erik_de_richter <frederik.de.richter@telenet.be>, 2013.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gramps 40_addons\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-01-29 13:18+0100\n"
+"PO-Revision-Date: 2013-01-29 13:38+0100\n"
+"Last-Translator: Frederik De Richter <frederik.de.richter@gmail.com>\n"
+"Language-Team: Dutch\n"
+"Language: nl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 1.5.4\n"
+
+#: ChangeGivenNames/ChangeGivenNames.gpr.py:36
+msgid "Fix Capitalization of Given Names"
+msgstr "Hoofdletters van voornamen verbeteren"
+
+#: ChangeGivenNames/ChangeGivenNames.gpr.py:37
+msgid ""
+"Searches the entire database and attempts to fix capitalization of the given "
+"names."
+msgstr ""
+"Het volledige gegevensbestand wordt doorzocht en er wordt getracht de "
+"hoofdletters van de voornamen te verbeteren."
+
+#: ChangeGivenNames/ChangeGivenNames.py:63
+msgid "manual|Fix_Capitalization_of_Given_Names..."
+msgstr "Hoofdletters van voornamen verbeteren..."
+
+#: ChangeGivenNames/ChangeGivenNames.py:87
+#: ChangeGivenNames/ChangeGivenNames.py:246
+msgid "Capitalization changes"
+msgstr "Hoofdletterwijziging"
+
+#: ChangeGivenNames/ChangeGivenNames.py:101
+msgid "Checking Given Names"
+msgstr "Voornamen controleren"
+
+#: ChangeGivenNames/ChangeGivenNames.py:102
+msgid "Searching given names"
+msgstr "Voornamen zoeken"
+
+#: ChangeGivenNames/ChangeGivenNames.py:118
+msgid "No modifications made"
+msgstr "Geen wijzigingen doorgevoerd"
+
+#: ChangeGivenNames/ChangeGivenNames.py:119
+msgid "No capitalization changes were detected."
+msgstr "Er werden geen hoofdletterwijzigingen vastgesteld."
+
+#: ChangeGivenNames/ChangeGivenNames.py:188
+msgid "Select"
+msgstr "Selecteer"
+
+#: ChangeGivenNames/ChangeGivenNames.py:191
+msgid "Original Name"
+msgstr "Oorspronkelijke naam"
+
+#: ChangeGivenNames/ChangeGivenNames.py:195
+msgid "Capitalization Change"
+msgstr "Hoofdletterwijziging"
+
+#: ChangeGivenNames/ChangeGivenNames.py:199
+msgid "Affected Names"
+msgstr "Voornamen die gewijzigd kunnen worden"
+
+#: ChangeGivenNames/ChangeGivenNames.py:206
+msgid "Building display"
+msgstr "Schermopbouw"
+
+#: ChangeGivenNames/changenames.glade.h:1
+msgid ""
+"Below is a list of the given names that \n"
+"Gramps can convert to correct capitalization. \n"
+"Select the names you wish Gramps to convert. "
+msgstr ""
+"Onderstaande lijst bevat de voornamen\n"
+"die Gramps kan omzetten naar de juiste schrijfwijze.\n"
+"Kies de namen die u wilt omzetten."
+
+#: ChangeGivenNames/changenames.glade.h:4
+msgid "Edit selection"
+msgstr "Selectie aanpassen"
+
+#: ChangeGivenNames/changenames.glade.h:5
+msgid "_Accept changes and close"
+msgstr "Aanpassingen accepteren en venster sluiten"
