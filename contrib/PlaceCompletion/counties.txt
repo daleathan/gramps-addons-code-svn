@@ -1,0 +1,58 @@
+Bedfordshire	I1,Z5,Z6
+Berkshire	P4,K7,Q2,B3,P9,M1
+Buckinghamshire	B9,I6
+Cambridgeshire	C3,K3
+Cheshire	Z7,Z8,E9,P2
+Cornwall	C6,Z9
+Cumbria	C9	
+Derbyshire	D3,D2
+Devon	D4,O4,K4
+Dorset	D6,K5,B2
+Durham	D8,D1,F5
+Essex	E4,O3,M5
+Gloucestershire	E6,M6
+Hampshire	F2,M4,K6
+Herefordshire	F7
+Hertfordshire	F8
+Isle of Wight	G2
+Kent	G5,I3
+Lancashire	H2,A9,A8
+Leicestershire	H5,H4
+Lincolnshire	H7,J2,J3
+Norfolk	I9
+Northamptonshire	J1
+Northumberland	J6
+Nottinghamshire	J9,J8
+Oxfordshire	K2
+Rutland	L4
+Shropshire	L6,O2
+Somerset	M3,A4,J4
+Staffordshire	M9,N4
+Suffolk	N5
+Surrey	N7
+Sussex	E2,B6,P6
+East Sussex	E2,B6
+West Sussex	P6
+Warwickshire	P3
+Wiltshire	P8,N9
+Worcestershire	Q4
+Yorkshire	A3,D5,L3,L9,B4,C2,G8,H3,O7,J7,Q5,N3,K9,I5,E1,G6
+South Yorkshire	A3,D5,L3,L9
+West Yorkshire	B4,C2,G8,H3,O7
+North Yorkshire	J7,Q5,N3,K9,I5
+East Ridng of Yorkshire	E1,G6
+Bristol	B7
+Greater London	GLA,A1,A2,A6,B5,B8,C4,C8,D9,E3,E7,E8,F1,F3,F4,F6,F9,G1,G3,G4,G7,H1,H6,H9,I4,I8,K8,L1,M8,N8,O5,O9,P1,P5
+Greater Manchester	B1,C1,I2,K1,L2,L5,N2,O1,O6,P7
+Merseyside	G9,H8,L8,N1,Q1
+Tyne and Wear	E5,I7,J5,M7,N6
+West Midlands	A7,C7,D7,L7,M2,O8,Q3
+Clwyd	X8,X9,Y1,Z4
+Dyfed	X7,X6,Y7
+Gwent	X2,X4,Y4,Y6,Z2
+Gwynedd	Y2,X1
+Mid Glamorgan	X3,Y3,Y9
+Powys	Y8
+South Glamorgan	X5,Z3
+West Glamorgan	Y5,Z1
+
