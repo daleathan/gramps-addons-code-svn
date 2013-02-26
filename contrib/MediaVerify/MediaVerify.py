@@ -164,6 +164,7 @@ class MediaVerify(tool.Tool, ManagedWindow.ManagedWindow):
         missing = self.model.append(None, (_('Missing Files'),))
         duplicate = self.model.append(None, (_('Duplicate Files'),))
         extra = self.model.append(None, (_('Extra Files'),))
+        nomd5 = self.model.append(None, (_('No md5 Generated'),))
 
         media_path = self.db.get_mediapath()
         if media_path is None:
@@ -221,6 +222,9 @@ class MediaVerify(tool.Tool, ManagedWindow.ManagedWindow):
                                 self.moved_files.append((handle, path))
                                 text = '%s -> %s' % (gramps_path, path)
                                 self.model.append(moved, (text,))
+            elif md5sum is None:
+                text = '[%s] %s' % (media.get_gramps_id(), gramps_path)
+                self.model.append(nomd5, (text,))
             else:
                 self.model.append(missing, (gramps_path,))
 
