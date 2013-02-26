@@ -62,6 +62,7 @@ class MediaVerify(tool.Tool, ManagedWindow.ManagedWindow):
         ManagedWindow.ManagedWindow.__init__(self, uistate, [], self.__class__)
 
         self.db = dbstate.db
+        self.moved_files = []
 
         window = gtk.Window()
         vbox = gtk.VBox()
@@ -86,12 +87,16 @@ class MediaVerify(tool.Tool, ManagedWindow.ManagedWindow):
         generate.set_tooltip_text(_('Generate md5 hashes for media objects'))
         generate.connect('clicked', self.generate_md5)
         verify = gtk.Button(_('Verify'))
-        verify.set_tooltip_text(_('Fix media paths and report missing, '
+        verify.set_tooltip_text(_('Check media paths and report missing, '
                                   'duplicate and extra files'))
         verify.connect('clicked', self.verify_media)
+        fix = gtk.Button(_('Fix'))
+        fix.set_tooltip_text(_('Fix media paths of moved and renamed files'))
+        fix.connect('clicked', self.fix_media)
         bbox.add(close)
         bbox.add(generate)
         bbox.add(verify)
+        bbox.add(fix)
         vbox.show_all()
 
         window.add(vbox)
@@ -153,6 +158,8 @@ class MediaVerify(tool.Tool, ManagedWindow.ManagedWindow):
         yet have a media file in Gramps.
         """
         self.model.clear()
+        self.moved_files = []
+
         moved = self.model.append(None, (_('Moved Files'),))
         missing = self.model.append(None, (_('Missing Files'),))
         duplicate = self.model.append(None, (_('Duplicate Files'),))
@@ -185,45 +192,41 @@ class MediaVerify(tool.Tool, ManagedWindow.ManagedWindow):
                 if progress.get_cancelled():
                     break
 
-        progress.set_pass(_('Fixing paths'), length)
+        progress.set_pass(_('Checking paths'), length)
 
-        with DbTxn(_("Fix media paths"), self.db, batch=True) as trans:
-            
-            in_gramps = []
-            for handle in self.db.get_media_object_handles():
-                media = self.db.get_object_from_handle(handle)
+        in_gramps = []
+        for handle in self.db.get_media_object_handles():
+            media = self.db.get_object_from_handle(handle)
 
-                md5sum = None
-                for attr in media.get_attribute_list():
-                    if str(attr.get_type()) == 'md5':
-                        md5sum = attr.get_value()
-                        in_gramps.append(md5sum)
-                        break
-
-                # Fix the path if possible
-                gramps_path = media.get_path()
-                if md5sum in all_files:
-                    file_path = all_files[md5sum]
-                    if gramps_path not in file_path:
-                        if len(file_path) == 1:
-                            media.set_path(file_path[0])
-                            text = '%s -> %s' % (gramps_path, file_path[0])
-                            self.model.append(moved, (text,))
-                        else:
-                            gramps_name = os.path.basename(gramps_path)
-                            for path in file_path:
-                                if os.path.basename(path) == gramps_name:
-                                    media.set_path(path)
-                                    text = '%s -> %s' % (gramps_path, path)
-                                    self.model.append(moved, (text,))
-                else:
-                    self.model.append(missing, (gramps_path,))
-
-                self.db.commit_media_object(media, trans)
-
-                progress.step()
-                if progress.get_cancelled():
+            md5sum = None
+            for attr in media.get_attribute_list():
+                if str(attr.get_type()) == 'md5':
+                    md5sum = attr.get_value()
+                    in_gramps.append(md5sum)
                     break
+
+            # Fix the path if possible
+            gramps_path = media.get_path()
+            if md5sum in all_files:
+                file_path = all_files[md5sum]
+                if gramps_path not in file_path:
+                    if len(file_path) == 1:
+                        self.moved_files.append((handle, file_path[0]))
+                        text = '%s -> %s' % (gramps_path, file_path[0])
+                        self.model.append(moved, (text,))
+                    else:
+                        gramps_name = os.path.basename(gramps_path)
+                        for path in file_path:
+                            if os.path.basename(path) == gramps_name:
+                                self.moved_files.append((handle, path))
+                                text = '%s -> %s' % (gramps_path, path)
+                                self.model.append(moved, (text,))
+            else:
+                self.model.append(missing, (gramps_path,))
+
+            progress.step()
+            if progress.get_cancelled():
+                break
 
         # Duplicate files or files not in Gramps
         for md5sum in all_files:
@@ -236,6 +239,26 @@ class MediaVerify(tool.Tool, ManagedWindow.ManagedWindow):
 
         progress.close()
         self.view.expand_all()
+
+    def fix_media(self, button):
+        """
+        Fix paths to moved media files.
+        """
+        progress = ProgressMeter(_('Media Verify'), can_cancel=True)
+        progress.set_pass(_('Fixing file paths'), len(self.moved_files))
+
+        with DbTxn(_("Fix media paths"), self.db, batch=True) as trans:
+            
+            for handle, new_path in self.moved_files:
+                media = self.db.get_object_from_handle(handle)
+                media.set_path(new_path)
+                self.db.commit_media_object(media, trans)
+
+                progress.step()
+                if progress.get_cancelled():
+                    break
+
+        progress.close()
 
 #------------------------------------------------------------------------
 #
