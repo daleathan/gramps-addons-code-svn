@@ -892,16 +892,18 @@ class PlaceCompletion(Tool.Tool, ManagedWindow.ManagedWindow):
         return False
     
     def load_counties_file(self):
+        import codecs
         filename = os.path.join(os.path.dirname(__file__), 'counties.txt')
-        county_file = open(filename, 'r')
+        county_file = codecs.open(filename, 'r', 'utf-8')
         line = county_file.readline()
         while line:
             fields = line.replace('\n', '').split('\t')
-            if len(fields) > 1:
+            if (not line.startswith('#')) and (len(fields) > 1):
                 county = fields[0]
                 codes = fields[1].split(',')
                 self.county_lookup[county] = codes
             line = county_file.readline()
+        county_file.close()
 
     def load_latlon_file(self, filename):
         import codecs

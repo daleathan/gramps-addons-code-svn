@@ -52,7 +52,7 @@
 {'d': 'Collection of Web sites for the UK (requires libwebconnect)', 'g': '3.4', 'i': 'UK Web Connect Pack', 'n': 'UK Web Connect Pack', 't': u'Plugin lib', 'v': '1.0.15', 'z': 'UKWebConnectPack.addon.tgz'}
 {'d': 'Gramplet zum demonstrieren der Cairo Grafik', 'g': '3.4', 'i': 'Clock Gramplet', 'n': 'Uhren Gramplet', 't': u'Gramplet', 'v': '0.0.8', 'z': 'ClockGramplet.addon.tgz'}
 {'d': 'Erstellt einen Nachkommen\xc3\xbcbersicht unter Verwendung eines Filter', 'g': '3.4', 'i': 'fil_descendant_report', 'n': 'Gefilterter Nachkommenbericht', 't': u'Report', 'v': '0.2.1', 'z': 'FilteredReports.addon.tgz'}
-{'d': 'Provides a browsable list of selected places, with possibility to complete/parse/set the attribute fields.', 'g': '3.4', 'i': 'PlaceCompletion', 'n': 'OrteVervollst\xc3\xa4ndigung', 't': u'Tool', 'v': '0.0.13', 'z': 'PlaceCompletion.addon.tgz'}
+{'d': 'Provides a browsable list of selected places, with possibility to complete/parse/set the attribute fields.', 'g': '3.4', 'i': 'PlaceCompletion', 'n': 'OrteVervollst\xc3\xa4ndigung', 't': u'Tool', 'v': '0.0.14', 'z': 'PlaceCompletion.addon.tgz'}
 {'d': 'Berechnet gesch\xc3\xa4tzte Daten f\xc3\xbcr Geburt und Tod.', 'g': '3.4', 'i': 'calculateestimateddates', 'n': 'Gesch\xc3\xa4tzte Daten berechnen', 't': u'Tool', 'v': '0.90.8', 'z': 'CalculateEstimatedDates.addon.tgz'}
 {'d': 'Prim\xc3\xa4re Objekte \xc3\xbcber die Kommandozeile zusammenfassen.', 'g': '3.4', 'i': 'climerge', 'n': 'Command Line Merge', 't': u'Tool', 'v': '1.0.5', 'z': 'CliMerge.addon.tgz'}
 {'d': 'Gramplet showing details of a person', 'g': '3.4', 'i': 'MediaBrowser', 'n': 'Media Browser', 't': u'Gramplet', 'v': '1.0.6', 'z': 'MediaBrowser.addon.tgz'}
