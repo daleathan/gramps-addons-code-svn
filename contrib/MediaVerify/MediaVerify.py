@@ -125,7 +125,7 @@ class MediaVerify(tool.Tool, ManagedWindow.ManagedWindow):
 
                 full_path = Utils.media_path_full(self.db, media.get_path())
                 try:
-                    media_file = open(full_path, 'r')
+                    media_file = open(full_path, 'rb')
                 except IOError:
                     progress.step()
                     continue
@@ -179,7 +179,7 @@ class MediaVerify(tool.Tool, ManagedWindow.ManagedWindow):
         for root, dirs, files in os.walk(media_path):
             for file_name in files:
                 full_path = os.path.join(root, file_name)
-                media_file = open(full_path, 'r')
+                media_file = open(full_path, 'rb')
                 md5sum = hashlib.md5(media_file.read()).hexdigest()
                 media_file.close()
 
