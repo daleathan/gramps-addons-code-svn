@@ -3,7 +3,7 @@ register(VIEW,
          name  = _("Graph View"),
          category = ("Ancestry", _("Ancestry")),
          description =  _("Dynamic graph of relations"),
-         version = '1.0.34',
+         version = '1.0.35',
          gramps_target_version = '4.0',
          status = UNSTABLE, # ImportError: No module named 'cStringIO'
          fname = 'graphview.py',
