@@ -26,11 +26,8 @@ import sys
 #
 #------------------------------------------------------------------------
 from gramps.gen.plug import Gramplet
-from gramps.gen.utils.trans import get_addon_translator
-if sys.version_info[0] < 3:
-    _ = get_addon_translator(__file__).ugettext
-else:
-    _ = get_addon_translator(__file__).gettext
+from gramps.gen.const import GRAMPS_LOCALE as glocale
+_ = glocale.get_addon_translator(__file__).gettext
 from gramps.gui.plug.quick import QuickTable, run_quick_report_by_name
 from gramps.gen.simple import SimpleAccess, SimpleDoc
 

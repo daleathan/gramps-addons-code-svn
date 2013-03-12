@@ -45,11 +45,8 @@ from gramps.gui.display import display_url
 from gramps.gui.dialog import ErrorDialog
 from gramps.plugins.lib.libhtml import Html, xml_lang
 from gramps.gen.constfunc import cuni
-from gramps.gen.utils.trans import get_addon_translator
-if sys.version_info[0] < 3:
-    _ = get_addon_translator(__file__).ugettext
-else:
-    _ = get_addon_translator(__file__).gettext
+from gramps.gen.const import GRAMPS_LOCALE as glocale
+_ = glocale.get_addon_translator(__file__).gettext
 
 #-------------------------------------------------------------------------
 #

@@ -33,11 +33,8 @@ from gramps.gen.errors import WindowActiveError
 from gramps.gen.db import DbTxn
 from gramps.gen.display.name import displayer as name_displayer
 
-from gramps.gen.utils.trans import get_addon_translator
-if sys.version_info[0] < 3:
-    _ = get_addon_translator(__file__).ugettext
-else:
-    _ = get_addon_translator(__file__).gettext
+from gramps.gen.const import GRAMPS_LOCALE as glocale
+_ = glocale.get_addon_translator(__file__).gettext
 
 class Attributes(Gramplet):
     """

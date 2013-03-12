@@ -47,13 +47,13 @@ from gramps.gen.plug.report import Report
 import gramps.gen.plug.report.utils as ReportUtils
 from gramps.gen.plug.report import MenuReportOptions
 from gramps.plugins.lib.libtranslate import get_language_string
-from gramps.gen.utils.trans import get_addon_translator
+from gramps.gen.const import GRAMPS_LOCALE as glocale
 import gramps.gen.proxy
 from gramps.gen.plug.docgen import (IndexMark, FontStyle, ParagraphStyle, 
                              FONT_SANS_SERIF, FONT_SERIF, 
                              INDEX_TYPE_TOC, PARA_ALIGN_CENTER)
                              
-_ = get_addon_translator().gettext
+_ = glocale.get_addon_translator(__file__).gettext
 
 LOCALEDIR = os.path.join(USER_PLUGINS, 'RepositoriesReport', 'locale')
 LOCALEDOMAIN = 'addon'
