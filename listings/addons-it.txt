@@ -1,6 +1,6 @@
 {'d': 'Creates data file for GoogleEarth and opens it', 'g': '4.0', 'i': 'GoogleEarth', 'n': 'GoogleEarth', 't': u'Map service', 'v': '1.0.20', 'z': 'GoogleEarthWriteKML.addon.tgz'}
 {'d': 'Gramplet for importing text', 'g': '4.0', 'i': 'Import Gramplet', 'n': 'Import Gramplet', 't': u'Gramplet', 'v': '1.0.14', 'z': 'ImportGramplet.addon.tgz'}
-{'d': 'Collection of Web sites for the UK (requires libwebconnect)', 'g': '4.0', 'i': 'UK Web Connect Pack', 'n': 'UK Web Connect Pack', 't': u'Plugin lib', 'v': '1.0.21', 'z': 'UKWebConnectPack.addon.tgz'}
+{'d': 'Collection of Web sites for the UK (requires libwebconnect)', 'g': '4.0', 'i': 'UK Web Connect Pack', 'n': 'UK Web Connect Pack', 't': u'Plugin lib', 'v': '1.0.22', 'z': 'UKWebConnectPack.addon.tgz'}
 {'d': 'Interactive Python interpreter', 'g': '4.0', 'i': 'Python Gramplet', 'n': 'Python Gramplet', 't': u'Gramplet', 'v': '1.0.12', 'z': 'PythonGramplet.addon.tgz'}
 {'d': 'Gramplet for grouping items', 'g': '4.0', 'i': 'Clipboard Gramplet', 'n': 'Clipboard Gramplet', 't': u'Gramplet', 'v': '1.0.17', 'z': 'ClipboardGramplet.addon.tgz'}
 {'d': 'Gramplet interface for census data', 'g': '4.0', 'i': 'Census Gramplet', 'n': 'Census Gramplet', 't': u'Gramplet', 'v': '1.0.21', 'z': 'Census.addon.tgz'}
@@ -18,7 +18,7 @@
 {'d': 'Attaches a shared source to multiple objects.', 'g': '4.0', 'i': 'AttachSource', 'n': 'Attach Source', 't': u'Tool', 'v': '0.0.17', 'z': 'AttachSourceTool.addon.tgz'}
 {'d': 'a gramplet that displays the birthdays of the living people', 'g': '4.0', 'i': 'Birthdays', 'n': 'Birthdays Gramplet', 't': u'Gramplet', 'v': '1.0.18', 'z': 'BirthdaysGramplet.addon.tgz'}
 {'d': 'Compares an external database with the current one.', 'g': '4.0', 'i': 'database-differences-report', 'n': 'Database Differences Report', 't': u'Report', 'v': '1.0', 'z': 'Differences.addon.tgz'}
-{'d': 'Collection of Web sites for the DE (requires libwebconnect)', 'g': '4.0', 'i': 'DE Web Connect Pack', 'n': 'DE Web Connect Pack', 't': u'Plugin lib', 'v': '0.0.8', 'z': 'DEWebConnectPack.addon.tgz'}
+{'d': 'Collection of Web sites for the DE (requires libwebconnect)', 'g': '4.0', 'i': 'DE Web Connect Pack', 'n': 'DE Web Connect Pack', 't': u'Plugin lib', 'v': '0.0.9', 'z': 'DEWebConnectPack.addon.tgz'}
 {'d': 'Set an attribute to a given value.', 'g': '4.0', 'i': 'SetAttribute', 'n': 'Set Attribute', 't': u'Tool', 'v': '0.0.12', 'z': 'SetAttributeTool.addon.tgz'}
 {'d': 'Produces a graphical family tree.', 'g': '4.0', 'i': 'FamilyTree', 'n': 'Arbre familial', 't': u'Report', 'v': '3.4.14', 'z': 'FamilyTree.addon.tgz'}
 {'d': 'The view shows a timeline pedigree with ancestors and descendants of the selected person', 'g': '4.0', 'i': 'TimelinePedigreeView', 'n': 'Timeline Pedigree', 't': u'Gramps View', 'v': '0.1.25', 'z': 'TimelinePedigreeView.addon.tgz'}
@@ -32,7 +32,7 @@
 {'d': 'Effettua stima per date di nascita e di decesso.', 'g': '4.0', 'i': 'calculateestimateddates', 'n': 'Effettua stima date', 't': u'Tool', 'v': '0.90.13', 'z': 'CalculateEstimatedDates.addon.tgz'}
 {'d': 'Generates thumbnails for media files', 'g': '4.0', 'i': 'thumbgen', 'n': 'Thumbnail Generator', 't': u'Tool', 'v': '1.0.7', 'z': 'ThumbnailGenerator.addon.tgz'}
 {'d': "Gramplet for editing active person's notes", 'g': '4.0', 'i': 'Note Gramplet', 'n': 'Note Gramplet', 't': u'Gramplet', 'v': '1.0.14', 'z': 'NoteGramplet.addon.tgz'}
-{'d': 'Library for web site collections', 'g': '4.0', 'i': 'libwebconnect', 'n': 'libwebconnect', 't': u'Plugin lib', 'v': '1.0.13', 'z': 'libwebconnect.addon.tgz'}
+{'d': 'Library for web site collections', 'g': '4.0', 'i': 'libwebconnect', 'n': 'libwebconnect', 't': u'Plugin lib', 'v': '1.0.14', 'z': 'libwebconnect.addon.tgz'}
 {'d': 'Gramplet showing relatives in a relation', 'g': '4.0', 'i': 'Related Relatives Gramplet', 'n': 'Related Relatives Gramplet', 't': u'Gramplet', 'v': '1.0.12', 'z': 'RelatedRelativesGramplet.addon.tgz'}
 {'d': 'Merge primary objects via the command line.', 'g': '4.0', 'i': 'climerge', 'n': 'Command Line Merge', 't': u'Tool', 'v': '1.0.10', 'z': 'CliMerge.addon.tgz'}
 {'d': 'Verify that media is present in the correct path', 'g': '4.0', 'i': 'mediaverify', 'n': 'Media Verify', 't': u'Tool', 'v': '1.0.1', 'z': 'MediaVerify.addon.tgz'}
@@ -41,12 +41,12 @@
 {'d': 'This is a raw python object dump', 'g': '4.0', 'i': 'Raw Export', 'n': 'Raw Export', 't': u'Exporter', 'v': '1.0.15', 'z': 'ExportRaw.addon.tgz'}
 {'d': "Gramplet affichant les d\xc3\xa9tails de l'individu", 'g': '4.0', 'i': 'MediaBrowser', 'n': 'Media Browser', 't': u'Gramplet', 'v': '1.0.10', 'z': 'MediaBrowser.addon.tgz'}
 {'d': 'Extensions to the common GEDCOM format.', 'g': '4.0', 'i': 'Export GEDCOM Extensions', 'n': 'Export GEDCOM Extensions (GED2)', 't': u'Exporter', 'v': '1.0.4', 'z': 'GedcomExtensions.addon.tgz'}
-{'d': 'Collection of Web sites for the US (requires libwebconnect)', 'g': '4.0', 'i': 'US Web Connect Pack', 'n': 'US Web Connect Pack', 't': u'Plugin lib', 'v': '1.0.23', 'z': 'USWebConnectPack.addon.tgz'}
+{'d': 'Collection of Web sites for the US (requires libwebconnect)', 'g': '4.0', 'i': 'US Web Connect Pack', 'n': 'US Web Connect Pack', 't': u'Plugin lib', 'v': '1.0.24', 'z': 'USWebConnectPack.addon.tgz'}
 {'d': 'Produces descendants lines of a person', 'g': '4.0', 'i': 'Descendants Lines', 'n': 'Descendants Lines', 't': u'Report', 'v': '0.1.15', 'z': 'DescendantsLines.addon.tgz'}
 {'d': 'Display descendant counts for each person.', 'g': '4.0', 'i': 'Descendant Count Quickview', 'n': 'Descendant Count', 't': u'Quickreport', 'v': '1.0.12', 'z': 'DescendantCount.addon.tgz'}
 {'d': 'Gramplet for showing people and descendant counts', 'g': '4.0', 'i': 'Descendant Count Gramplet', 'n': 'Descendant Count Gramplet', 't': u'Gramplet', 'v': '1.0.13', 'z': 'DescendantCount.addon.tgz'}
 {'d': 'Gramplet for detecting and assigning faces', 'g': '4.0', 'i': 'Face Detection', 'n': 'Face Detection', 't': u'Gramplet', 'v': '1.0.8', 'z': 'FaceDetection.addon.tgz'}
-{'d': 'Collection of Web sites for the FR (requires libwebconnect)', 'g': '4.0', 'i': 'FR Web Connect Pack', 'n': 'FR Web Connect Pack', 't': u'Plugin lib', 'v': '1.0.14', 'z': 'FRWebConnectPack.addon.tgz'}
+{'d': 'Collection of Web sites for the FR (requires libwebconnect)', 'g': '4.0', 'i': 'FR Web Connect Pack', 'n': 'FR Web Connect Pack', 't': u'Plugin lib', 'v': '1.0.15', 'z': 'FRWebConnectPack.addon.tgz'}
 {'d': 'Set Tag to a given value.', 'g': '4.0', 'i': 'SetTag', 'n': 'Set Tag', 't': u'Tool', 'v': '0.1.8', 'z': 'SetTagTool.addon.tgz'}
 {'d': "Gramplet pour voir, \xc3\xa9diter, et enregistrer les m\xc3\xa9tadonn\xc3\xa9es Exif de l'image", 'g': '4.0', 'i': 'Edit Image Exif Metadata', 'n': "\xc3\x89diter les m\xc3\xa9tadonn\xc3\xa9es Exif de l'image", 't': u'Gramplet', 'v': '1.5.0', 'z': 'EditExifMetadata.addon.tgz'}
 {'d': 'Searches the entire database and attempts to fix capitalization of the given names.', 'g': '4.0', 'i': 'chgivenname', 'n': 'Fix Capitalization of Given Names', 't': u'Tool', 'v': '1.0.14', 'z': 'ChangeGivenNames.addon.tgz'}
