@@ -7,9 +7,10 @@
 {'d': 'Gramplet zeigt eine tief gehende Beziehung zwischen aktiver und Hauptperson', 'g': '3.4', 'i': 'Deep Connections Gramplet', 'n': 'Tief gehende Beziehungen Gramplet', 't': u'Gramplet', 'v': '1.0.13', 'z': 'DeepConnectionsGramplet.addon.tgz'}
 {'d': 'Bericht der Zensusereignise f\xc3\xbcr eine Person.', 'g': '3.4', 'i': 'census_report', 'n': 'Zensusbericht', 't': u'Report', 'v': '1.0.16', 'z': 'Census.addon.tgz'}
 {'d': 'Gramplet Schnittstelle f\xc3\xbcr Zensusdaten', 'g': '3.4', 'i': 'Census Gramplet', 'n': 'Zensus Gramplet', 't': u'Gramplet', 'v': '1.0.16', 'z': 'Census.addon.tgz'}
+{'d': 'Fix changed attributes in census data', 'g': '3.4', 'i': 'censusfix', 'n': 'Census Fix', 't': u'Tool', 'v': '1.0.0', 'z': 'Census.addon.tgz'}
 {'d': 'Gramplet for generic notes', 'g': '3.4', 'i': 'TODO2', 'n': 'Zu erledigen2', 't': u'Gramplet', 'v': '0.0.2', 'z': 'ToDoNotesGramplet.addon.tgz'}
 {'d': 'Verify that media is present in the correct path', 'g': '3.4', 'i': 'mediaverify', 'n': 'Media Verify', 't': u'Tool', 'v': '1.0.2', 'z': 'MediaVerify.addon.tgz'}
-{'d': 'Set Tag to a given value.', 'g': '3.4', 'i': 'SetTag', 'n': 'Set Tag', 't': u'Tool', 'v': '0.1.3', 'z': 'SetTagTool.addon.tgz'}
+{'d': 'Set Tag to a given value.', 'g': '3.4', 'i': 'SetTag', 'n': 'Set Tag', 't': u'Tool', 'v': '0.1.4', 'z': 'SetTagTool.addon.tgz'}
 {'d': 'Bibliothek f\xc3\xbcr Webseitensammlungen', 'g': '3.4', 'i': 'libwebconnect', 'n': 'libwebconnect', 't': u'Plugin lib', 'v': '1.0.7', 'z': 'libwebconnect.addon.tgz'}
 {'d': 'Listet die letzten zehn ge\xc3\xa4nderten Personendatens\xc3\xa4tze', 'g': '3.4', 'i': 'LastChangeGramplet', 'n': 'Letzte \xc3\x84nderung Gramplet', 't': u'Gramplet', 'v': '0.0.12', 'z': 'LastChange.addon.tgz'}
 {'d': 'Bericht der letzten Datens\xc3\xa4tze die ge\xc3\xa4ndert wurden', 'g': '3.4', 'i': 'LastChangeReport', 'n': 'Letzte \xc3\x84nderungen Bericht', 't': u'Report', 'v': '0.0.12', 'z': 'LastChange.addon.tgz'}
