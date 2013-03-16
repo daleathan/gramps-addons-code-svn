@@ -46,7 +46,7 @@ import gtk
 #
 #-------------------------------------------------------------------------
 from gui.plug import tool
-from gui.utils import ProgressMeter
+import gui.widgets.progressdialog as progressdlg
 from gen.db import DbTxn
 from gen.lib import Attribute, AttributeType
 from ManagedWindow import ManagedWindow
@@ -244,10 +244,15 @@ class MediaVerify(tool.Tool, ManagedWindow):
         """
         self.clear_models()
 
-        progress = ProgressMeter(self.window_name, can_cancel=True)
+        pmon = progressdlg.ProgressMonitor(progressdlg.GtkProgressDialog, 
+                   ("", self.window, gtk.DIALOG_MODAL), popup_time=2)
 
         length = self.db.get_number_of_media_objects()
-        progress.set_pass(_('Generating media hashes'), length)
+        status = progressdlg.LongOpStatus(msg=_('Generating media hashes'),
+                                          total_steps=length,
+                                          interval=length//20,
+                                          can_cancel=True)
+        pmon.add_op(status)
 
         with DbTxn(_("Set media hashes"), self.db, batch=True) as trans:
 
@@ -261,7 +266,7 @@ class MediaVerify(tool.Tool, ManagedWindow):
                 except IOError as err:
                     error_msg = '%s: %s' % (err.strerror, full_path)
                     self.models[5].append((error_msg, None))
-                    progress.step()
+                    status.heartbeat()
                     continue
 
                 for attr in media.get_attribute_list():
@@ -277,12 +282,12 @@ class MediaVerify(tool.Tool, ManagedWindow):
                 
                 self.db.commit_media_object(media, trans)
 
-                progress.step()
-                if progress.get_cancelled():
+                status.heartbeat()
+                if status.should_cancel():
                     break
 
-        progress.close()
         self.show_tabs()
+        status.end()
 
     def verify_media(self, button):
         """
@@ -301,12 +306,17 @@ class MediaVerify(tool.Tool, ManagedWindow):
                             self.window)
             return
 
-        progress = ProgressMeter(self.window_name, can_cancel=True)
+        pmon = progressdlg.ProgressMonitor(progressdlg.GtkProgressDialog, 
+                   ("", self.window, gtk.DIALOG_MODAL), popup_time=2)
 
         length = 0
         for root, dirs, files in os.walk(media_path):
             length += len(files)
-        progress.set_pass(_('Finding files'), length)
+        status = progressdlg.LongOpStatus(msg=_("Finding Files"),
+                                          total_steps=length,
+                                          interval=length//20,
+                                          can_cancel=True)
+        pmon.add_op(status)
 
         all_files = {}
         for root, dirs, files in os.walk(media_path):
@@ -318,7 +328,7 @@ class MediaVerify(tool.Tool, ManagedWindow):
                 except IOError as err:
                     error_msg = '%s: %s' % (err.strerror, full_path)
                     self.models[5].append((error_msg, None))
-                    progress.step()
+                    status.heartbeat()
                     continue
 
                 rel_path = relative_path(full_path, media_path)
@@ -328,12 +338,17 @@ class MediaVerify(tool.Tool, ManagedWindow):
                 else:
                     all_files[md5sum] = [rel_path]
 
-                progress.step()
-                if progress.get_cancelled():
+                status.heartbeat()
+                if status.should_cancel():
                     break
+        status.end()
 
         length = self.db.get_number_of_media_objects()
-        progress.set_pass(_('Checking paths'), length)
+        status = progressdlg.LongOpStatus(msg=_("Checking Paths"),
+                                          total_steps=length,
+                                          interval=length,
+                                          can_cancel=True)
+        pmon.add_op(status)
 
         in_gramps = []
         for handle in self.db.get_media_object_handles():
@@ -368,8 +383,8 @@ class MediaVerify(tool.Tool, ManagedWindow):
             else:
                 self.models[1].append((gramps_path, handle))
 
-            progress.step()
-            if progress.get_cancelled():
+            status.heartbeat()
+            if status.should_cancel():
                 break
 
         # Duplicate files or files not in Gramps
@@ -381,15 +396,22 @@ class MediaVerify(tool.Tool, ManagedWindow):
                 text = ', '.join(all_files[md5sum])
                 self.models[3].append((text, all_files[md5sum][0]))
 
-        progress.close()
         self.show_tabs()
+        status.end()
 
     def fix_media(self, button):
         """
         Fix paths to moved media files.
         """
-        progress = ProgressMeter(self.window_name, can_cancel=True)
-        progress.set_pass(_('Fixing file paths'), len(self.moved_files))
+        pmon = progressdlg.ProgressMonitor(progressdlg.GtkProgressDialog, 
+                   ("", self.window, gtk.DIALOG_MODAL), popup_time=2)
+
+        length = len(self.moved_files)
+        status = progressdlg.LongOpStatus(msg=_('Fixing file paths'),
+                                          total_steps=length,
+                                          interval=length,
+                                          can_cancel=True)
+        pmon.add_op(status)
 
         with DbTxn(_("Fix media paths"), self.db, batch=True) as trans:
             
@@ -398,13 +420,13 @@ class MediaVerify(tool.Tool, ManagedWindow):
                 media.set_path(new_path)
                 self.db.commit_media_object(media, trans)
 
-                progress.step()
-                if progress.get_cancelled():
+                status.heartbeat()
+                if status.should_cancel():
                     break
 
-        progress.close()
         self.models[0].clear()
         self.show_tabs()
+        status.end()
 
 #------------------------------------------------------------------------
 #
