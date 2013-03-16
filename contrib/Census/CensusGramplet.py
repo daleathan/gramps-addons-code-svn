@@ -232,6 +232,7 @@ class CensusEditor(ManagedWindow.ManagedWindow):
         ManagedWindow.ManagedWindow.__init__(self, uistate, track, event)
 
         self.widgets = {}
+        self.model = None
         top = self.__create_gui()
         self.set_window(top, None, self.get_menu_title())
 
@@ -647,6 +648,9 @@ class CensusEditor(ManagedWindow.ManagedWindow):
         """
         Called when the user clicks the OK button.
         """
+        if self.model is None:
+            return
+
         with DbTxn(self.get_menu_title(), self.db) as trans:
             if not self.event.get_handle():
                 self.db.add_event(self.event, trans)
