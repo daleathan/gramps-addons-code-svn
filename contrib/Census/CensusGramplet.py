@@ -210,6 +210,7 @@ from Census import ORDER_ATTR
 from Census import (get_census_date, get_census_columns, get_census_citation,
                     get_census_sources, get_report_columns)
 from gui.selectors import SelectorFactory
+from config import config
 
 class CensusEditor(ManagedWindow.ManagedWindow):
     """
@@ -224,6 +225,11 @@ class CensusEditor(ManagedWindow.ManagedWindow):
         self.track = track
         self.db = dbstate.db
         
+        self._config = config.register_manager('census')
+        self._config.register('interface.census-width', 600)
+        self._config.register('interface.census-height', 400)
+        self._config.init()
+
         self.event = event
         self.citation = get_census_citation(self.db, self.event)
         if self.citation is None:
@@ -235,6 +241,10 @@ class CensusEditor(ManagedWindow.ManagedWindow):
         self.model = None
         top = self.__create_gui()
         self.set_window(top, None, self.get_menu_title())
+
+        width = self._config.get('interface.census-width')
+        height = self._config.get('interface.census-height')
+        self.window.resize(width, height)
 
         self.place_field = PlaceEntry(self.dbstate, self.uistate, self.track,
                                       self.widgets['place_text'],
@@ -278,7 +288,6 @@ class CensusEditor(ManagedWindow.ManagedWindow):
         Create and display the GUI components of the editor.
         """
         root = gtk.Window(type=gtk.WINDOW_TOPLEVEL)
-        root.set_default_size(600, 400)
         root.set_transient_for(self.uistate.window)
 
         vbox = gtk.VBox()
@@ -696,6 +705,10 @@ class CensusEditor(ManagedWindow.ManagedWindow):
         """
         Close the editor window.
         """
+        (width, height) = self.window.get_size()
+        self._config.set('interface.census-width', width)
+        self._config.set('interface.census-height', height)
+        self._config.save()
         ManagedWindow.ManagedWindow.close(self)
 
     def help_clicked(self, obj):
