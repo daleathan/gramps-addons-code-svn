@@ -207,8 +207,8 @@ from gui.editors import EditPerson
 import GrampsDisplay
 from QuestionDialog import ErrorDialog
 from Census import ORDER_ATTR
-from Census import (get_census_date, get_census_columns, get_census_citation,
-                    get_census_sources, get_report_columns)
+from Census import (get_census_date, get_census_columns, get_census_headings,
+                    get_census_citation, get_census_sources, get_report_columns)
 from gui.selectors import SelectorFactory
 from gui.editors.displaytabs import GalleryTab, GrampsTab
 from config import config
@@ -232,7 +232,6 @@ class CensusEditor(ManagedWindow.ManagedWindow):
         ManagedWindow.ManagedWindow.__init__(self, uistate, track, event)
 
         self.widgets = {}
-        self.model = None
         top = self.__create_gui()
         self.set_window(top, None, self.get_menu_title())
 
@@ -254,7 +253,6 @@ class CensusEditor(ManagedWindow.ManagedWindow):
             self.citation.get_page, 
             self.db.readonly)
 
-        self.initial_people = []
         if self.event.get_handle():
             self.widgets['census_combo'].set_sensitive(False)
             self.__populate_gui(event)
@@ -386,6 +384,13 @@ class CensusEditor(ManagedWindow.ManagedWindow):
                                        census_combo)
         self._add_tab(notebook, self.details)
 
+        self.headings = HeadingsTab(self.dbstate,
+                                       self.uistate,
+                                       self.track,
+                                       self.event,
+                                       census_combo)
+        self._add_tab(notebook, self.headings)
+
         self.gallery_list = GalleryTab(self.dbstate,
                                        self.uistate,
                                        self.track,
@@ -438,18 +443,24 @@ class CensusEditor(ManagedWindow.ManagedWindow):
         columns = get_census_columns(census_id)
         report_columns = get_report_columns(census_id)
         self.details.create_table(columns, report_columns)
-        
+        heading_list = get_census_headings(census_id)
+        self.headings.create_table(heading_list)
+
     def save(self, button):
         """
         Called when the user clicks the OK button.
         """
-        if self.details.is_empty():
+        if self.widgets['census_combo'].get_active() == -1:
+            ErrorDialog(_('Census Editor'),
+                        _('Cannot save this census.  First select '
+                          'a census from the drop-down list.'))
             return
 
         with DbTxn(self.get_menu_title(), self.db) as trans:
             if not self.event.get_handle():
                 self.db.add_event(self.event, trans)
 
+            self.headings.save()
             self.details.save(trans)
 
             citation_handle = self.citation.get_handle()
@@ -478,6 +489,11 @@ class CensusEditor(ManagedWindow.ManagedWindow):
         """
         GrampsDisplay.help(webpage='Census_Addons')
 
+#------------------------------------------------------------------------
+#
+# Details Tab
+#
+#------------------------------------------------------------------------
 class DetailsTab(GrampsTab):
     """
     Details tab in the census editor.
@@ -567,8 +583,9 @@ class DetailsTab(GrampsTab):
         Create a new person and add them to the census.
         """
         if self.source_combo.get_active() == -1:
-            ErrorDialog(_('Cannot add a person to this census.'),
-                        _('First select a census from the drop-down list.'))
+            ErrorDialog(_('Census Editor'),
+                        _('Cannot add a person to this census.  First select '
+                          'a census from the drop-down list.'))
             return
             
         person = gen.lib.Person()
@@ -644,7 +661,6 @@ class DetailsTab(GrampsTab):
         if iter_:
             model.remove(iter_)
             if len(self.model) == 0:
-                self.source_combo.set_sensitive(True)
                 self._set_label()
 
     def __move_person(self, button, direction):
@@ -702,7 +718,7 @@ class DetailsTab(GrampsTab):
 
     def create_table(self, columns, report_columns):
         """
-        Create a model and treeview for the census.
+        Create a model and treeview for the census details.
         """
         self.columns = list(columns)
         self.model = gtk.ListStore(*[str] * (len(columns) + 1))
@@ -760,7 +776,7 @@ class DetailsTab(GrampsTab):
         
     def save(self, trans):
         """
-        Save the census detail to the database.
+        Save the census details to the database.
         """
         # Update people on the census
         all_people = []    
@@ -776,9 +792,9 @@ class DetailsTab(GrampsTab):
                 person.add_event_ref(event_ref)
             # Write attributes
             attrs = event_ref.get_attribute_list()
-            self.set_attribute(event_ref, attrs, ORDER_ATTR, str(order + 1))
+            set_attribute(event_ref, attrs, ORDER_ATTR, str(order + 1))
             for offset, name in enumerate(self.columns[1:]):
-                self.set_attribute(event_ref, attrs, name, row[offset + 2])
+                set_attribute(event_ref, attrs, name, row[offset + 2])
             self.db.commit_person(person, trans)
 
         # Remove links to people no longer on census
@@ -789,38 +805,6 @@ class DetailsTab(GrampsTab):
             person.set_event_ref_list(ref_list)
             self.db.commit_person(person, trans)
 
-    def get_attribute(self, attrs, name):
-        """
-        Return a named attribute from a list of attributes.  Return 'None' if
-        the attribute is not in the list.
-        """
-        for attr in attrs:
-            if attr.get_type() == name:
-                return attr
-        return None
-
-    def set_attribute(self, event_ref, attrs, name, value):
-        """
-        Set a named attribute to a given value.  Create the attribute if it
-        does not already exist.  Delete it if the value is None or ''.
-        """
-        attr = self.get_attribute(attrs, name)
-        if attr is None:
-            if value:
-                # Add
-                attr = gen.lib.Attribute()
-                attr.set_type(name)
-                attr.set_value(value)
-                if name == ORDER_ATTR:
-                    attr.set_privacy(True)
-                event_ref.add_attribute(attr)
-        else:
-            if not value:
-                # Remove
-                event_ref.remove_attribute(attr)
-            elif attr.get_value() != value:
-                # Update
-                attr.set_value(value)
         
     def get_census_event_ref(self, person):
         """
@@ -831,3 +815,136 @@ class DetailsTab(GrampsTab):
             if event_ref.ref == self.event.get_handle():
                 return event_ref
         return None
+
+#------------------------------------------------------------------------
+#
+# Headings Tab
+#
+#------------------------------------------------------------------------
+class HeadingsTab(GrampsTab):
+    """
+    Headings tab in the census editor.
+    """
+    def __init__(self, dbstate, uistate, track, event, source_combo):
+        GrampsTab.__init__(self, dbstate, uistate, track, _('Headings'))
+        self.db = dbstate.db
+        self.event = event
+        self.heading_list = []
+        self.source_combo = source_combo
+        self._set_label()
+
+    def get_icon_name(self):
+        return 'gramps-attribute'
+
+    def build_interface(self):
+        """
+        Builds the interface.
+        """
+        self.model = gtk.ListStore(str, str)
+        self.view = gtk.TreeView(self.model)
+        self.selection = self.view.get_selection()
+        
+        renderer = gtk.CellRendererText()
+        column = gtk.TreeViewColumn(_('Key'), renderer, text=0)
+        self.view.append_column(column)
+
+        renderer = gtk.CellRendererText()
+        renderer.set_property('editable', True)
+        renderer.connect('edited', self.__cell_edited, (self.model, 1))
+        column = gtk.TreeViewColumn(_('Value'), renderer, text=1)
+        self.view.append_column(column)
+
+        scrollwin = gtk.ScrolledWindow()
+        scrollwin.add_with_viewport(self.view)
+        scrollwin.set_policy(gtk.POLICY_AUTOMATIC, gtk.POLICY_AUTOMATIC)
+
+        self.pack_start(scrollwin)
+
+    def is_empty(self):
+        """
+        Indicate if the tab contains any data. This is used to determine
+        how the label should be displayed.
+        """
+        for row in self.model:
+            if row[1]:
+                return False
+        return True
+
+    def create_table(self, heading_list):
+        """
+        Create the list of headings.
+        """
+        self.heading_list = heading_list
+        self.model.clear()
+        attr_list = self.event.get_attribute_list()
+        for heading in heading_list:
+            attr = get_attribute(attr_list, heading)
+            if attr:
+                self.model.append((heading, attr.get_value()))
+            else:
+                self.model.append((heading, ''))
+        self._set_label()
+
+    def save(self):
+        """
+        Save the census headings to the database.
+        """
+        new_list = []
+        for attr in self.event.get_attribute_list():
+            if attr.get_type() not in self.heading_list:
+                new_list.append(attr)
+
+        for row in self.model:
+            attr = gen.lib.Attribute()
+            attr.set_type(row[0])
+            attr.set_value(row[1])
+            new_list.append(attr)
+
+        self.event.set_attribute_list(new_list)                   
+
+    def __cell_edited(self, cell, path, new_text, data):
+        """
+        Called when a cell is edited in the list of headings.
+        """
+        model, column = data
+        model[path][column] = new_text
+        self.source_combo.set_sensitive(False)
+        self._set_label()
+
+#------------------------------------------------------------------------
+#
+# Helper functions
+#
+#------------------------------------------------------------------------
+def get_attribute(attrs, name):
+    """
+    Return a named attribute from a list of attributes.  Return 'None' if
+    the attribute is not in the list.
+    """
+    for attr in attrs:
+        if attr.get_type() == name:
+            return attr
+    return None
+
+def set_attribute(event_ref, attrs, name, value):
+    """
+    Set a named attribute to a given value.  Create the attribute if it
+    does not already exist.  Delete it if the value is None or ''.
+    """
+    attr = get_attribute(attrs, name)
+    if attr is None:
+        if value:
+            # Add
+            attr = gen.lib.Attribute()
+            attr.set_type(name)
+            attr.set_value(value)
+            if name == ORDER_ATTR:
+                attr.set_privacy(True)
+            event_ref.add_attribute(attr)
+    else:
+        if not value:
+            # Remove
+            event_ref.remove_attribute(attr)
+        elif attr.get_value() != value:
+            # Update
+            attr.set_value(value)

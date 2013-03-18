@@ -163,6 +163,12 @@ def get_census_columns(census_id):
     """
     return [x[0] for x in CENSUS.get_columns(census_id)]
     
+def get_census_headings(census_id):
+    """
+    Return a list of headings for a given census.
+    """
+    return CENSUS.get_headings(census_id)
+    
 def get_report_columns(census_id):
     """
     Return a list of column definitions for a given census.  These will be used
