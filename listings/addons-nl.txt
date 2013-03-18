@@ -9,7 +9,7 @@
 {'d': 'Gramplet interface for census data', 'g': '3.4', 'i': 'Census Gramplet', 'n': 'Volkstelling-gramplet', 't': u'Gramplet', 'v': '1.0.16', 'z': 'Census.addon.tgz'}
 {'d': 'Fix changed attributes in census data', 'g': '3.4', 'i': 'censusfix', 'n': 'Census Fix', 't': u'Tool', 'v': '1.0.0', 'z': 'Census.addon.tgz'}
 {'d': 'Gramplet for generic notes', 'g': '3.4', 'i': 'TODO2', 'n': 'Nog te doen 2', 't': u'Gramplet', 'v': '0.0.2', 'z': 'ToDoNotesGramplet.addon.tgz'}
-{'d': 'Verify that media is present in the correct path', 'g': '3.4', 'i': 'mediaverify', 'n': 'Media Verify', 't': u'Tool', 'v': '1.0.2', 'z': 'MediaVerify.addon.tgz'}
+{'d': 'Verify that media is present in the correct path', 'g': '3.4', 'i': 'mediaverify', 'n': 'Media Verify', 't': u'Tool', 'v': '1.0.3', 'z': 'MediaVerify.addon.tgz'}
 {'d': 'Set Tag to a given value.', 'g': '3.4', 'i': 'SetTag', 'n': 'Set Tag', 't': u'Tool', 'v': '0.1.4', 'z': 'SetTagTool.addon.tgz'}
 {'d': "Bibliotheek voor 'webstek'-verzamelingen", 'g': '3.4', 'i': 'libwebconnect', 'n': 'libwebconnect', 't': u'Plugin lib', 'v': '1.0.7', 'z': 'libwebconnect.addon.tgz'}
 {'d': 'De tien laatst gewijzigde persoonsgegevens worden gelijst', 'g': '3.4', 'i': 'LastChangeGramplet', 'n': "'Laatste-wijziging'-gramplet", 't': u'Gramplet', 'v': '0.0.12', 'z': 'LastChange.addon.tgz'}
