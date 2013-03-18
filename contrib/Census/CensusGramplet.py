@@ -210,14 +210,13 @@ from Census import ORDER_ATTR
 from Census import (get_census_date, get_census_columns, get_census_citation,
                     get_census_sources, get_report_columns)
 from gui.selectors import SelectorFactory
+from gui.editors.displaytabs import GalleryTab, GrampsTab
 from config import config
 
 class CensusEditor(ManagedWindow.ManagedWindow):
     """
     Census Editor.
     """
-    SelectPerson = SelectorFactory('Person')
-
     def __init__(self, dbstate, uistate, track, event):
 
         self.dbstate = dbstate
@@ -225,11 +224,6 @@ class CensusEditor(ManagedWindow.ManagedWindow):
         self.track = track
         self.db = dbstate.db
         
-        self._config = config.register_manager('census')
-        self._config.register('interface.census-width', 600)
-        self._config.register('interface.census-height', 400)
-        self._config.init()
-
         self.event = event
         self.citation = get_census_citation(self.db, self.event)
         if self.citation is None:
@@ -242,6 +236,7 @@ class CensusEditor(ManagedWindow.ManagedWindow):
         top = self.__create_gui()
         self.set_window(top, None, self.get_menu_title())
 
+        self._config = config.get_manager('census')
         width = self._config.get('interface.census-width')
         height = self._config.get('interface.census-height')
         self.window.resize(width, height)
@@ -263,6 +258,12 @@ class CensusEditor(ManagedWindow.ManagedWindow):
         if self.event.get_handle():
             self.widgets['census_combo'].set_sensitive(False)
             self.__populate_gui(event)
+            self.details.populate_gui(event)
+
+    def _add_tab(self, notebook, page):
+        notebook.insert_page(page, page.get_tab_widget())
+        page.label.set_use_underline(True)
+        return page
 
     def get_menu_title(self):
         """
@@ -360,6 +361,146 @@ class CensusEditor(ManagedWindow.ManagedWindow):
         tab.attach(place_add, 3, 4, 3, 4, xoptions=0)
         self.widgets['place_add'] = place_add
  
+        button_box = gtk.HButtonBox()
+        button_box.set_layout(gtk.BUTTONBOX_END)
+        
+        help_btn = gtk.Button(stock=gtk.STOCK_HELP)
+        help_btn.connect('clicked', self.help_clicked)
+        button_box.add(help_btn)
+        button_box.set_child_secondary(help_btn, True)
+
+        cancel_btn = gtk.Button(stock=gtk.STOCK_CANCEL)
+        cancel_btn.connect('clicked', self.close)
+        button_box.add(cancel_btn)
+        
+        ok_btn = gtk.Button(stock=gtk.STOCK_OK)
+        ok_btn.connect('clicked', self.save)
+        button_box.add(ok_btn)
+
+        notebook = gtk.Notebook()
+
+        self.details = DetailsTab(self.dbstate,
+                                       self.uistate,
+                                       self.track,
+                                       self.event,
+                                       census_combo)
+        self._add_tab(notebook, self.details)
+
+        self.gallery_list = GalleryTab(self.dbstate,
+                                       self.uistate,
+                                       self.track,
+                                       self.citation.get_media_list())
+        self._add_tab(notebook, self.gallery_list)
+
+        vbox.pack_start(tab, expand=False, padding=10)
+        vbox.pack_start(notebook)
+        vbox.pack_end(button_box, expand=False, fill=True, padding=10)
+        
+        root.add(vbox)
+        root.show_all()
+
+        notebook.set_current_page(0)
+
+        return root
+
+    def __populate_gui(self, event):
+        """
+        Populate the GUI for a given census event.
+        """
+        census_combo = self.widgets['census_combo']
+        for pos, row in enumerate(census_combo.get_model()):
+            if row[0] == self.citation.get_reference_handle():
+                census_combo.set_active(pos)
+                
+        date_text = self.widgets['date_text']
+        date_text.set_text(DateHandler.get_date(event))
+
+    def __census_changed(self, combo):
+        """
+        Called when the user selects a new census from the combo box.
+        """
+        model = combo.get_model()
+        index = combo.get_active()
+        census_id = model[index][2]
+
+        # Set date
+        census_date = get_census_date(census_id)
+
+        date_text = self.widgets['date_text']
+        date_text.set_text(DateHandler.displayer.display(census_date))
+        self.event.set_date_object(census_date)
+        self.citation.set_date_object(census_date)
+
+        # Set source
+        self.citation.set_reference_handle(model[index][0])
+
+        # Set new columns
+        columns = get_census_columns(census_id)
+        report_columns = get_report_columns(census_id)
+        self.details.create_table(columns, report_columns)
+        
+    def save(self, button):
+        """
+        Called when the user clicks the OK button.
+        """
+        if self.details.is_empty():
+            return
+
+        with DbTxn(self.get_menu_title(), self.db) as trans:
+            if not self.event.get_handle():
+                self.db.add_event(self.event, trans)
+
+            self.details.save(trans)
+
+            citation_handle = self.citation.get_handle()
+            if not citation_handle:
+                citation_handle = self.db.add_citation(self.citation, trans)
+                self.event.add_citation(citation_handle)
+            else:
+                self.db.commit_citation(self.citation, trans)
+
+            self.db.commit_event(self.event, trans)
+        self.close()
+
+    def close(self, *args):
+        """
+        Close the editor window.
+        """
+        (width, height) = self.window.get_size()
+        self._config.set('interface.census-width', width)
+        self._config.set('interface.census-height', height)
+        self._config.save()
+        ManagedWindow.ManagedWindow.close(self)
+
+    def help_clicked(self, obj):
+        """
+        Display the relevant portion of GRAMPS manual
+        """
+        GrampsDisplay.help(webpage='Census_Addons')
+
+class DetailsTab(GrampsTab):
+    """
+    Details tab in the census editor.
+    """
+    SelectPerson = SelectorFactory('Person')
+
+    def __init__(self, dbstate, uistate, track, event, source_combo):
+        GrampsTab.__init__(self, dbstate, uistate, track, _('Details'))
+        self.db = dbstate.db
+        self.event = event
+        self.source_combo = source_combo
+        self.model = None
+        self.columns = []
+        self.initial_people = []
+        self._set_label()
+
+    def get_icon_name(self):
+        return 'gramps-attribute'
+
+    def build_interface(self):
+        """
+        Builds the interface.
+        """
         hbox = gtk.HBox()
         
         image = gtk.Image()
@@ -409,35 +550,160 @@ class CensusEditor(ManagedWindow.ManagedWindow):
         scrollwin.add_with_viewport(self.view)
         scrollwin.set_policy(gtk.POLICY_AUTOMATIC, gtk.POLICY_AUTOMATIC)
 
-        #self.__create_table([_('Name')])
+        self.pack_start(hbox, expand=False)
+        self.pack_start(scrollwin)
 
-        button_box = gtk.HButtonBox()
-        button_box.set_layout(gtk.BUTTONBOX_END)
+    def is_empty(self):
+        """
+        Indicate if the tab contains any data. This is used to determine
+        how the label should be displayed.
+        """
+        if self.model is None:
+            return True
+        return len(self.model) == 0
+
+    def __add_person(self, button):
+        """
+        Create a new person and add them to the census.
+        """
+        if self.source_combo.get_active() == -1:
+            ErrorDialog(_('Cannot add a person to this census.'),
+                        _('First select a census from the drop-down list.'))
+            return
+            
+        person = gen.lib.Person()
+        EditPerson(self.dbstate, self.uistate, self.track, person,
+                   self.__person_added)
+
+    def __person_added(self, person):
+        """
+        Called when a person is added to the census.
+        """
+        self.model.append(self.__new_person_row(person))
+        self.source_combo.set_sensitive(False)
+        self._set_label()
+
+    def __edit_person(self, treeview, path, view_column):
+        """
+        Edit a person from selection.
+        """
+        model, iter_ = self.selection.get_selected()
+        if iter_: 
+            handle = model.get_value(iter_, 0)
+            if handle:
+                person = self.dbstate.db.get_person_from_handle(handle)
+                EditPerson(self.dbstate, self.uistate, self.track, person)
         
-        help_btn = gtk.Button(stock=gtk.STOCK_HELP)
-        help_btn.connect('clicked', self.help_clicked)
-        button_box.add(help_btn)
-        button_box.set_child_secondary(help_btn, True)
+    def __share_person(self, button):
+        """
+        Select an existing person and add them to the census.
+        """
+        if self.source_combo.get_active() == -1:
+            ErrorDialog(_('Cannot add a person to this census.'),
+                        _('First select a census from the drop-down list.'))
+            return
 
-        cancel_btn = gtk.Button(stock=gtk.STOCK_CANCEL)
-        cancel_btn.connect('clicked', self.close)
-        button_box.add(cancel_btn)
+        skip_list = []
+        handle = None
+        if len(self.model) > 0:
+            model, iter_ = self.selection.get_selected()
+            if iter_: # get from selection:
+                handle = model.get_value(iter_, 0)
+            else: # get from first row
+                handle = self.model[0][0]
+        else: # no rows, let's try to get active person:
+            handle = self.uistate.get_active('Person')
+
+        sel = self.SelectPerson(self.dbstate, self.uistate, self.track,
+                   _("Select Person"), skip=skip_list, default=handle)
+        person = sel.run()
+        if person:
+            self.model.append(self.__new_person_row(person))
+            self.source_combo.set_sensitive(False)
+            self._set_label()
+
+    def __new_person_row(self, person):
+        """
+        Create a new model entry for a person.
+        """
+        row = [None] * (len(self.columns) + 1)
+        row[0] = person.handle
+
+        # Insert name in column called "Name", if present
+        try:
+            row[self.columns.index("Name") + 1] = name_displayer.display(person)
+        except ValueError:
+            pass
+        return row
+
+    def __remove_person(self, button):
+        """
+        Remove a person from the census.
+        """
+        model, iter_ = self.selection.get_selected()
+        if iter_:
+            model.remove(iter_)
+            if len(self.model) == 0:
+                self.source_combo.set_sensitive(True)
+                self._set_label()
+
+    def __move_person(self, button, direction):
+        """
+        Change the position of a person in the list.
+        """
+        model, iter_ = self.selection.get_selected()
+        if iter_ is None:
+            return
+            
+        row = model.get_path(iter_)[0]
+        if direction == 'up' and row > 0:
+            model.move_before(iter_, model.get_iter((row - 1,)))
+            
+        if direction == 'down' and row < len(model) - 1:
+            model.move_after(iter_, model.get_iter((row + 1,)))
+
+    def __cell_edited(self, cell, path, new_text, data):
+        """
+        Called when a cell is edited in the list of people.
+        """
+        model, column = data
+        model[path][column] = new_text
+
+        next_column = self.view.get_column(column)
+        if next_column:
+            # Setting start_editing=True causes problems if Tab key ends entry
+            self.view.set_cursor_on_cell(path, next_column, start_editing=False)
+            #self.view.grab_focus()
         
-        ok_btn = gtk.Button(stock=gtk.STOCK_OK)
-        ok_btn.connect('clicked', self.save)
-        button_box.add(ok_btn)
-      
-        vbox.pack_start(tab, expand=False, padding=10)
-        vbox.pack_start(hbox, expand=False)
-        vbox.pack_start(scrollwin)
-        vbox.pack_end(button_box, expand=False, fill=True, padding=10)
-        
-        root.add(vbox)
-        root.show_all()
+    def __get_longnames(self, columns, report_columns):
+        self.longnames = dict(
+            [c, r[0]] for c, r in zip(columns, report_columns)
+            )
 
-        return root
+    def on_query_tooltip(self, widget, x, y, keyboard_tip, tooltip):
+        """
+        Display the longname as a tooltip. 
+        """
+        if not widget.get_tooltip_context(x, y, keyboard_tip):
+            return False
+        else:
+            model, path, iter_ = widget.get_tooltip_context(x, y, keyboard_tip)
+            bin_x, bin_y = widget.convert_widget_to_bin_window_coords(x, y)
+            result = widget.get_path_at_pos(bin_x, bin_y)
+    
+            if result is not None:
+                path, column, cell_x, cell_y = result
 
-    def __create_table(self, columns):
+                if column is not None:
+                    longname = self.longnames.get(column.get_title(),'')
+                    tooltip.set_markup('<b>%s</b>' % longname)
+                    widget.set_tooltip_cell(tooltip, path, None, None)
+                return True
+
+    def create_table(self, columns, report_columns):
+        """
+        Create a model and treeview for the census.
+        """
         self.columns = list(columns)
         self.model = gtk.ListStore(*[str] * (len(columns) + 1))
         self.view.set_model(self.model)
@@ -457,40 +723,12 @@ class CensusEditor(ManagedWindow.ManagedWindow):
             self.view.append_column(column)
         self.view.connect("row-activated", self.__edit_person)
 
-    def on_query_tooltip(self, widget, x, y, keyboard_tip, tooltip):
-        if not widget.get_tooltip_context(x, y, keyboard_tip):
-            return False
-        else:
-            model, path, iter_ = widget.get_tooltip_context(x, y, keyboard_tip)
-            bin_x, bin_y = widget.convert_widget_to_bin_window_coords(x, y)
-            result = widget.get_path_at_pos(bin_x, bin_y)
-    
-            if result is not None:
-                path, column, cell_x, cell_y = result
+        self.__get_longnames(columns, report_columns)
 
-                if column is not None:
-                    longname = self.longnames.get(column.get_title(),'')
-                    tooltip.set_markup('<b>%s</b>' % longname)
-                    widget.set_tooltip_cell(tooltip, path, None, None)
-                return True
-
-    def __get_longnames(self, columns, report_columns):
-        self.longnames = dict(
-            [c, r[0]] for c, r in zip(columns, report_columns)
-            )
-    
-    def __populate_gui(self, event):
+    def populate_gui(self, event):
         """
-        Populate the GUI for a given census event.
+        Populate the model.
         """
-        census_combo = self.widgets['census_combo']
-        for pos, row in enumerate(census_combo.get_model()):
-            if row[0] == self.citation.get_reference_handle():
-                census_combo.set_active(pos)
-                
-        date_text = self.widgets['date_text']
-        date_text.set_text(DateHandler.get_date(event))
-
         person_list = []
         for item in self.db.find_backlink_handles(event.get_handle(), 
                              include_classes=['Person']):
@@ -518,204 +756,38 @@ class CensusEditor(ManagedWindow.ManagedWindow):
                 row.append(person_data[3].get(attr))
             self.model.append(tuple(row))
 
-    def __add_person(self, button):
-        """
-        Create a new person and add them to the census.
-        """
-        if self.widgets['census_combo'].get_active() == -1:
-            ErrorDialog(_('Cannot add a person to this census.'),
-                        _('First select a census from the drop-down list.'))
-            return
-            
-        person = gen.lib.Person()
-        EditPerson(self.dbstate, self.uistate, self.track, person,
-                   self.__person_added)
-
-    def __person_added(self, person):
-        """
-        Called when a person is added to the census.
-        """
-        self.model.append(self.__new_person_row(person))
-        self.widgets['census_combo'].set_sensitive(False)
-
-    def __edit_person(self, treeview, path, view_column):
-        """
-        Edit a person from selection.
-        """
-        model, iter_ = self.selection.get_selected()
-        if iter_: 
-            handle = model.get_value(iter_, 0)
-            if handle:
-                person = self.dbstate.db.get_person_from_handle(handle)
-                EditPerson(self.dbstate, self.uistate, self.track, person)
+        self._set_label()
         
-    def __share_person(self, button):
+    def save(self, trans):
         """
-        Select an existing person and add them to the census.
+        Save the census detail to the database.
         """
-        if self.widgets['census_combo'].get_active() == -1:
-            ErrorDialog(_('Cannot add a person to this census.'),
-                        _('First select a census from the drop-down list.'))
-            return
+        # Update people on the census
+        all_people = []    
+        for order, row in enumerate(self.model):
+            all_people.append(row[0])
+            person = self.db.get_person_from_handle(row[0])
+            event_ref = self.get_census_event_ref(person)
+            if event_ref is None:
+                # Add new link to census
+                event_ref = gen.lib.EventRef()
+                event_ref.ref = self.event.get_handle()
+                event_ref.set_role(gen.lib.EventRoleType.PRIMARY)
+                person.add_event_ref(event_ref)
+            # Write attributes
+            attrs = event_ref.get_attribute_list()
+            self.set_attribute(event_ref, attrs, ORDER_ATTR, str(order + 1))
+            for offset, name in enumerate(self.columns[1:]):
+                self.set_attribute(event_ref, attrs, name, row[offset + 2])
+            self.db.commit_person(person, trans)
 
-        skip_list = []
-        handle = None
-        if len(self.model) > 0:
-            model, iter_ = self.selection.get_selected()
-            if iter_: # get from selection:
-                handle = model.get_value(iter_, 0)
-            else: # get from first row
-                handle = self.model[0][0]
-        else: # no rows, let's try to get active person:
-            handle = self.uistate.get_active('Person')
-
-        sel = self.SelectPerson(self.dbstate, self.uistate, self.track,
-                   _("Select Person"), skip=skip_list, default=handle)
-        person = sel.run()
-        if person:
-            self.model.append(self.__new_person_row(person))
-            self.widgets['census_combo'].set_sensitive(False)
-            
-    def __new_person_row(self, person):
-        """
-        Create a new model entry for a person.
-        """
-        row = [None] * (len(self.columns) + 1)
-        row[0] = person.handle
-
-        # Insert name in column called "Name", if present
-        try:
-            row[self.columns.index("Name") + 1] = name_displayer.display(person)
-        except ValueError:
-            pass
-        return row
-
-    def __remove_person(self, button):
-        """
-        Remove a person from the census.
-        """
-        model, iter_ = self.selection.get_selected()
-        if iter_:
-            model.remove(iter_)
-            if len(self.model) == 0:
-                self.widgets['census_combo'].set_sensitive(True)
-        
-    def __move_person(self, button, direction):
-        """
-        Change the position of a person in the list.
-        """
-        model, iter_ = self.selection.get_selected()
-        if iter_ is None:
-            return
-            
-        row = model.get_path(iter_)[0]
-        if direction == 'up' and row > 0:
-            model.move_before(iter_, model.get_iter((row - 1,)))
-            
-        if direction == 'down' and row < len(model) - 1:
-            model.move_after(iter_, model.get_iter((row + 1,)))
-
-    def __census_changed(self, combo):
-        """
-        Called when the user selects a new census from the combo box.
-        """
-        model = combo.get_model()
-        index = combo.get_active()
-        census_id = model[index][2]
-
-        # Set date
-        census_date = get_census_date(census_id)
-
-        date_text = self.widgets['date_text']
-        date_text.set_text(DateHandler.displayer.display(census_date))
-        self.event.set_date_object(census_date)
-        self.citation.set_date_object(census_date)
-
-        # Set source
-        self.citation.set_reference_handle(model[index][0])
-
-        # Set new columns
-        columns = get_census_columns(census_id)
-        report_columns = get_report_columns(census_id)
-        self.__create_table(columns)
-        self.__get_longnames(columns, report_columns)
-        
-    def __cell_edited(self, cell, path, new_text, data):
-        """
-        Called when a cell is edited in the list of people.
-        """
-        model, column = data
-        model[path][column] = new_text
-
-        next_column = self.view.get_column(column)
-        if next_column:
-            # Setting start_editing=True causes problems if Tab key ends entry
-            self.view.set_cursor_on_cell(path, next_column, start_editing=False)
-            #self.view.grab_focus()
-        
-    def save(self, button):
-        """
-        Called when the user clicks the OK button.
-        """
-        if self.model is None:
-            return
-
-        with DbTxn(self.get_menu_title(), self.db) as trans:
-            if not self.event.get_handle():
-                self.db.add_event(self.event, trans)
-
-            # Update people on the census
-            all_people = []    
-            for order, row in enumerate(self.model):
-                all_people.append(row[0])
-                person = self.db.get_person_from_handle(row[0])
-                event_ref = self.get_census_event_ref(person)
-                if event_ref is None:
-                    # Add new link to census
-                    event_ref = gen.lib.EventRef()
-                    event_ref.ref = self.event.get_handle()
-                    event_ref.set_role(gen.lib.EventRoleType.PRIMARY)
-                    person.add_event_ref(event_ref)
-                # Write attributes
-                attrs = event_ref.get_attribute_list()
-                self.set_attribute(event_ref, attrs, ORDER_ATTR, str(order + 1))
-                for offset, name in enumerate(self.columns[1:]):
-                    self.set_attribute(event_ref, attrs, name, row[offset + 2])
-                self.db.commit_person(person, trans)
-
-            # Remove links to people no longer on census
-            for handle in (set(self.initial_people) - set(all_people)):
-                person = self.db.get_person_from_handle(handle)
-                ref_list = [event_ref for event_ref in person.get_event_ref_list()
-                                    if event_ref.ref != self.event.handle]
-                person.set_event_ref_list(ref_list)
-                self.db.commit_person(person, trans)
-
-            citation_handle = self.citation.get_handle()
-            if not citation_handle:
-                citation_handle = self.db.add_citation(self.citation, trans)
-                self.event.add_citation(citation_handle)
-            else:
-                self.db.commit_citation(self.citation, trans)
-
-            self.db.commit_event(self.event, trans)
-        self.close()
-
-    def close(self, *args):
-        """
-        Close the editor window.
-        """
-        (width, height) = self.window.get_size()
-        self._config.set('interface.census-width', width)
-        self._config.set('interface.census-height', height)
-        self._config.save()
-        ManagedWindow.ManagedWindow.close(self)
-
-    def help_clicked(self, obj):
-        """
-        Display the relevant portion of GRAMPS manual
-        """
-        GrampsDisplay.help(webpage='Census_Addons')
+        # Remove links to people no longer on census
+        for handle in (set(self.initial_people) - set(all_people)):
+            person = self.db.get_person_from_handle(handle)
+            ref_list = [event_ref for event_ref in person.get_event_ref_list()
+                                if event_ref.ref != self.event.handle]
+            person.set_event_ref_list(ref_list)
+            self.db.commit_person(person, trans)
 
     def get_attribute(self, attrs, name):
         """

@@ -36,6 +36,7 @@ import xml.dom.minidom
 #
 #---------------------------------------------------------------
 import DateHandler
+from config import config
 
 #------------------------------------------------------------------------
 #
@@ -59,6 +60,16 @@ CENSUS_TAG = _('Census')
 
 # Files which may contain census definitions
 definition_files = ['census.xml', 'test.xml', 'custom.xml']
+
+#------------------------------------------------------------------------
+#
+# Configuration file
+#
+#------------------------------------------------------------------------
+CONFIG = config.register_manager('census')
+CONFIG.register('interface.census-width', 600)
+CONFIG.register('interface.census-height', 400)
+CONFIG.init()
 
 #------------------------------------------------------------------------
 #
