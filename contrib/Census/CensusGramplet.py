@@ -36,6 +36,7 @@ import gtk
 #
 #------------------------------------------------------------------------
 from gen.plug import Gramplet
+from gui.dbguielement import DbGUIElement
 from gen.display.name import displayer as name_displayer
 import DateHandler
 import Errors
@@ -55,11 +56,15 @@ _ = get_addon_translator(__file__).ugettext
 # Gramplet class
 #
 #------------------------------------------------------------------------
-class CensusGramplet(Gramplet):
+class CensusGramplet(Gramplet, DbGUIElement):
     """
     Gramplet to display census events for the active person.
     It allows a census to be created or edited with a census editor.
     """
+    def __init__(self, gui, nav_group=0):
+        Gramplet.__init__(self, gui, nav_group)
+        DbGUIElement.__init__(self, self.dbstate.db)
+
     def init(self):
         """
         Initialise the gramplet.
@@ -68,23 +73,26 @@ class CensusGramplet(Gramplet):
         self.gui.get_container_widget().remove(self.gui.textview)
         self.gui.get_container_widget().add_with_viewport(root)
         root.show_all()
-        self.dbstate.db.connect('person-rebuild', self.update)
-        self.dbstate.db.connect('event-rebuild', self.update)
+
+    def _connect_db_signals(self):
+        """
+        called on init of DbGUIElement, connect to db as required.
+        """
+        self.callman.register_callbacks({'person-update': self.changed})
+        self.callman.register_callbacks({'event-update': self.changed})
+        self.callman.connect_all(keys=['person', 'event'])
+    
+    def changed(self, handle):
+        """
+        Called when a registered event is updated.
+        """
+        self.update()
 
     def __create_gui(self):
         """
         Create and display the GUI components of the gramplet.
         """
         vbox = gtk.VBox()
-        hbox = gtk.HBox(False)
-
-        person_label = gtk.Label(_("Census details for: "))
-        person_label.set_alignment(0.0, 0.5)
-        hbox.pack_start(person_label, expand=False)
-
-        self.person_text = gtk.Label()
-        self.person_text.set_alignment(0.0, 0.5)
-        hbox.pack_start(self.person_text, expand=True, fill=True)
 
         self.model = gtk.ListStore(object, str, str, str)
         view = gtk.TreeView(self.model)
@@ -111,9 +119,8 @@ class CensusGramplet(Gramplet):
         edit.connect("clicked", self.__edit_census, view.get_selection())
         button_box.add(edit)
       
-        vbox.pack_start(hbox, expand=False, padding=10)
-        vbox.pack_start(view, padding=10)
-        vbox.pack_end(button_box, expand=False, fill=True)
+        vbox.pack_start(view, expand=True, fill=True)
+        vbox.pack_end(button_box, expand=False, fill=True, padding=4)
         
         return vbox
 
@@ -153,12 +160,13 @@ class CensusGramplet(Gramplet):
         """
         self.model.clear()
         active_person = self.get_active_object("Person")
-        if active_person:
-            self.person_text.set_text(name_displayer.display(active_person))
-        else:
-            self.person_text.set_text(_('No active person set.'))
+        if not active_person:
             return
         
+        self.callman.unregister_all()
+        self.callman.register_obj(active_person)
+        self.callman.register_handles({'person': [active_person.get_handle()]})
+
         db = self.dbstate.db
         for event_ref in active_person.get_event_ref_list():
             if event_ref:
