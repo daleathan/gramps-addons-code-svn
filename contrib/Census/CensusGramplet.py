@@ -903,10 +903,11 @@ class HeadingsTab(GrampsTab):
                 new_list.append(attr)
 
         for row in self.model:
-            attr = gen.lib.Attribute()
-            attr.set_type(row[0])
-            attr.set_value(row[1])
-            new_list.append(attr)
+            if row[1]:
+                attr = gen.lib.Attribute()
+                attr.set_type(row[0])
+                attr.set_value(row[1])
+                new_list.append(attr)
 
         self.event.set_attribute_list(new_list)                   
 
