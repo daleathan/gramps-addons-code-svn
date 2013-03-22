@@ -655,10 +655,10 @@ class DetailsTab(GrampsTab):
         row[0] = person.handle
 
         # Insert name in column called "Name", if present
-        try:
-            row[self.columns.index("Name") + 1] = name_displayer.display(person)
-        except ValueError:
-            pass
+        if _('Name') in self.columns:
+            name = name_displayer.display(person)
+            row[self.columns.index(_('Name')) + 1] = name
+
         return row
 
     def __remove_person(self, button):
@@ -775,9 +775,12 @@ class DetailsTab(GrampsTab):
         person_list.sort()
         
         for person_data in person_list:
-            row = person_data[1:3] # Assumes name is first column
-            for attr in self.columns[1:]:
-                row.append(person_data[3].get(attr))
+            row = person_data[1:2] # handle
+            for attr in self.columns:
+                if attr == _('Name'):
+                    row.append(person_data[3].get(attr, person_data[2]))
+                else:
+                    row.append(person_data[3].get(attr))
             self.model.append(tuple(row))
 
         self._set_label()
@@ -801,8 +804,13 @@ class DetailsTab(GrampsTab):
             # Write attributes
             attrs = event_ref.get_attribute_list()
             set_attribute(event_ref, attrs, ORDER_ATTR, str(order + 1))
-            for offset, name in enumerate(self.columns[1:]):
-                set_attribute(event_ref, attrs, name, row[offset + 2])
+            for offset, name in enumerate(self.columns):
+                value = row[offset + 1]
+                if name == _('Name'):
+                    if value != name_displayer.display(person):
+                        set_attribute(event_ref, attrs, name, value)
+                else:
+                    set_attribute(event_ref, attrs, name, value)
             self.db.commit_person(person, trans)
 
         # Remove links to people no longer on census
@@ -813,7 +821,6 @@ class DetailsTab(GrampsTab):
             person.set_event_ref_list(ref_list)
             self.db.commit_person(person, trans)
 
-        
     def get_census_event_ref(self, person):
         """
         Return the event reference for a given person the points to the census
