@@ -4,7 +4,7 @@
 #
 # Tino Meinen <a.t.meinen@chello.nl>, 2003, 2004, 2005.
 # Kees Bakker <kees.bakker@xs4all.nl>, 2005, 2006, 2007.
-# Erik De Richter <frederik.de.richter@pandora.be>, 2006, 2007, 2008, 2009, 2010.
+# Erik De Richter <frederik.de.richter@gmail.com>, 2006, 2007, 2008, 2009, 2010, 2013.
 #
 # --------------------------------------------------
 # Conventies (kan later altijd nog aangepast worden)
@@ -41,8 +41,8 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-04-10 08:50+0200\n"
 "PO-Revision-Date: 2011-04-08 08:19+0100\n"
-"Last-Translator: Erik De Richter <frederik.de.richter@googlemail.com>\n"
-"Language-Team: nederlands <frederik.de.richter@googlemail.com>\n"
+"Last-Translator: Erik De Richter <frederik.de.richter@gmail.com>\n"
+"Language-Team: nederlands <frederik.de.richter@gmail.com>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -53,16 +53,16 @@ msgstr ""
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.gpr.py:3
 msgid "Deep Connections Gramplet"
-msgstr "'Verre relaties'-gramplet"
+msgstr "'Verre verwantschappen"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.gpr.py:4
 msgid "Gramplet showing a deep relationship between active and home people"
 msgstr ""
-"Gramplet die de verre relatie tussen twee de actieve en de thuispersoon toont"
+"Gramplet die de verre verwantschappen tussen de actieve en de thuispersoon toont"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.gpr.py:10
 msgid "Deep Connections"
-msgstr "Verre relaties"
+msgstr "Verre verwantschappen"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:55
 msgid "Double-click name for details"
@@ -131,7 +131,7 @@ msgstr "zelf"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:179
 msgid "Looking for relationship between\n"
-msgstr "De relatie tussen\n"
+msgstr "De verwantschap tussen\n"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:180
 #, python-format
@@ -158,7 +158,7 @@ msgid ""
 "Press Continue to search for additional relations.\n"
 msgstr ""
 "Gestopt.\n"
-"Druk verder gaan om naar bijkomende relaties te zoeken.\n"
+"Druk verder gaan om naar bijkomende verwantschappen te zoeken.\n"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:216
 #, python-format
@@ -167,4 +167,4 @@ msgid ""
 "Search completed. %d relations found."
 msgstr ""
 "\n"
-"Het zoeken is gedaan. Er werden %d relaties gevonden."
+"Het zoeken is gedaan. Er werden %d verwantschappen gevonden."

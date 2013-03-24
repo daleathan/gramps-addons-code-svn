@@ -4,7 +4,7 @@
 #
 # Tino Meinen <a.t.meinen@chello.nl>, 2003, 2004, 2005.
 # Kees Bakker <kees.bakker@xs4all.nl>, 2005, 2006, 2007.
-# Erik De Richter <frederik.de.richter@pandora.be>, 2006, 2007, 2008, 2009, 2010.
+# Erik De Richter <frederik.de.richter@gmail.com>, 2006, 2007, 2008, 2009, 2010, 2013.
 # Enno Borgsteede <ennoborg@gmail.com>, 2012.
 #
 # --------------------------------------------------
@@ -43,7 +43,7 @@ msgstr ""
 "POT-Creation-Date: 2012-11-24 21:00+0100\n"
 "PO-Revision-Date: 2012-11-25 09:31+0100\n"
 "Last-Translator: Frederik De Richter <frederik.de.richter@gmail.com>\n"
-"Language-Team: nederlands <frederik.de.richter@googlemail.com>\n"
+"Language-Team: nederlands <frederik.de.richter@gmail.com>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -54,11 +54,11 @@ msgstr ""
 
 #: DescendantsLines/DescendantsLines.gpr.py:24
 msgid "Descendants Lines"
-msgstr "Lijnen van afstamming"
+msgstr "Afstammingslijnen"
 
 #: DescendantsLines/DescendantsLines.gpr.py:25
 msgid "Produces descendants lines of a person"
-msgstr "Lijnen van afstamming van een persoon aanmaken"
+msgstr "Afstammingslijnen van een persoon aanmaken"
 
 #: DescendantsLines/DescendantsLines.py:886
 msgid "Unknown"
@@ -130,7 +130,7 @@ msgstr "Generaties"
 
 #: DescendantsLines/DescendantsLines.py:1103
 msgid "The number of generations to include in the report. (0 for unlimited)"
-msgstr "Het aantal generaties dat in het verslag getoond wordt. 50 voor ongelimiteerd)"
+msgstr "Het aantal generaties dat in het verslag getoond wordt. (0 is onbeperkt)"
 
 #: DescendantsLines/DescendantsLines.py:1110
 msgid "Name format"
@@ -142,7 +142,7 @@ msgstr "Standaard"
 
 #: DescendantsLines/DescendantsLines.py:1114
 msgid "Select the format to display names"
-msgstr "Kies het naamformaat"
+msgstr "Naamformaat kiezen"
 
 #: DescendantsLines/DescendantsLines.py:1117
 msgid "Use colors"
@@ -150,7 +150,7 @@ msgstr "Kleuren gebruiken"
 
 #: DescendantsLines/DescendantsLines.py:1118
 msgid "Whether to use colored names indicating person gender in the output."
-msgstr "Al of niet gekleurde namen gebruiken om het geslacht van de persoon in de uitdruk weer te geven."
+msgstr "Al of niet gekleurde namen gebruiken om het geslacht van de persoon weer te geven."
 
 #: DescendantsLines/DescendantsLines.py:1121
 msgid "Include event places"
@@ -158,7 +158,7 @@ msgstr "Gebeurtenislocaties bijvoegen"
 
 #: DescendantsLines/DescendantsLines.py:1122
 msgid "Whether to include event places in the output."
-msgstr "Al of niet een gebeurtenislocaties aan het verslag."
+msgstr "Al of niet gebeurtenislocaties toevoegen."
 
 #: DescendantsLines/DescendantsLines.py:1125
 msgid "Include marriage information"
@@ -175,7 +175,7 @@ msgstr "d'Aboville nummering"
 # Opnemen ipv toevoegen
 #: DescendantsLines/DescendantsLines.py:1130
 msgid "Whether to use d'Aboville descendant numbering system in the output."
-msgstr "Al of niet het d' Aboville nummeringssysteem gebruiken in het verslag."
+msgstr "Al of niet het d'Aboville nummeringssysteem gebruiken in het verslag."
 
 #: DescendantsLines/DescendantsLines.py:1133
 msgid "Options S"
@@ -259,7 +259,7 @@ msgstr "C_ONDER"
 
 #: DescendantsLines/DescendantsLines.py:1178
 msgid "The length of the vertical edge from child to child-bar."
-msgstr "De lengte van de verticale hoek van kind tot kindmijn."
+msgstr "De lengte van de verticale hoek van kind tot kindlijn."
 
 #: DescendantsLines/DescendantsLines.py:1181
 msgid "MIN_C_WIDTH"
