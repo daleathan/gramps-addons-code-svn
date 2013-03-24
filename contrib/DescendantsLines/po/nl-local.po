@@ -88,7 +88,7 @@ msgstr "Bestemming"
 
 #: DescendantsLines/DescendantsLines.py:1100
 msgid "The destination file for the content."
-msgstr ""
+msgstr "Het bestemmingsbestand voor de inhoud."
 
 #: DescendantsLines/DescendantsLines.py:1103
 msgid "Generations"
@@ -96,7 +96,7 @@ msgstr "Generaties"
 
 #: DescendantsLines/DescendantsLines.py:1104
 msgid "The number of generations to include in the report. (0 for unlimited)"
-msgstr ""
+msgstr "Het aantal generaties dat in het verslag getoond wordt (0 is onbeperkt)"
 
 #: DescendantsLines/DescendantsLines.py:1111
 msgid "Name format"
@@ -108,7 +108,7 @@ msgstr "Standaard"
 
 #: DescendantsLines/DescendantsLines.py:1115
 msgid "Select the format to display names"
-msgstr ""
+msgstr "Naamformaat kiezen"
 
 #: DescendantsLines/DescendantsLines.py:1118
 msgid "Use colors"
@@ -116,15 +116,15 @@ msgstr "Kleuren gebruiken"
 
 #: DescendantsLines/DescendantsLines.py:1119
 msgid "Whether to use colored names indicating person gender in the output."
-msgstr ""
+msgstr "Al of niet gekleurde namen gebruiken om het geslacht van de persoon weer te geven."
 
 #: DescendantsLines/DescendantsLines.py:1122
 msgid "Include event places"
-msgstr ""
+msgstr "Gebeurtenislocaties toevoegen"
 
 #: DescendantsLines/DescendantsLines.py:1123
 msgid "Whether to include event places in the output."
-msgstr ""
+msgstr "Al of niet gebeurtenislocaties toevoegen."
 
 #: DescendantsLines/DescendantsLines.py:1126
 msgid "Include marriage information"
