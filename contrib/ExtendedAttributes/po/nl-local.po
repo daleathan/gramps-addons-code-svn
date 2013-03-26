@@ -45,7 +45,7 @@ msgid ""
 "selected attribute."
 msgstr ""
 "Om een snelverslag te zien dat alle personen met het geselecteerde kenmerk "
-"toont, dient u op tweemaal op een rij te klikken. "
+"toont, dient u tweemaal op een rij te klikken."
 
 #: ExtendedAttributes/ExtendedAttributes.py:60
 msgid "Date"

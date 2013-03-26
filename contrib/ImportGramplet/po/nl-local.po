@@ -39,7 +39,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-01-15 20:34+0100\n"
+"POT-Creation-Date: 2013-03-26 10:33+0100\n"
 "PO-Revision-Date: 2013-01-28 20:53+0100\n"
 "Last-Translator: Erik De Richter <frederik.de.richter@googlemail.com>\n"
 "Language-Team: nederlands <frederik.de.richter@googlemail.com>\n"
@@ -60,23 +60,74 @@ msgid "Gramplet for importing text"
 msgstr "Gramplet om tekst te importeren"
 
 #: ImportGramplet/ImportGramplet.gpr.py:17
-#: ImportGramplet/ImportGramplet.py:58
 msgid "Import"
 msgstr "Importeren"
 
-#: ImportGramplet/ImportGramplet.py:53
+#: ImportGramplet/ImportGramplet.py:65
+msgid "CSV import"
+msgstr "CSV-import"
+
+#: ImportGramplet/ImportGramplet.py:88
+msgid "VCard import"
+msgstr "VCard-import"
+
+#: ImportGramplet/ImportGramplet.py:110
+msgid "Gramps XML import"
+msgstr "Gramps XML-import"
+
+#: ImportGramplet/ImportGramplet.py:137
+msgid "Could not change media path"
+msgstr "Mediapad kon niet veranderd worden"
+
+#: ImportGramplet/ImportGramplet.py:138
+#, python-format
+msgid ""
+"The opened file has media path %s, which conflicts with the media path of "
+"the family tree you import into. The original media path has been retained. "
+"Copy the files to a correct directory or change the media path in the "
+"Preferences."
+msgstr ""
+"Het geopende bestand heeft als mediapad %s, maar dat geeft een conflict met het mediapad van "
+"de familiestamboom waarin de import werd gedaan.Het oorspronkelijke mediapad werd behouden. "
+"Kopieër de bestanden naar de juiste map of verander het mediapad in de "
+"Voorkeuren."
+
+#: ImportGramplet/ImportGramplet.py:168
 msgid ""
 "Enter text to import and then click\n"
 "the Import button at bottom"
 msgstr ""
-"Tekst die geïmporteerd wordt, ingegeven en dan op\n"
+"Te importeren tekst ingeven en dan op\n"
 "de importeerknop onderaan klikken"
 
-#: ImportGramplet/ImportGramplet.py:82
-msgid "Importing Text..."
-msgstr "Tekst wordt geïmporteerd..."
+#: ImportGramplet/ImportGramplet.py:194
+msgid "_Import"
+msgstr "Importeren"
 
-#: ImportGramplet/ImportGramplet.py:111
+#: ImportGramplet/ImportGramplet.py:211
 msgid "Import done"
 msgstr "Importeren ok"
 
+#: ImportGramplet/ImportGramplet.py:221
+msgid "Importing Text..."
+msgstr "Tekst wordt geïmporteerd..."
+
+#: ImportGramplet/ImportGramplet.py:225
+msgid "Person"
+msgstr "Persoon"
+
+#: ImportGramplet/ImportGramplet.py:225
+msgid "Surname"
+msgstr "Achternaam"
+
+#: ImportGramplet/ImportGramplet.py:225
+msgid "Given"
+msgstr "Voornaam"
+
+#: ImportGramplet/ImportGramplet.py:250
+msgid "Can't determine type of import"
+msgstr "Importtype kon niet achterhaald worden"
+
+#: ImportGramplet/ImportGramplet.py:251
+msgid "Import failed"
+msgstr "Import mislukte"
