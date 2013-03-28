@@ -1,0 +1,445 @@
+# Dutch translations for gramps-addons package.
+# Copyright (C) 2013 THE gramps-addons'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the gramps-addons package.
+# erik <frederik.de.richter@gmail.com>, 2013.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gramps-addons 34\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-03-25 20:17+0100\n"
+"PO-Revision-Date: 2013-03-25 20:17+0100\n"
+"Last-Translator: erik <frederik.de.richter@gmail.com>\n"
+"Language-Team: Dutch\n"
+"Language: nl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: FilteredReports//DescendantReport.gpr.py:25
+msgid "Filtered Descendant Report"
+msgstr "Afstammelingenfilter"
+
+#: FilteredReports//DescendantReport.gpr.py:26
+msgid "Produces a descendant report using a filter"
+msgstr "Verslag van de afstammelingen met gebruik van een filter aanmaken"
+
+#: FilteredReports//DescendantReport.py:231
+#, python-format
+msgid "Generation %d"
+msgstr "Generatie %d"
+
+#: FilteredReports//DescendantReport.py:316
+#, python-format
+msgid "%(name)s is the same person as [%(id_str)s]."
+msgstr "%(name)s is dezelfde persoon als [%(id_str)s]."
+
+#: FilteredReports//DescendantReport.py:366
+#, python-format
+msgid "%(date)s, %(place)s"
+msgstr ""
+
+#: FilteredReports//DescendantReport.py:369
+#, python-format
+msgid "%(date)s"
+msgstr ""
+
+#: FilteredReports//DescendantReport.py:371
+#, python-format
+msgid "%(place)s"
+msgstr ""
+
+#: FilteredReports//DescendantReport.py:383
+#, python-format
+msgid "%(event_name)s: %(event_text)s"
+msgstr ""
+
+#: FilteredReports//DescendantReport.py:400
+#: FilteredReports//DescendantReport.py:631
+#: FilteredReports//DescendantReport.py:781
+#, python-format
+msgid "%(type)s: %(value)s%(endnotes)s"
+msgstr ""
+
+#: FilteredReports//DescendantReport.py:484
+#, python-format
+msgid "Spouse: %s"
+msgstr "Echtgenoot: %s"
+
+#: FilteredReports//DescendantReport.py:486
+#, python-format
+msgid "Relationship with: %s"
+msgstr "Verwantschap met: %s"
+
+#: FilteredReports//DescendantReport.py:500
+#: FilteredReports//DescendantReport.py:507
+msgid "unknown"
+msgstr "onbekend"
+
+#: FilteredReports//DescendantReport.py:522
+#, python-format
+msgid "Children of %(mother_name)s and %(father_name)s"
+msgstr "Kinderen van %(mother_name)s en %(father_name)s"
+
+#: FilteredReports//DescendantReport.py:580
+#, python-format
+msgid "Notes for %(mother_name)s and %(father_name)s:"
+msgstr "Opmerkingen voor %(mother_name)s en %(father_name)s:"
+
+#: FilteredReports//DescendantReport.py:604
+#: FilteredReports//DescendantReport.py:623
+#, python-format
+msgid "More about %(mother_name)s and %(father_name)s:"
+msgstr "Meer over %(mother_name)s en %(father_name)s:"
+
+#: FilteredReports//DescendantReport.py:702
+#, python-format
+msgid "Notes for %s"
+msgstr "Opmerkingen voor %s"
+
+#: FilteredReports//DescendantReport.py:716
+#: FilteredReports//DescendantReport.py:734
+#: FilteredReports//DescendantReport.py:745
+#: FilteredReports//DescendantReport.py:769
+#, python-format
+msgid "More about %(person_name)s:"
+msgstr "Meer over %(person_name)s:"
+
+#: FilteredReports//DescendantReport.py:723
+#, python-format
+msgid "%(name_kind)s: %(name)s%(endnotes)s"
+msgstr ""
+
+#: FilteredReports//DescendantReport.py:758
+msgid "Address: "
+msgstr "Adres: "
+
+#: FilteredReports//DescendantReport.py:827
+msgid "no common person found between filter rules to synchronize generations"
+msgstr "geen gemeenschappelijke persoon gevonden tussen de regels van het filter om de generaties te synchroniseren"
+
+#: FilteredReports//DescendantReport.py:856
+#, python-format
+msgid "can't determine generation for '%s'"
+msgstr "kan geen generatie bepalen voor '%s'"
+
+#: FilteredReports//DescendantReport.py:911
+#, python-format
+msgid "no person found with ID '%s'"
+msgstr "geen persoon gevonden met ID '%s'"
+
+#: FilteredReports//DescendantReport.py:933
+msgid "Report Options"
+msgstr "Verslagopties"
+
+#: FilteredReports//DescendantReport.py:935
+msgid "Filter"
+msgstr "Filter"
+
+#: FilteredReports//DescendantReport.py:937
+msgid "Determines what people are included in the report"
+msgstr "Welke personen opnemen in het verslag"
+
+#: FilteredReports//DescendantReport.py:943
+msgid "no custom filters found -- can only use custom filters with this report"
+msgstr "geen eigen filters gevonden -- er kunnen enkel zelfaangemaakte filters gebruikt worden voor dit verslag"
+
+#: FilteredReports//DescendantReport.py:946
+msgid "Generations"
+msgstr "Generaties"
+
+#: FilteredReports//DescendantReport.py:948
+msgid "The number of generations to include in the report"
+msgstr "Het aantal generaties dat aan het verslag wordt toegevoegd"
+
+#: FilteredReports//DescendantReport.py:952
+msgid "Page break between generations"
+msgstr "Nieuwe pagina tussen de generaties"
+
+#: FilteredReports//DescendantReport.py:954
+msgid "Whether to start a new page after each generation."
+msgstr "Al dan niet een nieuwe pagina starten na iedere generatie."
+
+#: FilteredReports//DescendantReport.py:957
+msgid "Page break before end notes"
+msgstr "Pagina-einde voor eindopmerkingen"
+
+#: FilteredReports//DescendantReport.py:959
+msgid "Whether to start a new page before the end notes."
+msgstr "Al dan niet een nieuwe pagina starten voor de eindopmerkingen"
+
+#: FilteredReports//DescendantReport.py:962
+msgid "Report title"
+msgstr "Verslagtitiel"
+
+#: FilteredReports//DescendantReport.py:963
+msgid "This text will be used as the report title"
+msgstr "Deze tekst wordt gebruikt voor de titel van het verslag"
+
+#: FilteredReports//DescendantReport.py:966
+msgid "Translation"
+msgstr "Vertaling"
+
+#: FilteredReports//DescendantReport.py:968
+msgid "Default"
+msgstr "Standaard"
+
+#: FilteredReports//DescendantReport.py:971
+msgid "The translation to be used for the report."
+msgstr "De vertaling die gebruikt wordt voor het verslag."
+
+#: FilteredReports//DescendantReport.py:976
+msgid "Content"
+msgstr "Inhoud"
+
+#: FilteredReports//DescendantReport.py:978
+msgid "Use callname for common name"
+msgstr "Roepnaam voor de voornaam gebruiken"
+
+#: FilteredReports//DescendantReport.py:979
+msgid "Whether to use the call name as the first name."
+msgstr "Al dan niet de roepnaam als voornaam gebruiken."
+
+#: FilteredReports//DescendantReport.py:982
+msgid "Use full dates instead of only the year"
+msgstr "Volledige datum gebruiken in plaats van enkel het jartal"
+
+#: FilteredReports//DescendantReport.py:984
+msgid "Whether to use full dates instead of just year."
+msgstr "Al dan niet de volledige datum gebruiken in plaats van enkel het jaartal."
+
+#: FilteredReports//DescendantReport.py:987
+msgid "List children"
+msgstr "Kinderen oplijsten"
+
+#: FilteredReports//DescendantReport.py:988
+msgid "Whether to list children."
+msgstr "Al dan niet de kinderen oplijsten."
+
+#: FilteredReports//DescendantReport.py:991
+msgid "Compute death age"
+msgstr "Leeftijd bij overlijden berekenen"
+
+#: FilteredReports//DescendantReport.py:992
+msgid "Whether to compute a person's age at death."
+msgstr "Al dan niet de leeftijd bij overlijden van een persoon berekenen."
+
+#: FilteredReports//DescendantReport.py:995
+msgid "Omit duplicate ancestors"
+msgstr "Dubbele voorouders weglaten"
+
+#: FilteredReports//DescendantReport.py:996
+msgid "Whether to omit duplicate ancestors."
+msgstr "Al dan niet dubbele voorouders weglaten."
+
+#: FilteredReports//DescendantReport.py:999
+msgid "Use complete sentences"
+msgstr "Volledig zinnen gebruiken"
+
+#: FilteredReports//DescendantReport.py:1001
+msgid "Whether to use complete sentences or succinct language."
+msgstr "Al dan niet volledige zinnen gebruiken ."
+
+#: FilteredReports//DescendantReport.py:1004
+msgid "Add descendant reference in child list"
+msgstr "Bij de lijst van de kinderen een afstammelingverwijzing toevoegen"
+
+#: FilteredReports//DescendantReport.py:1007
+msgid "Whether to add descendant references in child list."
+msgstr "Al dan niet de afstammelingenverwijzingen toeveogen aan de lijst met kinderen."
+
+#: FilteredReports//DescendantReport.py:1010
+msgid "Turn URLs into real links"
+msgstr "URL omvormen naar echte 'links'"
+
+#: FilteredReports//DescendantReport.py:1011
+msgid ""
+"Turn any URLs starting with 'http', 'https', or 'mailto' into clickable links"
+msgstr ""
+"Alle URL's die beginnen met 'http', 'https' of 'mailto' omvormen naar klikbare 'links'"
+
+#: FilteredReports//DescendantReport.py:1014
+msgid "Do not include information marked private"
+msgstr "De informatie als privé gemarkeerd niet toeveogen"
+
+#: FilteredReports//DescendantReport.py:1015
+msgid "Whether to honor the private flag setting"
+msgstr "Al dan niet de privé-vlag respecteren"
+
+#: FilteredReports//DescendantReport.py:1018
+msgid "Include"
+msgstr "Toevoegen"
+
+#: FilteredReports//DescendantReport.py:1020
+msgid "Include notes"
+msgstr "Opmerkingen toevoegen"
+
+#: FilteredReports//DescendantReport.py:1021
+msgid "Whether to include notes."
+msgstr "Al dan niet opmerkingen toevoegen."
+
+#: FilteredReports//DescendantReport.py:1024
+msgid "Include attributes"
+msgstr "Kenmerken toevoegen"
+
+#: FilteredReports//DescendantReport.py:1025
+msgid "Whether to include attributes."
+msgstr "Al dan niet kenmerken toevoegen."
+
+#: FilteredReports//DescendantReport.py:1028
+msgid "Include Photo/Images from Gallery"
+msgstr "Foto's/beelden van de galerij toevoegen"
+
+#: FilteredReports//DescendantReport.py:1029
+msgid "Whether to include images."
+msgstr "Al dan niet beelden toevoegen."
+
+#: FilteredReports//DescendantReport.py:1033
+msgid "Include alternative names"
+msgstr "Alternatieve namen toevoegen"
+
+#: FilteredReports//DescendantReport.py:1034
+msgid "Whether to include other names."
+msgstr "Al dan niet andere namen toevoegen."
+
+#: FilteredReports//DescendantReport.py:1037
+msgid "Include events"
+msgstr "Gebeurtenissen toevoegen"
+
+#: FilteredReports//DescendantReport.py:1038
+msgid "Whether to include events."
+msgstr "Al dan niet gebeurtenissen toevoegen."
+
+#: FilteredReports//DescendantReport.py:1041
+msgid "Include addresses"
+msgstr "Adressen toevoegen"
+
+#: FilteredReports//DescendantReport.py:1042
+msgid "Whether to include addresses."
+msgstr "Al dan niet adressen toevoegen."
+
+#: FilteredReports//DescendantReport.py:1045
+msgid "Include sources"
+msgstr "Bronnen toevoegen"
+
+#: FilteredReports//DescendantReport.py:1046
+msgid "Whether to include source references."
+msgstr "Al dan niet bronverwijzingen toevoegen."
+
+#: FilteredReports//DescendantReport.py:1049
+msgid "Include sources notes"
+msgstr "Bronopmerkingen toevoegen"
+
+#: FilteredReports//DescendantReport.py:1050
+msgid ""
+"Whether to include source notes in the Endnotes section. Only works if "
+"Include sources is selected."
+msgstr "Al dan  niet bronopmerkingen bij de het deel eindopmerking toevoegen. Werkt enkel "
+"wanneer - Bronnen toevoegen - is geselecteerd."
+
+#: FilteredReports//DescendantReport.py:1054
+msgid "Include partners"
+msgstr "Partners toevoegen"
+
+#: FilteredReports//DescendantReport.py:1055
+msgid "Whether to include detailed partner information."
+msgstr "Al dan niet gedetailleerde partnerinformatie toevoegen."
+
+#: FilteredReports//DescendantReport.py:1058
+msgid "Include sign of succession ('+') in child-list"
+msgstr "Opvolgingsteken ('+') aan de lijst met kinderen toevoegen"
+
+#: FilteredReports//DescendantReport.py:1060
+msgid ""
+"Whether to include a sign ('+') before the descendant number in the child-"
+"list to indicate a child has succession."
+msgstr "Al dan niet een teken ('+') toevoegen voor het afstammelingennummer in de "
+"lijst met de kinderen om aan te geven of het kindnakomelingen heeft."
+#: FilteredReports//DescendantReport.py:1065
+msgid "Include path to start-person"
+msgstr "Pad naar startpersoon toevoegen"
+
+#: FilteredReports//DescendantReport.py:1066
+msgid ""
+"Whether to include the path of descendancy from the start-person to each "
+"descendant."
+msgstr ""
+"Al dan niet het nakomelingenpad vanaf de startpersoon "
+"naar elke nakomeling toevoegen."
+
+#: FilteredReports//DescendantReport.py:1070
+msgid "Caption"
+msgstr "Onderschrift"
+
+#: FilteredReports//DescendantReport.py:1072
+msgid "Add caption under image from Gallery"
+msgstr "Onderschrift bij beeld uit de gallerij toevoegen"
+
+#: FilteredReports//DescendantReport.py:1073
+msgid "Whether to add captions underneath images."
+msgstr "Al dan niet onderschriften bij de beelden toevoegen."
+
+#: FilteredReports//DescendantReport.py:1076
+msgid "Caption Format"
+msgstr "Onderschriftformaat"
+
+#: FilteredReports//DescendantReport.py:1077
+msgid "Display format for the caption."
+msgstr "Formaat onderschrift tonen."
+
+#: FilteredReports//DescendantReport.py:1082
+msgid "Missing information"
+msgstr "Ontbrekende informatie"
+
+#: FilteredReports//DescendantReport.py:1084
+msgid "Replace missing places with ______"
+msgstr "Ontbrekende locaties vervangen door ______"
+
+#: FilteredReports//DescendantReport.py:1085
+msgid "Whether to replace missing Places with blanks."
+msgstr "Al dan niet ontbrekende locaties vervangen door spaties."
+
+#: FilteredReports//DescendantReport.py:1088
+msgid "Replace missing dates with ______"
+msgstr "Ontbrekende datums vervangen door ______"
+
+#: FilteredReports//DescendantReport.py:1089
+msgid "Whether to replace missing Dates with blanks."
+msgstr "Al dan niet ontbrekende datums vervangen door spaties."
+
+#: FilteredReports//DescendantReport.py:1102
+msgid "The style used for the title of the page."
+msgstr "De stijl voor de titel."
+
+#: FilteredReports//DescendantReport.py:1112
+msgid "The style used for the generation header."
+msgstr "De stijl voor de generatiehoofding."
+
+#: FilteredReports//DescendantReport.py:1122
+msgid "The style used for the children list title."
+msgstr "De stijl de titel van de lijst met kinderen."
+
+#: FilteredReports//DescendantReport.py:1132
+msgid "The style used for the children list."
+msgstr "De stijl voor de lijst met kinderen."
+
+#: FilteredReports//DescendantReport.py:1148
+msgid "The basic style used for the text display."
+msgstr "De basisstijl voor de tekst."
+
+#: FilteredReports//DescendantReport.py:1155
+msgid "The style used for the first personal entry."
+msgstr "De stijl voor het eerste persoonlijke gegeven."
+
+#: FilteredReports//DescendantReport.py:1165
+msgid "The style used for the More About header and for headers of mates."
+msgstr "De stijl voor de hoofding -Meer over- en de andere hoofdingen."
+
+#: FilteredReports//DescendantReport.py:1176
+msgid "The style used for additional detail data."
+msgstr "De stijl voor de bijkomende detailinformatie."
+
+#: FilteredReports//DescendantReport.py:1184
+msgid "The style used for photo captions."
+msgstr "De stijl voor de onderschriften."
