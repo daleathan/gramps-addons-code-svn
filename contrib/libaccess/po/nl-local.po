@@ -39,7 +39,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-04-13 19:56+0200\n"
+"POT-Creation-Date: 2013-03-26 11:12+0100\n"
 "PO-Revision-Date: 2011-04-12 20:28+0100\n"
 "Last-Translator: Erik De Richter <frederik.de.richter@pandora.be>\n"
 "Language-Team: nederlands <frederik.de.richter@googlemail.com>\n"
@@ -51,7 +51,14 @@ msgstr ""
 "X-Poedit-Language: Nederlands\n"
 "X-Poedit-Country: België\n"
 
-#: libaccess/libaccess.gpr.py:32
+#: libaccess//libaccess.gpr.py:32
 msgid "Provides a library for generic access to the database and gen.lib."
-msgstr ""
-"Een bibliotheek voor algemene toegang tot het gegevensbestand en 'gen.lib'."
+msgstr "Een bibliotheek voor algemene toegang tot het gegevensbestand en 'gen.lib'."
+
+#: libaccess//libaccess.py:218
+msgid "libaccess edit name"
+msgstr "libaccess naam veranderen"
+
+#: libaccess//libaccess.py:260
+msgid "libaccess edit person"
+msgstr "libacces persoon veranderen"

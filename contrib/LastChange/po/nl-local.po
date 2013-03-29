@@ -188,15 +188,15 @@ msgstr "Bronnen"
 
 #: LastChange/LastChangeReport.py:272
 msgid "The style used for the title of the page."
-msgstr "De gebruikte stijl voor de titel van de pagina."
+msgstr "De stijl voor de titel van de pagina."
 
 #: LastChange/LastChangeReport.py:287
 msgid "The style used for the section headers."
-msgstr "De gebruikte stijl voor de sectietitels."
+msgstr "De stijl voor de sectietitels."
 
 #: LastChange/LastChangeReport.py:297
 msgid "The style used for normal text"
-msgstr "De stijl gebruikt voor gewone tekst"
+msgstr "De stijl voor gewone tekst"
 
 #: LastChange/LastChangeReport.py:309
 msgid "The basic style used for table headings."

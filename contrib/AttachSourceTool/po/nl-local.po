@@ -39,7 +39,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-04-09 08:55+0200\n"
+"POT-Creation-Date: 2013-03-29 10:54+0100\n"
 "PO-Revision-Date: 2011-04-08 08:19+0100\n"
 "Last-Translator: Erik De Richter <frederik.de.richter@gmail.com>\n"
 "Language-Team: nederlands <frederik.de.richter@gmail.com>\n"
@@ -51,86 +51,86 @@ msgstr ""
 "X-Poedit-Language: Nederlands\n"
 "X-Poedit-Country: België\n"
 
-#: AttachSourceTool/AttachSourceTool.gpr.py:25
-#: AttachSourceTool/AttachSourceTool.py:133
-#: AttachSourceTool/AttachSourceTool.py:187
+#: AttachSourceTool//AttachSourceTool.gpr.py:25
+#: AttachSourceTool//AttachSourceTool.py:133
+#: AttachSourceTool//AttachSourceTool.py:151
 msgid "Attach Source"
 msgstr "Bron toevoegen"
 
-#: AttachSourceTool/AttachSourceTool.gpr.py:26
+#: AttachSourceTool//AttachSourceTool.gpr.py:26
 msgid "Attaches a shared source to multiple objects."
 msgstr "Een gedeelde bron aan verschillende objecten toevoegen."
 
-#: AttachSourceTool/AttachSourceTool.py:63
-#: AttachSourceTool/AttachSourceTool.py:136
+#: AttachSourceTool//AttachSourceTool.py:63
+#: AttachSourceTool//AttachSourceTool.py:136
 msgid "Options"
 msgstr "Opties"
 
-#: AttachSourceTool/AttachSourceTool.py:65
+#: AttachSourceTool//AttachSourceTool.py:65
 msgid "Person Filter"
 msgstr "Persoonsfilter"
 
-#: AttachSourceTool/AttachSourceTool.py:66
+#: AttachSourceTool//AttachSourceTool.py:66
 msgid "Select filter to restrict people"
 msgstr "Filter om aantal personen te beperken, selecteren"
 
-#: AttachSourceTool/AttachSourceTool.py:70
+#: AttachSourceTool//AttachSourceTool.py:70
 msgid "Filter Person"
 msgstr "Personenfilter"
 
-#: AttachSourceTool/AttachSourceTool.py:71
+#: AttachSourceTool//AttachSourceTool.py:71
 msgid "The center person for the filter"
 msgstr "De centrale persoon voor de filter"
 
-#: AttachSourceTool/AttachSourceTool.py:77
+#: AttachSourceTool//AttachSourceTool.py:77
 msgid "Source type"
 msgstr "Brontype"
 
-#: AttachSourceTool/AttachSourceTool.py:78
+#: AttachSourceTool//AttachSourceTool.py:78
 msgid "New source"
 msgstr "Nieuwe bron"
 
-#: AttachSourceTool/AttachSourceTool.py:79
+#: AttachSourceTool//AttachSourceTool.py:79
 msgid "Existing source"
 msgstr "Bestaande bron"
 
-#: AttachSourceTool/AttachSourceTool.py:80
+#: AttachSourceTool//AttachSourceTool.py:80
 msgid "Select the type of source to attach"
 msgstr "Brontype dat wordt toegevoegd, selecteren"
 
-#: AttachSourceTool/AttachSourceTool.py:85
+#: AttachSourceTool//AttachSourceTool.py:85
 msgid "New Source Title"
 msgstr "Nieuwe brontitel"
 
-#: AttachSourceTool/AttachSourceTool.py:86
+#: AttachSourceTool//AttachSourceTool.py:86
 msgid "Text of source to attach"
 msgstr "Brontekst die wordt toegevoegd"
 
-#: AttachSourceTool/AttachSourceTool.py:90
+#: AttachSourceTool//AttachSourceTool.py:90
 msgid "Existing Source ID"
 msgstr "Bestaande bron-ID"
 
-#: AttachSourceTool/AttachSourceTool.py:91
+#: AttachSourceTool//AttachSourceTool.py:91
 msgid "ID of source to attach"
 msgstr "ID van de bron die wordt toegevoegd"
 
-#: AttachSourceTool/AttachSourceTool.py:153
+#: AttachSourceTool//AttachSourceTool.py:152
 msgid "Results"
 msgstr "Resultaten"
 
-#: AttachSourceTool/AttachSourceTool.py:154
+#: AttachSourceTool//AttachSourceTool.py:153
 msgid "Processing...\n"
 msgstr "Wordt verwerkt...\n"
 
-#: AttachSourceTool/AttachSourceTool.py:169
+#: AttachSourceTool//AttachSourceTool.py:170
 msgid "Attaching sources...\n"
 msgstr "Bronnen worden toegevoegd...\n"
 
-#: AttachSourceTool/AttachSourceTool.py:170
+#: AttachSourceTool//AttachSourceTool.py:171
 msgid "Attaching sources..."
 msgstr "Bronnen worden toegevoegd..."
 
-#: AttachSourceTool/AttachSourceTool.py:190
+#: AttachSourceTool//AttachSourceTool.py:193
 msgid "Done!\n"
 msgstr "OK!\n"
 
