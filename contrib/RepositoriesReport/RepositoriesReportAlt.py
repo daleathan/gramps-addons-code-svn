@@ -46,7 +46,7 @@ from gramps.gen.plug.menu import BooleanOption, EnumeratedListOption
 from gramps.gen.plug.report import Report
 import gramps.gen.plug.report.utils as ReportUtils
 from gramps.gen.plug.report import MenuReportOptions
-from gramps.plugins.lib.libtranslate import get_language_string
+from gramps.gen.utils.grampslocale import get_language_string
 from gramps.gen.const import GRAMPS_LOCALE as glocale
 import gramps.gen.proxy
 from gramps.gen.plug.docgen import (IndexMark, FontStyle, ParagraphStyle, 
