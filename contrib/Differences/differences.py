@@ -32,7 +32,6 @@ import datetime, time
 # GRAMPS modules
 #
 #------------------------------------------------------------------------
-from gramps.gen.ggettext import ngettext
 from gramps.gen.display.name import displayer as global_name_display
 from gramps.gen.plug.docgen import (FontStyle, ParagraphStyle, GraphicsStyle,
                              FONT_SERIF, PARA_ALIGN_RIGHT,
