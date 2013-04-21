@@ -53,7 +53,10 @@ import gramps.gen.lib
 from gramps.gen.utils.alive import probably_alive
 
 from gramps.gen.const import GRAMPS_LOCALE as glocale
-translator = glocale.get_addon_translator(__file__)
+try:
+    translator = glocale.get_addon_translator(__file__)
+except ValueError:
+    translator = glocale.translation
 _ = translator.gettext
 ngettext = translator.ngettext
 

@@ -45,8 +45,8 @@ from gramps.gen.merge.diff import diff_dbs, import_as_dict
 from gramps.gen.simple import SimpleAccess
 
 from gramps.gen.const import GRAMPS_LOCALE as glocale
-_ = glocale.get_translation().gettext
-ngettext = glocale.get_translation().ngettext
+_ = glocale.translation.gettext
+ngettext = glocale.translation.ngettext
 
 #------------------------------------------------------------------------
 #

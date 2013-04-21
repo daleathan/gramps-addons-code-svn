@@ -52,7 +52,10 @@ from gramps.gui.dialog import ErrorDialog
 from gramps.gen.utils.id import create_id
 
 from gramps.gen.const import GRAMPS_LOCALE as glocale
-translator = glocale.get_addon_translator(__file__)
+try:
+    translator = glocale.get_addon_translator(__file__)
+except ValueError:
+    translator = glocale.translation
 _ = translator.gettext
 ngettext = translator.ngettext
 

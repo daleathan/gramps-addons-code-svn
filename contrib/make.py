@@ -293,7 +293,8 @@ elif command == "build":
                files=files_str)
 elif command == "listing":
     try:
-        sys.path.append(GRAMPSPATH)
+        sys.path.insert(0, GRAMPSPATH)
+        os.environ['GRAMPS_RESOURCES'] = os.path.abspath(GRAMPSPATH)
         from gramps.gen.const import GRAMPS_LOCALE as glocale
         from gramps.gen.plug import make_environment, PTYPE_STR
     except ImportError:
@@ -321,8 +322,11 @@ elif command == "listing":
         fp = open("../listings/addons-%s.txt" % lang, "w")
         for addon in sorted(dirs):
             for gpr in glob.glob(r('''%(addon)s/*.gpr.py''')):
-                local_gettext = glocale.get_addon_translator(gpr,
-                                       languages=[lang]).gettext
+                try:
+                    local_gettext = glocale.get_addon_translator(gpr,
+                                                      languages=[lang]).gettext
+                except ValueError:
+                    local_gettext = glocale.translation.gettext
                 plugins = []
                 execfile(gpr.encode(sys.getfilesystemencoding()),
                          make_environment(_=local_gettext),

@@ -73,7 +73,10 @@ from gramps.gui.views.bookmarks import PersonBookmarks
 from gramps.gen.const import CUSTOM_FILTERS
 from gramps.gui.dialog import RunDatabaseRepair, ErrorDialog
 from gramps.gen.const import GRAMPS_LOCALE as glocale
-trans = glocale.get_addon_translator(__file__)
+try:
+    trans = glocale.get_addon_translator(__file__)
+except ValueError:
+    trans = glocale.translation
 _ = trans.gettext
 ngettext = trans.ngettext
 

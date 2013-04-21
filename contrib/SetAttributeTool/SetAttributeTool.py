@@ -43,13 +43,12 @@ import gramps.gen.lib
 from gramps.gen.db import DbTxn
 from gramps.gen.display.name import displayer as name_displayer
 import gramps.gen.plug.report.utils as ReportUtils
-
+from gramps.gen.const import GRAMPS_LOCALE as glocale
 try:
-    from gramps.gen.const import GRAMPS_LOCALE as glocale
-    _ = glocale.get_addon_translator(__file__).gettext
-except:
-    import gettext
-    _ = gettext.gettext
+    _trans = glocale.get_addon_translator(__file__)
+except ValueError:
+    _trans = glocale.translation
+_ = _trans.gettext
 
 #-------------------------------------------------
 #
