@@ -63,9 +63,9 @@ def run(database, document, *args, **kwargs):
                    person, 
                    str(name.get_type())) for name in  
                   person.get_alternate_names()]
-    names.sort()
+
     matches = 0
-    for (name, person, name_type) in names:
+    for (name, person, name_type) in sorted(names, key=lambda x: x[0]):
         stab.row(name, person, name_type)
         matches += 1
     sdoc.paragraph(_("Total names %d") % matches)
