@@ -84,7 +84,7 @@ class Attributes(Gramplet):
         for attr in obj.get_attribute_list():
             self.model.add((event_date,
                             event_sort,
-                            attr.get_type(),
+                            str(attr.get_type()),
                             attr.get_value(),
                             handle
                             ))
