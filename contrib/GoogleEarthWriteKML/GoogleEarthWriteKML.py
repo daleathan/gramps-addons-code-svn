@@ -89,6 +89,14 @@ else:
         if os.path.isfile(prog):
             _GOOGLEEARTH_OK = True
 
+    if not _GOOGLEEARTH_OK:
+        FILE_PATH = "google-earth"
+        SEARCH = os.environ['PATH'].split(':')
+        for lpath in SEARCH:
+            prog = os.path.join(lpath, FILE_PATH)
+            if os.path.isfile(prog):
+                _GOOGLEEARTH_OK = True
+      
 def _combine(str1, str2):
     """
     Combines two strings to one if both are not empty
