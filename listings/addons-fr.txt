@@ -15,7 +15,7 @@
 {"n": "DenominoViso","i": "denominoviso","t": "Report","d": "Génère une page internet (XHTML) avec une représentation graphique des ascendants/descendants (SVG) dont les détails des individus deviennent visibles avec les actions de la souris.","v": "2.3.15","g": "4.0","z": "DenominoViso.addon.tgz"}
 {"n": "Calcul des descendants","i": "Descendant Count Quickview","t": "Quickreport","d": "Affiche le total des descendants pour chaque individu","v": "1.0.16","g": "4.0","z": "DescendantCount.addon.tgz"}
 {"n": "Gramplet Calcul de descendants","i": "Descendant Count Gramplet","t": "Gramplet","d": "Gramplet pour afficher les individus et le nombre de leurs descendants","v": "1.0.17","g": "4.0","z": "DescendantCount.addon.tgz"}
-{"n": "Lignes des descendants","i": "Descendants Lines","t": "Report","d": "Produit les lignes de descendants de l'individu","v": "0.1.18","g": "4.0","z": "DescendantsLines.addon.tgz"}
+{"n": "Lignes des descendants","i": "Descendants Lines","t": "Report","d": "Produit les lignes de descendants de l'individu","v": "0.1.19","g": "4.0","z": "DescendantsLines.addon.tgz"}
 {"n": "Rapport des différences dans la base de données","i": "database-differences-report","t": "Report","d": "Compare une base de données externe avec la base actuelle.","v": "1.0.4","g": "4.0","z": "Differences.addon.tgz"}
 {"n": "Export Django","i": "export_django","t": "Exporter","d": "Django est un environnement internet fonctionnant avec une base de données configurée","v": "1.0.21","g": "4.0","z": "Django.addon.tgz"}
 {"n": "Import Django","i": "import_django","t": "Importer","d": "Django est un environnement internet fonctionnant avec une base de données configurée","v": "1.0.21","g": "4.0","z": "Django.addon.tgz"}

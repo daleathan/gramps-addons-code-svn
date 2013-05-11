@@ -15,7 +15,7 @@
 {"n": "DenominoViso","i": "denominoviso","t": "Report","d": "Een 'xhtml'-webpagina met een grafische voorstelling van de voorouders/afstammelingen (svg) wordt aangemaakt. Individuele details worden door muisacties zichtbaar. ","v": "2.3.15","g": "4.0","z": "DenominoViso.addon.tgz"}
 {"n": "Afstammelingen tellen","i": "Descendant Count Quickview","t": "Quickreport","d": "Het aantal afstammelingen voor elke persoon tonen.","v": "1.0.16","g": "4.0","z": "DescendantCount.addon.tgz"}
 {"n": "Afstammelingentelling","i": "Descendant Count Gramplet","t": "Gramplet","d": "Gramplet om personen en afstammelingentelling te tonen","v": "1.0.17","g": "4.0","z": "DescendantCount.addon.tgz"}
-{"n": "Afstammelingenlijnen","i": "Descendants Lines","t": "Report","d": "Afstammelingenlijnen van een persoon worden aangemaakt","v": "0.1.18","g": "4.0","z": "DescendantsLines.addon.tgz"}
+{"n": "Afstammelingenlijnen","i": "Descendants Lines","t": "Report","d": "Afstammelingenlijnen van een persoon worden aangemaakt","v": "0.1.19","g": "4.0","z": "DescendantsLines.addon.tgz"}
 {"n": "Database Differences Report","i": "database-differences-report","t": "Report","d": "Compares an external database with the current one.","v": "1.0.4","g": "4.0","z": "Differences.addon.tgz"}
 {"n": "Django-export","i": "export_django","t": "Exporter","d": "Django is een webstructuur die draait op een geconfigureerd gegevensbestand","v": "1.0.21","g": "4.0","z": "Django.addon.tgz"}
 {"n": "Django-import","i": "import_django","t": "Importer","d": "Django is een webstructuur die draait op een geconfigureerd gegevensbestand","v": "1.0.21","g": "4.0","z": "Django.addon.tgz"}

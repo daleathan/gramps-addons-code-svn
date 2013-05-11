@@ -15,7 +15,7 @@
 {"n": "DenominoViso","i": "denominoviso","t": "Report","d": "Erstellt eine Web (XHTML) Seite mit einer Grafischen Darstellung von Ahnen/ Nachkommen (SVG) auf der Details über Personen durch Mausereignisse sichtbar werden.","v": "2.3.15","g": "4.0","z": "DenominoViso.addon.tgz"}
 {"n": "Anzahl der Nachkommen","i": "Descendant Count Quickview","t": "Quickreport","d": "Zeigt die Anzahl der Nachkommen für jede Person.","v": "1.0.16","g": "4.0","z": "DescendantCount.addon.tgz"}
 {"n": "Anzahl der Nachkommen Gramplet","i": "Descendant Count Gramplet","t": "Gramplet","d": "Gramplet zum zeigen der Personen und der Anzahl ihrer Nachkommen","v": "1.0.17","g": "4.0","z": "DescendantCount.addon.tgz"}
-{"n": "Nachkommen Linien","i": "Descendants Lines","t": "Report","d": "Erstellt Nachkommenlinien einer Person","v": "0.1.18","g": "4.0","z": "DescendantsLines.addon.tgz"}
+{"n": "Nachkommen Linien","i": "Descendants Lines","t": "Report","d": "Erstellt Nachkommenlinien einer Person","v": "0.1.19","g": "4.0","z": "DescendantsLines.addon.tgz"}
 {"n": "Database Differences Report","i": "database-differences-report","t": "Report","d": "Compares an external database with the current one.","v": "1.0.4","g": "4.0","z": "Differences.addon.tgz"}
 {"n": "Django Export","i": "export_django","t": "Exporter","d": "Django ist ein Web Programmgerüst das auf einer konfigurierten Datenbank arbeitet","v": "1.0.21","g": "4.0","z": "Django.addon.tgz"}
 {"n": "Django Import","i": "import_django","t": "Importer","d": "Django ist ein Web Programmgerüst das auf einer konfigurierten Datenbank arbeitet","v": "1.0.21","g": "4.0","z": "Django.addon.tgz"}
