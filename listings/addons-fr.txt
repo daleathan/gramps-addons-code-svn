@@ -31,7 +31,7 @@
 {"n": "GoogleEarth","i": "GoogleEarth","t": "Map service","d": "Créé un fichier de données pouvant être ouvert dans GoogleEarth","v": "1.0.24","g": "4.0","z": "GoogleEarthWriteKML.addon.tgz"}
 {"n": "Vue Graphique","i": "graphview","t": "Gramps View","d": "Graphique dynamique des relations","v": "1.0.38","g": "4.0","z": "GraphView.addon.tgz"}
 {"n": "Gramplet Résumé","i": "Headline News Gramplet","t": "Gramplet","d": "Gramplet pour afficher les dernières nouvelles de Gramps","v": "1.0.19","g": "4.0","z": "HeadlineNewsGramplet.addon.tgz"}
-{"n": "Gramplet Importation","i": "Import Gramplet","t": "Gramplet","d": "Gramplet pour importer du texte","v": "1.0.17","g": "4.0","z": "ImportGramplet.addon.tgz"}
+{"n": "Gramplet Importation","i": "Import Gramplet","t": "Gramplet","d": "Gramplet pour importer du texte","v": "1.0.18","g": "4.0","z": "ImportGramplet.addon.tgz"}
 {"n": "Gramplet Dernières modifications","i": "LastChangeGramplet","t": "Gramplet","d": "Liste les dix derniers individus modifiés","v": "0.0.21","g": "4.0","z": "LastChange.addon.tgz"}
 {"n": "Rapport Dernières modifications","i": "LastChangeReport","t": "Report","d": "Rapport pour les derniers enregistrements modifiés","v": "0.0.21","g": "4.0","z": "LastChange.addon.tgz"}
 {"n": "Lines of Descendency Report","i": "LinesOfDescendency","t": "Report","d": "Affiche toutes les lignes de descendants d'un ancêtre donné à un descendant choisi dans un format textuel.","v": "1.1.19","g": "4.0","z": "LinesOfDescendency.addon.tgz"}

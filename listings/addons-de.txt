@@ -31,7 +31,7 @@
 {"n": "GoogleEarth","i": "GoogleEarth","t": "Map service","d": "Erstellt Datendatei für GoogleEarth und öffnet sie","v": "1.0.24","g": "4.0","z": "GoogleEarthWriteKML.addon.tgz"}
 {"n": "Graphenansicht","i": "graphview","t": "Gramps View","d": "Dynamischer Beziehungengraph","v": "1.0.38","g": "4.0","z": "GraphView.addon.tgz"}
 {"n": "Schlagzeilen Gramplet","i": "Headline News Gramplet","t": "Gramplet","d": "Gramplet zum zeigen der neuesten Gramps Nachrichten","v": "1.0.19","g": "4.0","z": "HeadlineNewsGramplet.addon.tgz"}
-{"n": "Import Gramplet","i": "Import Gramplet","t": "Gramplet","d": "Gramplet zum Textimport","v": "1.0.17","g": "4.0","z": "ImportGramplet.addon.tgz"}
+{"n": "Import Gramplet","i": "Import Gramplet","t": "Gramplet","d": "Gramplet zum Textimport","v": "1.0.18","g": "4.0","z": "ImportGramplet.addon.tgz"}
 {"n": "Letzte Änderung Gramplet","i": "LastChangeGramplet","t": "Gramplet","d": "Listet die letzten zehn geänderten Personendatensätze","v": "0.0.21","g": "4.0","z": "LastChange.addon.tgz"}
 {"n": "Letzte Änderungen Bericht","i": "LastChangeReport","t": "Report","d": "Bericht der letzten Datensätze die geändert wurden","v": "0.0.21","g": "4.0","z": "LastChange.addon.tgz"}
 {"n": "Nachkommen Linien Bericht","i": "LinesOfDescendency","t": "Report","d": "Druckt alle Nachkommenlinien von einem gegebenen Vorfahren zu einem gegebenen Nachkommen in Textform.","v": "1.1.19","g": "4.0","z": "LinesOfDescendency.addon.tgz"}
