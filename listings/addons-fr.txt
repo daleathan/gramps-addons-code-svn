@@ -8,7 +8,7 @@
 {"n": "Réparer la casse des prénoms","i": "chgivenname","t": "Tool","d": "Recherche dans toute la base de données et essaye de corriger la casse des prénoms.","v": "1.0.17","g": "4.0","z": "ChangeGivenNames.addon.tgz"}
 {"n": "Command Line Merge","i": "climerge","t": "Tool","d": "Fusionne les objets principaux via la ligne de commande","v": "1.0.13","g": "4.0","z": "CliMerge.addon.tgz"}
 {"n": "Gramplet Presse-papiers","i": "Clipboard Gramplet","t": "Gramplet","d": "Gramplet pour regrouper des articles","v": "1.0.20","g": "4.0","z": "ClipboardGramplet.addon.tgz"}
-{"n": "Gramplet Horloge","i": "Clock Gramplet","t": "Gramplet","d": "Gramplet pour démontrer les graphiques Cairo","v": "0.0.16","g": "4.0","z": "ClockGramplet.addon.tgz"}
+{"n": "Gramplet Horloge","i": "Clock Gramplet","t": "Gramplet","d": "Gramplet pour démontrer les graphiques Cairo","v": "0.0.17","g": "4.0","z": "ClockGramplet.addon.tgz"}
 {"n": "Ensemble de liens internet allemands","i": "DE Web Connect Pack","t": "Plugin lib","d": "Collection de sites internet pour l'Allemagne (nécessite libwebconnect)","v": "0.0.13","g": "4.0","z": "DEWebConnectPack.addon.tgz"}
 {"n": "Gramplet Formulaire","i": "Data Entry Gramplet","t": "Gramplet","d": "Gramplet pour une saisie rapide des données","v": "1.0.26","g": "4.0","z": "DataEntryGramplet.addon.tgz"}
 {"n": "Gramplet Connexions approfondies","i": "Deep Connections Gramplet","t": "Gramplet","d": "Gramplet affichant les relations étroites entre la souche et les autres individus","v": "1.0.19","g": "4.0","z": "DeepConnectionsGramplet.addon.tgz"}

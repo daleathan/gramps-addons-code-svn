@@ -8,7 +8,7 @@
 {"n": "Ordna stavning av förnamn","i": "chgivenname","t": "Tool","d": "Söker igenom hela databasen och försöker ordna stavning av förnamnen","v": "1.0.17","g": "4.0","z": "ChangeGivenNames.addon.tgz"}
 {"n": "Command Line Merge","i": "climerge","t": "Tool","d": "Merge primary objects via the command line.","v": "1.0.13","g": "4.0","z": "CliMerge.addon.tgz"}
 {"n": "Urklippsgramplet","i": "Clipboard Gramplet","t": "Gramplet","d": "Gramplet för gruppering av poster","v": "1.0.20","g": "4.0","z": "ClipboardGramplet.addon.tgz"}
-{"n": "Klock-Gramplet","i": "Clock Gramplet","t": "Gramplet","d": "Gramplet for demonstrating Cairo graphics","v": "0.0.16","g": "4.0","z": "ClockGramplet.addon.tgz"}
+{"n": "Klock-Gramplet","i": "Clock Gramplet","t": "Gramplet","d": "Gramplet for demonstrating Cairo graphics","v": "0.0.17","g": "4.0","z": "ClockGramplet.addon.tgz"}
 {"n": "DE Web Connect Pack","i": "DE Web Connect Pack","t": "Plugin lib","d": "Collection of Web sites for the DE (requires libwebconnect)","v": "0.0.13","g": "4.0","z": "DEWebConnectPack.addon.tgz"}
 {"n": "Gramplet för datainmatning","i": "Data Entry Gramplet","t": "Gramplet","d": "Gramplet for quick data entry","v": "1.0.26","g": "4.0","z": "DataEntryGramplet.addon.tgz"}
 {"n": "Gramplet för långa släktskap","i": "Deep Connections Gramplet","t": "Gramplet","d": "Gramplet visande ett lång släktskap mellan aktiv och hem person","v": "1.0.19","g": "4.0","z": "DeepConnectionsGramplet.addon.tgz"}

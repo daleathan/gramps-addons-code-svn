@@ -8,7 +8,7 @@
 {"n": "Fix Capitalization of Given Names","i": "chgivenname","t": "Tool","d": "Searches the entire database and attempts to fix capitalization of the given names.","v": "1.0.17","g": "4.0","z": "ChangeGivenNames.addon.tgz"}
 {"n": "Command Line Merge","i": "climerge","t": "Tool","d": "Merge primary objects via the command line.","v": "1.0.13","g": "4.0","z": "CliMerge.addon.tgz"}
 {"n": "Clipboard Gramplet","i": "Clipboard Gramplet","t": "Gramplet","d": "Gramplet for grouping items","v": "1.0.20","g": "4.0","z": "ClipboardGramplet.addon.tgz"}
-{"n": "gramplet Sat","i": "Clock Gramplet","t": "Gramplet","d": "Gramplet for demonstrating Cairo graphics","v": "0.0.16","g": "4.0","z": "ClockGramplet.addon.tgz"}
+{"n": "gramplet Sat","i": "Clock Gramplet","t": "Gramplet","d": "Gramplet for demonstrating Cairo graphics","v": "0.0.17","g": "4.0","z": "ClockGramplet.addon.tgz"}
 {"n": "DE Web Connect Pack","i": "DE Web Connect Pack","t": "Plugin lib","d": "Collection of Web sites for the DE (requires libwebconnect)","v": "0.0.13","g": "4.0","z": "DEWebConnectPack.addon.tgz"}
 {"n": "gramplet: Unos podataka","i": "Data Entry Gramplet","t": "Gramplet","d": "Gramplet for quick data entry","v": "1.0.26","g": "4.0","z": "DataEntryGramplet.addon.tgz"}
 {"n": "gramplet: duboka povezanost","i": "Deep Connections Gramplet","t": "Gramplet","d": "Gramplet showing a deep relationship between active and home people","v": "1.0.19","g": "4.0","z": "DeepConnectionsGramplet.addon.tgz"}

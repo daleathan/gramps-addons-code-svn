@@ -8,7 +8,7 @@
 {"n": "Großschreibung von Vornamen korrigieren","i": "chgivenname","t": "Tool","d": "Durchsucht die gesamte Datenbank und versucht Großschreibung von Vornamen zu korrigieren.","v": "1.0.17","g": "4.0","z": "ChangeGivenNames.addon.tgz"}
 {"n": "Command Line Merge","i": "climerge","t": "Tool","d": "Primäre Objekte über die Kommandozeile zusammenfassen.","v": "1.0.13","g": "4.0","z": "CliMerge.addon.tgz"}
 {"n": "Zwischenablage Gramplet","i": "Clipboard Gramplet","t": "Gramplet","d": "Gramplet zum gruppieren von Elementen","v": "1.0.20","g": "4.0","z": "ClipboardGramplet.addon.tgz"}
-{"n": "Uhren Gramplet","i": "Clock Gramplet","t": "Gramplet","d": "Gramplet zum demonstrieren der Cairo Grafik","v": "0.0.16","g": "4.0","z": "ClockGramplet.addon.tgz"}
+{"n": "Uhren Gramplet","i": "Clock Gramplet","t": "Gramplet","d": "Gramplet zum demonstrieren der Cairo Grafik","v": "0.0.17","g": "4.0","z": "ClockGramplet.addon.tgz"}
 {"n": "DE Web Connect Pack","i": "DE Web Connect Pack","t": "Plugin lib","d": "Sammlung von Webseiten für DE (benötigt libwebconnect)","v": "0.0.13","g": "4.0","z": "DEWebConnectPack.addon.tgz"}
 {"n": "Dateneingabe Gramplet","i": "Data Entry Gramplet","t": "Gramplet","d": "Gramplet zur schnellen Dateneingabe","v": "1.0.26","g": "4.0","z": "DataEntryGramplet.addon.tgz"}
 {"n": "Tief gehende Beziehungen Gramplet","i": "Deep Connections Gramplet","t": "Gramplet","d": "Gramplet zeigt eine tief gehende Beziehung zwischen aktiver und Hauptperson","v": "1.0.19","g": "4.0","z": "DeepConnectionsGramplet.addon.tgz"}
