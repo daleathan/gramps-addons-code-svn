@@ -29,7 +29,7 @@
 {"n": "Family Tree","i": "FamilyTree","t": "Report","d": "Grafische familiestamboom wordt aangemaakt.","v": "3.4.18","g": "4.0","z": "FamilyTree.addon.tgz"}
 {"n": "Export GEDCOM Extensions (GED2)","i": "Export GEDCOM Extensions","t": "Exporter","d": "Extensions to the common GEDCOM format.","v": "1.0.8","g": "4.0","z": "GedcomExtensions.addon.tgz"}
 {"n": "GoogleEarth","i": "GoogleEarth","t": "Map service","d": "Gegevensbestand voor 'GoogleEarth' aanmaken en openen","v": "1.0.24","g": "4.0","z": "GoogleEarthWriteKML.addon.tgz"}
-{"n": "Grafiekscherm","i": "graphview","t": "Gramps View","d": "Dynamische grafiek van de verwantschappen","v": "1.0.37","g": "4.0","z": "GraphView.addon.tgz"}
+{"n": "Grafiekscherm","i": "graphview","t": "Gramps View","d": "Dynamische grafiek van de verwantschappen","v": "1.0.38","g": "4.0","z": "GraphView.addon.tgz"}
 {"n": "Laatste nieuws","i": "Headline News Gramplet","t": "Gramplet","d": "Gramplet die het laatste Gramps-nieuws toont","v": "1.0.19","g": "4.0","z": "HeadlineNewsGramplet.addon.tgz"}
 {"n": "Import","i": "Import Gramplet","t": "Gramplet","d": "Gramplet om tekst te importeren","v": "1.0.17","g": "4.0","z": "ImportGramplet.addon.tgz"}
 {"n": "Laatste wijzigingen","i": "LastChangeGramplet","t": "Gramplet","d": "De tien laatst gewijzigde persoonsgegevens worden gelijst","v": "0.0.21","g": "4.0","z": "LastChange.addon.tgz"}

@@ -29,7 +29,7 @@
 {"n": "Family Tree","i": "FamilyTree","t": "Report","d": "Produces a graphical family tree.","v": "3.4.18","g": "4.0","z": "FamilyTree.addon.tgz"}
 {"n": "Export GEDCOM Extensions (GED2)","i": "Export GEDCOM Extensions","t": "Exporter","d": "Extensions to the common GEDCOM format.","v": "1.0.8","g": "4.0","z": "GedcomExtensions.addon.tgz"}
 {"n": "GoogleEarth","i": "GoogleEarth","t": "Map service","d": "Creates data file for GoogleEarth and opens it","v": "1.0.24","g": "4.0","z": "GoogleEarthWriteKML.addon.tgz"}
-{"n": "Graph View","i": "graphview","t": "Gramps View","d": "Dynamic graph of relations","v": "1.0.37","g": "4.0","z": "GraphView.addon.tgz"}
+{"n": "Graph View","i": "graphview","t": "Gramps View","d": "Dynamic graph of relations","v": "1.0.38","g": "4.0","z": "GraphView.addon.tgz"}
 {"n": "Headline News Gramplet","i": "Headline News Gramplet","t": "Gramplet","d": "Gramplet for showing latest the Gramps news","v": "1.0.19","g": "4.0","z": "HeadlineNewsGramplet.addon.tgz"}
 {"n": "Import Gramplet","i": "Import Gramplet","t": "Gramplet","d": "Gramplet for importing text","v": "1.0.17","g": "4.0","z": "ImportGramplet.addon.tgz"}
 {"n": "Last Change Gramplet","i": "LastChangeGramplet","t": "Gramplet","d": "List the last ten person records that have been changed","v": "0.0.21","g": "4.0","z": "LastChange.addon.tgz"}
