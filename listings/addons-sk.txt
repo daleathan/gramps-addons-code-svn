@@ -48,8 +48,8 @@
 {"n": "Správa o archívoch","i": "Repositories Report","t": "Report","d": "Poskytuje textovú správu o archívoch","v": "1.1.11","g": "4.0","z": "RepositoriesReport.addon.tgz"}
 {"n": "Repositories Report Options","i": "Repositories Report Options","t": "Report","d": "Poskytuje textovú správu o archívoch","v": "0.3.11","g": "4.0","z": "RepositoriesReport.addon.tgz"}
 {"n": "Set Attribute","i": "SetAttribute","t": "Tool","d": "Set an attribute to a given value.","v": "0.0.15","g": "4.0","z": "SetAttributeTool.addon.tgz"}
-{"n": "SQLite Import","i": "im_sqlite","t": "Importer","d": "SQLite is a common local database format","v": "1.0.20","g": "4.0","z": "Sqlite.addon.tgz"}
-{"n": "SQLite Export","i": "ex_sqlite","t": "Exporter","d": "SQLite is a common local database format","v": "1.0.19","g": "4.0","z": "Sqlite.addon.tgz"}
+{"n": "SQLite Import","i": "im_sqlite","t": "Importer","d": "SQLite is a common local database format","v": "1.0.21","g": "4.0","z": "Sqlite.addon.tgz"}
+{"n": "SQLite Export","i": "ex_sqlite","t": "Exporter","d": "SQLite is a common local database format","v": "1.0.20","g": "4.0","z": "Sqlite.addon.tgz"}
 {"n": "Thumbnail Generator","i": "thumbgen","t": "Tool","d": "Generates thumbnails for media files","v": "1.0.11","g": "4.0","z": "ThumbnailGenerator.addon.tgz"}
 {"n": "Timeline Pedigree","i": "TimelinePedigreeView","t": "Gramps View","d": "The view shows a timeline pedigree with ancestors and descendants of the selected person","v": "0.1.28","g": "4.0","z": "TimelinePedigreeView.addon.tgz"}
 {"n": "Timeline","i": "timelinequickview","t": "Quickreport","d": "Display a person's events on a timeline","v": "1.0.18","g": "4.0","z": "TimelineQuickview.addon.tgz"}

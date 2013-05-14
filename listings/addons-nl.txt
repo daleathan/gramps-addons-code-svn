@@ -48,8 +48,8 @@
 {"n": "Bibliotheken","i": "Repositories Report","t": "Report","d": "Tekstverslag van de bibliotheken aanmaken","v": "1.1.11","g": "4.0","z": "RepositoriesReport.addon.tgz"}
 {"n": "Opties voor het bibliotheekverslag","i": "Repositories Report Options","t": "Report","d": "Tekstverslag van de bibliotheken aanmaken","v": "0.3.11","g": "4.0","z": "RepositoriesReport.addon.tgz"}
 {"n": "Kenmerk vastleggen","i": "SetAttribute","t": "Tool","d": "Een kenmerk een bepaalde waarde toekennen.","v": "0.0.15","g": "4.0","z": "SetAttributeTool.addon.tgz"}
-{"n": "'SQLite'-import","i": "im_sqlite","t": "Importer","d": "'SQLite' is een veel gebruikt lokaal gegevensbestandsformaat","v": "1.0.20","g": "4.0","z": "Sqlite.addon.tgz"}
-{"n": "'SQLite'-export","i": "ex_sqlite","t": "Exporter","d": "'SQLite' is een veel gebruikt lokaal gegevensbestandsformaat","v": "1.0.19","g": "4.0","z": "Sqlite.addon.tgz"}
+{"n": "'SQLite'-import","i": "im_sqlite","t": "Importer","d": "'SQLite' is een veel gebruikt lokaal gegevensbestandsformaat","v": "1.0.21","g": "4.0","z": "Sqlite.addon.tgz"}
+{"n": "'SQLite'-export","i": "ex_sqlite","t": "Exporter","d": "'SQLite' is een veel gebruikt lokaal gegevensbestandsformaat","v": "1.0.20","g": "4.0","z": "Sqlite.addon.tgz"}
 {"n": "Miniaturen aanmaken","i": "thumbgen","t": "Tool","d": "Miniaturen voor mediabestanden aanmaken","v": "1.0.11","g": "4.0","z": "ThumbnailGenerator.addon.tgz"}
 {"n": "Tijdslijnstamboom","i": "TimelinePedigreeView","t": "Gramps View","d": "Dit scherm toont een tijdslijnstamboom met voorouders en nakomelingen van de geselecteerde persoon","v": "0.1.28","g": "4.0","z": "TimelinePedigreeView.addon.tgz"}
 {"n": "Timeline","i": "timelinequickview","t": "Quickreport","d": "Gebeurtenissen van een persoon worden op een tijdslijn getoond","v": "1.0.18","g": "4.0","z": "TimelineQuickview.addon.tgz"}

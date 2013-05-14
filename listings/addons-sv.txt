@@ -48,8 +48,8 @@
 {"n": "Arkivplatsrapport","i": "Repositories Report","t": "Report","d": "Skapar en textbaserad rapport över arkivplatser","v": "1.1.11","g": "4.0","z": "RepositoriesReport.addon.tgz"}
 {"n": "Arkivplatsrapportalternativ","i": "Repositories Report Options","t": "Report","d": "Skapar en textbaserad rapport över arkivplatser","v": "0.3.11","g": "4.0","z": "RepositoriesReport.addon.tgz"}
 {"n": "Sätt attribut","i": "SetAttribute","t": "Tool","d": "Sätt ett attribut till ett givet värde.","v": "0.0.15","g": "4.0","z": "SetAttributeTool.addon.tgz"}
-{"n": "SQLite Import","i": "im_sqlite","t": "Importer","d": "SQLite är ett vanligt lokal databasformat","v": "1.0.20","g": "4.0","z": "Sqlite.addon.tgz"}
-{"n": "SQLite Export","i": "ex_sqlite","t": "Exporter","d": "SQLite är ett vanligt lokal databasformat","v": "1.0.19","g": "4.0","z": "Sqlite.addon.tgz"}
+{"n": "SQLite Import","i": "im_sqlite","t": "Importer","d": "SQLite är ett vanligt lokal databasformat","v": "1.0.21","g": "4.0","z": "Sqlite.addon.tgz"}
+{"n": "SQLite Export","i": "ex_sqlite","t": "Exporter","d": "SQLite är ett vanligt lokal databasformat","v": "1.0.20","g": "4.0","z": "Sqlite.addon.tgz"}
 {"n": "Thumbnail Generator","i": "thumbgen","t": "Tool","d": "Generates thumbnails for media files","v": "1.0.11","g": "4.0","z": "ThumbnailGenerator.addon.tgz"}
 {"n": "Antavla med tidslinje","i": "TimelinePedigreeView","t": "Gramps View","d": "Vyn visar en tidslinje med anor och ättlingar för den valda personen","v": "0.1.28","g": "4.0","z": "TimelinePedigreeView.addon.tgz"}
 {"n": "Timeline","i": "timelinequickview","t": "Quickreport","d": "Visar händelser för en person på en tidslinje","v": "1.0.18","g": "4.0","z": "TimelineQuickview.addon.tgz"}

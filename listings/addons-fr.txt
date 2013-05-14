@@ -48,8 +48,8 @@
 {"n": "Rapport des dépôts","i": "Repositories Report","t": "Report","d": "Produit un rapport textuel des dépôts","v": "1.1.11","g": "4.0","z": "RepositoriesReport.addon.tgz"}
 {"n": "Rapport des dépôts avec options","i": "Repositories Report Options","t": "Report","d": "Produit un rapport textuel des dépôts","v": "0.3.11","g": "4.0","z": "RepositoriesReport.addon.tgz"}
 {"n": "Définir un attribut","i": "SetAttribute","t": "Tool","d": "Définir une valeur à un attribut.","v": "0.0.15","g": "4.0","z": "SetAttributeTool.addon.tgz"}
-{"n": "Importation SQLite","i": "im_sqlite","t": "Importer","d": "SQLite est un format courant de base de données locale","v": "1.0.20","g": "4.0","z": "Sqlite.addon.tgz"}
-{"n": "Exportation SQLite","i": "ex_sqlite","t": "Exporter","d": "SQLite est un format courant de base de données locale","v": "1.0.19","g": "4.0","z": "Sqlite.addon.tgz"}
+{"n": "Importation SQLite","i": "im_sqlite","t": "Importer","d": "SQLite est un format courant de base de données locale","v": "1.0.21","g": "4.0","z": "Sqlite.addon.tgz"}
+{"n": "Exportation SQLite","i": "ex_sqlite","t": "Exporter","d": "SQLite est un format courant de base de données locale","v": "1.0.20","g": "4.0","z": "Sqlite.addon.tgz"}
 {"n": "Générateur de miniature","i": "thumbgen","t": "Tool","d": "Génère des miniatures de nos fichiers media","v": "1.0.11","g": "4.0","z": "ThumbnailGenerator.addon.tgz"}
 {"n": "Arbre au fil du temps","i": "TimelinePedigreeView","t": "Gramps View","d": "Cette vue affiche une ligne temporelle dans l'arbre avec ascendants et descendants de l'individu sélectionné","v": "0.1.28","g": "4.0","z": "TimelinePedigreeView.addon.tgz"}
 {"n": "Timeline","i": "timelinequickview","t": "Quickreport","d": "Affiche les événements d'une personne tout au long de sa vie","v": "1.0.18","g": "4.0","z": "TimelineQuickview.addon.tgz"}
