@@ -39,7 +39,7 @@
 {"n": "Vérification des media","i": "mediaverify","t": "Tool","d": "Vérifier si l'objet medium est présent avec le bon chemin ","v": "1.0.5","g": "4.0","z": "MediaVerify.addon.tgz"}
 {"n": "Gramplet Note","i": "Note Gramplet","t": "Gramplet","d": "Gramplet pour l'édition des notes de l'individu actif","v": "1.0.17","g": "4.0","z": "NoteGramplet.addon.tgz"}
 {"n": "Nombre de descendants","i": "NumberOfDescendantsQuickview","t": "Quickreport","d": "Affiche le nombre de descendants de l'individu actif","v": "3.4.16","g": "4.0","z": "NumberOfDescendantsQuickview.addon.tgz"}
-{"n": "Arbre graphique","i": "PedigreeChart","t": "Report","d": "Version alternative de l'arbre graphique traditionnel.","v": "1.0.19","g": "4.0","z": "PedigreeChart.addon.tgz"}
+{"n": "Arbre graphique","i": "PedigreeChart","t": "Report","d": "Version alternative de l'arbre graphique traditionnel.","v": "1.0.20","g": "4.0","z": "PedigreeChart.addon.tgz"}
 {"n": "Arrangement des lieux","i": "PlaceCompletion","t": "Tool","d": "Fournit une liste consultable des lieux sélectionnés, avec la possibilité de compléter/analyser/définir les champs de l'attribut","v": "0.0.22","g": "4.0","z": "PlaceCompletion.addon.tgz"}
 {"n": "Gramplet Python","i": "Python Gramplet","t": "Gramplet","d": "Un interpréteur python interactif","v": "1.0.16","g": "4.0","z": "PythonGramplet.addon.tgz"}
 {"n": "Gramplet Requête","i": "Query Gramplet","t": "Gramplet","d": "Gramplet pour des requêtes SQL-like","v": "1.0.14","g": "4.0","z": "Query.addon.tgz"}
