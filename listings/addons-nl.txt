@@ -32,8 +32,8 @@
 {"n": "Grafiekscherm","i": "graphview","t": "Gramps View","d": "Dynamische grafiek van de verwantschappen","v": "1.0.37","g": "4.0","z": "GraphView.addon.tgz"}
 {"n": "Laatste nieuws","i": "Headline News Gramplet","t": "Gramplet","d": "Gramplet die het laatste Gramps-nieuws toont","v": "1.0.19","g": "4.0","z": "HeadlineNewsGramplet.addon.tgz"}
 {"n": "Import","i": "Import Gramplet","t": "Gramplet","d": "Gramplet om tekst te importeren","v": "1.0.17","g": "4.0","z": "ImportGramplet.addon.tgz"}
-{"n": "Laatste wijzigingen","i": "LastChangeGramplet","t": "Gramplet","d": "De tien laatst gewijzigde persoonsgegevens worden gelijst","v": "0.0.20","g": "4.0","z": "LastChange.addon.tgz"}
-{"n": "Laatste wijzigingen","i": "LastChangeReport","t": "Report","d": "Verslag van de laatst gewijzigde gegevens","v": "0.0.20","g": "4.0","z": "LastChange.addon.tgz"}
+{"n": "Laatste wijzigingen","i": "LastChangeGramplet","t": "Gramplet","d": "De tien laatst gewijzigde persoonsgegevens worden gelijst","v": "0.0.21","g": "4.0","z": "LastChange.addon.tgz"}
+{"n": "Laatste wijzigingen","i": "LastChangeReport","t": "Report","d": "Verslag van de laatst gewijzigde gegevens","v": "0.0.21","g": "4.0","z": "LastChange.addon.tgz"}
 {"n": "Afstammelingenlijnen","i": "LinesOfDescendency","t": "Report","d": "Alle afstammelingenlijnen van een bepaalde voorouder tot een bepaalde afstammeling worden als tekst afgedrukt.","v": "1.1.19","g": "4.0","z": "LinesOfDescendency.addon.tgz"}
 {"n": "Media-browser","i": "MediaBrowser","t": "Gramplet","d": "Gramplet showing details of a person","v": "1.0.13","g": "4.0","z": "MediaBrowser.addon.tgz"}
 {"n": "Media Verify","i": "mediaverify","t": "Tool","d": "Verify that media is present in the correct path","v": "1.0.5","g": "4.0","z": "MediaVerify.addon.tgz"}
