@@ -21,8 +21,8 @@
 {"n": "Django-import","i": "import_django","t": "Importer","d": "Django är ett nätbaserat ramverkarbetande med en konfigurerad databas ","v": "1.0.21","g": "4.0","z": "Django.addon.tgz"}
 {"n": "Edit Image Exif Metadata","i": "Edit Image Exif Metadata","t": "Gramplet","d": "Gramplet to view, edit, and save image Exif metadata","v": "1.5.3","g": "4.0","z": "EditExifMetadata.addon.tgz"}
 {"n": "Rå export","i": "Raw Export","t": "Exporter","d": "Detta är en rå dumpning av pythonobjekt","v": "1.0.19","g": "4.0","z": "ExportRaw.addon.tgz"}
-{"n": "Extended Family Attributes","i": "Extended Family Attributes","t": "Gramplet","d": "Gramplet showing the attributes of a family","v": "1.0.13","g": "4.0","z": "ExtendedAttributes.addon.tgz"}
-{"n": "Extended Person Attributes","i": "Extended Person Attributes","t": "Gramplet","d": "Gramplet showing the attributes of a person","v": "1.0.13","g": "4.0","z": "ExtendedAttributes.addon.tgz"}
+{"n": "Extended Family Attributes","i": "Extended Family Attributes","t": "Gramplet","d": "Gramplet showing the attributes of a family","v": "1.0.14","g": "4.0","z": "ExtendedAttributes.addon.tgz"}
+{"n": "Extended Person Attributes","i": "Extended Person Attributes","t": "Gramplet","d": "Gramplet showing the attributes of a person","v": "1.0.14","g": "4.0","z": "ExtendedAttributes.addon.tgz"}
 {"n": "FR Web Connect Pack","i": "FR Web Connect Pack","t": "Plugin lib","d": "Collection of Web sites for the FR (requires libwebconnect)","v": "1.0.19","g": "4.0","z": "FRWebConnectPack.addon.tgz"}
 {"n": "Face Detection","i": "Face Detection","t": "Gramplet","d": "Gramplet for detecting and assigning faces","v": "1.0.11","g": "4.0","z": "FaceDetection.addon.tgz"}
 {"n": "Familjeark","i": "FamilySheet","t": "Report","d": "Skapar ett familjeark visande all information om en person och dennes partner och barn.","v": "3.4.21","g": "4.0","z": "FamilySheet.addon.tgz"}

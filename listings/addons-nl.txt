@@ -21,8 +21,8 @@
 {"n": "Django-import","i": "import_django","t": "Importer","d": "Django is een webstructuur die draait op een geconfigureerd gegevensbestand","v": "1.0.21","g": "4.0","z": "Django.addon.tgz"}
 {"n": "Edit Image Exif Metadata","i": "Edit Image Exif Metadata","t": "Gramplet","d": "Gramplet to view, edit, and save image Exif metadata","v": "1.5.3","g": "4.0","z": "EditExifMetadata.addon.tgz"}
 {"n": "Ruwe export","i": "Raw Export","t": "Exporter","d": "Dit is een ruwe 'python object'-dump","v": "1.0.19","g": "4.0","z": "ExportRaw.addon.tgz"}
-{"n": "Uitgebreide familiekenmerken","i": "Extended Family Attributes","t": "Gramplet","d": "Gramplet showing the attributes of a family","v": "1.0.13","g": "4.0","z": "ExtendedAttributes.addon.tgz"}
-{"n": "Uitgebreide persoonskenmerken","i": "Extended Person Attributes","t": "Gramplet","d": "Gramplet showing the attributes of a person","v": "1.0.13","g": "4.0","z": "ExtendedAttributes.addon.tgz"}
+{"n": "Uitgebreide familiekenmerken","i": "Extended Family Attributes","t": "Gramplet","d": "Gramplet showing the attributes of a family","v": "1.0.14","g": "4.0","z": "ExtendedAttributes.addon.tgz"}
+{"n": "Uitgebreide persoonskenmerken","i": "Extended Person Attributes","t": "Gramplet","d": "Gramplet showing the attributes of a person","v": "1.0.14","g": "4.0","z": "ExtendedAttributes.addon.tgz"}
 {"n": "FR Web Connect Pack","i": "FR Web Connect Pack","t": "Plugin lib","d": "Collection of Web sites for the FR (requires libwebconnect)","v": "1.0.19","g": "4.0","z": "FRWebConnectPack.addon.tgz"}
 {"n": "Gelaatsherkenning","i": "Face Detection","t": "Gramplet","d": "Gramplet om gelaatstrekken te detecteren en toe te kennen","v": "1.0.11","g": "4.0","z": "FaceDetection.addon.tgz"}
 {"n": "Familiepagina","i": "FamilySheet","t": "Report","d": "Een familiepagina die de volledige informatie over een persoon en zijn/haar partners en kinderen, toont.","v": "3.4.21","g": "4.0","z": "FamilySheet.addon.tgz"}

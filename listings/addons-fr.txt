@@ -21,8 +21,8 @@
 {"n": "Import Django","i": "import_django","t": "Importer","d": "Django est un environnement internet fonctionnant avec une base de données configurée","v": "1.0.21","g": "4.0","z": "Django.addon.tgz"}
 {"n": "Edit Image Exif Metadata","i": "Edit Image Exif Metadata","t": "Gramplet","d": "Gramplet to view, edit, and save image Exif metadata","v": "1.5.3","g": "4.0","z": "EditExifMetadata.addon.tgz"}
 {"n": "Export brut","i": "Raw Export","t": "Exporter","d": "Ceci est une image brute d'objet python","v": "1.0.19","g": "4.0","z": "ExportRaw.addon.tgz"}
-{"n": "Attributs étendus de la famille","i": "Extended Family Attributes","t": "Gramplet","d": "Gramplet showing the attributes of a family","v": "1.0.13","g": "4.0","z": "ExtendedAttributes.addon.tgz"}
-{"n": "Attributs étendus de l'individu","i": "Extended Person Attributes","t": "Gramplet","d": "Gramplet showing the attributes of a person","v": "1.0.13","g": "4.0","z": "ExtendedAttributes.addon.tgz"}
+{"n": "Attributs étendus de la famille","i": "Extended Family Attributes","t": "Gramplet","d": "Gramplet showing the attributes of a family","v": "1.0.14","g": "4.0","z": "ExtendedAttributes.addon.tgz"}
+{"n": "Attributs étendus de l'individu","i": "Extended Person Attributes","t": "Gramplet","d": "Gramplet showing the attributes of a person","v": "1.0.14","g": "4.0","z": "ExtendedAttributes.addon.tgz"}
 {"n": "Ensemble de liens internet francophones","i": "FR Web Connect Pack","t": "Plugin lib","d": "Collection de sites internet pour les francophones (nécessite libwebconnect)","v": "1.0.19","g": "4.0","z": "FRWebConnectPack.addon.tgz"}
 {"n": "Détection de visage","i": "Face Detection","t": "Gramplet","d": "Gramplet pour détecter et assigner des visages","v": "1.0.11","g": "4.0","z": "FaceDetection.addon.tgz"}
 {"n": "Résumé familial","i": "FamilySheet","t": "Report","d": "Produit un résumé familial montrant les informations complètes sur l'individu, ses conjoints et enfants.","v": "3.4.21","g": "4.0","z": "FamilySheet.addon.tgz"}
