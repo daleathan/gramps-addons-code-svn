@@ -27,7 +27,7 @@
 {"n": "Face Detection","i": "Face Detection","t": "Gramplet","d": "Gramplet for detecting and assigning faces","v": "1.0.11","g": "4.0","z": "FaceDetection.addon.tgz"}
 {"n": "Family Sheet","i": "FamilySheet","t": "Report","d": "Produces a family sheet showing full information about a person and his/her partners and children.","v": "3.4.21","g": "4.0","z": "FamilySheet.addon.tgz"}
 {"n": "Family Tree","i": "FamilyTree","t": "Report","d": "Produces a graphical family tree.","v": "3.4.18","g": "4.0","z": "FamilyTree.addon.tgz"}
-{"n": "Export GEDCOM Extensions (GED2)","i": "Export GEDCOM Extensions","t": "Exporter","d": "Extensions to the common GEDCOM format.","v": "1.0.7","g": "4.0","z": "GedcomExtensions.addon.tgz"}
+{"n": "Export GEDCOM Extensions (GED2)","i": "Export GEDCOM Extensions","t": "Exporter","d": "Extensions to the common GEDCOM format.","v": "1.0.8","g": "4.0","z": "GedcomExtensions.addon.tgz"}
 {"n": "GoogleEarth","i": "GoogleEarth","t": "Map service","d": "Creates data file for GoogleEarth and opens it","v": "1.0.24","g": "4.0","z": "GoogleEarthWriteKML.addon.tgz"}
 {"n": "Graph View","i": "graphview","t": "Gramps View","d": "Dynamic graph of relations","v": "1.0.37","g": "4.0","z": "GraphView.addon.tgz"}
 {"n": "Gramplet de Capçaleres de Notícies","i": "Headline News Gramplet","t": "Gramplet","d": "Gramplet for showing latest the Gramps news","v": "1.0.19","g": "4.0","z": "HeadlineNewsGramplet.addon.tgz"}
