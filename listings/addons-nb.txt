@@ -39,6 +39,7 @@
 {"n": "Media Verify","i": "mediaverify","t": "Tool","d": "Verify that media is present in the correct path","v": "1.0.5","g": "4.0","z": "MediaVerify.addon.tgz"}
 {"n": "Notat Smågramps","i": "Note Gramplet","t": "Gramplet","d": "Gramplet for editing active person's notes","v": "1.0.17","g": "4.0","z": "NoteGramplet.addon.tgz"}
 {"n": "Number of descendants","i": "NumberOfDescendantsQuickview","t": "Quickreport","d": "Shows the number of descendants of the current person","v": "3.4.16","g": "4.0","z": "NumberOfDescendantsQuickview.addon.tgz"}
+{"n": "Participants","i": "Participants","t": "Gramplet","d": "Gramplet showing the participants in an event","v": "1.0.2","g": "4.0","z": "Participants.addon.tgz"}
 {"n": "Pedigree Chart","i": "PedigreeChart","t": "Report","d": "Alternate version of the traditional pedigree chart.","v": "1.0.20","g": "4.0","z": "PedigreeChart.addon.tgz"}
 {"n": "PlaceCompletion","i": "PlaceCompletion","t": "Tool","d": "Provides a browsable list of selected places, with possibility to complete/parse/set the attribute fields.","v": "0.0.22","g": "4.0","z": "PlaceCompletion.addon.tgz"}
 {"n": "Python smågramps","i": "Python Gramplet","t": "Gramplet","d": "Interactive Python interpreter","v": "1.0.16","g": "4.0","z": "PythonGramplet.addon.tgz"}
