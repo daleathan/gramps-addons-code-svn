@@ -5,7 +5,7 @@
 {"n": "Census Report","i": "census_report","t": "Report","d": "Report of census events for a person.","v": "1.0.27","g": "4.0","z": "Census.addon.tgz"}
 {"n": "Census Gramplet","i": "Census Gramplet","t": "Gramplet","d": "Gramplet interface for census data","v": "1.0.27","g": "4.0","z": "Census.addon.tgz"}
 {"n": "Census Fix","i": "censusfix","t": "Tool","d": "Fix changed attributes in census data","v": "1.0.6","g": "3.4","z": "Census.addon.tgz"}
-{"n": "Fix Capitalization of Given Names","i": "chgivenname","t": "Tool","d": "Searches the entire database and attempts to fix capitalization of the given names.","v": "1.0.17","g": "4.0","z": "ChangeGivenNames.addon.tgz"}
+{"n": "Fix Capitalization of Given Names","i": "chgivenname","t": "Tool","d": "Searches the entire database and attempts to fix capitalization of the given names.","v": "1.0.18","g": "4.0","z": "ChangeGivenNames.addon.tgz"}
 {"n": "Command Line Merge","i": "climerge","t": "Tool","d": "Merge primary objects via the command line.","v": "1.0.13","g": "4.0","z": "CliMerge.addon.tgz"}
 {"n": "Clipboard Gramplet","i": "Clipboard Gramplet","t": "Gramplet","d": "Gramplet for grouping items","v": "1.0.20","g": "4.0","z": "ClipboardGramplet.addon.tgz"}
 {"n": "Gramplet Zegara","i": "Clock Gramplet","t": "Gramplet","d": "Gramplet for demonstrating Cairo graphics","v": "0.0.17","g": "4.0","z": "ClockGramplet.addon.tgz"}

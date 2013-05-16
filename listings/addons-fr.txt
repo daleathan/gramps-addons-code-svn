@@ -5,7 +5,7 @@
 {"n": "Rapport de recensement","i": "census_report","t": "Report","d": "Les événements recensement de l'individu.","v": "1.0.27","g": "4.0","z": "Census.addon.tgz"}
 {"n": "Gramplet Recensement","i": "Census Gramplet","t": "Gramplet","d": "Gramplet servant d'interface aux données de recensement","v": "1.0.27","g": "4.0","z": "Census.addon.tgz"}
 {"n": "Census Fix","i": "censusfix","t": "Tool","d": "Fix changed attributes in census data","v": "1.0.6","g": "3.4","z": "Census.addon.tgz"}
-{"n": "Réparer la casse des prénoms","i": "chgivenname","t": "Tool","d": "Recherche dans toute la base de données et essaye de corriger la casse des prénoms.","v": "1.0.17","g": "4.0","z": "ChangeGivenNames.addon.tgz"}
+{"n": "Réparer la casse des prénoms","i": "chgivenname","t": "Tool","d": "Recherche dans toute la base de données et essaye de corriger la casse des prénoms.","v": "1.0.18","g": "4.0","z": "ChangeGivenNames.addon.tgz"}
 {"n": "Command Line Merge","i": "climerge","t": "Tool","d": "Fusionne les objets principaux via la ligne de commande","v": "1.0.13","g": "4.0","z": "CliMerge.addon.tgz"}
 {"n": "Gramplet Presse-papiers","i": "Clipboard Gramplet","t": "Gramplet","d": "Gramplet pour regrouper des articles","v": "1.0.20","g": "4.0","z": "ClipboardGramplet.addon.tgz"}
 {"n": "Gramplet Horloge","i": "Clock Gramplet","t": "Gramplet","d": "Gramplet pour démontrer les graphiques Cairo","v": "0.0.17","g": "4.0","z": "ClockGramplet.addon.tgz"}

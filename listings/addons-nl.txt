@@ -5,7 +5,7 @@
 {"n": "Volkstelling","i": "census_report","t": "Report","d": "Verslag van de volkstellinggebeurtenissen van een persoon.","v": "1.0.27","g": "4.0","z": "Census.addon.tgz"}
 {"n": "Volkstelling","i": "Census Gramplet","t": "Gramplet","d": "Gramplet ingavevensterdie voor volkstellinggegevens","v": "1.0.27","g": "4.0","z": "Census.addon.tgz"}
 {"n": "Census Fix","i": "censusfix","t": "Tool","d": "Fix changed attributes in census data","v": "1.0.6","g": "3.4","z": "Census.addon.tgz"}
-{"n": "Hoofdletters van voornamen verbeteren","i": "chgivenname","t": "Tool","d": "Het volledige gegevensbestand wordt doorzocht en er wordt getracht de hoofdletters van de voornamen te verbeteren.","v": "1.0.17","g": "4.0","z": "ChangeGivenNames.addon.tgz"}
+{"n": "Hoofdletters van voornamen verbeteren","i": "chgivenname","t": "Tool","d": "Het volledige gegevensbestand wordt doorzocht en er wordt getracht de hoofdletters van de voornamen te verbeteren.","v": "1.0.18","g": "4.0","z": "ChangeGivenNames.addon.tgz"}
 {"n": "Command Line Merge","i": "climerge","t": "Tool","d": "Primaire objecten via de opdrachtregel samenvoegen.","v": "1.0.13","g": "4.0","z": "CliMerge.addon.tgz"}
 {"n": "Klembord","i": "Clipboard Gramplet","t": "Gramplet","d": "Gramplet om gegevens te groeperen","v": "1.0.20","g": "4.0","z": "ClipboardGramplet.addon.tgz"}
 {"n": "Klok","i": "Clock Gramplet","t": "Gramplet","d": "Gramplet om de grafische mogelijkheden van 'Cairo' te tonen","v": "0.0.17","g": "4.0","z": "ClockGramplet.addon.tgz"}
