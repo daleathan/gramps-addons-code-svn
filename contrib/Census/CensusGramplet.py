@@ -1067,7 +1067,7 @@ class EntryGrid(gtk.Table):
         self.build()
 
     def row_changed(self, model, path, iter_):
-        for column in range(1, len(self.headings)):
+        for column in range(1, len(self.headings) + 1):
             value = model.get_value(iter_, column)
             if value is not None:
                 self.widgets[path[0]][column - 1].set_text(value)

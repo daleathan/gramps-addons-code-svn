@@ -9,9 +9,9 @@
 {'d': 'Gramplet interface for certificates', 'g': '3.4', 'i': 'Certificates Gramplet', 'n': 'Certificates Gramplet', 't': u'Gramplet', 'v': '1.0.20', 'z': 'Certificate.addon.tgz'}
 {'d': 'Gramplet to show all census events', 'g': '3.4', 'i': 'AllCensus', 'n': 'All Census Gramplet', 't': u'Gramplet', 'v': '1.0.0', 'z': 'Certificate.addon.tgz'}
 {'d': 'Gramplet showing a deep relationship between active and home people', 'g': '3.4', 'i': 'Deep Connections Gramplet', 'n': 'Gramplet g\xc5\x82\xc4\x99bokich po\xc5\x82\xc4\x85cze\xc5\x84', 't': u'Gramplet', 'v': '1.0.13', 'z': 'DeepConnectionsGramplet.addon.tgz'}
-{'d': 'Report of census events for a person.', 'g': '3.4', 'i': 'census_report', 'n': 'Census Report', 't': u'Report', 'v': '1.0.21', 'z': 'Census.addon.tgz'}
-{'d': 'Gramplet interface for census data', 'g': '3.4', 'i': 'Census Gramplet', 'n': 'Census Gramplet', 't': u'Gramplet', 'v': '1.0.21', 'z': 'Census.addon.tgz'}
-{'d': 'Gramplet to show all census events', 'g': '3.4', 'i': 'AllCensus', 'n': 'All Census Gramplet', 't': u'Gramplet', 'v': '1.0.1', 'z': 'Census.addon.tgz'}
+{'d': 'Report of census events for a person.', 'g': '3.4', 'i': 'census_report', 'n': 'Census Report', 't': u'Report', 'v': '1.0.22', 'z': 'Census.addon.tgz'}
+{'d': 'Gramplet interface for census data', 'g': '3.4', 'i': 'Census Gramplet', 'n': 'Census Gramplet', 't': u'Gramplet', 'v': '1.0.22', 'z': 'Census.addon.tgz'}
+{'d': 'Gramplet to show all census events', 'g': '3.4', 'i': 'AllCensus', 'n': 'All Census Gramplet', 't': u'Gramplet', 'v': '1.0.2', 'z': 'Census.addon.tgz'}
 {'d': 'Gramplet for generic notes', 'g': '3.4', 'i': 'TODO2', 'n': 'TODO2', 't': u'Gramplet', 'v': '0.0.2', 'z': 'ToDoNotesGramplet.addon.tgz'}
 {'d': 'Verify that media is present in the correct path', 'g': '3.4', 'i': 'mediaverify', 'n': 'Media Verify', 't': u'Tool', 'v': '1.0.3', 'z': 'MediaVerify.addon.tgz'}
 {'d': 'Set Tag to a given value.', 'g': '3.4', 'i': 'SetTag', 'n': 'Set Tag', 't': u'Tool', 'v': '0.1.4', 'z': 'SetTagTool.addon.tgz'}
