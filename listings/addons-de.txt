@@ -5,16 +5,12 @@
 {'d': 'SQLite is a common local database format', 'g': '3.4', 'i': 'im_sqlite', 'n': 'SQLite Import', 't': u'Importer', 'v': '1.0.15', 'z': 'Sqlite.addon.tgz'}
 {'d': 'SQLite is a common local database format', 'g': '3.4', 'i': 'ex_sqlite', 'n': 'SQLite Export', 't': u'Exporter', 'v': '1.0.14', 'z': 'Sqlite.addon.tgz'}
 {'d': 'Interactive Python interpreter', 'g': '3.4', 'i': 'Python Gramplet', 'n': 'Python Gramplet', 't': u'Gramplet', 'v': '1.0.7', 'z': 'PythonGramplet.addon.tgz'}
-{'d': 'Bericht der Zensusereignise f\xc3\xbcr eine Person.', 'g': '3.4', 'i': 'census_report', 'n': 'Zensusbericht', 't': u'Report', 'v': '1.0.20', 'z': 'Certificate.addon.tgz'}
-{'d': 'Gramplet interface for certificates', 'g': '3.4', 'i': 'Certificates Gramplet', 'n': 'Certificates Gramplet', 't': u'Gramplet', 'v': '1.0.20', 'z': 'Certificate.addon.tgz'}
-{'d': 'Gramplet to show all census events', 'g': '3.4', 'i': 'AllCensus', 'n': 'All Census Gramplet', 't': u'Gramplet', 'v': '1.0.0', 'z': 'Certificate.addon.tgz'}
 {'d': 'Gramplet zeigt eine tief gehende Beziehung zwischen aktiver und Hauptperson', 'g': '3.4', 'i': 'Deep Connections Gramplet', 'n': 'Tief gehende Beziehungen Gramplet', 't': u'Gramplet', 'v': '1.0.13', 'z': 'DeepConnectionsGramplet.addon.tgz'}
 {'d': 'Bericht der Zensusereignise f\xc3\xbcr eine Person.', 'g': '3.4', 'i': 'census_report', 'n': 'Zensusbericht', 't': u'Report', 'v': '1.0.22', 'z': 'Census.addon.tgz'}
 {'d': 'Gramplet Schnittstelle f\xc3\xbcr Zensusdaten', 'g': '3.4', 'i': 'Census Gramplet', 'n': 'Zensus Gramplet', 't': u'Gramplet', 'v': '1.0.22', 'z': 'Census.addon.tgz'}
 {'d': 'Gramplet to show all census events', 'g': '3.4', 'i': 'AllCensus', 'n': 'All Census Gramplet', 't': u'Gramplet', 'v': '1.0.2', 'z': 'Census.addon.tgz'}
 {'d': 'Gramplet for generic notes', 'g': '3.4', 'i': 'TODO2', 'n': 'Zu erledigen2', 't': u'Gramplet', 'v': '0.0.2', 'z': 'ToDoNotesGramplet.addon.tgz'}
 {'d': 'Verify that media is present in the correct path', 'g': '3.4', 'i': 'mediaverify', 'n': 'Media Verify', 't': u'Tool', 'v': '1.0.3', 'z': 'MediaVerify.addon.tgz'}
-{'d': 'Set Tag to a given value.', 'g': '3.4', 'i': 'SetTag', 'n': 'Set Tag', 't': u'Tool', 'v': '0.1.4', 'z': 'SetTagTool.addon.tgz'}
 {'d': 'Bibliothek f\xc3\xbcr Webseitensammlungen', 'g': '3.4', 'i': 'libwebconnect', 'n': 'libwebconnect', 't': u'Plugin lib', 'v': '1.0.7', 'z': 'libwebconnect.addon.tgz'}
 {'d': 'Listet die letzten zehn ge\xc3\xa4nderten Personendatens\xc3\xa4tze', 'g': '3.4', 'i': 'LastChangeGramplet', 'n': 'Letzte \xc3\x84nderung Gramplet', 't': u'Gramplet', 'v': '0.0.12', 'z': 'LastChange.addon.tgz'}
 {'d': 'Bericht der letzten Datens\xc3\xa4tze die ge\xc3\xa4ndert wurden', 'g': '3.4', 'i': 'LastChangeReport', 'n': 'Letzte \xc3\x84nderungen Bericht', 't': u'Report', 'v': '0.0.12', 'z': 'LastChange.addon.tgz'}

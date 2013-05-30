@@ -34,5 +34,6 @@ register(TOOL,
          toolclass = 'SetTagWindow',
          optionclass = 'SetTagOptions',
          tool_modes = [TOOL_MODE_GUI],
+         include_in_listing = False,
          )
 
