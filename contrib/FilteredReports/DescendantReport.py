@@ -31,8 +31,9 @@ from functools import partial
 #------------------------------------------------------------------------
 from gen.display.name import displayer as _nd
 from Errors import ReportError
+from Filters import GenericFilter
 from gen.lib import FamilyRelType, Person, NoteType
-from gen.plug.menu import (BooleanOption, NumberOption, PersonOption, 
+from gen.plug.menu import (BooleanOption, NumberOption, 
                            EnumeratedListOption, FilterOption,
                            StringOption, TextOption)
 from gen.plug.docgen import (IndexMark, FontStyle, ParagraphStyle, 
@@ -43,8 +44,6 @@ from gen.plug.report import endnotes
 from gen.plug.report import utils as ReportUtils
 from gen.plug.report import MenuReportOptions
                         
-import DateHandler
-
 from libnarrate import Narrator
 import TransUtils
 from libtranslate import Translator, get_language_string
@@ -805,8 +804,6 @@ class DescendantReport(Report):
             rules = self.filter.get_filter().get_rules()
 
             if len(rules) > 1:
-                from Filters import GenericFilter
-
                 # This will wind up to be an intersection of all filter rules
                 common_people = None
 
@@ -921,6 +918,7 @@ class DescendantOptions(MenuReportOptions):
     """
 
     def __init__(self, name, dbase):
+        self.__db = dbase
         MenuReportOptions.__init__(self, name, dbase)
         
     def add_menu_options(self, menu):
@@ -936,12 +934,47 @@ class DescendantOptions(MenuReportOptions):
         self.filter.set_help(
             _("Determines what people are included in the report"))
         add_option("filter", self.filter)
-        self.filter.connect("value-changed", self._filter_changed)
 
         from Filters import CustomFilters
         if len(CustomFilters.get_filters("Person")) == 0:
-            raise ReportError(_("no custom filters found -- can only use custom filters with this report"))
-        self.filter.set_filters(CustomFilters.get_filters("Person"))
+            from QuestionDialog import WarningDialog
+            WarningDialog(_("No custom filters found"),
+                    _(
+                        "You do not have any custom filters.  The power of this "
+                        "plugin comes from custom filters which are used to "
+                        "figure out which people to include in the report.\n"
+                        "\n"
+                        "You can create custom filters from the "
+                        "'Person Filter Editor' in the 'Edit' menu (when you "
+                        "are in a person-related view like People or "
+                        "Relationships).\n"
+                        "\n"
+                        "With no custom filters, this plugin will fallback "
+                        "to using whatever filters are available and an "
+                        "option to pick the center person for the filter.\n"
+                        "\n"
+                        "If you would like to create a descendant report "
+                        "without using custom filters, you might want to "
+                        "check out the 'Detailed Descendant Report' on which "
+                        "this plugin is based.\n"
+                     )
+            )
+
+            # No custom filters, fallback to use what's available along with
+            # a center person
+            from gen.plug.menu import PersonOption
+
+            self.filter.connect("value-changed", self._filter_changed)
+
+            self.pid = PersonOption(_("Filter Person"))
+            self.pid.set_help(_("The center person for the filter"))
+            add_option("pid", self.pid)
+            self.pid.connect("value-changed", self._update_filters)
+
+            self._update_filters()
+        else:
+            self.filter.connect("value-changed", self._customfilter_changed)
+            self.filter.set_filters(CustomFilters.get_filters("Person"))
         
         generations = NumberOption(_("Generations"), 10, 1, 100)
         generations.set_help(
@@ -1186,12 +1219,34 @@ class DescendantOptions(MenuReportOptions):
 
         endnotes.add_endnote_styles(default_style)
 
-    def _filter_changed(self):
+    def _customfilter_changed(self):
         try:
             # Update the title to match the name of the filter
             self.title.set_value(self.filter.get_filter().get_name())
         except AttributeError:
             pass
+
+    def _filter_changed(self):
+        """
+        Handle filter change. If the filter is not specific to a person,
+        disable the person option
+        """
+        filter_value = self.filter.get_value()
+        if filter_value in [1, 2, 3, 4]:
+            # Filters 1, 2, 3 and 4 rely on the center person
+            self.pid.set_available(True)
+        else:
+            # The rest don't
+            self.pid.set_available(False)
+
+    def _update_filters(self):
+        """
+        Update the filter list based on the selected person
+        """
+        gid = self.pid.get_value()
+        person = self.__db.get_person_from_gramps_id(gid)
+        filter_list = ReportUtils.get_person_filters(person, False)
+        self.filter.set_filters(filter_list)
 
     def _photo_changed(self):
         self.inccaptions.set_available(self.incphotos.get_value())
