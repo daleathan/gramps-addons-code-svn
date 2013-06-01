@@ -41,10 +41,9 @@ msgstr ""
 "Project-Id-Version: gramps\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-03-25 20:11+0100\n"
-"PO-Revision-Date: 2013-03-21 09:22+0100\n"
+"PO-Revision-Date: 2013-06-01 21:00+0100\n"
 "Last-Translator: Frederik De Richter <frederik.de.richter@gmail.com>\n"
 "Language-Team: nederlands <frederik.de.richter@gmail.com>\n"
-"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -53,16 +52,16 @@ msgstr ""
 
 #: FamilyTree//FamilyTree.gpr.py:3
 msgid "Family Tree"
-msgstr "Familiestamboom"
+msgstr "Stamboom"
 
 #: FamilyTree//FamilyTree.gpr.py:4
 msgid "Produces a graphical family tree."
-msgstr "Grafische familiestamboom wordt aangemaakt."
+msgstr "Grafische stamboom aanmaken."
 
 #: FamilyTree//FamilyTree.py:90
 #, python-format
 msgid "Family Tree for %s"
-msgstr "Familiestamboom voor %s"
+msgstr "Stamboom voor %s"
 
 #: FamilyTree//FamilyTree.py:625 FamilyTree//FamilyTree.py:630
 msgid "Unknown"
@@ -170,7 +169,8 @@ msgstr "Afstammelingengeneraties"
 
 #: FamilyTree//FamilyTree.py:986
 msgid "The number of descendant generations to include in the tree"
-msgstr "Het aantal afstammelingengeneraties dat aan de stamboom wordt toegevoegd"
+msgstr ""
+"Het aantal afstammelingengeneraties dat aan de stamboom wordt toegevoegd"
 
 #: FamilyTree//FamilyTree.py:989
 msgid "Sc_ale to fit on a single page"
@@ -178,7 +178,7 @@ msgstr "Schalen om op één pagina te kunnen plaatsen"
 
 #: FamilyTree//FamilyTree.py:990
 msgid "Whether to scale to fit on a single page."
-msgstr "Al dan niet schalen om op een enkel pagina te passen"
+msgstr "Al dan niet schalen om op een enkel pagina te passen."
 
 #: FamilyTree//FamilyTree.py:993
 msgid "Color"
@@ -230,11 +230,11 @@ msgstr "Inhoud"
 
 #: FamilyTree//FamilyTree.py:1011
 msgid "Use call name"
-msgstr "Gebruik roepnaam"
+msgstr "Roepnaam gebruiken"
 
 #: FamilyTree//FamilyTree.py:1013
 msgid "Don't use call name"
-msgstr "Gebruik de roepnaam niet"
+msgstr "Roepnaam niet gebruiken"
 
 #: FamilyTree//FamilyTree.py:1014
 msgid "Replace first name with call name"
@@ -283,7 +283,8 @@ msgstr "Op doopsel terugvallen indien geboortegebeurtenis ontbreekt"
 
 #: FamilyTree//FamilyTree.py:1043
 msgid "Fall back to burial or cremation if death event missing"
-msgstr "Op begrafenis of crematie terugvallen als overlijdensgebeurtenis ontbreekt"
+msgstr ""
+"Op begrafenis of crematie terugvallen als overlijdensgebeurtenis ontbreekt"
 
 #: FamilyTree//FamilyTree.py:1048
 msgid "Print fields for missing information"
@@ -303,7 +304,7 @@ msgstr "Tekstopties"
 
 #: FamilyTree//FamilyTree.py:1057
 msgid "Title text"
-msgstr "Titel tekst"
+msgstr "Titeltekst"
 
 #: FamilyTree//FamilyTree.py:1060
 msgid "Footer text"
@@ -319,7 +320,8 @@ msgstr "De gebruikte stijl voor de namen."
 
 #: FamilyTree//FamilyTree.py:1091
 msgid "The style used for data (birth, death, marriage, divorce)."
-msgstr "De gebruikte stijl voor gegeven (geboorte, overlijden, huwelijk, scheiding)."
+msgstr ""
+"De gebruikte stijl voor gegeven (geboorte, overlijden, huwelijk, scheiding)."
 
 #: FamilyTree//FamilyTree.py:1101
 msgid "The style used for the footer."
