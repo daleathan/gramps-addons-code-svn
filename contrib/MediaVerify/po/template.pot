@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-03-06 22:46+0000\n"
+"POT-Creation-Date: 2013-06-02 10:59+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,8 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: MediaVerify/MediaVerify.gpr.py:30 MediaVerify/MediaVerify.py:116
-#: MediaVerify/MediaVerify.py:173 MediaVerify/MediaVerify.py:251
+#: MediaVerify/MediaVerify.gpr.py:30
 msgid "Media Verify"
 msgstr ""
 
@@ -26,90 +25,117 @@ msgstr ""
 msgid "Verify that media is present in the correct path"
 msgstr ""
 
-#: MediaVerify/MediaVerify.py:61
+#: MediaVerify/MediaVerify.py:70
 msgid "Media Verify Tool"
 msgstr ""
 
-#: MediaVerify/MediaVerify.py:72
-msgid "Files"
+#: MediaVerify/MediaVerify.py:75
+msgid "Moved/Renamed Files"
 msgstr ""
 
-#: MediaVerify/MediaVerify.py:83
-msgid "Close"
-msgstr ""
-
-#: MediaVerify/MediaVerify.py:84
-msgid "Close the Media Verify Tool"
-msgstr ""
-
-#: MediaVerify/MediaVerify.py:86
-msgid "Generate"
-msgstr ""
-
-#: MediaVerify/MediaVerify.py:87
-msgid "Generate md5 hashes for media objects"
-msgstr ""
-
-#: MediaVerify/MediaVerify.py:89
-msgid "Verify"
-msgstr ""
-
-#: MediaVerify/MediaVerify.py:90
-msgid "Check media paths and report missing, duplicate and extra files"
-msgstr ""
-
-#: MediaVerify/MediaVerify.py:93
-msgid "Fix"
-msgstr ""
-
-#: MediaVerify/MediaVerify.py:94
-msgid "Fix media paths of moved and renamed files"
-msgstr ""
-
-#: MediaVerify/MediaVerify.py:108
-msgid "Verify Gramps media using md5 hashes"
-msgstr ""
-
-#: MediaVerify/MediaVerify.py:119
-msgid "Generating media hashes"
-msgstr ""
-
-#: MediaVerify/MediaVerify.py:121
-msgid "Set media hashes"
-msgstr ""
-
-#: MediaVerify/MediaVerify.py:163
-msgid "Moved Files"
-msgstr ""
-
-#: MediaVerify/MediaVerify.py:164
+#: MediaVerify/MediaVerify.py:75
 msgid "Missing Files"
 msgstr ""
 
-#: MediaVerify/MediaVerify.py:165
+#: MediaVerify/MediaVerify.py:76
 msgid "Duplicate Files"
 msgstr ""
 
-#: MediaVerify/MediaVerify.py:166
+#: MediaVerify/MediaVerify.py:76
 msgid "Extra Files"
 msgstr ""
 
-#: MediaVerify/MediaVerify.py:167
+#: MediaVerify/MediaVerify.py:77
 msgid "No md5 Generated"
 msgstr ""
 
-#: MediaVerify/MediaVerify.py:176
-msgid "Finding files"
+#: MediaVerify/MediaVerify.py:77
+msgid "Errors"
 msgstr ""
 
-#: MediaVerify/MediaVerify.py:196
-msgid "Checking paths"
+#: MediaVerify/MediaVerify.py:92
+msgid "Close"
 msgstr ""
 
-#: MediaVerify/MediaVerify.py:252
+#: MediaVerify/MediaVerify.py:93
+msgid "Close the Media Verify Tool"
+msgstr ""
+
+#: MediaVerify/MediaVerify.py:95
+msgid "Generate"
+msgstr ""
+
+#: MediaVerify/MediaVerify.py:96
+msgid "Generate md5 hashes for media objects"
+msgstr ""
+
+#: MediaVerify/MediaVerify.py:98
+msgid "Verify"
+msgstr ""
+
+#: MediaVerify/MediaVerify.py:99
+msgid "Check media paths and report missing, duplicate and extra files"
+msgstr ""
+
+#: MediaVerify/MediaVerify.py:102
+msgid "Export"
+msgstr ""
+
+#: MediaVerify/MediaVerify.py:103
+msgid "Export the results to a text file"
+msgstr ""
+
+#: MediaVerify/MediaVerify.py:105
+msgid "Fix"
+msgstr ""
+
+#: MediaVerify/MediaVerify.py:106
+msgid "Fix media paths of moved and renamed files"
+msgstr ""
+
+#: MediaVerify/MediaVerify.py:123
+msgid "Verify Gramps media using md5 hashes"
+msgstr ""
+
+#: MediaVerify/MediaVerify.py:133
+msgid "Files"
+msgstr ""
+
+#: MediaVerify/MediaVerify.py:185
+msgid "Export results to a text file"
+msgstr ""
+
+#: MediaVerify/MediaVerify.py:209
+#, python-format
+msgid "Error when writing the report: %s"
+msgstr ""
+
+#: MediaVerify/MediaVerify.py:251
+msgid "Generating media hashes"
+msgstr ""
+
+#: MediaVerify/MediaVerify.py:257
+msgid "Set media hashes"
+msgstr ""
+
+#: MediaVerify/MediaVerify.py:304
+msgid ""
+"Media path not set.  You must set the \"Base path for relative media paths\" "
+"in the Preferences."
+msgstr ""
+
+#: MediaVerify/MediaVerify.py:315
+msgid "Finding Files"
+msgstr ""
+
+#: MediaVerify/MediaVerify.py:347
+msgid "Checking Paths"
+msgstr ""
+
+#: MediaVerify/MediaVerify.py:410
 msgid "Fixing file paths"
 msgstr ""
 
-#: MediaVerify/MediaVerify.py:254
+#: MediaVerify/MediaVerify.py:416
 msgid "Fix media paths"
 msgstr ""
