@@ -1,0 +1,13 @@
+register(GRAMPLET, 
+         id="Surname Mapping", 
+         name=_("Surname Mapping"), 
+         description = _("Gramplet showing surname mapping"),
+         status = STABLE,
+         fname="SurnameMappingGramplet.py",
+         height=230,
+         expand=True,
+         gramplet = 'SurnameMappingGramplet',
+         gramplet_title=_("Surname Mapping"),
+         version="1.0.0",
+         gramps_target_version="3.4",
+         )
