@@ -1,0 +1,493 @@
+# Swedish translations for gramps package.
+# Copyright (C) 2013 THE gramps'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the gramps package.
+#
+# Peter Landgren <peter.talken@telia.com>, 2013.
+msgid ""
+msgstr ""
+"Project-Id-Version: gramps 34\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-06-25 12:32+0200\n"
+"PO-Revision-Date: 2013-06-25 16:50+0200\n"
+"Last-Translator: Peter Landgren <peter.talken@telia.com>\n"
+"Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
+"Language: sv\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 1.5\n"
+
+#: FilteredReports/DescendantReport.gpr.py:25
+msgid "Filtered Descendant Report"
+msgstr "Rapport med utvalda ättlingar"
+
+#: FilteredReports/DescendantReport.gpr.py:26
+msgid "Produces a descendant report using a filter"
+msgstr "Skapar en ättlingsrapport med hjälp av ett filter"
+
+#: FilteredReports/DescendantReport.py:230
+#, python-format
+msgid "Generation %d"
+msgstr "Generation %d"
+
+#: FilteredReports/DescendantReport.py:315
+#, python-format
+msgid "%(name)s is the same person as [%(id_str)s]."
+msgstr "%(name)s är samma person som [%(id_str)s]."
+
+#: FilteredReports/DescendantReport.py:365
+#, python-format
+msgid "%(date)s, %(place)s"
+msgstr "%(date)s, %(place)s"
+
+#: FilteredReports/DescendantReport.py:368
+#, python-format
+msgid "%(date)s"
+msgstr "%(date)s"
+
+#: FilteredReports/DescendantReport.py:370
+#, python-format
+msgid "%(place)s"
+msgstr "%(place)s"
+
+#: FilteredReports/DescendantReport.py:382
+#, python-format
+msgid "%(event_name)s: %(event_text)s"
+msgstr "%(event_name)s: %(event_text)s"
+
+#: FilteredReports/DescendantReport.py:399
+#: FilteredReports/DescendantReport.py:630
+#: FilteredReports/DescendantReport.py:780
+#, python-format
+msgid "%(type)s: %(value)s%(endnotes)s"
+msgstr "%(type)s: %(value)s%(endnotes)s"
+
+#: FilteredReports/DescendantReport.py:483
+#, python-format
+msgid "Spouse: %s"
+msgstr "Maka/make: %s"
+
+#: FilteredReports/DescendantReport.py:485
+#, python-format
+msgid "Relationship with: %s"
+msgstr "Släktskap med: %s"
+
+#: FilteredReports/DescendantReport.py:499
+#: FilteredReports/DescendantReport.py:506
+msgid "unknown"
+msgstr "okänd"
+
+#: FilteredReports/DescendantReport.py:521
+#, python-format
+msgid "Children of %(mother_name)s and %(father_name)s"
+msgstr "Barn till %(mother_name)s och %(father_name)s"
+
+#: FilteredReports/DescendantReport.py:579
+#, python-format
+msgid "Notes for %(mother_name)s and %(father_name)s:"
+msgstr "Notiser för %(mother_name)s och %(father_name)s:"
+
+#: FilteredReports/DescendantReport.py:603
+#: FilteredReports/DescendantReport.py:622
+#, python-format
+msgid "More about %(mother_name)s and %(father_name)s:"
+msgstr "Mer om %(mother_name)s och %(father_name)s:"
+
+#: FilteredReports/DescendantReport.py:701
+#, python-format
+msgid "Notes for %s"
+msgstr "Notiser för %s"
+
+#: FilteredReports/DescendantReport.py:715
+#: FilteredReports/DescendantReport.py:733
+#: FilteredReports/DescendantReport.py:744
+#: FilteredReports/DescendantReport.py:768
+#, python-format
+msgid "More about %(person_name)s:"
+msgstr "Mer om %(person_name)s:"
+
+#: FilteredReports/DescendantReport.py:722
+#, python-format
+msgid "%(name_kind)s: %(name)s%(endnotes)s"
+msgstr "%(name_kind)s: %(name)s%(endnotes)s"
+
+#: FilteredReports/DescendantReport.py:757
+msgid "Address: "
+msgstr "Adress: "
+
+#: FilteredReports/DescendantReport.py:824
+msgid "no common person found between filter rules to synchronize generations"
+msgstr ""
+"ingen gemensam person funnen mellan filterregler för att synkronisera "
+"generationer"
+
+#: FilteredReports/DescendantReport.py:853
+#, python-format
+msgid "can't determine generation for '%s'"
+msgstr "kan ej bestämma generation för '%s'"
+
+#: FilteredReports/DescendantReport.py:908
+#, python-format
+msgid "no person found with ID '%s'"
+msgstr "ingen person hittad med ID '%s'"
+
+#: FilteredReports/DescendantReport.py:931
+msgid "Report Options"
+msgstr "Rapportalternativ"
+
+#: FilteredReports/DescendantReport.py:933
+msgid "Filter"
+msgstr "Filter"
+
+#: FilteredReports/DescendantReport.py:935
+msgid "Determines what people are included in the report"
+msgstr "Bestämmer vilka personer, som skall ingå i rapporten"
+
+#: FilteredReports/DescendantReport.py:941
+msgid "No custom filters found"
+msgstr "Ingen anpassat filter hittat"
+
+#: FilteredReports/DescendantReport.py:943
+msgid ""
+"You do not have any custom filters.  The power of this plugin comes from "
+"custom filters which are used to figure out which people to include in the "
+"report.\n"
+"\n"
+"You can create custom filters from the 'Person Filter Editor' in the 'Edit' "
+"menu (when you are in a person-related view like People or Relationships).\n"
+"\n"
+"With no custom filters, this plugin will fallback to using whatever filters "
+"are available and an option to pick the center person for the filter.\n"
+"\n"
+"If you would like to create a descendant report without using custom "
+"filters, you might want to check out the 'Detailed Descendant Report' on "
+"which this plugin is based.\n"
+msgstr ""
+"Du har inga anpassade filter. Kraften i denna insticksmodul kommer från "
+"anpassade filter, som används för att ta reda på vilka personer att ta med "
+"i rapporten.\n"
+"\n"
+"Du kan skapa anpassade filter från 'Personfilterredigeraren' i "
+"'Redigerarmenyn' "
+"(när du är i en personrelaterad vy som 'Personvy' eller 'Släktskapsvy'.\n"
+"\n"
+"Utan anpassade filter kommer denna insticksmodul att använda vilket "
+"tillgängligt filter som helst och ett val att peka ut huvudpersonen för "
+"filtret.\n"
+"\n"
+"Om du vill skapa en ättlingarapport utan att använda anpassade filter, "
+"kan du i stället använda ' Detaljerad ättlingsrapport' "
+"på vilken denna insticksmodul är baserad.\n"
+
+#: FilteredReports/DescendantReport.py:969
+msgid "Filter Person"
+msgstr "Filterperson"
+
+#: FilteredReports/DescendantReport.py:970
+msgid "The center person for the filter"
+msgstr "Huvudperson för filtret"
+
+#: FilteredReports/DescendantReport.py:979
+msgid "Generations"
+msgstr "Generationer"
+
+#: FilteredReports/DescendantReport.py:981
+msgid "The number of generations to include in the report"
+msgstr "Antal generationer, som skall tas med i rapporten"
+
+#: FilteredReports/DescendantReport.py:985
+msgid "Page break between generations"
+msgstr "Sidbrytning mellan generationer"
+
+#: FilteredReports/DescendantReport.py:987
+msgid "Whether to start a new page after each generation."
+msgstr "Huruvida börja på ny sida för varje generation."
+
+#: FilteredReports/DescendantReport.py:990
+msgid "Page break before end notes"
+msgstr "Sidbrytning  före slutnoter"
+
+#: FilteredReports/DescendantReport.py:992
+msgid "Whether to start a new page before the end notes."
+msgstr "Huruvida börja på ny sida före slutnoter."
+
+#: FilteredReports/DescendantReport.py:995
+msgid "Report title"
+msgstr "Rapporttitel"
+
+#: FilteredReports/DescendantReport.py:996
+msgid "This text will be used as the report title"
+msgstr "Denna text kommer att utgöra rapportens titel"
+
+#: FilteredReports/DescendantReport.py:999
+msgid "Translation"
+msgstr "Översättning"
+
+#: FilteredReports/DescendantReport.py:1001
+msgid "Default"
+msgstr "Standard"
+
+#: FilteredReports/DescendantReport.py:1004
+msgid "The translation to be used for the report."
+msgstr "Den översättning som skall användas i rapporten."
+
+#: FilteredReports/DescendantReport.py:1009
+msgid "Content"
+msgstr "Innehåll"
+
+#: FilteredReports/DescendantReport.py:1011
+msgid "Use callname for common name"
+msgstr "Använd tilltalsnamn för allmänt namn"
+
+#: FilteredReports/DescendantReport.py:1012
+msgid "Whether to use the call name as the first name."
+msgstr "Huruvida använda tilltalsnamn som första namn."
+
+#: FilteredReports/DescendantReport.py:1015
+msgid "Use full dates instead of only the year"
+msgstr "Använd komplett datum i stället för enbart år"
+
+#: FilteredReports/DescendantReport.py:1017
+msgid "Whether to use full dates instead of just year."
+msgstr "Huruvida använda komplett datum i stället för bara året."
+
+#: FilteredReports/DescendantReport.py:1020
+msgid "List children"
+msgstr "Lista barn"
+
+#: FilteredReports/DescendantReport.py:1021
+msgid "Whether to list children."
+msgstr "Huruvida lista barn."
+
+#: FilteredReports/DescendantReport.py:1024
+msgid "Compute death age"
+msgstr "Beräkna dödsålder"
+
+#: FilteredReports/DescendantReport.py:1025
+msgid "Whether to compute a person's age at death."
+msgstr "Huruvida beräkna en persons ålder vid döden."
+
+#: FilteredReports/DescendantReport.py:1028
+msgid "Omit duplicate ancestors"
+msgstr "Uteslut dubbletteranor"
+
+#: FilteredReports/DescendantReport.py:1029
+msgid "Whether to omit duplicate ancestors."
+msgstr "Huruvida utesluta dubblerade anor"
+
+#: FilteredReports/DescendantReport.py:1032
+msgid "Use complete sentences"
+msgstr "Använd fullständiga satser"
+
+#: FilteredReports/DescendantReport.py:1034
+msgid "Whether to use complete sentences or succinct language."
+msgstr "Huruvida använda fullständiga satser eller kortfattat språk."
+
+#: FilteredReports/DescendantReport.py:1037
+msgid "Add descendant reference in child list"
+msgstr "Lägg till ättlingsreferens i barnlista"
+
+#: FilteredReports/DescendantReport.py:1040
+msgid "Whether to add descendant references in child list."
+msgstr "Huruvida lägga till ättlingsreferenser i barnlista."
+
+#: FilteredReports/DescendantReport.py:1043
+msgid "Turn URLs into real links"
+msgstr "Omvandla URL-er till riktiga länkar"
+
+#: FilteredReports/DescendantReport.py:1044
+msgid ""
+"Turn any URLs starting with 'http', 'https', or 'mailto' into clickable links"
+msgstr ""
+"Omvandla alla URL-er börjande med 'http', 'https' eller 'mailto' till "
+"klickbara länkar"
+
+#: FilteredReports/DescendantReport.py:1047
+msgid "Do not include information marked private"
+msgstr "Tag ej med information markerat som privat"
+
+#: FilteredReports/DescendantReport.py:1048
+msgid "Whether to honor the private flag setting"
+msgstr "Huruvida utnyttja inställning av privatflagga"
+
+#: FilteredReports/DescendantReport.py:1051
+msgid "Include"
+msgstr "Ta med"
+
+#: FilteredReports/DescendantReport.py:1053
+msgid "Include notes"
+msgstr "Ta med notiser"
+
+#: FilteredReports/DescendantReport.py:1054
+msgid "Whether to include notes."
+msgstr "Huruvida ta med notiser"
+
+#: FilteredReports/DescendantReport.py:1057
+msgid "Include attributes"
+msgstr "Ta med attribut"
+
+#: FilteredReports/DescendantReport.py:1058
+msgid "Whether to include attributes."
+msgstr "Huruvida ta med attribut"
+
+#: FilteredReports/DescendantReport.py:1061
+msgid "Include Photo/Images from Gallery"
+msgstr "Ta med bilder/fotografier från galleri"
+
+#: FilteredReports/DescendantReport.py:1062
+msgid "Whether to include images."
+msgstr "Huruvida ta med bilder."
+
+#: FilteredReports/DescendantReport.py:1066
+msgid "Include alternative names"
+msgstr "Ta med alternativa namn"
+
+#: FilteredReports/DescendantReport.py:1067
+msgid "Whether to include other names."
+msgstr "Huruvida ta med alternativa namn"
+
+#: FilteredReports/DescendantReport.py:1070
+msgid "Include events"
+msgstr "Ta med händelser"
+
+#: FilteredReports/DescendantReport.py:1071
+msgid "Whether to include events."
+msgstr "Huruvida ta med händelser"
+
+#: FilteredReports/DescendantReport.py:1074
+msgid "Include addresses"
+msgstr "Ta med adresser"
+
+#: FilteredReports/DescendantReport.py:1075
+msgid "Whether to include addresses."
+msgstr "Huruvida ta med adresser."
+
+#: FilteredReports/DescendantReport.py:1078
+msgid "Include sources"
+msgstr "Ta med källor"
+
+#: FilteredReports/DescendantReport.py:1079
+msgid "Whether to include source references."
+msgstr "Huruvida ta med källreferenser."
+
+#: FilteredReports/DescendantReport.py:1082
+msgid "Include sources notes"
+msgstr "Ta med källnotiser"
+
+#: FilteredReports/DescendantReport.py:1083
+msgid ""
+"Whether to include source notes in the Endnotes section. Only works if "
+"Include sources is selected."
+msgstr ""
+"Huruvida ta med källnotiser i slutnotdelen. Fungerar bara om "
+"'Ta med källor' är vald."
+
+#: FilteredReports/DescendantReport.py:1087
+msgid "Include partners"
+msgstr "Ta med partner"
+
+#: FilteredReports/DescendantReport.py:1088
+msgid "Whether to include detailed partner information."
+msgstr "Huruvida ta med detaljerad information om partner"
+
+#: FilteredReports/DescendantReport.py:1091
+msgid "Include sign of succession ('+') in child-list"
+msgstr "Ta med tecken på avkomma ('+') i barnlista"
+
+#: FilteredReports/DescendantReport.py:1093
+msgid ""
+"Whether to include a sign ('+') before the descendant number in the child-"
+"list to indicate a child has succession."
+msgstr ""
+"Huruvida ta med ett tecken ('+') före ättlingens nummer i barnlistan "
+"för att indikera att ett barn har avkomma."
+
+#: FilteredReports/DescendantReport.py:1098
+msgid "Include path to start-person"
+msgstr "Ta med sökväg för startperson"
+
+#: FilteredReports/DescendantReport.py:1099
+msgid ""
+"Whether to include the path of descendancy from the start-person to each "
+"descendant."
+msgstr ""
+"Huruvida ta med sökvägen av ättlingar från startpersonen till varje ättling."
+
+#: FilteredReports/DescendantReport.py:1103
+msgid "Caption"
+msgstr "Förklaring"
+
+#: FilteredReports/DescendantReport.py:1105
+msgid "Add caption under image from Gallery"
+msgstr "Lägg till förklaring under bilder från galleri"
+
+#: FilteredReports/DescendantReport.py:1106
+msgid "Whether to add captions underneath images."
+msgstr "Huruvida lägga till förklaringar undertill i bilder."
+
+#: FilteredReports/DescendantReport.py:1109
+msgid "Caption Format"
+msgstr "Format för förklaring"
+
+#: FilteredReports/DescendantReport.py:1110
+msgid "Display format for the caption."
+msgstr "Visa format för förklaring."
+
+#: FilteredReports/DescendantReport.py:1115
+msgid "Missing information"
+msgstr "Saknad information"
+
+#: FilteredReports/DescendantReport.py:1117
+msgid "Replace missing places with ______"
+msgstr "Byt ut saknade platser med ______"
+
+#: FilteredReports/DescendantReport.py:1118
+msgid "Whether to replace missing Places with blanks."
+msgstr "Huruvida att byta ut saknade platser med mellanslag."
+
+#: FilteredReports/DescendantReport.py:1121
+msgid "Replace missing dates with ______"
+msgstr "Byta ut saknade datum med  ______"
+
+#: FilteredReports/DescendantReport.py:1122
+msgid "Whether to replace missing Dates with blanks."
+msgstr "Huruvida att byta ut saknade datum med mellanslag."
+
+#: FilteredReports/DescendantReport.py:1135
+msgid "The style used for the title of the page."
+msgstr "Den mall som används för sidans titel."
+
+#: FilteredReports/DescendantReport.py:1145
+msgid "The style used for the generation header."
+msgstr "Den mall som används för generationshuvud."
+
+#: FilteredReports/DescendantReport.py:1155
+msgid "The style used for the children list title."
+msgstr "Den mall som används för titeln för barnlistan."
+
+#: FilteredReports/DescendantReport.py:1165
+msgid "The style used for the children list."
+msgstr "Den mall som används för barnlistan"
+
+#: FilteredReports/DescendantReport.py:1181
+msgid "The basic style used for the text display."
+msgstr "Den grundläggande mall som används för visning av text."
+
+#: FilteredReports/DescendantReport.py:1188
+msgid "The style used for the first personal entry."
+msgstr "Den mall som används för första personraden."
+
+#: FilteredReports/DescendantReport.py:1198
+msgid "The style used for the More About header and for headers of mates."
+msgstr ""
+"Den mall som används för huvud för 'Mer om' och för huvuden för ingifta."
+
+#: FilteredReports/DescendantReport.py:1209
+msgid "The style used for additional detail data."
+msgstr "Den  mall som används för ytterligare detaljerade data."
+
+#: FilteredReports/DescendantReport.py:1217
+msgid "The style used for photo captions."
+msgstr "Den mall som används för fotoförklaringar."
+
