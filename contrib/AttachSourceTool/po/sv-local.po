@@ -2,20 +2,21 @@
 # Copyright (C) 2009 THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 #
-# Peter Landgren <peter.talken@telia.com>, 2011.
+# Peter Landgren <peter.talken@telia.com>, 2011, 2013.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-11-23 19:26+0100\n"
-"PO-Revision-Date: 2011-03-16 09:24+0100\n"
+"PO-Revision-Date: 2013-06-25 17:26+0200\n"
 "Last-Translator: Peter Landgren <peter.talken@telia.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 1.0\n"
+"X-Generator: Lokalize 1.5\n"
+"Language: sv\n"
 
 #: AttachSourceTool/AttachSourceTool.gpr.py:25
 #: AttachSourceTool/AttachSourceTool.py:137
@@ -92,7 +93,7 @@ msgstr "Arbetar...\n"
 
 #: AttachSourceTool/AttachSourceTool.py:173
 msgid "Attaching sources...\n"
-msgstr "Kopplar källor...\"
+msgstr "Kopplar källor...\n"
 
 #: AttachSourceTool/AttachSourceTool.py:174
 msgid "Attaching sources..."
