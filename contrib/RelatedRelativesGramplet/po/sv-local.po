@@ -1,0 +1,60 @@
+# Swedish translations for gramps package.
+# Copyright (C) 2013 THE gramps'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the gramps package.
+#
+# Peter Landgren <peter.talken@telia.com>, 2013.
+msgid ""
+msgstr ""
+"Project-Id-Version: gramps 34\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-06-26 08:21+0200\n"
+"PO-Revision-Date: 2013-06-26 08:25+0200\n"
+"Last-Translator: Peter Landgren <peter.talken@telia.com>\n"
+"Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
+"Language: sv\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 1.5\n"
+
+#: RelatedRelativesGramplet/RelatedRelativesGramplet.gpr.py:3
+msgid "Related Relatives Gramplet"
+msgstr "Gramplet för släktskapsrelationer"
+
+#: RelatedRelativesGramplet/RelatedRelativesGramplet.gpr.py:4
+msgid "Gramplet showing relatives in a relation"
+msgstr "Gramplet som visar släktskap i en relation"
+
+#: RelatedRelativesGramplet/RelatedRelativesGramplet.gpr.py:10
+msgid "Related Relatives"
+msgstr "Släktskapsrelationer"
+
+#: RelatedRelativesGramplet/RelatedRelativesGramplet.py:49
+msgid "No Family Tree loaded."
+msgstr "Inget släktträd laddat"
+
+#: RelatedRelativesGramplet/RelatedRelativesGramplet.py:90
+msgid "Relations of related people in your database:"
+msgstr "Släktskap hos besläktade personer i din databas"
+
+#: RelatedRelativesGramplet/RelatedRelativesGramplet.py:213
+msgid "and"
+msgstr "och"
+
+#: RelatedRelativesGramplet/RelatedRelativesGramplet.py:216
+msgid "are partners and"
+msgstr "är partner och"
+
+#: RelatedRelativesGramplet/RelatedRelativesGramplet.py:239
+msgid "Common ancestor"
+msgstr "Gemensam ana"
+
+#: RelatedRelativesGramplet/RelatedRelativesGramplet.py:250
+msgid "No relatives in a relation found"
+msgstr "Inga släktingar i ett släktskap funna "
+
+#: RelatedRelativesGramplet/RelatedRelativesGramplet.py:251
+msgid "END"
+msgstr "SLUT"
+
