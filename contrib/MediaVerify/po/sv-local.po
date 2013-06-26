@@ -1,141 +1,147 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Swedish translations for gramps package.
+# Copyright (C) 2013 THE gramps'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the gramps package.
 #
-#, fuzzy
+# Peter Landgren <peter.talken@telia.com>, 2013.
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: gramps 34\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-06-26 08:01+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"PO-Revision-Date: 2013-06-26 08:11+0200\n"
+"Last-Translator: Peter Landgren <peter.talken@telia.com>\n"
+"Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
+"Language: sv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 1.5\n"
 
 #: MediaVerify/MediaVerify.gpr.py:30
 msgid "Media Verify"
-msgstr ""
+msgstr "Verifiera media"
 
 #: MediaVerify/MediaVerify.gpr.py:31
 msgid "Verify that media is present in the correct path"
-msgstr ""
+msgstr "Verifierar att media är närvarande i rätt sökväg"
 
 #: MediaVerify/MediaVerify.py:70
 msgid "Media Verify Tool"
-msgstr ""
+msgstr "Verktyg för mediaverifiering"
 
 #: MediaVerify/MediaVerify.py:75
 msgid "Moved/Renamed Files"
-msgstr ""
+msgstr "Flyttade/omdöpta filer"
 
 #: MediaVerify/MediaVerify.py:75
 msgid "Missing Files"
-msgstr ""
+msgstr "Saknade filer"
 
 #: MediaVerify/MediaVerify.py:76
 msgid "Duplicate Files"
-msgstr ""
+msgstr "Fildubbletter"
 
 #: MediaVerify/MediaVerify.py:76
 msgid "Extra Files"
-msgstr ""
+msgstr "Extra filer"
 
 #: MediaVerify/MediaVerify.py:77
 msgid "No md5 Generated"
-msgstr ""
+msgstr "Ingen md5 skapad"
 
 #: MediaVerify/MediaVerify.py:77
 msgid "Errors"
-msgstr ""
+msgstr "Fel"
 
 #: MediaVerify/MediaVerify.py:92
 msgid "Close"
-msgstr ""
+msgstr "Stäng"
 
 #: MediaVerify/MediaVerify.py:93
 msgid "Close the Media Verify Tool"
-msgstr ""
+msgstr "Stäng verktyget för mediaverifiering"
 
 #: MediaVerify/MediaVerify.py:95
 msgid "Generate"
-msgstr ""
+msgstr "Skapa"
 
 #: MediaVerify/MediaVerify.py:96
 msgid "Generate md5 hashes for media objects"
-msgstr ""
+msgstr "Skapa md5-hashes för mediaobjekt"
 
 #: MediaVerify/MediaVerify.py:98
 msgid "Verify"
-msgstr ""
+msgstr "Verifiera"
 
 #: MediaVerify/MediaVerify.py:99
 msgid "Check media paths and report missing, duplicate and extra files"
 msgstr ""
+"Kontrollera mediasökvägar och rapportera, saknade, dubblettfiler och extra "
+"filer"
 
 #: MediaVerify/MediaVerify.py:102
 msgid "Export"
-msgstr ""
+msgstr "Exportera"
 
 #: MediaVerify/MediaVerify.py:103
 msgid "Export the results to a text file"
-msgstr ""
+msgstr "Exportera resultatet till en textfil"
 
 #: MediaVerify/MediaVerify.py:105
 msgid "Fix"
-msgstr ""
+msgstr "Rätta till"
 
 #: MediaVerify/MediaVerify.py:106
 msgid "Fix media paths of moved and renamed files"
-msgstr ""
+msgstr "Rätta till mediasökvägar för flyttade och omdöpta filer"
 
 #: MediaVerify/MediaVerify.py:123
 msgid "Verify Gramps media using md5 hashes"
-msgstr ""
+msgstr "Verifiera Gramps media genom md5-hashes"
 
 #: MediaVerify/MediaVerify.py:133
 msgid "Files"
-msgstr ""
+msgstr "Filer"
 
 #: MediaVerify/MediaVerify.py:185
 msgid "Export results to a text file"
-msgstr ""
+msgstr "Exportera resultat till en textfil"
 
 #: MediaVerify/MediaVerify.py:209
 #, python-format
 msgid "Error when writing the report: %s"
-msgstr ""
+msgstr "Fel vid skrivning av rapport: %s"
 
 #: MediaVerify/MediaVerify.py:251
 msgid "Generating media hashes"
-msgstr ""
+msgstr "Skapar media hashes"
 
 #: MediaVerify/MediaVerify.py:257
 msgid "Set media hashes"
-msgstr ""
+msgstr "Bestämmer media hashes"
 
 #: MediaVerify/MediaVerify.py:304
 msgid ""
 "Media path not set.  You must set the \"Base path for relative media paths\" "
 "in the Preferences."
 msgstr ""
+"Mediasökväg en satt. Du måste sätt den grundläggande mediasökvägen för "
+"relativa mediasökväger\" "
 
 #: MediaVerify/MediaVerify.py:315
 msgid "Finding Files"
-msgstr ""
+msgstr "Hittar filer"
 
 #: MediaVerify/MediaVerify.py:347
 msgid "Checking Paths"
-msgstr ""
+msgstr "Kontrollerar sökvägar"
 
 #: MediaVerify/MediaVerify.py:410
 msgid "Fixing file paths"
-msgstr ""
+msgstr "Rättar till filsökvägar"
 
 #: MediaVerify/MediaVerify.py:416
 msgid "Fix media paths"
-msgstr ""
+msgstr "Rättar till mediasökvägar"
+
