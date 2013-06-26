@@ -1,0 +1,91 @@
+# Swedish translations for gramps package.
+# Copyright (C) 2013 THE gramps'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the gramps package.
+#
+# Peter Landgren <peter.talken@telia.com>, 2013.
+msgid ""
+msgstr ""
+"Project-Id-Version: gramps 34\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-06-26 08:29+0200\n"
+"PO-Revision-Date: 2013-06-26 10:02+0200\n"
+"Last-Translator: Peter Landgren <peter.talken@telia.com>\n"
+"Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
+"Language: sv\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 1.5\n"
+
+#: SetTagTool/SetTagTool.gpr.py:25 SetTagTool/SetTagTool.py:114
+#: SetTagTool/SetTagTool.py:120
+msgid "Set Tag"
+msgstr "Sätt flagga"
+
+#: SetTagTool/SetTagTool.gpr.py:26
+msgid "Set Tag to a given value."
+msgstr "Sätt flagga till ett givet värde"
+
+#: SetTagTool/SetTagTool.py:69 SetTagTool/SetTagTool.py:117
+msgid "Options"
+msgstr "Val"
+
+#: SetTagTool/SetTagTool.py:71
+msgid "Person Filter"
+msgstr "Personfilter"
+
+#: SetTagTool/SetTagTool.py:72
+msgid "Select filter to restrict people"
+msgstr "Välj filter för att begränsa personer"
+
+#: SetTagTool/SetTagTool.py:76
+msgid "Filter Person"
+msgstr "Filtrera person"
+
+#: SetTagTool/SetTagTool.py:77
+msgid "The center person for the filter"
+msgstr "Huvudperson för filtret"
+
+#: SetTagTool/SetTagTool.py:81
+msgid "Tag"
+msgstr "Flagga"
+
+#: SetTagTool/SetTagTool.py:83
+msgid "Tag value to add or edit"
+msgstr "Värde på flagga för tillägg eller redigering"
+
+#: SetTagTool/SetTagTool.py:122
+msgid "Results"
+msgstr "Resultat"
+
+#: SetTagTool/SetTagTool.py:123
+msgid "Processing...\n"
+msgstr "Bearbetar...\n"
+
+#: SetTagTool/SetTagTool.py:133
+msgid "Setting tags..."
+msgstr "Sätter flaggor..."
+
+#: SetTagTool/SetTagTool.py:137
+#, python-format
+msgid ""
+"Setting tags to '%s'...\n"
+"\n"
+msgstr ""
+"Sätter flaggor till '%s'...\n"
+"\n"
+
+#: SetTagTool/SetTagTool.py:154
+#, python-format
+msgid ""
+"\n"
+"Set %d tags to '%s'\n"
+msgstr ""
+"\n"
+"Sätt %d flaggor till '%s'\n"
+
+#: SetTagTool/SetTagTool.py:155
+msgid "Done!\n"
+msgstr "Klar!\n"
+
