@@ -1,0 +1,53 @@
+# Swedish translations for gramps package.
+# Copyright (C) 2013 THE gramps'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the gramps package.
+#
+# Peter Landgren <peter.talken@telia.com>, 2013.
+msgid ""
+msgstr ""
+"Project-Id-Version: gramps 34\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-06-26 10:06+0200\n"
+"PO-Revision-Date: 2013-06-26 10:09+0200\n"
+"Last-Translator: Peter Landgren <peter.talken@telia.com>\n"
+"Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
+"Language: sv\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 1.5\n"
+
+#: ThumbnailGenerator/ThumbnailGenerator.gpr.py:30
+#: ThumbnailGenerator/ThumbnailGenerator.py:45
+msgid "Thumbnail Generator"
+msgstr "Miniatyrbildskapare"
+
+#: ThumbnailGenerator/ThumbnailGenerator.gpr.py:31
+msgid "Generates thumbnails for media files"
+msgstr "Miniatyrbildskapare för mediafiler"
+
+#: ThumbnailGenerator/ThumbnailGenerator.py:48
+msgid "Generating media thumbnails"
+msgstr "Skapar mediaminiatyrbilder"
+
+#: ThumbnailGenerator/ThumbnailGenerator.py:59
+msgid "Generating thumbnails for person references"
+msgstr "Skapar miniatyrbilder för personreferenser"
+
+#: ThumbnailGenerator/ThumbnailGenerator.py:68
+msgid "Generating thumbnails for family references"
+msgstr "Skapar miniatyrbilder för familjereferenser"
+
+#: ThumbnailGenerator/ThumbnailGenerator.py:77
+msgid "Generating thumbnails for event references"
+msgstr "Skapar miniatyrbilder för händelsereferenser"
+
+#: ThumbnailGenerator/ThumbnailGenerator.py:86
+msgid "Generating thumbnails for place references"
+msgstr "Skapar miniatyrbilder för platsreferenser"
+
+#: ThumbnailGenerator/ThumbnailGenerator.py:95
+msgid "Generating thumbnails for source references"
+msgstr "Skapar miniatyrbilder för källreferenser"
+
