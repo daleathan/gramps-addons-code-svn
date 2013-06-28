@@ -117,7 +117,8 @@ class PhotoTaggingGramplet(Gramplet):
 
         self.button_index = button_panel.insert_stock(gtk.STOCK_INDEX, "Select Person", None, self.sel_person_clicked, None, -1)
         self.button_add = button_panel.insert_stock(gtk.STOCK_ADD, "Add Person", None, self.add_person_clicked, None, -1)
-        self.button_del = button_panel.insert_stock(gtk.STOCK_REMOVE, "Remove Reference", None, self.del_person_clicked, None, -1)
+        self.button_del = button_panel.insert_stock(gtk.STOCK_REMOVE, "Remove Region", None, self.del_person_clicked, None, -1)
+        self.button_clear = button_panel.insert_stock(gtk.STOCK_CLEAR, "Clear Reference", None, self.clear_ref_clicked, None, -1)
         self.button_edit = button_panel.insert_stock(gtk.STOCK_EDIT, "Edit Person", None, self.edit_person_clicked, None, -1)
 
         self.button_detect = button_panel.insert_stock(gtk.STOCK_EXECUTE, "Detect faces", None, self.detect_faces_clicked, None, -1)
@@ -413,7 +414,8 @@ class PhotoTaggingGramplet(Gramplet):
     def enable_buttons(self):
         self.button_index.set_sensitive(self.current is not None)
         self.button_add.set_sensitive(self.current is not None)
-        self.button_del.set_sensitive(self.current is not None and self.fragments.get(self.current) is not None)
+        self.button_del.set_sensitive(self.current is not None)
+        self.button_clear.set_sensitive(self.current is not None and self.fragments.get(self.current) is not None)
         self.button_edit.set_sensitive(self.current is not None and self.fragments.get(self.current) is not None)
 
         self.button_detect.set_sensitive(self.pixbuf is not None and computer_vision_available)
@@ -534,7 +536,18 @@ class PhotoTaggingGramplet(Gramplet):
         if self.current:
             person = self.fragments.get(self.current)
             if person:
-                del self.fragments[self.current]
+                rect = self.check_and_translate_to_proportional(self.current)
+                self.remove_reference(person, rect)
+            del self.fragments[self.current]
+            self.current = None
+            self.selection = None
+            self.image.queue_draw()
+
+    def clear_ref_clicked(self, event):
+        if self.current:
+            person = self.fragments.get(self.current)
+            if person:
+                self.fragments[self.current] = None
                 rect = self.check_and_translate_to_proportional(self.current)
                 self.remove_reference(person, rect)
 
