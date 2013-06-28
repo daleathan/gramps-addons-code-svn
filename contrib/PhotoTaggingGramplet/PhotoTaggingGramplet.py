@@ -224,7 +224,11 @@ class PhotoTaggingGramplet(Gramplet):
         return (rect[0] * 100 / w, rect[1] * 100 / h, rect[2] * 100 / w, rect[3] * 100 / h)
 
     def check_and_translate_to_proportional(self, rect):
-        return self.translation.get(rect, self.real_to_proportional(rect))
+        mediaref = self.translation.get(rect)
+        if mediaref:
+            return mediaref.get_rectangle()
+        else:
+            return self.real_to_proportional(rect)
 
     def image_to_screen(self, coords):
         """
@@ -285,7 +289,7 @@ class PhotoTaggingGramplet(Gramplet):
                                 rect = (0, 0, 100, 100)
                             fragment = self.proportional_to_real(rect)
                             self.fragments[fragment] = person
-                            self.translation[fragment] = mediaref.get_rectangle()
+                            self.translation[fragment] = mediaref
 
     def rescale(self):
         self.scaled_size = (int(self.original_image_size[0] * self.scale), int(self.original_image_size[1] * self.scale))
@@ -451,8 +455,12 @@ class PhotoTaggingGramplet(Gramplet):
                     if self.current:
                         person = self.fragments.get(self.current)
                         if person:
+                            mediaref = self.translation.get(self.current)
                             del self.fragments[self.current]
                             self.fragments[self.selection] = person
+                            self.translation[self.selection] = mediaref
+                            mediaref.set_rectangle(self.real_to_proportional(self.selection))
+                            self.commit_person(person)
                     self.current = self.selection
                     self.rect_pixbuf = None
                 else:
