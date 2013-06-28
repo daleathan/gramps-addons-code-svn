@@ -456,11 +456,11 @@ class PhotoTaggingGramplet(Gramplet):
                         person = self.fragments.get(self.current)
                         if person:
                             mediaref = self.translation.get(self.current)
-                            del self.fragments[self.current]
-                            self.fragments[self.selection] = person
                             self.translation[self.selection] = mediaref
                             mediaref.set_rectangle(self.real_to_proportional(self.selection))
                             self.commit_person(person)
+                        del self.fragments[self.current]
+                        self.fragments[self.selection] = person
                     self.current = self.selection
                     self.rect_pixbuf = None
                 else:
