@@ -1,7 +1,9 @@
 #
 # Gramps - a GTK+/GNOME based genealogy program
 #
-# Copyright (C) 2013  Artem Glebov <artem.glebov@gmail.com>
+# Copyright (C) 2011 Nick Hall
+#           (C) 2011 Doug Blank <doug.blank@gmail.com>
+#           (C) 2013  Artem Glebov <artem.glebov@gmail.com>
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -25,6 +27,7 @@
 # Standard python modules
 #
 #-------------------------------------------------------------------------
+import os
 from gen.ggettext import sgettext as _
 
 #-------------------------------------------------------------------------
@@ -53,12 +56,26 @@ from gui.selectors import SelectorFactory
 
 #-------------------------------------------------------------------------
 #
+# computer vision modules
+#
+#-------------------------------------------------------------------------
+try:
+    import cv
+    computer_vision_available = True
+except ImportError:
+    computer_vision_available = False
+
+#-------------------------------------------------------------------------
+#
 # PhotoTaggingGramplet
 #
 #-------------------------------------------------------------------------
 
 RESIZE_RATIO = 1.5
 SHADING_OPACITY = 0.7
+
+path, filename = os.path.split(__file__)
+HAARCASCADE_PATH = os.path.join(path, 'haarcascade_frontalface_alt.xml')
 
 def resize_keep_aspect(orig_x, orig_y, target_x, target_y):
     orig_aspect = float(orig_x) / orig_y
@@ -79,14 +96,15 @@ def scale_to_fit(orig_x, orig_y, target_x, target_y):
 class PhotoTaggingGramplet(Gramplet):
 
     def init(self):
+        self.pixbuf = None
+        self.current = None
+        self.scaled_pixbuf = None
+        self.scale = 1.0
+
         self.gui.WIDGET = self.build_gui()
         self.gui.get_container_widget().remove(self.gui.textview)
         self.gui.get_container_widget().add_with_viewport(self.gui.WIDGET)
         self.top.show_all()
-
-        self.pixbuf = None
-        self.scaled_pixbuf = None
-        self.scale = 1.0
 
     def build_gui(self):
         """
@@ -101,6 +119,10 @@ class PhotoTaggingGramplet(Gramplet):
         self.button_add = button_panel.insert_stock(gtk.STOCK_ADD, "Add Person", None, self.add_person_clicked, None, -1)
         self.button_del = button_panel.insert_stock(gtk.STOCK_REMOVE, "Remove Reference", None, self.del_person_clicked, None, -1)
         self.button_edit = button_panel.insert_stock(gtk.STOCK_EDIT, "Edit Person", None, self.edit_person_clicked, None, -1)
+
+        self.button_detect = button_panel.insert_stock(gtk.STOCK_EXECUTE, "Detect faces", None, self.detect_faces_clicked, None, -1)
+
+        self.enable_buttons()
 
         vbox.pack_start(button_panel, expand=False, fill=True, padding=5)
 
@@ -303,7 +325,6 @@ class PhotoTaggingGramplet(Gramplet):
         cr = self.image.window.cairo_create()
 
         if self.selection:
-            print("drawing selection")
             x1, y1, x2, y2 = self.selection
             x1, y1 = self.image_to_screen((x1, y1))
             x2, y2 = self.image_to_screen((x2, y2))
@@ -390,6 +411,8 @@ class PhotoTaggingGramplet(Gramplet):
         self.button_add.set_sensitive(self.current is not None)
         self.button_del.set_sensitive(self.current is not None and self.fragments.get(self.current) is not None)
         self.button_edit.set_sensitive(self.current is not None and self.fragments.get(self.current) is not None)
+
+        self.button_detect.set_sensitive(self.pixbuf is not None and computer_vision_available)
 
     def button_release_event(self, obj, event):
         if not self.is_image_loaded():
@@ -522,6 +545,23 @@ class PhotoTaggingGramplet(Gramplet):
         person = self.fragments[self.current]
         if person:
             EditPerson(self.dbstate, self.uistate, self.track, person)
+
+    def detect_faces_clicked(self, event):
+        min_face_size = (50,50) # FIXME: get from setting
+        media = self.get_current_object()
+        image_path = Utils.media_path_full(self.dbstate.db, media.get_path())
+        cv_image = cv.LoadImage(image_path, cv.CV_LOAD_IMAGE_GRAYSCALE)
+        o_width, o_height = cv_image.width, cv_image.height
+        cv.EqualizeHist(cv_image, cv_image)
+        cascade = cv.Load(HAARCASCADE_PATH)
+        faces = cv.HaarDetectObjects(cv_image, cascade, 
+                                     cv.CreateMemStorage(0),
+                                     1.2, 2, cv.CV_HAAR_DO_CANNY_PRUNING, 
+                                     min_face_size)
+        for ((x, y, width, height), neighbors) in faces:
+            self.fragments[(x, y, x + width, y + height)] = None
+
+        self.image.queue_draw()
 
     def motion_notify_event(self, widget, event):
         if not self.is_image_loaded():
