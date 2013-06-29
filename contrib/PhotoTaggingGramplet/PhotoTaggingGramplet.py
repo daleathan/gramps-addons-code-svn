@@ -44,13 +44,10 @@ import gobject
 #
 #-------------------------------------------------------------------------
 import const
-import gen.mime
-import ThumbNails
 import Utils
 from gen.db import DbTxn
 from gen.display.name import displayer as name_displayer
 from gen.plug import Gramplet
-from glade import Glade
 from gui.editors.editperson import EditPerson
 from gui.selectors import SelectorFactory
 
