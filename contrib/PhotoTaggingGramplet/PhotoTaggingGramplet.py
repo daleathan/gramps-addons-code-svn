@@ -113,15 +113,28 @@ class PhotoTaggingGramplet(Gramplet):
         vbox = gtk.VBox()
         self.top = vbox
 
-        button_panel = gtk.Toolbar()
+        button_panel = gtk.HBox()
 
-        self.button_index = button_panel.insert_stock(gtk.STOCK_INDEX, "Select Person", None, self.sel_person_clicked, None, -1)
-        self.button_add = button_panel.insert_stock(gtk.STOCK_ADD, "Add Person", None, self.add_person_clicked, None, -1)
-        self.button_del = button_panel.insert_stock(gtk.STOCK_REMOVE, "Remove Region", None, self.del_person_clicked, None, -1)
-        self.button_clear = button_panel.insert_stock(gtk.STOCK_CLEAR, "Clear Reference", None, self.clear_ref_clicked, None, -1)
-        self.button_edit = button_panel.insert_stock(gtk.STOCK_EDIT, "Edit Person", None, self.edit_person_clicked, None, -1)
+        self.button_index = gtk.ToolButton(gtk.STOCK_INDEX)
+        self.button_add = gtk.ToolButton(gtk.STOCK_ADD)
+        self.button_del = gtk.ToolButton(gtk.STOCK_REMOVE)
+        self.button_clear = gtk.ToolButton(gtk.STOCK_CLEAR)
+        self.button_edit = gtk.ToolButton(gtk.STOCK_EDIT)
+        self.button_detect = gtk.ToolButton(gtk.STOCK_EXECUTE)
 
-        self.button_detect = button_panel.insert_stock(gtk.STOCK_EXECUTE, "Detect faces", None, self.detect_faces_clicked, None, -1)
+        self.button_index.connect("clicked", self.sel_person_clicked)
+        self.button_add.connect("clicked", self.add_person_clicked)
+        self.button_del.connect("clicked", self.del_person_clicked)
+        self.button_clear.connect("clicked", self.clear_ref_clicked)
+        self.button_edit.connect("clicked", self.edit_person_clicked)
+        self.button_detect.connect("clicked", self.detect_faces_clicked)
+
+        button_panel.pack_start(self.button_index, expand=False, fill=False, padding=5)
+        button_panel.pack_start(self.button_add, expand=False, fill=False, padding=5)
+        button_panel.pack_start(self.button_del, expand=False, fill=False, padding=5)
+        button_panel.pack_start(self.button_clear, expand=False, fill=False, padding=5)
+        button_panel.pack_start(self.button_edit, expand=False, fill=False, padding=5)
+        button_panel.pack_start(self.button_detect, expand=False, fill=False, padding=5)
 
         self.enable_buttons()
 
