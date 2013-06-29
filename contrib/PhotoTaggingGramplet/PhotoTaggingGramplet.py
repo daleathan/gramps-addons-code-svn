@@ -136,6 +136,18 @@ class PhotoTaggingGramplet(Gramplet):
         button_panel.pack_start(self.button_edit, expand=False, fill=False, padding=5)
         button_panel.pack_start(self.button_detect, expand=False, fill=False, padding=5)
 
+        tooltips = gtk.Tooltips()
+        self.button_index.set_tooltip(tooltips, "Select Person", None)
+        self.button_add.set_tooltip(tooltips, "Add Person", None)
+        self.button_del.set_tooltip(tooltips, "Remove Reference", None)
+        self.button_clear.set_tooltip(tooltips, "Clear Reference", None)
+        self.button_edit.set_tooltip(tooltips, "Edit referenced Person", None)
+
+        if computer_vision_available:
+            self.button_detect.set_tooltip(tooltips, "Detect faces", None)
+        else:
+            self.button_detect.set_tooltip(tooltips, "Detect faces (cv module required)", None)
+
         self.enable_buttons()
 
         vbox.pack_start(button_panel, expand=False, fill=True, padding=5)
