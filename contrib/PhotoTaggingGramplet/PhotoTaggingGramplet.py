@@ -128,7 +128,9 @@ class PhotoTaggingGramplet(Gramplet):
         vbox.pack_start(button_panel, expand=False, fill=True, padding=5)
 
         self.image = gtk.Image()
+        self.image.set_has_tooltip(True)
         self.image.connect_after("expose-event", self.expose_handler)
+        self.image.connect("query-tooltip", self.show_tooltip)
 
         self.ebox_ref = gtk.EventBox()
         self.ebox_ref.connect('button-press-event', self.button_press_event)
@@ -303,22 +305,12 @@ class PhotoTaggingGramplet(Gramplet):
         if self.pixbuf:
             self.draw_selection()
 
-    def draw_name(self, cr, rect, person):
-        if person:
-            x1, y1, x2, y2 = rect
-            x1, y1 = self.image_to_screen((x1, y1))
-            x2, y2 = self.image_to_screen((x2, y2))
-            name = person.get_primary_name().get_name()
-            cr.set_source_rgb(1.0, 1.0, 1.0)
-            cr.rectangle(x1, y2 + 2, 300, 20)
-            cr.fill()
-            cr.set_source_rgb(0.0, 0.0, 1.0)
-            cr.rectangle(x1 - 2, y2 + 2, 300, 20)
-            cr.stroke()
-            cr.set_source_rgb(0.0, 0.0, 0.0)
-            cr.move_to(x1, y2 + 17)
-            cr.show_text(name)
-            cr.stroke()
+    def show_tooltip(self, widget, x, y, keyboard_mode, tooltip):
+        if self.in_fragment:
+            tooltip.set_text(name_displayer.display(self.in_fragment[1]))
+            return True
+        else:
+            return False
 
     def draw_selection(self):
         if not self.scaled_size:
@@ -366,9 +358,6 @@ class PhotoTaggingGramplet(Gramplet):
                 cr.set_source_rgb(0.0, 0.0, 1.0)
                 cr.rectangle(x1 - 2, y1 - 2, x2 - x1 + 4, y2 - y1 + 4)
                 cr.stroke()
-            
-            if self.in_fragment:
-                self.draw_name(cr, self.in_fragment[0], self.in_fragment[1])
 
     def find_fragment(self, x, y):
         for (rect, person) in self.fragments.items():
