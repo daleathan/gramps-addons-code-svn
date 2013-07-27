@@ -234,6 +234,8 @@ class AncestorFillReport(Report):
         # Recursively call the function. It is okay if the handle is None,  
         # since routine handles a handle of None
 
+        fatherid = False
+        motherid = False
         self.index[person_handle] = []
         if father_handle:
             father = self.database.get_person_from_handle(father_handle)
@@ -271,6 +273,7 @@ class AncestorFillReport(Report):
         percent = 100
         nbhand = 1
         implexe = 0
+        theor = ''
         self.apply_filter(self.center_person.get_handle(), 1)
         strgen = _("Generation ")
         strfoundanc = _(" Number of Ancestors found ")
@@ -279,9 +282,9 @@ class AncestorFillReport(Report):
         strtheoanc = _(" Number of theorical Ancestors ")
         strimplex = _(" Pedigree Collapse ")
         if self.displayth:
-	    form = strgen + "%2d; " + strfoundanc + "%12d;" + strtheoanc + str(theor) + "; " + pctfoundanc +" %." + str(self.Filleddigit) + "f%% " + " ; " + uniqfoundanc + " %6d; " + strimplex + "%3." + str(self.Collapsedigit) + "f%%"
+	        form = strgen + "%2d; " + strfoundanc + "%12d;" + strtheoanc + str(theor) + "; " + pctfoundanc +" %." + str(self.Filleddigit) + "f%% " + " ; " + uniqfoundanc + " %6d; " + strimplex + "%3." + str(self.Collapsedigit) + "f%%"
         else:
-	    form = strgen + "%2d; " + strfoundanc + "%12d;" + pctfoundanc +" %." + str(self.Filleddigit) + "f%% " + " ; " + uniqfoundanc + " %6d; " + strimplex + "%3." + str(self.Collapsedigit) + "f%%"
+	        form = strgen + "%2d; " + strfoundanc + "%12d;" + pctfoundanc +" %." + str(self.Filleddigit) + "f%% " + " ; " + uniqfoundanc + " %6d; " + strimplex + "%3." + str(self.Collapsedigit) + "f%%"
             text = _( 
                        form % ( gen , longueur , percent , nbhand , implexe ))
             self.doc.start_paragraph("AHN-Generation")
