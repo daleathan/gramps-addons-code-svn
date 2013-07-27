@@ -284,7 +284,7 @@ class AncestorFillReport(Report):
         if self.displayth:
 	        form = strgen + "%2d; " + strfoundanc + "%12d;" + strtheoanc + str(theor) + "; " + pctfoundanc +" %." + str(self.Filleddigit) + "f%% " + " ; " + uniqfoundanc + " %6d; " + strimplex + "%3." + str(self.Collapsedigit) + "f%%"
         else:
-	        form = strgen + "%2d; " + strfoundanc + "%12d;" + pctfoundanc +" %." + str(self.Filleddigit) + "f%% " + " ; " + uniqfoundanc + " %6d; " + strimplex + "%3." + str(self.Collapsedigit) + "f%%"
+            form = strgen + "%2d; " + strfoundanc + "%12d;" + pctfoundanc +" %." + str(self.Filleddigit) + "f%% " + " ; " + uniqfoundanc + " %6d; " + strimplex + "%3." + str(self.Collapsedigit) + "f%%"
             text = _( 
                        form % ( gen , longueur , percent , nbhand , implexe ))
             self.doc.start_paragraph("AHN-Generation")
