@@ -4,9 +4,8 @@
 {"n": "Geschätzte Daten berechnen","i": "calculateestimateddates","t": "Tool","d": "Berechnet geschätzte Daten für Geburt und Tod.","v": "0.90.17","g": "4.0","z": "CalculateEstimatedDates.addon.tgz"}
 {"n": "Zensusbericht","i": "census_report","t": "Report","d": "Bericht der Zensusereignise für eine Person.","v": "1.0.27","g": "4.0","z": "Census.addon.tgz"}
 {"n": "Zensus Gramplet","i": "Census Gramplet","t": "Gramplet","d": "Gramplet Schnittstelle für Zensusdaten","v": "1.0.27","g": "4.0","z": "Census.addon.tgz"}
-{"n": "Census Fix","i": "censusfix","t": "Tool","d": "Fix changed attributes in census data","v": "1.0.6","g": "3.4","z": "Census.addon.tgz"}
 {"n": "Großschreibung von Vornamen korrigieren","i": "chgivenname","t": "Tool","d": "Durchsucht die gesamte Datenbank und versucht Großschreibung von Vornamen zu korrigieren.","v": "1.0.18","g": "4.0","z": "ChangeGivenNames.addon.tgz"}
-{"n": "Command Line Merge","i": "climerge","t": "Tool","d": "Primäre Objekte über die Kommandozeile zusammenfassen.","v": "1.0.13","g": "4.0","z": "CliMerge.addon.tgz"}
+{"n": "Command Line Merge","i": "climerge","t": "Tool","d": "Primäre Objekte über die Kommandozeile zusammenfassen.","v": "1.0.14","g": "4.0","z": "CliMerge.addon.tgz"}
 {"n": "Zwischenablage Gramplet","i": "Clipboard Gramplet","t": "Gramplet","d": "Gramplet zum gruppieren von Elementen","v": "1.0.20","g": "4.0","z": "ClipboardGramplet.addon.tgz"}
 {"n": "Uhren Gramplet","i": "Clock Gramplet","t": "Gramplet","d": "Gramplet zum demonstrieren der Cairo Grafik","v": "0.0.17","g": "4.0","z": "ClockGramplet.addon.tgz"}
 {"n": "DE Web Connect Pack","i": "DE Web Connect Pack","t": "Plugin lib","d": "Sammlung von Webseiten für DE (benötigt libwebconnect)","v": "0.0.13","g": "4.0","z": "DEWebConnectPack.addon.tgz"}
@@ -19,17 +18,17 @@
 {"n": "Database Differences Report","i": "database-differences-report","t": "Report","d": "Compares an external database with the current one.","v": "1.0.4","g": "4.0","z": "Differences.addon.tgz"}
 {"n": "Django Export","i": "export_django","t": "Exporter","d": "Django ist ein Web Programmgerüst das auf einer konfigurierten Datenbank arbeitet","v": "1.0.21","g": "4.0","z": "Django.addon.tgz"}
 {"n": "Django Import","i": "import_django","t": "Importer","d": "Django ist ein Web Programmgerüst das auf einer konfigurierten Datenbank arbeitet","v": "1.0.21","g": "4.0","z": "Django.addon.tgz"}
-{"n": "Edit Image Exif Metadata","i": "Edit Image Exif Metadata","t": "Gramplet","d": "Gramplet to view, edit, and save image Exif metadata","v": "1.5.3","g": "4.0","z": "EditExifMetadata.addon.tgz"}
+{"n": "Bild Exif Metadaten bearbeiten","i": "Edit Image Exif Metadata","t": "Gramplet","d": "Gramplet zum ansehen, bearbeiten und speichern von Exif Metadaten","v": "1.5.3","g": "4.0","z": "EditExifMetadata.addon.tgz"}
 {"n": "Rohdaten Export","i": "Raw Export","t": "Exporter","d": "Dies ist eine Rohdaten Pythonobjekt Ausgabe","v": "1.0.19","g": "4.0","z": "ExportRaw.addon.tgz"}
 {"n": "Extended Family Attributes","i": "Extended Family Attributes","t": "Gramplet","d": "Gramplet showing the attributes of a family","v": "1.0.14","g": "4.0","z": "ExtendedAttributes.addon.tgz"}
 {"n": "Extended Person Attributes","i": "Extended Person Attributes","t": "Gramplet","d": "Gramplet showing the attributes of a person","v": "1.0.14","g": "4.0","z": "ExtendedAttributes.addon.tgz"}
 {"n": "FR Web Verknüpfungspaket","i": "FR Web Connect Pack","t": "Plugin lib","d": "Sammlung von Webseiten für FR (benötigt libwebconnect)","v": "1.0.19","g": "4.0","z": "FRWebConnectPack.addon.tgz"}
 {"n": "Gesichtserkennung","i": "Face Detection","t": "Gramplet","d": "Gramplet zur Erkennung und Zuordnung von Gesichtern","v": "1.0.11","g": "4.0","z": "FaceDetection.addon.tgz"}
 {"n": "Familienblatt","i": "FamilySheet","t": "Report","d": "Erstellt ein Familienblatt, das vollständige Informationen über eine Person und ihre Partner und Kinder enthält.","v": "3.4.21","g": "4.0","z": "FamilySheet.addon.tgz"}
-{"n": "Family Tree","i": "FamilyTree","t": "Report","d": "Erzeugt einen grafischen Stammbaum.","v": "3.4.18","g": "4.0","z": "FamilyTree.addon.tgz"}
+{"n": "Stammbaum","i": "FamilyTree","t": "Report","d": "Erzeugt einen grafischen Stammbaum.","v": "3.4.18","g": "4.0","z": "FamilyTree.addon.tgz"}
 {"n": "Export GEDCOM Extensions (GED2)","i": "Export GEDCOM Extensions","t": "Exporter","d": "Extensions to the common GEDCOM format.","v": "1.0.8","g": "4.0","z": "GedcomExtensions.addon.tgz"}
-{"n": "GoogleEarth","i": "GoogleEarth","t": "Map service","d": "Erstellt Datendatei für GoogleEarth und öffnet sie","v": "1.0.24","g": "4.0","z": "GoogleEarthWriteKML.addon.tgz"}
-{"n": "Graphenansicht","i": "graphview","t": "Gramps View","d": "Dynamischer Beziehungengraph","v": "1.0.38","g": "4.0","z": "GraphView.addon.tgz"}
+{"n": "GoogleEarth","i": "GoogleEarth","t": "Map service","d": "Erstellt Datendatei für GoogleEarth und öffnet sie","v": "1.0.28","g": "4.0","z": "GoogleEarthWriteKML.addon.tgz"}
+{"n": "Graphenansicht","i": "graphview","t": "Gramps View","d": "Dynamischer Beziehungengraph","v": "1.0.40","g": "4.0","z": "GraphView.addon.tgz"}
 {"n": "Schlagzeilen Gramplet","i": "Headline News Gramplet","t": "Gramplet","d": "Gramplet zum zeigen der neuesten Gramps Nachrichten","v": "1.0.19","g": "4.0","z": "HeadlineNewsGramplet.addon.tgz"}
 {"n": "Import Gramplet","i": "Import Gramplet","t": "Gramplet","d": "Gramplet zum Textimport","v": "1.0.18","g": "4.0","z": "ImportGramplet.addon.tgz"}
 {"n": "Letzte Änderung Gramplet","i": "LastChangeGramplet","t": "Gramplet","d": "Listet die letzten zehn geänderten Personendatensätze","v": "0.0.21","g": "4.0","z": "LastChange.addon.tgz"}
@@ -53,7 +52,7 @@
 {"n": "SQLite Export","i": "ex_sqlite","t": "Exporter","d": "SQLite is a common local database format","v": "1.0.20","g": "4.0","z": "Sqlite.addon.tgz"}
 {"n": "Thumbnail Generator","i": "thumbgen","t": "Tool","d": "Generates thumbnails for media files","v": "1.0.11","g": "4.0","z": "ThumbnailGenerator.addon.tgz"}
 {"n": "Zeitleistestammbaum","i": "TimelinePedigreeView","t": "Gramps View","d": "Diese Ansicht zeigt einen Zeitleistenstammbaum mit Vorfahren und Nachkommen der gewählten Person","v": "0.1.28","g": "4.0","z": "TimelinePedigreeView.addon.tgz"}
-{"n": "Timeline","i": "timelinequickview","t": "Quickreport","d": "Display a person's events on a timeline","v": "1.0.18","g": "4.0","z": "TimelineQuickview.addon.tgz"}
+{"n": "Zeitleiste","i": "timelinequickview","t": "Quickreport","d": "Display a person's events on a timeline","v": "1.0.18","g": "4.0","z": "TimelineQuickview.addon.tgz"}
 {"n": "Todo Report","i": "TodoReport","t": "Report","d": "Produces a list of all the notes with a given tag along with the records that it references, the Person, Family, Event, etc.","v": "1.2.16","g": "4.0","z": "ToDoReport.addon.tgz"}
 {"n": "UK Web Connect Pack","i": "UK Web Connect Pack","t": "Plugin lib","d": "Collection of Web sites for the UK (requires libwebconnect)","v": "1.0.25","g": "4.0","z": "UKWebConnectPack.addon.tgz"}
 {"n": "US Web Connect Pack","i": "US Web Connect Pack","t": "Plugin lib","d": "Collection of Web sites for the US (requires libwebconnect)","v": "1.0.27","g": "4.0","z": "USWebConnectPack.addon.tgz"}

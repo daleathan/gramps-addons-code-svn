@@ -4,9 +4,8 @@
 {"n": "Beräknade uppskattade datum","i": "calculateestimateddates","t": "Tool","d": "Beräkna uppskattningar av datum för födelse och död.","v": "0.90.17","g": "4.0","z": "CalculateEstimatedDates.addon.tgz"}
 {"n": "Folkräkningsrapport","i": "census_report","t": "Report","d": "Rapport över folkräkningshändelser för en person","v": "1.0.27","g": "4.0","z": "Census.addon.tgz"}
 {"n": "Census Gramplet","i": "Census Gramplet","t": "Gramplet","d": "Gramplet interface for census data","v": "1.0.27","g": "4.0","z": "Census.addon.tgz"}
-{"n": "Census Fix","i": "censusfix","t": "Tool","d": "Fix changed attributes in census data","v": "1.0.6","g": "3.4","z": "Census.addon.tgz"}
 {"n": "Ordna stavning av förnamn","i": "chgivenname","t": "Tool","d": "Söker igenom hela databasen och försöker ordna stavning av förnamnen","v": "1.0.18","g": "4.0","z": "ChangeGivenNames.addon.tgz"}
-{"n": "Command Line Merge","i": "climerge","t": "Tool","d": "Merge primary objects via the command line.","v": "1.0.13","g": "4.0","z": "CliMerge.addon.tgz"}
+{"n": "Command Line Merge","i": "climerge","t": "Tool","d": "Merge primary objects via the command line.","v": "1.0.14","g": "4.0","z": "CliMerge.addon.tgz"}
 {"n": "Urklippsgramplet","i": "Clipboard Gramplet","t": "Gramplet","d": "Gramplet för gruppering av poster","v": "1.0.20","g": "4.0","z": "ClipboardGramplet.addon.tgz"}
 {"n": "Klock-Gramplet","i": "Clock Gramplet","t": "Gramplet","d": "Gramplet for demonstrating Cairo graphics","v": "0.0.17","g": "4.0","z": "ClockGramplet.addon.tgz"}
 {"n": "DE Web Connect Pack","i": "DE Web Connect Pack","t": "Plugin lib","d": "Collection of Web sites for the DE (requires libwebconnect)","v": "0.0.13","g": "4.0","z": "DEWebConnectPack.addon.tgz"}
@@ -19,17 +18,17 @@
 {"n": "Database Differences Report","i": "database-differences-report","t": "Report","d": "Compares an external database with the current one.","v": "1.0.4","g": "4.0","z": "Differences.addon.tgz"}
 {"n": "Django-export","i": "export_django","t": "Exporter","d": "Django är ett nätbaserat ramverkarbetande med en konfigurerad databas ","v": "1.0.21","g": "4.0","z": "Django.addon.tgz"}
 {"n": "Django-import","i": "import_django","t": "Importer","d": "Django är ett nätbaserat ramverkarbetande med en konfigurerad databas ","v": "1.0.21","g": "4.0","z": "Django.addon.tgz"}
-{"n": "Edit Image Exif Metadata","i": "Edit Image Exif Metadata","t": "Gramplet","d": "Gramplet to view, edit, and save image Exif metadata","v": "1.5.3","g": "4.0","z": "EditExifMetadata.addon.tgz"}
+{"n": "Redigera bilds Exif-metadata","i": "Edit Image Exif Metadata","t": "Gramplet","d": "Gramplet för att se, redigera och spara bilds Exif-metadata","v": "1.5.3","g": "4.0","z": "EditExifMetadata.addon.tgz"}
 {"n": "Rå export","i": "Raw Export","t": "Exporter","d": "Detta är en rå dumpning av pythonobjekt","v": "1.0.19","g": "4.0","z": "ExportRaw.addon.tgz"}
 {"n": "Extended Family Attributes","i": "Extended Family Attributes","t": "Gramplet","d": "Gramplet showing the attributes of a family","v": "1.0.14","g": "4.0","z": "ExtendedAttributes.addon.tgz"}
 {"n": "Extended Person Attributes","i": "Extended Person Attributes","t": "Gramplet","d": "Gramplet showing the attributes of a person","v": "1.0.14","g": "4.0","z": "ExtendedAttributes.addon.tgz"}
 {"n": "FR Web Connect Pack","i": "FR Web Connect Pack","t": "Plugin lib","d": "Collection of Web sites for the FR (requires libwebconnect)","v": "1.0.19","g": "4.0","z": "FRWebConnectPack.addon.tgz"}
-{"n": "Face Detection","i": "Face Detection","t": "Gramplet","d": "Gramplet for detecting and assigning faces","v": "1.0.11","g": "4.0","z": "FaceDetection.addon.tgz"}
+{"n": "Detektion av ansikte","i": "Face Detection","t": "Gramplet","d": "Gramplet för detektering och tilldelning av ansikten","v": "1.0.11","g": "4.0","z": "FaceDetection.addon.tgz"}
 {"n": "Familjeark","i": "FamilySheet","t": "Report","d": "Skapar ett familjeark visande all information om en person och dennes partner och barn.","v": "3.4.21","g": "4.0","z": "FamilySheet.addon.tgz"}
-{"n": "Family Tree","i": "FamilyTree","t": "Report","d": "Skapar ett grafiskt släktträd.","v": "3.4.18","g": "4.0","z": "FamilyTree.addon.tgz"}
+{"n": "Släktträd","i": "FamilyTree","t": "Report","d": "Skapar ett grafiskt släktträd.","v": "3.4.18","g": "4.0","z": "FamilyTree.addon.tgz"}
 {"n": "Export GEDCOM Extensions (GED2)","i": "Export GEDCOM Extensions","t": "Exporter","d": "Extensions to the common GEDCOM format.","v": "1.0.8","g": "4.0","z": "GedcomExtensions.addon.tgz"}
-{"n": "GoogleEarth","i": "GoogleEarth","t": "Map service","d": "Skapar datafil för GoogleEarth och öppnar den","v": "1.0.24","g": "4.0","z": "GoogleEarthWriteKML.addon.tgz"}
-{"n": "Diagramvy","i": "graphview","t": "Gramps View","d": "Levande släktskapsdiagram","v": "1.0.38","g": "4.0","z": "GraphView.addon.tgz"}
+{"n": "GoogleEarth","i": "GoogleEarth","t": "Map service","d": "Skapar datafil för GoogleEarth och öppnar den","v": "1.0.28","g": "4.0","z": "GoogleEarthWriteKML.addon.tgz"}
+{"n": "Diagramvy","i": "graphview","t": "Gramps View","d": "Levande släktskapsdiagram","v": "1.0.40","g": "4.0","z": "GraphView.addon.tgz"}
 {"n": "Nyhetsrubriker med Gramplet","i": "Headline News Gramplet","t": "Gramplet","d": "Gramplet for showing latest the Gramps news","v": "1.0.19","g": "4.0","z": "HeadlineNewsGramplet.addon.tgz"}
 {"n": "Import Gramplet","i": "Import Gramplet","t": "Gramplet","d": "Gramplet for importing text","v": "1.0.18","g": "4.0","z": "ImportGramplet.addon.tgz"}
 {"n": "Gramplet med de senaste ändringarna","i": "LastChangeGramplet","t": "Gramplet","d": "Lista de tio personposterna, som har ändrats","v": "0.0.21","g": "4.0","z": "LastChange.addon.tgz"}
@@ -53,7 +52,7 @@
 {"n": "SQLite Export","i": "ex_sqlite","t": "Exporter","d": "SQLite är ett vanligt lokal databasformat","v": "1.0.20","g": "4.0","z": "Sqlite.addon.tgz"}
 {"n": "Thumbnail Generator","i": "thumbgen","t": "Tool","d": "Generates thumbnails for media files","v": "1.0.11","g": "4.0","z": "ThumbnailGenerator.addon.tgz"}
 {"n": "Antavla med tidslinje","i": "TimelinePedigreeView","t": "Gramps View","d": "Vyn visar en tidslinje med anor och ättlingar för den valda personen","v": "0.1.28","g": "4.0","z": "TimelinePedigreeView.addon.tgz"}
-{"n": "Timeline","i": "timelinequickview","t": "Quickreport","d": "Visar händelser för en person på en tidslinje","v": "1.0.18","g": "4.0","z": "TimelineQuickview.addon.tgz"}
+{"n": "Tidslinje","i": "timelinequickview","t": "Quickreport","d": "Visar händelser för en person på en tidslinje","v": "1.0.18","g": "4.0","z": "TimelineQuickview.addon.tgz"}
 {"n": "Todo Report","i": "TodoReport","t": "Report","d": "Produces a list of all the notes with a given tag along with the records that it references, the Person, Family, Event, etc.","v": "1.2.16","g": "4.0","z": "ToDoReport.addon.tgz"}
 {"n": "UK Web Connect Pack","i": "UK Web Connect Pack","t": "Plugin lib","d": "Collection of Web sites for the UK (requires libwebconnect)","v": "1.0.25","g": "4.0","z": "UKWebConnectPack.addon.tgz"}
 {"n": "US Web Connect Pack","i": "US Web Connect Pack","t": "Plugin lib","d": "Collection of Web sites for the US (requires libwebconnect)","v": "1.0.27","g": "4.0","z": "USWebConnectPack.addon.tgz"}

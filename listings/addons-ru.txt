@@ -4,9 +4,8 @@
 {"n": "Расчёт Оценки Дат","i": "calculateestimateddates","t": "Tool","d": "Calculates estimated dates for birth and death.","v": "0.90.17","g": "4.0","z": "CalculateEstimatedDates.addon.tgz"}
 {"n": "Census Report","i": "census_report","t": "Report","d": "Report of census events for a person.","v": "1.0.27","g": "4.0","z": "Census.addon.tgz"}
 {"n": "Census Gramplet","i": "Census Gramplet","t": "Gramplet","d": "Gramplet interface for census data","v": "1.0.27","g": "4.0","z": "Census.addon.tgz"}
-{"n": "Census Fix","i": "censusfix","t": "Tool","d": "Fix changed attributes in census data","v": "1.0.6","g": "3.4","z": "Census.addon.tgz"}
 {"n": "Fix Capitalization of Given Names","i": "chgivenname","t": "Tool","d": "Searches the entire database and attempts to fix capitalization of the given names.","v": "1.0.18","g": "4.0","z": "ChangeGivenNames.addon.tgz"}
-{"n": "Command Line Merge","i": "climerge","t": "Tool","d": "Merge primary objects via the command line.","v": "1.0.13","g": "4.0","z": "CliMerge.addon.tgz"}
+{"n": "Command Line Merge","i": "climerge","t": "Tool","d": "Merge primary objects via the command line.","v": "1.0.14","g": "4.0","z": "CliMerge.addon.tgz"}
 {"n": "Clipboard Gramplet","i": "Clipboard Gramplet","t": "Gramplet","d": "Gramplet for grouping items","v": "1.0.20","g": "4.0","z": "ClipboardGramplet.addon.tgz"}
 {"n": "Clock Gramplet","i": "Clock Gramplet","t": "Gramplet","d": "Gramplet for demonstrating Cairo graphics","v": "0.0.17","g": "4.0","z": "ClockGramplet.addon.tgz"}
 {"n": "DE Web Connect Pack","i": "DE Web Connect Pack","t": "Plugin lib","d": "Collection of Web sites for the DE (requires libwebconnect)","v": "0.0.13","g": "4.0","z": "DEWebConnectPack.addon.tgz"}
@@ -19,7 +18,7 @@
 {"n": "Database Differences Report","i": "database-differences-report","t": "Report","d": "Compares an external database with the current one.","v": "1.0.4","g": "4.0","z": "Differences.addon.tgz"}
 {"n": "Django Export","i": "export_django","t": "Exporter","d": "Django is a web framework working on a configured database","v": "1.0.21","g": "4.0","z": "Django.addon.tgz"}
 {"n": "Django Import","i": "import_django","t": "Importer","d": "Django is a web framework working on a configured database","v": "1.0.21","g": "4.0","z": "Django.addon.tgz"}
-{"n": "Edit Image Exif Metadata","i": "Edit Image Exif Metadata","t": "Gramplet","d": "Gramplet to view, edit, and save image Exif metadata","v": "1.5.3","g": "4.0","z": "EditExifMetadata.addon.tgz"}
+{"n": "Редактировать метаданные (EXIF) изображения","i": "Edit Image Exif Metadata","t": "Gramplet","d": "Грамплет для просмотра, редакции, и записи метаданных (в формате Exif) изображения","v": "1.5.3","g": "4.0","z": "EditExifMetadata.addon.tgz"}
 {"n": "Raw Export","i": "Raw Export","t": "Exporter","d": "This is a raw python object dump","v": "1.0.19","g": "4.0","z": "ExportRaw.addon.tgz"}
 {"n": "Extended Family Attributes","i": "Extended Family Attributes","t": "Gramplet","d": "Gramplet showing the attributes of a family","v": "1.0.14","g": "4.0","z": "ExtendedAttributes.addon.tgz"}
 {"n": "Extended Person Attributes","i": "Extended Person Attributes","t": "Gramplet","d": "Gramplet showing the attributes of a person","v": "1.0.14","g": "4.0","z": "ExtendedAttributes.addon.tgz"}
@@ -28,8 +27,8 @@
 {"n": "Family Sheet","i": "FamilySheet","t": "Report","d": "Produces a family sheet showing full information about a person and his/her partners and children.","v": "3.4.21","g": "4.0","z": "FamilySheet.addon.tgz"}
 {"n": "Family Tree","i": "FamilyTree","t": "Report","d": "Produces a graphical family tree.","v": "3.4.18","g": "4.0","z": "FamilyTree.addon.tgz"}
 {"n": "Export GEDCOM Extensions (GED2)","i": "Export GEDCOM Extensions","t": "Exporter","d": "Extensions to the common GEDCOM format.","v": "1.0.8","g": "4.0","z": "GedcomExtensions.addon.tgz"}
-{"n": "GoogleEarth","i": "GoogleEarth","t": "Map service","d": "Creates data file for GoogleEarth and opens it","v": "1.0.24","g": "4.0","z": "GoogleEarthWriteKML.addon.tgz"}
-{"n": "Graph View","i": "graphview","t": "Gramps View","d": "Dynamic graph of relations","v": "1.0.38","g": "4.0","z": "GraphView.addon.tgz"}
+{"n": "GoogleEarth","i": "GoogleEarth","t": "Map service","d": "Creates data file for GoogleEarth and opens it","v": "1.0.28","g": "4.0","z": "GoogleEarthWriteKML.addon.tgz"}
+{"n": "Graph View","i": "graphview","t": "Gramps View","d": "Dynamic graph of relations","v": "1.0.40","g": "4.0","z": "GraphView.addon.tgz"}
 {"n": "Headline News Gramplet","i": "Headline News Gramplet","t": "Gramplet","d": "Gramplet for showing latest the Gramps news","v": "1.0.19","g": "4.0","z": "HeadlineNewsGramplet.addon.tgz"}
 {"n": "Import Gramplet","i": "Import Gramplet","t": "Gramplet","d": "Gramplet for importing text","v": "1.0.18","g": "4.0","z": "ImportGramplet.addon.tgz"}
 {"n": "Last Change Gramplet","i": "LastChangeGramplet","t": "Gramplet","d": "List the last ten person records that have been changed","v": "0.0.21","g": "4.0","z": "LastChange.addon.tgz"}
