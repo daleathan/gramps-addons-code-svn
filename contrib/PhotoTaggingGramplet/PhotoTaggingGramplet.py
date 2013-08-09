@@ -48,6 +48,7 @@ import Utils
 from gen.db import DbTxn
 from gen.display.name import displayer as name_displayer
 from gen.plug import Gramplet
+from gen.lib import MediaRef
 from gui.editors.editperson import EditPerson
 from gui.selectors import SelectorFactory
 
@@ -111,8 +112,9 @@ class PhotoTaggingGramplet(Gramplet):
         """
         Build the GUI interface.
         """
-        vbox = gtk.VBox()
-        self.top = vbox
+        self.top = gtk.VBox()
+
+        hpaned = gtk.HPaned()
 
         button_panel = gtk.HBox()
 
@@ -151,7 +153,7 @@ class PhotoTaggingGramplet(Gramplet):
 
         self.enable_buttons()
 
-        vbox.pack_start(button_panel, expand=False, fill=True, padding=5)
+        self.top.pack_start(button_panel, expand=False, fill=True, padding=5)
 
         self.image = gtk.Image()
         self.image.set_has_tooltip(True)
@@ -175,19 +177,51 @@ class PhotoTaggingGramplet(Gramplet):
         self.scrolled_window = gtk.ScrolledWindow()
         self.scrolled_window.add(self.viewport)
 
-        vbox.pack_start(self.scrolled_window, expand=True, fill=True)
+        hpaned.pack1(self.scrolled_window, resize=True, shrink=False)
 
-        return vbox
+        self.treestore = gtk.TreeStore(int, str)
+
+        self.treeview = gtk.TreeView(self.treestore)
+        self.treeview.set_size_request(400, -1)
+        self.treeview.connect("cursor-changed", self.cursor_changed)
+        self.column1 = gtk.TreeViewColumn(_(''))
+        self.column2 = gtk.TreeViewColumn(_('Person'))
+        self.treeview.append_column(self.column1)
+        self.treeview.append_column(self.column2)
+
+        self.cell1 = gtk.CellRendererText()
+        self.cell2 = gtk.CellRendererText()
+        self.column1.pack_start(self.cell1, True)
+        self.column1.add_attribute(self.cell1, 'text', 0)
+        self.column2.pack_start(self.cell2, True)
+        self.column2.add_attribute(self.cell2, 'text', 1)
+
+        self.treeview.set_search_column(0)
+        self.column1.set_sort_column_id(0)
+        self.column2.set_sort_column_id(1)
+
+        hpaned.pack2(self.treeview, resize=False, shrink=False)
+
+        self.top.pack_start(hpaned, expand=True, fill=True)
+
+        return self.top
 
     def db_changed(self):
         self.dbstate.db.connect('media-update', self.update)
         self.connect_signal('Media', self.update)
 
     def main(self):
+        self.start_point = None
+        self.selection = None
+        self.current = None
+        self.in_fragment = None
+        self.fragments = None
+        self.translation = None
         media = self.get_current_object()
         self.top.hide()
         if media:
             self.load_image(media)
+        self.refresh_list()
         self.top.show()
 
     def load_image(self, media):
@@ -319,6 +353,13 @@ class PhotoTaggingGramplet(Gramplet):
                             fragment = self.proportional_to_real(rect)
                             self.fragments[fragment] = person
                             self.translation[fragment] = mediaref
+
+    def refresh_list(self):
+        if self.fragments != None:
+            self.treestore.clear()
+            for (i, (rect, person)) in enumerate(self.fragments.items(), start=1):
+                name = name_displayer.display(person)
+                self.treestore.append(None, (i, name))
 
     def rescale(self):
         self.scaled_size = (int(self.original_image_size[0] * self.scale), int(self.original_image_size[1] * self.scale))
@@ -488,6 +529,7 @@ class PhotoTaggingGramplet(Gramplet):
                     else:
                         self.selection = None
                         self.current = None
+                    self.refresh_selection()
 
             self.start_point = None
             self.enable_buttons()
@@ -506,7 +548,7 @@ class PhotoTaggingGramplet(Gramplet):
         """
         Add a reference to the current media object to the specified person.
         """
-        media_ref = gen.lib.MediaRef()
+        media_ref = MediaRef()
         media_ref.ref = self.get_current_handle()
         media_ref.set_rectangle(rect)
         person.add_media_reference(media_ref)
@@ -546,6 +588,7 @@ class PhotoTaggingGramplet(Gramplet):
                 if old_person:
                     self.remove_reference(old_person, rect)
                 self.add_reference(person, rect)
+                self.refresh_list()
 
     def del_person_clicked(self, event):
         if self.current:
@@ -557,6 +600,7 @@ class PhotoTaggingGramplet(Gramplet):
             self.current = None
             self.selection = None
             self.image.queue_draw()
+            self.refresh_list()
 
     def clear_ref_clicked(self, event):
         if self.current:
@@ -565,22 +609,26 @@ class PhotoTaggingGramplet(Gramplet):
                 self.fragments[self.current] = None
                 rect = self.check_and_translate_to_proportional(self.current)
                 self.remove_reference(person, rect)
+                self.refresh_list()
 
     def add_person_clicked(self, event):
         if self.current:
             person = gen.lib.Person()
             EditPerson(self.dbstate, self.uistate, self.track, person, self.new_person_added)
+            self.refresh_list()
 
     def new_person_added(self, person):
         if self.current and person:
             self.fragments[self.current] = person
             rect = self.check_and_translate_to_proportional(self.current)
             self.add_reference(person, rect)
+            self.refresh_list()
 
     def edit_person_clicked(self, event):
         person = self.fragments[self.current]
         if person:
             EditPerson(self.dbstate, self.uistate, self.track, person)
+            self.refresh_list()
 
     def detect_faces_clicked(self, event):
         min_face_size = (50,50) # FIXME: get from setting
@@ -596,7 +644,7 @@ class PhotoTaggingGramplet(Gramplet):
                                      min_face_size)
         for ((x, y, width, height), neighbors) in faces:
             self.fragments[(x, y, x + width, y + height)] = None
-
+        self.refresh_list()
         self.image.queue_draw()
 
     def motion_notify_event(self, widget, event):
@@ -640,3 +688,19 @@ class PhotoTaggingGramplet(Gramplet):
             if scaled_size[0] >= MIN_SIZE and scaled_size[1] >= MIN_SIZE:
                 self.scale /= RESIZE_RATIO
                 self.rescale()
+
+    def cursor_changed(self, treeview):
+        (model, pathlist) = self.treeview.get_selection().get_selected_rows()
+        for path in pathlist:
+            tree_iter = model.get_iter(path)
+            i = model.get_value(tree_iter, 0)
+            self.current = self.selection = self.fragments.keys()[i - 1]
+            self.image.queue_draw()
+            self.enable_buttons()
+            return # there should not be more than one row selected
+
+    def refresh_selection(self):
+        if self.current:
+            self.treeview.set_cursor((self.fragments.keys().index(self.current),))
+        else:
+            self.treeview.get_selection().unselect_all()
