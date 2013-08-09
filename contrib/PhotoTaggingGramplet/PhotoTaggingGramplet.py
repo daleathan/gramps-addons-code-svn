@@ -69,6 +69,10 @@ except ImportError:
 #-------------------------------------------------------------------------
 
 RESIZE_RATIO = 1.5
+MAX_ZOOM = 10
+MIN_ZOOM = 0.05
+MAX_SIZE = 2000
+MIN_SIZE = 50
 SHADING_OPACITY = 0.7
 
 path, filename = os.path.split(__file__)
@@ -627,7 +631,12 @@ class PhotoTaggingGramplet(Gramplet):
 
     def motion_scroll_event(self, widget, event):
         if event.direction == gtk.gdk.SCROLL_UP:
-            self.scale *= RESIZE_RATIO
+            scaled_size = (int(self.original_image_size[0] * self.scale * RESIZE_RATIO), int(self.original_image_size[1] * self.scale * RESIZE_RATIO))
+            if scaled_size[0] < MAX_SIZE and scaled_size[1] < MAX_SIZE:
+                self.scale *= RESIZE_RATIO
+                self.rescale()
         elif event.direction == gtk.gdk.SCROLL_DOWN:
-            self.scale /= RESIZE_RATIO
-        self.rescale()
+            scaled_size = (int(self.original_image_size[0] * self.scale * RESIZE_RATIO), int(self.original_image_size[1] * self.scale * RESIZE_RATIO))
+            if scaled_size[0] >= MIN_SIZE and scaled_size[1] >= MIN_SIZE:
+                self.scale /= RESIZE_RATIO
+                self.rescale()
