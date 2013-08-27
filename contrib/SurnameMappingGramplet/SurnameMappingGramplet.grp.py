@@ -1,7 +1,7 @@
 register(GRAMPLET, 
          id="Surname Mapping", 
          name=_("Surname Mapping"), 
-         description = _("Gramplet showing surname mapping"),
+         description = _("Gramplet for editing the grouping of surnames"),
          status = STABLE,
          fname="SurnameMappingGramplet.py",
          height=230,

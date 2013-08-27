@@ -62,19 +62,20 @@ class SurnameMappingGramplet(Gramplet):
         vbox = gtk.VBox()
         self.top = vbox
 
-        #button_panel = gtk.Toolbar()
+        button_panel = gtk.Toolbar()
 
-        #self.button_add = button_panel.insert_stock(gtk.STOCK_ADD, "Add Mapping", None, self.add_mapping_clicked, None, -1)
-        #self.button_del = button_panel.insert_stock(gtk.STOCK_REMOVE, "Remove Mapping", None, self.remove_mapping_clicked, None, -1)
-        #self.button_edit = button_panel.insert_stock(gtk.STOCK_EDIT, "Edit Mapping", None, self.edit_mapping_clicked, None, -1)
+        self.button_add = button_panel.insert_stock(gtk.STOCK_ADD, _("Add Mapping"), None, self.add_mapping_clicked, None, -1)
+        self.button_edit = button_panel.insert_stock(gtk.STOCK_EDIT, _("Edit Mapping"), None, self.edit_mapping_clicked, None, -1)
+        self.button_del = button_panel.insert_stock(gtk.STOCK_REMOVE, _("Remove Mapping"), None, self.remove_mapping_clicked, None, -1)
 
-        #vbox.pack_start(button_panel, expand=False, fill=True, padding=5)
+        vbox.pack_start(button_panel, expand=False, fill=True, padding=5)
 
         self.treestore = gtk.TreeStore(str, str)
 
         self.treeview = gtk.TreeView(self.treestore)
-        self.column1 = gtk.TreeViewColumn('Surname')
-        self.column2 = gtk.TreeViewColumn('Group Name')
+        self.treeview.connect("row-activated", self.row_double_clicked)
+        self.column1 = gtk.TreeViewColumn(_('Surname'))
+        self.column2 = gtk.TreeViewColumn(_('Group Name'))
         self.treeview.append_column(self.column1)
         self.treeview.append_column(self.column2)
 
@@ -101,14 +102,72 @@ class SurnameMappingGramplet(Gramplet):
         keys = self.dbstate.db.get_name_group_keys()
         for key in keys:
             group_name = self.dbstate.db.get_name_group_mapping(key)
-            #print("{0} -> {1}".format(key, group_name))
             self.treestore.append(None, (key, group_name))
 
+    def show_dialog(self, title, surname, group):
+        labelSurname = gtk.Label(_("Surname"))
+        entrySurname = gtk.Entry()
+        if surname:
+            entrySurname.set_text(surname)
+        labelGroup = gtk.Label(_("Group"))
+        entryGroup = gtk.Entry()
+        if group:
+            entryGroup.set_text(group)
+        dialog = gtk.Dialog(title,
+                   None,
+                   gtk.DIALOG_MODAL | gtk.DIALOG_DESTROY_WITH_PARENT,
+                   (gtk.STOCK_CANCEL, gtk.RESPONSE_REJECT,
+                    gtk.STOCK_OK, gtk.RESPONSE_ACCEPT))
+        dialog.vbox.pack_start(labelSurname)
+        dialog.vbox.pack_start(entrySurname)
+        dialog.vbox.pack_start(labelGroup)
+        dialog.vbox.pack_start(entryGroup)
+        labelSurname.show()
+        labelGroup.show()
+        entrySurname.show()
+        entryGroup.show()
+        response = dialog.run()
+        if response == gtk.RESPONSE_ACCEPT:
+            result = (entrySurname.get_text(), entryGroup.get_text())
+        else:
+            result = None
+        dialog.destroy()
+        return result
+
     def add_mapping_clicked(self, event):
-        pass
+        response = self.show_dialog(_("Create Mapping"), None, None)
+        print(response)
+        if response:
+            (surname, group) = response
+            self.dbstate.db.set_name_group_mapping(unicode(surname), unicode(group))
+        self.main()
 
     def remove_mapping_clicked(self, event):
-        pass
+        (model, pathlist) = self.treeview.get_selection().get_selected_rows()
+        for path in pathlist:
+            tree_iter = model.get_iter(path)
+            value = model.get_value(tree_iter, 0)
+            self.dbstate.db.set_name_group_mapping(unicode(value), None)
+        self.main()
+
+    def edit_row(self, model, path):
+        tree_iter = model.get_iter(path)
+        surname = model.get_value(tree_iter, 0)
+        group = model.get_value(tree_iter, 1)
+        response = self.show_dialog(_("Edit Mapping"), surname, group)
+        if response:
+            (new_surname, new_group) = response
+            if new_surname == surname:
+                self.dbstate.db.set_name_group_mapping(unicode(surname), unicode(new_group))
+            else:
+                self.dbstate.db.set_name_group_mapping(unicode(surname), None)
+                self.dbstate.db.set_name_group_mapping(unicode(new_surname), unicode(new_group)) 
 
     def edit_mapping_clicked(self, event):
-        pass
+        (model, pathlist) = self.treeview.get_selection().get_selected_rows()
+        for path in pathlist:
+            self.edit_row(model, path)
+        self.main()
+
+    def row_double_clicked(self, treeview, path, view_column):
+        self.edit_row(treeview.get_model(), path)
