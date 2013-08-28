@@ -118,14 +118,16 @@ class SurnameMappingGramplet(Gramplet):
                    gtk.DIALOG_MODAL | gtk.DIALOG_DESTROY_WITH_PARENT,
                    (gtk.STOCK_CANCEL, gtk.RESPONSE_REJECT,
                     gtk.STOCK_OK, gtk.RESPONSE_ACCEPT))
-        dialog.vbox.pack_start(labelSurname)
-        dialog.vbox.pack_start(entrySurname)
-        dialog.vbox.pack_start(labelGroup)
-        dialog.vbox.pack_start(entryGroup)
-        labelSurname.show()
-        labelGroup.show()
-        entrySurname.show()
-        entryGroup.show()
+
+        table = gtk.Table(2, 2)
+        table.attach(labelSurname, 0, 1, 0, 1, xoptions=gtk.SHRINK, yoptions=gtk.EXPAND, xpadding=5, ypadding=5)
+        table.attach(labelGroup, 0, 1, 1, 2, xoptions=gtk.SHRINK, yoptions=gtk.EXPAND, xpadding=5, ypadding=5)
+        table.attach(entrySurname, 1, 2, 0, 1, xoptions=gtk.FILL, yoptions=gtk.EXPAND, xpadding=5, ypadding=5)
+        table.attach(entryGroup, 1, 2, 1, 2, xoptions=gtk.FILL, yoptions=gtk.EXPAND, xpadding=5, ypadding=5)
+
+        dialog.vbox.pack_start(table, fill=True, expand=True)
+        dialog.show_all()
+
         response = dialog.run()
         if response == gtk.RESPONSE_ACCEPT:
             result = (entrySurname.get_text(), entryGroup.get_text())
