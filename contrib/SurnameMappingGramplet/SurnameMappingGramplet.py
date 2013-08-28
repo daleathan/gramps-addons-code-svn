@@ -138,7 +138,6 @@ class SurnameMappingGramplet(Gramplet):
 
     def add_mapping_clicked(self, event):
         response = self.show_dialog(_("Create Mapping"), None, None)
-        print(response)
         if response:
             (surname, group) = response
             self.dbstate.db.set_name_group_mapping(unicode(surname), unicode(group))
