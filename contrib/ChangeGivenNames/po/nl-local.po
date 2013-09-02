@@ -1,4 +1,4 @@
-+# Dutch translations for gramps package.
+# Dutch translations for gramps package.
 # Copyright (C) 2013 THE gramps'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the gramps package.
 # erik_de_richter <frederik.de.richter@telenet.be>, 2013.
