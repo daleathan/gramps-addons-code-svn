@@ -4,7 +4,6 @@ name  = _("Liste Eclair"),
 description =  _("Produit une liste eclair"),
 version = '1.0.2',
 gramps_target_version = '3.4',
-include_in_listing = False,
 status = STABLE, # strange indentation, bug with pdf file format
 fname = 'ListeEclair.py',
 authors = ["Eric Doutreleau"],
