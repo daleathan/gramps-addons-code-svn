@@ -448,8 +448,7 @@ msgstr "Beelden met bepaalde kenmerken in/uitsluiten"
 
 #: DenominoViso/DenominoViso.py:2670
 msgid "Include Image source references"
-msgstr "Bronverwijzingen 
-van beelden toevoegen"
+msgstr "Bronverwijzingen van beelden toevoegen"
 
 #: DenominoViso/DenominoViso.py:2671
 msgid "Whether to include references for images"
