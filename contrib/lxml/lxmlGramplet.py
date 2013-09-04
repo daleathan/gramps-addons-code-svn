@@ -229,7 +229,7 @@ class lxmlGramplet(Gramplet):
         
         entry = self.entry.get_text()
         if ' ' in entry:
-            ErrorDialog(_('Space character'), _('Please fix space on "%s"') % entry)
+            ErrorDialog(_('Space character on filename'), _('Please fix space on "%s"') % entry)
             return
         
         self.ReadXML(entry)
