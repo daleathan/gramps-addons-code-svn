@@ -2778,7 +2778,7 @@ class MyBooleanOption(PlugOption):
         PlugOption.__init__(self, label, value)
 
 class MyGuiBooleanOption(gtk.CheckButton):
-    def __init__(self, option, dbstate, uistate, track):
+    def __init__(self, option, dbstate, uistate, track, override):
         self.__option = option
         gtk.CheckButton.__init__(self, "")
         self.set_active(self.__option.get_value())
@@ -2804,7 +2804,7 @@ class IncAttributeOption(PlugOption):
 class GuiIncAttributeOption(gtk.HBox):
     """Megawidget consisting of a checkbutton, label and entry box to
         ask if and which attributes should be included in the output"""
-    def __init__(self, option, dbstate, uistate, track):
+    def __init__(self, option, dbstate, uistate, track, override):
         gtk.HBox.__init__(self)
         self.__option = option
         value_str = self.__option.get_value()
@@ -2845,7 +2845,7 @@ class CopyImgOption(PlugOption):
 class GuiCopyImgOption(gtk.HBox):
     """Megawidget consisting of a checkbutton, label and FileEntry widget to
         ask if images should be copied to a separate directory"""
-    def __init__(self, option, dbstate, uistate, track):
+    def __init__(self, option, dbstate, uistate, track, override):
         gtk.HBox.__init__(self)
         self.__option = option
         value_str = self.__option.get_value()
@@ -2883,7 +2883,7 @@ class GuiImageIncludeAttrOption(gtk.HBox):
     """Megawidget consisting of attribute selection, label, attribute value
         entry, label and include/exclude selection to ask which images with
         with which attributes should be included/excluded."""
-    def __init__(self, option, dbstate, uistate, track):
+    def __init__(self, option, dbstate, uistate, track, override):
         gtk.HBox.__init__(self)
         self.__option = option
         value_str = self.__option.get_value()
@@ -2938,7 +2938,7 @@ class HtmlWrapperOption(PlugOption):
 
 class GuiHtmlWrapperOption(gtk.HBox):
     """Megawidget consisting of a checkbutton and file entry box"""
-    def __init__(self, option, dbstate, uistate, track):
+    def __init__(self, option, dbstate, uistate, track, override):
         gtk.HBox.__init__(self)
         self.__option = option
         value_str = self.__option.get_value()
@@ -2964,7 +2964,7 @@ class GuiHtmlWrapperOption(gtk.HBox):
 
 # 
 class GuiOptionalFileEntry(gtk.HBox):
-    def __init__(self, option, dbstate, uistate, track):
+    def __init__(self, option, dbstate, uistate, track, override):
         gtk.HBox.__init__(self)
         self.__option = option
         value_str = self.__option.get_value()
@@ -3010,7 +3010,7 @@ class MouseHandlerOption(PlugOption):
 
 class GuiMouseHandlerOption(gtk.HBox):
     """Megawidget consisting of two radio buttons to chose mouse behavior"""
-    def __init__(self, option, dbstate, uistate, track):
+    def __init__(self, option, dbstate, uistate, track, override):
         mousegroup = None
         gtk.HBox.__init__(self)
         self.__option = option
@@ -3116,7 +3116,7 @@ class LineStyleOption(PlugOption):
         PlugOption.__init__(self, label, value)
 
 class GuiLineStyleOption(GuiTableOption):
-    def __init__(self, option, dbstate, uistate, track):
+    def __init__(self, option, dbstate, uistate, track, override):
         self.__option = option
         data = []
         for row in self.list_of_strings2list_of_lists(self.__option.get_value()):
@@ -3180,7 +3180,7 @@ class ConfidenceColorOption(PlugOption):
         PlugOption.__init__(self, label, value)
 
 class GuiConfidenceColorOption(GuiTableOption):
-    def __init__(self, option, dbstate, uistate, track):
+    def __init__(self, option, dbstate, uistate, track, override):
         self.__option = option
         data = []
         for row in self.list_of_strings2list_of_lists(self.__option.get_value()):
