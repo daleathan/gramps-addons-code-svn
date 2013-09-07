@@ -4,20 +4,20 @@
 {"n": "Calcul des dates estimées","i": "calculateestimateddates","t": "Tool","d": "Calcul des dates estimées pour les naissances et décès.","v": "0.90.17","g": "4.0","z": "CalculateEstimatedDates.addon.tgz"}
 {"n": "Rapport de recensement","i": "census_report","t": "Report","d": "Les événements recensement de l'individu.","v": "1.0.27","g": "4.0","z": "Census.addon.tgz"}
 {"n": "Gramplet Recensement","i": "Census Gramplet","t": "Gramplet","d": "Gramplet servant d'interface aux données de recensement","v": "1.0.27","g": "4.0","z": "Census.addon.tgz"}
-{"n": "Réparer la casse des prénoms","i": "chgivenname","t": "Tool","d": "Recherche dans toute la base de données et essaye de corriger la casse des prénoms.","v": "1.0.18","g": "4.0","z": "ChangeGivenNames.addon.tgz"}
+{"n": "Réparer la casse des prénoms","i": "chgivenname","t": "Tool","d": "Recherche dans toute la base de données et essaye de corriger la casse des prénoms.","v": "1.0.21","g": "4.0.2","z": "ChangeGivenNames.addon.tgz"}
 {"n": "Command Line Merge","i": "climerge","t": "Tool","d": "Fusionne les objets principaux via la ligne de commande","v": "1.0.14","g": "4.0","z": "CliMerge.addon.tgz"}
 {"n": "Gramplet Presse-papiers","i": "Clipboard Gramplet","t": "Gramplet","d": "Gramplet pour regrouper des articles","v": "1.0.20","g": "4.0","z": "ClipboardGramplet.addon.tgz"}
 {"n": "Gramplet Horloge","i": "Clock Gramplet","t": "Gramplet","d": "Gramplet pour démontrer les graphiques Cairo","v": "0.0.17","g": "4.0","z": "ClockGramplet.addon.tgz"}
 {"n": "Ensemble de liens internet allemands","i": "DE Web Connect Pack","t": "Plugin lib","d": "Collection de sites internet pour l'Allemagne (nécessite libwebconnect)","v": "0.0.13","g": "4.0","z": "DEWebConnectPack.addon.tgz"}
 {"n": "Gramplet Formulaire","i": "Data Entry Gramplet","t": "Gramplet","d": "Gramplet pour une saisie rapide des données","v": "1.0.26","g": "4.0","z": "DataEntryGramplet.addon.tgz"}
 {"n": "Gramplet Connexions approfondies","i": "Deep Connections Gramplet","t": "Gramplet","d": "Gramplet affichant les relations étroites entre la souche et les autres individus","v": "1.0.19","g": "4.0","z": "DeepConnectionsGramplet.addon.tgz"}
-{"n": "DenominoViso","i": "denominoviso","t": "Report","d": "Génère une page internet (XHTML) avec une représentation graphique des ascendants/descendants (SVG) dont les détails des individus deviennent visibles avec les actions de la souris.","v": "2.3.15","g": "4.0","z": "DenominoViso.addon.tgz"}
+{"n": "DenominoViso","i": "denominoviso","t": "Report","d": "Génère une page internet (XHTML) avec une représentation graphique des ascendants/descendants (SVG) dont les détails des individus deviennent visibles avec les actions de la souris.","v": "2.3.16","g": "4.0","z": "DenominoViso.addon.tgz"}
 {"n": "Calcul des descendants","i": "Descendant Count Quickview","t": "Quickreport","d": "Affiche le total des descendants pour chaque individu","v": "1.0.16","g": "4.0","z": "DescendantCount.addon.tgz"}
 {"n": "Gramplet Calcul de descendants","i": "Descendant Count Gramplet","t": "Gramplet","d": "Gramplet pour afficher les individus et le nombre de leurs descendants","v": "1.0.17","g": "4.0","z": "DescendantCount.addon.tgz"}
 {"n": "Lignes des descendants","i": "Descendants Lines","t": "Report","d": "Produit les lignes de descendants de l'individu","v": "0.1.19","g": "4.0","z": "DescendantsLines.addon.tgz"}
 {"n": "Rapport des différences dans la base de données","i": "database-differences-report","t": "Report","d": "Compare une base de données externe avec la base actuelle.","v": "1.0.4","g": "4.0","z": "Differences.addon.tgz"}
-{"n": "Export Django","i": "export_django","t": "Exporter","d": "Django est un environnement internet fonctionnant avec une base de données configurée","v": "1.0.21","g": "4.0","z": "Django.addon.tgz"}
 {"n": "Import Django","i": "import_django","t": "Importer","d": "Django est un environnement internet fonctionnant avec une base de données configurée","v": "1.0.21","g": "4.0","z": "Django.addon.tgz"}
+{"n": "Export Django","i": "export_django","t": "Exporter","d": "Django est un environnement internet fonctionnant avec une base de données configurée","v": "1.0.21","g": "4.0","z": "Django.addon.tgz"}
 {"n": "Éditer les métadonnées Exif de l'image","i": "Edit Image Exif Metadata","t": "Gramplet","d": "Gramplet pour voir, éditer, et enregistrer les métadonnées Exif de l'image","v": "1.5.3","g": "4.0","z": "EditExifMetadata.addon.tgz"}
 {"n": "Export brut","i": "Raw Export","t": "Exporter","d": "Ceci est une image brute d'objet python","v": "1.0.19","g": "4.0","z": "ExportRaw.addon.tgz"}
 {"n": "Attributs étendus de l'individu","i": "Extended Person Attributes","t": "Gramplet","d": "Gramplet affichant les attributs d'un individu","v": "1.0.14","g": "4.0","z": "ExtendedAttributes.addon.tgz"}
@@ -34,6 +34,7 @@
 {"n": "Gramplet Dernières modifications","i": "LastChangeGramplet","t": "Gramplet","d": "Liste les dix derniers individus modifiés","v": "0.0.21","g": "4.0","z": "LastChange.addon.tgz"}
 {"n": "Rapport Dernières modifications","i": "LastChangeReport","t": "Report","d": "Rapport pour les derniers enregistrements modifiés","v": "0.0.21","g": "4.0","z": "LastChange.addon.tgz"}
 {"n": "Lines of Descendency Report","i": "LinesOfDescendency","t": "Report","d": "Affiche toutes les lignes de descendants d'un ancêtre donné à un descendant choisi dans un format textuel.","v": "1.1.19","g": "4.0","z": "LinesOfDescendency.addon.tgz"}
+{"n": "Liste Éclair","i": "ListeEclair","t": "Report","d": "Produit une liste éclair","v": "1.0.9","g": "4.0","z": "ListeEclair.addon.tgz"}
 {"n": "Navigateur Media","i": "MediaBrowser","t": "Gramplet","d": "Gramplet affichant les détails de l'individu","v": "1.0.13","g": "4.0","z": "MediaBrowser.addon.tgz"}
 {"n": "Vérification des media","i": "mediaverify","t": "Tool","d": "Vérifier si l'objet medium est présent avec le bon chemin ","v": "1.0.5","g": "4.0","z": "MediaVerify.addon.tgz"}
 {"n": "Gramplet Note","i": "Note Gramplet","t": "Gramplet","d": "Gramplet pour l'édition des notes de l'individu actif","v": "1.0.17","g": "4.0","z": "NoteGramplet.addon.tgz"}
