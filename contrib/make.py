@@ -47,8 +47,8 @@ if "GRAMPSPATH" in os.environ:
 else:
     GRAMPSPATH = "../../../.."
 
-if not os.path.isdir(GRAMPSPATH + "/po"):
-    raise ValueError("Where is GRAMPSPATH/po: '%s/po'? Use 'GRAMPSPATH=path python make.py ...'" % GRAMPSPATH)
+#if not os.path.isdir(GRAMPSPATH + "/po"):
+    #raise ValueError("Where is GRAMPSPATH/po: '%s/po'? Use 'GRAMPSPATH=path python make.py ...'" % GRAMPSPATH)
 
 command = sys.argv[1]
 if len(sys.argv) >= 3:
@@ -293,7 +293,7 @@ elif command == "build":
         system('''tar cfz "../download/%(addon)s.addon.tgz" %(files)s''',
                files=files_str)
 elif command == "listing":
-    sys.path.append(os.path.join(GRAMPSPATH, "src"))
+    sys.path.append(os.path.join(GRAMPSPATH, "gramps"))
     from TransUtils import get_addon_translator
     from gen.plug import make_environment, PTYPE_STR
     def register(ptype, **kwargs):
