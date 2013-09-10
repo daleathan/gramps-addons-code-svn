@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: gramps 34\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-09-09 13:58+0200\n"
-"PO-Revision-Date: 2013-09-09 14:27+0200\n"
+"PO-Revision-Date: 2013-09-10 11:50+0200\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
@@ -20,11 +20,11 @@ msgstr ""
 
 #: AncestorFill/AncestorFill.gpr.py:8
 msgid "AncestorFill"
-msgstr ""
+msgstr "VorfahrenFüllung"
 
 #: AncestorFill/AncestorFill.gpr.py:9
 msgid "Report on the filling of the tree"
-msgstr ""
+msgstr "Bericht zum Füllstand des Baumes"
 
 #: AncestorFill/AncestorFill.py:172
 #, python-format
@@ -34,7 +34,7 @@ msgstr "Person %s existiert nicht in der Datenbank"
 #: AncestorFill/AncestorFill.py:265
 #, python-format
 msgid "AncestorFill for %s"
-msgstr ""
+msgstr "VorfahrenFüllung für %s"
 
 #: AncestorFill/AncestorFill.py:278
 msgid "Generation "
@@ -50,7 +50,7 @@ msgstr " gefundene Vorfahren in Prozent "
 
 #: AncestorFill/AncestorFill.py:281
 msgid " Number of single Ancestors found "
-msgstr ""
+msgstr " Anzahl der gefundenen einzelnen Vorfahren "
 
 #: AncestorFill/AncestorFill.py:282
 msgid " Number of theorical Ancestors "
@@ -58,15 +58,15 @@ msgstr " Anzahl theoretischer Vorfahren "
 
 #: AncestorFill/AncestorFill.py:283
 msgid " Pedigree Collapse "
-msgstr ""
+msgstr " Ahnentafel einklappen "
 
 #: AncestorFill/AncestorFill.py:327
 msgid " Total Number of Ancestors found "
-msgstr ""
+msgstr " Anzahl der gesamten gefundenen Vorfahren "
 
 #: AncestorFill/AncestorFill.py:329
 msgid " Total Number of single Ancestors found "
-msgstr ""
+msgstr " Gesamte Anzahl der gefundenen einzelnen Vorfahren "
 
 #: AncestorFill/AncestorFill.py:357
 msgid "Report Options"
@@ -90,31 +90,36 @@ msgstr "Anzahl der im Bericht enthaltenen Generationen"
 
 #: AncestorFill/AncestorFill.py:365
 msgid "Filleddigit"
-msgstr ""
+msgstr "FüllStellen"
 
 #: AncestorFill/AncestorFill.py:366
 msgid ""
 "The number of digit after comma to include in the report for the percentage "
 "of ancestor found at a given generation"
 msgstr ""
+"Anzahl der Stellen nach dem Komma die in dem Bericht enthalten sein sollen "
+"für die Prozentzahl der Vorfahren, die in einer bestimmten Generation "
+"gefunden wurden "
 
 #: AncestorFill/AncestorFill.py:368
 msgid "Collapsedigit"
-msgstr ""
+msgstr "StellenZusammengeklappt"
 
 #: AncestorFill/AncestorFill.py:369
 msgid ""
 "The number of digit after comma to include in the report for the pedigree "
 "Collapse"
 msgstr ""
+"Die Anzahl von Nachkommastellen in dem Bericht für eine zusammengeklappte "
+"Ahnentafel "
 
 #: AncestorFill/AncestorFill.py:371
 msgid "Display theorical"
-msgstr ""
+msgstr "Anzeige theoretisch"
 
 #: AncestorFill/AncestorFill.py:372
 msgid "Display the theorical number of ancestor by generation"
-msgstr ""
+msgstr "Zeige die theoretische Anzahl der Vorfahren pro Generation"
 
 #: AncestorFill/AncestorFill.py:374
 msgid "Translation"
@@ -139,4 +144,5 @@ msgstr "Der Stil, der für die Überschriften der Generation verwendet wird."
 #: AncestorFill/AncestorFill.py:445
 msgid "The basic style used for the text display."
 msgstr "Der Basisstil, der für die Textanzeige verwendet wird."
+
 
