@@ -6,13 +6,13 @@
 # Sebastian Vöcking <voeck@web.de>, 2005.
 # Martin Hawlisch <martin@hawlisch.de>, 2005, 2006.
 # Alex Roitman <shura@gramps-project.org>, 2006.
-# Mirko Leonhäuser <mirko@leonhaeuser.de>, 2007, 2008, 2009, 2010, 2011, 2012.
+# Mirko Leonhäuser <mirko@leonhaeuser.de>, 2007, 2008, 2009, 2010, 2011, 2012, 2013.
 msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-12-30 23:34+0100\n"
-"PO-Revision-Date: 2012-12-31 11:54+0100\n"
+"POT-Creation-Date: 2013-09-11 18:54+0200\n"
+"PO-Revision-Date: 2013-09-11 19:13+0200\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
@@ -51,9 +51,8 @@ msgid "Run"
 msgstr "Starten"
 
 #: lxml/etreeGramplet.py:215 lxml/etreeGramplet.py:220
-#, fuzzy
 msgid "Number of editions back"
-msgstr "Anzahl der Generationen:"
+msgstr "Anzahl Änderungen zurück"
 
 #: lxml/etreeGramplet.py:251 lxml/lxmlGramplet.py:252
 msgid "Sorry, no support for your OS yet!"
@@ -90,7 +89,7 @@ msgstr "Kann \"%s\" nicht kopieren"
 #: lxml/etreeGramplet.py:426
 #, python-format
 msgid "XML: Last %s editions since %s, were at/on :\n"
-msgstr ""
+msgstr "XML: Letzte $s Änderungen seit %s, waren an/in:\n"
 
 #: lxml/etreeGramplet.py:477
 #, python-format
@@ -249,9 +248,9 @@ msgid "RelaxNG validation"
 msgstr "RelaxNG Prüfung"
 
 #: lxml/lxmlGramplet.py:305
-#, fuzzy, python-format
+#, python-format
 msgid "Cannot validate \"%(file)s\" via RelaxNG schema"
-msgstr "Kann \"%s\" nicht mit RelaxNG Schema prüfen"
+msgstr "Kann \"%(file)s\" nicht mit RelaxNG Schema prüfen"
 
 #: lxml/lxmlGramplet.py:308
 msgid "File issue"
@@ -312,7 +311,7 @@ msgstr "Zeitraum: "
 
 #: lxml/lxmlGramplet.py:459
 msgid " entries for surname(s); no frequency yet"
-msgstr ""
+msgstr " Einträge für Nachname(n); noch keine Häufigkeit"
 
 #: lxml/lxmlGramplet.py:460
 msgid " entries for place(s)"
@@ -461,11 +460,9 @@ msgid "Country"
 msgstr "Land"
 
 #: lxml/lxmlGramplet.py:632
-#, fuzzy, python-format
+#, python-format
 msgid "1. Has generated \"%s\".\n"
-msgstr ""
-"Erstelle:\n"
-" \"%s\"."
+msgstr "1. Wurde erstellt \"%s\".\n"
 
 #: lxml/lxmlGramplet.py:633
 #, python-format
