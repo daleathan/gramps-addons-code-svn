@@ -6,186 +6,169 @@
 # Sebastian Vöcking <voeck@web.de>, 2005.
 # Martin Hawlisch <martin@hawlisch.de>, 2005, 2006.
 # Alex Roitman <shura@gramps-project.org>, 2006.
-# Mirko Leonhäuser <mirko@leonhaeuser.de>, 2007, 2008, 2009, 2010, 2011.
+# Mirko Leonhäuser <mirko@leonhaeuser.de>, 2007, 2008, 2009, 2010, 2011, 2012, 2013.
 msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-03-18 13:59+0100\n"
-"PO-Revision-Date: 2011-03-18 14:01+0100\n"
-"Last-Translator: \n"
+"POT-Creation-Date: 2013-09-12 16:19+0200\n"
+"PO-Revision-Date: 2013-09-12 18:25+0200\n"
+"Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 1.2\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 1.5\n"
+"Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 
 #: RepositoriesReport/RepositoriesReport.gpr.py:25
-#, fuzzy
 msgid "Repositories Report Options"
-msgstr "Berichtsoptionen"
+msgstr "Aufbewahrungsorte Berichtsoptionen"
 
 #: RepositoriesReport/RepositoriesReport.gpr.py:26
 #: RepositoriesReport/RepositoriesReport.gpr.py:43
-#, fuzzy
 msgid "Produces a textual repositories report"
-msgstr "Erstellt eine schriftlich Ahnentafel"
+msgstr "Erstellt einen schriftlichen Aufbewahrungsorte Bericht"
 
 #: RepositoriesReport/RepositoriesReport.gpr.py:42
-#: RepositoriesReport/RepositoriesReport.py:75
-#: RepositoriesReport/RepositoriesReportAlt.py:185
-#, fuzzy
+#: RepositoriesReport/RepositoriesReport.py:76
+#: RepositoriesReport/RepositoriesReportAlt.py:189
 msgid "Repositories Report"
-msgstr "Aufbewahrungsorte"
+msgstr "Aufbewahrungsorte Bericht"
 
-#: RepositoriesReport/RepositoriesReport.py:146
-#: RepositoriesReport/RepositoriesReportAlt.py:380
-#: RepositoriesReport/RepositoriesReportAlt.py:382
+#: RepositoriesReport/RepositoriesReport.py:147
+#: RepositoriesReport/RepositoriesReportAlt.py:387
+#: RepositoriesReport/RepositoriesReportAlt.py:389
 msgid "Report Options"
 msgstr "Berichtsoptionen"
 
-#: RepositoriesReport/RepositoriesReport.py:170
-#: RepositoriesReport/RepositoriesReportAlt.py:453
+#: RepositoriesReport/RepositoriesReport.py:171
+#: RepositoriesReport/RepositoriesReportAlt.py:460
 msgid "The style used for the title of the report."
 msgstr "Der Stil, der für den Titel des Berichts verwendet wird."
 
-#: RepositoriesReport/RepositoriesReport.py:184
-#: RepositoriesReport/RepositoriesReportAlt.py:467
-#, fuzzy
+#: RepositoriesReport/RepositoriesReport.py:185
+#: RepositoriesReport/RepositoriesReportAlt.py:474
 msgid "The style used for repository title."
-msgstr "Der Stil, der für Berichttitel verwendet wird."
+msgstr "Der Stil, der für Aufbewahrungsorttitel verwendet wird."
 
-#: RepositoriesReport/RepositoriesReport.py:198
-#: RepositoriesReport/RepositoriesReportAlt.py:482
+#: RepositoriesReport/RepositoriesReport.py:199
+#: RepositoriesReport/RepositoriesReportAlt.py:489
 msgid "The style used for each section."
 msgstr "Der Stil, der für jeden Absatz verwendet wird."
 
-#: RepositoriesReport/RepositoriesReportAlt.py:241
+#: RepositoriesReport/RepositoriesReportAlt.py:245
 msgid "Address:"
 msgstr "Adresse:"
 
-#: RepositoriesReport/RepositoriesReportAlt.py:303
+#: RepositoriesReport/RepositoriesReportAlt.py:307
 msgid "Author:"
 msgstr "Autor:"
 
-#: RepositoriesReport/RepositoriesReportAlt.py:308
+#: RepositoriesReport/RepositoriesReportAlt.py:312
 msgid "Abbreviation:"
 msgstr "Abkürzung:"
 
-#: RepositoriesReport/RepositoriesReportAlt.py:313
+#: RepositoriesReport/RepositoriesReportAlt.py:317
 msgid "Publication information:"
 msgstr "Publikationsinformation:"
 
-#: RepositoriesReport/RepositoriesReportAlt.py:318
+#: RepositoriesReport/RepositoriesReportAlt.py:322
 msgid "Data:"
 msgstr "Daten:"
 
-#: RepositoriesReport/RepositoriesReportAlt.py:384
-#, fuzzy
+#: RepositoriesReport/RepositoriesReportAlt.py:391
 msgid "Include repository's urls"
-msgstr "Aufbewahrungsorteseiten aufnehmen"
-
-#: RepositoriesReport/RepositoriesReportAlt.py:385
-#, fuzzy
-msgid "Whether to include urls on repository."
-msgstr "Ob Notizen einer Person aufgenommen werden."
-
-#: RepositoriesReport/RepositoriesReportAlt.py:388
-#, fuzzy
-msgid "Include repository's address"
-msgstr "Aufbewahrungsorteseiten aufnehmen"
-
-#: RepositoriesReport/RepositoriesReportAlt.py:389
-#, fuzzy
-msgid "Whether to include addresses on repository."
-msgstr "Ob Adressen der Eltern enthalten sind."
+msgstr "Aufbewahrungsorte URLs aufnehmen"
 
 #: RepositoriesReport/RepositoriesReportAlt.py:392
+msgid "Whether to include urls on repository."
+msgstr "Ob URLs im Aufbewahrungsort aufgenommen werden."
+
+#: RepositoriesReport/RepositoriesReportAlt.py:395
+msgid "Include repository's address"
+msgstr "Aufbewahrungsorteadressen aufnehmen"
+
+#: RepositoriesReport/RepositoriesReportAlt.py:396
+msgid "Whether to include addresses on repository."
+msgstr "Ob Adressen im Aufbewahrungsort aufgenommen werden."
+
+#: RepositoriesReport/RepositoriesReportAlt.py:399
 msgid "Include source's author"
 msgstr "Quellen einbeziehen"
 
-#: RepositoriesReport/RepositoriesReportAlt.py:393
-#, fuzzy
+#: RepositoriesReport/RepositoriesReportAlt.py:400
 msgid "Whether to include author."
-msgstr "Ob Notizen aufgenommen werden."
+msgstr "Ob Autor aufgenommen wird."
 
-#: RepositoriesReport/RepositoriesReportAlt.py:396
+#: RepositoriesReport/RepositoriesReportAlt.py:403
 msgid "Include source's abbreviation"
 msgstr "Quellinformationen aufnehmen"
 
-#: RepositoriesReport/RepositoriesReportAlt.py:397
-#, fuzzy
-msgid "Whether to include abbreviation."
-msgstr "Ob Ereignisse aufgenommen werden."
-
-#: RepositoriesReport/RepositoriesReportAlt.py:400
-#, fuzzy
-msgid "Include source's publication information"
-msgstr "Quellinformationen aufnehmen"
-
-#: RepositoriesReport/RepositoriesReportAlt.py:401
-#, fuzzy
-msgid "Whether to include publication information."
-msgstr "Ob detaillierte Informationen über den Partner enthalten sind."
-
 #: RepositoriesReport/RepositoriesReportAlt.py:404
-#, fuzzy
-msgid "Include source's data"
-msgstr "Quellen einbeziehen"
+msgid "Whether to include abbreviation."
+msgstr "Ob Abkürzungen aufgenommen werden."
 
-#: RepositoriesReport/RepositoriesReportAlt.py:405
-#, fuzzy
-msgid "Whether to include keys and values."
-msgstr "Ob andere Namen aufgenommen werden."
+#: RepositoriesReport/RepositoriesReportAlt.py:407
+msgid "Include source's publication information"
+msgstr "Quellen Veröffentlichungsinformationen aufnehmen"
 
 #: RepositoriesReport/RepositoriesReportAlt.py:408
+msgid "Whether to include publication information."
+msgstr "Ob Veröffentlichungsinformationen enthalten sind."
+
+#: RepositoriesReport/RepositoriesReportAlt.py:411
+msgid "Include source's data"
+msgstr "Quellendaten einbeziehen"
+
+#: RepositoriesReport/RepositoriesReportAlt.py:412
+msgid "Whether to include keys and values."
+msgstr "Ob Schlüssel und Werte aufgenommen werden."
+
+#: RepositoriesReport/RepositoriesReportAlt.py:415
 msgid "Include notes"
 msgstr "Notizen aufnehmen"
 
-#: RepositoriesReport/RepositoriesReportAlt.py:409
-#, fuzzy
-msgid "Whether to include notes on repositories and sources."
-msgstr "Ob Notizen für Eltern enthalten sind."
-
-#: RepositoriesReport/RepositoriesReportAlt.py:412
-#, fuzzy
-msgid "Include media"
-msgstr "Daten aufnehmen"
-
-#: RepositoriesReport/RepositoriesReportAlt.py:413
-#, fuzzy
-msgid "Whether to include media on sources."
-msgstr "Ob die Quellen einer Person aufgenommen werden."
-
 #: RepositoriesReport/RepositoriesReportAlt.py:416
-msgid "Include private records"
-msgstr "Private Daten aufnehmen"
+msgid "Whether to include notes on repositories and sources."
+msgstr "Ob Notizen in Aufbewahrungsorten und Quellen enthalten sind."
 
-#: RepositoriesReport/RepositoriesReportAlt.py:417
-#, fuzzy
-msgid "Whether to include repositories and sources marked as private."
-msgstr "Ob Namen, Daten und Familien die als privat markiert sind enthalten sind."
+#: RepositoriesReport/RepositoriesReportAlt.py:419
+msgid "Include media"
+msgstr "Medien aufnehmen"
 
 #: RepositoriesReport/RepositoriesReportAlt.py:420
+msgid "Whether to include media on sources."
+msgstr "Ob Medien Quellen aufgenommen werden."
+
+#: RepositoriesReport/RepositoriesReportAlt.py:423
+msgid "Include private records"
+msgstr "Vertrauliche Daten aufnehmen"
+
+#: RepositoriesReport/RepositoriesReportAlt.py:424
+msgid "Whether to include repositories and sources marked as private."
+msgstr ""
+"Ob Aufbewahrungsorte und Quellen die als vertraulich markiert sind enthalten "
+"sind."
+
+#: RepositoriesReport/RepositoriesReportAlt.py:427
 msgid "Translation"
 msgstr "Übersetzung"
 
-#: RepositoriesReport/RepositoriesReportAlt.py:421
+#: RepositoriesReport/RepositoriesReportAlt.py:428
 msgid "English"
 msgstr "Englisch"
 
-#: RepositoriesReport/RepositoriesReportAlt.py:424
+#: RepositoriesReport/RepositoriesReportAlt.py:431
 msgid "The translation to be used for the report."
 msgstr "Die Übersetzung, die für den Bericht verwendet wird."
 
-#: RepositoriesReport/RepositoriesReportAlt.py:497
-#, fuzzy
+#: RepositoriesReport/RepositoriesReportAlt.py:504
 msgid "The style used for child section."
-msgstr "Der Stil, der für jeden Absatz verwendet wird."
+msgstr "Der Stil, der für Kinder Absatz verwendet wird."
 
-#: RepositoriesReport/RepositoriesReportAlt.py:509
+#: RepositoriesReport/RepositoriesReportAlt.py:516
 msgid "The basic style used for the note display."
 msgstr "Der Basisstil, der für die Notizenanzeige verwendet wird."
 
