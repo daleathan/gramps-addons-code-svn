@@ -358,7 +358,7 @@ class PhotoTaggingGramplet(Gramplet):
         if self.fragments != None:
             self.treestore.clear()
             for (i, (rect, person)) in enumerate(self.fragments.items(), start=1):
-                name = name_displayer.display(person)
+                name = name_displayer.display(person) if person else ""
                 self.treestore.append(None, (i, name))
 
     def rescale(self):
@@ -373,8 +373,9 @@ class PhotoTaggingGramplet(Gramplet):
             self.draw_selection()
 
     def show_tooltip(self, widget, x, y, keyboard_mode, tooltip):
-        if self.in_fragment:
-            tooltip.set_text(name_displayer.display(self.in_fragment[1]))
+        if self.in_fragment and self.in_fragment[1]:
+            person = self.in_fragment[1]
+            tooltip.set_text(name_displayer.display(person))
             return True
         else:
             return False
