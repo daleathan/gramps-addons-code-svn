@@ -217,11 +217,17 @@ class PhotoTaggingGramplet(Gramplet):
         self.in_fragment = None
         self.fragments = None
         self.translation = None
+        self.pixbuf = None
         media = self.get_current_object()
         self.top.hide()
-        if media:
+        if media and media.mime.startswith("image"):
             self.load_image(media)
+        else:
+            self.pixbuf = None
+            self.image.set_from_stock(gtk.STOCK_MISSING_IMAGE, gtk.ICON_SIZE_DIALOG)
+            self.image.queue_draw()
         self.refresh_list()
+        self.enable_buttons()
         self.top.show()
 
     def load_image(self, media):
@@ -242,7 +248,6 @@ class PhotoTaggingGramplet(Gramplet):
                                   viewport_size.width, viewport_size.height)
             self.rescale()
             self.retrieve_backrefs()
-            self.enable_buttons()
         except (gobject.GError, OSError):
             self.pixbuf = None
             self.image.set_from_stock(gtk.STOCK_MISSING_IMAGE, gtk.ICON_SIZE_DIALOG)
@@ -355,8 +360,8 @@ class PhotoTaggingGramplet(Gramplet):
                             self.translation[fragment] = mediaref
 
     def refresh_list(self):
+        self.treestore.clear()
         if self.fragments != None:
-            self.treestore.clear()
             for (i, (rect, person)) in enumerate(self.fragments.items(), start=1):
                 name = name_displayer.display(person) if person else ""
                 self.treestore.append(None, (i, name))
@@ -679,6 +684,8 @@ class PhotoTaggingGramplet(Gramplet):
         self.image.queue_draw()
 
     def motion_scroll_event(self, widget, event):
+        if not self.is_image_loaded():
+            return
         if event.direction == gtk.gdk.SCROLL_UP:
             scaled_size = (int(self.original_image_size[0] * self.scale * RESIZE_RATIO), int(self.original_image_size[1] * self.scale * RESIZE_RATIO))
             if scaled_size[0] < MAX_SIZE and scaled_size[1] < MAX_SIZE:
