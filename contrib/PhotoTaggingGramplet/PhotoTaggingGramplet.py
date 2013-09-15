@@ -48,7 +48,7 @@ import Utils
 from gen.db import DbTxn
 from gen.display.name import displayer as name_displayer
 from gen.plug import Gramplet
-from gen.lib import MediaRef
+from gen.lib import MediaRef, Person
 from gui.editors.editperson import EditPerson
 from gui.selectors import SelectorFactory
 
@@ -95,6 +95,25 @@ def scale_to_fit(orig_x, orig_y, target_x, target_y):
     else:
         return float(target_y) / orig_y
 
+class Region(object):
+
+    def __init__(self, x1, y1, x2, y2):
+        self.set_coords(x1, y1, x2, y2)
+        self.person = None
+        self.mediaref = None
+
+    def coords(self):
+        return (self.x1, self.y1, self.x2, self.y2)
+
+    def set_coords(self, x1, y1, x2, y2):
+        self.x1 = x1
+        self.y1 = y1
+        self.x2 = x2
+        self.y2 = y2
+
+    def contains(self, x, y):
+        return self.x1 <= x <= self.x2 and self.y1 <= y <= self.y2
+
 class PhotoTaggingGramplet(Gramplet):
 
     def init(self):
@@ -107,6 +126,10 @@ class PhotoTaggingGramplet(Gramplet):
         self.gui.get_container_widget().remove(self.gui.textview)
         self.gui.get_container_widget().add_with_viewport(self.gui.WIDGET)
         self.top.show_all()
+
+    # ======================================================
+    # building the GUI
+    # ======================================================
 
     def build_gui(self):
         """
@@ -127,7 +150,7 @@ class PhotoTaggingGramplet(Gramplet):
 
         self.button_index.connect("clicked", self.sel_person_clicked)
         self.button_add.connect("clicked", self.add_person_clicked)
-        self.button_del.connect("clicked", self.del_person_clicked)
+        self.button_del.connect("clicked", self.del_region_clicked)
         self.button_clear.connect("clicked", self.clear_ref_clicked)
         self.button_edit.connect("clicked", self.edit_person_clicked)
         self.button_detect.connect("clicked", self.detect_faces_clicked)
@@ -206,16 +229,21 @@ class PhotoTaggingGramplet(Gramplet):
 
         return self.top
 
+    # ======================================================
+    # gramplet event handlers
+    # ======================================================
+
     def db_changed(self):
         self.dbstate.db.connect('media-update', self.update)
         self.connect_signal('Media', self.update)
 
     def main(self):
+        self.loaded = False
         self.start_point = None
         self.selection = None
         self.current = None
-        self.in_fragment = None
-        self.fragments = None
+        self.in_region = None
+        self.regions = []
         self.translation = None
         self.pixbuf = None
         media = self.get_current_object()
@@ -230,13 +258,18 @@ class PhotoTaggingGramplet(Gramplet):
         self.enable_buttons()
         self.top.show()
 
+    def expose_handler(self, widget, event):
+        if self.pixbuf:
+            self.draw_selection()
+
+    # ======================================================
+    # loading the image
+    # ======================================================
+
     def load_image(self, media):
         self.start_point = None
         self.selection = None
-        self.current = None
-        self.in_fragment = None
-        self.fragments = {}
-        self.translation = {}
+        self.in_region = None
 
         image_path = Utils.media_path_full(self.dbstate.db, media.get_path())
         try:
@@ -248,12 +281,41 @@ class PhotoTaggingGramplet(Gramplet):
                                   viewport_size.width, viewport_size.height)
             self.rescale()
             self.retrieve_backrefs()
+            self.loaded = True
         except (gobject.GError, OSError):
             self.pixbuf = None
             self.image.set_from_stock(gtk.STOCK_MISSING_IMAGE, gtk.ICON_SIZE_DIALOG)
 
+    def retrieve_backrefs(self):
+        """
+        Finds the media references pointing to the current image
+        """
+        backrefs = self.dbstate.db.find_backlink_handles(self.get_current_handle())
+        for (reftype, ref) in backrefs:
+            if reftype == "Person":
+                person = self.dbstate.db.get_person_from_handle(ref)
+                name = person.get_primary_name()
+                gallery = person.get_media_list()
+                for mediaref in gallery:
+                    referenced_handles = mediaref.get_referenced_handles()
+                    if len(referenced_handles) == 1:
+                        handle_type, handle = referenced_handles[0]
+                        if handle_type == "MediaObject" and handle == self.get_current_handle():
+                            rect = mediaref.get_rectangle()
+                            if rect is None:
+                                rect = (0, 0, 100, 100)
+                            coords = self.proportional_to_real(rect)
+                            region = Region(*coords)
+                            region.person = person
+                            region.mediaref = mediaref
+                            self.regions.append(region)
+
+    # ======================================================
+    # utility functions for retriving properties
+    # ======================================================
+
     def is_image_loaded(self):
-        return self.pixbuf is not None
+        return self.loaded
 
     def get_current_handle(self):
         return self.get_active('Media')
@@ -277,6 +339,10 @@ class PhotoTaggingGramplet(Gramplet):
         viewport_size = self.get_viewport_size()
         return (min(scaled_image_size[0], viewport_size[0]), min(scaled_image_size[1], viewport_size[1]))
 
+    # ======================================================
+    # coordinate transformations
+    # ======================================================
+
     def proportional_to_real(self, rect):
         """
         Translate proportional (ranging from 0 to 100) coordinates to image coordinates (in pixels).
@@ -290,13 +356,6 @@ class PhotoTaggingGramplet(Gramplet):
         """
         w, h = self.original_image_size
         return (rect[0] * 100 / w, rect[1] * 100 / h, rect[2] * 100 / w, rect[3] * 100 / h)
-
-    def check_and_translate_to_proportional(self, rect):
-        mediaref = self.translation.get(rect)
-        if mediaref:
-            return mediaref.get_rectangle()
-        else:
-            return self.real_to_proportional(rect)
 
     def image_to_screen(self, coords):
         """
@@ -338,52 +397,11 @@ class PhotoTaggingGramplet(Gramplet):
         x = min(x, image_size[0])
         y = max(y, 0)
         y = min(y, image_size[1])
-        return (x, y) 
+        return (x, y)
 
-    def retrieve_backrefs(self):
-        backrefs = self.dbstate.db.find_backlink_handles(self.get_current_handle())
-        for (reftype, ref) in backrefs:
-            if reftype == "Person":
-                person = self.dbstate.db.get_person_from_handle(ref)
-                name = person.get_primary_name()
-                gallery = person.get_media_list()
-                for mediaref in gallery:
-                    referenced_handles = mediaref.get_referenced_handles()
-                    if len(referenced_handles) == 1:
-                        handle_type, handle = referenced_handles[0]
-                        if handle_type == "MediaObject" and handle == self.get_current_handle():
-                            rect = mediaref.get_rectangle()
-                            if rect is None:
-                                rect = (0, 0, 100, 100)
-                            fragment = self.proportional_to_real(rect)
-                            self.fragments[fragment] = person
-                            self.translation[fragment] = mediaref
-
-    def refresh_list(self):
-        self.treestore.clear()
-        if self.fragments != None:
-            for (i, (rect, person)) in enumerate(self.fragments.items(), start=1):
-                name = name_displayer.display(person) if person else ""
-                self.treestore.append(None, (i, name))
-
-    def rescale(self):
-        self.scaled_size = (int(self.original_image_size[0] * self.scale), int(self.original_image_size[1] * self.scale))
-        self.scaled_image = self.pixbuf.scale_simple(self.scaled_size[0], self.scaled_size[1], gtk.gdk.INTERP_BILINEAR)
-        self.image.set_from_pixbuf(self.scaled_image)
-        self.image.set_size_request(*self.scaled_size)
-        self.ebox_ref.set_size_request(*self.scaled_size)
-
-    def expose_handler(self, widget, event):
-        if self.pixbuf:
-            self.draw_selection()
-
-    def show_tooltip(self, widget, x, y, keyboard_mode, tooltip):
-        if self.in_fragment and self.in_fragment[1]:
-            person = self.in_fragment[1]
-            tooltip.set_text(name_displayer.display(person))
-            return True
-        else:
-            return False
+    # ======================================================
+    # drawing and refreshing the image
+    # ======================================================
 
     def draw_selection(self):
         if not self.scaled_size:
@@ -418,11 +436,11 @@ class PhotoTaggingGramplet(Gramplet):
             cr.set_source_rgb(0.0, 0.0, 1.0)
             cr.rectangle(x1 - 2, y1 - 2, x2 - x1 + 4, y2 - y1 + 4)
             cr.stroke()
-        elif self.fragments:
+        else:
             # selection frame
             cr.set_font_size(14)
-            for (rect, person) in self.fragments.items():
-                x1, y1, x2, y2 = rect
+            for region in self.regions:
+                x1, y1, x2, y2 = region.coords()
                 x1, y1 = self.image_to_screen((x1, y1))
                 x2, y2 = self.image_to_screen((x2, y2))
                 cr.set_source_rgb(1.0, 1.0, 1.0)
@@ -432,12 +450,170 @@ class PhotoTaggingGramplet(Gramplet):
                 cr.rectangle(x1 - 2, y1 - 2, x2 - x1 + 4, y2 - y1 + 4)
                 cr.stroke()
 
-    def find_fragment(self, x, y):
-        for (rect, person) in self.fragments.items():
-            x1, y1, x2, y2 = rect
-            if x1 <= x <= x2 and y1 <= y <= y2:
-                return rect
+    def refresh(self):
+        self.image.queue_draw()
+        self.refresh_list()
+        self.refresh_selection()
+
+    def rescale(self):
+        self.scaled_size = (int(self.original_image_size[0] * self.scale), int(self.original_image_size[1] * self.scale))
+        self.scaled_image = self.pixbuf.scale_simple(self.scaled_size[0], self.scaled_size[1], gtk.gdk.INTERP_BILINEAR)
+        self.image.set_from_pixbuf(self.scaled_image)
+        self.image.set_size_request(*self.scaled_size)
+        self.ebox_ref.set_size_request(*self.scaled_size)
+
+    # ======================================================
+    # tooltips
+    # ======================================================
+
+    def show_tooltip(self, widget, x, y, keyboard_mode, tooltip):
+        if self.in_region:
+            person = self.in_region.person
+            if person:
+                name = name_displayer.display(person)
+            else:
+                name = ""
+            tooltip.set_text(name)
+            return True
+        else:
+            return False
+
+    def check_and_translate_to_proportional(self, mediaref, rect):
+        if mediaref:
+            return mediaref.get_rectangle()
+        else:
+            return self.real_to_proportional(rect)
+
+    def find_region(self, x, y):
+        for region in self.regions:
+            if region.contains(x, y):
+                return region
         return None
+
+    # ======================================================
+    # helpers for updating database objects
+    # ======================================================
+
+    def add_reference(self, person, rect):
+        """
+        Add a reference to the media object to the specified person.
+        """
+        mediaref = MediaRef()
+        mediaref.ref = self.get_current_handle()
+        mediaref.set_rectangle(rect)
+        person.add_media_reference(mediaref)
+        self.commit_person(person)
+        return mediaref
+
+    def remove_reference(self, person, mediaref):
+        """
+        Removes the reference to the media object from the person.
+        """
+        person.get_media_list().remove(mediaref)
+        self.commit_person(person)
+
+    def commit_person(self, person):
+        """
+        Save the modifications made to a Person object to the database.
+        """
+        with DbTxn('', self.dbstate.db) as trans:
+            self.dbstate.db.commit_person(person, trans)
+            msg = _("Edit Person (%s)") % \
+                  name_displayer.display(person)
+            trans.set_description(msg)
+
+    # ======================================================
+    # managing toolbar buttons
+    # ======================================================
+    def enable_buttons(self):
+        self.button_index.set_sensitive(self.current is not None)
+        self.button_add.set_sensitive(self.current is not None)
+        self.button_del.set_sensitive(self.current is not None)
+        self.button_clear.set_sensitive(self.current is not None and self.current.person is not None)
+        self.button_edit.set_sensitive(self.current is not None and self.current.person is not None)
+        self.button_detect.set_sensitive(self.pixbuf is not None and computer_vision_available)
+
+    # ======================================================
+    # toolbar button event handles
+    # ======================================================
+    def add_person_clicked(self, event):
+        if self.current:
+            person = Person()
+            EditPerson(self.dbstate, self.uistate, self.track, person, self.new_person_added)
+
+    def sel_person_clicked(self, event):
+        if self.current:
+            SelectPerson = SelectorFactory('Person')
+            sel = SelectPerson(self.dbstate, self.uistate, self.track, _("Select Person"))
+            person = sel.run()
+            if person:
+                self.set_current_person(person)
+                self.refresh()
+
+    def del_region_clicked(self, event):
+        if self.current:
+            self.regions.remove(self.current)
+            if self.current.person:
+                self.remove_reference(self.current.person, self.current.mediaref)
+            self.current = None
+            self.selection = None
+            self.refresh()
+
+    def clear_ref_clicked(self, event):
+        if self.clear_current_ref():
+            self.refresh()
+
+    def edit_person_clicked(self, event):
+        person = self.current.person
+        if person:
+            EditPerson(self.dbstate, self.uistate, self.track, person)
+            self.refresh()
+
+    def detect_faces_clicked(self, event):
+        min_face_size = (50,50) # FIXME: get from setting
+        media = self.get_current_object()
+        image_path = Utils.media_path_full(self.dbstate.db, media.get_path())
+        cv_image = cv.LoadImage(image_path, cv.CV_LOAD_IMAGE_GRAYSCALE)
+        o_width, o_height = cv_image.width, cv_image.height
+        cv.EqualizeHist(cv_image, cv_image)
+        cascade = cv.Load(HAARCASCADE_PATH)
+        faces = cv.HaarDetectObjects(cv_image, cascade, 
+                                     cv.CreateMemStorage(0),
+                                     1.2, 2, cv.CV_HAAR_DO_CANNY_PRUNING, 
+                                     min_face_size)
+        for ((x, y, width, height), neighbors) in faces:
+            region = Region(x, y, x + width, y + height)
+            self.regions.append(region)
+        self.refresh()
+
+    # ======================================================
+    # helpers for toolbar event handlers
+    # ======================================================
+
+    def new_person_added(self, person):
+        self.set_current_person(person)
+        self.refresh()
+
+    def set_current_person(self, person):
+        if self.current and person:
+            self.clear_current_ref()
+            rect = self.check_and_translate_to_proportional(self.current.mediaref, self.current.coords())
+            mediaref = self.add_reference(person, rect)
+            self.current.person = person
+            self.current.mediaref = mediaref
+
+    def clear_current_ref(self):
+        if self.current:
+            if self.current.person:
+                self.remove_reference(self.current.person, self.current.mediaref)
+                self.current.person = None
+                self.current.mediaref = None
+                return True
+        return False
+
+    # ======================================================
+    # mouse event handlers
+    # ======================================================
 
     def button_press_event(self, obj, event):
         if not self.is_image_loaded():
@@ -459,6 +635,7 @@ class PhotoTaggingGramplet(Gramplet):
                 else:
                     self.start_point = self.screen_to_image((event.x, event.y))
                     self.start_point = self.truncate_to_image_size(self.start_point)
+                    self.current = None
             else:
                 self.start_point = self.screen_to_image((event.x, event.y))
                 self.start_point = self.truncate_to_image_size(self.start_point)
@@ -473,33 +650,9 @@ class PhotoTaggingGramplet(Gramplet):
             self.rect_gc = self.rect_pixmap.new_gc()
             self.rect_gc.set_foreground(color)
 
-    def enable_buttons(self):
-        self.button_index.set_sensitive(self.current is not None)
-        self.button_add.set_sensitive(self.current is not None)
-        self.button_del.set_sensitive(self.current is not None)
-        self.button_clear.set_sensitive(self.current is not None and self.fragments.get(self.current) is not None)
-        self.button_edit.set_sensitive(self.current is not None and self.fragments.get(self.current) is not None)
-
-        self.button_detect.set_sensitive(self.pixbuf is not None and computer_vision_available)
-
     def button_release_event(self, obj, event):
         if not self.is_image_loaded():
             return
-        # context menu is disabled
-        #if event.button == 3:
-        #    for (rect, person) in self.fragments.items():
-        #        x1, y1, x2, y2 = self.proportional_to_real(rect)
-        #        if x1 <= event.x <= x2 and y1 <= event.y <= y2:
-        #            if person:
-        #                name = person.get_primary_name().get_name()
-        #                self.removemenu.set_sensitive(True)
-        #            else:
-        #                name = "[not selected]"
-        #                self.removemenu.set_sensitive(False)
-        #            self.nameitem.set_label(name)
-        #            self.current = rect
-        #            self.menu.popup(None, None, None, event.button, event.time, None)
-        #            self.menu.show_all()
         if event.button == 1:
             if self.start_point:
                 end_point = self.screen_to_image((event.x, event.y))
@@ -517,141 +670,25 @@ class PhotoTaggingGramplet(Gramplet):
 
                 if x2 - x1 >= 5 and y2 - y1 >= 5:
                     if self.current:
-                        person = self.fragments.get(self.current)
-                        if person:
-                            mediaref = self.translation.get(self.current)
-                            self.translation[self.selection] = mediaref
+                        person = self.current.person
+                        mediaref = self.current.mediaref
+                        if person and mediaref:
                             mediaref.set_rectangle(self.real_to_proportional(self.selection))
                             self.commit_person(person)
-                        del self.fragments[self.current]
-                        self.fragments[self.selection] = person
-                    self.current = self.selection
+                        self.current.set_coords(*self.selection)
+                    else:
+                        region = Region(*self.selection)
+                        self.regions.append(region)
+                        self.current = region
+                        self.refresh()
                     self.rect_pixbuf = None
                 else:
-                    rect = self.find_fragment(end_point[0], end_point[1])
-                    if rect:
-                        self.selection = rect
-                        self.current = rect
-                    else:
-                        self.selection = None
-                        self.current = None
-                    self.refresh_selection()
+                    self.current = self.find_region(end_point[0], end_point[1])
+                    self.selection = self.current.coords() if self.current else None
+                    self.refresh()
 
             self.start_point = None
             self.enable_buttons()
-
-    def commit_person(self, person):
-        """
-        Save the modifications made to a Person object to the database.
-        """
-        with DbTxn('', self.dbstate.db) as trans:
-            self.dbstate.db.commit_person(person, trans)
-            msg = _("Edit Person (%s)") % \
-                    name_displayer.display(person)
-            trans.set_description(msg)
-
-    def add_reference(self, person, rect):
-        """
-        Add a reference to the current media object to the specified person.
-        """
-        media_ref = MediaRef()
-        media_ref.ref = self.get_current_handle()
-        media_ref.set_rectangle(rect)
-        person.add_media_reference(media_ref)
-        self.commit_person(person)
-
-    def remove_reference(self, person, rect):
-        """
-        Add a reference to the current media object from the specified person.
-        """
-        # because MediaBase does not have a method to remove a single reference
-        # (remove_media_references removes all references to a particular object,
-        # i.e. if a person references several fragments of the same photo, all
-        # references to this photo will be removed), we have to manually search
-        # the media list for the reference in question and remove it
-        new_list = []
-        media_list = person.get_media_list()
-        for mediaref in media_list:
-            referenced_handles = mediaref.get_referenced_handles()
-            if len(referenced_handles) == 1:
-                handle_type, handle = referenced_handles[0]
-                if handle_type == "MediaObject" and handle == self.get_current_handle():
-                    if mediaref.get_rectangle() == rect:
-                        continue
-            new_list.append(mediaref)
-        person.set_media_list(new_list)
-        self.commit_person(person)
-
-    def sel_person_clicked(self, event):
-        if self.current:
-            SelectPerson = SelectorFactory('Person')
-            sel = SelectPerson(self.dbstate, self.uistate, self.track, _("Select Person"))
-            person = sel.run()
-            if person:
-                rect = self.check_and_translate_to_proportional(self.current)
-                old_person = self.fragments.get(self.current)
-                self.fragments[self.current] = person
-                if old_person:
-                    self.remove_reference(old_person, rect)
-                self.add_reference(person, rect)
-                self.refresh_list()
-
-    def del_person_clicked(self, event):
-        if self.current:
-            person = self.fragments.get(self.current)
-            if person:
-                rect = self.check_and_translate_to_proportional(self.current)
-                self.remove_reference(person, rect)
-            del self.fragments[self.current]
-            self.current = None
-            self.selection = None
-            self.image.queue_draw()
-            self.refresh_list()
-
-    def clear_ref_clicked(self, event):
-        if self.current:
-            person = self.fragments.get(self.current)
-            if person:
-                self.fragments[self.current] = None
-                rect = self.check_and_translate_to_proportional(self.current)
-                self.remove_reference(person, rect)
-                self.refresh_list()
-
-    def add_person_clicked(self, event):
-        if self.current:
-            person = gen.lib.Person()
-            EditPerson(self.dbstate, self.uistate, self.track, person, self.new_person_added)
-            self.refresh_list()
-
-    def new_person_added(self, person):
-        if self.current and person:
-            self.fragments[self.current] = person
-            rect = self.check_and_translate_to_proportional(self.current)
-            self.add_reference(person, rect)
-            self.refresh_list()
-
-    def edit_person_clicked(self, event):
-        person = self.fragments[self.current]
-        if person:
-            EditPerson(self.dbstate, self.uistate, self.track, person)
-            self.refresh_list()
-
-    def detect_faces_clicked(self, event):
-        min_face_size = (50,50) # FIXME: get from setting
-        media = self.get_current_object()
-        image_path = Utils.media_path_full(self.dbstate.db, media.get_path())
-        cv_image = cv.LoadImage(image_path, cv.CV_LOAD_IMAGE_GRAYSCALE)
-        o_width, o_height = cv_image.width, cv_image.height
-        cv.EqualizeHist(cv_image, cv_image)
-        cascade = cv.Load(HAARCASCADE_PATH)
-        faces = cv.HaarDetectObjects(cv_image, cascade, 
-                                     cv.CreateMemStorage(0),
-                                     1.2, 2, cv.CV_HAAR_DO_CANNY_PRUNING, 
-                                     min_face_size)
-        for ((x, y, width, height), neighbors) in faces:
-            self.fragments[(x, y, x + width, y + height)] = None
-        self.refresh_list()
-        self.image.queue_draw()
 
     def motion_notify_event(self, widget, event):
         if not self.is_image_loaded():
@@ -676,11 +713,7 @@ class PhotoTaggingGramplet(Gramplet):
                                 0,0,0,0, w, h)
             self.image.set_from_pixbuf(self.rect_pixbuf_render)
 
-        fragment = self.find_fragment(end_point[0], end_point[1])
-        if fragment:
-            self.in_fragment = (fragment, self.fragments[fragment])
-        else:
-            self.in_fragment = None
+        self.in_region = self.find_region(end_point[0], end_point[1])
         self.image.queue_draw()
 
     def motion_scroll_event(self, widget, event):
@@ -697,18 +730,33 @@ class PhotoTaggingGramplet(Gramplet):
                 self.scale /= RESIZE_RATIO
                 self.rescale()
 
+    # ======================================================
+    # list event handles
+    # ======================================================
+
     def cursor_changed(self, treeview):
         (model, pathlist) = self.treeview.get_selection().get_selected_rows()
         for path in pathlist:
             tree_iter = model.get_iter(path)
             i = model.get_value(tree_iter, 0)
-            self.current = self.selection = self.fragments.keys()[i - 1]
+            self.current = self.regions[i - 1]
+            self.selection = self.current.coords()
             self.image.queue_draw()
             self.enable_buttons()
             return # there should not be more than one row selected
 
+    # ======================================================
+    # refreshing the list
+    # ======================================================
+
+    def refresh_list(self):
+        self.treestore.clear()
+        for (i, region) in enumerate(self.regions, start=1):
+            name = name_displayer.display(region.person) if region.person else ""
+            self.treestore.append(None, (i, name))
+
     def refresh_selection(self):
         if self.current:
-            self.treeview.set_cursor((self.fragments.keys().index(self.current),))
+            self.treeview.get_selection().select_path((self.regions.index(self.current),))
         else:
             self.treeview.get_selection().unselect_all()
