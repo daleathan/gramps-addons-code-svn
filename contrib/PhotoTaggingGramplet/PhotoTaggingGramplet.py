@@ -364,14 +364,14 @@ class PhotoTaggingGramplet(Gramplet):
         viewport_rect = self.viewport.get_allocation()
         image_rect = self.scaled_size
         if image_rect[0] < viewport_rect.width:
-            offset_x = (image_rect[0] - viewport_rect.width) / 2
+            offset_x = float(image_rect[0] - viewport_rect.width) / 2
         else:
-            offset_x = 0
+            offset_x = 0.0
         if image_rect[1] < viewport_rect.height:
-            offset_y = (image_rect[1] - viewport_rect.height) / 2
+            offset_y = float(image_rect[1] - viewport_rect.height) / 2
         else:
-            offset_y = 0
-        return (int(coords[0] * self.scale) - offset_x, int(coords[1] * self.scale) - offset_y)
+            offset_y = 0.0
+        return (int(coords[0] * self.scale - offset_x), int(coords[1] * self.scale - offset_y))
 
     def screen_to_image(self, coords):
         """
@@ -381,13 +381,13 @@ class PhotoTaggingGramplet(Gramplet):
         viewport_rect = self.viewport.get_allocation()
         image_rect = self.scaled_size
         if image_rect[0] < viewport_rect.width:
-            offset_x = (image_rect[0] - viewport_rect.width) / 2
+            offset_x = float(image_rect[0] - viewport_rect.width) / 2
         else:
-            offset_x = 0
+            offset_x = 0.0
         if image_rect[1] < viewport_rect.height:
-            offset_y = (image_rect[1] - viewport_rect.height) / 2
+            offset_y = float(image_rect[1] - viewport_rect.height) / 2
         else:
-            offset_y = 0
+            offset_y = 0.0
         return (int((coords[0] + offset_x) / self.scale), int((coords[1] + offset_y) / self.scale))
 
     def truncate_to_image_size(self, coords):
@@ -409,6 +409,8 @@ class PhotoTaggingGramplet(Gramplet):
 
         w, h = self.scaled_size
         offset_x, offset_y = self.image_to_screen((0, 0))
+        offset_x -= 1
+        offset_y -= 1
 
         cr = self.image.window.cairo_create()
 
