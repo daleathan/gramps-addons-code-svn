@@ -695,8 +695,8 @@ class PhotoTaggingGramplet(Gramplet):
     def motion_notify_event(self, widget, event):
         if not self.is_image_loaded():
             return
-        end_point = self.screen_to_image((event.x, event.y))
-        end_point = self.truncate_to_image_size(end_point)
+        end_point_orig = self.screen_to_image((event.x, event.y))
+        end_point = self.truncate_to_image_size(end_point_orig)
         if self.start_point:
             x1 = min(self.start_point[0], end_point[0])
             x2 = max(self.start_point[0], end_point[0])
@@ -715,7 +715,7 @@ class PhotoTaggingGramplet(Gramplet):
                                 0,0,0,0, w, h)
             self.image.set_from_pixbuf(self.rect_pixbuf_render)
 
-        self.in_region = self.find_region(end_point[0], end_point[1])
+        self.in_region = self.find_region(end_point_orig[0], end_point_orig[1])
         self.image.queue_draw()
 
     def motion_scroll_event(self, widget, event):
