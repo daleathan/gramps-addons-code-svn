@@ -48,7 +48,7 @@
 {'d': 'Gramplet showing the attributes of a family', 'g': '3.4', 'i': 'Extended Family Attributes', 'n': 'Extended Family Attributes', 't': u'Gramplet', 'v': '1.0.5', 'z': 'ExtendedAttributes.addon.tgz'}
 {'d': 'Report on the filling of the tree', 'g': '3.4', 'i': 'AncestorFill', 'n': 'AncestorFill', 't': u'Report', 'v': '1.0.3', 'z': 'AncestorFill.addon.tgz'}
 {'d': 'a gramplet that displays the birthdays of the living people', 'g': '3.4', 'i': 'Birthdays', 'n': 'Birthdays Gramplet', 't': u'Gramplet', 'v': '1.0.13', 'z': 'BirthdaysGramplet.addon.tgz'}
-{'d': 'Produces a graphical family tree.', 'g': '3.4', 'i': 'FamilyTree', 'n': 'Family Tree', 't': u'Report', 'v': '3.4.9', 'z': 'FamilyTree.addon.tgz'}
+{'d': 'Produces a graphical family tree.', 'g': '3.4', 'i': 'FamilyTree', 'n': 'Family Tree', 't': u'Report', 'v': '3.4.10', 'z': 'FamilyTree.addon.tgz'}
 {'d': 'Gramplet for running SQL-like queries', 'g': '3.4', 'i': 'Query Gramplet', 'n': 'Query Gramplet', 't': u'Gramplet', 'v': '1.0.7', 'z': 'Query.addon.tgz'}
 {'d': 'Quick view for SQL-like running queries', 'g': '3.4', 'i': 'Query Quickview', 'n': 'Query Quickview', 't': u'Quickreport', 'v': '1.0.7', 'z': 'Query.addon.tgz'}
 {'d': 'Report of census events for a person.', 'g': '3.4', 'i': 'census_report', 'n': 'Census Report', 't': u'Report', 'v': '1.0.22', 'z': 'Census.addon.tgz'}

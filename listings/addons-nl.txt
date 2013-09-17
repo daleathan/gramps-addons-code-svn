@@ -48,7 +48,7 @@
 {'d': 'Gramplet die de kenmerken van een familie toont', 'g': '3.4', 'i': 'Extended Family Attributes', 'n': 'Uitgebreide familiekenmerken', 't': u'Gramplet', 'v': '1.0.5', 'z': 'ExtendedAttributes.addon.tgz'}
 {'d': 'Report on the filling of the tree', 'g': '3.4', 'i': 'AncestorFill', 'n': 'AncestorFill', 't': u'Report', 'v': '1.0.3', 'z': 'AncestorFill.addon.tgz'}
 {'d': 'een gramplet dat de verjaardagen van de nog in leven zijnde personen toont', 'g': '3.4', 'i': 'Birthdays', 'n': 'Verjaardagen', 't': u'Gramplet', 'v': '1.0.13', 'z': 'BirthdaysGramplet.addon.tgz'}
-{'d': 'Grafische stamboom aanmaken.', 'g': '3.4', 'i': 'FamilyTree', 'n': 'Stamboom', 't': u'Report', 'v': '3.4.9', 'z': 'FamilyTree.addon.tgz'}
+{'d': 'Grafische stamboom aanmaken.', 'g': '3.4', 'i': 'FamilyTree', 'n': 'Stamboom', 't': u'Report', 'v': '3.4.10', 'z': 'FamilyTree.addon.tgz'}
 {'d': "Gramplet om 'sql'-achtige zoekopdrachten in te geven", 'g': '3.4', 'i': 'Query Gramplet', 'n': 'Zoek-gramplet', 't': u'Gramplet', 'v': '1.0.7', 'z': 'Query.addon.tgz'}
 {'d': "Snelscherm om 'sql'-achtige zoekopdrachten in te geven", 'g': '3.4', 'i': 'Query Quickview', 'n': 'Snelscherm voor zoeken', 't': u'Quickreport', 'v': '1.0.7', 'z': 'Query.addon.tgz'}
 {'d': 'Verslag van de volkstellinggebeurtenissen van een persoon.', 'g': '3.4', 'i': 'census_report', 'n': 'Volkstellingsverslag', 't': u'Report', 'v': '1.0.22', 'z': 'Census.addon.tgz'}

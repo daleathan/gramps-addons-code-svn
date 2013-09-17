@@ -48,7 +48,7 @@
 {'d': 'Gramplet som visar en familjs attribut', 'g': '3.4', 'i': 'Extended Family Attributes', 'n': 'Utvidgade familjeattribut', 't': u'Gramplet', 'v': '1.0.5', 'z': 'ExtendedAttributes.addon.tgz'}
 {'d': 'Rapport \xc3\xb6ver ifyllnad av sl\xc3\xa4kttr\xc3\xa4d', 'g': '3.4', 'i': 'AncestorFill', 'n': 'Anors fyllnadsgrad', 't': u'Report', 'v': '1.0.3', 'z': 'AncestorFill.addon.tgz'}
 {'d': 'en Gramplet, som visar f\xc3\xb6delsedagarna f\xc3\xb6r levande personer', 'g': '3.4', 'i': 'Birthdays', 'n': 'F\xc3\xb6delsedags-Gramplet', 't': u'Gramplet', 'v': '1.0.13', 'z': 'BirthdaysGramplet.addon.tgz'}
-{'d': 'Skapar ett grafiskt sl\xc3\xa4kttr\xc3\xa4d.', 'g': '3.4', 'i': 'FamilyTree', 'n': 'Sl\xc3\xa4kttr\xc3\xa4d', 't': u'Report', 'v': '3.4.9', 'z': 'FamilyTree.addon.tgz'}
+{'d': 'Skapar ett grafiskt sl\xc3\xa4kttr\xc3\xa4d.', 'g': '3.4', 'i': 'FamilyTree', 'n': 'Sl\xc3\xa4kttr\xc3\xa4d', 't': u'Report', 'v': '3.4.10', 'z': 'FamilyTree.addon.tgz'}
 {'d': 'Gramplet f\xc3\xb6r att g\xc3\xb6ra SQL-liknande fr\xc3\xa5gor', 'g': '3.4', 'i': 'Query Gramplet', 'n': 'Fr\xc3\xa5ge-Gramplet', 't': u'Gramplet', 'v': '1.0.7', 'z': 'Query.addon.tgz'}
 {'d': 'Snabbtitt f\xc3\xb6r SQL-liknande fr\xc3\xa5gor', 'g': '3.4', 'i': 'Query Quickview', 'n': 'Fr\xc3\xa5gesnabbtitt', 't': u'Quickreport', 'v': '1.0.7', 'z': 'Query.addon.tgz'}
 {'d': 'Rapport \xc3\xb6ver folkr\xc3\xa4kningsh\xc3\xa4ndelser f\xc3\xb6r en person', 'g': '3.4', 'i': 'census_report', 'n': 'Folkr\xc3\xa4kningsrapport', 't': u'Report', 'v': '1.0.22', 'z': 'Census.addon.tgz'}

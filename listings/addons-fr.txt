@@ -48,7 +48,7 @@
 {'d': "Gramplet affichant les attributs d'une famille", 'g': '3.4', 'i': 'Extended Family Attributes', 'n': 'Attributs \xc3\xa9tendus de la famille', 't': u'Gramplet', 'v': '1.0.5', 'z': 'ExtendedAttributes.addon.tgz'}
 {'d': "Rapport sur le remplissage de l'arbre.", 'g': '3.4', 'i': 'AncestorFill', 'n': "Remplissage de l'arbre", 't': u'Report', 'v': '1.0.3', 'z': 'AncestorFill.addon.tgz'}
 {'d': 'Ce Gramplet affiche les anniversaires des personnes en vie', 'g': '3.4', 'i': 'Birthdays', 'n': 'Gramplet Anniversaires', 't': u'Gramplet', 'v': '1.0.13', 'z': 'BirthdaysGramplet.addon.tgz'}
-{'d': 'Produit un arbre familial sous forme graphique.', 'g': '3.4', 'i': 'FamilyTree', 'n': 'Arbre familial', 't': u'Report', 'v': '3.4.9', 'z': 'FamilyTree.addon.tgz'}
+{'d': 'Produit un arbre familial sous forme graphique.', 'g': '3.4', 'i': 'FamilyTree', 'n': 'Arbre familial', 't': u'Report', 'v': '3.4.10', 'z': 'FamilyTree.addon.tgz'}
 {'d': 'Gramplet pour des requ\xc3\xaates SQL-like', 'g': '3.4', 'i': 'Query Gramplet', 'n': 'Gramplet Requ\xc3\xaate', 't': u'Gramplet', 'v': '1.0.7', 'z': 'Query.addon.tgz'}
 {'d': 'Rapport express pour du SQL-like fonctionnant avec requ\xc3\xaates', 'g': '3.4', 'i': 'Query Quickview', 'n': 'Rapport express Requ\xc3\xaate', 't': u'Quickreport', 'v': '1.0.7', 'z': 'Query.addon.tgz'}
 {'d': "Les \xc3\xa9v\xc3\xa9nements recensement de l'individu.", 'g': '3.4', 'i': 'census_report', 'n': 'Rapport de recensement', 't': u'Report', 'v': '1.0.22', 'z': 'Census.addon.tgz'}
