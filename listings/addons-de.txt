@@ -15,18 +15,18 @@
 {"n": "Anzahl der Nachkommen","i": "Descendant Count Quickview","t": "Quickreport","d": "Zeigt die Anzahl der Nachkommen für jede Person.","v": "1.0.16","g": "4.0","z": "DescendantCount.addon.tgz"}
 {"n": "Anzahl der Nachkommen Gramplet","i": "Descendant Count Gramplet","t": "Gramplet","d": "Gramplet zum zeigen der Personen und der Anzahl ihrer Nachkommen","v": "1.0.17","g": "4.0","z": "DescendantCount.addon.tgz"}
 {"n": "Nachkommen Linien","i": "Descendants Lines","t": "Report","d": "Erstellt Nachkommenlinien einer Person","v": "0.1.19","g": "4.0","z": "DescendantsLines.addon.tgz"}
-{"n": "Database Differences Report","i": "database-differences-report","t": "Report","d": "Compares an external database with the current one.","v": "1.0.4","g": "4.0","z": "Differences.addon.tgz"}
+{"n": "Datenbankunterschiede Bericht","i": "database-differences-report","t": "Report","d": "Vergleicht eine externe Datenbank mit der aktuell geöffneten.","v": "1.0.4","g": "4.0","z": "Differences.addon.tgz"}
 {"n": "Django Import","i": "import_django","t": "Importer","d": "Django ist ein Web Programmgerüst das auf einer konfigurierten Datenbank arbeitet","v": "1.0.21","g": "4.0","z": "Django.addon.tgz"}
 {"n": "Django Export","i": "export_django","t": "Exporter","d": "Django ist ein Web Programmgerüst das auf einer konfigurierten Datenbank arbeitet","v": "1.0.21","g": "4.0","z": "Django.addon.tgz"}
 {"n": "Bild Exif Metadaten bearbeiten","i": "Edit Image Exif Metadata","t": "Gramplet","d": "Gramplet zum ansehen, bearbeiten und speichern von Exif Metadaten","v": "1.5.3","g": "4.0","z": "EditExifMetadata.addon.tgz"}
 {"n": "Rohdaten Export","i": "Raw Export","t": "Exporter","d": "Dies ist eine Rohdaten Pythonobjekt Ausgabe","v": "1.0.19","g": "4.0","z": "ExportRaw.addon.tgz"}
-{"n": "Extended Family Attributes","i": "Extended Family Attributes","t": "Gramplet","d": "Gramplet showing the attributes of a family","v": "1.0.14","g": "4.0","z": "ExtendedAttributes.addon.tgz"}
-{"n": "Extended Person Attributes","i": "Extended Person Attributes","t": "Gramplet","d": "Gramplet showing the attributes of a person","v": "1.0.14","g": "4.0","z": "ExtendedAttributes.addon.tgz"}
+{"n": "Erweiterte Familienattribute","i": "Extended Family Attributes","t": "Gramplet","d": "Gramplet zeigt die Attribute einer Familie","v": "1.0.14","g": "4.0","z": "ExtendedAttributes.addon.tgz"}
+{"n": "Erweiterte Person Attribute","i": "Extended Person Attributes","t": "Gramplet","d": "Gramplet zeigt die Attribute einer Person","v": "1.0.14","g": "4.0","z": "ExtendedAttributes.addon.tgz"}
 {"n": "FR Web Verknüpfungspaket","i": "FR Web Connect Pack","t": "Plugin lib","d": "Sammlung von Webseiten für FR (benötigt libwebconnect)","v": "1.0.19","g": "4.0","z": "FRWebConnectPack.addon.tgz"}
 {"n": "Gesichtserkennung","i": "Face Detection","t": "Gramplet","d": "Gramplet zur Erkennung und Zuordnung von Gesichtern","v": "1.0.11","g": "4.0","z": "FaceDetection.addon.tgz"}
 {"n": "Familienblatt","i": "FamilySheet","t": "Report","d": "Erstellt ein Familienblatt, das vollständige Informationen über eine Person und ihre Partner und Kinder enthält.","v": "3.4.21","g": "4.0","z": "FamilySheet.addon.tgz"}
-{"n": "Stammbaum","i": "FamilyTree","t": "Report","d": "Erzeugt einen grafischen Stammbaum.","v": "3.4.18","g": "4.0","z": "FamilyTree.addon.tgz"}
-{"n": "Export GEDCOM Extensions (GED2)","i": "Export GEDCOM Extensions","t": "Exporter","d": "Extensions to the common GEDCOM format.","v": "1.0.8","g": "4.0","z": "GedcomExtensions.addon.tgz"}
+{"n": "Stammbaum","i": "FamilyTree","t": "Report","d": "Erzeugt einen grafischen Stammbaum.","v": "3.4.19","g": "4.0","z": "FamilyTree.addon.tgz"}
+{"n": "GEDCOM Export Erweiterungen (GED2)","i": "Export GEDCOM Extensions","t": "Exporter","d": "Erweiterungen für das bekannte GEDCOM Format","v": "1.0.8","g": "4.0","z": "GedcomExtensions.addon.tgz"}
 {"n": "GoogleEarth","i": "GoogleEarth","t": "Map service","d": "Erstellt Datendatei für GoogleEarth und öffnet sie","v": "1.0.28","g": "4.0","z": "GoogleEarthWriteKML.addon.tgz"}
 {"n": "Graphenansicht","i": "graphview","t": "Gramps View","d": "Dynamischer Beziehungengraph","v": "1.0.40","g": "4.0","z": "GraphView.addon.tgz"}
 {"n": "Schlagzeilen Gramplet","i": "Headline News Gramplet","t": "Gramplet","d": "Gramplet zum zeigen der neuesten Gramps Nachrichten","v": "1.0.19","g": "4.0","z": "HeadlineNewsGramplet.addon.tgz"}
@@ -34,7 +34,7 @@
 {"n": "Letzte Änderung Gramplet","i": "LastChangeGramplet","t": "Gramplet","d": "Listet die letzten zehn geänderten Personendatensätze","v": "0.0.21","g": "4.0","z": "LastChange.addon.tgz"}
 {"n": "Letzte Änderungen Bericht","i": "LastChangeReport","t": "Report","d": "Bericht der letzten Datensätze die geändert wurden","v": "0.0.21","g": "4.0","z": "LastChange.addon.tgz"}
 {"n": "Nachkommen Linien Bericht","i": "LinesOfDescendency","t": "Report","d": "Druckt alle Nachkommenlinien von einem gegebenen Vorfahren zu einem gegebenen Nachkommen in Textform.","v": "1.1.19","g": "4.0","z": "LinesOfDescendency.addon.tgz"}
-{"n": "Liste Eclair","i": "ListeEclair","t": "Report","d": "Erstellt eine Liste Eclair","v": "1.0.9","g": "4.0","z": "ListeEclair.addon.tgz"}
+{"n": "Blitz Liste","i": "ListeEclair","t": "Report","d": "Erstellt eine Blitz Liste","v": "1.0.9","g": "4.0","z": "ListeEclair.addon.tgz"}
 {"n": "Media Browser","i": "MediaBrowser","t": "Gramplet","d": "Gramplet showing details of a person","v": "1.0.13","g": "4.0","z": "MediaBrowser.addon.tgz"}
 {"n": "Media Verify","i": "mediaverify","t": "Tool","d": "Verify that media is present in the correct path","v": "1.0.5","g": "4.0","z": "MediaVerify.addon.tgz"}
 {"n": "Notiz Gramplet","i": "Note Gramplet","t": "Gramplet","d": "Gramplet zum bearbeiten der Notizen der aktiven Person","v": "1.0.17","g": "4.0","z": "NoteGramplet.addon.tgz"}
