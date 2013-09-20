@@ -14,7 +14,7 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-09-19 23:28+0200\n"
-"PO-Revision-Date: 2013-09-19 23:49+0200\n"
+"PO-Revision-Date: 2013-09-20 15:09+0200\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
@@ -209,7 +209,7 @@ msgstr "Ort, PLZ, Land"
 
 #: PlaceCompletion/PlaceCompletion.py:1251
 msgid "City[(Street;Locality;Parish)],PostalCode,Country"
-msgstr ""
+msgstr "Stadty[(Straße;Lokalität;Gemeinde)],PLZ,Land"
 
 #: PlaceCompletion/PlaceCompletion.py:1253
 msgid "TitleStart [, City] [, State]"
@@ -220,9 +220,8 @@ msgid "TitleStart [, City] [, County] [, State] [, Country]"
 msgstr "TitelStart [, Stadt] [, Kreis][, Bundesland][, Land]"
 
 #: PlaceCompletion/PlaceCompletion.py:1257
-#, fuzzy
 msgid "TitleStart [, City] [, Zip] [, County] [, State] [, Country]"
-msgstr "TitelStart [, Stadt] [, Kreis][, Bundesland][, Land]"
+msgstr "TitelStart [, Stadt][,PLZ] [, Kreis][, Bundesland][, Land]"
 
 #: PlaceCompletion/PlaceCompletion.py:1281
 msgid "City [,|.] State"
@@ -293,11 +292,8 @@ msgid "Apply all suggested changes"
 msgstr "Übernimm alle vorgeschlagenen Änderungen"
 
 #: PlaceCompletion/placecompletion.glade.h:3
-#, fuzzy
 msgid "Selection of the Places you want to complete:"
-msgstr ""
-"<span size=\"large\"><b>Auswahl der Orte die du vervollständigen willst::</"
-"b></span>"
+msgstr "Auswahl der Orte die du vervollständigen willst:"
 
 #: PlaceCompletion/placecompletion.glade.h:4
 msgid "C_ity:"
@@ -380,12 +376,16 @@ msgid ""
 "Or define a simple\n"
 "title format:"
 msgstr ""
+"Oder definiere ein einfaches\n"
+"Titelformat:"
 
 #: PlaceCompletion/placecompletion.glade.h:25
 msgid ""
 "Available variables: city, street, locality, parish, county, state, country, "
 "postal_code"
 msgstr ""
+"Verfügbare Variablen: Stadt, Straße, Lokalität, Gemeinde, Kreis, Staat, Land, "
+"PLZ"
 
 #: PlaceCompletion/placecompletion.glade.h:26
 msgid "3. Set attributes of all selected places:"
