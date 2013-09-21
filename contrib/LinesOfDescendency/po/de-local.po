@@ -6,13 +6,13 @@
 # Sebastian Vöcking <voeck@web.de>, 2005.
 # Martin Hawlisch <martin@hawlisch.de>, 2005, 2006.
 # Alex Roitman <shura@gramps-project.org>, 2006.
-# Mirko Leonhäuser <mirko@leonhaeuser.de>, 2007, 2008, 2009, 2010, 2011, 2012.
+# Mirko Leonhäuser <mirko@leonhaeuser.de>, 2007, 2008, 2009, 2010, 2011, 2012, 2013.
 msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-12-30 17:34+0100\n"
-"PO-Revision-Date: 2012-12-30 19:11+0100\n"
+"POT-Creation-Date: 2013-09-11 18:39+0200\n"
+"PO-Revision-Date: 2013-09-01 14:07+0200\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
@@ -31,8 +31,8 @@ msgid ""
 "Prints out all descendency lines from a given ancestor to a given descendent "
 "in text."
 msgstr ""
-"Druckt alle Nachkommenlinien von einem gegebenen Vorfahren zu einem gegebenen "
-"Nachkommen in Textform."
+"Druckt alle Nachkommenlinien von einem gegebenen Vorfahren zu einem "
+"gegebenen Nachkommen in Textform."
 
 #: LinesOfDescendency/lines-of-descendency.py:49
 msgid "People"
@@ -75,4 +75,3 @@ msgstr "Person %s ist nicht in der Datenbank"
 #, python-format
 msgid "Lines of Descendency from %(ancestor)s to %(descendent)s"
 msgstr "Nachkommen Linien von %(ancestor)s zu %(descendent)s"
-
