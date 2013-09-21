@@ -6,20 +6,20 @@
 # Sebastian Vöcking <voeck@web.de>, 2005.
 # Martin Hawlisch <martin@hawlisch.de>, 2005, 2006.
 # Alex Roitman <shura@gramps-project.org>, 2006.
-# Mirko Leonhäuser <mirko@leonhaeuser.de>, 2007, 2008, 2009, 2010, 2011.
+# Mirko Leonhäuser <mirko@leonhaeuser.de>, 2007, 2008, 2009, 2010, 2011, 2012, 2013.
 msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-22 19:49+0100\n"
-"PO-Revision-Date: 2011-12-22 19:58+0100\n"
+"POT-Creation-Date: 2013-09-11 18:17+0200\n"
+"PO-Revision-Date: 2013-09-01 14:07+0200\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 1.2\n"
+"X-Generator: Lokalize 1.5\n"
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 
 #: GoogleEarthWriteKML/GoogleEarthWriteKML.gpr.py:30
@@ -30,15 +30,15 @@ msgstr "GoogleEarth"
 msgid "Creates data file for GoogleEarth and opens it"
 msgstr "Erstellt Datendatei für GoogleEarth und öffnet sie"
 
-#: GoogleEarthWriteKML/GoogleEarthWriteKML.py:89
+#: GoogleEarthWriteKML/GoogleEarthWriteKML.py:107
 msgid "No place description"
 msgstr "Keine Ortsbeschreibung"
 
-#: GoogleEarthWriteKML/GoogleEarthWriteKML.py:122
+#: GoogleEarthWriteKML/GoogleEarthWriteKML.py:140
 msgid "GoogleEarth not installed!"
 msgstr "GoogleEarth nicht installiert!"
 
-#: GoogleEarthWriteKML/GoogleEarthWriteKML.py:123
+#: GoogleEarthWriteKML/GoogleEarthWriteKML.py:141
 #, python-format
 msgid ""
 "Create kmz/kml file ''%s''\n"
@@ -47,30 +47,30 @@ msgstr ""
 "Erstelle Kmz/kml Datei \"%s\"\n"
 "im Anwenderverzeichnis \"%s\"?"
 
-#: GoogleEarthWriteKML/GoogleEarthWriteKML.py:126
-#: GoogleEarthWriteKML/GoogleEarthWriteKML.py:147
+#: GoogleEarthWriteKML/GoogleEarthWriteKML.py:144
+#: GoogleEarthWriteKML/GoogleEarthWriteKML.py:165
 msgid "Yes"
 msgstr "Ja"
 
-#: GoogleEarthWriteKML/GoogleEarthWriteKML.py:127
-#: GoogleEarthWriteKML/GoogleEarthWriteKML.py:148
+#: GoogleEarthWriteKML/GoogleEarthWriteKML.py:145
+#: GoogleEarthWriteKML/GoogleEarthWriteKML.py:166
 msgid "No"
 msgstr "Nein"
 
-#: GoogleEarthWriteKML/GoogleEarthWriteKML.py:133
+#: GoogleEarthWriteKML/GoogleEarthWriteKML.py:151
 #, python-format
 msgid "Failure writing to %s"
 msgstr "Fehler beim Schreiben nach %s"
 
-#: GoogleEarthWriteKML/GoogleEarthWriteKML.py:134
+#: GoogleEarthWriteKML/GoogleEarthWriteKML.py:152
 msgid "Directory does not exist"
 msgstr "Verzeichnis existiert nicht"
 
-#: GoogleEarthWriteKML/GoogleEarthWriteKML.py:143
+#: GoogleEarthWriteKML/GoogleEarthWriteKML.py:161
 msgid "GoogleEarth file exists!"
 msgstr "GoogleEarth Datei existiert!"
 
-#: GoogleEarthWriteKML/GoogleEarthWriteKML.py:144
+#: GoogleEarthWriteKML/GoogleEarthWriteKML.py:162
 #, python-format
 msgid ""
 "Overwrite kmz/kml file ''%s''\n"
@@ -78,4 +78,3 @@ msgid ""
 msgstr ""
 "Überschreiben Kmz/kml Datei \"%s\"\n"
 "im Anwenderverzeichnis \"%s\"?"
-
