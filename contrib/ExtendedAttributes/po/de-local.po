@@ -1,70 +1,73 @@
-# German translations for PACKAGE package.
-# Copyright (C) 2012 THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
+# translation of de.po to Deutsch
+# German GRAMPS Translation
 #
-# Mirko Leonhäuser <mirko@leonhaeuser.de>, 2012.
+# Anton Huber <anton_huber@gmx.de>, 2005,2006.
+# Sebastian Vöcking <sebastian_voecking@gmx.de>, 2005.
+# Sebastian Vöcking <voeck@web.de>, 2005.
+# Martin Hawlisch <martin@hawlisch.de>, 2005, 2006.
+# Alex Roitman <shura@gramps-project.org>, 2006.
+# Mirko Leonhäuser <mirko@leonhaeuser.de>, 2007, 2008, 2009, 2010, 2011, 2012, 2013.
 msgid ""
 msgstr ""
-"Project-Id-Version: \n"
+"Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-05-19 20:56+0200\n"
-"PO-Revision-Date: 2012-05-19 22:04+0200\n"
+"POT-Creation-Date: 2013-09-10 18:43+0200\n"
+"PO-Revision-Date: 2013-09-01 14:07+0200\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 1.4\n"
+"X-Generator: Lokalize 1.5\n"
+"Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 
-#: ExtendedAttributes//ExtendedAttributes.gpr.py:31
+#: ExtendedAttributes/ExtendedAttributes.gpr.py:31
 msgid "Extended Person Attributes"
 msgstr "Erweiterte Personenattribute"
 
-#: ExtendedAttributes//ExtendedAttributes.gpr.py:32
+#: ExtendedAttributes/ExtendedAttributes.gpr.py:32
 msgid "Gramplet showing the attributes of a person"
 msgstr "Gramplet zeigt die Attribute einer Person"
 
-#: ExtendedAttributes//ExtendedAttributes.gpr.py:39
-#: ExtendedAttributes//ExtendedAttributes.gpr.py:53
+#: ExtendedAttributes/ExtendedAttributes.gpr.py:39
+#: ExtendedAttributes/ExtendedAttributes.gpr.py:53
 msgid "Attributes"
 msgstr "Attribute"
 
-#: ExtendedAttributes//ExtendedAttributes.gpr.py:45
+#: ExtendedAttributes/ExtendedAttributes.gpr.py:45
 msgid "Extended Family Attributes"
 msgstr "Erweiterte Familienattribute"
 
-#: ExtendedAttributes//ExtendedAttributes.gpr.py:46
+#: ExtendedAttributes/ExtendedAttributes.gpr.py:46
 msgid "Gramplet showing the attributes of a family"
 msgstr "Gramplet zeigt die Attribute einer Familie"
 
-#: ExtendedAttributes//ExtendedAttributes.py:49
+#: ExtendedAttributes/ExtendedAttributes.py:49
 msgid ""
 "Double-click on a row to view a quick report showing all people with the "
 "selected attribute."
 msgstr ""
-"Klicke doppelt auf eine Zeile um einen Schnellbericht mit allen Personen mit "
-"diesem Attribut zu zeigen."
+"Doppelklick auf eine Zeile um einen Schnellbericht mit allen Personen mit "
+"den gewählten Attribut."
 
-#: ExtendedAttributes//ExtendedAttributes.py:53
+#: ExtendedAttributes/ExtendedAttributes.py:53
 msgid "Date"
 msgstr "Datum"
 
-#: ExtendedAttributes//ExtendedAttributes.py:55
+#: ExtendedAttributes/ExtendedAttributes.py:55
 msgid "Key"
 msgstr "Schlüssel"
 
-#: ExtendedAttributes//ExtendedAttributes.py:56
+#: ExtendedAttributes/ExtendedAttributes.py:56
 msgid "Value"
 msgstr "Wert"
 
-#: ExtendedAttributes//ExtendedAttributes.py:152
+#: ExtendedAttributes/ExtendedAttributes.py:152
 #, python-format
 msgid "Edit Person (%s)"
-msgstr "Bearbeite Person (%s)"
+msgstr "Person (%s) bearbeiten"
 
-#: ExtendedAttributes//ExtendedAttributes.py:217
+#: ExtendedAttributes/ExtendedAttributes.py:217
 msgid "Edit Family"
 msgstr "Familie bearbeiten"
-
