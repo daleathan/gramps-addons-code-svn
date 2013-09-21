@@ -6,20 +6,20 @@
 # Sebastian Vöcking <voeck@web.de>, 2005.
 # Martin Hawlisch <martin@hawlisch.de>, 2005, 2006.
 # Alex Roitman <shura@gramps-project.org>, 2006.
-# Mirko Leonhäuser <mirko@leonhaeuser.de>, 2007, 2008, 2009, 2010, 2011.
+# Mirko Leonhäuser <mirko@leonhaeuser.de>, 2007, 2008, 2009, 2010, 2011, 2012, 2013.
 msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-22 19:23+0100\n"
-"PO-Revision-Date: 2011-12-22 19:40+0100\n"
+"POT-Creation-Date: 2013-09-10 19:01+0200\n"
+"PO-Revision-Date: 2013-09-21 14:30+0200\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 1.2\n"
+"X-Generator: Lokalize 1.5\n"
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 
 #: FamilyTree/FamilyTree.gpr.py:3
@@ -134,8 +134,7 @@ msgstr "Vorfahrengenerationen"
 #: FamilyTree/FamilyTree.py:982
 msgid "The number of ancestor generations to include in the tree"
 msgstr ""
-"Die Anzahl der Vorfahrengenerationen, die in den Stammbaum aufgenommen "
-"werden"
+"Die Anzahl der Vorfahrengenerationen, die in den Stammbaum aufgenommen werden"
 
 #: FamilyTree/FamilyTree.py:985
 msgid "Descendant Generations"
@@ -185,7 +184,7 @@ msgstr "Männliche Linie"
 
 #: FamilyTree/FamilyTree.py:1001
 msgid "Male line and illegitimate children"
-msgstr "Mänliche Linie und illigitime Kinder"
+msgstr "Männliche Linie und illegitime Kinder"
 
 #: FamilyTree/FamilyTree.py:1002
 msgid "Female line"
@@ -210,15 +209,15 @@ msgstr "Rufname verwenden"
 
 #: FamilyTree/FamilyTree.py:1013
 msgid "Don't use call name"
-msgstr "Rufnamen nicht verwenden"
+msgstr "Rufname nicht verwenden"
 
 #: FamilyTree/FamilyTree.py:1014
 msgid "Replace first name with call name"
-msgstr "Vornamen durch Rufname ersetzen"
+msgstr "Vornamen durch Rufnamen ersetzen"
 
 #: FamilyTree/FamilyTree.py:1015
 msgid "Underline call name in first name / add call name to first name"
-msgstr "Rufname im Vornamen unterstreichen / zum Vornamen hinzufügen"
+msgstr "Rufnamen im Vornamen unterstreichen / Rufnamen zum Vornamen hinzufügen"
 
 #: FamilyTree/FamilyTree.py:1018
 msgid "Include Occupation"
@@ -270,7 +269,7 @@ msgstr "Ob Felder für fehlende Informationen enthalten sind."
 
 #: FamilyTree/FamilyTree.py:1052
 msgid "Include event description"
-msgstr "Ereignisbechreibung aufnehmen"
+msgstr "Ereignisbeschreibung aufnehmen"
 
 #: FamilyTree/FamilyTree.py:1055
 msgid "Text Options"
@@ -290,11 +289,11 @@ msgstr "Der Stil, der für den Titel verwendet wird."
 
 #: FamilyTree/FamilyTree.py:1083
 msgid "The style used for names."
-msgstr "Stil für Namen"
+msgstr "Der Stil der für Namen verwendet wird."
 
 #: FamilyTree/FamilyTree.py:1091
 msgid "The style used for data (birth, death, marriage, divorce)."
-msgstr "Stil für Daten (Geburt, Tod, Ehe, Scheidung)"
+msgstr "Der Stil der für Daten (Geburt, Tod, Ehe, Scheidung) verwendet wird."
 
 #: FamilyTree/FamilyTree.py:1101
 msgid "The style used for the footer."
