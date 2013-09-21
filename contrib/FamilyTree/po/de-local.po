@@ -14,7 +14,7 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-09-19 19:10+0200\n"
-"PO-Revision-Date: 2013-09-19 19:12+0200\n"
+"PO-Revision-Date: 2013-09-21 14:37+0200\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
@@ -186,7 +186,7 @@ msgstr "Männliche Linie"
 
 #: FamilyTree/FamilyTree.py:1023
 msgid "Male line and illegitimate children"
-msgstr "Mänliche Linie und illigitime Kinder"
+msgstr "Männliche Linie und illegitime Kinder"
 
 #: FamilyTree/FamilyTree.py:1024
 msgid "Female line"
@@ -207,11 +207,11 @@ msgstr "Inhalt"
 
 #: FamilyTree/FamilyTree.py:1033
 msgid "Use call name"
-msgstr "Rufname"
+msgstr "Rufname verwenden"
 
 #: FamilyTree/FamilyTree.py:1035
 msgid "Don't use call name"
-msgstr "nicht verwenden"
+msgstr "Rufname nicht verwenden"
 
 #: FamilyTree/FamilyTree.py:1036
 msgid "Replace first name with call name"
@@ -219,7 +219,7 @@ msgstr "Vornamen durch Rufname ersetzen"
 
 #: FamilyTree/FamilyTree.py:1037
 msgid "Underline call name in first name / add call name to first name"
-msgstr "Rufname im Vornamen unterstreichen / zum Vornamen hinzufügen"
+msgstr "Rufnamen im Vornamen unterstreichen / Rufnamen zum Vornamen hinzufügen"
 
 #: FamilyTree/FamilyTree.py:1040
 msgid "Include Occupation"
@@ -275,7 +275,7 @@ msgstr "Ob Felder für fehlende Informationen enthalten sind."
 
 #: FamilyTree/FamilyTree.py:1077
 msgid "Include event description"
-msgstr "Ereignisbechreibung aufnehmen"
+msgstr "Ereignisbeschreibung aufnehmen"
 
 #: FamilyTree/FamilyTree.py:1080
 msgid "Text Options"
@@ -295,13 +295,14 @@ msgstr "Der Stil, der für den Titel verwendet wird."
 
 #: FamilyTree/FamilyTree.py:1108
 msgid "The style used for names."
-msgstr "Stil für Namen"
+msgstr "Der Stil der für Namen verwendet wird."
 
 #: FamilyTree/FamilyTree.py:1116
 msgid "The style used for data (birth, death, marriage, divorce)."
-msgstr "Stil für Daten (Geburt, Tod, Ehe, Scheidung)"
+msgstr "Der Stil der für Daten (Geburt, Tod, Ehe, Scheidung) verwendet wird."
 
 #: FamilyTree/FamilyTree.py:1126
 msgid "The style used for the footer."
 msgstr "Der Stil, der für Fußzeilen verwendet wird."
+
 
