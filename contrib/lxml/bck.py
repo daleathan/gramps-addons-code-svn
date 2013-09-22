@@ -466,7 +466,7 @@ class bckGramplet(Gramplet):
                 ecount += 1
                 #print(attributes[1][1][1:])
         
-        if ecount == len(eventrefs):
+        if ecount == len(eventrefs) or ecount == 0:
             event_refs = ''
         else:
             event_refs = '\n\t\tDiff event_refs: %s\n' % (len(eventrefs) - ecount)
@@ -479,7 +479,7 @@ class bckGramplet(Gramplet):
                 ccount += 1
                 #print(hlink[0][1][1:])
                 
-        if ccount == len(citationrefs):
+        if ccount == len(citationrefs) or ccount == 0:
             citation_refs = ''
         else:
             citation_refs = '\n\t\tDiff citation_refs: %s\n' % (len(citationrefs) - ccount)
@@ -491,7 +491,7 @@ class bckGramplet(Gramplet):
             if self.dbstate.db.source_map.get(hlink[0][1][1:]) == None:
                 scount += 1
                 
-        if scount == len(sourcerefs):
+        if scount == len(sourcerefs) or scount == 0:
             source_refs = ''
         else:
             source_refs = '\n\t\tDiff source_refs: %s\n' % (len(sourcerefs) - scount)
