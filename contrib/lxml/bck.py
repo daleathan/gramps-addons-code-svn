@@ -498,7 +498,10 @@ class bckGramplet(Gramplet):
         
         base  = _('\nLoaded Family Tree base:\n "%s"\n' % self.dbstate.db.path)
         
-        repair = _("\nIt seems that %s records have been fixed recently,\n"
+        if len(handles) < 2:
+            repair = ''
+        else:
+            repair = _("\nIt seems that %s records have been fixed recently,\n"
                 "do you want to try to merge them via your backup file?\n") % len(handles)
         
         preview = person + family + event + event_refs + citation + citation_refs + \
