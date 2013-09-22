@@ -461,20 +461,31 @@ class bckGramplet(Gramplet):
         event = _('\n\tDiff Events : %s\n') % (self.dbstate.db.emap_index - len(events))
         event_refs = '\n\t\t XML event_refs: %s\n' % len(eventrefs)
         
-        for attribute in eventrefs:
-            print(attribute)
+        #for attribute in eventrefs:
+            #print(attribute)
         
         citation = _('\n\tDiff Citations : %s\n') % (self.dbstate.db.cmap_index - len(citations))
-        citation_refs = '\n\t\t XML citation_refs: %s\n' % len(citationrefs)
         
+        ccount = 0
         for hlink in citationrefs:
-            print(hlink[0][1][1:])
+            if self.dbstate.db.citation_map.get(hlink[0][1][1:]) == None:
+                ccount += 1
+                print(hlink[0][1][1:])
+        if ccount == 0:
+            citation_refs = ''
+        else:
+            citation_refs = '\n\t\tDiff citation_refs: %s\n' % (len(citationrefs) - ccount)
         
         source = _('\n\tDiff Sources : %s\n') % (self.dbstate.db.smap_index - len(sources))
-        source_refs = '\n\t\t XML source_refs: %s\n' % len(sourcerefs)
         
+        scount = 0
         for hlink in sourcerefs:
-            print(hlink[0][1][1:])
+            if self.dbstate.db.source_map.get(hlink[0][1][1:]) == None:
+                scount += 1
+        if scount == 0:
+            source_refs = ''
+        else:
+            source_refs = '\n\t\tDiff source_refs: %s\n' % (len(sourcerefs) - scount)
         
         base  = _('\nLoaded Family Tree base:\n "%s"\n' % self.dbstate.db.path)
         
