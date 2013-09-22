@@ -467,7 +467,7 @@ class etreeGramplet(Gramplet):
             elast = epoch(tevent[-1])
             print('DB: Last event object edition on/at:', elast)
         except IndexError:
-	        pass
+            pass
         # person object; alternate method via person_map, see LastChange addon
         
         handles = sorted(self.dbstate.db.get_person_handles(), key=self._getPersonTimestamp)

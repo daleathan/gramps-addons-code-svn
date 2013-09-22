@@ -346,7 +346,7 @@ class bckGramplet(Gramplet):
                 if tag == NAMESPACE + 'event':
                     events.append(two)
                 if tag == NAMESPACE + 'eventref':
-                    eventrefs.append(two)
+                    eventrefs.append(item)
                 if tag == NAMESPACE + 'person':
                     people.append(two)
                 if tag == NAMESPACE + 'family':
@@ -354,11 +354,11 @@ class bckGramplet(Gramplet):
                 if tag == NAMESPACE + 'source':
                     sources.append(two)
                 if tag == NAMESPACE + 'sourceref':
-                    sourcerefs.append(two)
+                    sourcerefs.append(item)
                 if tag == NAMESPACE + 'citation':
                     citations.append(two)
                 if tag == NAMESPACE + 'citationref':
-                    citationrefs.append(two)
+                    citationrefs.append(item)
                     
         root.clear()
                                     
@@ -461,11 +461,20 @@ class bckGramplet(Gramplet):
         event = _('\n\tDiff Events : %s\n') % (self.dbstate.db.emap_index - len(events))
         event_refs = '\n\t\t XML event_refs: %s\n' % len(eventrefs)
         
+        for hlink in eventrefs:
+            print(hlink[0][1])
+        
         citation = _('\n\tDiff Citations : %s\n') % (self.dbstate.db.cmap_index - len(citations))
         citation_refs = '\n\t\t XML citation_refs: %s\n' % len(citationrefs)
         
+        for hlink in citationrefs:
+            print(hlink[0][1])
+        
         source = _('\n\tDiff Sources : %s\n') % (self.dbstate.db.smap_index - len(sources))
         source_refs = '\n\t\t XML source_refs: %s\n' % len(sourcerefs)
+        
+        for hlink in sourcerefs:
+            print(hlink[0][1])
         
         base  = _('\nLoaded Family Tree base:\n "%s"\n' % self.dbstate.db.path)
         
