@@ -459,10 +459,17 @@ class bckGramplet(Gramplet):
         family = _('\n\tDiff Families : %s\n') % (self.dbstate.db.fmap_index - len(families))
         
         event = _('\n\tDiff Events : %s\n') % (self.dbstate.db.emap_index - len(events))
-        event_refs = '\n\t\t XML event_refs: %s\n' % len(eventrefs)
         
-        #for attribute in eventrefs:
-            #print(attribute)
+        ecount = 0
+        for attributes in eventrefs:
+            if self.dbstate.db.event_map.get(attributes[1][1][1:]) == None:
+                ecount += 1
+                #print(attributes[1][1][1:])
+        
+        if ecount == 0:
+            event_refs = ''
+        else:
+            event_refs = '\n\t\tDiff event_refs: %s\n' % (len(eventrefs) - ecount)
         
         citation = _('\n\tDiff Citations : %s\n') % (self.dbstate.db.cmap_index - len(citations))
         
@@ -470,7 +477,8 @@ class bckGramplet(Gramplet):
         for hlink in citationrefs:
             if self.dbstate.db.citation_map.get(hlink[0][1][1:]) == None:
                 ccount += 1
-                print(hlink[0][1][1:])
+                #print(hlink[0][1][1:])
+                
         if ccount == 0:
             citation_refs = ''
         else:
@@ -482,6 +490,7 @@ class bckGramplet(Gramplet):
         for hlink in sourcerefs:
             if self.dbstate.db.source_map.get(hlink[0][1][1:]) == None:
                 scount += 1
+                
         if scount == 0:
             source_refs = ''
         else:
