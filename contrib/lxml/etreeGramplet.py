@@ -66,10 +66,11 @@ NAMESPACE = '{http://gramps-project.org/xml/1.5.0/}'
     
 #-------------------------------------------------------------------------    
 
+# python 2.6 / 2.7 / 3.0
 # name for getiterator / iter (ElementTree 1.2 vs 1.3)
 
-if sys.version_info[1] != 6:
-    raise ValueError('ITERATOR = iter(), not written for python 2.7 and greater!')
+if sys.version_info[0] == 3:
+    raise ValueError('Not written for python 3.0 and greater!')
 
 #-------------------------------------------------------------------------
 #
@@ -105,7 +106,7 @@ def epoch(t):
 
 class etreeGramplet(Gramplet):
     """
-    Gramplet for testing etree (python 2.6) and Gramps XML parsing
+    Gramplet for testing etree (python 2.7) and Gramps XML parsing
     """
     
     def init(self):
@@ -173,7 +174,7 @@ class etreeGramplet(Gramplet):
         
         my_action = gtk.FILE_CHOOSER_ACTION_SAVE
         
-        dialog = gtk.FileChooserDialog('lxml',
+        dialog = gtk.FileChooserDialog('etree',
                                        action=my_action,
                                        buttons=(gtk.STOCK_CANCEL,
                                                 gtk.RESPONSE_CANCEL,
@@ -226,6 +227,10 @@ class etreeGramplet(Gramplet):
         """
         
         entry = self.entry.get_text()
+        if ' ' in entry:
+            ErrorDialog(_('Space character on filename'), _('Please fix space on "%s"') % entry)
+            return
+            
         self.ReadXML(entry)
                                                        
         
@@ -251,7 +256,7 @@ class etreeGramplet(Gramplet):
             self.text.set_text(_('Sorry, no support for your OS yet!'))
             return
         
-        filename = os.path.join(const.USER_PLUGINS, 'lxml', 'etree.xml')
+        filename = os.path.join(const.USER_PLUGINS, 'etree.xml')
                 
         if use_gzip == 1:
             try:
@@ -306,7 +311,7 @@ class etreeGramplet(Gramplet):
         notes = []
         
         # DB: Family Tree loaded
-        # see gen/plug/_gramplet.py and gen/bb/read.py
+        # see gen/plug/_gramplet.py and gen/db/read.py
         
         if self.dbstate.db.db_is_open:
             print('tags', self.dbstate.db.get_number_of_tags())
@@ -357,7 +362,14 @@ class etreeGramplet(Gramplet):
         
         for one in root.getchildren():
             
-            #primary objects (samples)
+            # getiterator() for python 2.6
+            ITERATION = one.getiterator()
+            
+            # iter() for python 2.7 and greater versions
+            if sys.version_info[1] == 7:
+                ITERATION = one.iter()
+            
+            # Primary objects (samples)
             
             # find() needs memory - /!\ large files
             if one.find(NAMESPACE + 'event'):
@@ -369,8 +381,7 @@ class etreeGramplet(Gramplet):
                 if self.dbstate.db.db_is_open:
                     print('Has home handle? ', self.dbstate.db.has_person_handle("%(home)s" % one.attrib))
             
-            # iter() for python 2.7 and greater versions
-            for two in one.getiterator():
+            for two in ITERATION:
                 
                 timestamp.append(two.get('change'))
                 
@@ -451,9 +462,12 @@ class etreeGramplet(Gramplet):
             tevent.append(event.get_change_time())
         
         tevent.sort()
-        elast = epoch(tevent[-1])
-        print('DB: Last event object edition on/at:', elast)
         
+        try:
+            elast = epoch(tevent[-1])
+            print('DB: Last event object edition on/at:', elast)
+        except IndexError:
+	        pass
         # person object; alternate method via person_map, see LastChange addon
         
         handles = sorted(self.dbstate.db.get_person_handles(), key=self._getPersonTimestamp)

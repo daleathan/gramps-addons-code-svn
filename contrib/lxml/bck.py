@@ -49,15 +49,15 @@ import GrampsDisplay
 from QuestionDialog import ErrorDialog
 from Filters import GenericFilter, Rules
 
-#from gen.merge.mergeevent import MergeEventQuery
-#from gen.merge.mergeperson import MergePersonQuery
-#from gen.merge.mergefamily import MergeFamilyQuery
-#from gen.merge.mergesource import MergeSourceQuery
-#from gen.merge.mergecitation import MergeCitationQuery
-#from gen.merge.mergeplace import MergePlaceQuery
-#from gen.merge.mergemedia import MergeMediaQuery
-#from gen.merge.mergerepository import MergeRepoQuery
-#from gen.merge.mergenote import MergeNoteQuery
+#from Merge.mergeevent import MergeEventQuery
+#from Merge.mergeperson import MergePersonQuery
+#from Merge.mergefamily import MergeFamilyQuery
+#from Merge.mergesource import MergeSourceQuery
+#from Merge.mergecitation import MergeCitationQuery
+#from Merge.mergeplace import MergePlaceQuery
+#from Merge.mergemedia import MergeMediaQuery
+#from Merge.mergerepository import MergeRepoQuery
+#from Merge.mergenote import MergeNoteQuery
 
 
 
@@ -179,7 +179,7 @@ class bckGramplet(Gramplet):
         
         my_action = gtk.FILE_CHOOSER_ACTION_SAVE
         
-        dialog = gtk.FileChooserDialog('lxml',
+        dialog = gtk.FileChooserDialog('etree',
                                        action=my_action,
                                        buttons=(gtk.STOCK_CANCEL,
                                                 gtk.RESPONSE_CANCEL,
@@ -401,7 +401,7 @@ class bckGramplet(Gramplet):
             elast = epoch(tevent[-1])
             print('DB: Last event object edition on/at:', elast)
         except IndexError:
-	    pass
+	        pass
         
         # person object; alternate method via person_map, see LastChange addon
         
