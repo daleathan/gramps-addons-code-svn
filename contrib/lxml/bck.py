@@ -461,8 +461,8 @@ class bckGramplet(Gramplet):
         event = _('\n\tDiff Events : %s\n') % (self.dbstate.db.emap_index - len(events))
         event_refs = '\n\t\t XML event_refs: %s\n' % len(eventrefs)
         
-        for hlink in eventrefs:
-            print(hlink[0][1][1:])
+        for attribute in eventrefs:
+            print(attribute)
         
         citation = _('\n\tDiff Citations : %s\n') % (self.dbstate.db.cmap_index - len(citations))
         citation_refs = '\n\t\t XML citation_refs: %s\n' % len(citationrefs)
