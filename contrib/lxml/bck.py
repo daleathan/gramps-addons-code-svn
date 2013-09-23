@@ -49,6 +49,8 @@ import GrampsDisplay
 from QuestionDialog import ErrorDialog
 from Filters import GenericFilter, Rules
 
+import diff
+
 
 #from Merge.mergeevent import MergeEventQuery
 #from Merge.mergeperson import MergePersonQuery
@@ -443,7 +445,6 @@ class bckGramplet(Gramplet):
     
     
     def get_db(self, filename):
-        import diff
         diff.import_as_dict(filename)
     
     
