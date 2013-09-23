@@ -251,7 +251,10 @@ class bckGramplet(Gramplet):
             self.text.set_text(_('Sorry, no support for your OS yet!'))
             return
         
-        filename = os.path.join(const.USER_PLUGINS, 'etree.xml')
+        if self.dbstate.db.db_is_open:
+            filename = os.path.join(self.dbstate.db.path, 'etree.xml')
+        else:
+            filename = os.path.join(const.USER_PLUGINS, 'etree.xml')
                 
         if use_gzip == 1:
             try:
@@ -305,8 +308,8 @@ class bckGramplet(Gramplet):
         # DB: Family Tree loaded
         # see gen/plug/_gramplet.py and gen/db/read.py
         
-        if self.dbstate.db.db_is_open:
-            print('tags', self.dbstate.db.get_number_of_tags())
+        #if self.dbstate.db.db_is_open:
+            #print('tags', self.dbstate.db.get_number_of_tags())
         
         #print(self.dbstate.db.surname_list)
         
@@ -442,17 +445,17 @@ class bckGramplet(Gramplet):
         Set of counters for parsed Gramps XML and loaded family tree
         """
         
-        last_note_id_or_with_2013_text = self.get_note()
         
-        
-        for handle in self.dbstate.db.get_note_handles():
-            if self.dbstate.db.note_map.get(handle)[0] == last_note_id_or_with_2013_text:
-                self.text.set_text(self.dbstate.db.note_map.get(handle)[2][0])
+        if self.dbstate.db.db_is_open:
+            last_note_id_or_with_2013_text = self.get_note()
+            for handle in self.dbstate.db.get_note_handles():
+                if self.dbstate.db.note_map.get(handle)[0] == last_note_id_or_with_2013_text:
+                    self.text.set_text(self.dbstate.db.note_map.get(handle)[2][0])
                 
-                print(self.dbstate.db.note_map.get(handle)[2][0])
+                    print(self.dbstate.db.note_map.get(handle)[2][0])
                 
-                handles = [citasource_handle for (object_type, citasource_handle) in
-                         self.dbstate.db.find_backlink_handles(handle)]
+                    handles = [citasource_handle for (object_type, citasource_handle) in
+                             self.dbstate.db.find_backlink_handles(handle)]
         
         
         person = _('\n\tDiff Persons : %s\n') % (self.dbstate.db.pmap_index - len(people))
@@ -498,6 +501,9 @@ class bckGramplet(Gramplet):
         
         base  = _('\nLoaded Family Tree base:\n "%s"\n' % self.dbstate.db.path)
         
+        if not self.dbstate.db.db_is_open:
+            handles = []
+            
         if len(handles) < 2:
             repair = ''
         else:
