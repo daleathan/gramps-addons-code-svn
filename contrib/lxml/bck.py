@@ -257,10 +257,7 @@ class bckGramplet(Gramplet):
         else:
             filename = os.path.join(const.USER_PLUGINS, 'etree.xml')
         
-        try:
-            self.get_db(filename)
-        except:
-            _('Skip experimental handling')
+        self.get_db(filename)
                 
         if use_gzip == 1:
             try:
