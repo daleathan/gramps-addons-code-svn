@@ -49,6 +49,7 @@ import GrampsDisplay
 from QuestionDialog import ErrorDialog
 from Filters import GenericFilter, Rules
 
+
 #from Merge.mergeevent import MergeEventQuery
 #from Merge.mergeperson import MergePersonQuery
 #from Merge.mergefamily import MergeFamilyQuery
@@ -255,6 +256,11 @@ class bckGramplet(Gramplet):
             filename = os.path.join(self.dbstate.db.path, 'etree.xml')
         else:
             filename = os.path.join(const.USER_PLUGINS, 'etree.xml')
+        
+        try:
+            self.get_db(filename)
+        except:
+            _('Skip experimental handling')
                 
         if use_gzip == 1:
             try:
@@ -437,6 +443,11 @@ class bckGramplet(Gramplet):
         #note_handle = 'c8c202feca8198236b7'
         
         return note.handle
+    
+    
+    def get_db(self, filename):
+        from Merge.diff import import_as_dict
+        Merge.diff.import_as_dict(filename)
     
     
     def counters(self, events, eventrefs, people, families, sources, sourcerefs, \
