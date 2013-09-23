@@ -446,8 +446,8 @@ class bckGramplet(Gramplet):
     
     
     def get_db(self, filename):
-        from Merge.diff import import_as_dict
-        Merge.diff.import_as_dict(filename)
+        import diff
+        diff.import_as_dict(filename)
     
     
     def counters(self, events, eventrefs, people, families, sources, sourcerefs, \

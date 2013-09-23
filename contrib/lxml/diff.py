@@ -29,7 +29,7 @@ import cli.user
 from DbState import DbState
 from cli.grampscli import CLIManager
 from gen.plug import BasePluginManager
-from gen.db.dictionary import DictionaryDb
+from dictionary import DictionaryDb
 
 def import_as_dict(filename):
     """
