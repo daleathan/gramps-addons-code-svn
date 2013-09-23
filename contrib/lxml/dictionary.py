@@ -41,7 +41,7 @@ from gen.db import (PERSON_KEY,
                     PLACE_KEY,
                     REPOSITORY_KEY,
                     NOTE_KEY)
-from gen.utils import create_id
+from Utils import create_id
 from gen.lib import (MediaObject, Person, Family, Source, Citation, Event,
                      Place, Repository, Note, Tag)
 
