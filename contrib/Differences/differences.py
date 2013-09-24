@@ -150,9 +150,7 @@ class DifferencesReport(Report):
         
         self._user = user
         
-        menu = options.menu
-        get_option_by_name = self.menu.get_option_by_name
-        mgobn = lambda name: get_option_by_name(name).get_value()
+        mgobn = lambda name:options.menu.get_option_by_name(name).get_value()
         
         self.filename = mgobn('filename')
         self.show_diff = mgobn('show_diff')
