@@ -2,8 +2,8 @@
 {"n": "Bron toevoegen","i": "AttachSource","t": "Tool","d": "Een gedeelde bron aan verschillende objecten toevoegen.","v": "0.0.20","g": "4.0","z": "AttachSourceTool.addon.tgz"}
 {"n": "Verjaardagen","i": "Birthdays","t": "Gramplet","d": "een gramplet dat de verjaardagen van de nog in leven zijnde personen toont","v": "1.0.21","g": "4.0","z": "BirthdaysGramplet.addon.tgz"}
 {"n": "Geschatte datums berekenen","i": "calculateestimateddates","t": "Tool","d": "Geschatte datums voor geboorte en overlijden berekenen.","v": "0.90.17","g": "4.0","z": "CalculateEstimatedDates.addon.tgz"}
-{"n": "Volkstelling","i": "census_report","t": "Report","d": "Verslag van de volkstellinggebeurtenissen van een persoon.","v": "1.0.27","g": "4.0","z": "Census.addon.tgz"}
-{"n": "Volkstelling","i": "Census Gramplet","t": "Gramplet","d": "Gramplet ingavevensterdie voor volkstellinggegevens","v": "1.0.27","g": "4.0","z": "Census.addon.tgz"}
+{"n": "Volkstelling","i": "census_report","t": "Report","d": "Verslag van de volkstellinggebeurtenissen van een persoon.","v": "1.0.28","g": "4.0","z": "Census.addon.tgz"}
+{"n": "Volkstelling","i": "Census Gramplet","t": "Gramplet","d": "Gramplet ingavevensterdie voor volkstellinggegevens","v": "1.0.28","g": "4.0","z": "Census.addon.tgz"}
 {"n": "Hoofdletters van voornamen verbeteren","i": "chgivenname","t": "Tool","d": "Het volledige gegevensbestand wordt doorzocht en er wordt getracht de hoofdletters van de voornamen te verbeteren.","v": "1.0.21","g": "4.0.2","z": "ChangeGivenNames.addon.tgz"}
 {"n": "Command Line Merge","i": "climerge","t": "Tool","d": "Primaire objecten via de opdrachtregel samenvoegen.","v": "1.0.14","g": "4.0","z": "CliMerge.addon.tgz"}
 {"n": "Klembord","i": "Clipboard Gramplet","t": "Gramplet","d": "Gramplet om gegevens te groeperen","v": "1.0.20","g": "4.0","z": "ClipboardGramplet.addon.tgz"}
@@ -16,8 +16,8 @@
 {"n": "Afstammelingentelling","i": "Descendant Count Gramplet","t": "Gramplet","d": "Gramplet om personen en afstammelingentelling te tonen","v": "1.0.17","g": "4.0","z": "DescendantCount.addon.tgz"}
 {"n": "Afstammelingenlijnen","i": "Descendants Lines","t": "Report","d": "Afstammelingenlijnen van een persoon worden aangemaakt","v": "0.1.19","g": "4.0","z": "DescendantsLines.addon.tgz"}
 {"n": "Database Differences Report","i": "database-differences-report","t": "Report","d": "Compares an external database with the current one.","v": "1.0.4","g": "4.0","z": "Differences.addon.tgz"}
-{"n": "Django-import","i": "import_django","t": "Importer","d": "Django is een webstructuur die draait op een geconfigureerd gegevensbestand","v": "1.0.21","g": "4.0","z": "Django.addon.tgz"}
 {"n": "Django-export","i": "export_django","t": "Exporter","d": "Django is een webstructuur die draait op een geconfigureerd gegevensbestand","v": "1.0.21","g": "4.0","z": "Django.addon.tgz"}
+{"n": "Django-import","i": "import_django","t": "Importer","d": "Django is een webstructuur die draait op een geconfigureerd gegevensbestand","v": "1.0.21","g": "4.0","z": "Django.addon.tgz"}
 {"n": "Exif-metagegevens aanpassen","i": "Edit Image Exif Metadata","t": "Gramplet","d": "Een gramplet om de Exif-beeldmetagegevens te zien, aan te passen of op te slaan","v": "1.5.3","g": "4.0","z": "EditExifMetadata.addon.tgz"}
 {"n": "Ruwe export","i": "Raw Export","t": "Exporter","d": "Dit is een ruwe 'python object'-dump","v": "1.0.19","g": "4.0","z": "ExportRaw.addon.tgz"}
 {"n": "Uitgebreide familiekenmerken","i": "Extended Family Attributes","t": "Gramplet","d": "Gramplet die de kenmerken van een familie toont","v": "1.0.14","g": "4.0","z": "ExtendedAttributes.addon.tgz"}

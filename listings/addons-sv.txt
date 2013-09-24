@@ -2,8 +2,8 @@
 {"n": "Koppla källa","i": "AttachSource","t": "Tool","d": "Kopplar en delad källa till flera objekt.","v": "0.0.20","g": "4.0","z": "AttachSourceTool.addon.tgz"}
 {"n": "Födelsedags-Gramplet","i": "Birthdays","t": "Gramplet","d": "en Gramplet, som visar födelsedagarna för levande personer","v": "1.0.21","g": "4.0","z": "BirthdaysGramplet.addon.tgz"}
 {"n": "Beräknade uppskattade datum","i": "calculateestimateddates","t": "Tool","d": "Beräkna uppskattningar av datum för födelse och död.","v": "0.90.17","g": "4.0","z": "CalculateEstimatedDates.addon.tgz"}
-{"n": "Folkräkningsrapport","i": "census_report","t": "Report","d": "Rapport över folkräkningshändelser för en person","v": "1.0.27","g": "4.0","z": "Census.addon.tgz"}
-{"n": "Census Gramplet","i": "Census Gramplet","t": "Gramplet","d": "Gramplet interface for census data","v": "1.0.27","g": "4.0","z": "Census.addon.tgz"}
+{"n": "Folkräkningsrapport","i": "census_report","t": "Report","d": "Rapport över folkräkningshändelser för en person","v": "1.0.28","g": "4.0","z": "Census.addon.tgz"}
+{"n": "Census Gramplet","i": "Census Gramplet","t": "Gramplet","d": "Gramplet interface for census data","v": "1.0.28","g": "4.0","z": "Census.addon.tgz"}
 {"n": "Ordna stavning av förnamn","i": "chgivenname","t": "Tool","d": "Söker igenom hela databasen och försöker ordna stavning av förnamnen","v": "1.0.21","g": "4.0.2","z": "ChangeGivenNames.addon.tgz"}
 {"n": "Command Line Merge","i": "climerge","t": "Tool","d": "Merge primary objects via the command line.","v": "1.0.14","g": "4.0","z": "CliMerge.addon.tgz"}
 {"n": "Urklippsgramplet","i": "Clipboard Gramplet","t": "Gramplet","d": "Gramplet för gruppering av poster","v": "1.0.20","g": "4.0","z": "ClipboardGramplet.addon.tgz"}
@@ -16,8 +16,8 @@
 {"n": "Gramplet för räkning av ättlingar","i": "Descendant Count Gramplet","t": "Gramplet","d": "Gramplet for showing people and descendant counts","v": "1.0.17","g": "4.0","z": "DescendantCount.addon.tgz"}
 {"n": "Descendants Lines","i": "Descendants Lines","t": "Report","d": "Produces descendants lines of a person","v": "0.1.19","g": "4.0","z": "DescendantsLines.addon.tgz"}
 {"n": "Database Differences Report","i": "database-differences-report","t": "Report","d": "Compares an external database with the current one.","v": "1.0.4","g": "4.0","z": "Differences.addon.tgz"}
-{"n": "Django-import","i": "import_django","t": "Importer","d": "Django är ett nätbaserat ramverkarbetande med en konfigurerad databas ","v": "1.0.21","g": "4.0","z": "Django.addon.tgz"}
 {"n": "Django-export","i": "export_django","t": "Exporter","d": "Django är ett nätbaserat ramverkarbetande med en konfigurerad databas ","v": "1.0.21","g": "4.0","z": "Django.addon.tgz"}
+{"n": "Django-import","i": "import_django","t": "Importer","d": "Django är ett nätbaserat ramverkarbetande med en konfigurerad databas ","v": "1.0.21","g": "4.0","z": "Django.addon.tgz"}
 {"n": "Redigera bilds Exif-metadata","i": "Edit Image Exif Metadata","t": "Gramplet","d": "Gramplet för att se, redigera och spara bilds Exif-metadata","v": "1.5.3","g": "4.0","z": "EditExifMetadata.addon.tgz"}
 {"n": "Rå export","i": "Raw Export","t": "Exporter","d": "Detta är en rå dumpning av pythonobjekt","v": "1.0.19","g": "4.0","z": "ExportRaw.addon.tgz"}
 {"n": "Extended Family Attributes","i": "Extended Family Attributes","t": "Gramplet","d": "Gramplet showing the attributes of a family","v": "1.0.14","g": "4.0","z": "ExtendedAttributes.addon.tgz"}

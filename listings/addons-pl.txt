@@ -2,8 +2,8 @@
 {"n": "Attach Source","i": "AttachSource","t": "Tool","d": "Attaches a shared source to multiple objects.","v": "0.0.20","g": "4.0","z": "AttachSourceTool.addon.tgz"}
 {"n": "Birthdays Gramplet","i": "Birthdays","t": "Gramplet","d": "a gramplet that displays the birthdays of the living people","v": "1.0.21","g": "4.0","z": "BirthdaysGramplet.addon.tgz"}
 {"n": "Obliczanie dat szacunkowych","i": "calculateestimateddates","t": "Tool","d": "Wylicza szacunkowe daty urodzenia i zgonu.","v": "0.90.17","g": "4.0","z": "CalculateEstimatedDates.addon.tgz"}
-{"n": "Census Report","i": "census_report","t": "Report","d": "Report of census events for a person.","v": "1.0.27","g": "4.0","z": "Census.addon.tgz"}
-{"n": "Census Gramplet","i": "Census Gramplet","t": "Gramplet","d": "Gramplet interface for census data","v": "1.0.27","g": "4.0","z": "Census.addon.tgz"}
+{"n": "Census Report","i": "census_report","t": "Report","d": "Report of census events for a person.","v": "1.0.28","g": "4.0","z": "Census.addon.tgz"}
+{"n": "Census Gramplet","i": "Census Gramplet","t": "Gramplet","d": "Gramplet interface for census data","v": "1.0.28","g": "4.0","z": "Census.addon.tgz"}
 {"n": "Fix Capitalization of Given Names","i": "chgivenname","t": "Tool","d": "Searches the entire database and attempts to fix capitalization of the given names.","v": "1.0.21","g": "4.0.2","z": "ChangeGivenNames.addon.tgz"}
 {"n": "Command Line Merge","i": "climerge","t": "Tool","d": "Merge primary objects via the command line.","v": "1.0.14","g": "4.0","z": "CliMerge.addon.tgz"}
 {"n": "Clipboard Gramplet","i": "Clipboard Gramplet","t": "Gramplet","d": "Gramplet for grouping items","v": "1.0.20","g": "4.0","z": "ClipboardGramplet.addon.tgz"}
@@ -16,8 +16,8 @@
 {"n": "Descendant Count Gramplet","i": "Descendant Count Gramplet","t": "Gramplet","d": "Gramplet for showing people and descendant counts","v": "1.0.17","g": "4.0","z": "DescendantCount.addon.tgz"}
 {"n": "Descendants Lines","i": "Descendants Lines","t": "Report","d": "Produces descendants lines of a person","v": "0.1.19","g": "4.0","z": "DescendantsLines.addon.tgz"}
 {"n": "Database Differences Report","i": "database-differences-report","t": "Report","d": "Compares an external database with the current one.","v": "1.0.4","g": "4.0","z": "Differences.addon.tgz"}
-{"n": "Django Import","i": "import_django","t": "Importer","d": "Django is a web framework working on a configured database","v": "1.0.21","g": "4.0","z": "Django.addon.tgz"}
 {"n": "Django Export","i": "export_django","t": "Exporter","d": "Django is a web framework working on a configured database","v": "1.0.21","g": "4.0","z": "Django.addon.tgz"}
+{"n": "Django Import","i": "import_django","t": "Importer","d": "Django is a web framework working on a configured database","v": "1.0.21","g": "4.0","z": "Django.addon.tgz"}
 {"n": "Edytuj metadane Exif obrazu","i": "Edit Image Exif Metadata","t": "Gramplet","d": "Gramplet do podglądu, edycji oraz zapisu metadanych Exif","v": "1.5.3","g": "4.0","z": "EditExifMetadata.addon.tgz"}
 {"n": "Raw Export","i": "Raw Export","t": "Exporter","d": "This is a raw python object dump","v": "1.0.19","g": "4.0","z": "ExportRaw.addon.tgz"}
 {"n": "Extended Family Attributes","i": "Extended Family Attributes","t": "Gramplet","d": "Gramplet showing the attributes of a family","v": "1.0.14","g": "4.0","z": "ExtendedAttributes.addon.tgz"}
