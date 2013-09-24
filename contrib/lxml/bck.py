@@ -262,8 +262,8 @@ class bckGramplet(Gramplet):
             
             self.text.set_text(_('Sorry, no support for your OS yet!'))
             return
-        
-        if self.dbstate.db.db_is_open:
+            
+        if self.dbstate.db.db_is_open and not ' ' in self.dbstate.db.get_dbname():
             filename = os.path.join(self.dbstate.db.path, self.dbstate.db.get_dbname() + '.xml')
         else:
             filename = os.path.join(const.USER_PLUGINS, 'etree.xml')
