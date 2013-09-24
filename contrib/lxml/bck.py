@@ -121,7 +121,11 @@ class bckGramplet(Gramplet):
         # filename and selectors
         
         self.__base_path = const.USER_HOME
-        self.__file_name = "test.gramps"
+        if self.dbstate.db.db_is_open:
+            dbname = str(self.dbstate.db.get_dbname())
+            self.__file_name = dbname + ".gramps"
+        else:
+            self.__file_name = "test.gramps"
         self.entry = gtk.Entry()
         self.entry.set_text(os.path.join(self.__base_path, self.__file_name))
         
@@ -182,7 +186,12 @@ class bckGramplet(Gramplet):
         
         my_action = gtk.FILE_CHOOSER_ACTION_SAVE
         
-        dialog = gtk.FileChooserDialog('etree',
+        if self.dbstate.db.db_is_open:
+            dbname = str(self.dbstate.db.get_dbname())
+        else:
+            dbname = 'etree'
+        
+        dialog = gtk.FileChooserDialog(dbname,
                                        action=my_action,
                                        buttons=(gtk.STOCK_CANCEL,
                                                 gtk.RESPONSE_CANCEL,
@@ -255,7 +264,7 @@ class bckGramplet(Gramplet):
             return
         
         if self.dbstate.db.db_is_open:
-            filename = os.path.join(self.dbstate.db.path, 'etree.xml')
+            filename = os.path.join(self.dbstate.db.path, self.dbstate.db.get_dbname() + '.xml')
         else:
             filename = os.path.join(const.USER_PLUGINS, 'etree.xml')
         

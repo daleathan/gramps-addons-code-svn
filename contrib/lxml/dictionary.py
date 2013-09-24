@@ -181,7 +181,7 @@ class DictionaryDb(DbWriteBase, DbReadBase):
                 },
             }
         # skip GEDCOM cross-ref check for now:
-        self.set_feature("skip-check-xref", True)
+        #self.set_feature("skip-check-xref", True)
         self.readonly = False
         self.db_is_open = True
         self.name_formats = []
