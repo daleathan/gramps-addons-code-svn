@@ -151,7 +151,7 @@ class DifferencesReport(Report):
         self._user = user
         
         menu = options.menu
-        get_option_by_name = menu.get_option_by_name
+        get_option_by_name = self.menu.get_option_by_name
         mgobn = lambda name: get_option_by_name(name).get_value()
         
         self.filename = mgobn('filename')
@@ -276,6 +276,7 @@ class DifferencesOptions(MenuReportOptions):
     
     def __init__(self, dbase, name):
         ReportOptions.__init__(self, name, dbase)
+        MenuReportOptions.__init__(self, name, dbase)
         """
         Create a new empty Item.
         
