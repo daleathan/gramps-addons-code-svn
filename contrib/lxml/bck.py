@@ -557,8 +557,8 @@ class bckGramplet(Gramplet):
                 
         # citations
         
-        cit_text = ['dateval', 'page', 'confidence']
-        cit_attribs = ['sourceref', 'noteref']
+        cit_text = ['page', 'confidence']
+        cit_attribs = ['dateval', 'sourceref', 'noteref']
         
         for tag in cit_text:
             print(tag)
