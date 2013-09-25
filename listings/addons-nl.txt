@@ -35,6 +35,8 @@
 {'d': 'Django is een webstructuur die draait op een geconfigureerd gegevensbestand', 'g': '3.4', 'i': 'import_django', 'n': 'Django-import', 't': u'Importer', 'v': '1.0.13', 'z': 'Django.addon.tgz'}
 {'d': 'Dynamische grafiek van de verwantschappen', 'g': '3.4', 'i': 'graphview', 'n': 'Grafiekscherm', 't': u'Gramps View', 'v': '1.0.27', 'z': 'GraphView.addon.tgz'}
 {'d': 'Gramplet om de opmerkingen van de actieve persoon te bewerken', 'g': '3.4', 'i': 'Note Gramplet', 'n': 'Opmerkingen', 't': u'Gramplet', 'v': '1.0.9', 'z': 'NoteGramplet.addon.tgz'}
+{'d': 'Gramplet showing an overview of events for a person', 'g': '3.4', 'i': 'Person Overview', 'n': 'Person Overview', 't': u'Gramplet', 'v': '1.0.1', 'z': 'Overview.addon.tgz'}
+{'d': 'Gramplet showing an overview of events for a family', 'g': '3.4', 'i': 'Family Overview', 'n': 'Family Overview', 't': u'Gramplet', 'v': '1.0.1', 'z': 'Overview.addon.tgz'}
 {'d': 'een gramplet dat de verjaardagen van de nog in leven zijnde personen toont', 'g': '3.4', 'i': 'Birthdays', 'n': 'Verjaardagen', 't': u'Gramplet', 'v': '1.0.13', 'z': 'BirthdaysGramplet.addon.tgz'}
 {'d': 'Produit une liste eclair', 'g': '3.4', 'i': 'ListeEclair', 'n': 'Liste Eclair', 't': u'Report', 'v': '1.0.2', 'z': 'ListeEclair.addon.tgz'}
 {'d': 'Miniaturen voor mediabestanden aanmaken', 'g': '3.4', 'i': 'thumbgen', 'n': 'Miniaturen aanmaken', 't': u'Tool', 'v': '1.0.3', 'z': 'ThumbnailGenerator.addon.tgz'}
@@ -48,6 +50,8 @@
 {'d': 'Report on the filling of the tree', 'g': '3.4', 'i': 'AncestorFill', 'n': 'AncestorFill', 't': u'Report', 'v': '1.0.3', 'z': 'AncestorFill.addon.tgz'}
 {'d': 'Afstammingslijnen van een persoon aanmaken', 'g': '3.4', 'i': 'Descendants Lines', 'n': 'Afstammingslijnen', 't': u'Report', 'v': '0.1.16', 'z': 'DescendantsLines.addon.tgz'}
 {'d': 'Een kenmerk een bepaalde waarde toekennen.', 'g': '3.4', 'i': 'SetAttribute', 'n': 'Kenmerk vastleggen', 't': u'Tool', 'v': '0.0.7', 'z': 'SetAttributeTool.addon.tgz'}
+{'d': 'Gramplet showing the source media for a person', 'g': '3.4', 'i': 'Person Source Media', 'n': 'Person Source Media', 't': u'Gramplet', 'v': '1.0.0', 'z': 'SourceMedia.addon.tgz'}
+{'d': 'Gramplet showing the source media for a family', 'g': '3.4', 'i': 'Family Source Media', 'n': 'Family Source Media', 't': u'Gramplet', 'v': '1.0.0', 'z': 'SourceMedia.addon.tgz'}
 {'d': 'Alle afstammelingslijnen van een bepaalde voorouder tot een bepaalde afstammeling worden als tekst afgedrukt.', 'g': '3.4', 'i': 'LinesOfDescendency', 'n': 'Afstammelingslijnen', 't': u'Report', 'v': '1.1.11', 'z': 'LinesOfDescendency.addon.tgz'}
 {'d': 'Collection of Web sites for the DE (requires libwebconnect)', 'g': '3.4', 'i': 'DE Web Connect Pack', 'n': 'DE Web Connect Pack', 't': u'Plugin lib', 'v': '0.0.3', 'z': 'DEWebConnectPack.addon.tgz'}
 {'d': 'Tekstverslag van de bibliotheken wordt opgemaakt', 'g': '3.4', 'i': 'Repositories Report Options', 'n': 'Opties voor het bibliotheekverslag', 't': u'Report', 'v': '0.3.2', 'z': 'RepositoriesReport.addon.tgz'}
