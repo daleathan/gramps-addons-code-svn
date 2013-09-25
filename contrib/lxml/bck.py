@@ -551,11 +551,42 @@ class bckGramplet(Gramplet):
         
         for node in primary:
             record = NAMESPACE + node
-            for record in root.findall(record):
+            for r in root.findall(record):
                 print('Remove %s' % node)
-                root.remove(record)
+                root.remove(r)
+                
+        # citations
+        
+        cit_text = ['dateval', 'page', 'confidence']
+        cit_attribs = ['sourceref', 'noteref']
+        
+        for tag in cit_text:
+            print(tag)
+            for entry in root[0].iter(NAMESPACE + tag):
+                print(entry.text)
+        
+        for tag in cit_attribs:
+            print(tag)
+            for entry in root[0].iter(NAMESPACE + tag):
+                print(entry.attrib)
+                
+        # sources
+        
+        src_text = ['stitle', 'spubinfo', 'sauthor']
+        src_attribs = ['objref', 'data_item', 'noteref', 'reporef']
+        
+        for tag in src_text:
+            print(tag)
+            for entry in root[1].iter(NAMESPACE + tag):
+                print(entry.text)
+        
+        for tag in src_attribs:
+            print(tag)
+            for entry in root[1].iter(NAMESPACE + tag):
+                print(entry.attrib)
+            
 
-        ElementTree.dump(root)
+        #ElementTree.dump(root)
         
         self.outfile.write(ElementTree.tostring(root, encoding="UTF-8"))
 
