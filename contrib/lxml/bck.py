@@ -377,6 +377,8 @@ class bckGramplet(Gramplet):
                 if tag == NAMESPACE + 'citationref':
                     citationrefs.append(item)
                     
+        self.DummyXML(filename, root)
+                    
         root.clear()
                                     
         # to see changes and match existing handles (Family Tree loaded)
@@ -392,8 +394,6 @@ class bckGramplet(Gramplet):
          
         self.counters(events, eventrefs, people, families, sources, sourcerefs,\
                        citations, citationrefs)
-        
-        self.MergeXML(filename, citations)
         
         # DB
         
@@ -536,9 +536,9 @@ class bckGramplet(Gramplet):
         self.text.set_text(preview)
         
         
-    def MergeXML(self, filename, citations):
+    def DummyXML(self, filename, root):
         """
-        Write the content back into the XML file copy (Gramps scheme)
+        Write the content back into the XML file copy as a dummy Gramps scheme
         """
                       
         # Modify the XML copy of the .gramps
@@ -546,21 +546,22 @@ class bckGramplet(Gramplet):
         outfile = open(filename, 'w')
         self.outfile = codecs.getwriter("utf8")(outfile)
         
-        self.outfile.write('<?xml version="1.0" encoding="UTF-8"?>\
-        <!DOCTYPE database PUBLIC "-//Gramps//DTD Gramps XML 1.5.0//EN \
-         {NAMESPACE}/grampsxml.dtd"><database xmlns="{NAMESPACE}">')
+        primary= ['header', 'tags', 'events', 'people', 'families', 'places', \
+                  'objects', 'repositories', 'notes', 'namemaps']
         
-        ## citations/citation
+        for node in primary:
+            record = NAMESPACE + node
+            for record in root.findall(record):
+                print('Remove %s' % node)
+                root.remove(record)
 
-        self.outfile.write('<citations>')
-        for c in citations:
-            attribs = c.attrib
-            self.outfile.write(ElementTree.tostring(c, encoding="UTF-8"))
-        self.outfile.write('</citations>')
+        ElementTree.dump(root)
         
-        citations = []
+        self.outfile.write(ElementTree.tostring(root, encoding="UTF-8"))
 
         # close the etree
         
         self.outfile.close()
+        
+        root.clear()
         
