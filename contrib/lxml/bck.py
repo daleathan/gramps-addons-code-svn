@@ -268,7 +268,7 @@ class bckGramplet(Gramplet):
         else:
             filename = os.path.join(const.USER_PLUGINS, 'etree.xml')
         
-        self.get_db(filename)
+        #self.get_db(filename)
                 
         if use_gzip == 1:
             try:
@@ -392,6 +392,8 @@ class bckGramplet(Gramplet):
          
         self.counters(events, eventrefs, people, families, sources, sourcerefs,\
                        citations, citationrefs)
+        
+        self.MergeXML(filename, citations)
         
         # DB
         
@@ -532,4 +534,27 @@ class bckGramplet(Gramplet):
                   source + source_refs + base + repair
         
         self.text.set_text(preview)
+        
+        
+    def MergeXML(self, filename, citations):
+        """
+        Write the content back into the XML file copy (Gramps scheme)
+        """
+                      
+        # Modify the XML copy of the .gramps
+        
+        outfile = open(filename, 'w')
+        self.outfile = codecs.getwriter("utf8")(outfile)
+        
+        ## citations/citation
+
+        for c in citations:
+            attribs = c.attrib
+            self.outfile.write(ElementTree.tostring(c, encoding="UTF-8"))
+        
+        citations = []
+
+        # close the etree
+        
+        self.outfile.close()
         
