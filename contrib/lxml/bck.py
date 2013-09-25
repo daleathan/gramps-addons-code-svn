@@ -546,11 +546,17 @@ class bckGramplet(Gramplet):
         outfile = open(filename, 'w')
         self.outfile = codecs.getwriter("utf8")(outfile)
         
+        self.outfile.write('<?xml version="1.0" encoding="UTF-8"?>\
+        <!DOCTYPE database PUBLIC "-//Gramps//DTD Gramps XML 1.5.0//EN \
+         {NAMESPACE}/grampsxml.dtd"><database xmlns="{NAMESPACE}">')
+        
         ## citations/citation
 
+        self.outfile.write('<citations>')
         for c in citations:
             attribs = c.attrib
             self.outfile.write(ElementTree.tostring(c, encoding="UTF-8"))
+        self.outfile.write('</citations>')
         
         citations = []
 
