@@ -596,6 +596,10 @@ class bckGramplet(Gramplet):
             clocation += 1
             
             cit_hlink = citation_level.get('hlink')
+            if cit_hlink:
+                print(cit_hlink)
+            else:
+                print('false', cit_hlink)
             if cit_hlink == None:
                 print('Warning:', root[0][clocation].attrib)
 
