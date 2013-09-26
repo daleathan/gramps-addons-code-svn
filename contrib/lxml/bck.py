@@ -591,7 +591,7 @@ class bckGramplet(Gramplet):
             cit_handle = citation_level.get('handle')
             #print(cit_handle)
             
-        clocation = 0
+        clocation = -1
         for citation_level in root[0][0]:
             clocation += 1
             
@@ -604,7 +604,7 @@ class bckGramplet(Gramplet):
             src_handle = source_level.get('handle')
             #print(src_handle)
          
-        slocation = 0
+        slocation = -1
         for source_level in root[1][0]:
             slocation += 1
                 
