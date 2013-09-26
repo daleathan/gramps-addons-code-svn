@@ -572,7 +572,7 @@ class bckGramplet(Gramplet):
                 
         # sources
         
-        src_text = ['stitle', 'spubinfo', 'sauthor']
+        src_text = ['stitle', 'spubinfo', 'sauthor', 'sabbrev']
         src_attribs = ['objref', 'data_item', 'noteref', 'reporef']
         
         for tag in src_text:
