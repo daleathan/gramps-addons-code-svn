@@ -558,7 +558,7 @@ class bckGramplet(Gramplet):
         # citations
         
         cit_text = ['page', 'confidence']
-        cit_attribs = ['dateval', 'sourceref', 'noteref']
+        cit_attribs = ['dateval', 'data_item', 'sourceref', 'noteref', 'objref']
         
         for tag in cit_text:
             print(tag)
@@ -584,8 +584,34 @@ class bckGramplet(Gramplet):
             print(tag)
             for entry in root[1].iter(NAMESPACE + tag):
                 print(entry.attrib)
+                
+        # keys
+        
+        for citation_level in root[0]:
+            cit_handle = citation_level.get('handle')
+            #print(cit_handle)
             
+        clocation = 0
+        for citation_level in root[0][0]:
+            clocation += 1
+            
+            cit_hlink = citation_level.get('hlink')
+            if cit_hlink == None:
+                print('Warning:', root[0][clocation].attrib)
 
+                
+        for source_level in root[1]:
+            src_handle = source_level.get('handle')
+            #print(src_handle)
+         
+        slocation = 0
+        for source_level in root[1][0]:
+            slocation += 1
+                
+            src_hlink = source_level.get('hlink')
+            if src_hlink == None:
+                print('Warning:', root[1][slocation].attrib)
+        
         #ElementTree.dump(root)
         
         self.outfile.write(ElementTree.tostring(root, encoding="UTF-8"))
