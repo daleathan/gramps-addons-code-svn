@@ -596,11 +596,7 @@ class bckGramplet(Gramplet):
             clocation += 1
             
             cit_hlink = citation_level.get('hlink')
-            if cit_hlink:
-                print(cit_hlink)
-            else:
-                print('false', cit_hlink)
-            if cit_hlink == None:
+            if cit_hlink and cit_hlink == None:
                 print('Warning:', root[0][clocation].attrib)
 
                 
@@ -613,7 +609,7 @@ class bckGramplet(Gramplet):
             slocation += 1
                 
             src_hlink = source_level.get('hlink')
-            if src_hlink == None:
+            if src_hlink and src_hlink == None:
                 print('Warning:', root[1][slocation].attrib)
         
         #ElementTree.dump(root)
