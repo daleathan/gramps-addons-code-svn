@@ -348,8 +348,8 @@ class bckGramplet(Gramplet):
             # The behavior of this method will change in future versions.  
             # Use specific 'len(elem)' or 'elem is not None' test instead.
             
-            if one.find(NAMESPACE + 'event'):
-                print('XML: Find all "event" records: %s' % len(one.findall(NAMESPACE + 'event')))
+            #if one.find(NAMESPACE + 'event'):
+                #print('XML: Find all "event" records: %s' % len(one.findall(NAMESPACE + 'event')))
             
             for two in ITERATION:
                 
@@ -421,9 +421,9 @@ class bckGramplet(Gramplet):
         
         try:
             elast = epoch(tevent[-1])
-            print('DB: Last event object edition on/at:', elast)
+            #print('DB: Last event object edition on/at:', elast)
         except IndexError:
-	        pass
+            pass
         
         # person object; alternate method via person_map, see LastChange addon
         
@@ -522,9 +522,10 @@ class bckGramplet(Gramplet):
             ctime = str(self.dbstate.db.citation_map.get(handle)[9])
             if ctime[0:8] == str(change_time)[0:8]:
                 records.append("citation : " + str(handle))
-                last_cprefix = str(handle)[0:2]
-            if last_cprefix !=  str(handle)[0:2]:
-                grouped_records.append("citation : " + str(handle))
+                last_cprefix = str(handle)[0:10]
+            if last_cprefix !=  str(handle)[0:10]:
+                cid = str(self.dbstate.db.citation_map.get(handle)[1])
+                grouped_records.append("citation : " + cid + ": " + str(self.dbstate.db.citation_map.get(handle)[3]))
                     
         
         if ccount == len(citationrefs) or ccount == 0:
@@ -546,7 +547,8 @@ class bckGramplet(Gramplet):
                 records.append("source : " + str(handle))
                 last_sprefix = str(handle)[0:2]
             if last_sprefix !=  str(handle)[0:2]:
-                grouped_records.append("source : " + str(handle))
+                sid = str(self.dbstate.db.source_map.get(handle)[1])
+                grouped_records.append("source : " + sid + ": " + str(self.dbstate.db.source_map.get(handle)[2]))
         
         if scount == len(sourcerefs) or scount == 0:
             source_refs = ''
@@ -558,13 +560,13 @@ class bckGramplet(Gramplet):
         if not self.dbstate.db.db_is_open:
             handles = []
             
-        data = "\n  == Handles =="
+        data = "\n  == Handles (candidats for merging)=="
         merge_count = 0
         for merge in records:
             merge_count += 1
             data = data + "\n%s\t%s" % (merge_count, merge)
         merge_count =0
-        data = data + "\n == Groups of handles =="
+        data = data + "\n == Groups of handles (not created by batch or import) =="
         for period_record in grouped_records:
             merge_count += 1
             data = data + "\n%s\t%s" % (merge_count, period_record )
@@ -599,6 +601,7 @@ class bckGramplet(Gramplet):
         primary= ['header', 'tags', 'events', 'people', 'families', 'places', \
                   'objects', 'repositories', 'notes', 'namemaps']
         
+        print('*** XML copy of tables ***')
         for node in primary:
             record = NAMESPACE + node
             for r in root.findall(record):
