@@ -545,8 +545,8 @@ class bckGramplet(Gramplet):
             stime = str(self.dbstate.db.source_map.get(handle)[8])
             if stime[0:8] == str(change_time)[0:8]:
                 records.append("source : " + str(handle))
-                last_sprefix = str(handle)[0:2]
-            if last_sprefix !=  str(handle)[0:2]:
+                last_sprefix = str(handle)[0:3]
+            if last_sprefix !=  str(handle)[0:3]:
                 sid = str(self.dbstate.db.source_map.get(handle)[1])
                 grouped_records.append("source : " + sid + ": " + str(self.dbstate.db.source_map.get(handle)[2]))
         
