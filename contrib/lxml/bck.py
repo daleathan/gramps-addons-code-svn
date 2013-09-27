@@ -26,6 +26,8 @@
 # Python modules
 #
 #------------------------------------------------------------------------
+from __future__ import print_function
+
 import codecs
 import sys
 import os
@@ -377,8 +379,9 @@ class bckGramplet(Gramplet):
                 if tag == NAMESPACE + 'citationref':
                     citationrefs.append(item)
                     
+        
         self.DummyXML(filename, root)
-                    
+                            
         root.clear()
                                     
         # to see changes and match existing handles (Family Tree loaded)
@@ -465,12 +468,17 @@ class bckGramplet(Gramplet):
         Set of counters for parsed Gramps XML and loaded family tree
         """
         
+        records = []
+        grouped_records = []
+        change_time = '000000'
         
         if self.dbstate.db.db_is_open:
             last_note_id_or_with_2013_text = self.get_note()
             for handle in self.dbstate.db.get_note_handles():
                 if self.dbstate.db.note_map.get(handle)[0] == last_note_id_or_with_2013_text:
                     self.text.set_text(self.dbstate.db.note_map.get(handle)[2][0])
+                    
+                    change_time = self.dbstate.db.note_map.get(handle)[5]
                 
                     print(self.dbstate.db.note_map.get(handle)[2][0])
                 
@@ -487,7 +495,15 @@ class bckGramplet(Gramplet):
         for attributes in eventrefs:
             if self.dbstate.db.event_map.get(attributes[1][1][1:]) == None:
                 ecount += 1
-                #print(attributes[1][1][1:])
+        
+        #last_eprefix = 'e0'
+        for handle in self.dbstate.db.get_event_handles():
+            etime = str(self.dbstate.db.event_map.get(handle)[10])
+            if etime[0:8] == str(change_time)[0:8]:
+                records.append("event : "+ str(handle))
+                #last_eprefix = str(handle)[0:2]
+            #if last_eprefix !=  str(handle)[0:2]:
+                #grouped_records.append("event : " + str(handle))
         
         if ecount == len(eventrefs) or ecount == 0:
             event_refs = ''
@@ -500,8 +516,17 @@ class bckGramplet(Gramplet):
         for hlink in citationrefs:
             if self.dbstate.db.citation_map.get(hlink[0][1][1:]) == None:
                 ccount += 1
-                #print(hlink[0][1][1:])
-                
+
+        last_cprefix = 'c0'
+        for handle in self.dbstate.db.get_citation_handles():
+            ctime = str(self.dbstate.db.citation_map.get(handle)[9])
+            if ctime[0:8] == str(change_time)[0:8]:
+                records.append("citation : " + str(handle))
+                last_cprefix = str(handle)[0:2]
+            if last_cprefix !=  str(handle)[0:2]:
+                grouped_records.append("citation : " + str(handle))
+                    
+        
         if ccount == len(citationrefs) or ccount == 0:
             citation_refs = ''
         else:
@@ -513,7 +538,16 @@ class bckGramplet(Gramplet):
         for hlink in sourcerefs:
             if self.dbstate.db.source_map.get(hlink[0][1][1:]) == None:
                 scount += 1
-                
+
+        last_sprefix = 's0'
+        for handle in self.dbstate.db.get_source_handles():
+            stime = str(self.dbstate.db.source_map.get(handle)[8])
+            if stime[0:8] == str(change_time)[0:8]:
+                records.append("source : " + str(handle))
+                last_sprefix = str(handle)[0:2]
+            if last_sprefix !=  str(handle)[0:2]:
+                grouped_records.append("source : " + str(handle))
+        
         if scount == len(sourcerefs) or scount == 0:
             source_refs = ''
         else:
@@ -524,16 +558,32 @@ class bckGramplet(Gramplet):
         if not self.dbstate.db.db_is_open:
             handles = []
             
+        data = "\n  == Handles =="
+        merge_count = 0
+        for merge in records:
+            merge_count += 1
+            data = data + "\n%s\t%s" % (merge_count, merge)
+        merge_count =0
+        data = data + "\n == Groups of handles =="
+        for period_record in grouped_records:
+            merge_count += 1
+            data = data + "\n%s\t%s" % (merge_count, period_record )
+        
+        records = []
+            
         if len(handles) < 2:
             repair = ''
         else:
             repair = _("\nIt seems that %s records have been fixed recently,\n"
-                "do you want to try to merge them via your backup file?\n") % len(handles)
+                "do you want to try to merge them via your backup file?\n%s") % (len(handles), data)
+        
+        data = []
         
         preview = person + family + event + event_refs + citation + citation_refs + \
                   source + source_refs + base + repair
         
         self.text.set_text(preview)
+        
         
         
     def DummyXML(self, filename, root):
@@ -560,37 +610,40 @@ class bckGramplet(Gramplet):
         cit_text = ['page', 'confidence']
         cit_attribs = ['dateval', 'data_item', 'sourceref', 'noteref', 'objref']
         
-        for tag in cit_text:
-            print(tag)
-            for entry in root[0].iter(NAMESPACE + tag):
-                print(entry.text)
+        #for tag in cit_text:
+            #print(tag)
+            #for entry in root[0].iter(NAMESPACE + tag):
+                #print(entry.text)
         
-        for tag in cit_attribs:
-            print(tag)
-            for entry in root[0].iter(NAMESPACE + tag):
-                print(entry.attrib)
+        #for tag in cit_attribs:
+            #print(tag)
+            #for entry in root[0].iter(NAMESPACE + tag):
+                #print(entry.attrib)
                 
         # sources
         
         src_text = ['stitle', 'spubinfo', 'sauthor', 'sabbrev']
         src_attribs = ['objref', 'data_item', 'noteref', 'reporef']
         
-        for tag in src_text:
-            print(tag)
-            for entry in root[1].iter(NAMESPACE + tag):
-                print(entry.text)
+        #for tag in src_text:
+            #print(tag)
+            #for entry in root[1].iter(NAMESPACE + tag):
+                #print(entry.text)
         
-        for tag in src_attribs:
-            print(tag)
-            for entry in root[1].iter(NAMESPACE + tag):
-                print(entry.attrib)
+        #for tag in src_attribs:
+            #print(tag)
+            #for entry in root[1].iter(NAMESPACE + tag):
+                #print(entry.attrib)
                 
         # keys
         
+        cit_handles = []
+        
         for citation_level in root[0]:
             cit_handle = citation_level.get('handle')
-            #print(cit_handle)
-            
+            cit_handles.append(cit_handle)
+        
+        
         clocation = -1
         for citation_level in root[0][0]:
             clocation += 1
@@ -598,12 +651,14 @@ class bckGramplet(Gramplet):
             cit_hlink = citation_level.get('hlink')
             if cit_hlink and cit_hlink == None:
                 print('Warning:', root[0][clocation].attrib)
-
-                
+        
+        src_handles = []
+        
         for source_level in root[1]:
             src_handle = source_level.get('handle')
-            #print(src_handle)
-         
+            src_handles.append(src_handle)
+        
+        
         slocation = -1
         for source_level in root[1][0]:
             slocation += 1
