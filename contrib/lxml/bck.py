@@ -607,9 +607,47 @@ class bckGramplet(Gramplet):
         self.outfile = codecs.getwriter("utf8")(outfile)
         
         # events, people, families (stored as Element)
-        where_cit_on_events = root.findall('./' + NAMESPACE + 'events//' + NAMESPACE + 'citationref')
-        where_cit_on_individuals = root.findall('./' + NAMESPACE + 'people//' + NAMESPACE + 'citationref')
-        where_cit_on_families = root.findall('./' + NAMESPACE + 'families//' + NAMESPACE + 'citationref')
+        parent_node = '/..'
+        where_cit_on_events = root.findall('./' + NAMESPACE + 'events//' + NAMESPACE + 'citationref' + parent_node)
+        where_cit_on_individuals = root.findall('./' + NAMESPACE + 'people//' + NAMESPACE + 'citationref' + parent_node)
+        where_cit_on_families = root.findall('./' + NAMESPACE + 'families//' + NAMESPACE + 'citationref'  + parent_node)
+        attributes = root.findall('.//' + NAMESPACE + 'attribute/' + NAMESPACE + 'citationref')
+        
+        print('Attributes with citation reference:', len(attributes))
+        
+        attributes = []
+        
+        cit_on_eatt = []
+        for element in where_cit_on_events:
+            if element.attrib.get('type'): # attribute(s) on event with citations
+                cit_on_eatt.append(element.findall('./' + NAMESPACE + 'citationref'))
+        
+        print('Attributes on events with citation reference:', len(cit_on_eatt))
+        
+        cit_on_patt = []
+        for element in where_cit_on_individuals:
+            if element.attrib.get('type'): # attribute(s) on person with citations
+                cit_on_patt.append(element.findall('./' + NAMESPACE + 'citationref'))
+                
+        print('Attributes on people with citation reference:', len(cit_on_patt))
+        
+        cit_on_fatt = []
+        for element in where_cit_on_families:
+            if element.attrib.get('type'): # attribute(s) on family with citations
+                cit_on_fatt.append(element.findall('./' + NAMESPACE + 'citationref'))
+                
+        print('Attributes on families with citation reference:', len(cit_on_fatt))
+        
+        #for parent in cit_on_eatt:
+            #if len(parent) < 2:
+                #print(parent[0].attrib.get('hlink')[1:])
+            #else:
+                #for i in range(len(parent)):
+                    #print(parent[i].attrib.get('hlink')[1:])
+                    
+        cit_on_eatt = cit_on_patt = cit_on_fatt = []
+        where_cit_on_events = where_cit_on_individuals = where_cit_on_families = []
+                    
         
         primary= ['header', 'tags', 'events', 'people', 'families', 'places', \
                   'objects', 'repositories', 'notes', 'namemaps']
