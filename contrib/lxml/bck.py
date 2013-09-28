@@ -649,7 +649,7 @@ class bckGramplet(Gramplet):
                     quay = str(self.dbstate.db.citation_map.get(handle)[4])
                     #print('event: ',  cid + " " + key + " " + date + " " + page + " " + quay)
                 else:
-                    print('event: ', handle)
+                    print('event: ', root.find('./' + NAMESPACE + 'citations/' + NAMESPACE + 'citation[@handle="_%s"]' % handle))
             else:
                 for i in range(len(parent)):
                     handle = parent[i].attrib.get('hlink')[1:]
@@ -661,7 +661,8 @@ class bckGramplet(Gramplet):
                         quay = str(self.dbstate.db.citation_map.get(handle)[4])
                         #print('event: ',  cid + " " + key + " " + date + " " + page + " " + quay)
                     else:
-                        print('event: ', handle)    
+                        print('event: ', root.find('./' + NAMESPACE + 'citations/' + NAMESPACE + 'citation[@handle="_%s"]' % handle))
+                        
         for parent in cit_on_patt:
             if len(parent) < 2:
                 handle = parent[0].attrib.get('hlink')[1:]
@@ -673,7 +674,7 @@ class bckGramplet(Gramplet):
                     quay = str(self.dbstate.db.citation_map.get(handle)[4])
                     #print('person: ',  cid + " " + key + " " + date + " " + page + " " + quay)
                 else:
-                    print('person: ', handle)
+                    print('person: ', root.find('./' + NAMESPACE + 'citations/' + NAMESPACE + 'citation[@handle="_%s"]' % handle))
             else:
                 for i in range(len(parent)):
                     handle = parent[i].attrib.get('hlink')[1:]
@@ -685,33 +686,33 @@ class bckGramplet(Gramplet):
                         quay = str(self.dbstate.db.citation_map.get(handle)[4])
                         #print('person: ',  cid + " " + key + " " + date + " " + page + " " + quay)
                     else:
-                        print('person: ', handle)
+                        print('person: ', root.find('./' + NAMESPACE + 'citations/' + NAMESPACE + 'citation[@handle="_%s"]' % handle))
                         
-        for parent in cit_on_fatt:
-            if len(parent) < 2:
-                handle = parent[0].attrib.get('hlink')[1:]
-                if self.dbstate.db.citation_map.get(handle):
-                    key = str(self.dbstate.db.citation_map.get(handle)[0])
-                    cid = str(self.dbstate.db.citation_map.get(handle)[1])
-                    date = str(self.dbstate.db.citation_map.get(handle)[2])
-                    page = str(self.dbstate.db.citation_map.get(handle)[3])
-                    quay = str(self.dbstate.db.citation_map.get(handle)[4])
+        #for parent in cit_on_fatt:
+            #if len(parent) < 2:
+                #handle = parent[0].attrib.get('hlink')[1:]
+                #if self.dbstate.db.citation_map.get(handle):
+                    #key = str(self.dbstate.db.citation_map.get(handle)[0])
+                    #cid = str(self.dbstate.db.citation_map.get(handle)[1])
+                    ##date = str(self.dbstate.db.citation_map.get(handle)[2])
+                    #page = str(self.dbstate.db.citation_map.get(handle)[3])
+                    #quay = str(self.dbstate.db.citation_map.get(handle)[4])
                     #print('family: ',  cid + " " + key + " " + date + " " + page + " " + quay)
-                else:
-                    print('family: ', handle)
-            else:
-                for i in range(len(parent)):
-                    handle = parent[i].attrib.get('hlink')[1:]
-                    if self.dbstate.db.citation_map.get(handle):
-                        key = str(self.dbstate.db.citation_map.get(handle)[0])
-                        cid = str(self.dbstate.db.citation_map.get(handle)[1])
-                        date = str(self.dbstate.db.citation_map.get(handle)[2])
-                        page = str(self.dbstate.db.citation_map.get(handle)[3])
-                        quay = str(self.dbstate.db.citation_map.get(handle)[4])
+                #else:
+                    #print('family: ', root.find('./' + NAMESPACE + 'citations/' + NAMESPACE + 'citation[@handle="_%s"]' % handle))
+            #else:
+                #for i in range(len(parent)):
+                    #handle = parent[i].attrib.get('hlink')[1:]
+                    #if self.dbstate.db.citation_map.get(handle):
+                        #key = str(self.dbstate.db.citation_map.get(handle)[0])
+                        #cid = str(self.dbstate.db.citation_map.get(handle)[1])
+                        #date = str(self.dbstate.db.citation_map.get(handle)[2])
+                        #page = str(self.dbstate.db.citation_map.get(handle)[3])
+                        #quay = str(self.dbstate.db.citation_map.get(handle)[4])
                         #print('family: ',  cid + " " + key + " " + date + " " + page + " " + quay)
-                    else:
-                        print('family: ', handle)
-                    
+                    #else:
+                        #print('family: ', root.find(root.find('./' + NAMESPACE + 'citations/' + NAMESPACE + 'citation[@handle="_%s"]' % handle))
+                        
         cit_on_eatt = cit_on_patt = cit_on_fatt = []
         where_cit_on_events = where_cit_on_individuals = where_cit_on_families = []
                     
