@@ -606,6 +606,11 @@ class bckGramplet(Gramplet):
         outfile = open(filename, 'w')
         self.outfile = codecs.getwriter("utf8")(outfile)
         
+        # events, people, families (stored as Element)
+        where_cit_on_events = root.findall('./' + NAMESPACE + 'events//' + NAMESPACE + 'citationref')
+        where_cit_on_individuals = root.findall('./' + NAMESPACE + 'people//' + NAMESPACE + 'citationref')
+        where_cit_on_families = root.findall('./' + NAMESPACE + 'families//' + NAMESPACE + 'citationref')
+        
         primary= ['header', 'tags', 'events', 'people', 'families', 'places', \
                   'objects', 'repositories', 'notes', 'namemaps']
         
