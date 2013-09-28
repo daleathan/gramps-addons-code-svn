@@ -540,15 +540,23 @@ class bckGramplet(Gramplet):
             if self.dbstate.db.source_map.get(hlink[0][1][1:]) == None:
                 scount += 1
 
+        back_sourcerefs = []
         last_sprefix = 's0'
         for handle in self.dbstate.db.get_source_handles():
             stime = str(self.dbstate.db.source_map.get(handle)[8])
             if stime[0:8] == str(change_time)[0:8]:
-                records.append("source : " + str(handle))
+                for (object_type, sourceref) in self.dbstate.db.find_backlink_handles(handle):
+                    # object_type = Citation
+                    back_sourcerefs.append((handle, sourceref))
                 last_sprefix = str(handle)[0:3]
             if last_sprefix !=  str(handle)[0:3]:
                 sid = str(self.dbstate.db.source_map.get(handle)[1])
                 grouped_records.append("source : " + sid + ": " + str(self.dbstate.db.source_map.get(handle)[2]))
+        
+        for (handle, sourceref) in back_sourcerefs:
+            cid = str(self.dbstate.db.citation_map.get(sourceref)[1])
+            sid = str(self.dbstate.db.source_map.get(handle)[1])
+            records.append("source : " + str(handle) + " \t" + sid + '<=>' + cid)
         
         if scount == len(sourcerefs) or scount == 0:
             source_refs = ''
@@ -571,7 +579,7 @@ class bckGramplet(Gramplet):
             merge_count += 1
             data = data + "\n%s\t%s" % (merge_count, period_record )
         
-        records = []
+        records = grouped_records = []
             
         if len(handles) < 2:
             repair = ''
@@ -605,7 +613,7 @@ class bckGramplet(Gramplet):
         for node in primary:
             record = NAMESPACE + node
             for r in root.findall(record):
-                print('Remove %s' % node)
+                print('Skip %s' % node)
                 root.remove(r)
                 
         # citations
