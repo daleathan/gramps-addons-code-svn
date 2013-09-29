@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-09-11 18:54+0200\n"
-"PO-Revision-Date: 2013-09-11 19:13+0200\n"
+"POT-Creation-Date: 2013-09-29 14:52+0200\n"
+"PO-Revision-Date: 2013-09-29 16:29+0200\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
@@ -21,6 +21,156 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Lokalize 1.5\n"
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
+
+#: lxml/bck.gpr.py:9
+msgid "bck Gramplet"
+msgstr "sic Gramplet"
+
+#: lxml/bck.gpr.py:10
+msgid "Gramplet for listing some data via backup files"
+msgstr "Gramplet zum auflisten einiger Daten über die Sicherungsdatei"
+
+#: lxml/bck.gpr.py:18
+msgid "bck"
+msgstr "sic"
+
+#: lxml/bck.gpr.py:22
+msgid "diff"
+msgstr "Unterschied"
+
+#: lxml/bck.gpr.py:23 lxml/bck.gpr.py:34
+msgid "Backported modules from Doug's implementation"
+msgstr ""
+
+#: lxml/bck.gpr.py:33
+msgid "dictionary"
+msgstr "Wörterbuch"
+
+#: lxml/bck.py:97 lxml/etreeGramplet.py:92 lxml/lxmlGramplet.py:100
+msgid "Invalid timestamp"
+msgstr "Ungültiger Zeitstempel"
+
+#: lxml/bck.py:98 lxml/etreeGramplet.py:93 lxml/lxmlGramplet.py:101
+msgid "Unknown"
+msgstr "Unbekannt"
+
+#: lxml/bck.py:160 lxml/etreeGramplet.py:146
+msgid "No file parsed..."
+msgstr "Keine Datei analysiert..."
+
+#: lxml/bck.py:167 lxml/etreeGramplet.py:153 lxml/lxmlGramplet.py:159
+msgid "Run"
+msgstr "Starten"
+
+#: lxml/bck.py:240 lxml/etreeGramplet.py:231
+msgid "Space character on filename"
+msgstr "Leerzeichen im Dateiname"
+
+#: lxml/bck.py:240 lxml/etreeGramplet.py:231
+#, python-format
+msgid "Please fix space on \"%s\""
+msgstr "Bitte korrigiere Leerzeichen in \"%s\""
+
+#: lxml/bck.py:265 lxml/etreeGramplet.py:256 lxml/lxmlGramplet.py:252
+msgid "Sorry, no support for your OS yet!"
+msgstr "Sorry, aktuell keine Unterstützung für dein Betriebssystem!"
+
+#: lxml/bck.py:279 lxml/etreeGramplet.py:265 lxml/lxmlGramplet.py:261
+msgid "Is it a compressed .gramps?"
+msgstr "Ist es eine gepackte .gramps?"
+
+#: lxml/bck.py:279 lxml/etreeGramplet.py:265 lxml/lxmlGramplet.py:261
+#, python-format
+msgid "Cannot uncompress \"%s\""
+msgstr "Kann \"%s\" nicht entpacken"
+
+#: lxml/bck.py:281 lxml/bck.py:288 lxml/etreeGramplet.py:267
+#: lxml/etreeGramplet.py:274 lxml/lxmlGramplet.py:263 lxml/lxmlGramplet.py:270
+#, python-format
+msgid ""
+"From:\n"
+" \"%(file1)s\"\n"
+" to:\n"
+" \"%(file2)s\".\n"
+msgstr ""
+"Von:\n"
+" \"%(file1)s\"\n"
+" nach:\n"
+" \"%(file2)s\".\n"
+
+#: lxml/bck.py:286 lxml/etreeGramplet.py:272 lxml/lxmlGramplet.py:268
+#, python-format
+msgid "Cannot copy \"%s\""
+msgstr "Kann \"%s\" nicht kopieren"
+
+#: lxml/bck.py:489
+#, python-format
+msgid ""
+"\n"
+"\tDiff Persons : %s\n"
+msgstr ""
+"\n"
+"\tDiff Personen : %s\n"
+
+#: lxml/bck.py:490
+#, python-format
+msgid ""
+"\n"
+"\tDiff Families : %s\n"
+msgstr ""
+"\n"
+"\tDiff Familien : %s\n"
+
+#: lxml/bck.py:492
+#, python-format
+msgid ""
+"\n"
+"\tDiff Events : %s\n"
+msgstr ""
+"\n"
+"\tDiff Ereignisse : %s\n"
+
+#: lxml/bck.py:513
+#, python-format
+msgid ""
+"\n"
+"\tDiff Citations : %s\n"
+msgstr ""
+"\n"
+"\tDiff Fundstellen : %s\n"
+
+#: lxml/bck.py:536
+#, python-format
+msgid ""
+"\n"
+"\tDiff Sources : %s\n"
+msgstr ""
+"\n"
+"\tDiff Quellen : %s\n"
+
+#: lxml/bck.py:566
+#, python-format
+msgid ""
+"\n"
+"Loaded Family Tree base:\n"
+" \"%s\"\n"
+msgstr ""
+"\n"
+"Geladene Stammbaumbasis:\n"
+" \"%s\"\n"
+
+#: lxml/bck.py:587
+#, python-format
+msgid ""
+"\n"
+"It seems that %s records have been fixed recently,\n"
+"do you want to try to merge them via your backup file?\n"
+"%s"
+msgstr ""
+"\n"
+"Es scheint, dass %s Datensätze vor kurzem repariert wurden,\n"
+"willst du versuchen, sie über deine Sicherungsdatei zusammen zu fassen?\n"
+"%s"
 
 #: lxml/etreeGramplet.gpr.py:9
 msgid "etree Gramplet"
@@ -34,64 +184,16 @@ msgstr "Gramplet zum testen von etree mit Gramps XML"
 msgid "etree"
 msgstr "etree"
 
-#: lxml/etreeGramplet.py:91 lxml/lxmlGramplet.py:100
-msgid "Invalid timestamp"
-msgstr "Ungültiger Zeitstempel"
-
-#: lxml/etreeGramplet.py:92 lxml/lxmlGramplet.py:101
-msgid "Unknown"
-msgstr "Unbekannt"
-
-#: lxml/etreeGramplet.py:145
-msgid "No file parsed..."
-msgstr "Keine Datei analysiert..."
-
-#: lxml/etreeGramplet.py:152 lxml/lxmlGramplet.py:159
-msgid "Run"
-msgstr "Starten"
-
-#: lxml/etreeGramplet.py:215 lxml/etreeGramplet.py:220
+#: lxml/etreeGramplet.py:216 lxml/etreeGramplet.py:221
 msgid "Number of editions back"
 msgstr "Anzahl Änderungen zurück"
 
-#: lxml/etreeGramplet.py:251 lxml/lxmlGramplet.py:252
-msgid "Sorry, no support for your OS yet!"
-msgstr "Sorry, aktuell keine Unterstützung für dein Betriebssystem!"
-
-#: lxml/etreeGramplet.py:260 lxml/lxmlGramplet.py:261
-msgid "Is it a compressed .gramps?"
-msgstr "Ist es eine gepackte .gramps?"
-
-#: lxml/etreeGramplet.py:260 lxml/lxmlGramplet.py:261
-#, python-format
-msgid "Cannot uncompress \"%s\""
-msgstr "Kann \"%s\" nicht entpacken"
-
-#: lxml/etreeGramplet.py:262 lxml/etreeGramplet.py:269
-#: lxml/lxmlGramplet.py:263 lxml/lxmlGramplet.py:270
-#, python-format
-msgid ""
-"From:\n"
-" \"%(file1)s\"\n"
-" to:\n"
-" \"%(file2)s\".\n"
-msgstr ""
-"Von:\n"
-" \"%(file1)s\"\n"
-" nach:\n"
-" \"%(file2)s\".\n"
-
-#: lxml/etreeGramplet.py:267 lxml/lxmlGramplet.py:268
-#, python-format
-msgid "Cannot copy \"%s\""
-msgstr "Kann \"%s\" nicht kopieren"
-
-#: lxml/etreeGramplet.py:426
+#: lxml/etreeGramplet.py:438
 #, python-format
 msgid "XML: Last %s editions since %s, were at/on :\n"
 msgstr "XML: Letzte $s Änderungen seit %s, waren an/in:\n"
 
-#: lxml/etreeGramplet.py:477
+#: lxml/etreeGramplet.py:492
 #, python-format
 msgid ""
 "\n"
@@ -102,62 +204,62 @@ msgstr ""
 "XML: Anzahl der Datensätze und Beziehungen : \t%s\n"
 "\n"
 
-#: lxml/etreeGramplet.py:480
+#: lxml/etreeGramplet.py:495
 #, python-format
 msgid "Number of tags : \t%s\t|\t(%s)*\n"
 msgstr "Anzahl der Markierungen: \t%s\t|\t(%s)*\n"
 
-#: lxml/etreeGramplet.py:482
+#: lxml/etreeGramplet.py:497
 #, python-format
 msgid "Number of tags : \t%s\n"
 msgstr "Anzahl der Markierungen : \t%s\n"
 
-#: lxml/etreeGramplet.py:484
+#: lxml/etreeGramplet.py:499
 #, python-format
 msgid "Number of  events : \t%s\t|\t(%s)*\n"
 msgstr "Anzahl der Ereignisse : \t%s\t|\t(%s)*\n"
 
-#: lxml/etreeGramplet.py:485
+#: lxml/etreeGramplet.py:500
 #, python-format
 msgid "Number of persons : \t%s\t|\t(%s)* and (%s)* surnames\n"
 msgstr "Anzahl der Personen : \t%s\t|\t(%s)* and (%s)* surnames\n"
 
-#: lxml/etreeGramplet.py:486
+#: lxml/etreeGramplet.py:501
 #, python-format
 msgid "Number of families : \t%s\t|\t(%s)*\n"
 msgstr "Anzahl der Familien : \t%s\t|\t(%s)*\n"
 
-#: lxml/etreeGramplet.py:487
+#: lxml/etreeGramplet.py:502
 #, python-format
 msgid "Number of sources : \t%s\t|\t(%s)*\n"
 msgstr "Anzahl der Quellen : \t%s\t|\t(%s)*\n"
 
-#: lxml/etreeGramplet.py:488
+#: lxml/etreeGramplet.py:503
 #, python-format
 msgid "Number of citations : \t%s\t|\t(%s)*\n"
 msgstr "Anzahl der Fundstellen : \t%s\t|\t(%s)*\n"
 
-#: lxml/etreeGramplet.py:489
+#: lxml/etreeGramplet.py:504
 #, python-format
 msgid "Number of places : \t%s\t|\t(%s)*\n"
 msgstr "Anzahl der Orte : \t%s\t|\t(%s)*\n"
 
-#: lxml/etreeGramplet.py:490
+#: lxml/etreeGramplet.py:505
 #, python-format
 msgid "Number of media objects : \t%s\t|\t(%s)*\n"
 msgstr "Anzahl der Medienobjekte : \t%s\t|\t(%s)*\n"
 
-#: lxml/etreeGramplet.py:491
+#: lxml/etreeGramplet.py:506
 #, python-format
 msgid "Number of repositories : \t%s\t|\t(%s)*\n"
 msgstr "Anzahl der Aufbewahrungsorte : \t%s\t|\t(%s)*\n"
 
-#: lxml/etreeGramplet.py:492
+#: lxml/etreeGramplet.py:507
 #, python-format
 msgid "Number of notes : \t%s\t|\t(%s)*\n"
 msgstr "Anzahl der Notizen : \t%s\t|\t(%s)*\n"
 
-#: lxml/etreeGramplet.py:497
+#: lxml/etreeGramplet.py:512
 #, python-format
 msgid ""
 "\n"
@@ -166,7 +268,7 @@ msgstr ""
 "\n"
 "XML: Anzahl zusätzlicher Datensätze und Beziehungen: \t%s\n"
 
-#: lxml/etreeGramplet.py:499
+#: lxml/etreeGramplet.py:514
 #, python-format
 msgid ""
 "* loaded Family Tree base:\n"
