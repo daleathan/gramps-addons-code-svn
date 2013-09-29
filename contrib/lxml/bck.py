@@ -638,55 +638,55 @@ class bckGramplet(Gramplet):
                 
         print('Attributes on families with citation reference:', len(cit_on_fatt))
         
-        for parent in cit_on_eatt:
-            if len(parent) < 2:
-                handle = parent[0].attrib.get('hlink')[1:]
-                if self.dbstate.db.citation_map.get(handle):
-                    key = str(self.dbstate.db.citation_map.get(handle)[0])
-                    cid = str(self.dbstate.db.citation_map.get(handle)[1])
-                    date = str(self.dbstate.db.citation_map.get(handle)[2])
-                    page = str(self.dbstate.db.citation_map.get(handle)[3])
-                    quay = str(self.dbstate.db.citation_map.get(handle)[4])
+        #for parent in cit_on_eatt:
+            #if len(parent) < 2:
+                #handle = parent[0].attrib.get('hlink')[1:]
+                #if self.dbstate.db.citation_map.get(handle):
+                    #key = str(self.dbstate.db.citation_map.get(handle)[0])
+                    #cid = str(self.dbstate.db.citation_map.get(handle)[1])
+                    #date = str(self.dbstate.db.citation_map.get(handle)[2])
+                    #page = str(self.dbstate.db.citation_map.get(handle)[3])
+                    #quay = str(self.dbstate.db.citation_map.get(handle)[4])
                     #print('event: ',  cid + " " + key + " " + date + " " + page + " " + quay)
-                else:
-                    print('event: ', root.find('./' + NAMESPACE + 'citations/' + NAMESPACE + 'citation[@handle="_%s"]' % handle))
-            else:
-                for i in range(len(parent)):
-                    handle = parent[i].attrib.get('hlink')[1:]
-                    if self.dbstate.db.citation_map.get(handle):
-                        key = str(self.dbstate.db.citation_map.get(handle)[0])
-                        cid = str(self.dbstate.db.citation_map.get(handle)[1])
-                        date = str(self.dbstate.db.citation_map.get(handle)[2])
-                        page = str(self.dbstate.db.citation_map.get(handle)[3])
-                        quay = str(self.dbstate.db.citation_map.get(handle)[4])
+                #else:
+                    #print('event: ', root.find('./' + NAMESPACE + 'citations/' + NAMESPACE + 'citation[@handle="_%s"]' % handle))
+            #else:
+                #for i in range(len(parent)):
+                    #handle = parent[i].attrib.get('hlink')[1:]
+                    #if self.dbstate.db.citation_map.get(handle):
+                        #key = str(self.dbstate.db.citation_map.get(handle)[0])
+                        #cid = str(self.dbstate.db.citation_map.get(handle)[1])
+                        #date = str(self.dbstate.db.citation_map.get(handle)[2])
+                        #page = str(self.dbstate.db.citation_map.get(handle)[3])
+                        #quay = str(self.dbstate.db.citation_map.get(handle)[4])
                         #print('event: ',  cid + " " + key + " " + date + " " + page + " " + quay)
-                    else:
-                        print('event: ', root.find('./' + NAMESPACE + 'citations/' + NAMESPACE + 'citation[@handle="_%s"]' % handle))
+                    #else:
+                        #print('event: ', root.find('./' + NAMESPACE + 'citations/' + NAMESPACE + 'citation[@handle="_%s"]' % handle))
                         
-        for parent in cit_on_patt:
-            if len(parent) < 2:
-                handle = parent[0].attrib.get('hlink')[1:]
-                if self.dbstate.db.citation_map.get(handle):
-                    key = str(self.dbstate.db.citation_map.get(handle)[0])
-                    cid = str(self.dbstate.db.citation_map.get(handle)[1])
-                    date = str(self.dbstate.db.citation_map.get(handle)[2])
-                    page = str(self.dbstate.db.citation_map.get(handle)[3])
-                    quay = str(self.dbstate.db.citation_map.get(handle)[4])
+        #for parent in cit_on_patt:
+            #if len(parent) < 2:
+                #handle = parent[0].attrib.get('hlink')[1:]
+                #if self.dbstate.db.citation_map.get(handle):
+                    #key = str(self.dbstate.db.citation_map.get(handle)[0])
+                    #cid = str(self.dbstate.db.citation_map.get(handle)[1])
+                    #date = str(self.dbstate.db.citation_map.get(handle)[2])
+                    #page = str(self.dbstate.db.citation_map.get(handle)[3])
+                    #quay = str(self.dbstate.db.citation_map.get(handle)[4])
                     #print('person: ',  cid + " " + key + " " + date + " " + page + " " + quay)
-                else:
-                    print('person: ', root.find('./' + NAMESPACE + 'citations/' + NAMESPACE + 'citation[@handle="_%s"]' % handle))
-            else:
-                for i in range(len(parent)):
-                    handle = parent[i].attrib.get('hlink')[1:]
-                    if self.dbstate.db.citation_map.get(handle):
-                        key = str(self.dbstate.db.citation_map.get(handle)[0])
-                        cid = str(self.dbstate.db.citation_map.get(handle)[1])
-                        date = str(self.dbstate.db.citation_map.get(handle)[2])
-                        page = str(self.dbstate.db.citation_map.get(handle)[3])
-                        quay = str(self.dbstate.db.citation_map.get(handle)[4])
+                #else:
+                    #print('person: ', root.find('./' + NAMESPACE + 'citations/' + NAMESPACE + 'citation[@handle="_%s"]' % handle))
+            #else:
+                #for i in range(len(parent)):
+                    #handle = parent[i].attrib.get('hlink')[1:]
+                    #if self.dbstate.db.citation_map.get(handle):
+                        #key = str(self.dbstate.db.citation_map.get(handle)[0])
+                        #cid = str(self.dbstate.db.citation_map.get(handle)[1])
+                        #date = str(self.dbstate.db.citation_map.get(handle)[2])
+                        #page = str(self.dbstate.db.citation_map.get(handle)[3])
+                        #quay = str(self.dbstate.db.citation_map.get(handle)[4])
                         #print('person: ',  cid + " " + key + " " + date + " " + page + " " + quay)
-                    else:
-                        print('person: ', root.find('./' + NAMESPACE + 'citations/' + NAMESPACE + 'citation[@handle="_%s"]' % handle))
+                    #else:
+                        #print('person: ', root.find('./' + NAMESPACE + 'citations/' + NAMESPACE + 'citation[@handle="_%s"]' % handle))
                         
         #for parent in cit_on_fatt:
             #if len(parent) < 2:
@@ -713,12 +713,36 @@ class bckGramplet(Gramplet):
                     #else:
                         #print('family: ', root.find(root.find('./' + NAMESPACE + 'citations/' + NAMESPACE + 'citation[@handle="_%s"]' % handle))
                         
+        
+        cit_on_att = cit_on_eatt + cit_on_patt + cit_on_fatt
+        print('Nb of entries (could be multiple time):', len(cit_on_att))
+        
         cit_on_eatt = cit_on_patt = cit_on_fatt = []
         where_cit_on_events = where_cit_on_individuals = where_cit_on_families = []
-                    
         
-        primary= ['header', 'tags', 'events', 'people', 'families', 'places', \
-                  'objects', 'repositories', 'notes', 'namemaps']
+        for parent in cit_on_att:
+            if len(parent) < 2:
+                handle = parent[0].attrib.get('hlink')[1:]
+                if not self.dbstate.db.citation_map.get(handle):
+                    e = root.find('./' + NAMESPACE + 'citations/' + NAMESPACE + 'citation[@handle="_%s"]' % handle)
+                    root.append(e)
+                    #children = e.itertext()
+                    #for value in children:
+                        #if value != '2' or value == '': # default for confidence (or empty)
+                            #print(e.attrib, value) # citation handle and page/volume
+            else:
+                for i in range(len(parent)):
+                    handle = parent[i].attrib.get('hlink')[1:]
+                    if not self.dbstate.db.citation_map.get(handle):
+                        e = root.find('.' + NAMESPACE + 'citations/' + NAMESPACE + 'citation[@handle="_%s"]' % handle)
+                        root.append(e)
+                        #children = e.itertext()
+                        #for value in children:
+                            #if value != '2' or value == '': # default for confidence (or empty)
+                                #print(e.attrib, value) # citation handle and page/volume
+                            
+        primary = ['header', 'tags', 'events', 'people', 'families', 'places', \
+                  'objects', 'repositories', 'notes', 'namemaps', 'citations']
         
         print('*** XML copy of tables ***')
         for node in primary:
@@ -729,8 +753,8 @@ class bckGramplet(Gramplet):
                 
         # citations
         
-        cit_text = ['page', 'confidence']
-        cit_attribs = ['dateval', 'data_item', 'sourceref', 'noteref', 'objref']
+        #cit_text = ['page', 'confidence']
+        #cit_attribs = ['dateval', 'data_item', 'sourceref', 'noteref', 'objref']
         
         #for tag in cit_text:
             #print(tag)
@@ -744,8 +768,8 @@ class bckGramplet(Gramplet):
                 
         # sources
         
-        src_text = ['stitle', 'spubinfo', 'sauthor', 'sabbrev']
-        src_attribs = ['objref', 'data_item', 'noteref', 'reporef']
+        #src_text = ['stitle', 'spubinfo', 'sauthor', 'sabbrev']
+        #src_attribs = ['objref', 'data_item', 'noteref', 'reporef']
         
         #for tag in src_text:
             #print(tag)
@@ -759,35 +783,35 @@ class bckGramplet(Gramplet):
                 
         # keys
         
-        cit_handles = []
+        #cit_handles = []
         
-        for citation_level in root[0]:
-            cit_handle = citation_level.get('handle')
-            cit_handles.append(cit_handle)
+        #for citation_level in root[0]:
+            #cit_handle = citation_level.get('handle')
+            #cit_handles.append(cit_handle)
         
         
-        clocation = -1
-        for citation_level in root[0][0]:
-            clocation += 1
+        #clocation = -1
+        #for citation_level in root[0][0]:
+            #clocation += 1
             
-            cit_hlink = citation_level.get('hlink')
-            if cit_hlink and cit_hlink == None:
-                print('Warning:', root[0][clocation].attrib)
+            #cit_hlink = citation_level.get('hlink')
+            #if cit_hlink and cit_hlink == None:
+                #print('Warning:', root[0][clocation].attrib)
         
-        src_handles = []
+        #src_handles = []
         
-        for source_level in root[1]:
-            src_handle = source_level.get('handle')
-            src_handles.append(src_handle)
+        #for source_level in root[1]:
+            #src_handle = source_level.get('handle')
+            #src_handles.append(src_handle)
         
         
-        slocation = -1
-        for source_level in root[1][0]:
-            slocation += 1
+        #slocation = -1
+        #for source_level in root[1][0]:
+            #slocation += 1
                 
-            src_hlink = source_level.get('hlink')
-            if src_hlink and src_hlink == None:
-                print('Warning:', root[1][slocation].attrib)
+            #src_hlink = source_level.get('hlink')
+            #if src_hlink and src_hlink == None:
+                #print('Warning:', root[1][slocation].attrib)
         
         #ElementTree.dump(root)
         
