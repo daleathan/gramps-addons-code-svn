@@ -1,0 +1,72 @@
+# translation of de.po to Deutsch
+# German GRAMPS Translation
+#
+# Anton Huber <anton_huber@gmx.de>, 2005,2006.
+# Sebastian Vöcking <sebastian_voecking@gmx.de>, 2005.
+# Sebastian Vöcking <voeck@web.de>, 2005.
+# Martin Hawlisch <martin@hawlisch.de>, 2005, 2006.
+# Alex Roitman <shura@gramps-project.org>, 2006.
+# Mirko Leonhäuser <mirko@leonhaeuser.de>, 2007, 2008, 2009, 2010, 2011, 2012, 2013.
+msgid ""
+msgstr ""
+"Project-Id-Version: de\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-09-29 14:26+0200\n"
+"PO-Revision-Date: 2013-09-29 14:43+0200\n"
+"Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
+"Language-Team: German <kde-i18n-de@kde.org>\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.5\n"
+"Plural-Forms:  nplurals=2; plural=(n != 1);\n"
+
+#: Overview/Overview.gpr.py:30
+msgid "Person Overview"
+msgstr "Personenübersicht"
+
+#: Overview/Overview.gpr.py:31
+msgid "Gramplet showing an overview of events for a person"
+msgstr "Gramplet zeigt eine Übersicht der Ereignisse einer Person"
+
+#: Overview/Overview.gpr.py:38 Overview/Overview.gpr.py:52
+msgid "Overview"
+msgstr "Übersicht"
+
+#: Overview/Overview.gpr.py:44
+msgid "Family Overview"
+msgstr "Familienübersicht"
+
+#: Overview/Overview.gpr.py:45
+msgid "Gramplet showing an overview of events for a family"
+msgstr "Gramplet zeigt eine Übersicht der Ereignisse einer Familie"
+
+#: Overview/Overview.py:45
+msgid "Double-click on a row to edit the selected event."
+msgstr "Doppelklick auf eine Zeile um das gewählte Ereignis zu bearbeiten."
+
+#: Overview/Overview.py:49
+msgid "Type"
+msgstr "Art"
+
+#: Overview/Overview.py:50
+msgid "Date"
+msgstr "Datum"
+
+#: Overview/Overview.py:52
+msgid "Age"
+msgstr "Alter"
+
+#: Overview/Overview.py:53 Overview/Overview.py:85
+msgid "Condition"
+msgstr "Bedingung"
+
+#: Overview/Overview.py:54 Overview/Overview.py:87
+msgid "Occupation"
+msgstr "Beruf"
+
+#: Overview/Overview.py:55 Overview/Overview.py:89
+msgid "Where Born"
+msgstr "Wo geboren"
+
