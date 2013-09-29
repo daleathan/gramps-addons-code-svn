@@ -1,5 +1,5 @@
 # German translation for Gramps
-# $Id: de.po 23088 2013-09-11 17:42:05Z leonhaeuser $
+# $Id: de.po 23165 2013-09-19 17:02:56Z leonhaeuser $
 # This file is distributed under the same license as the Gramps package.
 # translation of de.po to Deutsch
 #
@@ -13,8 +13,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-09-15 15:25+0200\n"
-"PO-Revision-Date: 2013-09-19 23:06+0200\n"
+"POT-Creation-Date: 2013-09-29 16:48+0200\n"
+"PO-Revision-Date: 2013-09-19 19:01+0200\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
@@ -97,12 +97,12 @@ msgstr ""
 msgid "Cannot copy \"%s\""
 msgstr "Kann \"%s\" nicht kopieren"
 
-#: lxml/etreeGramplet.py:444
+#: lxml/etreeGramplet.py:445
 #, python-format
 msgid "XML: Last %s editions since %s, were at/on :\n"
 msgstr "XML: Letzte $s Änderungen seit %s, waren an/in:\n"
 
-#: lxml/etreeGramplet.py:499
+#: lxml/etreeGramplet.py:500
 #, python-format
 msgid ""
 "\n"
@@ -113,62 +113,62 @@ msgstr ""
 "XML: Anzahl der Datensätze und Beziehungen : \t%s\n"
 "\n"
 
-#: lxml/etreeGramplet.py:502
+#: lxml/etreeGramplet.py:503
 #, python-format
 msgid "Number of tags : \t\t\t\t%s\t|\t(%s)*\n"
 msgstr "Anzahl der Markierungen : \t\t\t\t%s\t|\t(%s)*\n"
 
-#: lxml/etreeGramplet.py:504
+#: lxml/etreeGramplet.py:505
 #, python-format
 msgid "Number of tags : \t\t\t\t%s\n"
 msgstr "Anzahl der Markierungen : \t\t\t\t%s\n"
 
-#: lxml/etreeGramplet.py:506
+#: lxml/etreeGramplet.py:507
 #, python-format
 msgid "Number of  events : \t\t\t\t%s\t|\t(%s)*\n"
 msgstr "Anzahl der Ereignisse : \t\t\t%s\t|\t(%s)*\n"
 
-#: lxml/etreeGramplet.py:507
+#: lxml/etreeGramplet.py:508
 #, python-format
 msgid "Number of persons : \t\t\t\t%s\t|\t(%s)* and (%s)* surnames\n"
 msgstr "Anzahl der Personen : \t\t\t%s\t|\t(%s)* und (%s)* Nachnamen\n"
 
-#: lxml/etreeGramplet.py:508
+#: lxml/etreeGramplet.py:509
 #, python-format
 msgid "Number of families : \t\t\t\t%s\t|\t(%s)*\n"
 msgstr "Anzahl der Familien : \t\t\t\t%s\t|\t(%s)*\n"
 
-#: lxml/etreeGramplet.py:509
+#: lxml/etreeGramplet.py:510
 #, python-format
 msgid "Number of sources : \t\t\t\t%s\t|\t(%s)*\n"
 msgstr "Anzahl der Quellen : \t\t\t\t%s\t|\t(%s)*\n"
 
-#: lxml/etreeGramplet.py:510
+#: lxml/etreeGramplet.py:511
 #, python-format
 msgid "Number of citations : \t\t\t\t%s\t|\t(%s)*\n"
 msgstr "Anzahl der Fundstellen : \t\t\t\t%s\t|\t(%s)*\n"
 
-#: lxml/etreeGramplet.py:511
+#: lxml/etreeGramplet.py:512
 #, python-format
 msgid "Number of places : \t\t\t\t%s\t|\t(%s)*\n"
 msgstr "Anzahl der Orte : \t\t\t\t%s\t|\t(%s)*\n"
 
-#: lxml/etreeGramplet.py:512
+#: lxml/etreeGramplet.py:513
 #, python-format
 msgid "Number of media objects : \t\t\t\t%s\t|\t(%s)*\n"
 msgstr "Anzahl der Medienobjekte : \t\t\t\t%s\t|\t(%s)*\n"
 
-#: lxml/etreeGramplet.py:513
+#: lxml/etreeGramplet.py:514
 #, python-format
 msgid "Number of repositories : \t\t\t\t%s\t|\t(%s)*\n"
 msgstr "Anzahl der Aufbewahrungsorte : \t\t\t\t%s\t|\t(%s)*\n"
 
-#: lxml/etreeGramplet.py:514
+#: lxml/etreeGramplet.py:515
 #, python-format
 msgid "Number of notes : \t\t\t\t%s\t|\t(%s)*\n"
 msgstr "Anzahl der Notizen : \t\t\t\t%s\t|\t(%s)*\n"
 
-#: lxml/etreeGramplet.py:519
+#: lxml/etreeGramplet.py:520
 #, python-format
 msgid ""
 "\n"
@@ -177,7 +177,7 @@ msgstr ""
 "\n"
 "XML: Anzahl zusätzlicher Datensätze und Beziehungen: \t%s\n"
 
-#: lxml/etreeGramplet.py:521
+#: lxml/etreeGramplet.py:522
 #, python-format
 msgid ""
 "* loaded Family Tree base:\n"
