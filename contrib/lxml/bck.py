@@ -740,7 +740,21 @@ class bckGramplet(Gramplet):
                         #for value in children:
                             #if value != '2' or value == '': # default for confidence (or empty)
                                 #print(e.attrib, value) # citation handle and page/volume
-                            
+        
+        back_refs = []                    
+        new_src_handles = []
+        for handle in self.dbstate.db.get_source_handles():
+            src = self.dbstate.db.get_source_from_handle(handle)
+            for (object_type, citationref) in self.dbstate.db.find_backlink_handles(handle):
+                if src and src.get_title() == _('Unknown'):
+                    new_src_handles.append(citationref)
+        
+        print(len(new_src_handles))
+        
+        for src_handle in new_src_handles:
+            if root.find('./' + NAMESPACE + 'citations/' + NAMESPACE + 'citation[@handle="_%s"]' % src_handle):
+                root.append(root.find('./' + NAMESPACE + 'citations/' + NAMESPACE + 'citation[@handle="_%s"]' % src_handle))
+        
         primary = ['header', 'tags', 'events', 'people', 'families', 'places', \
                   'objects', 'repositories', 'notes', 'namemaps', 'citations']
         
