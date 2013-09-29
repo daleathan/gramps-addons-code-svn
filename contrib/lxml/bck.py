@@ -751,9 +751,9 @@ class bckGramplet(Gramplet):
         
         print(len(new_src_handles))
         
-        for src_handle in new_src_handles:
-            if root.get('./' + NAMESPACE + 'citations/' + NAMESPACE + 'citation[@handle="_%s"]' % src_handle):
-                root.append(root.find('./' + NAMESPACE + 'citations/' + NAMESPACE + 'citation[@handle="_%s"]' % src_handle))
+        for cit_handle in new_src_handles:
+            if root.get('./' + NAMESPACE + 'citations/' + NAMESPACE + 'citation[@handle="_%s"]' % cit_handle):
+                root.append(root.find('./' + NAMESPACE + 'citations/' + NAMESPACE + 'citation[@handle="_%s"]' % cit_handle))
         
         primary = ['header', 'tags', 'events', 'people', 'families', 'places', \
                   'objects', 'repositories', 'notes', 'namemaps', 'citations']
