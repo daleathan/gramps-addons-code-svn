@@ -613,7 +613,7 @@ class bckGramplet(Gramplet):
         where_cit_on_families = root.findall('./' + NAMESPACE + 'families//' + NAMESPACE + 'citationref'  + parent_node)
         attributes = root.findall('.//' + NAMESPACE + 'attribute/' + NAMESPACE + 'citationref')
         
-        print('Attributes with citation reference:', len(attributes))
+        print('XML: Attributes with citation reference:', len(attributes))
         
         attributes = []
         
@@ -622,21 +622,21 @@ class bckGramplet(Gramplet):
             if element.attrib.get('type'): # attribute(s) on event with citations
                 cit_on_eatt.append(element.findall('./' + NAMESPACE + 'citationref'))
         
-        print('Attributes on events with citation reference:', len(cit_on_eatt))
+        print('XML: Attributes on events with citation reference:', len(cit_on_eatt))
         
         cit_on_patt = []
         for element in where_cit_on_individuals:
             if element.attrib.get('type'): # attribute(s) on person with citations
                 cit_on_patt.append(element.findall('./' + NAMESPACE + 'citationref'))
                 
-        print('Attributes on people with citation reference:', len(cit_on_patt))
+        print('XML: Attributes on people with citation reference:', len(cit_on_patt))
         
         cit_on_fatt = []
         for element in where_cit_on_families:
             if element.attrib.get('type'): # attribute(s) on family with citations
                 cit_on_fatt.append(element.findall('./' + NAMESPACE + 'citationref'))
                 
-        print('Attributes on families with citation reference:', len(cit_on_fatt))
+        print('XML: Attributes on families with citation reference:', len(cit_on_fatt))
         
         #for parent in cit_on_eatt:
             #if len(parent) < 2:
@@ -715,7 +715,7 @@ class bckGramplet(Gramplet):
                         
         
         cit_on_att = cit_on_eatt + cit_on_patt + cit_on_fatt
-        print('Nb of entries (could be multiple time):', len(cit_on_att))
+        print('XML: Nb of entries (could be multiple):', len(cit_on_att))
         
         cit_on_eatt = cit_on_patt = cit_on_fatt = []
         where_cit_on_events = where_cit_on_individuals = where_cit_on_families = []
@@ -742,18 +742,37 @@ class bckGramplet(Gramplet):
                                 #print(e.attrib, value) # citation handle and page/volume
         
         back_refs = []                    
-        new_src_handles = []
+        new_cit_handles = []
         for handle in self.dbstate.db.get_source_handles():
             src = self.dbstate.db.get_source_from_handle(handle)
             for (object_type, citationref) in self.dbstate.db.find_backlink_handles(handle):
                 if src and src.get_title() == _('Unknown'):
-                    new_src_handles.append(citationref)
+                    new_cit_handles.append(citationref)
         
-        print(len(new_src_handles))
+        print('DB: New citation handles (batch/import) : ', len(new_cit_handles))
+        
+        new_src_handles = []
+        for handle in self.dbstate.db.get_citation_handles():
+            new_src_handles.append(self.dbstate.db.citation_map.get(handle)[5])
+                    
+        print('DB: New source handles (shared references): ', len(new_src_handles))
+        
+        counter = 0
+        
+        for cit_handle in new_cit_handles:
+            if root.get('./' + NAMESPACE + 'citations/' + NAMESPACE + 'citation[@handle="_%s"]' % cit_handle):
+                root.append(root.find('./' + NAMESPACE + 'citations/' + NAMESPACE + 'citation[@handle="_%s"]' % cit_handle))
+                counter += 1
         
         for cit_handle in new_src_handles:
             if root.get('./' + NAMESPACE + 'citations/' + NAMESPACE + 'citation[@handle="_%s"]' % cit_handle):
                 root.append(root.find('./' + NAMESPACE + 'citations/' + NAMESPACE + 'citation[@handle="_%s"]' % cit_handle))
+                counter += 1
+                
+        print("XML vs DB: New data merged into '%(file)s' : %(nb)d" % {'file' : filename, 'nb' : counter})
+        
+        citations_copied = root.findall('./' + NAMESPACE + 'citation')
+        print("XML vs DB: New citations added : %d" % len(citations_copied))
         
         primary = ['header', 'tags', 'events', 'people', 'families', 'places', \
                   'objects', 'repositories', 'notes', 'namemaps', 'citations']
