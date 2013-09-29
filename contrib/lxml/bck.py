@@ -380,6 +380,8 @@ class bckGramplet(Gramplet):
                     citationrefs.append(item)
                     
         
+        self.squeletons(root)
+        
         self.DummyXML(filename, root)
                             
         root.clear()
@@ -856,3 +858,37 @@ class bckGramplet(Gramplet):
         
         root.clear()
         
+        
+    def squeletons(self, root):
+        """
+        Compare structures
+        """
+        
+        DB_handles = 0
+        DB_dates = 0
+        DB_pages = 0
+        DB_quays = 0
+        
+        for handle in self.dbstate.db.get_citation_handles():
+            DB_handles += 1
+            if self.dbstate.db.citation_map.get(handle)[2]:
+                DB_dates += 1
+            if self.dbstate.db.citation_map.get(handle)[3] != '':
+                DB_pages += 1
+            if self.dbstate.db.citation_map.get(handle)[4] != 2: # default = 2
+                DB_quays += 1
+        
+        print('DB values : %d, %d, %d, %d' % (DB_handles, DB_dates, DB_pages, DB_quays))
+        
+        XML_handles = root.findall('.//' + NAMESPACE + 'citation')
+        XML_dates = root.findall('./' + NAMESPACE + 'citations//' + NAMESPACE + 'dateval')
+        XML_pages = root.findall('./' + NAMESPACE + 'citations//' + NAMESPACE + 'page')
+        XML_quays = root.findall('./' + NAMESPACE + 'citations//' + NAMESPACE + 'confidence')
+        
+        XML_conf = 0
+        for confidence in XML_quays:
+            if confidence.text != '2':
+                XML_conf += 1
+
+        print('XML values : %d, %d, %d, %d' % (len(XML_handles), len(XML_dates), len(XML_pages), XML_conf))
+
