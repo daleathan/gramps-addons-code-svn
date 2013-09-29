@@ -864,13 +864,11 @@ class bckGramplet(Gramplet):
         Compare structures
         """
         
-        DB_handles = 0
         DB_dates = 0
         DB_pages = 0
         DB_quays = 0
         
         for handle in self.dbstate.db.get_citation_handles():
-            DB_handles += 1
             if self.dbstate.db.citation_map.get(handle)[2]:
                 DB_dates += 1
             if self.dbstate.db.citation_map.get(handle)[3] != '':
@@ -878,7 +876,7 @@ class bckGramplet(Gramplet):
             if self.dbstate.db.citation_map.get(handle)[4] != 2: # default = 2
                 DB_quays += 1
         
-        print('DB values : %d, %d, %d, %d' % (DB_handles, DB_dates, DB_pages, DB_quays))
+        print('DB values : %d, %d, %d, %d' % (self.dbstate.db.cmap_index, DB_dates, DB_pages, DB_quays))
         
         XML_handles = root.findall('.//' + NAMESPACE + 'citation')
         XML_dates = root.findall('./' + NAMESPACE + 'citations//' + NAMESPACE + 'dateval')
