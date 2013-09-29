@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-09-12 14:52+0200\n"
-"PO-Revision-Date: 2013-09-12 14:57+0200\n"
+"POT-Creation-Date: 2013-09-29 14:50+0200\n"
+"PO-Revision-Date: 2013-09-26 20:57+0200\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
@@ -31,16 +31,16 @@ msgstr "Foto markieren"
 msgid "Gramplet for tagging people in photos"
 msgstr "Gramplet zum markieren von Personen auf Fotos"
 
-#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:188
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:211
 msgid "Person"
 msgstr "Person"
 
-#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:543
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:523
 #, python-format
 msgid "Edit Person (%s)"
 msgstr "Person (%s) bearbeiten"
 
-#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:582
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:549
 msgid "Select Person"
 msgstr "Person wählen"
 
@@ -14833,4 +14833,3 @@ msgstr ""
 "<left_val>0.4738228023052216</left_val> <right_val>0.6522961258888245</"
 "right_val></_></_></trees> <stage_threshold>105.7611007690429700</"
 "stage_threshold> <parent>20</parent> <next>-1</next>"
-
