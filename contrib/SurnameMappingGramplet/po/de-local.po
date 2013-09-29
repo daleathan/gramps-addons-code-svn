@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-09-13 11:53+0200\n"
-"PO-Revision-Date: 2013-09-13 13:29+0200\n"
+"POT-Creation-Date: 2013-09-29 16:36+0200\n"
+"PO-Revision-Date: 2013-09-26 20:57+0200\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
@@ -47,7 +47,7 @@ msgstr "Zuordnung entfernen"
 #: SurnameMappingGramplet/SurnameMappingGramplet.py:77
 #: SurnameMappingGramplet/SurnameMappingGramplet.py:108
 msgid "Surname"
-msgstr "Nachname"
+msgstr "Familienname"
 
 #: SurnameMappingGramplet/SurnameMappingGramplet.py:78
 msgid "Group Name"
@@ -60,4 +60,3 @@ msgstr "Gruppe"
 #: SurnameMappingGramplet/SurnameMappingGramplet.py:140
 msgid "Create Mapping"
 msgstr "Zuordnung erstellen"
-
