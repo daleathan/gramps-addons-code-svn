@@ -150,8 +150,8 @@ class PhotoTaggingGramplet(Gramplet):
 
         self.button_index.connect("clicked", self.sel_person_clicked)
         self.button_add.connect("clicked", self.add_person_clicked)
-        self.button_del.connect("clicked", self.del_region_clicked)
-        self.button_clear.connect("clicked", self.clear_ref_clicked)
+        self.button_del.connect("clicked", self.clear_ref_clicked)
+        self.button_clear.connect("clicked", self.del_region_clicked)
         self.button_edit.connect("clicked", self.edit_person_clicked)
         self.button_detect.connect("clicked", self.detect_faces_clicked)
 
@@ -165,8 +165,8 @@ class PhotoTaggingGramplet(Gramplet):
         tooltips = gtk.Tooltips()
         self.button_index.set_tooltip(tooltips, "Select Person", None)
         self.button_add.set_tooltip(tooltips, "Add Person", None)
-        self.button_del.set_tooltip(tooltips, "Remove Reference", None)
-        self.button_clear.set_tooltip(tooltips, "Clear Reference", None)
+        self.button_del.set_tooltip(tooltips, "Clear Reference", None)
+        self.button_clear.set_tooltip(tooltips, "Remove Selection", None)
         self.button_edit.set_tooltip(tooltips, "Edit referenced Person", None)
 
         if computer_vision_available:
@@ -536,8 +536,8 @@ class PhotoTaggingGramplet(Gramplet):
     def enable_buttons(self):
         self.button_index.set_sensitive(self.current is not None)
         self.button_add.set_sensitive(self.current is not None)
-        self.button_del.set_sensitive(self.current is not None)
-        self.button_clear.set_sensitive(self.current is not None and self.current.person is not None)
+        self.button_del.set_sensitive(self.current is not None and self.current.person is not None)
+        self.button_clear.set_sensitive(self.current is not None)
         self.button_edit.set_sensitive(self.current is not None and self.current.person is not None)
         self.button_detect.set_sensitive(self.pixbuf is not None and computer_vision_available)
 
@@ -566,6 +566,7 @@ class PhotoTaggingGramplet(Gramplet):
             self.current = None
             self.selection = None
             self.refresh()
+            self.enable_buttons()
 
     def clear_ref_clicked(self, event):
         if self.clear_current_ref():
