@@ -304,7 +304,7 @@ class PhotoTaggingGramplet(Gramplet):
                             rect = mediaref.get_rectangle()
                             if rect is None:
                                 rect = (0, 0, 100, 100)
-                            coords = self.proportional_to_real(rect)
+                            coords = self.proportional_to_real_rect(rect)
                             region = Region(*coords)
                             region.person = person
                             region.mediaref = mediaref
@@ -343,19 +343,25 @@ class PhotoTaggingGramplet(Gramplet):
     # coordinate transformations
     # ======================================================
 
-    def proportional_to_real(self, rect):
+    def proportional_to_real(self, coord):
         """
         Translate proportional (ranging from 0 to 100) coordinates to image coordinates (in pixels).
         """
         w, h = self.original_image_size
-        return (rect[0] * w / 100, rect[1] * h / 100, rect[2] * w / 100, rect[3] * h / 100)
+        return map ((lambda x : int(round(x / 100))), (float(coord[0] * w), float(coord[1] * h)))
 
-    def real_to_proportional(self, rect):
+    def real_to_proportional(self, coord):
         """
         Translate image coordinates (in pixels) to proportional (ranging from 0 to 100).
         """
         w, h = self.original_image_size
-        return (rect[0] * 100 / w, rect[1] * 100 / h, rect[2] * 100 / w, rect[3] * 100 / h)
+        return map ((lambda x : int(round(x * 100))), (float(coord[0]) / w, float(coord[1]) / h))
+
+    def proportional_to_real_rect(self, rect):
+        return self.proportional_to_real(rect[0:2]) + self.proportional_to_real(rect[2:4])
+
+    def real_to_proportional_rect(self, rect):
+        return self.real_to_proportional(rect[0:2]) + self.real_to_proportional(rect[2:4])
 
     def image_to_screen(self, coords):
         """
@@ -392,12 +398,12 @@ class PhotoTaggingGramplet(Gramplet):
 
     def truncate_to_image_size(self, coords):
         x, y = coords
-        image_size = self.get_original_image_size()
+        (image_width, image_height) = self.get_original_image_size()
         x = max(x, 0)
-        x = min(x, image_size[0])
+        x = min(x, image_width)
         y = max(y, 0)
-        y = min(y, image_size[1])
-        return (x, y)
+        y = min(y, image_height)
+        return self.proportional_to_real(self.real_to_proportional((x, y)))
 
     # ======================================================
     # drawing and refreshing the image
@@ -484,7 +490,7 @@ class PhotoTaggingGramplet(Gramplet):
         if mediaref:
             return mediaref.get_rectangle()
         else:
-            return self.real_to_proportional(rect)
+            return self.real_to_proportional_rect(rect)
 
     def find_region(self, x, y):
         for region in self.regions:
@@ -675,7 +681,7 @@ class PhotoTaggingGramplet(Gramplet):
                         person = self.current.person
                         mediaref = self.current.mediaref
                         if person and mediaref:
-                            mediaref.set_rectangle(self.real_to_proportional(self.selection))
+                            mediaref.set_rectangle(self.real_to_proportional_rect(self.selection))
                             self.commit_person(person)
                         self.current.set_coords(*self.selection)
                     else:
