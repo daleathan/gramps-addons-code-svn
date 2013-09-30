@@ -626,12 +626,17 @@ class bckGramplet(Gramplet):
         
         print('XML: Attributes on events with citation reference:', len(cit_on_eatt))
         
+        cit_on_pers = []
         cit_on_patt = []
         cit_on_asso = []
         cit_on_addr = []
         cit_on_name = []
+        cit_on_rel = []
+        cit_on_note = []
         for element in where_cit_on_individuals:
-            if element.attrib.get('type'): # attribute(s) on person with citations
+            if element.tag == NAMESPACE + 'citationref': # citation on persons; where ????
+                cit_on_pers.append(element.findall('./' + NAMESPACE + 'citationref'))
+            if element.attrib.get('type'): # citation(s) on eventref or objref with attribute (+ attributes themself)
                 cit_on_patt.append(element.findall('./' + NAMESPACE + 'citationref'))
             if element.tag == NAMESPACE + 'personref': # citation on association
                 cit_on_asso.append(element.findall('./' + NAMESPACE + 'citationref'))
@@ -639,16 +644,28 @@ class bckGramplet(Gramplet):
                 cit_on_addr.append(element.findall('./' + NAMESPACE + 'citationref'))
             if element.tag == NAMESPACE + 'name': # citation on address
                 cit_on_name.append(element.findall('./' + NAMESPACE + 'citationref'))
-                
+            if element.tag == NAMESPACE + 'parentin' or element.tag == NAMESPACE + 'childof': # citation on relation (fam)
+                cit_on_rel.append(element.findall('./' + NAMESPACE + 'citationref'))
+            if element.tag == NAMESPACE + 'noteref': # url/link source on note 
+                cit_on_note.append(element.findall('./' + NAMESPACE + 'citationref'))
+        
+        print('*************************************************')
+        print('XML: Citation related to individuals: %d' % len(where_cit_on_individuals))
+        print('*************************************************')
+        print('XML: Citation on people: %d' % len(cit_on_pers))
         print('XML: Attributes on people with citation reference: %d' % len(cit_on_patt))
         print('XML: Associations with citation reference: %d' % len(cit_on_asso))
         print('XML: Addresses with citation reference: %d' % len(cit_on_addr))
         print('XML: Names with citation reference: %d' % len(cit_on_name))
-        print('XML: Attr + Asso + Addr + Names: %d' % (len(cit_on_patt) + len(cit_on_asso) + len(cit_on_addr) + len(cit_on_name)))
+        print('XML: Notes with citation reference: %d' % len(cit_on_note))
+        print('*************************************************')
+        print('XML: src + attr + asso + addr + names + rel + notes: %d' % (len(cit_on_pers) + len(cit_on_patt) +\
+                len(cit_on_asso) + len(cit_on_addr) + len(cit_on_name) + len(cit_on_rel) + len(cit_on_note)))
+        print('*************************************************')
         
         cit_on_fatt = []
         for element in where_cit_on_families:
-            if element.attrib.get('type'): # attribute(s) on family with citations
+            if element.tag == NAMESPACE + 'attribute': # attribute(s) on family with citations
                 cit_on_fatt.append(element.findall('./' + NAMESPACE + 'citationref'))
                 
         print('XML: Attributes on families with citation reference:', len(cit_on_fatt))
@@ -773,8 +790,20 @@ class bckGramplet(Gramplet):
             if not self.dbstate.db.citation_map.get(handle):
                 e = root.find('./' + NAMESPACE + 'citations/' + NAMESPACE + 'citation[@handle="_%s"]' % handle)
                 root.append(e)
+        
+        for parent in cit_on_rel:
+            handle = parent[0].attrib.get('hlink')[1:]
+            if not self.dbstate.db.citation_map.get(handle):
+                e = root.find('./' + NAMESPACE + 'citations/' + NAMESPACE + 'citation[@handle="_%s"]' % handle)
+                root.append(e)
+        
+        for parent in cit_on_note:
+            handle = parent[0].attrib.get('hlink')[1:]
+            if not self.dbstate.db.citation_map.get(handle):
+                e = root.find('./' + NAMESPACE + 'citations/' + NAMESPACE + 'citation[@handle="_%s"]' % handle)
+                root.append(e)
                 
-        cit_on_att = cit_on_asso = cit_on_addr = cit_on_name = []
+        cit_on_att = cit_on_asso = cit_on_addr = cit_on_name = cit_on_rel = cit_on_note = []
         
         back_refs = []                    
         new_cit_handles = []
