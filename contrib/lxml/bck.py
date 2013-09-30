@@ -642,7 +642,7 @@ class bckGramplet(Gramplet):
                 cit_on_asso.append(element.findall('./' + NAMESPACE + 'citationref'))
             if element.tag == NAMESPACE + 'address': # citation on address
                 cit_on_addr.append(element.findall('./' + NAMESPACE + 'citationref'))
-            if element.tag == NAMESPACE + 'name': # citation on address
+            if element.tag == NAMESPACE + 'name': # citation on name
                 cit_on_name.append(element.findall('./' + NAMESPACE + 'citationref'))
             if element.tag == NAMESPACE + 'parentin' or element.tag == NAMESPACE + 'childof': # citation on relation (fam)
                 cit_on_rel.append(element.findall('./' + NAMESPACE + 'citationref'))
