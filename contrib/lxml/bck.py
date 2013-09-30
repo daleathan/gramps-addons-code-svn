@@ -663,11 +663,15 @@ class bckGramplet(Gramplet):
                 len(cit_on_asso) + len(cit_on_addr) + len(cit_on_name) + len(cit_on_rel) + len(cit_on_note)))
         print('*************************************************')
         
+        cit_on_fams = []
         cit_on_fatt = []
         for element in where_cit_on_families:
-            if element.tag == NAMESPACE + 'attribute': # attribute(s) on family with citations
+            if element.tag == NAMESPACE + 'citationref': # citation on families; where ????
+                cit_on_fams.append(element.findall('./' + NAMESPACE + 'citationref'))
+            if element.tag == NAMESPACE + 'attribute': # citation(s) on eventref with attribute (+ attributes themself)
                 cit_on_fatt.append(element.findall('./' + NAMESPACE + 'citationref'))
                 
+        print('XML: Citation on families: %d' % len(cit_on_fams))
         print('XML: Attributes on families with citation reference:', len(cit_on_fatt))
         
         #for parent in cit_on_eatt:
