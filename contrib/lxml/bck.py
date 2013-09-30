@@ -746,7 +746,7 @@ class bckGramplet(Gramplet):
                         #print('family: ', root.find(root.find('./' + NAMESPACE + 'citations/' + NAMESPACE + 'citation[@handle="_%s"]' % handle))
                         
         
-        #cit_on_att = cit_on_eatt + cit_on_patt + cit_on_fatt
+        cit_on_att = cit_on_eatt + cit_on_patt + cit_on_fatt
         #print('XML: Nb of entries (could be multiple):', len(cit_on_att))
         
         cit_on_eatt = cit_on_patt = cit_on_fatt = []
