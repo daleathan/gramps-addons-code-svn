@@ -41,7 +41,7 @@ import gzip
 #
 #------------------------------------------------------------------------
 from gen.plug import Gramplet
-from gen.lib import date, note
+from gen.lib import calendar, date, note
 import DateHandler
 from TransUtils import get_addon_translator
 _ = get_addon_translator(__file__).ugettext
@@ -864,6 +864,7 @@ class bckGramplet(Gramplet):
         Compare structures
         """
         
+        cit_dates = []
         DB_dates = 0
         DB_pages = 0
         DB_quays = 0
@@ -871,10 +872,17 @@ class bckGramplet(Gramplet):
         for handle in self.dbstate.db.get_citation_handles():
             if self.dbstate.db.citation_map.get(handle)[2]:
                 DB_dates += 1
+                cit_dates.append(self.dbstate.db.citation_map.get(handle)[2][5])
             if self.dbstate.db.citation_map.get(handle)[3] != '':
                 DB_pages += 1
             if self.dbstate.db.citation_map.get(handle)[4] != 2: # default = 2
                 DB_quays += 1
+        
+        cit_dates.sort()
+        for sdn in cit_dates:
+            print(calendar.gregorian_ymd(sdn))
+        
+        cit_dates = []
         
         print('DB values : %d, %d, %d, %d' % (self.dbstate.db.cmap_index, DB_dates, DB_pages, DB_quays))
         
@@ -887,6 +895,15 @@ class bckGramplet(Gramplet):
         for confidence in XML_quays:
             if confidence.text != '2':
                 XML_conf += 1
+        
+        sorted_dates = []        
+        for date in XML_dates:
+            sorted_dates.append(date.get('val'))
+            
+        sorted_dates.sort()
+        print(sorted_dates)
+        
+        sorted_dates = []
 
         print('XML values : %d, %d, %d, %d' % (len(XML_handles), len(XML_dates), len(XML_pages), XML_conf))
 
