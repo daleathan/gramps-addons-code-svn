@@ -627,11 +627,24 @@ class bckGramplet(Gramplet):
         print('XML: Attributes on events with citation reference:', len(cit_on_eatt))
         
         cit_on_patt = []
+        cit_on_asso = []
+        cit_on_addr = []
+        cit_on_name = []
         for element in where_cit_on_individuals:
             if element.attrib.get('type'): # attribute(s) on person with citations
                 cit_on_patt.append(element.findall('./' + NAMESPACE + 'citationref'))
+            if element.tag == NAMESPACE + 'personref': # citation on association
+                cit_on_asso.append(element.findall('./' + NAMESPACE + 'citationref'))
+            if element.tag == NAMESPACE + 'address': # citation on address
+                cit_on_addr.append(element.findall('./' + NAMESPACE + 'citationref'))
+            if element.tag == NAMESPACE + 'name': # citation on address
+                cit_on_name.append(element.findall('./' + NAMESPACE + 'citationref'))
                 
-        print('XML: Attributes on people with citation reference:', len(cit_on_patt))
+        print('XML: Attributes on people with citation reference: %d' % len(cit_on_patt))
+        print('XML: Associations with citation reference: %d' % len(cit_on_asso))
+        print('XML: Addresses with citation reference: %d' % len(cit_on_addr))
+        print('XML: Names with citation reference: %d' % len(cit_on_name))
+        print('XML: Attr + Asso + Addr + Names: %d' % (len(cit_on_patt) + len(cit_on_asso) + len(cit_on_addr) + len(cit_on_name)))
         
         cit_on_fatt = []
         for element in where_cit_on_families:
@@ -742,6 +755,26 @@ class bckGramplet(Gramplet):
                         #for value in children:
                             #if value != '2' or value == '': # default for confidence (or empty)
                                 #print(e.attrib, value) # citation handle and page/volume
+        
+        for parent in cit_on_asso:
+            handle = parent[0].attrib.get('hlink')[1:]
+            if not self.dbstate.db.citation_map.get(handle):
+                e = root.find('./' + NAMESPACE + 'citations/' + NAMESPACE + 'citation[@handle="_%s"]' % handle)
+                root.append(e)
+        
+        for parent in cit_on_addr:
+            handle = parent[0].attrib.get('hlink')[1:]
+            if not self.dbstate.db.citation_map.get(handle):
+                e = root.find('./' + NAMESPACE + 'citations/' + NAMESPACE + 'citation[@handle="_%s"]' % handle)
+                root.append(e)
+                
+        for parent in cit_on_name:
+            handle = parent[0].attrib.get('hlink')[1:]
+            if not self.dbstate.db.citation_map.get(handle):
+                e = root.find('./' + NAMESPACE + 'citations/' + NAMESPACE + 'citation[@handle="_%s"]' % handle)
+                root.append(e)
+                
+        cit_on_att = cit_on_asso = cit_on_addr = cit_on_name = []
         
         back_refs = []                    
         new_cit_handles = []
