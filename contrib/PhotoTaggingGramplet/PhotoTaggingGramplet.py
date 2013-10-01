@@ -75,6 +75,7 @@ MIN_ZOOM = 0.05
 MAX_SIZE = 2000
 MIN_SIZE = 50
 SHADING_OPACITY = 0.7
+RADIUS = 5
 
 path, filename = os.path.split(__file__)
 HAARCASCADE_PATH = os.path.join(path, 'haarcascade_frontalface_alt.xml')
@@ -627,7 +628,6 @@ class PhotoTaggingGramplet(Gramplet):
     def button_press_event(self, obj, event):
         if not self.is_image_loaded():
             return
-        RADIUS = 5
         if event.button==1:
             if self.selection:
                 x1, y1, x2, y2 = self.selection
