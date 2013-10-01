@@ -557,7 +557,10 @@ class PhotoTaggingGramplet(Gramplet):
             person = sel.run()
             if person:
                 self.set_current_person(person)
+                self.current = None
+                self.selection = None
                 self.refresh()
+                self.enable_buttons()
 
     def del_region_clicked(self, event):
         if self.current:
@@ -602,7 +605,10 @@ class PhotoTaggingGramplet(Gramplet):
 
     def new_person_added(self, person):
         self.set_current_person(person)
+        self.current = None
+        self.selection = None
         self.refresh()
+        self.enable_buttons()
 
     def set_current_person(self, person):
         if self.current and person:
