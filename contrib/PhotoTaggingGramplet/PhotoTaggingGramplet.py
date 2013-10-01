@@ -27,6 +27,8 @@
 # Standard python modules
 #
 #-------------------------------------------------------------------------
+from __future__ import division
+
 import os
 from gen.ggettext import sgettext as _
 
@@ -81,20 +83,20 @@ path, filename = os.path.split(__file__)
 HAARCASCADE_PATH = os.path.join(path, 'haarcascade_frontalface_alt.xml')
 
 def resize_keep_aspect(orig_x, orig_y, target_x, target_y):
-    orig_aspect = float(orig_x) / orig_y
-    target_aspect = float(target_x) / target_y
+    orig_aspect = orig_x / orig_y
+    target_aspect = target_x / target_y
     if orig_aspect > target_aspect:
         return (target_x, target_x * orig_y // orig_x)
     else:
         return (target_y * orig_x // orig_y, target_y)
 
 def scale_to_fit(orig_x, orig_y, target_x, target_y):
-    orig_aspect = float(orig_x) / orig_y
-    target_aspect = float(target_x) / target_y
+    orig_aspect = orig_x / orig_y
+    target_aspect = target_x / target_y
     if orig_aspect > target_aspect:
-        return float(target_x) / orig_x
+        return target_x / orig_x
     else:
-        return float(target_y) / orig_y
+        return target_y / orig_y
 
 class Region(object):
 
@@ -349,14 +351,14 @@ class PhotoTaggingGramplet(Gramplet):
         Translate proportional (ranging from 0 to 100) coordinates to image coordinates (in pixels).
         """
         w, h = self.original_image_size
-        return map ((lambda x : int(round(x / 100))), (float(coord[0] * w), float(coord[1] * h)))
+        return map ((lambda x : int(round(x / 100))), (coord[0] * w, coord[1] * h))
 
     def real_to_proportional(self, coord):
         """
         Translate image coordinates (in pixels) to proportional (ranging from 0 to 100).
         """
         w, h = self.original_image_size
-        return map ((lambda x : int(round(x * 100))), (float(coord[0]) / w, float(coord[1]) / h))
+        return map ((lambda x : int(round(x * 100))), (coord[0] / w, coord[1] / h))
 
     def proportional_to_real_rect(self, rect):
         return self.proportional_to_real(rect[0:2]) + self.proportional_to_real(rect[2:4])
@@ -371,11 +373,11 @@ class PhotoTaggingGramplet(Gramplet):
         viewport_rect = self.viewport.get_allocation()
         image_rect = self.scaled_size
         if image_rect[0] < viewport_rect.width:
-            offset_x = float(image_rect[0] - viewport_rect.width) / 2
+            offset_x = (image_rect[0] - viewport_rect.width) / 2
         else:
             offset_x = 0.0
         if image_rect[1] < viewport_rect.height:
-            offset_y = float(image_rect[1] - viewport_rect.height) / 2
+            offset_y = (image_rect[1] - viewport_rect.height) / 2
         else:
             offset_y = 0.0
         return (int(coords[0] * self.scale - offset_x), int(coords[1] * self.scale - offset_y))
@@ -388,11 +390,11 @@ class PhotoTaggingGramplet(Gramplet):
         viewport_rect = self.viewport.get_allocation()
         image_rect = self.scaled_size
         if image_rect[0] < viewport_rect.width:
-            offset_x = float(image_rect[0] - viewport_rect.width) / 2
+            offset_x = (image_rect[0] - viewport_rect.width) / 2
         else:
             offset_x = 0.0
         if image_rect[1] < viewport_rect.height:
-            offset_y = float(image_rect[1] - viewport_rect.height) / 2
+            offset_y = (image_rect[1] - viewport_rect.height) / 2
         else:
             offset_y = 0.0
         return (int((coords[0] + offset_x) / self.scale), int((coords[1] + offset_y) / self.scale))
