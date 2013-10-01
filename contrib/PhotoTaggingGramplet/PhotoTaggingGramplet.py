@@ -120,6 +120,7 @@ class Region(object):
 class PhotoTaggingGramplet(Gramplet):
 
     def init(self):
+        self.loaded = False
         self.pixbuf = None
         self.current = None
         self.scaled_pixbuf = None
@@ -542,7 +543,7 @@ class PhotoTaggingGramplet(Gramplet):
         self.button_del.set_sensitive(self.current is not None and self.current.person is not None)
         self.button_clear.set_sensitive(self.current is not None)
         self.button_edit.set_sensitive(self.current is not None and self.current.person is not None)
-        self.button_detect.set_sensitive(self.pixbuf is not None and computer_vision_available)
+        self.button_detect.set_sensitive(self.is_image_loaded() and computer_vision_available)
 
     # ======================================================
     # toolbar button event handles
