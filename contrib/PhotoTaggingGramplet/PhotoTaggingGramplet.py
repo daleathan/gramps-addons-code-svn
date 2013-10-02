@@ -117,6 +117,9 @@ class Region(object):
     def contains(self, x, y):
         return self.x1 <= x <= self.x2 and self.y1 <= y <= self.y2
 
+    def area(self):
+        return abs(self.x1 - self.x2) * abs(self.y1 - self.y2)
+
 class PhotoTaggingGramplet(Gramplet):
 
     def init(self):
@@ -525,10 +528,12 @@ class PhotoTaggingGramplet(Gramplet):
             return self.real_to_proportional_rect(rect)
 
     def find_region(self, x, y):
+        result = None
         for region in self.regions:
             if region.contains(x, y):
-                return region
-        return None
+                if result is None or result.area() > region.area():
+                    result = region
+        return result
 
     # ======================================================
     # helpers for updating database objects
