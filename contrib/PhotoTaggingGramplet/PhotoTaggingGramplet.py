@@ -78,6 +78,7 @@ MAX_SIZE = 2000
 MIN_SIZE = 50
 SHADING_OPACITY = 0.7
 RADIUS = 5
+DETECTED_REGION_PADDING = 10
 
 path, filename = os.path.split(__file__)
 HAARCASCADE_PATH = os.path.join(path, 'haarcascade_frontalface_alt.xml')
@@ -644,7 +645,8 @@ class PhotoTaggingGramplet(Gramplet):
                                      1.2, 2, cv.CV_HAAR_DO_CANNY_PRUNING, 
                                      min_face_size)
         for ((x, y, width, height), neighbors) in faces:
-            region = Region(x, y, x + width, y + height)
+            region = Region(x - DETECTED_REGION_PADDING, y - DETECTED_REGION_PADDING,
+                            x + width + DETECTED_REGION_PADDING, y + height + DETECTED_REGION_PADDING)
             if self.enclosing_region(region) is None:
                 self.regions.append(region)
         self.refresh()
