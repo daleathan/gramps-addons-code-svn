@@ -150,6 +150,8 @@ class PhotoTaggingGramplet(Gramplet):
         self.button_del = gtk.ToolButton(gtk.STOCK_REMOVE)
         self.button_clear = gtk.ToolButton(gtk.STOCK_CLEAR)
         self.button_edit = gtk.ToolButton(gtk.STOCK_EDIT)
+        self.button_zoom_in = gtk.ToolButton(gtk.STOCK_ZOOM_IN)
+        self.button_zoom_out = gtk.ToolButton(gtk.STOCK_ZOOM_OUT)
         self.button_detect = gtk.ToolButton(gtk.STOCK_EXECUTE)
 
         self.button_index.connect("clicked", self.sel_person_clicked)
@@ -157,6 +159,8 @@ class PhotoTaggingGramplet(Gramplet):
         self.button_del.connect("clicked", self.clear_ref_clicked)
         self.button_clear.connect("clicked", self.del_region_clicked)
         self.button_edit.connect("clicked", self.edit_person_clicked)
+        self.button_zoom_in.connect("clicked", self.zoom_in_clicked)
+        self.button_zoom_out.connect("clicked", self.zoom_out_clicked)
         self.button_detect.connect("clicked", self.detect_faces_clicked)
 
         button_panel.pack_start(self.button_index, expand=False, fill=False, padding=5)
@@ -164,6 +168,8 @@ class PhotoTaggingGramplet(Gramplet):
         button_panel.pack_start(self.button_del, expand=False, fill=False, padding=5)
         button_panel.pack_start(self.button_clear, expand=False, fill=False, padding=5)
         button_panel.pack_start(self.button_edit, expand=False, fill=False, padding=5)
+        button_panel.pack_start(self.button_zoom_in, expand=False, fill=False, padding=5)
+        button_panel.pack_start(self.button_zoom_out, expand=False, fill=False, padding=5)
         button_panel.pack_start(self.button_detect, expand=False, fill=False, padding=5)
 
         tooltips = gtk.Tooltips()
@@ -172,6 +178,8 @@ class PhotoTaggingGramplet(Gramplet):
         self.button_del.set_tooltip(tooltips, "Clear Reference", None)
         self.button_clear.set_tooltip(tooltips, "Remove Selection", None)
         self.button_edit.set_tooltip(tooltips, "Edit referenced Person", None)
+        self.button_zoom_in.set_tooltip(tooltips, "Zoom In", None)
+        self.button_zoom_out.set_tooltip(tooltips, "Zoom Out", None)
 
         if computer_vision_available:
             self.button_detect.set_tooltip(tooltips, "Detect faces", None)
@@ -410,7 +418,7 @@ class PhotoTaggingGramplet(Gramplet):
         return self.proportional_to_real(self.real_to_proportional((x, y)))
 
     # ======================================================
-    # drawing and refreshing the image
+    # drawing, refreshing and zooming the image
     # ======================================================
 
     def draw_selection(self):
@@ -473,6 +481,26 @@ class PhotoTaggingGramplet(Gramplet):
         self.image.set_from_pixbuf(self.scaled_image)
         self.image.set_size_request(*self.scaled_size)
         self.ebox_ref.set_size_request(*self.scaled_size)
+
+    def can_zoom_in(self):
+        scaled_size = (int(self.original_image_size[0] * self.scale * RESIZE_RATIO), int(self.original_image_size[1] * self.scale * RESIZE_RATIO))
+        return scaled_size[0] < MAX_SIZE and scaled_size[1] < MAX_SIZE
+
+    def can_zoom_out(self):
+        scaled_size = (int(self.original_image_size[0] * self.scale * RESIZE_RATIO), int(self.original_image_size[1] * self.scale * RESIZE_RATIO))
+        return scaled_size[0] >= MIN_SIZE and scaled_size[1] >= MIN_SIZE
+
+    def zoom_in(self):
+        if self.can_zoom_in():
+            self.scale *= RESIZE_RATIO
+            self.rescale()
+            self.enable_buttons()
+
+    def zoom_out(self):
+        if self.can_zoom_out():
+            self.scale /= RESIZE_RATIO
+            self.rescale()
+            self.enable_buttons()
 
     # ======================================================
     # tooltips
@@ -543,6 +571,8 @@ class PhotoTaggingGramplet(Gramplet):
         self.button_del.set_sensitive(self.current is not None and self.current.person is not None)
         self.button_clear.set_sensitive(self.current is not None)
         self.button_edit.set_sensitive(self.current is not None and self.current.person is not None)
+        self.button_zoom_in.set_sensitive(self.is_image_loaded() and self.can_zoom_in())
+        self.button_zoom_out.set_sensitive(self.is_image_loaded() and self.can_zoom_out())
         self.button_detect.set_sensitive(self.is_image_loaded() and computer_vision_available)
 
     # ======================================================
@@ -584,6 +614,12 @@ class PhotoTaggingGramplet(Gramplet):
         if person:
             EditPerson(self.dbstate, self.uistate, self.track, person)
             self.refresh()
+
+    def zoom_in_clicked(self, event):
+        self.zoom_in()
+
+    def zoom_out_clicked(self, event):
+        self.zoom_out()
 
     def detect_faces_clicked(self, event):
         min_face_size = (50,50) # FIXME: get from setting
@@ -738,15 +774,9 @@ class PhotoTaggingGramplet(Gramplet):
         if not self.is_image_loaded():
             return
         if event.direction == gtk.gdk.SCROLL_UP:
-            scaled_size = (int(self.original_image_size[0] * self.scale * RESIZE_RATIO), int(self.original_image_size[1] * self.scale * RESIZE_RATIO))
-            if scaled_size[0] < MAX_SIZE and scaled_size[1] < MAX_SIZE:
-                self.scale *= RESIZE_RATIO
-                self.rescale()
+            self.zoom_in()
         elif event.direction == gtk.gdk.SCROLL_DOWN:
-            scaled_size = (int(self.original_image_size[0] * self.scale * RESIZE_RATIO), int(self.original_image_size[1] * self.scale * RESIZE_RATIO))
-            if scaled_size[0] >= MIN_SIZE and scaled_size[1] >= MIN_SIZE:
-                self.scale /= RESIZE_RATIO
-                self.rescale()
+            self.zoom_out()
 
     # ======================================================
     # list event handles
