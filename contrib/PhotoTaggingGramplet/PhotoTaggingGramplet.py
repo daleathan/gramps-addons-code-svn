@@ -228,6 +228,7 @@ class PhotoTaggingGramplet(Gramplet):
         self.treeview = gtk.TreeView(self.treestore)
         self.treeview.set_size_request(400, -1)
         self.treeview.connect("cursor-changed", self.cursor_changed)
+        self.treeview.connect("row-activated", self.row_activated)
         self.column1 = gtk.TreeViewColumn(_(''))
         self.column2 = gtk.TreeViewColumn(_('Person'))
         self.treeview.append_column(self.column1)
@@ -808,15 +809,26 @@ class PhotoTaggingGramplet(Gramplet):
     # ======================================================
 
     def cursor_changed(self, treeview):
+        self.current = self.get_selected_region()
+        if self.current is not None:
+            self.selection = self.current.coords()
+        self.image.queue_draw()
+        self.enable_buttons()
+
+    def row_activated(self, treeview, path, view_column):
+        self.edit_person_clicked(None)
+
+    # ======================================================
+    # helpers for list event handlers
+    # ======================================================
+
+    def get_selected_region(self):
         (model, pathlist) = self.treeview.get_selection().get_selected_rows()
         for path in pathlist:
             tree_iter = model.get_iter(path)
             i = model.get_value(tree_iter, 0)
-            self.current = self.regions[i - 1]
-            self.selection = self.current.coords()
-            self.image.queue_draw()
-            self.enable_buttons()
-            return # there should not be more than one row selected
+            return self.regions[i - 1]   
+        return None
 
     # ======================================================
     # refreshing the list
