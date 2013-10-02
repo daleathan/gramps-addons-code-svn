@@ -120,6 +120,11 @@ class Region(object):
     def area(self):
         return abs(self.x1 - self.x2) * abs(self.y1 - self.y2)
 
+    def intersects(self, other):
+        # assumes that x1 < x2 and y1 < y2
+        return not (self.x2 < other.x1 or self.x1 > other.x2 or
+                    self.y2 < other.y1 or self.y1 > other.y2)
+
 class PhotoTaggingGramplet(Gramplet):
 
     def init(self):
@@ -640,7 +645,8 @@ class PhotoTaggingGramplet(Gramplet):
                                      min_face_size)
         for ((x, y, width, height), neighbors) in faces:
             region = Region(x, y, x + width, y + height)
-            self.regions.append(region)
+            if self.enclosing_region(region) is None:
+                self.regions.append(region)
         self.refresh()
 
     # ======================================================
@@ -670,6 +676,18 @@ class PhotoTaggingGramplet(Gramplet):
                 self.current.mediaref = None
                 return True
         return False
+
+    def intersects_any(self, region):
+        for r in self.regions:
+            if r.intersects(region):
+                return True
+        return False
+
+    def enclosing_region(self, region):
+        for r in self.regions:
+            if r.contains(region.x1, region.y1) and r.contains(region.x2, region.y2):
+                return r
+        return None
 
     # ======================================================
     # mouse event handlers
