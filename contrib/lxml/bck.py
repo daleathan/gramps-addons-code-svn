@@ -626,7 +626,10 @@ class bckGramplet(Gramplet):
         
         print('XML: Attributes on events with citation reference:', len(cit_on_eatt))
         
-        cit_on_pers = root.findall('.//' + NAMESPACE + 'person' + NAMESPACE + 'citationref')
+        cit_on_pers = []
+        for person in root.findall('.//' + NAMESPACE + 'person/'):
+            if person.tag == NAMESPACE + 'citationref':
+                cit_on_pers.append(person)
 
         cit_on_patt = []
         cit_on_asso = []
@@ -659,8 +662,11 @@ class bckGramplet(Gramplet):
                 len(cit_on_asso) + len(cit_on_addr) + len(cit_on_name) + len(cit_on_objref) ))
         print('*************************************************')
         
-        cit_on_fams = root.findall('.//' + NAMESPACE + 'family' + NAMESPACE + 'citationref')
-        
+        cit_on_fams = []
+        for family in root.findall('.//' + NAMESPACE + 'family/'):
+            if family.tag == NAMESPACE + 'citationref':
+                cit_on_fams.append(person)
+                
         cit_on_fatt = []
         cit_on_childref = []
         for element in where_cit_on_families:
@@ -668,10 +674,13 @@ class bckGramplet(Gramplet):
                 cit_on_fatt.append(element.findall('./' + NAMESPACE + 'citationref'))
             if element.tag == NAMESPACE + 'childref': # citation(s) on childref (parent/child rel)
                 cit_on_childref.append(element.findall('./' + NAMESPACE + 'citationref'))
-                
+        
+        print('XML: Citation related to families: %d' % ( len(cit_on_fams) + len(where_cit_on_families)))
+        print('*************************************************')
         print('XML: Citation on families: %d' % len(cit_on_fams))
         print('XML: Attributes on families with citation reference:', len(cit_on_fatt))
         print('XML: Child reference with citation reference:', len(cit_on_childref))
+        print('*************************************************')
         
         #for parent in cit_on_eatt:
             #if len(parent) < 2:
