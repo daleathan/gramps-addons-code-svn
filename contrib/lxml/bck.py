@@ -682,6 +682,7 @@ class bckGramplet(Gramplet):
         print('XML: Child reference with citation reference:', len(cit_on_childref))
         print('*************************************************')
         
+        
         #for parent in cit_on_eatt:
             #if len(parent) < 2:
                 #handle = parent[0].attrib.get('hlink')[1:]
@@ -962,10 +963,17 @@ class bckGramplet(Gramplet):
         
         XML_dates = XML_datevals + XML_dateranges
         
+        very_low = '0'
         XML_conf = 0
         for confidence in XML_quays:
             if confidence.text != '2':
                 XML_conf += 1
+                
+        # dirty workaround !
+        # confidence = "0" not written into XML
+        
+        if len(XML_quays) != len(XML_handles):
+            very_low = len(XML_handles) - len(XML_quays)
         
         #sorted_dates = []        
         #for date in XML_dates:
@@ -976,5 +984,5 @@ class bckGramplet(Gramplet):
         
         #sorted_dates = []
 
-        print('XML values : %d, %d, %d, %d' % (len(XML_handles), len(XML_dates), len(XML_pages), XML_conf))
+        print('XML values : %d, %d, %d, %d' % (len(XML_handles), len(XML_dates), len(XML_pages), XML_conf + int(very_low)))
 
