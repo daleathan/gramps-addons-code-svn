@@ -853,16 +853,23 @@ class bckGramplet(Gramplet):
         print("XML vs DB: New data merged into '%(file)s' : %(nb)d" % {'file' : filename, 'nb' : counter})
         
         citations_copied = root.findall('./' + NAMESPACE + 'citation')
+        sources = []
         for cit in citations_copied:
             src = cit.find('./' + NAMESPACE + 'sourceref')
             src_handle = src.attrib.get('hlink')
-            try:
-                root.append(root.find('./' + NAMESPACE + 'sources/' + NAMESPACE + 'source[@handle="%s"]' % src_handle))
-            except:
-                print('source %s does not match' % src_handle)
-                continue
+            if src_handle not in sources:
+                sources.append(src_handle)
+                try:
+                    root.append(root.find('./' + NAMESPACE + 'sources/' + NAMESPACE + 'source[@handle="%s"]' % src_handle))
+                except:
+                    print('source %s does not match' % src_handle)
+                    continue
             
         print("XML vs DB: New citations added : %d" % len(citations_copied))
+        
+        sources_copied = root.findall('./' + NAMESPACE + 'source')
+        
+        print("XML vs DB: New sources added : %d" % len(sources_copied))
         
         primary = ['header', 'tags', 'events', 'people', 'families', 'places', \
                   'objects', 'repositories', 'notes', 'namemaps', 'sources', 'citations']
