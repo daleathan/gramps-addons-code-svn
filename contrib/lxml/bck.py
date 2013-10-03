@@ -649,14 +649,14 @@ class bckGramplet(Gramplet):
                 cit_on_objref.append(element.findall('./' + NAMESPACE + 'citationref'))
         
         print('*************************************************')
-        print('XML: Citation related to individuals: %d' % ( len(cit_on_pers) + len(where_cit_on_individuals)))
+        print('XML: Citations related to individuals: %d' % ( len(cit_on_pers) + len(where_cit_on_individuals)))
         print('*************************************************')
-        print('XML: Citation on people: %d' % len(cit_on_pers))
+        print('XML: Citations on people: %d' % len(cit_on_pers))
         print('XML: Attributes on people with citation reference: %d' % len(cit_on_patt))
         print('XML: Associations with citation reference: %d' % len(cit_on_asso))
         print('XML: Addresses with citation reference: %d' % len(cit_on_addr))
         print('XML: Names with citation reference: %d' % len(cit_on_name))
-        print('XML: Objref with citation reference: %d' % len(cit_on_objref))
+        print('XML: Objrefs with citation reference: %d' % len(cit_on_objref))
         print('*************************************************')
         print('XML: attr + asso + addr + names + objref: %d' % ( len(cit_on_patt) +\
                 len(cit_on_asso) + len(cit_on_addr) + len(cit_on_name) + len(cit_on_objref) ))
@@ -777,8 +777,8 @@ class bckGramplet(Gramplet):
                             #if value != '2' or value == '': # default for confidence (or empty)
                                 #print(e.attrib, value) # citation handle and page/volume
                     except:
-                        print('do not match')
-                        return
+                        print('citation %s does not match' % handle)
+                        continue
             else:
                 for i in range(len(parent)):
                     handle = parent[i].attrib.get('hlink')[1:]
@@ -791,8 +791,8 @@ class bckGramplet(Gramplet):
                                 #if value != '2' or value == '': # default for confidence (or empty)
                                     #print(e.attrib, value) # citation handle and page/volume
                         except:
-                            print('do not match')
-                            return
+                            print('citation %s does not match' % handle)
+                            continue
         
         for parent in cit_on_asso:
             handle = parent[0].attrib.get('hlink')[1:]
@@ -852,25 +852,30 @@ class bckGramplet(Gramplet):
                 
         print("XML vs DB: New data merged into '%(file)s' : %(nb)d" % {'file' : filename, 'nb' : counter})
         
-        try:
-            citations_copied = root.findall('./' + NAMESPACE + 'citation')
-        except:
-            return
+        citations_copied = root.findall('./' + NAMESPACE + 'citation')
+        for cit in citations_copied:
+            src = cit.find('./' + NAMESPACE + 'sourceref')
+            src_handle = src.attrib.get('hlink')
+            try:
+                root.append(root.find('./' + NAMESPACE + 'sources/' + NAMESPACE + 'source[@handle="%s"]' % src_handle))
+            except:
+                print('source %s does not match' % src_handle)
+                continue
             
         print("XML vs DB: New citations added : %d" % len(citations_copied))
         
         primary = ['header', 'tags', 'events', 'people', 'families', 'places', \
-                  'objects', 'repositories', 'notes', 'namemaps', 'citations']
+                  'objects', 'repositories', 'notes', 'namemaps', 'sources', 'citations']
         
         print('*** XML copy of tables ***')
         for node in primary:
             try:
                 record = NAMESPACE + node
+                for r in root.findall(record):
+                    print('Skip %s' % node)
+                    root.remove(r)
             except:
                 return
-            for r in root.findall(record):
-                print('Skip %s' % node)
-                root.remove(r)
                 
         # citations
         
