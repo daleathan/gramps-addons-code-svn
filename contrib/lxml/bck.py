@@ -769,22 +769,30 @@ class bckGramplet(Gramplet):
             if len(parent) < 2:
                 handle = parent[0].attrib.get('hlink')[1:]
                 if not self.dbstate.db.citation_map.get(handle):
-                    e = root.find('./' + NAMESPACE + 'citations/' + NAMESPACE + 'citation[@handle="_%s"]' % handle)
-                    root.append(e)
-                    #children = e.itertext()
-                    #for value in children:
-                        #if value != '2' or value == '': # default for confidence (or empty)
-                            #print(e.attrib, value) # citation handle and page/volume
-            else:
-                for i in range(len(parent)):
-                    handle = parent[i].attrib.get('hlink')[1:]
-                    if not self.dbstate.db.citation_map.get(handle):
-                        e = root.find('.' + NAMESPACE + 'citations/' + NAMESPACE + 'citation[@handle="_%s"]' % handle)
+                    try: # e = None
+                        e = root.find('./' + NAMESPACE + 'citations/' + NAMESPACE + 'citation[@handle="_%s"]' % handle)
                         root.append(e)
                         #children = e.itertext()
                         #for value in children:
                             #if value != '2' or value == '': # default for confidence (or empty)
                                 #print(e.attrib, value) # citation handle and page/volume
+                    except:
+                        print('do not match')
+                        return
+            else:
+                for i in range(len(parent)):
+                    handle = parent[i].attrib.get('hlink')[1:]
+                    if not self.dbstate.db.citation_map.get(handle):
+                        try: # e = None
+                            e = root.find('.' + NAMESPACE + 'citations/' + NAMESPACE + 'citation[@handle="_%s"]' % handle)
+                            root.append(e)
+                            #children = e.itertext()
+                            #for value in children:
+                                #if value != '2' or value == '': # default for confidence (or empty)
+                                    #print(e.attrib, value) # citation handle and page/volume
+                        except:
+                            print('do not match')
+                            return
         
         for parent in cit_on_asso:
             handle = parent[0].attrib.get('hlink')[1:]
@@ -803,12 +811,14 @@ class bckGramplet(Gramplet):
             if not self.dbstate.db.citation_map.get(handle):
                 e = root.find('./' + NAMESPACE + 'citations/' + NAMESPACE + 'citation[@handle="_%s"]' % handle)
                 root.append(e)
+                e = []
         
         for parent in cit_on_objref:
             handle = parent[0].attrib.get('hlink')[1:]
             if not self.dbstate.db.citation_map.get(handle):
                 e = root.find('./' + NAMESPACE + 'citations/' + NAMESPACE + 'citation[@handle="_%s"]' % handle)
                 root.append(e)
+                e = []
                 
         cit_on_att = cit_on_asso = cit_on_addr = cit_on_name = cit_on_objref = []
         
@@ -842,7 +852,11 @@ class bckGramplet(Gramplet):
                 
         print("XML vs DB: New data merged into '%(file)s' : %(nb)d" % {'file' : filename, 'nb' : counter})
         
-        citations_copied = root.findall('./' + NAMESPACE + 'citation')
+        try:
+            citations_copied = root.findall('./' + NAMESPACE + 'citation')
+        except:
+            return
+            
         print("XML vs DB: New citations added : %d" % len(citations_copied))
         
         primary = ['header', 'tags', 'events', 'people', 'families', 'places', \
@@ -850,7 +864,10 @@ class bckGramplet(Gramplet):
         
         print('*** XML copy of tables ***')
         for node in primary:
-            record = NAMESPACE + node
+            try:
+                record = NAMESPACE + node
+            except:
+                return
             for r in root.findall(record):
                 print('Skip %s' % node)
                 root.remove(r)
