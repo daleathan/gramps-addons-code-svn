@@ -60,10 +60,11 @@ class RebuildTypes(tool.Tool):
             event = self.db.get_event_from_handle(handle)
             if event.get_type().is_custom():
                 links = [x[0] for x in self.db.find_backlink_handles(handle)]
-                if 'Person' in links:
-                    person_event_types.append(str(event.get_type()))
-                if 'Family' in links:
-                    family_event_types.append(str(event.get_type()))
+                type_str = str(event.get_type())
+                if 'Person' in links and type_str not in person_event_types:
+                    person_event_types.append(type_str)
+                if 'Family' in links and type_str not in family_event_types:
+                    family_event_types.append(type_str)
 
         self.db.individual_event_names.update(person_event_types)
         self.db.family_event_names.update(family_event_types)
