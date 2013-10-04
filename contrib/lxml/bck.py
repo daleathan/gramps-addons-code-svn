@@ -50,6 +50,7 @@ import Utils
 import GrampsDisplay
 from QuestionDialog import ErrorDialog
 from Filters import GenericFilter, Rules
+from gui.selectors.selectnote import SelectNote
 
 import diff
 
@@ -443,7 +444,9 @@ class bckGramplet(Gramplet):
         return timestamp
     
     def select_note(self, obj):
-        print(self.get_note)
+        #sel = SelectNote(self.dbstate, self.uistate, [],
+                               #_("Select Note"), skip=[])
+        #sel.run()
         pass
     
     def get_note(self):
@@ -467,6 +470,7 @@ class bckGramplet(Gramplet):
         #note_handle = 'c8c202feca8198236b7'
         
         return note.handle
+    
     
     
     def get_db(self, filename):
