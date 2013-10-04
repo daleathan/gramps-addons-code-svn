@@ -138,7 +138,6 @@ class bckGramplet(Gramplet):
         self.button.connect('clicked', self.__select_file)
         
         #self.filter_note = None
-        
         #notes_cell = gtk.CellRendererText()
         #notes_cell.set_property('ellipsize', pango.ELLIPSIZE_END)
         #self.filter_note.pack_start(notes_cell, True)
@@ -148,6 +147,13 @@ class bckGramplet(Gramplet):
         
         vbox = gtk.VBox()
         hbox = gtk.HBox()
+        
+        # experimental note selector
+        
+        notes = gtk.Button(_("Note selector"))
+        
+        notes.connect("clicked", self.select_note)
+        vbox.pack_start(notes, False, False, 0) # v1
         
         # area
         
@@ -160,20 +166,20 @@ class bckGramplet(Gramplet):
         self.text.set_text(_('No file parsed...'))
         self.import_text.set_buffer(self.text)
         
-        vbox.pack_start(self.import_text, True, True, 0) # v1
+        vbox.pack_start(self.import_text, True, True, 0) # v2
         
         # button
         
         button = gtk.Button(_("Run"))
         button.connect("clicked", self.run)
-        vbox.pack_start(button, False, False, 0) # v2
+        vbox.pack_start(button, False, False, 0) # v3
         
         # build
         
         hbox.pack_start(self.entry, True, True, 0)
         hbox.pack_end(self.button, False, False, 0)
         
-        vbox.pack_end(hbox, False, False, 0) # v3
+        vbox.pack_end(hbox, False, False, 0) # v4
         
         self.gui.get_container_widget().remove(self.gui.textview)
         self.gui.get_container_widget().add_with_viewport(vbox)
@@ -436,6 +442,9 @@ class bckGramplet(Gramplet):
         timestamp = self.dbstate.db.person_map.get(str(person_handle))[17]
         return timestamp
     
+    def select_note(self, obj):
+        print(self.get_note)
+        pass
     
     def get_note(self):
         
