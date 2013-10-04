@@ -220,6 +220,7 @@ class PhotoTaggingGramplet(Gramplet):
 
         self.scrolled_window = gtk.ScrolledWindow()
         self.scrolled_window.add(self.viewport)
+        self.scrolled_window.set_size_request(200, -1)
 
         hpaned.pack1(self.scrolled_window, resize=True, shrink=False)
 
