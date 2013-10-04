@@ -2,8 +2,8 @@
 {"n": "Quelle hinzufügen","i": "AttachSource","t": "Tool","d": "Fügt verteilte Quellen mehreren Objekten hinzu.","v": "0.0.20","g": "4.0","z": "AttachSourceTool.addon.tgz"}
 {"n": "Geburtstags Gramplet","i": "Birthdays","t": "Gramplet","d": "ein Gramplet welches die Geburtstage von lebenden Personen zeigt","v": "1.0.21","g": "4.0","z": "BirthdaysGramplet.addon.tgz"}
 {"n": "Geschätzte Daten berechnen","i": "calculateestimateddates","t": "Tool","d": "Berechnet geschätzte Daten für Geburt und Tod.","v": "0.90.17","g": "4.0","z": "CalculateEstimatedDates.addon.tgz"}
-{"n": "Zensusbericht","i": "census_report","t": "Report","d": "Bericht der Zensusereignise für eine Person.","v": "1.0.28","g": "4.0","z": "Census.addon.tgz"}
-{"n": "Zensus Gramplet","i": "Census Gramplet","t": "Gramplet","d": "Gramplet Schnittstelle für Zensusdaten","v": "1.0.28","g": "4.0","z": "Census.addon.tgz"}
+{"n": "Zensusbericht","i": "census_report","t": "Report","d": "Bericht der Zensusereignise für eine Person.","v": "1.0.29","g": "4.0","z": "Census.addon.tgz"}
+{"n": "Zensus Gramplet","i": "Census Gramplet","t": "Gramplet","d": "Gramplet Schnittstelle für Zensusdaten","v": "1.0.29","g": "4.0","z": "Census.addon.tgz"}
 {"n": "Großschreibung von Vornamen korrigieren","i": "chgivenname","t": "Tool","d": "Durchsucht die gesamte Datenbank und versucht Großschreibung von Vornamen zu korrigieren.","v": "1.0.21","g": "4.0.2","z": "ChangeGivenNames.addon.tgz"}
 {"n": "Command Line Merge","i": "climerge","t": "Tool","d": "Primäre Objekte über die Kommandozeile zusammenfassen.","v": "1.0.14","g": "4.0","z": "CliMerge.addon.tgz"}
 {"n": "Zwischenablage Gramplet","i": "Clipboard Gramplet","t": "Gramplet","d": "Gramplet zum gruppieren von Elementen","v": "1.0.20","g": "4.0","z": "ClipboardGramplet.addon.tgz"}

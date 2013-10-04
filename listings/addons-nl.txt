@@ -2,8 +2,8 @@
 {"n": "Bron toevoegen","i": "AttachSource","t": "Tool","d": "Een gedeelde bron aan verschillende objecten toevoegen.","v": "0.0.20","g": "4.0","z": "AttachSourceTool.addon.tgz"}
 {"n": "Verjaardagen","i": "Birthdays","t": "Gramplet","d": "een gramplet dat de verjaardagen van de nog in leven zijnde personen toont","v": "1.0.21","g": "4.0","z": "BirthdaysGramplet.addon.tgz"}
 {"n": "Geschatte datums berekenen","i": "calculateestimateddates","t": "Tool","d": "Geschatte datums voor geboorte en overlijden berekenen.","v": "0.90.17","g": "4.0","z": "CalculateEstimatedDates.addon.tgz"}
-{"n": "Volkstelling","i": "census_report","t": "Report","d": "Verslag van de volkstellinggebeurtenissen van een persoon.","v": "1.0.28","g": "4.0","z": "Census.addon.tgz"}
-{"n": "Volkstelling","i": "Census Gramplet","t": "Gramplet","d": "Gramplet ingavevensterdie voor volkstellinggegevens","v": "1.0.28","g": "4.0","z": "Census.addon.tgz"}
+{"n": "Volkstelling","i": "census_report","t": "Report","d": "Verslag van de volkstellinggebeurtenissen van een persoon.","v": "1.0.29","g": "4.0","z": "Census.addon.tgz"}
+{"n": "Volkstelling","i": "Census Gramplet","t": "Gramplet","d": "Gramplet ingavevensterdie voor volkstellinggegevens","v": "1.0.29","g": "4.0","z": "Census.addon.tgz"}
 {"n": "Hoofdletters van voornamen verbeteren","i": "chgivenname","t": "Tool","d": "Het volledige gegevensbestand wordt doorzocht en er wordt getracht de hoofdletters van de voornamen te verbeteren.","v": "1.0.21","g": "4.0.2","z": "ChangeGivenNames.addon.tgz"}
 {"n": "Command Line Merge","i": "climerge","t": "Tool","d": "Primaire objecten via de opdrachtregel samenvoegen.","v": "1.0.14","g": "4.0","z": "CliMerge.addon.tgz"}
 {"n": "Klembord","i": "Clipboard Gramplet","t": "Gramplet","d": "Gramplet om gegevens te groeperen","v": "1.0.20","g": "4.0","z": "ClipboardGramplet.addon.tgz"}

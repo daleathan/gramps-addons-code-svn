@@ -2,8 +2,8 @@
 {"n": "Koppla källa","i": "AttachSource","t": "Tool","d": "Kopplar en delad källa till flera objekt.","v": "0.0.20","g": "4.0","z": "AttachSourceTool.addon.tgz"}
 {"n": "Födelsedags-Gramplet","i": "Birthdays","t": "Gramplet","d": "en Gramplet, som visar födelsedagarna för levande personer","v": "1.0.21","g": "4.0","z": "BirthdaysGramplet.addon.tgz"}
 {"n": "Beräknade uppskattade datum","i": "calculateestimateddates","t": "Tool","d": "Beräkna uppskattningar av datum för födelse och död.","v": "0.90.17","g": "4.0","z": "CalculateEstimatedDates.addon.tgz"}
-{"n": "Folkräkningsrapport","i": "census_report","t": "Report","d": "Rapport över folkräkningshändelser för en person","v": "1.0.28","g": "4.0","z": "Census.addon.tgz"}
-{"n": "Census Gramplet","i": "Census Gramplet","t": "Gramplet","d": "Gramplet interface for census data","v": "1.0.28","g": "4.0","z": "Census.addon.tgz"}
+{"n": "Folkräkningsrapport","i": "census_report","t": "Report","d": "Rapport över folkräkningshändelser för en person","v": "1.0.29","g": "4.0","z": "Census.addon.tgz"}
+{"n": "Census Gramplet","i": "Census Gramplet","t": "Gramplet","d": "Gramplet interface for census data","v": "1.0.29","g": "4.0","z": "Census.addon.tgz"}
 {"n": "Ordna stavning av förnamn","i": "chgivenname","t": "Tool","d": "Söker igenom hela databasen och försöker ordna stavning av förnamnen","v": "1.0.21","g": "4.0.2","z": "ChangeGivenNames.addon.tgz"}
 {"n": "Command Line Merge","i": "climerge","t": "Tool","d": "Merge primary objects via the command line.","v": "1.0.14","g": "4.0","z": "CliMerge.addon.tgz"}
 {"n": "Urklippsgramplet","i": "Clipboard Gramplet","t": "Gramplet","d": "Gramplet för gruppering av poster","v": "1.0.20","g": "4.0","z": "ClipboardGramplet.addon.tgz"}
