@@ -130,7 +130,7 @@ class Region(object):
         return abs(self.x1 - self.x2) * abs(self.y1 - self.y2)
 
     def intersects(self, other):
-        # assumes that x1 < x2 and y1 < y2
+        # assumes that x1 <= x2 and y1 <= y2
         return not (self.x2 < other.x1 or self.x1 > other.x2 or
                     self.y2 < other.y1 or self.y1 > other.y2)
 
@@ -491,10 +491,10 @@ class PhotoTaggingGramplet(Gramplet):
         self.draw_region_frame(cr, x1, y1, x2, y2)
 
     def draw_region_frame(self, cr, x1, y1, x2, y2):
-        cr.set_source_rgb(1.0, 1.0, 1.0)
+        cr.set_source_rgb(1.0, 1.0, 1.0) # white
         cr.rectangle(x1, y1, x2 - x1, y2 - y1)
         cr.stroke()
-        cr.set_source_rgb(0.0, 0.0, 1.0)
+        cr.set_source_rgb(0.0, 0.0, 1.0) # blue
         cr.rectangle(x1 - 2, y1 - 2, x2 - x1 + 4, y2 - y1 + 4)
         cr.stroke()
 
