@@ -709,6 +709,7 @@ class PhotoTaggingGramplet(Gramplet):
         if not self.is_image_loaded():
             return
         if event.button==1:
+            self.start_point_screen = (event.x, event.y)
             if self.selection:
                 x1, y1, x2, y2 = self.selection
                 sx1, sy1 = self.image_to_screen((x1, y1))
@@ -722,11 +723,11 @@ class PhotoTaggingGramplet(Gramplet):
                 elif abs(event.x - sx2) <= RADIUS and abs(event.y - sy2) <= RADIUS:
                     self.start_point = (x1, y1)
                 else:
-                    self.start_point = self.screen_to_image((event.x, event.y))
+                    self.start_point = self.screen_to_image(self.start_point_screen)
                     self.start_point = self.truncate_to_image_size(self.start_point)
                     self.current = None
             else:
-                self.start_point = self.screen_to_image((event.x, event.y))
+                self.start_point = self.screen_to_image(self.start_point_screen)
                 self.start_point = self.truncate_to_image_size(self.start_point)
 
     def button_release_event(self, obj, event):
@@ -742,7 +743,8 @@ class PhotoTaggingGramplet(Gramplet):
 
                 self.image.set_from_pixbuf(self.scaled_image)
 
-                if x2 - x1 >= MIN_SELECTION_SIZE and y2 - y1 >= MIN_SELECTION_SIZE:
+                if (abs(self.start_point_screen[0] - event.x) >= MIN_SELECTION_SIZE and
+                    abs(self.start_point_screen[1] - event.y) >= MIN_SELECTION_SIZE):
                     if self.current:
                         person = self.current.person
                         mediaref = self.current.mediaref
