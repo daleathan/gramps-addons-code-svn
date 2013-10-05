@@ -204,19 +204,19 @@ class PhotoTaggingGramplet(Gramplet):
         self.image.connect_after("expose-event", self.expose_handler)
         self.image.connect("query-tooltip", self.show_tooltip)
 
-        self.ebox_ref = gtk.EventBox()
-        self.ebox_ref.connect('button-press-event', self.button_press_event)
-        self.ebox_ref.connect('button-release-event', self.button_release_event)
-        self.ebox_ref.connect('motion-notify-event', self.motion_notify_event)
-        self.ebox_ref.connect('scroll-event', self.motion_scroll_event)
-        self.ebox_ref.add_events(gtk.gdk.BUTTON_PRESS_MASK)
-        self.ebox_ref.add_events(gtk.gdk.BUTTON_RELEASE_MASK)
-        self.ebox_ref.add_events(gtk.gdk.POINTER_MOTION_MASK)
+        self.event_box = gtk.EventBox()
+        self.event_box.connect('button-press-event', self.button_press_event)
+        self.event_box.connect('button-release-event', self.button_release_event)
+        self.event_box.connect('motion-notify-event', self.motion_notify_event)
+        self.event_box.connect('scroll-event', self.motion_scroll_event)
+        self.event_box.add_events(gtk.gdk.BUTTON_PRESS_MASK)
+        self.event_box.add_events(gtk.gdk.BUTTON_RELEASE_MASK)
+        self.event_box.add_events(gtk.gdk.POINTER_MOTION_MASK)
 
-        self.ebox_ref.add(self.image)
+        self.event_box.add(self.image)
 
         self.viewport = gtk.Viewport()
-        self.viewport.add(self.ebox_ref)
+        self.viewport.add(self.event_box)
 
         self.scrolled_window = gtk.ScrolledWindow()
         self.scrolled_window.add(self.viewport)
@@ -491,7 +491,7 @@ class PhotoTaggingGramplet(Gramplet):
         self.scaled_image = self.pixbuf.scale_simple(self.scaled_size[0], self.scaled_size[1], gtk.gdk.INTERP_BILINEAR)
         self.image.set_from_pixbuf(self.scaled_image)
         self.image.set_size_request(*self.scaled_size)
-        self.ebox_ref.set_size_request(*self.scaled_size)
+        self.event_box.set_size_request(*self.scaled_size)
 
     def can_zoom_in(self):
         scaled_size = (int(self.original_image_size[0] * self.scale * RESIZE_RATIO), int(self.original_image_size[1] * self.scale * RESIZE_RATIO))
