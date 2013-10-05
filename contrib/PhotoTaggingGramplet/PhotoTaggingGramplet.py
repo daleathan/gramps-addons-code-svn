@@ -720,16 +720,6 @@ class PhotoTaggingGramplet(Gramplet):
             else:
                 self.start_point = self.screen_to_image((event.x, event.y))
                 self.start_point = self.truncate_to_image_size(self.start_point)
-            # prepare drawing of a feedback rectangle
-            self.rect_pixbuf = self.image.get_pixbuf()
-            w,h = self.rect_pixbuf.get_width(), self.rect_pixbuf.get_height()
-            self.rect_pixbuf_render = gtk.gdk.Pixbuf(gtk.gdk.COLORSPACE_RGB, False, 8, w, h)
-            self.cm = gtk.gdk.colormap_get_system()
-            color = self.cm.alloc_color(gtk.gdk.Color("blue"))
-            self.rect_pixmap = gtk.gdk.Pixmap(None, w, h, self.cm.get_visual().depth)
-            self.rect_pixmap.set_colormap(self.cm)
-            self.rect_gc = self.rect_pixmap.new_gc()
-            self.rect_gc.set_foreground(color)
 
     def button_release_event(self, obj, event):
         if not self.is_image_loaded():
@@ -745,9 +735,7 @@ class PhotoTaggingGramplet(Gramplet):
 
                 self.selection = (x1, y1, x2, y2)
 
-                if self.rect_pixbuf is None:
-                    return
-                self.image.set_from_pixbuf(self.rect_pixbuf)
+                self.image.set_from_pixbuf(self.scaled_image)
 
                 if x2 - x1 >= 5 and y2 - y1 >= 5:
                     if self.current:
@@ -762,7 +750,6 @@ class PhotoTaggingGramplet(Gramplet):
                         self.regions.append(region)
                         self.current = region
                         self.refresh()
-                    self.rect_pixbuf = None
                 else:
                     self.current = self.find_region(end_point[0], end_point[1])
                     self.selection = self.current.coords() if self.current else None
@@ -781,19 +768,7 @@ class PhotoTaggingGramplet(Gramplet):
             x2 = max(self.start_point[0], end_point[0])
             y1 = min(self.start_point[1], end_point[1])
             y2 = max(self.start_point[1], end_point[1])
-
             self.selection = (x1, y1, x2, y2)
-
-            w, h = (self.rect_pixbuf.get_width(), self.rect_pixbuf.get_height())
-            image_rect = self.original_image_size
-
-            self.rect_pixmap.draw_pixbuf(self.rect_gc, self.rect_pixbuf, 0, 0, 0, 0)        
-
-            self.rect_pixbuf_render.get_from_drawable(self.rect_pixmap,
-                                gtk.gdk.colormap_get_system(),
-                                0,0,0,0, w, h)
-            self.image.set_from_pixbuf(self.rect_pixbuf_render)
-
         self.in_region = self.find_region(end_point_orig[0], end_point_orig[1])
         self.image.queue_draw()
 
