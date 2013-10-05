@@ -47,6 +47,7 @@ import gobject
 #-------------------------------------------------------------------------
 import const
 import Utils
+from config import config
 from gen.db import DbTxn
 from gen.display.name import displayer as name_displayer
 from gen.plug import Gramplet
@@ -64,6 +65,20 @@ try:
     computer_vision_available = True
 except ImportError:
     computer_vision_available = False
+
+#-------------------------------------------------------------------------
+#
+# configuration
+#
+#-------------------------------------------------------------------------
+
+GRAMPLET_CONFIG_NAME = "phototagginggramplet"
+CONFIG = config.register_manager(GRAMPLET_CONFIG_NAME)
+CONFIG.register("detection.box_size", (50,50))
+CONFIG.load()
+CONFIG.save()
+
+MIN_FACE_SIZE = CONFIG.get("detection.box_size")
 
 #-------------------------------------------------------------------------
 #
@@ -147,6 +162,9 @@ class PhotoTaggingGramplet(Gramplet):
         self.gui.get_container_widget().remove(self.gui.textview)
         self.gui.get_container_widget().add_with_viewport(self.gui.WIDGET)
         self.top.show_all()
+
+    def on_save(self):
+        CONFIG.save()
 
     # ======================================================
     # building the GUI
@@ -652,7 +670,7 @@ class PhotoTaggingGramplet(Gramplet):
         self.zoom_out()
 
     def detect_faces_clicked(self, event):
-        min_face_size = (50,50) # FIXME: get from setting
+        min_face_size = MIN_FACE_SIZE
         media = self.get_current_object()
         image_path = Utils.media_path_full(self.dbstate.db, media.get_path())
         cv_image = cv.LoadImage(image_path, cv.CV_LOAD_IMAGE_GRAYSCALE)
