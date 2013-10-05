@@ -96,8 +96,37 @@ RADIUS = 5
 DETECTED_REGION_PADDING = 10
 MIN_SELECTION_SIZE = 10
 
+MIN_CORNER_GRABBER = 50
+MIN_SIDE_GRABBER = 50
+MIN_GRABBER_PADDING = 20
+MIN_SIDE_FOR_INSIDE_GRABBERS = (2 * (MIN_CORNER_GRABBER + MIN_GRABBER_PADDING) + 
+                                MIN_SIDE_GRABBER)
+
+INSIDE = 0
+GRABBER_UPPER_LEFT = 1
+GRABBER_UPPER = 2
+GRABBER_UPPER_RIGHT = 3
+GRABBER_RIGHT = 4
+GRABBER_LOWER_RIGHT = 5
+GRABBER_LOWER = 6
+GRABBER_LOWER_LEFT = 7
+GRABBER_LEFT = 8
+
 path, filename = os.path.split(__file__)
 HAARCASCADE_PATH = os.path.join(path, 'haarcascade_frontalface_alt.xml')
+
+CURSOR_UPPER = gtk.gdk.Cursor(gtk.gdk.TOP_SIDE)
+CURSOR_LOWER = gtk.gdk.Cursor(gtk.gdk.BOTTOM_SIDE)
+CURSOR_LEFT = gtk.gdk.Cursor(gtk.gdk.LEFT_SIDE)
+CURSOR_RIGHT = gtk.gdk.Cursor(gtk.gdk.RIGHT_SIDE)
+CURSOR_UPPER_LEFT = gtk.gdk.Cursor(gtk.gdk.TOP_LEFT_CORNER)
+CURSOR_UPPER_RIGHT = gtk.gdk.Cursor(gtk.gdk.TOP_RIGHT_CORNER)
+CURSOR_LOWER_LEFT = gtk.gdk.Cursor(gtk.gdk.BOTTOM_LEFT_CORNER)
+CURSOR_LOWER_RIGHT = gtk.gdk.Cursor(gtk.gdk.BOTTOM_RIGHT_CORNER)
+
+CURSORS = [None, CURSOR_UPPER_LEFT, CURSOR_UPPER, CURSOR_UPPER_RIGHT,
+           CURSOR_RIGHT, CURSOR_LOWER_RIGHT, CURSOR_LOWER, CURSOR_LOWER_LEFT,
+           CURSOR_LEFT]
 
 def resize_keep_aspect(orig_x, orig_y, target_x, target_y):
     orig_aspect = orig_x / orig_y
@@ -121,6 +150,76 @@ def order_coordinates(point1, point2):
     y1 = min(point1[1], point2[1])
     y2 = max(point1[1], point2[1])
     return (x1, y1, x2, y2)
+
+def can_grab(rect, x, y):
+    (x1, y1, x2, y2) = rect
+    if (x2 - x1 >= MIN_SIDE_FOR_INSIDE_GRABBERS and 
+        y2 - y1 >= MIN_SIDE_FOR_INSIDE_GRABBERS):
+        # grabbers are inside
+        if x < x1 or x > x2 or y < y1 or y > y2:
+            return None
+        elif y1 <= y <= y1 + MIN_CORNER_GRABBER: # upper grabbers
+            if x1 <= x <= x1 + MIN_CORNER_GRABBER:
+                return GRABBER_UPPER_LEFT
+            elif (x1 + MIN_CORNER_GRABBER + MIN_GRABBER_PADDING <= x and 
+                  x <= x2 - MIN_CORNER_GRABBER - MIN_GRABBER_PADDING):
+                return GRABBER_UPPER
+            elif x2 - MIN_CORNER_GRABBER <= x <= x2:
+                return GRABBER_UPPER_RIGHT
+            else:
+                return INSIDE
+        elif y2 - MIN_CORNER_GRABBER <= y <= y2: # lower grabbers
+            if x1 <= x <= x1 + MIN_CORNER_GRABBER:
+                return GRABBER_LOWER_LEFT
+            elif (x1 + MIN_CORNER_GRABBER + MIN_GRABBER_PADDING <= x and 
+                  x <= x2 - MIN_CORNER_GRABBER - MIN_GRABBER_PADDING):
+                return GRABBER_LOWER
+            elif x2 - MIN_CORNER_GRABBER <= x <= x2:
+                return GRABBER_LOWER_RIGHT
+            else:
+                return INSIDE
+        elif (y1 + MIN_CORNER_GRABBER + MIN_GRABBER_PADDING <= y and
+              y <= y2 - MIN_CORNER_GRABBER - MIN_GRABBER_PADDING):
+            # middle grabbers (left and right side)
+            if x1 <= x <= x1 + MIN_CORNER_GRABBER:
+                return GRABBER_LEFT
+            elif x2 - MIN_CORNER_GRABBER <= x <= x2:
+                return GRABBER_RIGHT
+            else:
+                return INSIDE
+        else:
+            return INSIDE
+    else:
+        # grabbers are outside
+        if x1 <= x <= x2 and y1 <= y <= y2:
+            return INSIDE
+        elif y1 - MIN_CORNER_GRABBER <= y <= y1: # upper grabbers
+            if x1 - MIN_CORNER_GRABBER <= x <= x1:
+                return GRABBER_UPPER_LEFT
+            elif x1 <= x <= x2:
+                return GRABBER_UPPER
+            elif x2 <= x <= x2 + MIN_CORNER_GRABBER:
+                return GRABBER_UPPER_RIGHT
+            else:
+                return None
+        elif y2 <= y <= y2 + MIN_CORNER_GRABBER: # lower grabbers
+            if x1 - MIN_CORNER_GRABBER <= x <= x1:
+                return GRABBER_LOWER_LEFT
+            elif x1 <= x <= x2:
+                return GRABBER_LOWER
+            elif x2 <= x <= x2 + MIN_CORNER_GRABBER:
+                return GRABBER_LOWER_RIGHT
+            else:
+                return None
+        elif y1 <= y <= y2:
+            if x1 - MIN_CORNER_GRABBER <= x <= x1:
+                return GRABBER_LEFT
+            elif x2 <= x <= x2 + MIN_CORNER_GRABBER:
+                return GRABBER_RIGHT
+            else:
+                return None
+        else:
+            return None
 
 class Region(object):
 
@@ -291,10 +390,11 @@ class PhotoTaggingGramplet(Gramplet):
 
     def main(self):
         self.loaded = False
-        self.start_point = None
+        self.start_point_screen = None
         self.selection = None
         self.current = None
         self.in_region = None
+        self.grabber = None
         self.regions = []
         self.translation = None
         self.pixbuf = None
@@ -319,7 +419,7 @@ class PhotoTaggingGramplet(Gramplet):
     # ======================================================
 
     def load_image(self, media):
-        self.start_point = None
+        self.start_point_screen = None
         self.selection = None
         self.in_region = None
 
@@ -496,6 +596,8 @@ class PhotoTaggingGramplet(Gramplet):
                 x1, y1, x2, y2 = self.rect_image_to_screen(region.coords())
                 self.draw_region_frame(cr, x1, y1, x2, y2)
 
+        self.draw_grabber(cr)
+
     def draw_transparent_shading(self, cr, x1, y1, x2, y2, w, h, offset_x, offset_y):
         cr.set_source_rgba(1.0, 1.0, 1.0, SHADING_OPACITY)
         cr.rectangle(offset_x, offset_y, x1 - offset_x, y1 - offset_y)
@@ -518,6 +620,100 @@ class PhotoTaggingGramplet(Gramplet):
         cr.set_source_rgb(0.0, 0.0, 1.0) # blue
         cr.rectangle(x1 - 2, y1 - 2, x2 - x1 + 4, y2 - y1 + 4)
         cr.stroke()
+
+    def draw_grabber(self, cr):
+        if self.current is not None and self.grabber is not None:
+            x1, y1, x2, y2 = self.rect_image_to_screen(self.selection)
+            cr.set_source_rgb(1.0, 0, 0)
+            if (x2 - x1 >= MIN_SIDE_FOR_INSIDE_GRABBERS and
+                y2 - y1 >= MIN_SIDE_FOR_INSIDE_GRABBERS):
+                if self.grabber == GRABBER_UPPER_LEFT:
+                    cr.rectangle(x1,
+                                 y1,
+                                 MIN_CORNER_GRABBER,
+                                 MIN_CORNER_GRABBER)
+                elif self.grabber == GRABBER_UPPER:
+                    cr.rectangle(x1 + MIN_CORNER_GRABBER + MIN_GRABBER_PADDING,
+                                 y1,
+                                 x2 - x1 - 2 * (MIN_CORNER_GRABBER + MIN_GRABBER_PADDING),
+                                 MIN_CORNER_GRABBER)
+                elif self.grabber == GRABBER_UPPER_RIGHT:
+                    cr.rectangle(x2 - MIN_CORNER_GRABBER,
+                                 y1,
+                                 MIN_CORNER_GRABBER,
+                                 MIN_CORNER_GRABBER)
+                elif self.grabber == GRABBER_RIGHT:
+                    cr.rectangle(x2 - MIN_CORNER_GRABBER,
+                                 y1 + MIN_CORNER_GRABBER + MIN_GRABBER_PADDING,
+                                 MIN_CORNER_GRABBER,
+                                 y2 - y1 - 2 * (MIN_CORNER_GRABBER + MIN_GRABBER_PADDING))
+                elif self.grabber == GRABBER_LOWER_RIGHT:
+                    cr.rectangle(x2 - MIN_CORNER_GRABBER,
+                                 y2 - MIN_CORNER_GRABBER,
+                                 MIN_CORNER_GRABBER,
+                                 MIN_CORNER_GRABBER)
+                elif self.grabber == GRABBER_LOWER:
+                    cr.rectangle(x1 + MIN_CORNER_GRABBER + MIN_GRABBER_PADDING,
+                                 y2 - MIN_CORNER_GRABBER,
+                                 x2 - x1 - 2 * (MIN_CORNER_GRABBER + MIN_GRABBER_PADDING),
+                                 MIN_CORNER_GRABBER)
+                elif self.grabber == GRABBER_LOWER_LEFT:
+                    cr.rectangle(x1,
+                                 y2 - MIN_CORNER_GRABBER,
+                                 MIN_CORNER_GRABBER,
+                                 MIN_CORNER_GRABBER)
+                elif self.grabber == GRABBER_LEFT:
+                    cr.rectangle(x1,
+                                 y1 + MIN_CORNER_GRABBER + MIN_GRABBER_PADDING, 
+                                 MIN_CORNER_GRABBER, 
+                                 y2 - y1 - 2 * (MIN_CORNER_GRABBER + MIN_GRABBER_PADDING))
+                else:
+                    assert False # this case should never be reached
+            else:
+                if self.grabber == GRABBER_UPPER_LEFT:
+                    cr.rectangle(x1 - MIN_CORNER_GRABBER,
+                                 y1 - MIN_CORNER_GRABBER,
+                                 MIN_CORNER_GRABBER,
+                                 MIN_CORNER_GRABBER)
+                elif self.grabber == GRABBER_UPPER:
+                    cr.rectangle(x1,
+                                 y1 - MIN_CORNER_GRABBER,
+                                 x2 - x1,
+                                 MIN_CORNER_GRABBER)
+                elif self.grabber == GRABBER_UPPER_RIGHT:
+                    cr.rectangle(x2,
+                                 y1 - MIN_CORNER_GRABBER,
+                                 MIN_CORNER_GRABBER,
+                                 MIN_CORNER_GRABBER)
+                elif self.grabber == GRABBER_RIGHT:
+                    cr.rectangle(x2,
+                                 y1,
+                                 MIN_CORNER_GRABBER,
+                                 y2 - y1)
+                elif self.grabber == GRABBER_LOWER_RIGHT:
+                    cr.rectangle(x2,
+                                 y2,
+                                 MIN_CORNER_GRABBER,
+                                 MIN_CORNER_GRABBER)
+                elif self.grabber == GRABBER_LOWER:
+                    cr.rectangle(x1,
+                                 y2,
+                                 x2 - x1,
+                                 MIN_CORNER_GRABBER)
+                elif self.grabber == GRABBER_LOWER_LEFT:
+                    cr.rectangle(x1 - MIN_CORNER_GRABBER,
+                                 y2,
+                                 MIN_CORNER_GRABBER,
+                                 MIN_CORNER_GRABBER)
+                elif self.grabber == GRABBER_LEFT:
+                    cr.rectangle(x1 - MIN_CORNER_GRABBER,
+                                 y1, 
+                                 MIN_CORNER_GRABBER, 
+                                 y2 - y1)
+                else:
+                    assert False # this case should never be reached
+            cr.stroke()
+
 
     def refresh(self):
         self.image.queue_draw()
@@ -744,65 +940,77 @@ class PhotoTaggingGramplet(Gramplet):
             return
         if event.button==1:
             self.start_point_screen = (event.x, event.y)
-            if self.selection:
-                x1, y1, x2, y2 = self.selection
-                sx1, sy1 = self.image_to_screen((x1, y1))
-                sx2, sy2 = self.image_to_screen((x2, y2))
-                if abs(event.x - sx1) <= RADIUS and abs(event.y - sy1) <= RADIUS:
-                    self.start_point = (x2, y2)
-                elif abs(event.x - sx1) <= RADIUS and abs(event.y - sy2) <= RADIUS:
-                    self.start_point = (x2, y1)
-                elif abs(event.x - sx2) <= RADIUS and abs(event.y - sy1) <= RADIUS:
-                    self.start_point = (x1, y2)
-                elif abs(event.x - sx2) <= RADIUS and abs(event.y - sy2) <= RADIUS:
-                    self.start_point = (x1, y1)
-                else:
-                    self.start_point = self.screen_to_truncated(self.start_point_screen)
-                    self.current = None
-            else:
-                self.start_point = self.screen_to_truncated(self.start_point_screen)
+            if self.current is not None and self.grabber is None:
+                self.current = None
+                self.selection = None
+                self.start_point_screen = None
+                self.refresh()
 
     def button_release_event(self, obj, event):
         if not self.is_image_loaded():
             return
         if event.button == 1:
-            if self.start_point:
-                end_point = self.screen_to_truncated((event.x, event.y))
-                (x1, y1, x2, y2) = order_coordinates(self.start_point, end_point)
-                self.selection = (x1, y1, x2, y2)
-
-                self.image.set_from_pixbuf(self.scaled_image)
-
-                if (abs(self.start_point_screen[0] - event.x) >= MIN_SELECTION_SIZE and
-                    abs(self.start_point_screen[1] - event.y) >= MIN_SELECTION_SIZE):
-                    if self.current:
+            if self.start_point_screen:
+                if self.current is not None:
+                    # a box is currently selected
+                    if self.grabber is None:
+                        # clicked outside of the grabbing area
+                        self.current = None
+                        self.selection = None
+                    elif self.grabber != INSIDE:
+                        # clicked on one of the grabbers
+                        dx, dy = (event.x - self.start_point_screen[0], 
+                                  event.y - self.start_point_screen[1])
+                        self.modify_selection(dx, dy)
                         person = self.current.person
                         mediaref = self.current.mediaref
                         if person and mediaref:
                             mediaref.set_rectangle(self.real_to_proportional_rect(self.selection))
                             self.commit_person(person)
                         self.current.set_coords(*self.selection)
-                    else:
+                else:
+                    # nothing is currently selected
+                    if (abs(self.start_point_screen[0] - event.x) >= MIN_SELECTION_SIZE and
+                        abs(self.start_point_screen[1] - event.y) >= MIN_SELECTION_SIZE):
+                        # region selection
                         region = Region(*self.selection)
                         self.regions.append(region)
                         self.current = region
-                        self.refresh()
-                else:
-                    self.current = self.find_region(end_point[0], end_point[1])
-                    self.selection = self.current.coords() if self.current else None
-                    self.refresh()
+                    else:
+                        # nothing selected, just a click
+                        click_point = self.screen_to_image(self.start_point_screen)
+                        self.current = self.find_region(*click_point)
+                        self.selection = self.current.coords() if self.current is not None else None
 
-            self.start_point = None
-            self.enable_buttons()
+                self.start_point_screen = None
+                self.refresh()
+                self.enable_buttons()
 
     def motion_notify_event(self, widget, event):
         if not self.is_image_loaded():
             return
         end_point_orig = self.screen_to_image((event.x, event.y))
         end_point = self.truncate_to_image_size(end_point_orig)
-        if self.start_point:
-            self.selection = order_coordinates(self.start_point, end_point)
-        self.in_region = self.find_region(end_point_orig[0], end_point_orig[1])
+        if self.start_point_screen:
+            if self.grabber is not None and self.grabber != INSIDE:
+                dx, dy = (event.x - self.start_point_screen[0], 
+                          event.y - self.start_point_screen[1])
+                self.modify_selection(dx, dy)
+            else:
+                start_point = self.screen_to_truncated(self.start_point_screen)
+                self.selection = order_coordinates(start_point, end_point)
+        else:
+            self.in_region = self.find_region(*end_point_orig)
+            if self.current is not None:
+                self.grabber = can_grab(self.rect_image_to_screen(self.current.coords()),
+                                        event.x, event.y)
+                if self.grabber is not None:
+                    self.event_box.window.set_cursor(CURSORS[self.grabber])
+                else:
+                    self.event_box.window.set_cursor(None)
+            else:
+                self.grabber = None
+                self.event_box.window.set_cursor(None)
         self.image.queue_draw()
 
     def motion_scroll_event(self, widget, event):
@@ -812,6 +1020,36 @@ class PhotoTaggingGramplet(Gramplet):
             self.zoom_in()
         elif event.direction == gtk.gdk.SCROLL_DOWN:
             self.zoom_out()
+
+    # ======================================================
+    # helpers for mouse event handlers
+    # ======================================================
+
+    def modify_selection(self, dx, dy):
+        (x1, y1, x2, y2) = self.rect_image_to_screen(self.current.coords())
+        if self.grabber == GRABBER_UPPER_LEFT:
+            x1 += dx
+            y1 += dy
+        elif self.grabber == GRABBER_UPPER:
+            y1 += dy
+        elif self.grabber == GRABBER_UPPER_RIGHT:
+            x2 += dx
+            y1 += dy
+        elif self.grabber == GRABBER_RIGHT:
+            x2 += dx
+        elif self.grabber == GRABBER_LOWER_RIGHT:
+            x2 += dx
+            y2 += dy
+        elif self.grabber == GRABBER_LOWER:
+            y2 += dy
+        elif self.grabber == GRABBER_LOWER_LEFT:
+            x1 += dx
+            y2 += dy
+        elif self.grabber == GRABBER_LEFT:
+            x1 += dx
+        (x1, y1) = self.screen_to_truncated((x1, y1))
+        (x2, y2) = self.screen_to_truncated((x2, y2))
+        self.selection = (x1, y1, x2, y2)
 
     # ======================================================
     # list event handles
