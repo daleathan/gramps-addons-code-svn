@@ -360,7 +360,7 @@ class PhotoTaggingGramplet(Gramplet):
                             self.regions.append(region)
 
     # ======================================================
-    # utility functions for retriving properties
+    # utility functions for retrieving properties
     # ======================================================
 
     def is_image_loaded(self):
@@ -549,20 +549,8 @@ class PhotoTaggingGramplet(Gramplet):
             self.enable_buttons()
 
     # ======================================================
-    # tooltips
+    # managing regions
     # ======================================================
-
-    def show_tooltip(self, widget, x, y, keyboard_mode, tooltip):
-        if self.in_region:
-            person = self.in_region.person
-            if person:
-                name = name_displayer.display(person)
-            else:
-                name = ""
-            tooltip.set_text(name)
-            return True
-        else:
-            return False
 
     def check_and_translate_to_proportional(self, mediaref, rect):
         if mediaref:
@@ -577,6 +565,34 @@ class PhotoTaggingGramplet(Gramplet):
                 if result is None or result.area() > region.area():
                     result = region
         return result
+
+    def intersects_any(self, region):
+        for r in self.regions:
+            if r.intersects(region):
+                return True
+        return False
+
+    def enclosing_region(self, region):
+        for r in self.regions:
+            if r.contains(region.x1, region.y1) and r.contains(region.x2, region.y2):
+                return r
+        return None
+
+    # ======================================================
+    # tooltips
+    # ======================================================
+
+    def show_tooltip(self, widget, x, y, keyboard_mode, tooltip):
+        if self.in_region:
+            person = self.in_region.person
+            if person:
+                name = name_displayer.display(person)
+            else:
+                name = ""
+            tooltip.set_text(name)
+            return True
+        else:
+            return False
 
     # ======================================================
     # helpers for updating database objects
@@ -715,18 +731,6 @@ class PhotoTaggingGramplet(Gramplet):
                 self.current.mediaref = None
                 return True
         return False
-
-    def intersects_any(self, region):
-        for r in self.regions:
-            if r.intersects(region):
-                return True
-        return False
-
-    def enclosing_region(self, region):
-        for r in self.regions:
-            if r.contains(region.x1, region.y1) and r.contains(region.x2, region.y2):
-                return r
-        return None
 
     # ======================================================
     # mouse event handlers
