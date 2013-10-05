@@ -436,6 +436,9 @@ class PhotoTaggingGramplet(Gramplet):
         y = min(y, image_height)
         return self.proportional_to_real(self.real_to_proportional((x, y)))
 
+    def screen_to_truncated(self, coords):
+        return self.truncate_to_image_size(self.screen_to_image(coords))
+
     # ======================================================
     # drawing, refreshing and zooming the image
     # ======================================================
@@ -723,21 +726,17 @@ class PhotoTaggingGramplet(Gramplet):
                 elif abs(event.x - sx2) <= RADIUS and abs(event.y - sy2) <= RADIUS:
                     self.start_point = (x1, y1)
                 else:
-                    self.start_point = self.screen_to_image(self.start_point_screen)
-                    self.start_point = self.truncate_to_image_size(self.start_point)
+                    self.start_point = self.screen_to_truncated(self.start_point_screen)
                     self.current = None
             else:
-                self.start_point = self.screen_to_image(self.start_point_screen)
-                self.start_point = self.truncate_to_image_size(self.start_point)
+                self.start_point = self.screen_to_truncated(self.start_point_screen)
 
     def button_release_event(self, obj, event):
         if not self.is_image_loaded():
             return
         if event.button == 1:
             if self.start_point:
-                end_point = self.screen_to_image((event.x, event.y))
-                end_point = self.truncate_to_image_size(end_point)
-
+                end_point = self.screen_to_truncated((event.x, event.y))
                 (x1, y1, x2, y2) = order_coordinates(self.start_point, end_point)
                 self.selection = (x1, y1, x2, y2)
 
