@@ -439,6 +439,12 @@ class PhotoTaggingGramplet(Gramplet):
     def screen_to_truncated(self, coords):
         return self.truncate_to_image_size(self.screen_to_image(coords))
 
+    def rect_image_to_screen(self, rect):
+        x1, y1, x2, y2 = rect
+        x1, y1 = self.image_to_screen((x1, y1))
+        x2, y2 = self.image_to_screen((x2, y2))
+        return (x1, y1, x2, y2)
+
     # ======================================================
     # drawing, refreshing and zooming the image
     # ======================================================
@@ -455,42 +461,42 @@ class PhotoTaggingGramplet(Gramplet):
         cr = self.image.window.cairo_create()
 
         if self.selection:
-            x1, y1, x2, y2 = self.selection
-            x1, y1 = self.image_to_screen((x1, y1))
-            x2, y2 = self.image_to_screen((x2, y2))
+            x1, y1, x2, y2 = self.rect_image_to_screen(self.selection)
 
             # transparent shading
-            cr.set_source_rgba(1.0, 1.0, 1.0, SHADING_OPACITY)
-            cr.rectangle(offset_x, offset_y, x1 - offset_x, y1 - offset_y)
-            cr.rectangle(offset_x, y1, x1 - offset_x, y2 - y1)
-            cr.rectangle(offset_x, y2, x1 - offset_x, h - y2 + offset_y)
-            cr.rectangle(x1, y2 + 1, x2 - x1 + 1, h - y2 + offset_y)
-            cr.rectangle(x2 + 1, y2 + 1, w - x2 + offset_x, h - y2 + offset_y)
-            cr.rectangle(x2 + 1, y1, w - x2 + offset_x, y2 - y1 + 1)
-            cr.rectangle(x2 + 1, offset_y, w - x2 + offset_x, y2 - offset_y)
-            cr.rectangle(x1, offset_y, x2 - x1 + 1, y1 - offset_y)
-            cr.fill()
+            self.draw_transparent_shading(cr, x1, y1, x2, y2, w, h, 
+                                          offset_x, offset_y)
 
             # selection frame
-            cr.set_source_rgb(1.0, 1.0, 1.0)
-            cr.rectangle(x1, y1, x2 - x1, y2 - y1)
-            cr.stroke()
-            cr.set_source_rgb(0.0, 0.0, 1.0)
-            cr.rectangle(x1 - 2, y1 - 2, x2 - x1 + 4, y2 - y1 + 4)
-            cr.stroke()
+            self.draw_selection_frame(cr, x1, y1, x2, y2)
         else:
             # selection frame
-            cr.set_font_size(14)
             for region in self.regions:
-                x1, y1, x2, y2 = region.coords()
-                x1, y1 = self.image_to_screen((x1, y1))
-                x2, y2 = self.image_to_screen((x2, y2))
-                cr.set_source_rgb(1.0, 1.0, 1.0)
-                cr.rectangle(x1, y1, x2 - x1, y2 - y1)
-                cr.stroke()
-                cr.set_source_rgb(0.0, 0.0, 1.0)
-                cr.rectangle(x1 - 2, y1 - 2, x2 - x1 + 4, y2 - y1 + 4)
-                cr.stroke()
+                x1, y1, x2, y2 = self.rect_image_to_screen(region.coords())
+                self.draw_region_frame(cr, x1, y1, x2, y2)
+
+    def draw_transparent_shading(self, cr, x1, y1, x2, y2, w, h, offset_x, offset_y):
+        cr.set_source_rgba(1.0, 1.0, 1.0, SHADING_OPACITY)
+        cr.rectangle(offset_x, offset_y, x1 - offset_x, y1 - offset_y)
+        cr.rectangle(offset_x, y1, x1 - offset_x, y2 - y1)
+        cr.rectangle(offset_x, y2, x1 - offset_x, h - y2 + offset_y)
+        cr.rectangle(x1, y2 + 1, x2 - x1 + 1, h - y2 + offset_y)
+        cr.rectangle(x2 + 1, y2 + 1, w - x2 + offset_x, h - y2 + offset_y)
+        cr.rectangle(x2 + 1, y1, w - x2 + offset_x, y2 - y1 + 1)
+        cr.rectangle(x2 + 1, offset_y, w - x2 + offset_x, y2 - offset_y)
+        cr.rectangle(x1, offset_y, x2 - x1 + 1, y1 - offset_y)
+        cr.fill()
+
+    def draw_selection_frame(self, cr, x1, y1, x2, y2):
+        self.draw_region_frame(cr, x1, y1, x2, y2)
+
+    def draw_region_frame(self, cr, x1, y1, x2, y2):
+        cr.set_source_rgb(1.0, 1.0, 1.0)
+        cr.rectangle(x1, y1, x2 - x1, y2 - y1)
+        cr.stroke()
+        cr.set_source_rgb(0.0, 0.0, 1.0)
+        cr.rectangle(x1 - 2, y1 - 2, x2 - x1 + 4, y2 - y1 + 4)
+        cr.stroke()
 
     def refresh(self):
         self.image.queue_draw()
