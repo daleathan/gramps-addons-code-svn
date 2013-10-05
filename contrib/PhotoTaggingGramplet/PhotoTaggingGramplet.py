@@ -99,6 +99,13 @@ def scale_to_fit(orig_x, orig_y, target_x, target_y):
     else:
         return target_y / orig_y
 
+def order_coordinates(point1, point2):
+    x1 = min(point1[0], point2[0])
+    x2 = max(point1[0], point2[0])
+    y1 = min(point1[1], point2[1])
+    y2 = max(point1[1], point2[1])
+    return (x1, y1, x2, y2)
+
 class Region(object):
 
     def __init__(self, x1, y1, x2, y2):
@@ -728,11 +735,8 @@ class PhotoTaggingGramplet(Gramplet):
             if self.start_point:
                 end_point = self.screen_to_image((event.x, event.y))
                 end_point = self.truncate_to_image_size(end_point)
-                x1 = min(self.start_point[0], end_point[0])
-                x2 = max(self.start_point[0], end_point[0])
-                y1 = min(self.start_point[1], end_point[1])
-                y2 = max(self.start_point[1], end_point[1])
 
+                (x1, y1, x2, y2) = order_coordinates(self.start_point, end_point)
                 self.selection = (x1, y1, x2, y2)
 
                 self.image.set_from_pixbuf(self.scaled_image)
@@ -764,11 +768,7 @@ class PhotoTaggingGramplet(Gramplet):
         end_point_orig = self.screen_to_image((event.x, event.y))
         end_point = self.truncate_to_image_size(end_point_orig)
         if self.start_point:
-            x1 = min(self.start_point[0], end_point[0])
-            x2 = max(self.start_point[0], end_point[0])
-            y1 = min(self.start_point[1], end_point[1])
-            y2 = max(self.start_point[1], end_point[1])
-            self.selection = (x1, y1, x2, y2)
+            self.selection = order_coordinates(self.start_point, end_point)
         self.in_region = self.find_region(end_point_orig[0], end_point_orig[1])
         self.image.queue_draw()
 
