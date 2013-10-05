@@ -141,6 +141,9 @@ class Region(object):
     def contains(self, x, y):
         return self.x1 <= x <= self.x2 and self.y1 <= y <= self.y2
 
+    def contains_rect(self, other):
+        return self.contains(other.x1, other.y1) and self.contains(other.x2, other.y2)
+
     def area(self):
         return abs(self.x1 - self.x2) * abs(self.y1 - self.y2)
 
@@ -574,7 +577,7 @@ class PhotoTaggingGramplet(Gramplet):
 
     def enclosing_region(self, region):
         for r in self.regions:
-            if r.contains(region.x1, region.y1) and r.contains(region.x2, region.y2):
+            if r.contains_rect(region):
                 return r
         return None
 
