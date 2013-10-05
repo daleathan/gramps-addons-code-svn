@@ -79,6 +79,7 @@ MIN_SIZE = 50
 SHADING_OPACITY = 0.7
 RADIUS = 5
 DETECTED_REGION_PADDING = 10
+MIN_SELECTION_SIZE = 10
 
 path, filename = os.path.split(__file__)
 HAARCASCADE_PATH = os.path.join(path, 'haarcascade_frontalface_alt.xml')
@@ -741,7 +742,7 @@ class PhotoTaggingGramplet(Gramplet):
 
                 self.image.set_from_pixbuf(self.scaled_image)
 
-                if x2 - x1 >= 5 and y2 - y1 >= 5:
+                if x2 - x1 >= MIN_SELECTION_SIZE and y2 - y1 >= MIN_SELECTION_SIZE:
                     if self.current:
                         person = self.current.person
                         mediaref = self.current.mediaref
