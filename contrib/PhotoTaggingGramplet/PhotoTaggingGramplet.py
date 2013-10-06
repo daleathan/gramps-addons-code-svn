@@ -86,9 +86,9 @@ MIN_FACE_SIZE = CONFIG.get("detection.box_size")
 #
 #-------------------------------------------------------------------------
 
-MIN_CORNER_GRABBER = 50
-MIN_SIDE_GRABBER = 50
-MIN_GRABBER_PADDING = 20
+MIN_CORNER_GRABBER = 20
+MIN_SIDE_GRABBER = 20
+MIN_GRABBER_PADDING = 10
 MIN_SIDE_FOR_INSIDE_GRABBERS = (2 * (MIN_CORNER_GRABBER + MIN_GRABBER_PADDING) + 
                                 MIN_SIDE_GRABBER)
 
