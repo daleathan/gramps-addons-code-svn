@@ -857,7 +857,7 @@ class PhotoTaggingGramplet(Gramplet):
             if person:
                 name = name_displayer.display(person)
             else:
-                name = ""
+                return False
             tooltip.set_text(name)
             return True
         else:
