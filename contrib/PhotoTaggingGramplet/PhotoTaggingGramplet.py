@@ -836,6 +836,13 @@ class PhotoTaggingGramplet(Gramplet):
                 return r
         return None
 
+    def regions_referencing_person(self, person):
+        result = []
+        for r in self.regions:
+            if r.person == person:
+                result.append(r)
+        return result
+
     # ======================================================
     # tooltips
     # ======================================================
@@ -926,10 +933,7 @@ class PhotoTaggingGramplet(Gramplet):
 
     def del_region_clicked(self, event):
         if self.current:
-            self.regions.remove(self.current)
-            if self.current.person:
-                self.remove_reference(self.current.person, 
-                                      self.current.mediaref)
+            self.delete_region(self.current)
             self.current = None
             self.selection = None
             self.refresh()
@@ -976,6 +980,15 @@ class PhotoTaggingGramplet(Gramplet):
     # helpers for toolbar event handlers
     # ======================================================
 
+    def delete_region(self, region):
+        self.regions.remove(region)
+        if region.person is not None:
+            self.remove_reference(region.person, region.mediaref)
+
+    def delete_regions(self, regions):
+        for r in regions:
+            self.delete_region(r)
+
     def new_person_added(self, person):
         self.set_current_person(person)
         self.current = None
@@ -985,10 +998,30 @@ class PhotoTaggingGramplet(Gramplet):
 
     def set_current_person(self, person):
         if self.current and person:
-            self.clear_current_ref()
+            other_references = self.regions_referencing_person(person)
+            ref_count = len(other_references)
+            if ref_count > 0:
+                person = other_references[0].person
+                if ref_count == 1:
+                    message_text = _("Another region of this image is associated with {name}. Remove it?")
+                else:
+                    message_text = _("{count} other regions of this image are associated with {name}. Remove them?")
+                message = message_text.format(
+                            name=name_displayer.display(person),
+                            count=ref_count)
+                dialog = gtk.MessageDialog(
+                            parent=None,
+                            type=gtk.MESSAGE_QUESTION, 
+                            buttons=gtk.BUTTONS_YES_NO, 
+                            message_format=message)
+                response = dialog.run()
+                dialog.destroy()
+                if response == gtk.RESPONSE_YES:
+                    self.delete_regions(other_references)
             rect = self.check_and_translate_to_proportional(
                        self.current.mediaref, 
                        self.current.coords())
+            self.clear_current_ref()
             mediaref = self.add_reference(person, rect)
             self.current.person = person
             self.current.mediaref = mediaref
