@@ -305,6 +305,8 @@ RADIUS = 5
 DETECTED_REGION_PADDING = 10
 MIN_SELECTION_SIZE = 10
 
+THUMBNAIL_IMAGE_SIZE = (50, 50)
+
 path, filename = os.path.split(__file__)
 HAARCASCADE_PATH = os.path.join(path, 'haarcascade_frontalface_alt.xml')
 
@@ -474,27 +476,32 @@ class PhotoTaggingGramplet(Gramplet):
 
         hpaned.pack1(self.scrolled_window, resize=True, shrink=False)
 
-        self.treestore = gtk.TreeStore(int, str)
+        self.treestore = gtk.TreeStore(int, gtk.gdk.Pixbuf, str)
 
         self.treeview = gtk.TreeView(self.treestore)
         self.treeview.set_size_request(400, -1)
         self.treeview.connect("cursor-changed", self.cursor_changed)
         self.treeview.connect("row-activated", self.row_activated)
         self.column1 = gtk.TreeViewColumn(_(''))
-        self.column2 = gtk.TreeViewColumn(_('Person'))
+        self.column2 = gtk.TreeViewColumn(_('Preview'))
+        self.column3 = gtk.TreeViewColumn(_('Person'))
         self.treeview.append_column(self.column1)
         self.treeview.append_column(self.column2)
+        self.treeview.append_column(self.column3)
 
         self.cell1 = gtk.CellRendererText()
-        self.cell2 = gtk.CellRendererText()
+        self.cell2 = gtk.CellRendererPixbuf()
+        self.cell3 = gtk.CellRendererText()
         self.column1.pack_start(self.cell1, True)
         self.column1.add_attribute(self.cell1, 'text', 0)
         self.column2.pack_start(self.cell2, True)
-        self.column2.add_attribute(self.cell2, 'text', 1)
+        self.column2.add_attribute(self.cell2, 'pixbuf', 1)
+        self.column3.pack_start(self.cell3, True)
+        self.column3.add_attribute(self.cell3, 'text', 2)
 
         self.treeview.set_search_column(0)
         self.column1.set_sort_column_id(0)
-        self.column2.set_sort_column_id(1)
+        self.column3.set_sort_column_id(2)
 
         hpaned.pack2(self.treeview, resize=False, shrink=False)
 
@@ -1137,7 +1144,13 @@ class PhotoTaggingGramplet(Gramplet):
         self.treestore.clear()
         for (i, region) in enumerate(self.regions, start=1):
             name = name_displayer.display(region.person) if region.person else ""
-            self.treestore.append(None, (i, name))
+            w = region.x2 - region.x1
+            h = region.y2 - region.y1
+            subpixbuf = self.pixbuf.subpixbuf(region.x1, region.y1, w, h)
+            size = resize_keep_aspect(w, h, *THUMBNAIL_IMAGE_SIZE)
+            thumbnail = subpixbuf.scale_simple(size[0], size[1],
+                                               gtk.gdk.INTERP_BILINEAR)
+            self.treestore.append(None, (i, thumbnail, name))
 
     def refresh_selection(self):
         if self.current:
