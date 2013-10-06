@@ -168,7 +168,7 @@ def can_grab(rect, x, y):
         elif y1 <= y <= y1 + MIN_CORNER_GRABBER: # upper grabbers
             if x1 <= x <= x1 + MIN_CORNER_GRABBER:
                 return GRABBER_UPPER_LEFT
-            elif (x1 + MIN_CORNER_GRABBER + MIN_GRABBER_PADDING <= x and 
+            elif (x1 + MIN_CORNER_GRABBER + MIN_GRABBER_PADDING <= x and
                   x <= x2 - MIN_CORNER_GRABBER - MIN_GRABBER_PADDING):
                 return GRABBER_UPPER
             elif x2 - MIN_CORNER_GRABBER <= x <= x2:
@@ -178,7 +178,7 @@ def can_grab(rect, x, y):
         elif y2 - MIN_CORNER_GRABBER <= y <= y2: # lower grabbers
             if x1 <= x <= x1 + MIN_CORNER_GRABBER:
                 return GRABBER_LOWER_LEFT
-            elif (x1 + MIN_CORNER_GRABBER + MIN_GRABBER_PADDING <= x and 
+            elif (x1 + MIN_CORNER_GRABBER + MIN_GRABBER_PADDING <= x and
                   x <= x2 - MIN_CORNER_GRABBER - MIN_GRABBER_PADDING):
                 return GRABBER_LOWER
             elif x2 - MIN_CORNER_GRABBER <= x <= x2:
@@ -500,7 +500,8 @@ class PhotoTaggingGramplet(Gramplet):
     def get_used_screen_size(self):
         scaled_image_size = self.get_scaled_image_size()
         viewport_size = self.get_viewport_size()
-        return (min(scaled_image_size[0], viewport_size[0]), min(scaled_image_size[1], viewport_size[1]))
+        return (min(scaled_image_size[0], viewport_size[0]), 
+                min(scaled_image_size[1], viewport_size[1]))
 
     # ======================================================
     # coordinate transformations
@@ -508,27 +509,32 @@ class PhotoTaggingGramplet(Gramplet):
 
     def proportional_to_real(self, coord):
         """
-        Translate proportional (ranging from 0 to 100) coordinates to image coordinates (in pixels).
+        Translate proportional (ranging from 0 to 100) coordinates to image
+        coordinates (in pixels).
         """
         w, h = self.original_image_size
         return map ((lambda x : int(round(x / 100))), (coord[0] * w, coord[1] * h))
 
     def real_to_proportional(self, coord):
         """
-        Translate image coordinates (in pixels) to proportional (ranging from 0 to 100).
+        Translate image coordinates (in pixels) to proportional (ranging
+        from 0 to 100).
         """
         w, h = self.original_image_size
         return map ((lambda x : int(round(x * 100))), (coord[0] / w, coord[1] / h))
 
     def proportional_to_real_rect(self, rect):
-        return self.proportional_to_real(rect[0:2]) + self.proportional_to_real(rect[2:4])
+        return (self.proportional_to_real(rect[0:2]) +
+                self.proportional_to_real(rect[2:4]))
 
     def real_to_proportional_rect(self, rect):
-        return self.real_to_proportional(rect[0:2]) + self.real_to_proportional(rect[2:4])
+        return (self.real_to_proportional(rect[0:2]) +
+                self.real_to_proportional(rect[2:4]))
 
     def image_to_screen(self, coords):
         """
-        Translate image coordinates to viewport coordinates using the current scale and viewport size.
+        Translate image coordinates to viewport coordinates using the current
+        scale and viewport size.
         """
         viewport_rect = self.viewport.get_allocation()
         image_rect = self.scaled_size
@@ -540,12 +546,13 @@ class PhotoTaggingGramplet(Gramplet):
             offset_y = (image_rect[1] - viewport_rect.height) / 2
         else:
             offset_y = 0.0
-        return (int(coords[0] * self.scale - offset_x), int(coords[1] * self.scale - offset_y))
+        return (int(coords[0] * self.scale - offset_x), 
+                int(coords[1] * self.scale - offset_y))
 
     def screen_to_image(self, coords):
         """
-        Translate viewport coordinates to original (unscaled) image coordinates using the current scale
-        and viewport size.
+        Translate viewport coordinates to original (unscaled) image coordinates 
+        using the current scale and viewport size.
         """
         viewport_rect = self.viewport.get_allocation()
         image_rect = self.scaled_size
@@ -557,7 +564,8 @@ class PhotoTaggingGramplet(Gramplet):
             offset_y = (image_rect[1] - viewport_rect.height) / 2
         else:
             offset_y = 0.0
-        return (int((coords[0] + offset_x) / self.scale), int((coords[1] + offset_y) / self.scale))
+        return (int((coords[0] + offset_x) / self.scale), 
+                int((coords[1] + offset_y) / self.scale))
 
     def truncate_to_image_size(self, coords):
         x, y = coords
@@ -736,18 +744,23 @@ class PhotoTaggingGramplet(Gramplet):
         self.refresh_selection()
 
     def rescale(self):
-        self.scaled_size = (int(self.original_image_size[0] * self.scale), int(self.original_image_size[1] * self.scale))
-        self.scaled_image = self.pixbuf.scale_simple(self.scaled_size[0], self.scaled_size[1], gtk.gdk.INTERP_BILINEAR)
+        self.scaled_size = (int(self.original_image_size[0] * self.scale), 
+                            int(self.original_image_size[1] * self.scale))
+        self.scaled_image = self.pixbuf.scale_simple(self.scaled_size[0],
+                                                     self.scaled_size[1],
+                                                     gtk.gdk.INTERP_BILINEAR)
         self.image.set_from_pixbuf(self.scaled_image)
         self.image.set_size_request(*self.scaled_size)
         self.event_box.set_size_request(*self.scaled_size)
 
     def can_zoom_in(self):
-        scaled_size = (int(self.original_image_size[0] * self.scale * RESIZE_RATIO), int(self.original_image_size[1] * self.scale * RESIZE_RATIO))
+        scaled_size = (self.original_image_size[0] * self.scale * RESIZE_RATIO,
+                       self.original_image_size[1] * self.scale * RESIZE_RATIO)
         return scaled_size[0] < MAX_SIZE and scaled_size[1] < MAX_SIZE
 
     def can_zoom_out(self):
-        scaled_size = (int(self.original_image_size[0] * self.scale * RESIZE_RATIO), int(self.original_image_size[1] * self.scale * RESIZE_RATIO))
+        scaled_size = (self.original_image_size[0] * self.scale * RESIZE_RATIO,
+                       self.original_image_size[1] * self.scale * RESIZE_RATIO)
         return scaled_size[0] >= MIN_SIZE and scaled_size[1] >= MIN_SIZE
 
     def zoom_in(self):
@@ -846,12 +859,17 @@ class PhotoTaggingGramplet(Gramplet):
     def enable_buttons(self):
         self.button_index.set_sensitive(self.current is not None)
         self.button_add.set_sensitive(self.current is not None)
-        self.button_del.set_sensitive(self.current is not None and self.current.person is not None)
+        self.button_del.set_sensitive(self.current is not None and
+                                      self.current.person is not None)
         self.button_clear.set_sensitive(self.current is not None)
-        self.button_edit.set_sensitive(self.current is not None and self.current.person is not None)
-        self.button_zoom_in.set_sensitive(self.is_image_loaded() and self.can_zoom_in())
-        self.button_zoom_out.set_sensitive(self.is_image_loaded() and self.can_zoom_out())
-        self.button_detect.set_sensitive(self.is_image_loaded() and computer_vision_available)
+        self.button_edit.set_sensitive(self.current is not None and
+                                       self.current.person is not None)
+        self.button_zoom_in.set_sensitive(self.is_image_loaded() and
+                                          self.can_zoom_in())
+        self.button_zoom_out.set_sensitive(self.is_image_loaded() and
+                                           self.can_zoom_out())
+        self.button_detect.set_sensitive(self.is_image_loaded() and
+                                         computer_vision_available)
 
     # ======================================================
     # toolbar button event handles
@@ -859,12 +877,14 @@ class PhotoTaggingGramplet(Gramplet):
     def add_person_clicked(self, event):
         if self.current:
             person = Person()
-            EditPerson(self.dbstate, self.uistate, self.track, person, self.new_person_added)
+            EditPerson(self.dbstate, self.uistate, self.track, person, 
+                       self.new_person_added)
 
     def sel_person_clicked(self, event):
         if self.current:
             SelectPerson = SelectorFactory('Person')
-            sel = SelectPerson(self.dbstate, self.uistate, self.track, _("Select Person"))
+            sel = SelectPerson(self.dbstate, self.uistate, self.track, 
+                               _("Select Person"))
             person = sel.run()
             if person:
                 self.set_current_person(person)
@@ -877,7 +897,8 @@ class PhotoTaggingGramplet(Gramplet):
         if self.current:
             self.regions.remove(self.current)
             if self.current.person:
-                self.remove_reference(self.current.person, self.current.mediaref)
+                self.remove_reference(self.current.person, 
+                                      self.current.mediaref)
             self.current = None
             self.selection = None
             self.refresh()
@@ -912,8 +933,10 @@ class PhotoTaggingGramplet(Gramplet):
                                      1.2, 2, cv.CV_HAAR_DO_CANNY_PRUNING, 
                                      min_face_size)
         for ((x, y, width, height), neighbors) in faces:
-            region = Region(x - DETECTED_REGION_PADDING, y - DETECTED_REGION_PADDING,
-                            x + width + DETECTED_REGION_PADDING, y + height + DETECTED_REGION_PADDING)
+            region = Region(x - DETECTED_REGION_PADDING,
+                            y - DETECTED_REGION_PADDING,
+                            x + width + DETECTED_REGION_PADDING,
+                            y + height + DETECTED_REGION_PADDING)
             if self.enclosing_region(region) is None:
                 self.regions.append(region)
         self.refresh()
@@ -932,7 +955,9 @@ class PhotoTaggingGramplet(Gramplet):
     def set_current_person(self, person):
         if self.current and person:
             self.clear_current_ref()
-            rect = self.check_and_translate_to_proportional(self.current.mediaref, self.current.coords())
+            rect = self.check_and_translate_to_proportional(
+                       self.current.mediaref, 
+                       self.current.coords())
             mediaref = self.add_reference(person, rect)
             self.current.person = person
             self.current.mediaref = mediaref
@@ -940,7 +965,8 @@ class PhotoTaggingGramplet(Gramplet):
     def clear_current_ref(self):
         if self.current:
             if self.current.person:
-                self.remove_reference(self.current.person, self.current.mediaref)
+                self.remove_reference(self.current.person, 
+                                      self.current.mediaref)
                 self.current.person = None
                 self.current.mediaref = None
                 return True
