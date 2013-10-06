@@ -492,7 +492,7 @@ class bckGramplet(Gramplet):
         change_time = '000000'
         
         if not self.dbstate.db.get_note_from_gramps_id(self.nid):
-            ErrorDialog(_('Invalid Note id'), _('Please fix note id "%s"') % self.note_id)
+            ErrorDialog(_('Invalid Note id'), _('Cannot find note id'))
             return
         
         self.note_handle = self.dbstate.db.get_note_from_gramps_id(self.nid).handle
