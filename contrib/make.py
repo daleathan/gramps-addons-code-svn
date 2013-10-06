@@ -47,8 +47,8 @@ if "GRAMPSPATH" in os.environ:
 else:
     GRAMPSPATH = "../../../.."
 
-#if not os.path.isdir(GRAMPSPATH + "/po"):
-    #raise ValueError("Where is GRAMPSPATH/po: '%s/po'? Use 'GRAMPSPATH=path python make.py ...'" % GRAMPSPATH)
+if not os.path.isdir(GRAMPSPATH + "/po"):
+    raise ValueError("Where is GRAMPSPATH/po: '%s/po'? Use 'GRAMPSPATH=path python make.py ...'" % GRAMPSPATH)
 
 command = sys.argv[1]
 if len(sys.argv) >= 3:
