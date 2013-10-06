@@ -667,6 +667,8 @@ class PhotoTaggingGramplet(Gramplet):
                                  y1 + MIN_CORNER_GRABBER + MIN_GRABBER_PADDING, 
                                  MIN_CORNER_GRABBER, 
                                  y2 - y1 - 2 * (MIN_CORNER_GRABBER + MIN_GRABBER_PADDING))
+                elif self.grabber == INSIDE:
+                    pass # draw nothing for inside grabber
                 else:
                     assert False # this case should never be reached
             else:
@@ -710,6 +712,8 @@ class PhotoTaggingGramplet(Gramplet):
                                  y1, 
                                  MIN_CORNER_GRABBER, 
                                  y2 - y1)
+                elif self.grabber == INSIDE:
+                    pass # draw nothing for inside grabber
                 else:
                     assert False # this case should never be reached
             cr.stroke()
