@@ -3,7 +3,7 @@
 #
 # Copyright (C) 2011 Nick Hall
 #           (C) 2011 Doug Blank <doug.blank@gmail.com>
-#           (C) 2013  Artem Glebov <artem.glebov@gmail.com>
+#           (C) 2013 Artem Glebov <artem.glebov@gmail.com>
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -145,6 +145,10 @@ def scale_to_fit(orig_x, orig_y, target_x, target_y):
         return target_y / orig_y
 
 def order_coordinates(point1, point2):
+    """
+    Returns the rectangle (x1, y1, x2, y2) based on point1 and point2,
+    such that x1 <= x2 and y1 <= y2.
+    """
     x1 = min(point1[0], point2[0])
     x2 = max(point1[0], point2[0])
     y1 = min(point1[1], point2[1])
@@ -152,6 +156,9 @@ def order_coordinates(point1, point2):
     return (x1, y1, x2, y2)
 
 def can_grab(rect, x, y):
+    """
+    Checks if (x,y) lies within one of the grabbers of rect.
+    """
     (x1, y1, x2, y2) = rect
     if (x2 - x1 >= MIN_SIDE_FOR_INSIDE_GRABBERS and 
         y2 - y1 >= MIN_SIDE_FOR_INSIDE_GRABBERS):
@@ -222,6 +229,10 @@ def can_grab(rect, x, y):
             return None
 
 class Region(object):
+    """
+    Representation of a region of image that can be associated with
+    a person.
+    """
 
     def __init__(self, x1, y1, x2, y2):
         self.set_coords(x1, y1, x2, y2)
@@ -996,16 +1007,21 @@ class PhotoTaggingGramplet(Gramplet):
         end_point_orig = self.screen_to_image((event.x, event.y))
         end_point = self.truncate_to_image_size(end_point_orig)
         if self.start_point_screen:
+            # selection (mouse button pressed)
             if self.grabber is not None and self.grabber != INSIDE:
+                # dragging the grabber
                 dx, dy = (event.x - self.start_point_screen[0], 
                           event.y - self.start_point_screen[1])
                 self.modify_selection(dx, dy)
             else:
+                # making new selection
                 start_point = self.screen_to_truncated(self.start_point_screen)
                 self.selection = order_coordinates(start_point, end_point)
         else:
+            # motion (mouse button is not pressed)
             self.in_region = self.find_region(*end_point_orig)
             if self.current is not None:
+                # a box is active, so check if the pointer is inside a grabber
                 self.grabber = can_grab(self.rect_image_to_screen(self.current.coords()),
                                         event.x, event.y)
                 if self.grabber is not None:
@@ -1013,6 +1029,7 @@ class PhotoTaggingGramplet(Gramplet):
                 else:
                     self.event_box.window.set_cursor(None)
             else:
+                # nothing is active
                 self.grabber = None
                 self.event_box.window.set_cursor(None)
         self.image.queue_draw()
