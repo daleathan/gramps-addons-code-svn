@@ -82,19 +82,9 @@ MIN_FACE_SIZE = CONFIG.get("detection.box_size")
 
 #-------------------------------------------------------------------------
 #
-# PhotoTaggingGramplet
+# Grabbers constants and routines
 #
 #-------------------------------------------------------------------------
-
-RESIZE_RATIO = 1.5
-MAX_ZOOM = 10
-MIN_ZOOM = 0.05
-MAX_SIZE = 2000
-MIN_SIZE = 50
-SHADING_OPACITY = 0.7
-RADIUS = 5
-DETECTED_REGION_PADDING = 10
-MIN_SELECTION_SIZE = 10
 
 MIN_CORNER_GRABBER = 50
 MIN_SIDE_GRABBER = 50
@@ -111,49 +101,6 @@ GRABBER_LOWER_RIGHT = 5
 GRABBER_LOWER = 6
 GRABBER_LOWER_LEFT = 7
 GRABBER_LEFT = 8
-
-path, filename = os.path.split(__file__)
-HAARCASCADE_PATH = os.path.join(path, 'haarcascade_frontalface_alt.xml')
-
-CURSOR_UPPER = gtk.gdk.Cursor(gtk.gdk.TOP_SIDE)
-CURSOR_LOWER = gtk.gdk.Cursor(gtk.gdk.BOTTOM_SIDE)
-CURSOR_LEFT = gtk.gdk.Cursor(gtk.gdk.LEFT_SIDE)
-CURSOR_RIGHT = gtk.gdk.Cursor(gtk.gdk.RIGHT_SIDE)
-CURSOR_UPPER_LEFT = gtk.gdk.Cursor(gtk.gdk.TOP_LEFT_CORNER)
-CURSOR_UPPER_RIGHT = gtk.gdk.Cursor(gtk.gdk.TOP_RIGHT_CORNER)
-CURSOR_LOWER_LEFT = gtk.gdk.Cursor(gtk.gdk.BOTTOM_LEFT_CORNER)
-CURSOR_LOWER_RIGHT = gtk.gdk.Cursor(gtk.gdk.BOTTOM_RIGHT_CORNER)
-
-CURSORS = [None, CURSOR_UPPER_LEFT, CURSOR_UPPER, CURSOR_UPPER_RIGHT,
-           CURSOR_RIGHT, CURSOR_LOWER_RIGHT, CURSOR_LOWER, CURSOR_LOWER_LEFT,
-           CURSOR_LEFT]
-
-def resize_keep_aspect(orig_x, orig_y, target_x, target_y):
-    orig_aspect = orig_x / orig_y
-    target_aspect = target_x / target_y
-    if orig_aspect > target_aspect:
-        return (target_x, target_x * orig_y // orig_x)
-    else:
-        return (target_y * orig_x // orig_y, target_y)
-
-def scale_to_fit(orig_x, orig_y, target_x, target_y):
-    orig_aspect = orig_x / orig_y
-    target_aspect = target_x / target_y
-    if orig_aspect > target_aspect:
-        return target_x / orig_x
-    else:
-        return target_y / orig_y
-
-def order_coordinates(point1, point2):
-    """
-    Returns the rectangle (x1, y1, x2, y2) based on point1 and point2,
-    such that x1 <= x2 and y1 <= y2.
-    """
-    x1 = min(point1[0], point2[0])
-    x2 = max(point1[0], point2[0])
-    y1 = min(point1[1], point2[1])
-    y2 = max(point1[1], point2[1])
-    return (x1, y1, x2, y2)
 
 def upper_left_grabber_inner(x1, y1, x2, y2):
     return (x1, y1, x1 + MIN_CORNER_GRABBER, y1 + MIN_CORNER_GRABBER)
@@ -286,6 +233,29 @@ MOTION_FUNCTIONS = [inside_moved,
                     lower_left_moved,
                     left_moved]
 
+# cursors
+
+CURSOR_UPPER = gtk.gdk.Cursor(gtk.gdk.TOP_SIDE)
+CURSOR_LOWER = gtk.gdk.Cursor(gtk.gdk.BOTTOM_SIDE)
+CURSOR_LEFT = gtk.gdk.Cursor(gtk.gdk.LEFT_SIDE)
+CURSOR_RIGHT = gtk.gdk.Cursor(gtk.gdk.RIGHT_SIDE)
+CURSOR_UPPER_LEFT = gtk.gdk.Cursor(gtk.gdk.TOP_LEFT_CORNER)
+CURSOR_UPPER_RIGHT = gtk.gdk.Cursor(gtk.gdk.TOP_RIGHT_CORNER)
+CURSOR_LOWER_LEFT = gtk.gdk.Cursor(gtk.gdk.BOTTOM_LEFT_CORNER)
+CURSOR_LOWER_RIGHT = gtk.gdk.Cursor(gtk.gdk.BOTTOM_RIGHT_CORNER)
+
+CURSORS = [None,
+           CURSOR_UPPER_LEFT,
+           CURSOR_UPPER,
+           CURSOR_UPPER_RIGHT,
+           CURSOR_RIGHT,
+           CURSOR_LOWER_RIGHT,
+           CURSOR_LOWER,
+           CURSOR_LOWER_LEFT,
+           CURSOR_LEFT]
+
+# helper functions
+
 def grabber_generators(rect):
     x1, y1, x2, y2 = rect
     if (x2 - x1 >= MIN_SIDE_FOR_INSIDE_GRABBERS and 
@@ -293,10 +263,6 @@ def grabber_generators(rect):
         return INNER_GRABBERS
     else:
         return OUTER_GRABBERS
-
-def inside_rect(rect, x, y):
-    x1, y1, x2, y2 = rect
-    return x1 <= x <= x2 and y1 <= y <= y2
 
 def can_grab(rect, x, y):
     """
@@ -322,6 +288,56 @@ def can_grab(rect, x, y):
             if inside_rect(grabber_area, x, y):
                 return grabber
         return None
+
+#-------------------------------------------------------------------------
+#
+# PhotoTaggingGramplet
+#
+#-------------------------------------------------------------------------
+
+RESIZE_RATIO = 1.5
+MAX_ZOOM = 10
+MIN_ZOOM = 0.05
+MAX_SIZE = 2000
+MIN_SIZE = 50
+SHADING_OPACITY = 0.7
+RADIUS = 5
+DETECTED_REGION_PADDING = 10
+MIN_SELECTION_SIZE = 10
+
+path, filename = os.path.split(__file__)
+HAARCASCADE_PATH = os.path.join(path, 'haarcascade_frontalface_alt.xml')
+
+def resize_keep_aspect(orig_x, orig_y, target_x, target_y):
+    orig_aspect = orig_x / orig_y
+    target_aspect = target_x / target_y
+    if orig_aspect > target_aspect:
+        return (target_x, target_x * orig_y // orig_x)
+    else:
+        return (target_y * orig_x // orig_y, target_y)
+
+def scale_to_fit(orig_x, orig_y, target_x, target_y):
+    orig_aspect = orig_x / orig_y
+    target_aspect = target_x / target_y
+    if orig_aspect > target_aspect:
+        return target_x / orig_x
+    else:
+        return target_y / orig_y
+
+def order_coordinates(point1, point2):
+    """
+    Returns the rectangle (x1, y1, x2, y2) based on point1 and point2,
+    such that x1 <= x2 and y1 <= y2.
+    """
+    x1 = min(point1[0], point2[0])
+    x2 = max(point1[0], point2[0])
+    y1 = min(point1[1], point2[1])
+    y2 = max(point1[1], point2[1])
+    return (x1, y1, x2, y2)
+
+def inside_rect(rect, x, y):
+    x1, y1, x2, y2 = rect
+    return x1 <= x <= x2 and y1 <= y <= y2
 
 class Region(object):
     """
