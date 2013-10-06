@@ -470,11 +470,11 @@ class PhotoTaggingGramplet(Gramplet):
         self.viewport = gtk.Viewport()
         self.viewport.add(self.event_box)
 
-        scrolled_window = gtk.ScrolledWindow()
-        scrolled_window.add(self.viewport)
-        scrolled_window.set_size_request(200, -1)
+        scrolled_window1 = gtk.ScrolledWindow()
+        scrolled_window1.add(self.viewport)
+        scrolled_window1.set_size_request(200, -1)
 
-        hpaned.pack1(scrolled_window, resize=True, shrink=False)
+        hpaned.pack1(scrolled_window1, resize=True, shrink=False)
 
         self.treestore = gtk.TreeStore(int, gtk.gdk.Pixbuf, str)
 
@@ -503,7 +503,11 @@ class PhotoTaggingGramplet(Gramplet):
         column1.set_sort_column_id(0)
         column3.set_sort_column_id(2)
 
-        hpaned.pack2(self.treeview, resize=False, shrink=False)
+        scrolled_window2 = gtk.ScrolledWindow()
+        scrolled_window2.add(self.treeview)
+        scrolled_window2.set_size_request(400, -1)
+
+        hpaned.pack2(scrolled_window2, resize=False, shrink=False)
 
         self.top.pack_start(hpaned, expand=True, fill=True)
 
