@@ -1,0 +1,65 @@
+# French translations for gramps package.
+# Copyright (C) 2013 THE gramps'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the gramps package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gramps 34\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-10-06 18:57+0200\n"
+"PO-Revision-Date: 2013-10-06 18:57+0200\n"
+"Last-Translator: \n"
+"Language-Team: French\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: Overview/Overview.gpr.py:30
+msgid "Person Overview"
+msgstr "Vue générale de l'individu"
+
+#: Overview/Overview.gpr.py:31
+msgid "Gramplet showing an overview of events for a person"
+msgstr "Gramplet affichant une vue générale des événements de l'individu"
+
+#: Overview/Overview.gpr.py:38 Overview/Overview.gpr.py:52
+msgid "Overview"
+msgstr "Vue générale"
+
+#: Overview/Overview.gpr.py:44
+msgid "Family Overview"
+msgstr "Vue générale de la famille"
+
+#: Overview/Overview.gpr.py:45
+msgid "Gramplet showing an overview of events for a family"
+msgstr "Gramplet affichant une vue générale des événements de la famille"
+
+#: Overview/Overview.py:45
+msgid "Double-click on a row to edit the selected event."
+msgstr "Cliquez deux fois sur la ligne pour éditer l'événement"
+
+#: Overview/Overview.py:49
+msgid "Type"
+msgstr "Type"
+
+#: Overview/Overview.py:50
+msgid "Date"
+msgstr "Date"
+
+#: Overview/Overview.py:52
+msgid "Age"
+msgstr "Âge"
+
+#: Overview/Overview.py:53 Overview/Overview.py:85
+msgid "Condition"
+msgstr "Condition"
+
+#: Overview/Overview.py:54 Overview/Overview.py:87
+msgid "Occupation"
+msgstr "Profession"
+
+#: Overview/Overview.py:55 Overview/Overview.py:89
+msgid "Where Born"
+msgstr "Né(e) à"

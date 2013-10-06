@@ -1,0 +1,86 @@
+# French translations for gramps package.
+# Copyright (C) 2013 THE gramps'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the gramps package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gramps 34\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-10-06 18:50+0200\n"
+"PO-Revision-Date: 2013-10-06 18:50+0200\n"
+"Last-Translator: \n"
+"Language-Team: French <traduc@traduc.org>\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: Differences/differences.gpr.py:4
+msgid "Database Differences Report"
+msgstr "Rapport de différences dans la base de données"
+
+#: Differences/differences.gpr.py:5
+msgid "Compares an external database with the current one."
+msgstr "Compare une base de données externe avec l'actuelle"
+
+#: Differences/differences.gpr.py:22
+msgid "diff"
+msgstr "diff."
+
+#: Differences/differences.gpr.py:23 Differences/differences.gpr.py:34
+msgid "Backported modules from Doug's implementation"
+msgstr "Modules retro-portés depuis l'implémentation de Doug"
+
+#: Differences/differences.gpr.py:33
+msgid "dictionary"
+msgstr "dictionnaire"
+
+#: Differences/differences.py:162
+msgid "Differences Report"
+msgstr "Rapport de différences"
+
+#: Differences/differences.py:163
+msgid "Looking for differences..."
+msgstr "Recherche de différences..."
+
+#: Differences/differences.py:301
+msgid "Report Options"
+msgstr "Options du rapport"
+
+#: Differences/differences.py:303
+msgid "Family Tree file"
+msgstr "File d'arbre familial"
+
+#: Differences/differences.py:304
+msgid "Select a .gpkg or .gramps file"
+msgstr "Sélectionnez un fichier .gpkg ou .gramps"
+
+#: Differences/differences.py:307
+msgid "Show items that are different"
+msgstr "Afficher les articles qui sont différents"
+
+#: Differences/differences.py:308
+msgid "Include items that are different"
+msgstr "Inclure les articles qui sont différents"
+
+#: Differences/differences.py:311
+msgid "Show deleted items"
+msgstr "Afficher les articles absents"
+
+#: Differences/differences.py:312
+msgid "Include items not in file but in database"
+msgstr "Inclure les articles absents du fichier mais présents dans la base de données"
+
+#: Differences/differences.py:315
+msgid "Show added items"
+msgstr "Afficher les articles ajoutés"
+
+#: Differences/differences.py:316
+msgid "Include items in file but not in database"
+msgstr "Inclure les articles dans le fichier mais absents de la base de données"
+
+#: Differences/differences.py:361 Differences/differences.py:363
+#: Differences/differences.py:366 Differences/differences.py:369
+msgid "Text"
+msgstr "Texte"
