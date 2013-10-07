@@ -384,6 +384,8 @@ class PhotoTaggingGramplet(Gramplet):
         self.scaled_pixbuf = None
         self.scale = 1.0
 
+        self.build_context_menu()
+
         self.gui.WIDGET = self.build_gui()
         self.gui.get_container_widget().remove(self.gui.textview)
         self.gui.get_container_widget().add_with_viewport(self.gui.WIDGET)
@@ -512,6 +514,34 @@ class PhotoTaggingGramplet(Gramplet):
         self.top.pack_start(hpaned, expand=True, fill=True)
 
         return self.top
+
+    def build_context_menu(self):
+        self.context_menu = gtk.Menu()
+
+        self.context_button_select = gtk.ImageMenuItem(gtk.STOCK_INDEX)
+        self.context_button_select.set_label("Select")
+        self.context_button_select.set_always_show_image(True)
+        self.context_button_select.connect("activate", self.sel_person_clicked)
+
+        self.context_button_add = gtk.ImageMenuItem(gtk.STOCK_ADD)
+        self.context_button_add.set_label("Add")
+        self.context_button_add.set_always_show_image(True)
+        self.context_button_add.connect("activate", self.add_person_clicked)
+
+        self.context_button_clear = gtk.ImageMenuItem(gtk.STOCK_REMOVE)
+        self.context_button_clear.set_label("Clear")
+        self.context_button_clear.set_always_show_image(True)
+        self.context_button_clear.connect("activate", self.clear_ref_clicked)
+       
+        self.context_button_remove = gtk.ImageMenuItem(gtk.STOCK_CLEAR)
+        self.context_button_remove.set_label("Remove")
+        self.context_button_remove.set_always_show_image(True)
+        self.context_button_remove.connect("activate", self.del_region_clicked)
+
+        self.context_menu.append(self.context_button_select)
+        self.context_menu.append(self.context_button_add)
+        self.context_menu.append(self.context_button_clear)
+        self.context_menu.append(self.context_button_remove)
 
     # ======================================================
     # gramplet event handlers
@@ -914,6 +944,17 @@ class PhotoTaggingGramplet(Gramplet):
                                          computer_vision_available)
 
     # ======================================================
+    # managing context menu buttons
+    # ======================================================
+
+    def enable_context_menu_buttons(self):
+        self.context_button_add.set_sensitive(self.current is not None)
+        self.context_button_select.set_sensitive(self.current is not None)
+        self.context_button_clear.set_sensitive(
+          self.current is not None and self.current.person is not None)
+        self.context_button_remove.set_sensitive(self.current is not None)
+
+    # ======================================================
     # toolbar button event handles
     # ======================================================
     def add_person_clicked(self, event):
@@ -1085,6 +1126,9 @@ class PhotoTaggingGramplet(Gramplet):
                         region = Region(*self.selection)
                         self.regions.append(region)
                         self.current = region
+                        self.context_menu.popup(None, None, None, event.button, event.time, None)
+                        self.enable_context_menu_buttons()
+                        self.context_menu.show_all()
                     else:
                         # nothing selected, just a click
                         click_point = self.screen_to_image(self.start_point_screen)
