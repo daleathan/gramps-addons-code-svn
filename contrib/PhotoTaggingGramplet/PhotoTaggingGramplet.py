@@ -665,7 +665,7 @@ class PhotoTaggingGramplet(Gramplet):
         coordinates (in pixels).
         """
         w, h = self.original_image_size
-        return map ((lambda x : int(round(x / 100))), (coord[0] * w, coord[1] * h))
+        return (int(round(coord[0] * w / 100)), int(round(coord[1] * h / 100)))
 
     def real_to_proportional(self, coord):
         """
@@ -673,15 +673,17 @@ class PhotoTaggingGramplet(Gramplet):
         from 0 to 100).
         """
         w, h = self.original_image_size
-        return map ((lambda x : int(round(x * 100))), (coord[0] / w, coord[1] / h))
+        return (int(round(coord[0] * 100 / w)), int(round(coord[1] * 100 / h)))
 
     def proportional_to_real_rect(self, rect):
-        return (self.proportional_to_real(rect[0:2]) +
-                self.proportional_to_real(rect[2:4]))
+        x1, y1, x2, y2 = rect
+        return (self.proportional_to_real((x1, y1)) +
+                self.proportional_to_real((x2, y2)))
 
     def real_to_proportional_rect(self, rect):
-        return (self.real_to_proportional(rect[0:2]) +
-                self.real_to_proportional(rect[2:4]))
+        x1, y1, x2, y2 = rect
+        return (self.real_to_proportional((x1, y1)) +
+                self.real_to_proportional((x2, y2)))
 
     def image_to_screen(self, coords):
         """
