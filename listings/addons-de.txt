@@ -53,8 +53,6 @@
 {'d': 'Bericht zum F\xc3\xbcllstand des Baumes', 'g': '3.4', 'i': 'AncestorFill', 'n': 'VorfahrenF\xc3\xbcllung', 't': u'Report', 'v': '1.0.3', 'z': 'AncestorFill.addon.tgz'}
 {'d': 'Erstellt Nachkommenlinien einer Person', 'g': '3.4', 'i': 'Descendants Lines', 'n': 'Nachkommen Linien', 't': u'Report', 'v': '0.1.16', 'z': 'DescendantsLines.addon.tgz'}
 {'d': 'Setzt ein Attribut auf einen gegebenen Wert.', 'g': '3.4', 'i': 'SetAttribute', 'n': 'Attribut setzen', 't': u'Tool', 'v': '0.0.7', 'z': 'SetAttributeTool.addon.tgz'}
-{'d': 'Gramplet showing the source media for a person', 'g': '3.4', 'i': 'Person Source Media', 'n': 'Person Source Media', 't': u'Gramplet', 'v': '1.0.0', 'z': 'SourceMedia.addon.tgz'}
-{'d': 'Gramplet showing the source media for a family', 'g': '3.4', 'i': 'Family Source Media', 'n': 'Family Source Media', 't': u'Gramplet', 'v': '1.0.0', 'z': 'SourceMedia.addon.tgz'}
 {'d': 'Druckt alle Nachkommenlinien von einem gegebenen Vorfahren zu einem gegebenen Nachkommen in Textform.', 'g': '3.4', 'i': 'LinesOfDescendency', 'n': 'Nachkommen Linien Bericht', 't': u'Report', 'v': '1.1.11', 'z': 'LinesOfDescendency.addon.tgz'}
 {'d': 'Sammlung von Webseiten f\xc3\xbcr DE (ben\xc3\xb6tigt libwebconnect)', 'g': '3.4', 'i': 'DE Web Connect Pack', 'n': 'DE Web Connect Pack', 't': u'Plugin lib', 'v': '0.0.3', 'z': 'DEWebConnectPack.addon.tgz'}
 {'d': 'Erstellt einen schriftlichen Aufbewahrungsorte Bericht', 'g': '3.4', 'i': 'Repositories Report Options', 'n': 'Aufbewahrungsorte Berichtsoptionen', 't': u'Report', 'v': '0.3.2', 'z': 'RepositoriesReport.addon.tgz'}
@@ -62,7 +60,6 @@
 {'d': 'Zeigt Ereignisse einer Person auf einer Zeitleiste', 'g': '3.4', 'i': 'timelinequickview', 'n': 'Zeitleiste', 't': u'Quickreport', 'v': '1.0.9', 'z': 'TimelineQuickview.addon.tgz'}
 {'d': 'F\xc3\xbcgt verteilte Quellen mehreren Objekten hinzu.', 'g': '3.4', 'i': 'AttachSource', 'n': 'Quelle hinzuf\xc3\xbcgen', 't': u'Tool', 'v': '0.0.15', 'z': 'AttachSourceTool.addon.tgz'}
 {'d': 'Sammlung von Webseiten f\xc3\xbcr UK (ben\xc3\xb6tigt libwebconnect)', 'g': '3.4', 'i': 'UK Web Connect Pack', 'n': 'UK Web Verkn\xc3\xbcpfungspaket', 't': u'Plugin lib', 'v': '1.0.15', 'z': 'UKWebConnectPack.addon.tgz'}
-{'d': 'Tree view of files in the media diectory', 'g': '3.4', 'i': 'fileview', 'n': 'File View', 't': u'Gramps View', 'v': '1.0.0', 'z': 'FileView.addon.tgz'}
 {'d': 'Gramplet zum demonstrieren der Cairo Grafik', 'g': '3.4', 'i': 'Clock Gramplet', 'n': 'Uhren Gramplet', 't': u'Gramplet', 'v': '0.0.8', 'z': 'ClockGramplet.addon.tgz'}
 {'d': 'Erstellt einen Nachkommen\xc3\xbcbersicht unter Verwendung eines Filter', 'g': '3.4', 'i': 'fil_descendant_report', 'n': 'Gefilterter Nachkommenbericht', 't': u'Report', 'v': '0.3.2', 'z': 'FilteredReports.addon.tgz'}
 {'d': 'Liefert eine durchsuchbare Liste ausgew\xc3\xa4hlter Orte mit der M\xc3\xb6glichkeit die Attributefelder zu vervollst\xc3\xa4ndigen/Syntaxanalyse/setzen.', 'g': '3.4', 'i': 'PlaceCompletion', 'n': 'OrteVervollst\xc3\xa4ndigung', 't': u'Tool', 'v': '0.0.14', 'z': 'PlaceCompletion.addon.tgz'}

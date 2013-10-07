@@ -53,8 +53,6 @@
 {'d': 'Report on the filling of the tree', 'g': '3.4', 'i': 'AncestorFill', 'n': 'AncestorFill', 't': u'Report', 'v': '1.0.3', 'z': 'AncestorFill.addon.tgz'}
 {'d': 'Produces descendants lines of a person', 'g': '3.4', 'i': 'Descendants Lines', 'n': 'Descendants Lines', 't': u'Report', 'v': '0.1.16', 'z': 'DescendantsLines.addon.tgz'}
 {'d': 'Set an attribute to a given value.', 'g': '3.4', 'i': 'SetAttribute', 'n': 'Set Attribute', 't': u'Tool', 'v': '0.0.7', 'z': 'SetAttributeTool.addon.tgz'}
-{'d': 'Gramplet showing the source media for a person', 'g': '3.4', 'i': 'Person Source Media', 'n': 'Person Source Media', 't': u'Gramplet', 'v': '1.0.0', 'z': 'SourceMedia.addon.tgz'}
-{'d': 'Gramplet showing the source media for a family', 'g': '3.4', 'i': 'Family Source Media', 'n': 'Family Source Media', 't': u'Gramplet', 'v': '1.0.0', 'z': 'SourceMedia.addon.tgz'}
 {'d': 'Prints out all descendency lines from a given ancestor to a given descendent in text.', 'g': '3.4', 'i': 'LinesOfDescendency', 'n': 'Lines of Descendency Report', 't': u'Report', 'v': '1.1.11', 'z': 'LinesOfDescendency.addon.tgz'}
 {'d': 'Collection of Web sites for the DE (requires libwebconnect)', 'g': '3.4', 'i': 'DE Web Connect Pack', 'n': 'DE Web Connect Pack', 't': u'Plugin lib', 'v': '0.0.3', 'z': 'DEWebConnectPack.addon.tgz'}
 {'d': 'Poskytuje textov\xc3\xba spr\xc3\xa1vu o arch\xc3\xadvoch', 'g': '3.4', 'i': 'Repositories Report Options', 'n': 'Repositories Report Options', 't': u'Report', 'v': '0.3.2', 'z': 'RepositoriesReport.addon.tgz'}
@@ -62,7 +60,6 @@
 {'d': "Display a person's events on a timeline", 'g': '3.4', 'i': 'timelinequickview', 'n': 'Graf \xc4\x8dasovej osi', 't': u'Quickreport', 'v': '1.0.9', 'z': 'TimelineQuickview.addon.tgz'}
 {'d': 'Attaches a shared source to multiple objects.', 'g': '3.4', 'i': 'AttachSource', 'n': 'Attach Source', 't': u'Tool', 'v': '0.0.15', 'z': 'AttachSourceTool.addon.tgz'}
 {'d': 'Collection of Web sites for the UK (requires libwebconnect)', 'g': '3.4', 'i': 'UK Web Connect Pack', 'n': 'UK Web Connect Pack', 't': u'Plugin lib', 'v': '1.0.15', 'z': 'UKWebConnectPack.addon.tgz'}
-{'d': 'Tree view of files in the media diectory', 'g': '3.4', 'i': 'fileview', 'n': 'File View', 't': u'Gramps View', 'v': '1.0.0', 'z': 'FileView.addon.tgz'}
 {'d': 'Gramplet for demonstrating Cairo graphics', 'g': '3.4', 'i': 'Clock Gramplet', 'n': 'Gramplet Hodiny', 't': u'Gramplet', 'v': '0.0.8', 'z': 'ClockGramplet.addon.tgz'}
 {'d': 'Produces a descendant report using a filter', 'g': '3.4', 'i': 'fil_descendant_report', 'n': 'Filtered Descendant Report', 't': u'Report', 'v': '0.3.2', 'z': 'FilteredReports.addon.tgz'}
 {'d': 'Poskytuje zoznam vybran\xc3\xbdch miest ktor\xc3\xbd je mo\xc5\xben\xc3\xa9 prezera\xc5\xa5 s mo\xc5\xbenos\xc5\xa5ou dopl\xc5\x88ova\xc5\xa5/triedi\xc5\xa5/nastavi\xc5\xa5 atrib\xc3\xbaty pol\xc3\xad', 'g': '3.4', 'i': 'PlaceCompletion', 'n': 'PlaceCompletion', 't': u'Tool', 'v': '0.0.14', 'z': 'PlaceCompletion.addon.tgz'}

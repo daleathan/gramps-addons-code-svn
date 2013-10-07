@@ -53,8 +53,6 @@
 {'d': 'Report on the filling of the tree', 'g': '3.4', 'i': 'AncestorFill', 'n': 'AncestorFill', 't': u'Report', 'v': '1.0.3', 'z': 'AncestorFill.addon.tgz'}
 {'d': 'Afstammingslijnen van een persoon aanmaken', 'g': '3.4', 'i': 'Descendants Lines', 'n': 'Afstammingslijnen', 't': u'Report', 'v': '0.1.16', 'z': 'DescendantsLines.addon.tgz'}
 {'d': 'Een kenmerk een bepaalde waarde toekennen.', 'g': '3.4', 'i': 'SetAttribute', 'n': 'Kenmerk vastleggen', 't': u'Tool', 'v': '0.0.7', 'z': 'SetAttributeTool.addon.tgz'}
-{'d': 'Gramplet showing the source media for a person', 'g': '3.4', 'i': 'Person Source Media', 'n': 'Person Source Media', 't': u'Gramplet', 'v': '1.0.0', 'z': 'SourceMedia.addon.tgz'}
-{'d': 'Gramplet showing the source media for a family', 'g': '3.4', 'i': 'Family Source Media', 'n': 'Family Source Media', 't': u'Gramplet', 'v': '1.0.0', 'z': 'SourceMedia.addon.tgz'}
 {'d': 'Alle afstammelingslijnen van een bepaalde voorouder tot een bepaalde afstammeling worden als tekst afgedrukt.', 'g': '3.4', 'i': 'LinesOfDescendency', 'n': 'Afstammelingslijnen', 't': u'Report', 'v': '1.1.11', 'z': 'LinesOfDescendency.addon.tgz'}
 {'d': 'Collection of Web sites for the DE (requires libwebconnect)', 'g': '3.4', 'i': 'DE Web Connect Pack', 'n': 'DE Web Connect Pack', 't': u'Plugin lib', 'v': '0.0.3', 'z': 'DEWebConnectPack.addon.tgz'}
 {'d': 'Tekstverslag van de bibliotheken wordt opgemaakt', 'g': '3.4', 'i': 'Repositories Report Options', 'n': 'Opties voor het bibliotheekverslag', 't': u'Report', 'v': '0.3.2', 'z': 'RepositoriesReport.addon.tgz'}
@@ -62,7 +60,6 @@
 {'d': 'Gebeurtenissen van een persoon worden op een tijdslijn getoond', 'g': '3.4', 'i': 'timelinequickview', 'n': 'Tijdslijn', 't': u'Quickreport', 'v': '1.0.9', 'z': 'TimelineQuickview.addon.tgz'}
 {'d': 'Een gedeelde bron aan verschillende objecten toevoegen.', 'g': '3.4', 'i': 'AttachSource', 'n': 'Bron toevoegen', 't': u'Tool', 'v': '0.0.15', 'z': 'AttachSourceTool.addon.tgz'}
 {'d': "Verzameling van websites voor 'VK' (libwebconnect is nodig)", 'g': '3.4', 'i': 'UK Web Connect Pack', 'n': 'V.K. Web Connect Pack', 't': u'Plugin lib', 'v': '1.0.15', 'z': 'UKWebConnectPack.addon.tgz'}
-{'d': 'Tree view of files in the media diectory', 'g': '3.4', 'i': 'fileview', 'n': 'File View', 't': u'Gramps View', 'v': '1.0.0', 'z': 'FileView.addon.tgz'}
 {'d': "Gramplet om de grafische mogelijkheden van 'Cairo' te tonen", 'g': '3.4', 'i': 'Clock Gramplet', 'n': 'Klok', 't': u'Gramplet', 'v': '0.0.8', 'z': 'ClockGramplet.addon.tgz'}
 {'d': 'Verslag van de afstammelingen met gebruik van een filter aanmaken', 'g': '3.4', 'i': 'fil_descendant_report', 'n': 'Afstammelingenfilter', 't': u'Report', 'v': '0.3.2', 'z': 'FilteredReports.addon.tgz'}
 {'d': 'Een lijst van geselecteerde locaties, met de mogelijkheid om/de kenmerkenvelden de vervolledigen/bekijken/veranderen.', 'g': '3.4', 'i': 'PlaceCompletion', 'n': 'Locatie vervolledigen', 't': u'Tool', 'v': '0.0.14', 'z': 'PlaceCompletion.addon.tgz'}
