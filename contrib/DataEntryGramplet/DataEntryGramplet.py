@@ -369,11 +369,12 @@ class DataEntryGramplet(Gramplet):
 
     def get_last_source_title(self, obj):
         if obj:
-            ref_list = obj.get_source_references()
-            if len(ref_list) > 0:
-                ref = ref_list[-1]
-                if ref:
-                    source = self.dbstate.db.get_source_from_handle(ref.ref)
+            citation_list = obj.get_citation_list()
+            if len(citation_list) > 0:
+                citation_handle = citation_list[-1]
+                citation = self.dbstate.db.get_citation_from_handle(citation_handle)
+                if citation:
+                    source = self.dbstate.db.get_source_from_handle(citation.source_handle)
                     if source:
                         return source.get_title()
         return ""
@@ -462,16 +463,16 @@ class DataEntryGramplet(Gramplet):
         self.update()
 
     def add_source(self, obj, source):
-        source_refs = obj.get_source_references()
         found = 0
-        for ref in source_refs:
-            if ref.ref == source.get_handle():
+        for handle in obj.get_citation_list():
+            citation = self.dbstate.db.get_citation_from_handle(handle)
+            if citation.get_reference_handle() == source.get_handle():
                 found = 1
                 break
         if not found:
-            sref = gen.lib.SourceRef()
-            sref.set_reference_handle(source.get_handle())
-            obj.add_source_reference(sref)
+            citation = Citation()
+            citation.set_reference_handle(source.get_handle())
+        obj.add_source_reference(sref)
 
     def add_data_entry(self, obj):
         from QuestionDialog import ErrorDialog
