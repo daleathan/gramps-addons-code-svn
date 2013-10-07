@@ -470,7 +470,7 @@ class DataEntryGramplet(Gramplet):
                 found = 1
                 break
         if not found:
-            citation = Citation()
+            citation = gen.lib.Citation()
             citation.set_reference_handle(source.get_handle())
         obj.add_source_reference(sref)
 
