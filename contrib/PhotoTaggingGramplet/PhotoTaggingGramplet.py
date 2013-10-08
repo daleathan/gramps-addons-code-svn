@@ -1090,13 +1090,26 @@ class PhotoTaggingGramplet(Gramplet):
     def button_press_event(self, obj, event):
         if not self.is_image_loaded():
             return
-        if event.button==1:
+        if event.button == 1: # left button
             self.start_point_screen = (event.x, event.y)
             if self.current is not None and self.grabber is None:
                 self.current = None
                 self.selection = None
                 self.start_point_screen = None
                 self.refresh()
+        elif event.button == 3: # right button
+            # select a region, if clicked inside one
+            click_point = self.screen_to_image((event.x, event.y))
+            self.current = self.find_region(*click_point)
+            self.selection = self.current.coords() if self.current is not None else None
+            self.start_point_screen = None
+            self.refresh()
+            self.enable_buttons()
+            if self.current is not None:
+                self.context_menu.popup(None, None, None, event.button, event.time, None)
+                self.enable_context_menu_buttons()
+                self.context_menu.show_all()
+        return True # don't propagate the event further
 
     def button_release_event(self, obj, event):
         if not self.is_image_loaded():
