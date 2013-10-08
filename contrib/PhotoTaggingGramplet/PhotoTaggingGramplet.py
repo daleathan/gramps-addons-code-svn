@@ -1003,7 +1003,7 @@ class PhotoTaggingGramplet(Gramplet):
         self.zoom_out()
 
     def detect_faces_clicked(self, event):
-        min_face_size = MIN_FACE_SIZE
+        self.uistate.push_message(self.dbstate, "Detecting faces...")
         media = self.get_current_object()
         image_path = Utils.media_path_full(self.dbstate.db, media.get_path())
         cv_image = cv.LoadImage(image_path, cv.CV_LOAD_IMAGE_GRAYSCALE)
@@ -1013,7 +1013,7 @@ class PhotoTaggingGramplet(Gramplet):
         faces = cv.HaarDetectObjects(cv_image, cascade, 
                                      cv.CreateMemStorage(0),
                                      1.2, 2, cv.CV_HAAR_DO_CANNY_PRUNING, 
-                                     min_face_size)
+                                     MIN_FACE_SIZE)
         for ((x, y, width, height), neighbors) in faces:
             region = Region(x - DETECTED_REGION_PADDING,
                             y - DETECTED_REGION_PADDING,
@@ -1022,6 +1022,7 @@ class PhotoTaggingGramplet(Gramplet):
             if self.enclosing_region(region) is None:
                 self.regions.append(region)
         self.refresh()
+        self.uistate.push_message(self.dbstate, "Detection finished")
 
     # ======================================================
     # helpers for toolbar event handlers
