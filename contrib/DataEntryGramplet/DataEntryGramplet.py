@@ -472,7 +472,7 @@ class DataEntryGramplet(Gramplet):
         if not found:
             citation = gen.lib.Citation()
             citation.set_reference_handle(source.get_handle())
-        obj.add_source_reference(sref)
+        obj.add_citation(citation.get_handle())
 
     def add_data_entry(self, obj):
         from QuestionDialog import ErrorDialog
