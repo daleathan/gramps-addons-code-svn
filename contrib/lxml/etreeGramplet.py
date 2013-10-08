@@ -30,6 +30,7 @@
 import codecs
 import sys
 import os
+from shutil import copy
 from gi.repository import Gtk
 from xml.etree import ElementTree
 import gzip
@@ -98,7 +99,10 @@ def epoch(t):
             conv = datetime.fromtimestamp(date)
             fmt = conv.strftime('%d %B %Y')
         
-        return(fmt)
+        if os.name == 'nt':
+            return(fmt).decode('mbcs').encode("utf-8")
+        else:
+            return(fmt)
 
 #-------------------------------------------------------------------------
 #
@@ -251,7 +255,7 @@ class etreeGramplet(Gramplet):
             use_gzip = 0
          
         # lazy ...
-        if os.name != 'posix':
+        if os.name != 'posix' and os.name != 'nt':
             
             # GtkTextView
             
@@ -269,7 +273,7 @@ class etreeGramplet(Gramplet):
             sys.stdout.write(_('From:\n "%(file1)s"\n to:\n "%(file2)s".\n') % {'file1': entry, 'file2': filename})
         else:
             try:
-                os.system('cp %s %s' % (entry, filename))
+                copy(entry, filename)
             except:
                 ErrorDialog('Is it a .gramps ?', _('Cannot copy "%s"') % entry)
                 return
