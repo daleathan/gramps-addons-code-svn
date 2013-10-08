@@ -1095,7 +1095,6 @@ class PhotoTaggingGramplet(Gramplet):
             if self.current is not None and self.grabber is None:
                 self.current = None
                 self.selection = None
-                self.start_point_screen = None
                 self.refresh()
         elif event.button == 3: # right button
             # select a region, if clicked inside one
