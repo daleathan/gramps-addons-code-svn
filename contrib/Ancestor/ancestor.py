@@ -41,6 +41,7 @@ from Errors import WindowActiveError
 from gen.display.name import displayer as name_displayer
 from DateHandler import get_date
 from gen.utils import get_birth_or_fallback, get_death_or_fallback
+from config import config
 from gen.ggettext import gettext as _
 
 class Ancestor(Gramplet):
@@ -109,13 +110,16 @@ class Ancestor(Gramplet):
         active_handle = self.get_active('Person')
         self.model.clear()
         if active_handle:
-            self.add_to_tree(None, active_handle)
+            self.add_to_tree(1, None, active_handle)
             self.view.expand_all()
             self.set_has_data(self.get_has_data(active_handle))
         else:
             self.set_has_data(False)
 
-    def add_to_tree(self, parent_id, person_handle):
+    def add_to_tree(self, depth, parent_id, person_handle):
+        if depth > config.get('behavior.generation-depth'):
+            return
+
         person = self.dbstate.db.get_person_from_handle(person_handle)
         name = name_displayer.display(person)
 
@@ -140,15 +144,16 @@ class Ancestor(Gramplet):
 
         tooltip = name + '\n' + birth_text + '\n' + death_text
 
-        item_id = self.model.add([name, birth_date, birth_sort, 
+        label = _('%(depth)s. %(name)s') % {'depth': depth, 'name': name}
+        item_id = self.model.add([label, birth_date, birth_sort, 
                                   tooltip, person_handle], node=parent_id)
 
         family_handle = person.get_main_parents_family_handle()
         family = self.dbstate.db.get_family_from_handle(family_handle)
         if family:
             if family.get_father_handle():
-                self.add_to_tree(item_id, family.get_father_handle())
+                self.add_to_tree(depth + 1, item_id, family.get_father_handle())
             if family.get_mother_handle():
-                self.add_to_tree(item_id, family.get_mother_handle())
+                self.add_to_tree(depth + 1, item_id, family.get_mother_handle())
 
         return item_id

@@ -17,7 +17,7 @@
 {'d': 'Rapport \xc3\xb6ver de poster, som har \xc3\xa4ndrats senast', 'g': '3.4', 'i': 'LastChangeReport', 'n': 'Rapport \xc3\xb6ver senaste \xc3\xa4ndringar', 't': u'Report', 'v': '0.0.12', 'z': 'LastChange.addon.tgz'}
 {'d': 'Detta \xc3\xa4r en r\xc3\xa5 dumpning av pythonobjekt', 'g': '3.4', 'i': 'Raw Export', 'n': 'R\xc3\xa5 export', 't': u'Exporter', 'v': '1.0.10', 'z': 'ExportRaw.addon.tgz'}
 {'d': 'Rebuilds Gramps Types', 'g': '3.4', 'i': 'rebuild_types', 'n': 'Rebuild Gramps Types', 't': u'Tool', 'v': '1.0.2', 'z': 'RebuildTypes.addon.tgz'}
-{'d': "Gramplet showing active person's descendants", 'g': '3.4', 'i': 'Descendant', 'n': 'Descendant', 't': u'Gramplet', 'v': '1.0.1', 'z': 'Descendant.addon.tgz'}
+{'d': "Gramplet showing active person's descendants", 'g': '3.4', 'i': 'Descendant', 'n': 'Descendant', 't': u'Gramplet', 'v': '1.0.2', 'z': 'Descendant.addon.tgz'}
 {'d': 'Collection of Web sites for the US (requires libwebconnect)', 'g': '3.4', 'i': 'US Web Connect Pack', 'n': 'US Web Connect Pack', 't': u'Plugin lib', 'v': '1.0.17', 'z': 'USWebConnectPack.addon.tgz'}
 {'d': 'Gramplet f\xc3\xb6r gruppering av poster', 'g': '3.4', 'i': 'Clipboard Gramplet', 'n': 'Urklippsgramplet', 't': u'Gramplet', 'v': '1.0.12', 'z': 'ClipboardGramplet.addon.tgz'}
 {'d': 'S\xc3\xb6ker igenom hela databasen och f\xc3\xb6rs\xc3\xb6ker ordna stavning av f\xc3\xb6rnamnen', 'g': '3.4.6', 'i': 'chgivenname', 'n': 'Ordna stavning av f\xc3\xb6rnamn', 't': u'Tool', 'v': '1.0.7', 'z': 'ChangeGivenNames.addon.tgz'}
@@ -33,7 +33,7 @@
 {'d': 'Produces a list of all the notes with a given tag along with the records that it references, the Person, Family, Event, etc.', 'g': '3.4', 'i': 'TodoReport', 'n': 'Todo Report', 't': u'Report', 'v': '1.2.9', 'z': 'ToDoReport.addon.tgz'}
 {'d': 'Visa antal \xc3\xa4ttlingar f\xc3\xb6r varje person', 'g': '3.4', 'i': 'Descendant Count Quickview', 'n': '\xc3\x84ttlingsr\xc3\xa4knare', 't': u'Quickreport', 'v': '1.0.7', 'z': 'DescendantCount.addon.tgz'}
 {'d': 'Gramplet for showing people and descendant counts', 'g': '3.4', 'i': 'Descendant Count Gramplet', 'n': 'Gramplet f\xc3\xb6r r\xc3\xa4kning av \xc3\xa4ttlingar', 't': u'Gramplet', 'v': '1.0.8', 'z': 'DescendantCount.addon.tgz'}
-{'d': "Gramplet showing active person's ancestors", 'g': '3.4', 'i': 'Ancestor', 'n': 'Ancestor', 't': u'Gramplet', 'v': '1.0.1', 'z': 'Ancestor.addon.tgz'}
+{'d': "Gramplet showing active person's ancestors", 'g': '3.4', 'i': 'Ancestor', 'n': 'Ancestor', 't': u'Gramplet', 'v': '1.0.2', 'z': 'Ancestor.addon.tgz'}
 {'d': 'Django \xc3\xa4r ett n\xc3\xa4tbaserat ramverkarbetande med en konfigurerad databas ', 'g': '3.4', 'i': 'export_django', 'n': 'Django-export', 't': u'Exporter', 'v': '1.0.13', 'z': 'Django.addon.tgz'}
 {'d': 'Django \xc3\xa4r ett n\xc3\xa4tbaserat ramverkarbetande med en konfigurerad databas ', 'g': '3.4', 'i': 'import_django', 'n': 'Django-import', 't': u'Importer', 'v': '1.0.13', 'z': 'Django.addon.tgz'}
 {'d': 'Levande sl\xc3\xa4ktskapsdiagram', 'g': '3.4', 'i': 'graphview', 'n': 'Diagramvy', 't': u'Gramps View', 'v': '1.0.27', 'z': 'GraphView.addon.tgz'}
