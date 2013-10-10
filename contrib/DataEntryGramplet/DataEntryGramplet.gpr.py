@@ -18,7 +18,6 @@ register(GRAMPLET,
          status=STABLE,
          fname="DataEntryGramplet.py",
          help_url="Data Entry Gramplet",
-         include_in_listing = False,
          )
 
 
