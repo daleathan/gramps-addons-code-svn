@@ -1,9 +1,7 @@
 #
 # Gramps - a GTK+/GNOME based genealogy program
 #
-# Copyright (C) 2011 Nick Hall
-#           (C) 2011 Doug Blank <doug.blank@gmail.com>
-#           (C) 2013 Artem Glebov <artem.glebov@gmail.com>
+# Copyright (C) 2013 Artem Glebov <artem.glebov@gmail.com>
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -29,7 +27,6 @@
 #-------------------------------------------------------------------------
 from __future__ import division
 
-import os
 from gen.ggettext import sgettext as _
 
 #-------------------------------------------------------------------------
@@ -57,14 +54,10 @@ from gui.selectors import SelectorFactory
 
 #-------------------------------------------------------------------------
 #
-# computer vision modules
+# face detection module
 #
 #-------------------------------------------------------------------------
-try:
-    import cv
-    computer_vision_available = True
-except ImportError:
-    computer_vision_available = False
+import facedetection
 
 #-------------------------------------------------------------------------
 #
@@ -343,9 +336,6 @@ MIN_SELECTION_SIZE = 10
 
 THUMBNAIL_IMAGE_SIZE = (50, 50)
 
-path, filename = os.path.split(__file__)
-HAARCASCADE_PATH = os.path.join(path, 'haarcascade_frontalface_alt.xml')
-
 def resize_keep_aspect(orig_x, orig_y, target_x, target_y):
     orig_aspect = orig_x / orig_y
     target_aspect = target_x / target_y
@@ -480,7 +470,7 @@ class PhotoTaggingGramplet(Gramplet):
         self.button_zoom_in.set_tooltip(tooltips, "Zoom In", None)
         self.button_zoom_out.set_tooltip(tooltips, "Zoom Out", None)
 
-        if computer_vision_available:
+        if facedetection.computer_vision_available:
             self.button_detect.set_tooltip(tooltips, "Detect faces", None)
         else:
             self.button_detect.set_tooltip(tooltips, "Detect faces (cv module required)", None)
@@ -998,7 +988,7 @@ class PhotoTaggingGramplet(Gramplet):
         self.button_zoom_out.set_sensitive(self.is_image_loaded() and
                                            self.can_zoom_out())
         self.button_detect.set_sensitive(self.is_image_loaded() and
-                                         computer_vision_available)
+                                         facedetection.computer_vision_available)
 
     # ======================================================
     # managing context menu buttons
@@ -1080,14 +1070,7 @@ class PhotoTaggingGramplet(Gramplet):
         self.uistate.push_message(self.dbstate, "Detecting faces...")
         media = self.get_current_object()
         image_path = Utils.media_path_full(self.dbstate.db, media.get_path())
-        cv_image = cv.LoadImage(image_path, cv.CV_LOAD_IMAGE_GRAYSCALE)
-        o_width, o_height = cv_image.width, cv_image.height
-        cv.EqualizeHist(cv_image, cv_image)
-        cascade = cv.Load(HAARCASCADE_PATH)
-        faces = cv.HaarDetectObjects(cv_image, cascade, 
-                                     cv.CreateMemStorage(0),
-                                     1.2, 2, cv.CV_HAAR_DO_CANNY_PRUNING, 
-                                     MIN_FACE_SIZE)
+        faces = facedetection.detect_faces(image_path, MIN_FACE_SIZE)
         for ((x, y, width, height), neighbors) in faces:
             region = Region(x - DETECTED_REGION_PADDING,
                             y - DETECTED_REGION_PADDING,
