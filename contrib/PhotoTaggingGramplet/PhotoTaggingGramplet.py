@@ -196,6 +196,8 @@ def lower_left_moved(x1, y1, x2, y2, dx, dy):
 def left_moved(x1, y1, x2, y2, dx, dy):
     return (x1 + dx, y1, x2, y2)
 
+# switching
+
 GRABBERS = [INSIDE,
             GRABBER_UPPER_LEFT,
             GRABBER_UPPER,
@@ -236,6 +238,18 @@ MOTION_FUNCTIONS = [inside_moved,
                     lower_left_moved,
                     left_moved]
 
+GRABBERS_SWITCH = [ 
+  [INSIDE, INSIDE, INSIDE],
+  [GRABBER_UPPER_RIGHT, GRABBER_LOWER_RIGHT, GRABBER_LOWER_LEFT],
+  [GRABBER_UPPER, GRABBER_LOWER, GRABBER_LOWER],
+  [GRABBER_UPPER_LEFT, GRABBER_LOWER_LEFT, GRABBER_UPPER_RIGHT],
+  [GRABBER_LEFT, GRABBER_LEFT, GRABBER_RIGHT],
+  [GRABBER_LOWER_LEFT, GRABBER_UPPER_LEFT, GRABBER_UPPER_RIGHT],
+  [GRABBER_LOWER, GRABBER_UPPER, GRABBER_UPPER],
+  [GRABBER_LOWER_RIGHT, GRABBER_UPPER_RIGHT, GRABBER_UPPER_LEFT],
+  [GRABBER_RIGHT, GRABBER_RIGHT, GRABBER_LEFT]
+]
+
 # cursors
 
 CURSOR_UPPER = gtk.gdk.Cursor(gtk.gdk.TOP_SIDE)
@@ -272,6 +286,19 @@ def grabber_generators(rect):
         return INNER_GRABBERS
     else:
         return OUTER_GRABBERS
+
+def switch_grabber(grabber, x1, y1, x2, y2):
+    switch_row = GRABBERS_SWITCH[grabber]
+    if x1 > x2:
+        if y1 > y2:
+            return switch_row[1]
+        else:
+            return switch_row[0]
+    else:
+        if y1 > y2:
+            return switch_row[2]
+        else:
+            return grabber
 
 def can_grab(rect, x, y):
     """
@@ -597,6 +624,7 @@ class PhotoTaggingGramplet(Gramplet):
         self.selection = None
         self.in_region = None
         self.grabber_position = None
+        self.grabber_to_draw = None
 
         image_path = Utils.media_path_full(self.dbstate.db, media.get_path())
         try:
@@ -816,7 +844,10 @@ class PhotoTaggingGramplet(Gramplet):
                 generators = INNER_GRABBERS
             else:
                 generators = OUTER_GRABBERS
-            generator = generators[self.grabber]
+            if self.grabber_to_draw is not None:
+                generator = generators[self.grabber_to_draw]
+            else:
+                generator = generators[self.grabber]
             if generator is not None:
                 x1, y1, x2, y2 = generator(*selection_rect)
                 cr.rectangle(x1, y1, x2 - x1, y2 - y1)
@@ -1183,7 +1214,7 @@ class PhotoTaggingGramplet(Gramplet):
                         # clicked on one of the grabbers
                         dx, dy = (event.x - self.start_point_screen[0], 
                                   event.y - self.start_point_screen[1])
-                        self.modify_selection(dx, dy)
+                        self.grabber_to_draw = self.modify_selection(dx, dy)
                         person = self.current.person
                         mediaref = self.current.mediaref
                         if person and mediaref:
@@ -1222,7 +1253,7 @@ class PhotoTaggingGramplet(Gramplet):
                 # dragging the grabber
                 dx, dy = (event.x - self.start_point_screen[0], 
                           event.y - self.start_point_screen[1])
-                self.modify_selection(dx, dy)
+                self.grabber_to_draw = self.modify_selection(dx, dy)
             else:
                 # making new selection
                 start_point = self.screen_to_truncated(self.start_point_screen)
@@ -1235,14 +1266,17 @@ class PhotoTaggingGramplet(Gramplet):
                 rect = self.rect_image_to_screen(self.current.coords())
                 self.grabber = can_grab(rect, event.x, event.y)
                 if self.grabber is not None:
+                    self.grabber_to_draw = self.grabber
                     self.grabber_position = grabber_position(rect)
                     self.event_box.window.set_cursor(CURSORS[self.grabber])
                 else:
+                    self.grabber_to_draw = None
                     self.grabber_position = None
                     self.event_box.window.set_cursor(None)
             else:
                 # nothing is active
                 self.grabber = None
+                self.grabber_to_draw = None
                 self.grabber_position = None
                 self.event_box.window.set_cursor(None)
         self.image.queue_draw()
@@ -1264,7 +1298,9 @@ class PhotoTaggingGramplet(Gramplet):
         x1, y1, x2, y2 = MOTION_FUNCTIONS[self.grabber](x1, y1, x2, y2, dx, dy)
         (x1, y1) = self.screen_to_truncated((x1, y1))
         (x2, y2) = self.screen_to_truncated((x2, y2))
-        self.selection = (x1, y1, x2, y2)
+        grabber = switch_grabber(self.grabber, x1, y1, x2, y2)
+        self.selection = order_coordinates((x1, y1), (x2, y2))
+        return grabber
 
     # ======================================================
     # list event handles
