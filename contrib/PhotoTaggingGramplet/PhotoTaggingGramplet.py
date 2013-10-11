@@ -86,6 +86,9 @@ MIN_FACE_SIZE = CONFIG.get("detection.box_size")
 #
 #-------------------------------------------------------------------------
 
+GRABBER_INSIDE = 0
+GRABBER_OUTSIDE = 1
+
 MIN_CORNER_GRABBER = 20
 MIN_SIDE_GRABBER = 20
 MIN_GRABBER_PADDING = 10
@@ -256,10 +259,16 @@ CURSORS = [None,
 
 # helper functions
 
-def grabber_generators(rect):
+def grabber_position(rect):
     x1, y1, x2, y2 = rect
     if (x2 - x1 >= MIN_SIDE_FOR_INSIDE_GRABBERS and 
         y2 - y1 >= MIN_SIDE_FOR_INSIDE_GRABBERS):
+        return GRABBER_INSIDE
+    else:
+        return GRABBER_OUTSIDE
+
+def grabber_generators(rect):
+    if grabber_position(rect) == GRABBER_INSIDE:
         return INNER_GRABBERS
     else:
         return OUTER_GRABBERS
@@ -587,6 +596,7 @@ class PhotoTaggingGramplet(Gramplet):
         self.start_point_screen = None
         self.selection = None
         self.in_region = None
+        self.grabber_position = None
 
         image_path = Utils.media_path_full(self.dbstate.db, media.get_path())
         try:
@@ -800,7 +810,12 @@ class PhotoTaggingGramplet(Gramplet):
         if self.current is not None and self.grabber is not None:
             selection_rect = self.rect_image_to_screen(self.selection)
             cr.set_source_rgb(1.0, 0, 0)
-            generators = grabber_generators(selection_rect)
+            if self.grabber_position is None:
+                generators = grabber_generators(selection_rect)
+            elif self.grabber_position == GRABBER_INSIDE:
+                generators = INNER_GRABBERS
+            else:
+                generators = OUTER_GRABBERS
             generator = generators[self.grabber]
             if generator is not None:
                 x1, y1, x2, y2 = generator(*selection_rect)
@@ -1217,15 +1232,18 @@ class PhotoTaggingGramplet(Gramplet):
             self.in_region = self.find_region(*end_point_orig)
             if self.current is not None:
                 # a box is active, so check if the pointer is inside a grabber
-                self.grabber = can_grab(self.rect_image_to_screen(self.current.coords()),
-                                        event.x, event.y)
+                rect = self.rect_image_to_screen(self.current.coords())
+                self.grabber = can_grab(rect, event.x, event.y)
                 if self.grabber is not None:
+                    self.grabber_position = grabber_position(rect)
                     self.event_box.window.set_cursor(CURSORS[self.grabber])
                 else:
+                    self.grabber_position = None
                     self.event_box.window.set_cursor(None)
             else:
                 # nothing is active
                 self.grabber = None
+                self.grabber_position = None
                 self.event_box.window.set_cursor(None)
         self.image.queue_draw()
 
