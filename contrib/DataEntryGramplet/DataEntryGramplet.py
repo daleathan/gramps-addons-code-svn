@@ -276,23 +276,29 @@ class DataEntryGramplet(Gramplet):
         self.update()
 
     def edit_person(self, obj):
-        from gui.editors import EditPerson
-        try:
-            EditPerson(self.gui.dbstate, 
-                       self.gui.uistate, [], 
-                       self._dirty_person,
-                       callback=self.edit_callback)
-        except Errors.WindowActiveError:
-            pass
+        if self._dirty_person:
+            from gui.editors import EditPerson
+            try:
+                EditPerson(self.gui.dbstate, 
+                           self.gui.uistate, [], 
+                           self._dirty_person,
+                           callback=self.edit_callback)
+            except Errors.WindowActiveError:
+                pass
+        else:
+            return
 
     def edit_family(self, obj):
-        from gui.editors import EditFamily
-        try:
-            EditFamily(self.gui.dbstate, 
-                       self.gui.uistate, [], 
-                       self._dirty_family)
-        except Errors.WindowActiveError:
-            pass
+        if self._dirty_family:
+            from gui.editors import EditFamily
+            try:
+                EditFamily(self.gui.dbstate, 
+                           self.gui.uistate, [], 
+                           self._dirty_family)
+            except Errors.WindowActiveError:
+                pass
+        else:
+            return
     
     def process_dateplace(self, text):
         if text == "": return None, None
