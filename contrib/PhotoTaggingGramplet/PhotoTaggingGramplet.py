@@ -1321,10 +1321,13 @@ class PhotoTaggingGramplet(Gramplet):
             name = name_displayer.display(region.person) if region.person else ""
             w = region.x2 - region.x1
             h = region.y2 - region.y1
-            subpixbuf = self.pixbuf.subpixbuf(region.x1, region.y1, w, h)
-            size = resize_keep_aspect(w, h, *THUMBNAIL_IMAGE_SIZE)
-            thumbnail = subpixbuf.scale_simple(size[0], size[1],
-                                               gtk.gdk.INTERP_BILINEAR)
+            if w >= 1 and h >= 1:
+                subpixbuf = self.pixbuf.subpixbuf(region.x1, region.y1, w, h)
+                size = resize_keep_aspect(w, h, *THUMBNAIL_IMAGE_SIZE)
+                thumbnail = subpixbuf.scale_simple(size[0], size[1],
+                                                   gtk.gdk.INTERP_BILINEAR)
+            else:
+                thumbnail = None
             self.treestore.append(None, (i, thumbnail, name))
 
     def refresh_selection(self):
