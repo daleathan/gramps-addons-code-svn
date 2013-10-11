@@ -543,6 +543,8 @@ class PhotoTaggingGramplet(Gramplet):
         self.context_menu.append(self.context_button_clear)
         self.context_menu.append(self.context_button_remove)
 
+        self.additional_items = []
+
     # ======================================================
     # gramplet event handlers
     # ======================================================
@@ -879,6 +881,13 @@ class PhotoTaggingGramplet(Gramplet):
                 result.append(r)
         return result
 
+    def all_referenced_persons(self):
+        result = set()
+        for r in self.regions:
+            if r.person is not None:
+                result.add(r.person)
+        return result
+
     # ======================================================
     # tooltips
     # ======================================================
@@ -949,12 +958,31 @@ class PhotoTaggingGramplet(Gramplet):
     # managing context menu buttons
     # ======================================================
 
-    def enable_context_menu_buttons(self):
+    def prepare_context_menu(self):
         self.context_button_add.set_sensitive(self.current is not None)
         self.context_button_select.set_sensitive(self.current is not None)
         self.context_button_clear.set_sensitive(
           self.current is not None and self.current.person is not None)
         self.context_button_remove.set_sensitive(self.current is not None)
+
+        # clear temporary items
+        for item in self.additional_items:
+            self.context_menu.remove(item)
+
+        self.additional_items = []
+
+        # populate the context menu
+        persons = self.all_referenced_persons()
+        if persons:
+            self.additional_items.append(gtk.SeparatorMenuItem())
+            sorted_persons = sorted(list(persons), key=name_displayer.display)
+            for person in sorted_persons:
+                item = gtk.MenuItem(
+                  _("Replace {0}").format(name_displayer.display(person)))
+                item.connect("activate", self.replace_reference, person)
+                self.additional_items.append(item)
+            for item in self.additional_items:
+                self.context_menu.append(item)
 
     # ======================================================
     # toolbar button event handles
@@ -987,7 +1015,7 @@ class PhotoTaggingGramplet(Gramplet):
             self.enable_buttons()
 
     def clear_ref_clicked(self, event):
-        if self.clear_current_ref():
+        if self.clear_ref(self.current):
             self.refresh()
 
     def edit_person_clicked(self, event):
@@ -1066,23 +1094,37 @@ class PhotoTaggingGramplet(Gramplet):
                 dialog.destroy()
                 if response == gtk.RESPONSE_YES:
                     self.delete_regions(other_references)
-            rect = self.check_and_translate_to_proportional(
-                       self.current.mediaref, 
-                       self.current.coords())
-            self.clear_current_ref()
-            mediaref = self.add_reference(person, rect)
-            self.current.person = person
-            self.current.mediaref = mediaref
+            self.set_person(self.current, person)
 
-    def clear_current_ref(self):
-        if self.current:
-            if self.current.person:
-                self.remove_reference(self.current.person, 
-                                      self.current.mediaref)
-                self.current.person = None
-                self.current.mediaref = None
+    def set_person(self, region, person):
+        rect = self.check_and_translate_to_proportional(
+          region.mediaref, region.coords())
+        self.clear_ref(region)
+        mediaref = self.add_reference(person, rect)
+        region.person = person
+        region.mediaref = mediaref
+
+    def clear_ref(self, region):
+        if region:
+            if region.person:
+                self.remove_reference(region.person, region.mediaref)
+                region.person = None
+                region.mediaref = None
                 return True
         return False
+
+    # ======================================================
+    # context menu event handles
+    # ======================================================
+
+    def replace_reference(self, event, person):
+        other_references = self.regions_referencing_person(person)
+        self.delete_regions(other_references)
+        self.set_person(self.current, person)
+        self.current = None
+        self.selection = None
+        self.refresh()
+        self.enable_buttons()
 
     # ======================================================
     # mouse event handlers
@@ -1107,7 +1149,7 @@ class PhotoTaggingGramplet(Gramplet):
             self.enable_buttons()
             if self.current is not None:
                 self.context_menu.popup(None, None, None, event.button, event.time, None)
-                self.enable_context_menu_buttons()
+                self.prepare_context_menu()
                 self.context_menu.show_all()
         return True # don't propagate the event further
 
@@ -1142,7 +1184,7 @@ class PhotoTaggingGramplet(Gramplet):
                         self.regions.append(region)
                         self.current = region
                         self.context_menu.popup(None, None, None, event.button, event.time, None)
-                        self.enable_context_menu_buttons()
+                        self.prepare_context_menu()
                         self.context_menu.show_all()
                     else:
                         # nothing selected, just a click
