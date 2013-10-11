@@ -439,11 +439,6 @@ class PhotoTaggingGramplet(Gramplet):
     # selection event handlers
     # ======================================================
 
-    def state_updated(self, sender):
-        self.enable_buttons()
-        self.refresh_list()
-        self.refresh_selection()
-
     def region_modified(self, sender):
         region = self.selection_widget.get_current()
         person = region.person
@@ -453,6 +448,9 @@ class PhotoTaggingGramplet(Gramplet):
             rect = self.selection_widget.real_to_proportional_rect(selection)
             mediaref.set_rectangle(rect)
             self.commit_person(person)
+        self.enable_buttons()
+        self.refresh_list()
+        self.refresh_selection()
 
     def region_created(self, sender, event):
         self.context_menu.popup(None, None, None, event.button, event.time, None)

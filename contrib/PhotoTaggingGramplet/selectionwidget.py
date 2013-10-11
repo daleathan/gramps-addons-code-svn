@@ -519,8 +519,8 @@ class SelectionWidget(gtk.ScrolledWindow):
                         dx, dy = (event.x - self.start_point_screen[0], 
                                   event.y - self.start_point_screen[1])
                         self.grabber_to_draw = self.modify_selection(dx, dy)
-                        self.emit("region-modified")
                         self.current.set_coords(*self.selection)
+                        self.emit("region-modified")
                 else:
                     # nothing is currently selected
                     if (abs(self.start_point_screen[0] - event.x) >= MIN_SELECTION_SIZE and
