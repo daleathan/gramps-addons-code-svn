@@ -1,0 +1,45 @@
+# French translations for gramps package.
+# Copyright (C) 2013 THE gramps'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the gramps package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gramps 34\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-10-06 19:11+0200\n"
+"PO-Revision-Date: 2013-10-06 19:11+0200\n"
+"Last-Translator: \n"
+"Language-Team: French\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: Participants/Participants.gpr.py:30 Participants/Participants.gpr.py:38
+msgid "Participants"
+msgstr "Participants"
+
+#: Participants/Participants.gpr.py:31
+msgid "Gramplet showing the participants in an event"
+msgstr "Gramplet affichant les personnes présentes à un événement"
+
+#: Participants/Participants.py:68
+msgid "Double-click on a row to edit the selected participant."
+msgstr "Cliquez deux fois sur une ligne pour éditer le participant sélectionné."
+
+#: Participants/Participants.py:72
+msgid "Name"
+msgstr "Nom"
+
+#: Participants/Participants.py:73
+msgid "Role"
+msgstr "Rôle"
+
+#: Participants/Participants.py:74
+msgid "Birth Date"
+msgstr "Date de naissance"
+
+#: Participants/Participants.py:76
+msgid "Spouses"
+msgstr "Conjoints"
