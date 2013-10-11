@@ -164,10 +164,13 @@ class PhotoTaggingGramplet(Gramplet):
 
         self.selection_widget = selectionwidget.SelectionWidget()
         self.selection_widget.set_size_request(200, -1)
-        self.selection_widget.connect("state-updated", self.state_updated)
         self.selection_widget.connect("region-modified", self.region_modified)
-        self.selection_widget.connect("selection-made", self.selection_made)
+        self.selection_widget.connect("region-created", self.region_created)
+        self.selection_widget.connect("region-selected", self.region_selected)
+        self.selection_widget.connect("selection-cleared", self.selection_cleared)
         self.selection_widget.connect("right-button-clicked", self.right_button_clicked)
+        self.selection_widget.connect("zoomed-in", self.zoomed)
+        self.selection_widget.connect("zoomed-out", self.zoomed)
 
         hpaned.pack1(self.selection_widget, resize=True, shrink=False)
 
@@ -451,7 +454,7 @@ class PhotoTaggingGramplet(Gramplet):
             mediaref.set_rectangle(rect)
             self.commit_person(person)
 
-    def selection_made(self, sender, event):
+    def region_created(self, sender, event):
         self.context_menu.popup(None, None, None, event.button, event.time, None)
         self.prepare_context_menu()
         self.context_menu.show_all()
@@ -460,6 +463,17 @@ class PhotoTaggingGramplet(Gramplet):
         self.context_menu.popup(None, None, None, event.button, event.time, None)
         self.prepare_context_menu()
         self.context_menu.show_all()
+
+    def region_selected(self, sender):
+        self.enable_buttons()
+        self.refresh_selection()
+
+    def selection_cleared(self, sender):
+        self.enable_buttons()
+        self.refresh_selection()
+
+    def zoomed(self, sender):
+        self.enable_buttons()
 
     # ======================================================
     # toolbar button event handles

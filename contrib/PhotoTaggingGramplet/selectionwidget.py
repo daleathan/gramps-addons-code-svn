@@ -665,13 +665,13 @@ class SelectionWidget(gtk.ScrolledWindow):
         if self.can_zoom_in():
             self.scale *= RESIZE_RATIO
             self.rescale()
-            self.emit("state-updated")
+            self.emit("zoomed-in")
 
     def zoom_out(self):
         if self.can_zoom_out():
             self.scale /= RESIZE_RATIO
             self.rescale()
-            self.emit("state-updated")
+            self.emit("zoomed-out")
 
     def expose_handler(self, widget, event):
         if self.pixbuf:
@@ -728,6 +728,7 @@ class SelectionWidget(gtk.ScrolledWindow):
                 self.current = None
                 self.selection = None
                 self.refresh()
+                self.emit("selection-cleared")
         elif event.button == 3: # right button
             # select a region, if clicked inside one
             click_point = self.screen_to_image((event.x, event.y))
@@ -735,9 +736,11 @@ class SelectionWidget(gtk.ScrolledWindow):
             self.selection = self.current.coords() if self.current is not None else None
             self.start_point_screen = None
             self.refresh()
-            self.emit("state-updated")
             if self.current is not None:
+                self.emit("region-selected")
                 self.emit("right-button-clicked", event)
+            else:
+                self.emit("selection-cleared")
         return True # don't propagate the event further
 
     def button_release_event(self, obj, event):
@@ -751,6 +754,7 @@ class SelectionWidget(gtk.ScrolledWindow):
                         # clicked outside of the grabbing area
                         self.current = None
                         self.selection = None
+                        self.emit("selection-cleared")
                     elif self.grabber != INSIDE:
                         # clicked on one of the grabbers
                         dx, dy = (event.x - self.start_point_screen[0], 
@@ -766,16 +770,16 @@ class SelectionWidget(gtk.ScrolledWindow):
                         region = Region(*self.selection)
                         self.regions.append(region)
                         self.current = region
-                        self.emit("selection-made", event)
+                        self.emit("region-created", event)
                     else:
                         # nothing selected, just a click
                         click_point = self.screen_to_image(self.start_point_screen)
                         self.current = self.find_region(*click_point)
                         self.selection = self.current.coords() if self.current is not None else None
+                        self.emit("region-selected")
 
                 self.start_point_screen = None
                 self.refresh()
-                self.emit("state-updated")
 
     def motion_notify_event(self, widget, event):
         if not self.is_image_loaded():
@@ -854,11 +858,17 @@ class SelectionWidget(gtk.ScrolledWindow):
             return False
 
 gobject.type_register(SelectionWidget)
-gobject.signal_new("state-updated", SelectionWidget, gobject.SIGNAL_RUN_FIRST,
-                   gobject.TYPE_NONE, ())
 gobject.signal_new("region-modified", SelectionWidget, gobject.SIGNAL_RUN_FIRST,
                    gobject.TYPE_NONE, ())
-gobject.signal_new("selection-made", SelectionWidget, gobject.SIGNAL_RUN_FIRST,
+gobject.signal_new("region-created", SelectionWidget, gobject.SIGNAL_RUN_FIRST,
                    gobject.TYPE_NONE, (gtk.gdk.Event,))
+gobject.signal_new("region-selected", SelectionWidget, gobject.SIGNAL_RUN_FIRST,
+                   gobject.TYPE_NONE, ())
+gobject.signal_new("selection-cleared", SelectionWidget, gobject.SIGNAL_RUN_FIRST,
+                   gobject.TYPE_NONE, ())
 gobject.signal_new("right-button-clicked", SelectionWidget, gobject.SIGNAL_RUN_FIRST,
                    gobject.TYPE_NONE, (gtk.gdk.Event,))
+gobject.signal_new("zoomed-in", SelectionWidget, gobject.SIGNAL_RUN_FIRST,
+                   gobject.TYPE_NONE, ())
+gobject.signal_new("zoomed-out", SelectionWidget, gobject.SIGNAL_RUN_FIRST,
+                   gobject.TYPE_NONE, ())
