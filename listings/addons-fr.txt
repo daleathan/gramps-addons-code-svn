@@ -2,7 +2,7 @@
 {'d': 'Gramplet pour des requ\xc3\xaates SQL-like', 'g': '3.4', 'i': 'Query Gramplet', 'n': 'Gramplet Requ\xc3\xaate', 't': u'Gramplet', 'v': '1.0.7', 'z': 'Query.addon.tgz'}
 {'d': 'Rapport express pour du SQL-like fonctionnant avec requ\xc3\xaates', 'g': '3.4', 'i': 'Query Quickview', 'n': 'Rapport express Requ\xc3\xaate', 't': u'Quickreport', 'v': '1.0.7', 'z': 'Query.addon.tgz'}
 {'d': 'Gramplet pour afficher les derni\xc3\xa8res nouvelles de Gramps', 'g': '3.4', 'i': 'Headline News Gramplet', 'n': 'Gramplet R\xc3\xa9sum\xc3\xa9', 't': u'Gramplet', 'v': '1.0.9', 'z': 'HeadlineNewsGramplet.addon.tgz'}
-{'d': "Gramplet affichant les descendants de l'individu actif", 'g': '3.4', 'i': 'Descendant', 'n': 'Descendants', 't': u'Gramplet', 'v': '1.0.2', 'z': 'Descendant.addon.tgz'}
+{'d': "Gramplet affichant les descendants de l'individu actif", 'g': '3.4', 'i': 'Descendant', 'n': 'Descendants', 't': u'Gramplet', 'v': '1.0.3', 'z': 'Descendant.addon.tgz'}
 {'d': 'Gramplet pour d\xc3\xa9finir les individus dans les photos', 'g': '3.4', 'i': 'Photo Tagging', 'n': 'Cartographie photographique', 't': u'Gramplet', 'v': '1.0.0', 'z': 'PhotoTaggingGramplet.addon.tgz'}
 {'d': "Gramplet affichant les d\xc3\xa9tails de l'individu", 'g': '3.4', 'i': 'MediaBrowser', 'n': 'Navigateur Media', 't': u'Gramplet', 'v': '1.0.7', 'z': 'MediaBrowser.addon.tgz'}
 {'d': 'G\xc3\xa9n\xc3\xa8re des miniatures de nos fichiers media', 'g': '3.4', 'i': 'thumbgen', 'n': 'G\xc3\xa9n\xc3\xa9rateur de miniature', 't': u'Tool', 'v': '1.0.3', 'z': 'ThumbnailGenerator.addon.tgz'}
@@ -19,35 +19,35 @@
 {'d': 'Gramplet pour une saisie rapide des donn\xc3\xa9es', 'g': '3.4', 'i': 'Data Entry Gramplet', 'n': 'Gramplet Formulaire', 't': u'Gramplet', 'v': '1.0.19', 'z': 'DataEntryGramplet.addon.tgz'}
 {'d': "Fournit une liste consultable des lieux s\xc3\xa9lectionn\xc3\xa9s, avec la possibilit\xc3\xa9 de compl\xc3\xa9ter/analyser/d\xc3\xa9finir les champs de l'attribut", 'g': '3.4', 'i': 'PlaceCompletion', 'n': 'Arrangement des lieux', 't': u'Tool', 'v': '0.0.14', 'z': 'PlaceCompletion.addon.tgz'}
 {'d': 'Fusionne les objets principaux via la ligne de commande', 'g': '3.4', 'i': 'climerge', 'n': 'Command Line Merge', 't': u'Tool', 'v': '1.0.6', 'z': 'CliMerge.addon.tgz'}
-{'d': 'Reconstruit les types Gramps', 'g': '3.4', 'i': 'rebuild_types', 'n': 'Reconstruire les types Gramps', 't': u'Tool', 'v': '1.0.2', 'z': 'RebuildTypes.addon.tgz'}
+{'d': 'Reconstruit les types Gramps', 'g': '3.4', 'i': 'rebuild_types', 'n': 'Reconstruire les types Gramps', 't': u'Tool', 'v': '1.0.3', 'z': 'RebuildTypes.addon.tgz'}
 {'d': 'D\xc3\xa9finir une valeur \xc3\xa0 un attribut.', 'g': '3.4', 'i': 'SetAttribute', 'n': 'D\xc3\xa9finir un attribut', 't': u'Tool', 'v': '0.0.7', 'z': 'SetAttributeTool.addon.tgz'}
 {'d': "Affiche le nombre de descendants de l'individu actif", 'g': '3.4', 'i': 'NumberOfDescendantsQuickview', 'n': 'Nombre de descendants', 't': u'Quickreport', 'v': '3.4.7', 'z': 'NumberOfDescendantsQuickview.addon.tgz'}
-{'d': "Gramplet affichant les ascendants de l'individu actif", 'g': '3.4', 'i': 'Ancestor', 'n': 'Ascendant', 't': u'Gramplet', 'v': '1.0.2', 'z': 'Ancestor.addon.tgz'}
+{'d': "Gramplet affichant les ascendants de l'individu actif", 'g': '3.4', 'i': 'Ancestor', 'n': 'Ascendant', 't': u'Gramplet', 'v': '1.0.3', 'z': 'Ancestor.addon.tgz'}
 {'d': 'Graphique dynamique des relations', 'g': '3.4', 'i': 'graphview', 'n': 'Vue Graphique', 't': u'Gramps View', 'v': '1.0.27', 'z': 'GraphView.addon.tgz'}
 {'d': 'Collection de sites internet pour les \xc3\x89tats-Unis (n\xc3\xa9cessite libwebconnect)', 'g': '3.4', 'i': 'US Web Connect Pack', 'n': 'Ensemble de liens internet US', 't': u'Plugin lib', 'v': '1.0.17', 'z': 'USWebConnectPack.addon.tgz'}
 {'d': "V\xc3\xa9rifier si l'objet medium est pr\xc3\xa9sent avec le bon chemin ", 'g': '3.4', 'i': 'mediaverify', 'n': 'V\xc3\xa9rification des media', 't': u'Tool', 'v': '1.0.4', 'z': 'MediaVerify.addon.tgz'}
 {'d': 'Django est un environnement internet fonctionnant avec une base de donn\xc3\xa9es configur\xc3\xa9e', 'g': '3.4', 'i': 'import_django', 'n': 'Import Django', 't': u'Importer', 'v': '1.0.13', 'z': 'Django.addon.tgz'}
 {'d': 'Django est un environnement internet fonctionnant avec une base de donn\xc3\xa9es configur\xc3\xa9e', 'g': '3.4', 'i': 'export_django', 'n': 'Export Django', 't': u'Exporter', 'v': '1.0.13', 'z': 'Django.addon.tgz'}
-{'d': "Gramplet affichant une vue g\xc3\xa9n\xc3\xa9rale des \xc3\xa9v\xc3\xa9nements de l'individu", 'g': '3.4', 'i': 'Person Overview', 'n': "Vue g\xc3\xa9n\xc3\xa9rale de l'individu", 't': u'Gramplet', 'v': '1.0.1', 'z': 'Overview.addon.tgz'}
-{'d': 'Gramplet affichant une vue g\xc3\xa9n\xc3\xa9rale des \xc3\xa9v\xc3\xa9nements de la famille', 'g': '3.4', 'i': 'Family Overview', 'n': 'Vue g\xc3\xa9n\xc3\xa9rale de la famille', 't': u'Gramplet', 'v': '1.0.1', 'z': 'Overview.addon.tgz'}
+{'d': "Gramplet affichant une vue g\xc3\xa9n\xc3\xa9rale des \xc3\xa9v\xc3\xa9nements de l'individu", 'g': '3.4', 'i': 'Person Overview', 'n': "Vue g\xc3\xa9n\xc3\xa9rale de l'individu", 't': u'Gramplet', 'v': '1.0.2', 'z': 'Overview.addon.tgz'}
+{'d': 'Gramplet affichant une vue g\xc3\xa9n\xc3\xa9rale des \xc3\xa9v\xc3\xa9nements de la famille', 'g': '3.4', 'i': 'Family Overview', 'n': 'Vue g\xc3\xa9n\xc3\xa9rale de la famille', 't': u'Gramplet', 'v': '1.0.2', 'z': 'Overview.addon.tgz'}
 {'d': 'Calcul des dates estim\xc3\xa9es pour les naissances et d\xc3\xa9c\xc3\xa8s.', 'g': '3.4', 'i': 'calculateestimateddates', 'n': 'Calcul des dates estim\xc3\xa9es', 't': u'Tool', 'v': '0.90.8', 'z': 'CalculateEstimatedDates.addon.tgz'}
 {'d': 'Biblioth\xc3\xa8que pour les collections de liens internet', 'g': '3.4', 'i': 'libwebconnect', 'n': 'libwebconnect', 't': u'Plugin lib', 'v': '1.0.8', 'z': 'libwebconnect.addon.tgz'}
 {'d': 'SQLite est un format courant de base de donn\xc3\xa9es locale', 'g': '3.4', 'i': 'im_sqlite', 'n': 'Importation SQLite', 't': u'Importer', 'v': '1.0.15', 'z': 'Sqlite.addon.tgz'}
 {'d': 'SQLite est un format courant de base de donn\xc3\xa9es locale', 'g': '3.4', 'i': 'ex_sqlite', 'n': 'Exportation SQLite', 't': u'Exporter', 'v': '1.0.14', 'z': 'Sqlite.addon.tgz'}
-{'d': 'Produit un rapport textuel des d\xc3\xa9p\xc3\xb4ts', 'g': '3.4', 'i': 'Repositories Report Options', 'n': 'Rapport des d\xc3\xa9p\xc3\xb4ts avec options', 't': u'Report', 'v': '0.3.2', 'z': 'RepositoriesReport.addon.tgz'}
-{'d': 'Produit un rapport textuel des d\xc3\xa9p\xc3\xb4ts', 'g': '3.4', 'i': 'Repositories Report', 'n': 'Rapport des d\xc3\xa9p\xc3\xb4ts', 't': u'Report', 'v': '1.1.2', 'z': 'RepositoriesReport.addon.tgz'}
+{'d': 'Produit un rapport textuel des d\xc3\xa9p\xc3\xb4ts', 'g': '3.4', 'i': 'Repositories Report Options', 'n': 'Rapport des d\xc3\xa9p\xc3\xb4ts avec options', 't': u'Report', 'v': '0.3.3', 'z': 'RepositoriesReport.addon.tgz'}
+{'d': 'Produit un rapport textuel des d\xc3\xa9p\xc3\xb4ts', 'g': '3.4', 'i': 'Repositories Report', 'n': 'Rapport des d\xc3\xa9p\xc3\xb4ts', 't': u'Report', 'v': '1.1.3', 'z': 'RepositoriesReport.addon.tgz'}
 {'d': 'Gramplet pour des notes g\xc3\xa9n\xc3\xa9riques', 'g': '3.4', 'i': 'TODO2', 'n': '\xc3\x80 faire 2', 't': u'Gramplet', 'v': '0.0.2', 'z': 'ToDoNotesGramplet.addon.tgz'}
 {'d': 'Fournit une biblioth\xc3\xa8que pour un acc\xc3\xa8s g\xc3\xa9n\xc3\xa9rique \xc3\xa0 la base de donn\xc3\xa9es et gen.lib.', 'g': '3.4', 'i': 'libaccess', 'n': 'Generic DB Access lib', 't': u'Plugin lib', 'v': '1.0.9', 'z': 'libaccess.addon.tgz'}
 {'d': 'Liste les dix derniers individus modifi\xc3\xa9s', 'g': '3.4', 'i': 'LastChangeGramplet', 'n': 'Gramplet Derni\xc3\xa8res modifications', 't': u'Gramplet', 'v': '0.0.12', 'z': 'LastChange.addon.tgz'}
 {'d': 'Rapport pour les derniers enregistrements modifi\xc3\xa9s', 'g': '3.4', 'i': 'LastChangeReport', 'n': 'Rapport Derni\xc3\xa8res modifications', 't': u'Report', 'v': '0.0.12', 'z': 'LastChange.addon.tgz'}
 {'d': 'Cr\xc3\xa9\xc3\xa9 un fichier de donn\xc3\xa9es pouvant \xc3\xaatre ouvert dans GoogleEarth', 'g': '3.4', 'i': 'GoogleEarth', 'n': 'GoogleEarth', 't': u'Map service', 'v': '1.0.15', 'z': 'GoogleEarthWriteKML.addon.tgz'}
-{'d': 'Produces a descendant report using a filter', 'g': '3.4', 'i': 'fil_descendant_report', 'n': 'Filtered Descendant Report', 't': u'Report', 'v': '0.3.2', 'z': 'FilteredReports.addon.tgz'}
+{'d': 'Produit un rapport de descendant en utilisant un filtre', 'g': '3.4', 'i': 'fil_descendant_report', 'n': 'Rapport Filtrage de descendant', 't': u'Report', 'v': '0.3.3', 'z': 'FilteredReports.addon.tgz'}
 {'d': 'Gramplet pour regrouper des articles', 'g': '3.4', 'i': 'Clipboard Gramplet', 'n': 'Gramplet Presse-papiers', 't': u'Gramplet', 'v': '1.0.12', 'z': 'ClipboardGramplet.addon.tgz'}
 {'d': 'Gramplet affichant les parent\xc3\xa9s dans une relation', 'g': '3.4', 'i': 'Related Relatives Gramplet', 'n': 'Gramplet Parent\xc3\xa9s', 't': u'Gramplet', 'v': '1.0.8', 'z': 'RelatedRelativesGramplet.addon.tgz'}
 {'d': 'Produit un arbre familial sous forme graphique.', 'g': '3.4', 'i': 'FamilyTree', 'n': 'Arbre familial', 't': u'Report', 'v': '3.4.10', 'z': 'FamilyTree.addon.tgz'}
 {'d': "Collection de sites internet pour l'Allemagne (n\xc3\xa9cessite libwebconnect)", 'g': '3.4', 'i': 'DE Web Connect Pack', 'n': 'Ensemble de liens internet allemands', 't': u'Plugin lib', 'v': '0.0.3', 'z': 'DEWebConnectPack.addon.tgz'}
 {'d': 'Un interpr\xc3\xa9teur python interactif', 'g': '3.4', 'i': 'Python Gramplet', 'n': 'Gramplet Python', 't': u'Gramplet', 'v': '1.0.7', 'z': 'PythonGramplet.addon.tgz'}
-{'d': 'Gramplet affichant les personnes pr\xc3\xa9sentes \xc3\xa0 un \xc3\xa9v\xc3\xa9nement', 'g': '3.4', 'i': 'Participants', 'n': 'Acteurs principaux', 't': u'Gramplet', 'v': '1.0.1', 'z': 'Participants.addon.tgz'}
+{'d': 'Gramplet affichant les personnes pr\xc3\xa9sentes \xc3\xa0 un \xc3\xa9v\xc3\xa9nement', 'g': '3.4', 'i': 'Participants', 'n': 'Acteurs principaux', 't': u'Gramplet', 'v': '1.0.2', 'z': 'Participants.addon.tgz'}
 {'d': 'Gramplet affichant les relations \xc3\xa9troites entre la souche et les autres individus', 'g': '3.4', 'i': 'Deep Connections Gramplet', 'n': 'Gramplet Connexions approfondies', 't': u'Gramplet', 'v': '1.0.13', 'z': 'DeepConnectionsGramplet.addon.tgz'}
 {'d': 'Attache une source partag\xc3\xa9e \xc3\xa0 des objets multiples', 'g': '3.4', 'i': 'AttachSource', 'n': 'Attacher une source', 't': u'Tool', 'v': '0.0.15', 'z': 'AttachSourceTool.addon.tgz'}
 {'d': "Gramplet pour l'\xc3\xa9dition des notes de l'individu actif", 'g': '3.4', 'i': 'Note Gramplet', 'n': 'Gramplet Note', 't': u'Gramplet', 'v': '1.0.9', 'z': 'NoteGramplet.addon.tgz'}
@@ -64,6 +64,6 @@
 {'d': 'Gramplet affichant tous les recensements', 'g': '3.4', 'i': 'AllCensus', 'n': 'Gramplet Tous les recensements', 't': u'Gramplet', 'v': '1.0.3', 'z': 'Census.addon.tgz'}
 {'d': "Les \xc3\xa9v\xc3\xa9nements recensement de l'individu.", 'g': '3.4', 'i': 'census_report', 'n': 'Rapport de recensement', 't': u'Report', 'v': '1.0.23', 'z': 'Census.addon.tgz'}
 {'d': "Gramplet servant d'interface aux donn\xc3\xa9es de recensement", 'g': '3.4', 'i': 'Census Gramplet', 'n': 'Gramplet Recensement', 't': u'Gramplet', 'v': '1.0.23', 'z': 'Census.addon.tgz'}
-{'d': "Gramplet affichant les r\xc3\xa9f\xc3\xa9rences d'une source", 'g': '3.4', 'i': 'Source References', 'n': 'R\xc3\xa9f\xc3\xa9rences des sources', 't': u'Gramplet', 'v': '1.0.1', 'z': 'SourceReferences.addon.tgz'}
+{'d': "Gramplet affichant les r\xc3\xa9f\xc3\xa9rences d'une source", 'g': '3.4', 'i': 'Source References', 'n': 'R\xc3\xa9f\xc3\xa9rences des sources', 't': u'Gramplet', 'v': '1.0.2', 'z': 'SourceReferences.addon.tgz'}
 {'d': 'Collection de sites internet pour les fran\xc3\xa7ais (n\xc3\xa9cessite libwebconnect)', 'g': '3.4', 'i': 'FR Web Connect Pack', 'n': 'Ensemble de liens internet francophones', 't': u'Plugin lib', 'v': '1.0.10', 'z': 'FRWebConnectPack.addon.tgz'}
 {'d': 'Affiche tous les noms de tous les individus', 'g': '3.4', 'i': 'allnames', 'n': 'Tous les noms pour tous les individus', 't': u'Quickreport', 'v': '1.0.6', 'z': 'AllNamesQuickview.addon.tgz'}
