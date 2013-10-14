@@ -41,7 +41,7 @@
 {'d': 'Listet die letzten zehn ge\xc3\xa4nderten Personendatens\xc3\xa4tze', 'g': '3.4', 'i': 'LastChangeGramplet', 'n': 'Letzte \xc3\x84nderung Gramplet', 't': u'Gramplet', 'v': '0.0.12', 'z': 'LastChange.addon.tgz'}
 {'d': 'Bericht der letzten Datens\xc3\xa4tze die ge\xc3\xa4ndert wurden', 'g': '3.4', 'i': 'LastChangeReport', 'n': 'Letzte \xc3\x84nderungen Bericht', 't': u'Report', 'v': '0.0.12', 'z': 'LastChange.addon.tgz'}
 {'d': 'Erstellt Datendatei f\xc3\xbcr GoogleEarth und \xc3\xb6ffnet sie', 'g': '3.4', 'i': 'GoogleEarth', 'n': 'GoogleEarth', 't': u'Map service', 'v': '1.0.15', 'z': 'GoogleEarthWriteKML.addon.tgz'}
-{'d': 'Erstellt einen Nachkommen\xc3\xbcbersicht unter Verwendung eines Filter', 'g': '3.4', 'i': 'fil_descendant_report', 'n': 'Gefilterter Nachkommenbericht', 't': u'Report', 'v': '0.3.3', 'z': 'FilteredReports.addon.tgz'}
+{'d': 'Erstellt einen Nachkommen\xc3\xbcbersicht unter Verwendung eines Filter', 'g': '3.4', 'i': 'fil_descendant_report', 'n': 'Gefilterter Nachkommenbericht', 't': u'Report', 'v': '0.3.4', 'z': 'FilteredReports.addon.tgz'}
 {'d': 'Gramplet zum gruppieren von Elementen', 'g': '3.4', 'i': 'Clipboard Gramplet', 'n': 'Zwischenablage Gramplet', 't': u'Gramplet', 'v': '1.0.12', 'z': 'ClipboardGramplet.addon.tgz'}
 {'d': 'Gramplet zeigt die Beziehung zwischen Verwandten', 'g': '3.4', 'i': 'Related Relatives Gramplet', 'n': 'Verbundene Verwandte Gramplet', 't': u'Gramplet', 'v': '1.0.8', 'z': 'RelatedRelativesGramplet.addon.tgz'}
 {'d': 'Erzeugt einen grafischen Stammbaum.', 'g': '3.4', 'i': 'FamilyTree', 'n': 'Arbre familial', 't': u'Report', 'v': '3.4.10', 'z': 'FamilyTree.addon.tgz'}

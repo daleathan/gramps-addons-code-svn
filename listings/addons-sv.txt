@@ -41,7 +41,7 @@
 {'d': 'Lista de tio personposterna, som har \xc3\xa4ndrats', 'g': '3.4', 'i': 'LastChangeGramplet', 'n': 'Gramplet med de senaste \xc3\xa4ndringarna', 't': u'Gramplet', 'v': '0.0.12', 'z': 'LastChange.addon.tgz'}
 {'d': 'Rapport \xc3\xb6ver de poster, som har \xc3\xa4ndrats senast', 'g': '3.4', 'i': 'LastChangeReport', 'n': 'Rapport \xc3\xb6ver senaste \xc3\xa4ndringar', 't': u'Report', 'v': '0.0.12', 'z': 'LastChange.addon.tgz'}
 {'d': 'Skapar datafil f\xc3\xb6r GoogleEarth och \xc3\xb6ppnar den', 'g': '3.4', 'i': 'GoogleEarth', 'n': 'GoogleEarth', 't': u'Map service', 'v': '1.0.15', 'z': 'GoogleEarthWriteKML.addon.tgz'}
-{'d': 'Skapar en \xc3\xa4ttlingsrapport med hj\xc3\xa4lp av ett filter', 'g': '3.4', 'i': 'fil_descendant_report', 'n': 'Rapport med utvalda \xc3\xa4ttlingar', 't': u'Report', 'v': '0.3.3', 'z': 'FilteredReports.addon.tgz'}
+{'d': 'Skapar en \xc3\xa4ttlingsrapport med hj\xc3\xa4lp av ett filter', 'g': '3.4', 'i': 'fil_descendant_report', 'n': 'Rapport med utvalda \xc3\xa4ttlingar', 't': u'Report', 'v': '0.3.4', 'z': 'FilteredReports.addon.tgz'}
 {'d': 'Gramplet f\xc3\xb6r gruppering av poster', 'g': '3.4', 'i': 'Clipboard Gramplet', 'n': 'Urklippsgramplet', 't': u'Gramplet', 'v': '1.0.12', 'z': 'ClipboardGramplet.addon.tgz'}
 {'d': 'Gramplet som visar sl\xc3\xa4ktskap i en relation', 'g': '3.4', 'i': 'Related Relatives Gramplet', 'n': 'Gramplet f\xc3\xb6r sl\xc3\xa4ktskapsrelationer', 't': u'Gramplet', 'v': '1.0.8', 'z': 'RelatedRelativesGramplet.addon.tgz'}
 {'d': 'Skapar ett grafiskt sl\xc3\xa4kttr\xc3\xa4d.', 'g': '3.4', 'i': 'FamilyTree', 'n': 'Arbre familial', 't': u'Report', 'v': '3.4.10', 'z': 'FamilyTree.addon.tgz'}

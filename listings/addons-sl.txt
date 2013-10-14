@@ -41,7 +41,7 @@
 {'d': 'List the last ten person records that have been changed', 'g': '3.4', 'i': 'LastChangeGramplet', 'n': 'Last Change Gramplet', 't': u'Gramplet', 'v': '0.0.12', 'z': 'LastChange.addon.tgz'}
 {'d': 'Report of the last records that have been changed', 'g': '3.4', 'i': 'LastChangeReport', 'n': 'Last Change Report', 't': u'Report', 'v': '0.0.12', 'z': 'LastChange.addon.tgz'}
 {'d': 'Creates data file for GoogleEarth and opens it', 'g': '3.4', 'i': 'GoogleEarth', 'n': 'GoogleEarth', 't': u'Map service', 'v': '1.0.15', 'z': 'GoogleEarthWriteKML.addon.tgz'}
-{'d': 'Produces a descendant report using a filter', 'g': '3.4', 'i': 'fil_descendant_report', 'n': 'Filtered Descendant Report', 't': u'Report', 'v': '0.3.3', 'z': 'FilteredReports.addon.tgz'}
+{'d': 'Produces a descendant report using a filter', 'g': '3.4', 'i': 'fil_descendant_report', 'n': 'Filtered Descendant Report', 't': u'Report', 'v': '0.3.4', 'z': 'FilteredReports.addon.tgz'}
 {'d': 'Gramplet for grouping items', 'g': '3.4', 'i': 'Clipboard Gramplet', 'n': 'Clipboard Gramplet', 't': u'Gramplet', 'v': '1.0.12', 'z': 'ClipboardGramplet.addon.tgz'}
 {'d': 'Gramplet showing relatives in a relation', 'g': '3.4', 'i': 'Related Relatives Gramplet', 'n': 'Related Relatives Gramplet', 't': u'Gramplet', 'v': '1.0.8', 'z': 'RelatedRelativesGramplet.addon.tgz'}
 {'d': 'Produces a graphical family tree.', 'g': '3.4', 'i': 'FamilyTree', 'n': 'Arbre familial', 't': u'Report', 'v': '3.4.10', 'z': 'FamilyTree.addon.tgz'}

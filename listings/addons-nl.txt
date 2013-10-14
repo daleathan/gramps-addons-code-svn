@@ -41,7 +41,7 @@
 {'d': 'De tien laatst gewijzigde persoonsgegevens worden gelijst', 'g': '3.4', 'i': 'LastChangeGramplet', 'n': 'Laatste wijzigingen', 't': u'Gramplet', 'v': '0.0.12', 'z': 'LastChange.addon.tgz'}
 {'d': 'Verslag van de laatst gewijzigde gegevens', 'g': '3.4', 'i': 'LastChangeReport', 'n': 'Laatste wijzigingen', 't': u'Report', 'v': '0.0.12', 'z': 'LastChange.addon.tgz'}
 {'d': "Gegevensbestand voor 'GoogleEarth' aanmaken en openen", 'g': '3.4', 'i': 'GoogleEarth', 'n': 'GoogleEarth', 't': u'Map service', 'v': '1.0.15', 'z': 'GoogleEarthWriteKML.addon.tgz'}
-{'d': 'Verslag van de afstammelingen met gebruik van een filter aanmaken', 'g': '3.4', 'i': 'fil_descendant_report', 'n': 'Afstammelingenfilter', 't': u'Report', 'v': '0.3.3', 'z': 'FilteredReports.addon.tgz'}
+{'d': 'Verslag van de afstammelingen met gebruik van een filter aanmaken', 'g': '3.4', 'i': 'fil_descendant_report', 'n': 'Afstammelingenfilter', 't': u'Report', 'v': '0.3.4', 'z': 'FilteredReports.addon.tgz'}
 {'d': 'Gramplet om gegevens te groeperen', 'g': '3.4', 'i': 'Clipboard Gramplet', 'n': 'Klembord', 't': u'Gramplet', 'v': '1.0.12', 'z': 'ClipboardGramplet.addon.tgz'}
 {'d': 'Gramplet toont de verwanten in een relatie', 'g': '3.4', 'i': 'Related Relatives Gramplet', 'n': 'Aanverwanten-gramplet', 't': u'Gramplet', 'v': '1.0.8', 'z': 'RelatedRelativesGramplet.addon.tgz'}
 {'d': 'Grafische stamboom aanmaken.', 'g': '3.4', 'i': 'FamilyTree', 'n': 'Arbre familial', 't': u'Report', 'v': '3.4.10', 'z': 'FamilyTree.addon.tgz'}

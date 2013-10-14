@@ -41,7 +41,7 @@
 {'d': 'Liste les dix derniers individus modifi\xc3\xa9s', 'g': '3.4', 'i': 'LastChangeGramplet', 'n': 'Gramplet Derni\xc3\xa8res modifications', 't': u'Gramplet', 'v': '0.0.12', 'z': 'LastChange.addon.tgz'}
 {'d': 'Rapport pour les derniers enregistrements modifi\xc3\xa9s', 'g': '3.4', 'i': 'LastChangeReport', 'n': 'Rapport Derni\xc3\xa8res modifications', 't': u'Report', 'v': '0.0.12', 'z': 'LastChange.addon.tgz'}
 {'d': 'Cr\xc3\xa9\xc3\xa9 un fichier de donn\xc3\xa9es pouvant \xc3\xaatre ouvert dans GoogleEarth', 'g': '3.4', 'i': 'GoogleEarth', 'n': 'GoogleEarth', 't': u'Map service', 'v': '1.0.15', 'z': 'GoogleEarthWriteKML.addon.tgz'}
-{'d': 'Produit un rapport de descendant en utilisant un filtre', 'g': '3.4', 'i': 'fil_descendant_report', 'n': 'Rapport Filtrage de descendant', 't': u'Report', 'v': '0.3.3', 'z': 'FilteredReports.addon.tgz'}
+{'d': 'Produit un rapport de descendant en utilisant un filtre', 'g': '3.4', 'i': 'fil_descendant_report', 'n': 'Rapport Filtrage de descendant', 't': u'Report', 'v': '0.3.4', 'z': 'FilteredReports.addon.tgz'}
 {'d': 'Gramplet pour regrouper des articles', 'g': '3.4', 'i': 'Clipboard Gramplet', 'n': 'Gramplet Presse-papiers', 't': u'Gramplet', 'v': '1.0.12', 'z': 'ClipboardGramplet.addon.tgz'}
 {'d': 'Gramplet affichant les parent\xc3\xa9s dans une relation', 'g': '3.4', 'i': 'Related Relatives Gramplet', 'n': 'Gramplet Parent\xc3\xa9s', 't': u'Gramplet', 'v': '1.0.8', 'z': 'RelatedRelativesGramplet.addon.tgz'}
 {'d': 'Produit un arbre familial sous forme graphique.', 'g': '3.4', 'i': 'FamilyTree', 'n': 'Arbre familial', 't': u'Report', 'v': '3.4.10', 'z': 'FamilyTree.addon.tgz'}
