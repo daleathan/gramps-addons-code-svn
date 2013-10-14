@@ -382,6 +382,15 @@ class RepositoryReportAlt(Report):
 		self.doc.end_paragraph()
 		
 		citation = self.database.get_citation_from_handle(handle)
+			
+		date = citation.serialize()[2]
+		
+		if date:
+			self.doc.start_paragraph('REPO-Section2')
+			self.doc.write_text(self._('Date:'))
+			self.doc.write_text(date[4])
+			self.doc.end_paragraph()
+		
 		page = citation.get_page()
 		quay = citation.get_confidence_level()
 				
