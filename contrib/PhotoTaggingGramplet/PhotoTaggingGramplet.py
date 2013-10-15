@@ -44,13 +44,18 @@ import gobject
 #-------------------------------------------------------------------------
 import const
 import Utils
+import ManagedWindow
+import Errors
 from config import config
 from gen.db import DbTxn
 from gen.display.name import displayer as name_displayer
-from gen.plug import Gramplet
+from gen.plug import Gramplet, MenuOptions
 from gen.lib import MediaRef, Person
 from gui.editors.editperson import EditPerson
 from gui.selectors import SelectorFactory
+from gen.plug.menu import (BooleanOption, StringOption, NumberOption, 
+                         EnumeratedListOption, FilterOption, PersonOption)
+from gui.plug import PluginWindows
 
 #-------------------------------------------------------------------------
 #
@@ -76,19 +81,101 @@ import facedetection
 GRAMPLET_CONFIG_NAME = "phototagginggramplet"
 CONFIG = config.register_manager(GRAMPLET_CONFIG_NAME)
 CONFIG.register("detection.box_size", (50,50))
+CONFIG.register("detection.inside_existing_boxes", False)
+CONFIG.register("selection.replace_without_asking", False)
 CONFIG.load()
 CONFIG.save()
 
 MIN_FACE_SIZE = CONFIG.get("detection.box_size")
+REPLACE_WITHOUT_ASKING = CONFIG.get("selection.replace_without_asking")
+DETECT_INSIDE_EXISTING_BOXES = CONFIG.get("detection.inside_existing_boxes")
+
+def save_config():
+    CONFIG.set("detection.box_size", MIN_FACE_SIZE)
+    CONFIG.set("detection.inside_existing_boxes", DETECT_INSIDE_EXISTING_BOXES)
+    CONFIG.set("selection.replace_without_asking", REPLACE_WITHOUT_ASKING)
+    CONFIG.save()
 
 #-------------------------------------------------------------------------
 #
-# PhotoTaggingGramplet
+# Gramplet Options
 #
 #-------------------------------------------------------------------------
 
 DETECTED_REGION_PADDING = 10
 THUMBNAIL_IMAGE_SIZE = (50, 50)
+
+class PhotoTaggingOptions(MenuOptions):
+
+    def __init__(self):
+        MenuOptions.__init__(self)
+
+    def add_menu_options(self, menu):
+        category_name = _("Selection")
+        self.replace_without_asking = BooleanOption(
+          _("Replace existing references to the person being assigned without asking"),
+          REPLACE_WITHOUT_ASKING)
+
+        menu.add_option(category_name, "replace_without_asking",
+                        self.replace_without_asking)
+
+        category_name = _("Face detection")
+        width, height = MIN_FACE_SIZE
+        self.min_face_width = NumberOption(_("Minimum face width"), width,
+                                           1, 1000, 1)
+        self.min_face_height = NumberOption(_("Minimum face height"), height,
+                                            1, 1000, 1)
+        self.detect_inside_existing_boxes = BooleanOption(
+          _("Detect faces inside existing boxes"), DETECT_INSIDE_EXISTING_BOXES)
+
+        menu.add_option(category_name, "min_face_width", self.min_face_width)
+        menu.add_option(category_name, "min_face_height", self.min_face_height)
+        menu.add_option(category_name, "detect_inside_existing_boxes",
+                        self.detect_inside_existing_boxes)
+
+    def update_settings(self):
+        global REPLACE_WITHOUT_ASKING
+        global DETECT_INSIDE_EXISTING_BOXES
+        global MIN_FACE_SIZE
+        REPLACE_WITHOUT_ASKING = self.replace_without_asking.get_value()
+        DETECT_INSIDE_EXISTING_BOXES = self.detect_inside_existing_boxes.get_value()
+        width = self.min_face_width.get_value()
+        height = self.min_face_height.get_value()
+        MIN_FACE_SIZE = (width, height)
+        save_config()
+
+#-------------------------------------------------------------------------
+#
+# Settings Dialog
+#
+#-------------------------------------------------------------------------
+
+class SettingsDialog(PluginWindows.ToolManagedWindowBase):
+
+    def __init__(self, dbstate, uistate, title, options):
+        self.dbstate = dbstate
+        self.uistate = uistate
+        self.title = title
+        self.options = options
+
+        PluginWindows.ToolManagedWindowBase.__init__(self, 
+          dbstate, uistate, None, "SettingsDialog")
+
+        self.ok.set_use_stock(True)
+        self.ok.set_label("gtk-ok")
+
+    def get_title(self):
+        return self.title
+
+    def on_ok_clicked(self, obj):
+        self.options.update_settings()
+        self.close()
+
+#-------------------------------------------------------------------------
+#
+# Photo Tagging Gramplet
+#
+#-------------------------------------------------------------------------
 
 class PhotoTaggingGramplet(Gramplet):
 
@@ -127,6 +214,7 @@ class PhotoTaggingGramplet(Gramplet):
         self.button_zoom_in = gtk.ToolButton(gtk.STOCK_ZOOM_IN)
         self.button_zoom_out = gtk.ToolButton(gtk.STOCK_ZOOM_OUT)
         self.button_detect = gtk.ToolButton(gtk.STOCK_EXECUTE)
+        self.button_settings = gtk.ToolButton(gtk.STOCK_PREFERENCES)
 
         self.button_index.connect("clicked", self.sel_person_clicked)
         self.button_add.connect("clicked", self.add_person_clicked)
@@ -136,6 +224,7 @@ class PhotoTaggingGramplet(Gramplet):
         self.button_zoom_in.connect("clicked", self.zoom_in_clicked)
         self.button_zoom_out.connect("clicked", self.zoom_out_clicked)
         self.button_detect.connect("clicked", self.detect_faces_clicked)
+        self.button_settings.connect("clicked", self.settings_clicked)
 
         button_panel.pack_start(self.button_index, expand=False, fill=False, padding=5)
         button_panel.pack_start(self.button_add, expand=False, fill=False, padding=5)
@@ -145,6 +234,7 @@ class PhotoTaggingGramplet(Gramplet):
         button_panel.pack_start(self.button_zoom_in, expand=False, fill=False, padding=5)
         button_panel.pack_start(self.button_zoom_out, expand=False, fill=False, padding=5)
         button_panel.pack_start(self.button_detect, expand=False, fill=False, padding=5)
+        button_panel.pack_start(self.button_settings, expand=False, fill=False, padding=5)
 
         tooltips = gtk.Tooltips()
         self.button_index.set_tooltip(tooltips, "Select Person", None)
@@ -159,6 +249,8 @@ class PhotoTaggingGramplet(Gramplet):
             self.button_detect.set_tooltip(tooltips, "Detect faces", None)
         else:
             self.button_detect.set_tooltip(tooltips, "Detect faces (cv module required)", None)
+
+        self.button_settings.set_tooltip(tooltips, "Settings", None)
 
         self.top.pack_start(button_panel, expand=False, fill=True, padding=5)
 
@@ -527,10 +619,17 @@ class PhotoTaggingGramplet(Gramplet):
                             y - DETECTED_REGION_PADDING,
                             x + width + DETECTED_REGION_PADDING,
                             y + height + DETECTED_REGION_PADDING)
-            if self.enclosing_region(region) is None:
+            if DETECT_INSIDE_EXISTING_BOXES or self.enclosing_region(region) is None:
                 self.regions.append(region)
         self.refresh()
         self.uistate.push_message(self.dbstate, "Detection finished")
+
+    def settings_clicked(self, event):
+        try:
+            SettingsDialog(self.gui.dbstate, self.gui.uistate, 
+                           "Settings", PhotoTaggingOptions())
+        except Errors.WindowActiveError:
+            pass
 
     # ======================================================
     # helpers for toolbar event handlers
@@ -557,22 +656,25 @@ class PhotoTaggingGramplet(Gramplet):
             ref_count = len(other_references)
             if ref_count > 0:
                 person = other_references[0].person
-                if ref_count == 1:
-                    message_text = _("Another region of this image is associated with {name}. Remove it?")
-                else:
-                    message_text = _("{count} other regions of this image are associated with {name}. Remove them?")
-                message = message_text.format(
-                            name=name_displayer.display(person),
-                            count=ref_count)
-                dialog = gtk.MessageDialog(
-                            parent=None,
-                            type=gtk.MESSAGE_QUESTION, 
-                            buttons=gtk.BUTTONS_YES_NO, 
-                            message_format=message)
-                response = dialog.run()
-                dialog.destroy()
-                if response == gtk.RESPONSE_YES:
+                if REPLACE_WITHOUT_ASKING:
                     self.delete_regions(other_references)
+                else:
+                    if ref_count == 1:
+                        message_text = _("Another region of this image is associated with {name}. Remove it?")
+                    else:
+                        message_text = _("{count} other regions of this image are associated with {name}. Remove them?")
+                    message = message_text.format(
+                                name=name_displayer.display(person),
+                                count=ref_count)
+                    dialog = gtk.MessageDialog(
+                                parent=None,
+                                type=gtk.MESSAGE_QUESTION, 
+                                buttons=gtk.BUTTONS_YES_NO, 
+                                message_format=message)
+                    response = dialog.run()
+                    dialog.destroy()
+                    if response == gtk.RESPONSE_YES:
+                        self.delete_regions(other_references)
             self.set_person(self.selection_widget.get_current(), person)
 
     def set_person(self, region, person):
