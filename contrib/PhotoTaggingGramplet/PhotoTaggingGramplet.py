@@ -237,20 +237,20 @@ class PhotoTaggingGramplet(Gramplet):
         button_panel.pack_start(self.button_settings, expand=False, fill=False, padding=5)
 
         tooltips = gtk.Tooltips()
-        self.button_index.set_tooltip(tooltips, "Select Person", None)
-        self.button_add.set_tooltip(tooltips, "Add Person", None)
-        self.button_del.set_tooltip(tooltips, "Clear Reference", None)
-        self.button_clear.set_tooltip(tooltips, "Remove Selection", None)
-        self.button_edit.set_tooltip(tooltips, "Edit referenced Person", None)
-        self.button_zoom_in.set_tooltip(tooltips, "Zoom In", None)
-        self.button_zoom_out.set_tooltip(tooltips, "Zoom Out", None)
+        self.button_index.set_tooltip(tooltips, _("Select Person"), None)
+        self.button_add.set_tooltip(tooltips, _("Add Person"), None)
+        self.button_del.set_tooltip(tooltips, _("Clear Reference"), None)
+        self.button_clear.set_tooltip(tooltips, _("Remove Selection"), None)
+        self.button_edit.set_tooltip(tooltips, _("Edit referenced Person"), None)
+        self.button_zoom_in.set_tooltip(tooltips, _("Zoom In"), None)
+        self.button_zoom_out.set_tooltip(tooltips, _("Zoom Out"), None)
 
         if facedetection.computer_vision_available:
-            self.button_detect.set_tooltip(tooltips, "Detect faces", None)
+            self.button_detect.set_tooltip(tooltips, _("Detect faces"), None)
         else:
-            self.button_detect.set_tooltip(tooltips, "Detect faces (cv module required)", None)
+            self.button_detect.set_tooltip(tooltips, _("Detect faces (cv module required)"), None)
 
-        self.button_settings.set_tooltip(tooltips, "Settings", None)
+        self.button_settings.set_tooltip(tooltips, _("Settings"), None)
 
         self.top.pack_start(button_panel, expand=False, fill=True, padding=5)
 
