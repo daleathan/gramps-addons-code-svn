@@ -296,6 +296,7 @@ class PhotoTaggingGramplet(Gramplet):
         scrolled_window2 = gtk.ScrolledWindow()
         scrolled_window2.add(self.treeview)
         scrolled_window2.set_size_request(400, -1)
+        scrolled_window2.set_policy(gtk.POLICY_AUTOMATIC, gtk.POLICY_AUTOMATIC)
 
         hpaned.pack2(scrolled_window2, resize=False, shrink=False)
 

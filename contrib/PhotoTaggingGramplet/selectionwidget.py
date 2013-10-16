@@ -149,6 +149,7 @@ class SelectionWidget(gtk.ScrolledWindow):
 
         gtk.ScrolledWindow.__init__(self)
         self.add(self.build_gui())
+        self.set_policy(gtk.POLICY_AUTOMATIC, gtk.POLICY_AUTOMATIC)
 
     def build_gui(self):
         self.image = gtk.Image()
