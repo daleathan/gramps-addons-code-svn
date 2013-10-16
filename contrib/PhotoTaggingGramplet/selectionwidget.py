@@ -348,13 +348,14 @@ class SelectionWidget(gtk.ScrolledWindow):
 
             # selection frame
             self.draw_selection_frame(cr, x1, y1, x2, y2)
+
+            # draw grabber
+            self.draw_grabber(cr)
         else:
             # selection frame
             for region in self.regions:
                 x1, y1, x2, y2 = self.rect_image_to_screen(region.coords())
                 self.draw_region_frame(cr, x1, y1, x2, y2)
-
-        self.draw_grabber(cr)
 
     def draw_transparent_shading(self, cr, x1, y1, x2, y2, w, h, offset_x, offset_y):
         cr.set_source_rgba(1.0, 1.0, 1.0, SHADING_OPACITY)
@@ -380,7 +381,7 @@ class SelectionWidget(gtk.ScrolledWindow):
         cr.stroke()
 
     def draw_grabber(self, cr):
-        if self.current is not None and self.grabber is not None:
+        if self.selection is not None and self.grabber is not None:
             selection_rect = self.rect_image_to_screen(self.selection)
             cr.set_source_rgb(1.0, 0, 0)
             if self.grabber_position is None:
