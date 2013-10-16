@@ -310,22 +310,22 @@ class PhotoTaggingGramplet(Gramplet):
         self.context_menu = gtk.Menu()
 
         self.context_button_select = gtk.ImageMenuItem(gtk.STOCK_INDEX)
-        self.context_button_select.set_label("Select")
+        self.context_button_select.set_label(_("Select"))
         self.context_button_select.set_always_show_image(True)
         self.context_button_select.connect("activate", self.sel_person_clicked)
 
         self.context_button_add = gtk.ImageMenuItem(gtk.STOCK_ADD)
-        self.context_button_add.set_label("Add")
+        self.context_button_add.set_label(_("Add"))
         self.context_button_add.set_always_show_image(True)
         self.context_button_add.connect("activate", self.add_person_clicked)
 
         self.context_button_clear = gtk.ImageMenuItem(gtk.STOCK_REMOVE)
-        self.context_button_clear.set_label("Clear")
+        self.context_button_clear.set_label(_("Clear"))
         self.context_button_clear.set_always_show_image(True)
         self.context_button_clear.connect("activate", self.clear_ref_clicked)
        
         self.context_button_remove = gtk.ImageMenuItem(gtk.STOCK_CLEAR)
-        self.context_button_remove.set_label("Remove")
+        self.context_button_remove.set_label(_("Remove"))
         self.context_button_remove.set_always_show_image(True)
         self.context_button_remove.connect("activate", self.del_region_clicked)
 
@@ -614,7 +614,7 @@ class PhotoTaggingGramplet(Gramplet):
         self.selection_widget.zoom_out()
 
     def detect_faces_clicked(self, event):
-        self.uistate.push_message(self.dbstate, "Detecting faces...")
+        self.uistate.push_message(self.dbstate, _("Detecting faces..."))
         media = self.get_current_object()
         image_path = Utils.media_path_full(self.dbstate.db, media.get_path())
         faces = facedetection.detect_faces(image_path, MIN_FACE_SIZE)
@@ -626,12 +626,12 @@ class PhotoTaggingGramplet(Gramplet):
             if DETECT_INSIDE_EXISTING_BOXES or self.enclosing_region(region) is None:
                 self.regions.append(region)
         self.refresh()
-        self.uistate.push_message(self.dbstate, "Detection finished")
+        self.uistate.push_message(self.dbstate, _("Detection finished"))
 
     def settings_clicked(self, event):
         try:
             SettingsDialog(self.gui.dbstate, self.gui.uistate, 
-                           "Settings", PhotoTaggingOptions())
+                           _("Settings"), PhotoTaggingOptions())
         except Errors.WindowActiveError:
             pass
 
