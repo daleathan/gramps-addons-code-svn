@@ -16,8 +16,8 @@
 {"n": "Gramplet Calcul de descendants","i": "Descendant Count Gramplet","t": "Gramplet","d": "Gramplet pour afficher les individus et le nombre de leurs descendants","v": "1.0.17","g": "4.0","z": "DescendantCount.addon.tgz"}
 {"n": "Lignes des descendants","i": "Descendants Lines","t": "Rapport","d": "Produit les lignes de descendants de l'individu","v": "0.1.19","g": "4.0","z": "DescendantsLines.addon.tgz"}
 {"n": "Rapport des différences dans la base de données","i": "database-differences-report","t": "Rapport","d": "Compare une base de données externe avec la base actuelle.","v": "1.0.4","g": "4.0","z": "Differences.addon.tgz"}
-{"n": "Import Django","i": "import_django","t": "Import","d": "Django est un environnement internet fonctionnant avec une base de données configurée","v": "1.0.21","g": "4.0","z": "Django.addon.tgz"}
-{"n": "Export Django","i": "export_django","t": "Export","d": "Django est un environnement internet fonctionnant avec une base de données configurée","v": "1.0.21","g": "4.0","z": "Django.addon.tgz"}
+{"n": "Import Django","i": "import_django","t": "Import","d": "Django est un environnement internet fonctionnant avec une base de données configurée","v": "1.0.24","g": "4.0","z": "Django.addon.tgz"}
+{"n": "Export Django","i": "export_django","t": "Export","d": "Django est un environnement internet fonctionnant avec une base de données configurée","v": "1.0.24","g": "4.0","z": "Django.addon.tgz"}
 {"n": "Éditer les métadonnées Exif de l'image","i": "Edit Image Exif Metadata","t": "Gramplet","d": "Gramplet pour voir, éditer, et enregistrer les métadonnées Exif de l'image","v": "1.5.3","g": "4.0","z": "EditExifMetadata.addon.tgz"}
 {"n": "Export brut","i": "Raw Export","t": "Export","d": "Ceci est une image brute d'objet python","v": "1.0.19","g": "4.0","z": "ExportRaw.addon.tgz"}
 {"n": "Attributs étendus de l'individu","i": "Extended Person Attributes","t": "Gramplet","d": "Gramplet affichant les attributs d'un individu","v": "1.0.14","g": "4.0","z": "ExtendedAttributes.addon.tgz"}

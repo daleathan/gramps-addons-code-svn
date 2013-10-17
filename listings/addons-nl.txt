@@ -16,9 +16,9 @@
 {"n": "Afstammelingentelling","i": "Descendant Count Gramplet","t": "Gramplet","d": "Gramplet om personen en afstammelingentelling te tonen","v": "1.0.17","g": "4.0","z": "DescendantCount.addon.tgz"}
 {"n": "Afstammelingenlijnen","i": "Descendants Lines","t": "Rapport","d": "Afstammelingenlijnen van een persoon worden aangemaakt","v": "0.1.19","g": "4.0","z": "DescendantsLines.addon.tgz"}
 {"n": "Database Differences Report","i": "database-differences-report","t": "Rapport","d": "Compares an external database with the current one.","v": "1.0.4","g": "4.0","z": "Differences.addon.tgz"}
-{"n": "Django-import","i": "import_django","t": "Import","d": "Django is een webstructuur die draait op een geconfigureerd gegevensbestand","v": "1.0.21","g": "4.0","z": "Django.addon.tgz"}
-{"n": "Django-export","i": "export_django","t": "Export","d": "Django is een webstructuur die draait op een geconfigureerd gegevensbestand","v": "1.0.21","g": "4.0","z": "Django.addon.tgz"}
-{"n": "Éditer les métadonnées Exif de l'image","i": "Edit Image Exif Metadata","t": "Gramplet","d": "Gramplet pour voir, éditer, et enregistrer les métadonnées Exif de l'image","v": "1.5.3","g": "4.0","z": "EditExifMetadata.addon.tgz"}
+{"n": "Django-import","i": "import_django","t": "Import","d": "Django is een webstructuur die draait op een geconfigureerd gegevensbestand","v": "1.0.24","g": "4.0","z": "Django.addon.tgz"}
+{"n": "Django-export","i": "export_django","t": "Export","d": "Django is een webstructuur die draait op een geconfigureerd gegevensbestand","v": "1.0.24","g": "4.0","z": "Django.addon.tgz"}
+{"n": "Exif-metagegevens aanpassen","i": "Edit Image Exif Metadata","t": "Gramplet","d": "Een gramplet om de Exif-beeldmetagegevens te zien, aan te passen of op te slaan","v": "1.5.3","g": "4.0","z": "EditExifMetadata.addon.tgz"}
 {"n": "Ruwe export","i": "Raw Export","t": "Export","d": "Dit is een ruwe 'python object'-dump","v": "1.0.19","g": "4.0","z": "ExportRaw.addon.tgz"}
 {"n": "Uitgebreide persoonskenmerken","i": "Extended Person Attributes","t": "Gramplet","d": "Gramplet affichant les attributs d'un individu","v": "1.0.14","g": "4.0","z": "ExtendedAttributes.addon.tgz"}
 {"n": "Uitgebreide familiekenmerken","i": "Extended Family Attributes","t": "Gramplet","d": "Gramplet affichant les attributs d'une famille","v": "1.0.14","g": "4.0","z": "ExtendedAttributes.addon.tgz"}

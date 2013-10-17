@@ -16,9 +16,9 @@
 {"n": "Anzahl der Nachkommen Gramplet","i": "Descendant Count Gramplet","t": "Gramplet","d": "Gramplet zum zeigen der Personen und der Anzahl ihrer Nachkommen","v": "1.0.17","g": "4.0","z": "DescendantCount.addon.tgz"}
 {"n": "Nachkommen Linien","i": "Descendants Lines","t": "Rapport","d": "Erstellt Nachkommenlinien einer Person","v": "0.1.19","g": "4.0","z": "DescendantsLines.addon.tgz"}
 {"n": "Datenbankunterschiede Bericht","i": "database-differences-report","t": "Rapport","d": "Vergleicht eine externe Datenbank mit der aktuell geöffneten.","v": "1.0.4","g": "4.0","z": "Differences.addon.tgz"}
-{"n": "Django Import","i": "import_django","t": "Import","d": "Django ist ein Web Programmgerüst das auf einer konfigurierten Datenbank arbeitet","v": "1.0.21","g": "4.0","z": "Django.addon.tgz"}
-{"n": "Django Export","i": "export_django","t": "Export","d": "Django ist ein Web Programmgerüst das auf einer konfigurierten Datenbank arbeitet","v": "1.0.21","g": "4.0","z": "Django.addon.tgz"}
-{"n": "Éditer les métadonnées Exif de l'image","i": "Edit Image Exif Metadata","t": "Gramplet","d": "Gramplet pour voir, éditer, et enregistrer les métadonnées Exif de l'image","v": "1.5.3","g": "4.0","z": "EditExifMetadata.addon.tgz"}
+{"n": "Django Import","i": "import_django","t": "Import","d": "Django ist ein Web Programmgerüst das auf einer konfigurierten Datenbank arbeitet","v": "1.0.24","g": "4.0","z": "Django.addon.tgz"}
+{"n": "Django Export","i": "export_django","t": "Export","d": "Django ist ein Web Programmgerüst das auf einer konfigurierten Datenbank arbeitet","v": "1.0.24","g": "4.0","z": "Django.addon.tgz"}
+{"n": "Bild Exif Metadaten bearbeiten","i": "Edit Image Exif Metadata","t": "Gramplet","d": "Gramplet zum ansehen, bearbeiten und speichern von Exif Metadaten","v": "1.5.3","g": "4.0","z": "EditExifMetadata.addon.tgz"}
 {"n": "Rohdaten Export","i": "Raw Export","t": "Export","d": "Dies ist eine Rohdaten Pythonobjekt Ausgabe","v": "1.0.19","g": "4.0","z": "ExportRaw.addon.tgz"}
 {"n": "Erweiterte Person Attribute","i": "Extended Person Attributes","t": "Gramplet","d": "Gramplet affichant les attributs d'un individu","v": "1.0.14","g": "4.0","z": "ExtendedAttributes.addon.tgz"}
 {"n": "Erweiterte Familienattribute","i": "Extended Family Attributes","t": "Gramplet","d": "Gramplet affichant les attributs d'une famille","v": "1.0.14","g": "4.0","z": "ExtendedAttributes.addon.tgz"}

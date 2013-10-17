@@ -16,9 +16,9 @@
 {"n": "Descendant Count Gramplet","i": "Descendant Count Gramplet","t": "Gramplet","d": "Gramplet for showing people and descendant counts","v": "1.0.17","g": "4.0","z": "DescendantCount.addon.tgz"}
 {"n": "Descendants Lines","i": "Descendants Lines","t": "Rapport","d": "Produces descendants lines of a person","v": "0.1.19","g": "4.0","z": "DescendantsLines.addon.tgz"}
 {"n": "Database Differences Report","i": "database-differences-report","t": "Rapport","d": "Compares an external database with the current one.","v": "1.0.4","g": "4.0","z": "Differences.addon.tgz"}
-{"n": "Django Import","i": "import_django","t": "Import","d": "Django is a web framework working on a configured database","v": "1.0.21","g": "4.0","z": "Django.addon.tgz"}
-{"n": "Django Export","i": "export_django","t": "Export","d": "Django is a web framework working on a configured database","v": "1.0.21","g": "4.0","z": "Django.addon.tgz"}
-{"n": "Éditer les métadonnées Exif de l'image","i": "Edit Image Exif Metadata","t": "Gramplet","d": "Gramplet pour voir, éditer, et enregistrer les métadonnées Exif de l'image","v": "1.5.3","g": "4.0","z": "EditExifMetadata.addon.tgz"}
+{"n": "Django Import","i": "import_django","t": "Import","d": "Django is a web framework working on a configured database","v": "1.0.24","g": "4.0","z": "Django.addon.tgz"}
+{"n": "Django Export","i": "export_django","t": "Export","d": "Django is a web framework working on a configured database","v": "1.0.24","g": "4.0","z": "Django.addon.tgz"}
+{"n": "Rediger Exif Metadata for bilete","i": "Edit Image Exif Metadata","t": "Gramplet","d": "Smågramps for å sjå, redigera og lagra Exif metadata for bilete","v": "1.5.3","g": "4.0","z": "EditExifMetadata.addon.tgz"}
 {"n": "Raw Export","i": "Raw Export","t": "Export","d": "This is a raw python object dump","v": "1.0.19","g": "4.0","z": "ExportRaw.addon.tgz"}
 {"n": "Extended Person Attributes","i": "Extended Person Attributes","t": "Gramplet","d": "Gramplet affichant les attributs d'un individu","v": "1.0.14","g": "4.0","z": "ExtendedAttributes.addon.tgz"}
 {"n": "Extended Family Attributes","i": "Extended Family Attributes","t": "Gramplet","d": "Gramplet affichant les attributs d'une famille","v": "1.0.14","g": "4.0","z": "ExtendedAttributes.addon.tgz"}
