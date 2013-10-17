@@ -1,4 +1,5 @@
 #! /usr/bin/env python
+# $Id$
 """
 make.py for Gramps addons.
 
@@ -45,10 +46,7 @@ import os
 if "GRAMPSPATH" in os.environ:
     GRAMPSPATH = os.environ["GRAMPSPATH"]
 else:
-    GRAMPSPATH = "../../../.."
-
-if not os.path.isdir(GRAMPSPATH + "/po"):
-    raise ValueError("Where is GRAMPSPATH/po: '%s/po'? Use 'GRAMPSPATH=path python make.py ...'" % GRAMPSPATH)
+    GRAMPSPATH = "../../.."
 
 command = sys.argv[1]
 if len(sys.argv) >= 3:
@@ -59,7 +57,7 @@ def system(scmd, **kwargs):
     Replace and call system with scmd.
     """
     cmd = r(scmd, **kwargs)
-    print(cmd)
+    #print(cmd)
     os.system(cmd)
 
 def echo(scmd, **kwargs):
@@ -80,13 +78,12 @@ def r(scmd, **kwargs):
 
 def increment_target(filenames):
     for filename in filenames:
-        print(filename)
         fp = open(filename, "r")
         newfp = open("%s.new" % filename, "w")
         for line in fp:
             if ((line.lstrip().startswith("version")) and 
                 ("=" in line)):
-                print("orig = %s" % line.rstrip())
+                #print("orig = %s" % line.rstrip())
                 line, stuff = line.rsplit(",", 1)
                 line = line.rstrip()
                 pos = line.index("version")
@@ -195,6 +192,8 @@ elif command == "update":
            '''%(addon)s/po/%(locale)s.po'''
            ''' -o %(addon)s/po/%(locale)s-local.po''')
     # Start with Gramps main PO file:
+    if not os.path.isdir(GRAMPSPATH + "/po"):
+        raise ValueError("Where is GRAMPSPATH/po: '%s/po'? Use 'GRAMPSPATH=path python make.py update'" % GRAMPSPATH)
     locale_po_files = [r("%(GRAMPSPATH)s/po/%(locale)s.po")]
     # Next, get all of the translations from other addons:
     for module in [name for name in os.listdir(".") if os.path.isdir(name)]:
@@ -293,9 +292,13 @@ elif command == "build":
         system('''tar cfz "../download/%(addon)s.addon.tgz" %(files)s''',
                files=files_str)
 elif command == "listing":
-    sys.path.append(os.path.join(GRAMPSPATH, "src"))
-    from TransUtils import get_addon_translator
-    from gen.plug import make_environment, PTYPE_STR
+    try:
+        sys.path.insert(0, GRAMPSPATH)
+        os.environ['GRAMPS_RESOURCES'] = os.path.abspath(GRAMPSPATH)
+        from gramps.gen.const import GRAMPS_LOCALE as glocale
+        from gramps.gen.plug import make_environment, PTYPE_STR
+    except ImportError:
+        raise ValueError("Where is GRAMPSPATH: '%s'? Use 'GRAMPSPATH=path python make.py listing'" % GRAMPSPATH)
     def register(ptype, **kwargs):
         global plugins
         kwargs["ptype"] = PTYPE_STR[ptype]
@@ -315,30 +318,35 @@ elif command == "listing":
             languages.add(locale[:-9])
     # next, create a file for all languages listing plugins
     for lang in languages:
+        print("Building listing for '%s'..." % lang)
         fp = open("../listings/addons-%s.txt" % lang, "w")
-        for addon in dirs:
+        for addon in sorted(dirs):
             for gpr in glob.glob(r('''%(addon)s/*.gpr.py''')):
-                local_gettext = get_addon_translator(gpr,
-                                       languages=[lang]).gettext
+                try:
+                    local_gettext = glocale.get_addon_translator(gpr,
+                                                      languages=[lang]).gettext
+                except ValueError:
+                    local_gettext = glocale.translation.gettext
                 plugins = []
                 execfile(gpr.encode(sys.getfilesystemencoding()),
                          make_environment(_=local_gettext),
                          {"register": register})
-                for p in plugins:
+                for p in sorted(plugins):
                     tgz_file = "%s.addon.tgz" % gpr.split("/", 1)[0]
                     tgz_exists = os.path.isfile("../download/" + tgz_file)
                     if p.get("include_in_listing", True) and tgz_exists:
-                        plugin = {"n": p["name"], 
-                                  "i": p["id"], 
-                                  "t": p["ptype"], 
-                                  "d": p["description"], 
-                                  "v": p["version"], 
-                                  "g": p["gramps_target_version"], 
-                                  "z": tgz_file, 
-                                  }
-                        print(plugin, file=fp)
+                        dictstring = ('{"n": "'+ p["name"] + '",'+
+                              '"i": "' + p["id"] +  '",' +
+                              '"t": "' + p["ptype"]+  '",' +
+                              '"d": "' + p["description"]+  '",'+
+                              '"v": "' + p["version"]+  '",'+
+                              '"g": "' + p["gramps_target_version"]+  '",'+
+                              '"z": "' + tgz_file +  '"' +
+                              '}')
+                        fp.write(dictstring.encode('utf-8'))
+                        fp.write('\n')
                     else:
-                        print("Ignoring '%s' in Language %s..." % (p["name"], lang))
+                        print("   ignoring '%s'" % (p["name"]))
         fp.close()
 else:
     raise AttributeError("unknown command")
