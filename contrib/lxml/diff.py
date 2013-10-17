@@ -31,6 +31,9 @@ from cli.grampscli import CLIManager
 from gen.plug import BasePluginManager
 from dictionary import DictionaryDb
 
+handle2internal = lambda x: x
+
+
 def import_as_dict(filename):
     """
     Import the filename into a DictionaryDb and return it.
@@ -130,8 +133,8 @@ def diff_dbs(db1, db2):
     diffs = []
     for item in ['Person', 'Family', 'Source', 'Citation', 'Event', 'Media',
                  'Place', 'Repository', 'Note', 'Tag']:
-        handles1 = sorted(db1._tables[item]["handles_func"]())
-        handles2 = sorted(db2._tables[item]["handles_func"]())
+        handles1 = sorted([handle2internal(handle) for handle in db1._tables[item]["handles_func"]()])
+        handles2 = sorted([handle2internal(handle) for handle in db2._tables[item]["handles_func"]()])
         p1 = 0
         p2 = 0
         while p1 < len(handles1) and p2 < len(handles2):
