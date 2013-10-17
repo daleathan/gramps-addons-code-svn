@@ -27,8 +27,6 @@
 #-------------------------------------------------------------------------
 from __future__ import division
 
-from gen.ggettext import sgettext as _
-
 #-------------------------------------------------------------------------
 #
 # GTK/Gnome modules
@@ -45,6 +43,9 @@ import gobject
 import const
 import Utils
 from gen.display.name import displayer as name_displayer
+
+from TransUtils import get_addon_translator
+_ = get_addon_translator(__file__).gettext
 
 #-------------------------------------------------------------------------
 #

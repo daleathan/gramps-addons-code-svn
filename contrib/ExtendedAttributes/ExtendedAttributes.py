@@ -23,7 +23,6 @@
 from ListModel import ListModel, NOSORT
 from QuickReports import run_quick_report_by_name
 from gen.plug import Gramplet
-from gen.ggettext import gettext as _
 import gen.lib
 import DateHandler
 import gtk
@@ -31,6 +30,9 @@ from gui.editors import EditPerson, EditFamily, EditEventRef
 import Errors
 from gen.db import DbTxn
 from gen.display.name import displayer as name_displayer
+
+from TransUtils import get_addon_translator
+_ = get_addon_translator(__file__).gettext
 
 class Attributes(Gramplet):
     """

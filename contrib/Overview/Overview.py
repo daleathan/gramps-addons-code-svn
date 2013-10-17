@@ -22,11 +22,13 @@
 from gui.editors import EditEvent
 from ListModel import ListModel, NOSORT
 from gen.plug import Gramplet
-from gen.ggettext import gettext as _
 from gen.lib import AttributeType
 import DateHandler
 import Errors
 import gtk
+
+from TransUtils import get_addon_translator
+_ = get_addon_translator(__file__).gettext
 
 class Overview(Gramplet):
     """

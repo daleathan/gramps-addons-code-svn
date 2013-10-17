@@ -21,7 +21,6 @@
 # standard python modules
 #
 #------------------------------------------------------------------------
-from gen.ggettext import gettext as _
 from functools import partial
 
 #------------------------------------------------------------------------
@@ -48,6 +47,9 @@ from libnarrate import Narrator
 import TransUtils
 from libtranslate import Translator, get_language_string
 from libsubstkeyword import SubstKeywords
+
+from TransUtils import get_addon_translator
+_ = get_addon_translator(__file__).gettext
 
 #------------------------------------------------------------------------
 #

@@ -23,10 +23,12 @@ from ListModel import ListModel, NOSORT
 from Utils import navigation_label
 from gen.plug import Gramplet
 from gui.widgets import Photo
-from gen.ggettext import gettext as _
 import Utils
 import Errors
 import gtk
+
+from TransUtils import get_addon_translator
+_ = get_addon_translator(__file__).gettext
 
 class MediaBrowser(Gramplet):
     """

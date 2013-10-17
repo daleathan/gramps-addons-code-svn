@@ -27,8 +27,6 @@
 #-------------------------------------------------------------------------
 from __future__ import division
 
-from gen.ggettext import sgettext as _
-
 #-------------------------------------------------------------------------
 #
 # GTK/Gnome modules
@@ -56,6 +54,9 @@ from gui.selectors import SelectorFactory
 from gen.plug.menu import (BooleanOption, StringOption, NumberOption, 
                          EnumeratedListOption, FilterOption, PersonOption)
 from gui.plug import PluginWindows
+
+from TransUtils import get_addon_translator
+_ = get_addon_translator(__file__).gettext
 
 #-------------------------------------------------------------------------
 #

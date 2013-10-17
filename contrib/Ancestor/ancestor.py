@@ -42,7 +42,9 @@ from gen.display.name import displayer as name_displayer
 from DateHandler import get_date
 from gen.utils import get_birth_or_fallback, get_death_or_fallback
 from config import config
-from gen.ggettext import gettext as _
+
+from TransUtils import get_addon_translator
+_ = get_addon_translator(__file__).gettext
 
 class Ancestor(Gramplet):
 

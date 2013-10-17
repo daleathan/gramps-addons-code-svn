@@ -24,12 +24,14 @@ from ListModel import ListModel, NOSORT
 from gen.display.name import displayer
 from gen.plug import Gramplet
 from gui.dbguielement import DbGUIElement
-from gen.ggettext import gettext as _
 from gui.editors import EditPerson
 from gen.utils import get_birth_or_fallback
 import DateHandler
 import Errors
 import gtk
+
+from TransUtils import get_addon_translator
+_ = get_addon_translator(__file__).gettext
 
 class Participants(Gramplet, DbGUIElement):
     """

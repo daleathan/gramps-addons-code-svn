@@ -22,12 +22,6 @@
 
 """Tools/Database Processing/Rebuild Types"""
 
-#-------------------------------------------------------------------------
-#
-# python modules
-#
-#-------------------------------------------------------------------------
-from gen.ggettext import gettext as _
 
 #-------------------------------------------------------------------------
 #
@@ -36,6 +30,9 @@ from gen.ggettext import gettext as _
 #-------------------------------------------------------------------------
 from gui.plug import tool
 from QuestionDialog import OkDialog
+
+from TransUtils import get_addon_translator
+_ = get_addon_translator(__file__).gettext
 
 #-------------------------------------------------------------------------
 #

@@ -28,7 +28,9 @@ import gtk
 from gen.plug import Gramplet
 from gui.widgets import SimpleButton
 from Filters import GenericFilterFactory, Rules
-from gen.ggettext import sgettext as _
+
+from TransUtils import get_addon_translator
+_ = get_addon_translator(__file__).gettext
 
 #------------------------------------------------------------------------
 #

@@ -23,8 +23,10 @@
 from ListModel import ListModel, NOSORT
 from Utils import navigation_label
 from gen.plug import Gramplet
-from gen.ggettext import gettext as _
 import gtk
+
+from TransUtils import get_addon_translator
+_ = get_addon_translator(__file__).gettext
 
 class SourceReferences(Gramplet):
     """
