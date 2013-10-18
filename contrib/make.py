@@ -328,8 +328,11 @@ elif command == "listing":
                 except ValueError:
                     local_gettext = glocale.translation.gettext
                 plugins = []
-                execfile(gpr.encode(sys.getfilesystemencoding()),
-                         make_environment(_=local_gettext),
+                with open(gpr.encode("utf-8", errors="backslashreplace")) as f:
+                    code = compile(f.read(),
+                                   gpr.encode("utf-8", errors="backslashreplace"),
+                                   'exec')
+                    exec(code, make_environment(_=local_gettext),
                          {"register": register})
                 for p in plugins:
                     tgz_file = "%s.addon.tgz" % gpr.split("/", 1)[0]
