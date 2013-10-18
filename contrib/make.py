@@ -188,7 +188,7 @@ elif command == "update":
                '''--input="%(addon)s/po/template.pot" '''
                '''--output="%(addon)s/po/%(locale)s.po"''')
     # Merge existing local translation with last data:
-    system('''msgmerge %(addon)s/po/%(locale)s-local.po '''
+    system('''msgmerge --no-fuzzy-matching %(addon)s/po/%(locale)s-local.po '''
            '''%(addon)s/po/%(locale)s.po'''
            ''' -o %(addon)s/po/%(locale)s-local.po''')
     # Start with Gramps main PO file:
@@ -210,7 +210,7 @@ elif command == "update":
     # Merge the local and global:
     #locale_local = r("%(module)s/po/%(locale)s-local.po", module=module)
     #if os.path.isfile(locale_local):
-    system('''msgmerge -U "%(addon)s/po/%(locale)s-global.po" '''
+    system('''msgmerge --no-fuzzy-matching -U "%(addon)s/po/%(locale)s-global.po" '''
            '''"%(addon)s/po/%(locale)s-local.po" ''')
     # Get all of the addon strings out of the catalog:
     system('''msggrep --location=%(addon)s/* '''
@@ -319,7 +319,7 @@ elif command == "listing":
     # next, create a file for all languages listing plugins
     for lang in languages:
         print("Building listing for '%s'..." % lang)
-        fp = open("../listings/addons-%s.txt" % lang, "w")
+        listings = []
         for addon in sorted(dirs):
             for gpr in glob.glob(r('''%(addon)s/*.gpr.py''')):
                 try:
@@ -331,22 +331,24 @@ elif command == "listing":
                 execfile(gpr.encode(sys.getfilesystemencoding()),
                          make_environment(_=local_gettext),
                          {"register": register})
-                for p in sorted(plugins):
+                for p in plugins:
                     tgz_file = "%s.addon.tgz" % gpr.split("/", 1)[0]
                     tgz_exists = os.path.isfile("../download/" + tgz_file)
                     if p.get("include_in_listing", True) and tgz_exists:
-                        dictstring = ('{"n": "'+ p["name"] + '",'+
-                              '"i": "' + p["id"] +  '",' +
-                              '"t": "' + p["ptype"]+  '",' +
-                              '"d": "' + p["description"]+  '",'+
-                              '"v": "' + p["version"]+  '",'+
-                              '"g": "' + p["gramps_target_version"]+  '",'+
-                              '"z": "' + tgz_file +  '"' +
-                              '}')
-                        fp.write(dictstring.encode('utf-8'))
-                        fp.write('\n')
+                        plugin = {"n": repr(p["name"]),
+                                  "i": repr(p["id"]),
+                                  "t": repr(p["ptype"]),
+                                  "d": repr(p["description"]),
+                                  "v": repr(p["version"]),
+                                  "g": repr(p["gramps_target_version"]),
+                                  "z": repr(tgz_file),
+                                  }
+                        listings.append(plugin)
                     else:
                         print("   ignoring '%s'" % (p["name"]))
+        fp = open("../listings/addons-%s.txt" % lang, "w")
+        for plugin in sorted(listings, key=lambda p: (p["t"], p["i"])):
+            print('{"t":%(t)s,"i":%(i)s,"n":%(n)s,"v":%(v)s,"g":%(g)s,"d":%(d)s,"z":%(z)s}' % plugin, file=fp)
         fp.close()
 else:
     raise AttributeError("unknown command")
