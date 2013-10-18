@@ -1,69 +1,69 @@
-{'d': 'Vyn visar en tidslinje med anor och \xc3\xa4ttlingar f\xc3\xb6r den valda personen', 'g': '3.4', 'i': 'TimelinePedigreeView', 'n': 'Antavla med tidslinje', 't': u'Gramps View', 'v': '0.1.19', 'z': 'TimelinePedigreeView.addon.tgz'}
-{'d': 'Gramplet f\xc3\xb6r att g\xc3\xb6ra SQL-liknande fr\xc3\xa5gor', 'g': '3.4', 'i': 'Query Gramplet', 'n': 'Fr\xc3\xa5ge-Gramplet', 't': u'Gramplet', 'v': '1.0.7', 'z': 'Query.addon.tgz'}
-{'d': 'Snabbtitt f\xc3\xb6r SQL-liknande fr\xc3\xa5gor', 'g': '3.4', 'i': 'Query Quickview', 'n': 'Fr\xc3\xa5gesnabbtitt', 't': u'Quickreport', 'v': '1.0.7', 'z': 'Query.addon.tgz'}
-{'d': 'Gramplet for showing latest the Gramps news', 'g': '3.4', 'i': 'Headline News Gramplet', 'n': 'Nyhetsrubriker med Gramplet', 't': u'Gramplet', 'v': '1.0.9', 'z': 'HeadlineNewsGramplet.addon.tgz'}
-{'d': "Gramplet showing active person's descendants", 'g': '3.4', 'i': 'Descendant', 'n': 'Descendant', 't': u'Gramplet', 'v': '1.0.4', 'z': 'Descendant.addon.tgz'}
-{'d': 'Gramplet for tagging people in photos', 'g': '3.4', 'i': 'Photo Tagging', 'n': 'Photo Tagging', 't': u'Gramplet', 'v': '1.0.2', 'z': 'PhotoTaggingGramplet.addon.tgz'}
-{'d': 'Gramplet visande detaljer om en person', 'g': '3.4', 'i': 'MediaBrowser', 'n': 'Mediabl\xc3\xa4ddrare', 't': u'Gramplet', 'v': '1.0.8', 'z': 'MediaBrowser.addon.tgz'}
-{'d': 'Miniatyrbildskapare f\xc3\xb6r mediafiler', 'g': '3.4', 'i': 'thumbgen', 'n': 'Miniatyrbildskapare', 't': u'Tool', 'v': '1.0.3', 'z': 'ThumbnailGenerator.addon.tgz'}
-{'d': 'Gramplet f\xc3\xb6r importering av text', 'g': '3.4', 'i': 'Import Gramplet', 'n': 'Gramplet importering', 't': u'Gramplet', 'v': '1.0.10', 'z': 'ImportGramplet.addon.tgz'}
-{'d': 'Produces a list of all the notes with a given tag along with the records that it references, the Person, Family, Event, etc.', 'g': '3.4', 'i': 'TodoReport', 'n': 'Todo Report', 't': u'Report', 'v': '1.2.9', 'z': 'ToDoReport.addon.tgz'}
-{'d': 'Produces descendants lines of a person', 'g': '3.4', 'i': 'Descendants Lines', 'n': 'Descendants Lines', 't': u'Report', 'v': '0.1.16', 'z': 'DescendantsLines.addon.tgz'}
-{'d': 'Gramplet som visar en persons attribut', 'g': '3.4', 'i': 'Extended Person Attributes', 'n': 'Utvidgade personattribut', 't': u'Gramplet', 'v': '1.0.6', 'z': 'ExtendedAttributes.addon.tgz'}
-{'d': 'Gramplet som visar en familjs attribut', 'g': '3.4', 'i': 'Extended Family Attributes', 'n': 'Utvidgade familjeattribut', 't': u'Gramplet', 'v': '1.0.6', 'z': 'ExtendedAttributes.addon.tgz'}
-{'d': 'Skapar en hemsida (XHTML) med grafisk representation av f\xc3\xb6rf\xc3\xa4der/\xc3\xa4ttlingar (SVG) d\xc3\xa4r detaljer om individier blir synliga via mush\xc3\xa4ndelser.', 'g': '3.4', 'i': 'denominoviso', 'n': 'DenominoViso', 't': u'Report', 'v': '2.3.9', 'z': 'DenominoViso.addon.tgz'}
-{'d': 'Produit une liste eclair', 'g': '3.4', 'i': 'ListeEclair', 'n': 'Liste Eclair', 't': u'Report', 'v': '1.0.2', 'z': 'ListeEclair.addon.tgz'}
-{'d': 'Detta \xc3\xa4r en r\xc3\xa5 dumpning av pythonobjekt', 'g': '3.4', 'i': 'Raw Export', 'n': 'R\xc3\xa5 export', 't': u'Exporter', 'v': '1.0.10', 'z': 'ExportRaw.addon.tgz'}
-{'d': 'Prints out all descendency lines from a given ancestor to a given descendent in text.', 'g': '3.4', 'i': 'LinesOfDescendency', 'n': 'Lines of Descendency Report', 't': u'Report', 'v': '1.1.11', 'z': 'LinesOfDescendency.addon.tgz'}
-{'d': 'Visar h\xc3\xa4ndelser f\xc3\xb6r en person p\xc3\xa5 en tidslinje', 'g': '3.4', 'i': 'timelinequickview', 'n': 'Tidslinje', 't': u'Quickreport', 'v': '1.0.9', 'z': 'TimelineQuickview.addon.tgz'}
-{'d': 'Gramplet for quick data entry', 'g': '3.4', 'i': 'Data Entry Gramplet', 'n': 'Gramplet f\xc3\xb6r datainmatning', 't': u'Gramplet', 'v': '1.0.19', 'z': 'DataEntryGramplet.addon.tgz'}
-{'d': 'L\xc3\xa4mnar en bl\xc3\xa4ddringsbar lista p\xc3\xa5 valda platser, med m\xc3\xb6jlighet att komplettera/avs\xc3\xb6ka/s\xc3\xa4tta attributf\xc3\xa4ltet.', 'g': '3.4', 'i': 'PlaceCompletion', 'n': 'Platskomplettering', 't': u'Tool', 'v': '0.0.14', 'z': 'PlaceCompletion.addon.tgz'}
-{'d': 'Sl\xc3\xa5 samman prim\xc3\xa4ra objekt via kommandoraden', 'g': '3.4', 'i': 'climerge', 'n': 'Command Line Merge', 't': u'Tool', 'v': '1.0.7', 'z': 'CliMerge.addon.tgz'}
-{'d': 'Rebuilds Gramps Types', 'g': '3.4', 'i': 'rebuild_types', 'n': 'Rebuild Gramps Types', 't': u'Tool', 'v': '1.0.4', 'z': 'RebuildTypes.addon.tgz'}
-{'d': 'S\xc3\xa4tt ett attribut till ett givet v\xc3\xa4rde.', 'g': '3.4', 'i': 'SetAttribute', 'n': 'S\xc3\xa4tt attribut', 't': u'Tool', 'v': '0.0.7', 'z': 'SetAttributeTool.addon.tgz'}
-{'d': 'Visar antal \xc3\xa4ttlingar till aktuell person', 'g': '3.4', 'i': 'NumberOfDescendantsQuickview', 'n': 'Antal \xc3\xa4ttlingar', 't': u'Quickreport', 'v': '3.4.7', 'z': 'NumberOfDescendantsQuickview.addon.tgz'}
-{'d': "Gramplet showing active person's ancestors", 'g': '3.4', 'i': 'Ancestor', 'n': 'Ancestor', 't': u'Gramplet', 'v': '1.0.4', 'z': 'Ancestor.addon.tgz'}
-{'d': 'Levande sl\xc3\xa4ktskapsdiagram', 'g': '3.4', 'i': 'graphview', 'n': 'Diagramvy', 't': u'Gramps View', 'v': '1.0.27', 'z': 'GraphView.addon.tgz'}
-{'d': 'Collection of Web sites for the US (requires libwebconnect)', 'g': '3.4', 'i': 'US Web Connect Pack', 'n': 'US Web Connect Pack', 't': u'Plugin lib', 'v': '1.0.17', 'z': 'USWebConnectPack.addon.tgz'}
-{'d': 'Verifierar att media \xc3\xa4r n\xc3\xa4rvarande i r\xc3\xa4tt s\xc3\xb6kv\xc3\xa4g', 'g': '3.4', 'i': 'mediaverify', 'n': 'Verifiera media', 't': u'Tool', 'v': '1.0.4', 'z': 'MediaVerify.addon.tgz'}
-{'d': 'Django \xc3\xa4r ett n\xc3\xa4tbaserat ramverkarbetande med en konfigurerad databas ', 'g': '3.4', 'i': 'import_django', 'n': 'Django-import', 't': u'Importer', 'v': '1.0.13', 'z': 'Django.addon.tgz'}
-{'d': 'Django \xc3\xa4r ett n\xc3\xa4tbaserat ramverkarbetande med en konfigurerad databas ', 'g': '3.4', 'i': 'export_django', 'n': 'Django-export', 't': u'Exporter', 'v': '1.0.13', 'z': 'Django.addon.tgz'}
-{'d': 'Gramplet showing an overview of events for a person', 'g': '3.4', 'i': 'Person Overview', 'n': 'Person Overview', 't': u'Gramplet', 'v': '1.0.3', 'z': 'Overview.addon.tgz'}
-{'d': 'Gramplet showing an overview of events for a family', 'g': '3.4', 'i': 'Family Overview', 'n': 'Family Overview', 't': u'Gramplet', 'v': '1.0.3', 'z': 'Overview.addon.tgz'}
-{'d': 'Ber\xc3\xa4kna uppskattningar av datum f\xc3\xb6r f\xc3\xb6delse och d\xc3\xb6d.', 'g': '3.4', 'i': 'calculateestimateddates', 'n': 'Ber\xc3\xa4knade uppskattade datum', 't': u'Tool', 'v': '0.90.8', 'z': 'CalculateEstimatedDates.addon.tgz'}
-{'d': 'Bibliotek f\xc3\xb6r samling av webbsidor', 'g': '3.4', 'i': 'libwebconnect', 'n': 'libwebconnect', 't': u'Plugin lib', 'v': '1.0.8', 'z': 'libwebconnect.addon.tgz'}
-{'d': 'SQLite \xc3\xa4r ett vanligt lokal databasformat', 'g': '3.4', 'i': 'im_sqlite', 'n': 'SQLite Import', 't': u'Importer', 'v': '1.0.15', 'z': 'Sqlite.addon.tgz'}
-{'d': 'SQLite \xc3\xa4r ett vanligt lokal databasformat', 'g': '3.4', 'i': 'ex_sqlite', 'n': 'SQLite Export', 't': u'Exporter', 'v': '1.0.14', 'z': 'Sqlite.addon.tgz'}
-{'d': 'Skapar en textbaserad rapport \xc3\xb6ver arkivplatser', 'g': '3.4', 'i': 'Repositories Report Options', 'n': 'Arkivplatsrapportalternativ', 't': u'Report', 'v': '0.3.3', 'z': 'RepositoriesReport.addon.tgz'}
-{'d': 'Skapar en textbaserad rapport \xc3\xb6ver arkivplatser', 'g': '3.4', 'i': 'Repositories Report', 'n': 'Arkivplatsrapport', 't': u'Report', 'v': '1.1.3', 'z': 'RepositoriesReport.addon.tgz'}
-{'d': 'Gramplet for generic notes', 'g': '3.4', 'i': 'TODO2', 'n': 'Att g\xc3\xb6ra 2', 't': u'Gramplet', 'v': '0.0.3', 'z': 'ToDoNotesGramplet.addon.tgz'}
-{'d': 'Utg\xc3\xb6r ett bibliotek f\xc3\xb6r generell tillg\xc3\xa5ng till databasen och gen.lib', 'g': '3.4', 'i': 'libaccess', 'n': 'Generic DB Access lib', 't': u'Plugin lib', 'v': '1.0.9', 'z': 'libaccess.addon.tgz'}
-{'d': 'Lista de tio personposterna, som har \xc3\xa4ndrats', 'g': '3.4', 'i': 'LastChangeGramplet', 'n': 'Gramplet med de senaste \xc3\xa4ndringarna', 't': u'Gramplet', 'v': '0.0.12', 'z': 'LastChange.addon.tgz'}
-{'d': 'Rapport \xc3\xb6ver de poster, som har \xc3\xa4ndrats senast', 'g': '3.4', 'i': 'LastChangeReport', 'n': 'Rapport \xc3\xb6ver senaste \xc3\xa4ndringar', 't': u'Report', 'v': '0.0.12', 'z': 'LastChange.addon.tgz'}
-{'d': 'Skapar datafil f\xc3\xb6r GoogleEarth och \xc3\xb6ppnar den', 'g': '3.4', 'i': 'GoogleEarth', 'n': 'GoogleEarth', 't': u'Map service', 'v': '1.0.15', 'z': 'GoogleEarthWriteKML.addon.tgz'}
-{'d': 'Skapar en \xc3\xa4ttlingsrapport med hj\xc3\xa4lp av ett filter', 'g': '3.4', 'i': 'fil_descendant_report', 'n': 'Rapport med utvalda \xc3\xa4ttlingar', 't': u'Report', 'v': '0.3.5', 'z': 'FilteredReports.addon.tgz'}
-{'d': 'Gramplet f\xc3\xb6r gruppering av poster', 'g': '3.4', 'i': 'Clipboard Gramplet', 'n': 'Urklippsgramplet', 't': u'Gramplet', 'v': '1.0.12', 'z': 'ClipboardGramplet.addon.tgz'}
-{'d': 'Gramplet som visar sl\xc3\xa4ktskap i en relation', 'g': '3.4', 'i': 'Related Relatives Gramplet', 'n': 'Gramplet f\xc3\xb6r sl\xc3\xa4ktskapsrelationer', 't': u'Gramplet', 'v': '1.0.8', 'z': 'RelatedRelativesGramplet.addon.tgz'}
-{'d': 'Skapar ett grafiskt sl\xc3\xa4kttr\xc3\xa4d.', 'g': '3.4', 'i': 'FamilyTree', 'n': 'Sl\xc3\xa4kttr\xc3\xa4d', 't': u'Report', 'v': '3.4.10', 'z': 'FamilyTree.addon.tgz'}
-{'d': 'Samling webplatser f\xc3\xb6r DE (kr\xc3\xa4ver libwebconnect)', 'g': '3.4', 'i': 'DE Web Connect Pack', 'n': 'DE Web kopplingspaket', 't': u'Plugin lib', 'v': '0.0.3', 'z': 'DEWebConnectPack.addon.tgz'}
-{'d': 'Interactive Python interpreter', 'g': '3.4', 'i': 'Python Gramplet', 'n': 'Gramplet med Python', 't': u'Gramplet', 'v': '1.0.7', 'z': 'PythonGramplet.addon.tgz'}
-{'d': 'Gramplet showing the participants in an event', 'g': '3.4', 'i': 'Participants', 'n': 'Participants', 't': u'Gramplet', 'v': '1.0.3', 'z': 'Participants.addon.tgz'}
-{'d': 'Gramplet visande ett l\xc3\xa5ng sl\xc3\xa4ktskap mellan aktiv person och hemperson', 'g': '3.4', 'i': 'Deep Connections Gramplet', 'n': 'Gramplet f\xc3\xb6r l\xc3\xa5nga sl\xc3\xa4ktskap', 't': u'Gramplet', 'v': '1.0.13', 'z': 'DeepConnectionsGramplet.addon.tgz'}
-{'d': 'Kopplar en delad k\xc3\xa4lla till flera objekt.', 'g': '3.4', 'i': 'AttachSource', 'n': 'Koppla k\xc3\xa4lla', 't': u'Tool', 'v': '0.0.15', 'z': 'AttachSourceTool.addon.tgz'}
-{'d': "Gramplet for editing active person's notes", 'g': '3.4', 'i': 'Note Gramplet', 'n': 'Gramplet f\xc3\xb6r notis', 't': u'Gramplet', 'v': '1.0.9', 'z': 'NoteGramplet.addon.tgz'}
-{'d': 'Antavlealternativ', 'g': '3.4', 'i': 'PedigreeChart', 'n': 'Antavla', 't': u'Report', 'v': '1.0.11', 'z': 'PedigreeChart.addon.tgz'}
-{'d': 'Collection of Web sites for the UK (requires libwebconnect)', 'g': '3.4', 'i': 'UK Web Connect Pack', 'n': 'UK Web Connect Pack', 't': u'Plugin lib', 'v': '1.0.15', 'z': 'UKWebConnectPack.addon.tgz'}
-{'d': 'Skapar ett familjeark visande all information om en person och dennes partner och barn.', 'g': '3.4', 'i': 'FamilySheet', 'n': 'Familjeark', 't': u'Report', 'v': '3.4.10', 'z': 'FamilySheet.addon.tgz'}
-{'d': 'en Gramplet, som visar f\xc3\xb6delsedagarna f\xc3\xb6r levande personer', 'g': '3.4', 'i': 'Birthdays', 'n': 'F\xc3\xb6delsedags-Gramplet', 't': u'Gramplet', 'v': '1.0.13', 'z': 'BirthdaysGramplet.addon.tgz'}
-{'d': 'Rapport \xc3\xb6ver ifyllnad av sl\xc3\xa4kttr\xc3\xa4d', 'g': '3.4', 'i': 'AncestorFill', 'n': 'Anors fyllnadsgrad', 't': u'Report', 'v': '1.0.3', 'z': 'AncestorFill.addon.tgz'}
-{'d': 'S\xc3\xb6ker igenom hela databasen och f\xc3\xb6rs\xc3\xb6ker ordna stavning av f\xc3\xb6rnamnen', 'g': '3.4.6', 'i': 'chgivenname', 'n': 'Ordna stavning av f\xc3\xb6rnamn', 't': u'Tool', 'v': '1.0.7', 'z': 'ChangeGivenNames.addon.tgz'}
-{'d': 'Gramplet f\xc3\xb6r detektering och tilldelning av ansikten', 'g': '3.4', 'i': 'Face Detection', 'n': 'Detektion av ansikte', 't': u'Gramplet', 'v': '1.0.4', 'z': 'FaceDetection.addon.tgz'}
-{'d': 'Gramplet for demonstrating Cairo graphics', 'g': '3.4', 'i': 'Clock Gramplet', 'n': 'Klock-Gramplet', 't': u'Gramplet', 'v': '0.0.8', 'z': 'ClockGramplet.addon.tgz'}
-{'d': 'Visa antal \xc3\xa4ttlingar f\xc3\xb6r varje person', 'g': '3.4', 'i': 'Descendant Count Quickview', 'n': '\xc3\x84ttlingsr\xc3\xa4knare', 't': u'Quickreport', 'v': '1.0.7', 'z': 'DescendantCount.addon.tgz'}
-{'d': 'Gramplet for showing people and descendant counts', 'g': '3.4', 'i': 'Descendant Count Gramplet', 'n': 'Gramplet f\xc3\xb6r r\xc3\xa4kning av \xc3\xa4ttlingar', 't': u'Gramplet', 'v': '1.0.8', 'z': 'DescendantCount.addon.tgz'}
-{'d': 'Gramplet to show all census events', 'g': '3.4', 'i': 'AllCensus', 'n': 'All Census Gramplet', 't': u'Gramplet', 'v': '1.0.3', 'z': 'Census.addon.tgz'}
-{'d': 'Rapport \xc3\xb6ver folkr\xc3\xa4kningsh\xc3\xa4ndelser f\xc3\xb6r en person', 'g': '3.4', 'i': 'census_report', 'n': 'Folkr\xc3\xa4kningsrapport', 't': u'Report', 'v': '1.0.23', 'z': 'Census.addon.tgz'}
-{'d': 'Gramplet interface for census data', 'g': '3.4', 'i': 'Census Gramplet', 'n': 'Census Gramplet', 't': u'Gramplet', 'v': '1.0.23', 'z': 'Census.addon.tgz'}
-{'d': 'Gramplet showing the references for a source', 'g': '3.4', 'i': 'Source References', 'n': 'Source References', 't': u'Gramplet', 'v': '1.0.3', 'z': 'SourceReferences.addon.tgz'}
-{'d': 'Samling av webbplatser f\xc3\xb6r FR (kr\xc3\xa4ver libwebconnect)', 'g': '3.4', 'i': 'FR Web Connect Pack', 'n': 'FR webb kopplingspaket', 't': u'Plugin lib', 'v': '1.0.10', 'z': 'FRWebConnectPack.addon.tgz'}
-{'d': 'Visa samtliga namn f\xc3\xb6r alla personer', 'g': '3.4', 'i': 'allnames', 'n': 'Samtliga namn f\xc3\xb6r alla personer', 't': u'Quickreport', 'v': '1.0.6', 'z': 'AllNamesQuickview.addon.tgz'}
+{"t":u'Exporter',"i":'Raw Export',"n":'R\xc3\xa5 export',"v":'1.0.10',"g":'3.4',"d":'Detta \xc3\xa4r en r\xc3\xa5 dumpning av pythonobjekt',"z":'ExportRaw.addon.tgz'}
+{"t":u'Exporter',"i":'ex_sqlite',"n":'SQLite Export',"v":'1.0.14',"g":'3.4',"d":'SQLite \xc3\xa4r ett vanligt lokal databasformat',"z":'Sqlite.addon.tgz'}
+{"t":u'Exporter',"i":'export_django',"n":'Django-export',"v":'1.0.13',"g":'3.4',"d":'Django \xc3\xa4r ett n\xc3\xa4tbaserat ramverkarbetande med en konfigurerad databas ',"z":'Django.addon.tgz'}
+{"t":u'Gramplet',"i":'AllCensus',"n":'All Census Gramplet',"v":'1.0.3',"g":'3.4',"d":'Gramplet to show all census events',"z":'Census.addon.tgz'}
+{"t":u'Gramplet',"i":'Ancestor',"n":'Ancestor',"v":'1.0.4',"g":'3.4',"d":"Gramplet showing active person's ancestors","z":'Ancestor.addon.tgz'}
+{"t":u'Gramplet',"i":'Birthdays',"n":'F\xc3\xb6delsedags-Gramplet',"v":'1.0.13',"g":'3.4',"d":'en Gramplet, som visar f\xc3\xb6delsedagarna f\xc3\xb6r levande personer',"z":'BirthdaysGramplet.addon.tgz'}
+{"t":u'Gramplet',"i":'Census Gramplet',"n":'Census Gramplet',"v":'1.0.23',"g":'3.4',"d":'Gramplet interface for census data',"z":'Census.addon.tgz'}
+{"t":u'Gramplet',"i":'Clipboard Gramplet',"n":'Urklippsgramplet',"v":'1.0.12',"g":'3.4',"d":'Gramplet f\xc3\xb6r gruppering av poster',"z":'ClipboardGramplet.addon.tgz'}
+{"t":u'Gramplet',"i":'Clock Gramplet',"n":'Klock-Gramplet',"v":'0.0.8',"g":'3.4',"d":'Gramplet for demonstrating Cairo graphics',"z":'ClockGramplet.addon.tgz'}
+{"t":u'Gramplet',"i":'Data Entry Gramplet',"n":'Gramplet f\xc3\xb6r datainmatning',"v":'1.0.19',"g":'3.4',"d":'Gramplet for quick data entry',"z":'DataEntryGramplet.addon.tgz'}
+{"t":u'Gramplet',"i":'Deep Connections Gramplet',"n":'Gramplet f\xc3\xb6r l\xc3\xa5nga sl\xc3\xa4ktskap',"v":'1.0.13',"g":'3.4',"d":'Gramplet visande ett l\xc3\xa5ng sl\xc3\xa4ktskap mellan aktiv person och hemperson',"z":'DeepConnectionsGramplet.addon.tgz'}
+{"t":u'Gramplet',"i":'Descendant Count Gramplet',"n":'Gramplet f\xc3\xb6r r\xc3\xa4kning av \xc3\xa4ttlingar',"v":'1.0.8',"g":'3.4',"d":'Gramplet for showing people and descendant counts',"z":'DescendantCount.addon.tgz'}
+{"t":u'Gramplet',"i":'Descendant',"n":'Descendant',"v":'1.0.4',"g":'3.4',"d":"Gramplet showing active person's descendants","z":'Descendant.addon.tgz'}
+{"t":u'Gramplet',"i":'Extended Family Attributes',"n":'Utvidgade familjeattribut',"v":'1.0.6',"g":'3.4',"d":'Gramplet som visar en familjs attribut',"z":'ExtendedAttributes.addon.tgz'}
+{"t":u'Gramplet',"i":'Extended Person Attributes',"n":'Utvidgade personattribut',"v":'1.0.6',"g":'3.4',"d":'Gramplet som visar en persons attribut',"z":'ExtendedAttributes.addon.tgz'}
+{"t":u'Gramplet',"i":'Face Detection',"n":'Detektion av ansikte',"v":'1.0.4',"g":'3.4',"d":'Gramplet f\xc3\xb6r detektering och tilldelning av ansikten',"z":'FaceDetection.addon.tgz'}
+{"t":u'Gramplet',"i":'Family Overview',"n":'Family Overview',"v":'1.0.3',"g":'3.4',"d":'Gramplet showing an overview of events for a family',"z":'Overview.addon.tgz'}
+{"t":u'Gramplet',"i":'Headline News Gramplet',"n":'Nyhetsrubriker med Gramplet',"v":'1.0.9',"g":'3.4',"d":'Gramplet for showing latest the Gramps news',"z":'HeadlineNewsGramplet.addon.tgz'}
+{"t":u'Gramplet',"i":'Import Gramplet',"n":'Gramplet importering',"v":'1.0.10',"g":'3.4',"d":'Gramplet f\xc3\xb6r importering av text',"z":'ImportGramplet.addon.tgz'}
+{"t":u'Gramplet',"i":'LastChangeGramplet',"n":'Gramplet med de senaste \xc3\xa4ndringarna',"v":'0.0.12',"g":'3.4',"d":'Lista de tio personposterna, som har \xc3\xa4ndrats',"z":'LastChange.addon.tgz'}
+{"t":u'Gramplet',"i":'MediaBrowser',"n":'Mediabl\xc3\xa4ddrare',"v":'1.0.8',"g":'3.4',"d":'Gramplet visande detaljer om en person',"z":'MediaBrowser.addon.tgz'}
+{"t":u'Gramplet',"i":'Note Gramplet',"n":'Gramplet f\xc3\xb6r notis',"v":'1.0.9',"g":'3.4',"d":"Gramplet for editing active person's notes","z":'NoteGramplet.addon.tgz'}
+{"t":u'Gramplet',"i":'Participants',"n":'Participants',"v":'1.0.3',"g":'3.4',"d":'Gramplet showing the participants in an event',"z":'Participants.addon.tgz'}
+{"t":u'Gramplet',"i":'Person Overview',"n":'Person Overview',"v":'1.0.3',"g":'3.4',"d":'Gramplet showing an overview of events for a person',"z":'Overview.addon.tgz'}
+{"t":u'Gramplet',"i":'Photo Tagging',"n":'Photo Tagging',"v":'1.0.2',"g":'3.4',"d":'Gramplet for tagging people in photos',"z":'PhotoTaggingGramplet.addon.tgz'}
+{"t":u'Gramplet',"i":'Python Gramplet',"n":'Gramplet med Python',"v":'1.0.7',"g":'3.4',"d":'Interactive Python interpreter',"z":'PythonGramplet.addon.tgz'}
+{"t":u'Gramplet',"i":'Query Gramplet',"n":'Fr\xc3\xa5ge-Gramplet',"v":'1.0.7',"g":'3.4',"d":'Gramplet f\xc3\xb6r att g\xc3\xb6ra SQL-liknande fr\xc3\xa5gor',"z":'Query.addon.tgz'}
+{"t":u'Gramplet',"i":'Related Relatives Gramplet',"n":'Gramplet f\xc3\xb6r sl\xc3\xa4ktskapsrelationer',"v":'1.0.8',"g":'3.4',"d":'Gramplet som visar sl\xc3\xa4ktskap i en relation',"z":'RelatedRelativesGramplet.addon.tgz'}
+{"t":u'Gramplet',"i":'Source References',"n":'Source References',"v":'1.0.3',"g":'3.4',"d":'Gramplet showing the references for a source',"z":'SourceReferences.addon.tgz'}
+{"t":u'Gramplet',"i":'TODO2',"n":'Att g\xc3\xb6ra 2',"v":'0.0.3',"g":'3.4',"d":'Gramplet for generic notes',"z":'ToDoNotesGramplet.addon.tgz'}
+{"t":u'Gramps View',"i":'TimelinePedigreeView',"n":'Antavla med tidslinje',"v":'0.1.19',"g":'3.4',"d":'Vyn visar en tidslinje med anor och \xc3\xa4ttlingar f\xc3\xb6r den valda personen',"z":'TimelinePedigreeView.addon.tgz'}
+{"t":u'Gramps View',"i":'graphview',"n":'Diagramvy',"v":'1.0.27',"g":'3.4',"d":'Levande sl\xc3\xa4ktskapsdiagram',"z":'GraphView.addon.tgz'}
+{"t":u'Importer',"i":'im_sqlite',"n":'SQLite Import',"v":'1.0.15',"g":'3.4',"d":'SQLite \xc3\xa4r ett vanligt lokal databasformat',"z":'Sqlite.addon.tgz'}
+{"t":u'Importer',"i":'import_django',"n":'Django-import',"v":'1.0.13',"g":'3.4',"d":'Django \xc3\xa4r ett n\xc3\xa4tbaserat ramverkarbetande med en konfigurerad databas ',"z":'Django.addon.tgz'}
+{"t":u'Map service',"i":'GoogleEarth',"n":'GoogleEarth',"v":'1.0.15',"g":'3.4',"d":'Skapar datafil f\xc3\xb6r GoogleEarth och \xc3\xb6ppnar den',"z":'GoogleEarthWriteKML.addon.tgz'}
+{"t":u'Plugin lib',"i":'DE Web Connect Pack',"n":'DE Web kopplingspaket',"v":'0.0.3',"g":'3.4',"d":'Samling webplatser f\xc3\xb6r DE (kr\xc3\xa4ver libwebconnect)',"z":'DEWebConnectPack.addon.tgz'}
+{"t":u'Plugin lib',"i":'FR Web Connect Pack',"n":'FR webb kopplingspaket',"v":'1.0.10',"g":'3.4',"d":'Samling av webbplatser f\xc3\xb6r FR (kr\xc3\xa4ver libwebconnect)',"z":'FRWebConnectPack.addon.tgz'}
+{"t":u'Plugin lib',"i":'UK Web Connect Pack',"n":'UK Web Connect Pack',"v":'1.0.15',"g":'3.4',"d":'Collection of Web sites for the UK (requires libwebconnect)',"z":'UKWebConnectPack.addon.tgz'}
+{"t":u'Plugin lib',"i":'US Web Connect Pack',"n":'US Web Connect Pack',"v":'1.0.17',"g":'3.4',"d":'Collection of Web sites for the US (requires libwebconnect)',"z":'USWebConnectPack.addon.tgz'}
+{"t":u'Plugin lib',"i":'libaccess',"n":'Generic DB Access lib',"v":'1.0.9',"g":'3.4',"d":'Utg\xc3\xb6r ett bibliotek f\xc3\xb6r generell tillg\xc3\xa5ng till databasen och gen.lib',"z":'libaccess.addon.tgz'}
+{"t":u'Plugin lib',"i":'libwebconnect',"n":'libwebconnect',"v":'1.0.8',"g":'3.4',"d":'Bibliotek f\xc3\xb6r samling av webbsidor',"z":'libwebconnect.addon.tgz'}
+{"t":u'Quickreport',"i":'Descendant Count Quickview',"n":'\xc3\x84ttlingsr\xc3\xa4knare',"v":'1.0.7',"g":'3.4',"d":'Visa antal \xc3\xa4ttlingar f\xc3\xb6r varje person',"z":'DescendantCount.addon.tgz'}
+{"t":u'Quickreport',"i":'NumberOfDescendantsQuickview',"n":'Antal \xc3\xa4ttlingar',"v":'3.4.7',"g":'3.4',"d":'Visar antal \xc3\xa4ttlingar till aktuell person',"z":'NumberOfDescendantsQuickview.addon.tgz'}
+{"t":u'Quickreport',"i":'Query Quickview',"n":'Fr\xc3\xa5gesnabbtitt',"v":'1.0.7',"g":'3.4',"d":'Snabbtitt f\xc3\xb6r SQL-liknande fr\xc3\xa5gor',"z":'Query.addon.tgz'}
+{"t":u'Quickreport',"i":'allnames',"n":'Samtliga namn f\xc3\xb6r alla personer',"v":'1.0.6',"g":'3.4',"d":'Visa samtliga namn f\xc3\xb6r alla personer',"z":'AllNamesQuickview.addon.tgz'}
+{"t":u'Quickreport',"i":'timelinequickview',"n":'Tidslinje',"v":'1.0.9',"g":'3.4',"d":'Visar h\xc3\xa4ndelser f\xc3\xb6r en person p\xc3\xa5 en tidslinje',"z":'TimelineQuickview.addon.tgz'}
+{"t":u'Report',"i":'AncestorFill',"n":'Anors fyllnadsgrad',"v":'1.0.3',"g":'3.4',"d":'Rapport \xc3\xb6ver ifyllnad av sl\xc3\xa4kttr\xc3\xa4d',"z":'AncestorFill.addon.tgz'}
+{"t":u'Report',"i":'Descendants Lines',"n":'Descendants Lines',"v":'0.1.16',"g":'3.4',"d":'Produces descendants lines of a person',"z":'DescendantsLines.addon.tgz'}
+{"t":u'Report',"i":'FamilySheet',"n":'Familjeark',"v":'3.4.10',"g":'3.4',"d":'Skapar ett familjeark visande all information om en person och dennes partner och barn.',"z":'FamilySheet.addon.tgz'}
+{"t":u'Report',"i":'FamilyTree',"n":'Sl\xc3\xa4kttr\xc3\xa4d',"v":'3.4.10',"g":'3.4',"d":'Skapar ett grafiskt sl\xc3\xa4kttr\xc3\xa4d.',"z":'FamilyTree.addon.tgz'}
+{"t":u'Report',"i":'LastChangeReport',"n":'Rapport \xc3\xb6ver senaste \xc3\xa4ndringar',"v":'0.0.12',"g":'3.4',"d":'Rapport \xc3\xb6ver de poster, som har \xc3\xa4ndrats senast',"z":'LastChange.addon.tgz'}
+{"t":u'Report',"i":'LinesOfDescendency',"n":'Lines of Descendency Report',"v":'1.1.11',"g":'3.4',"d":'Prints out all descendency lines from a given ancestor to a given descendent in text.',"z":'LinesOfDescendency.addon.tgz'}
+{"t":u'Report',"i":'ListeEclair',"n":'Liste Eclair',"v":'1.0.2',"g":'3.4',"d":'Produit une liste eclair',"z":'ListeEclair.addon.tgz'}
+{"t":u'Report',"i":'PedigreeChart',"n":'Antavla',"v":'1.0.11',"g":'3.4',"d":'Antavlealternativ',"z":'PedigreeChart.addon.tgz'}
+{"t":u'Report',"i":'Repositories Report Options',"n":'Arkivplatsrapportalternativ',"v":'0.3.3',"g":'3.4',"d":'Skapar en textbaserad rapport \xc3\xb6ver arkivplatser',"z":'RepositoriesReport.addon.tgz'}
+{"t":u'Report',"i":'Repositories Report',"n":'Arkivplatsrapport',"v":'1.1.3',"g":'3.4',"d":'Skapar en textbaserad rapport \xc3\xb6ver arkivplatser',"z":'RepositoriesReport.addon.tgz'}
+{"t":u'Report',"i":'TodoReport',"n":'Todo Report',"v":'1.2.9',"g":'3.4',"d":'Produces a list of all the notes with a given tag along with the records that it references, the Person, Family, Event, etc.',"z":'ToDoReport.addon.tgz'}
+{"t":u'Report',"i":'census_report',"n":'Folkr\xc3\xa4kningsrapport',"v":'1.0.23',"g":'3.4',"d":'Rapport \xc3\xb6ver folkr\xc3\xa4kningsh\xc3\xa4ndelser f\xc3\xb6r en person',"z":'Census.addon.tgz'}
+{"t":u'Report',"i":'denominoviso',"n":'DenominoViso',"v":'2.3.9',"g":'3.4',"d":'Skapar en hemsida (XHTML) med grafisk representation av f\xc3\xb6rf\xc3\xa4der/\xc3\xa4ttlingar (SVG) d\xc3\xa4r detaljer om individier blir synliga via mush\xc3\xa4ndelser.',"z":'DenominoViso.addon.tgz'}
+{"t":u'Report',"i":'fil_descendant_report',"n":'Rapport med utvalda \xc3\xa4ttlingar',"v":'0.3.5',"g":'3.4',"d":'Skapar en \xc3\xa4ttlingsrapport med hj\xc3\xa4lp av ett filter',"z":'FilteredReports.addon.tgz'}
+{"t":u'Tool',"i":'AttachSource',"n":'Koppla k\xc3\xa4lla',"v":'0.0.15',"g":'3.4',"d":'Kopplar en delad k\xc3\xa4lla till flera objekt.',"z":'AttachSourceTool.addon.tgz'}
+{"t":u'Tool',"i":'PlaceCompletion',"n":'Platskomplettering',"v":'0.0.14',"g":'3.4',"d":'L\xc3\xa4mnar en bl\xc3\xa4ddringsbar lista p\xc3\xa5 valda platser, med m\xc3\xb6jlighet att komplettera/avs\xc3\xb6ka/s\xc3\xa4tta attributf\xc3\xa4ltet.',"z":'PlaceCompletion.addon.tgz'}
+{"t":u'Tool',"i":'SetAttribute',"n":'S\xc3\xa4tt attribut',"v":'0.0.7',"g":'3.4',"d":'S\xc3\xa4tt ett attribut till ett givet v\xc3\xa4rde.',"z":'SetAttributeTool.addon.tgz'}
+{"t":u'Tool',"i":'calculateestimateddates',"n":'Ber\xc3\xa4knade uppskattade datum',"v":'0.90.8',"g":'3.4',"d":'Ber\xc3\xa4kna uppskattningar av datum f\xc3\xb6r f\xc3\xb6delse och d\xc3\xb6d.',"z":'CalculateEstimatedDates.addon.tgz'}
+{"t":u'Tool',"i":'chgivenname',"n":'Ordna stavning av f\xc3\xb6rnamn',"v":'1.0.7',"g":'3.4.6',"d":'S\xc3\xb6ker igenom hela databasen och f\xc3\xb6rs\xc3\xb6ker ordna stavning av f\xc3\xb6rnamnen',"z":'ChangeGivenNames.addon.tgz'}
+{"t":u'Tool',"i":'climerge',"n":'Command Line Merge',"v":'1.0.7',"g":'3.4',"d":'Sl\xc3\xa5 samman prim\xc3\xa4ra objekt via kommandoraden',"z":'CliMerge.addon.tgz'}
+{"t":u'Tool',"i":'mediaverify',"n":'Verifiera media',"v":'1.0.4',"g":'3.4',"d":'Verifierar att media \xc3\xa4r n\xc3\xa4rvarande i r\xc3\xa4tt s\xc3\xb6kv\xc3\xa4g',"z":'MediaVerify.addon.tgz'}
+{"t":u'Tool',"i":'rebuild_types',"n":'Rebuild Gramps Types',"v":'1.0.4',"g":'3.4',"d":'Rebuilds Gramps Types',"z":'RebuildTypes.addon.tgz'}
+{"t":u'Tool',"i":'thumbgen',"n":'Miniatyrbildskapare',"v":'1.0.3',"g":'3.4',"d":'Miniatyrbildskapare f\xc3\xb6r mediafiler',"z":'ThumbnailGenerator.addon.tgz'}
