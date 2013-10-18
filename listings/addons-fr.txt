@@ -42,7 +42,7 @@
 {'d': 'Produit un arbre familial sous forme graphique.', 'g': '4.0', 'i': 'FamilyTree', 'n': 'Arbre familial', 't': u'Report', 'v': '3.4.19', 'z': 'FamilyTree.addon.tgz'}
 {'d': "Collection de sites internet pour l'Allemagne (n\xc3\xa9cessite libwebconnect)", 'g': '4.0', 'i': 'DE Web Connect Pack', 'n': 'Ensemble de liens internet allemands', 't': u'Plugin lib', 'v': '0.0.13', 'z': 'DEWebConnectPack.addon.tgz'}
 {'d': 'Un interpr\xc3\xa9teur python interactif', 'g': '4.0', 'i': 'Python Gramplet', 'n': 'Gramplet Python', 't': u'Gramplet', 'v': '1.0.16', 'z': 'PythonGramplet.addon.tgz'}
-{'d': 'Gramplet affichant les personnes pr\xc3\xa9sentes \xc3\xa0 un \xc3\xa9v\xc3\xa9nement', 'g': '4.0', 'i': 'Participants', 'n': 'Acteurs principaux', 't': u'Gramplet', 'v': '1.0.2', 'z': 'Participants.addon.tgz'}
+{'d': 'Gramplet affichant les personnes pr\xc3\xa9sentes \xc3\xa0 un \xc3\xa9v\xc3\xa9nement', 'g': '4.0', 'i': 'Participants', 'n': 'Participants', 't': u'Gramplet', 'v': '1.0.2', 'z': 'Participants.addon.tgz'}
 {'d': 'Gramplet affichant les relations \xc3\xa9troites entre la souche et les autres individus', 'g': '4.0', 'i': 'Deep Connections Gramplet', 'n': 'Gramplet Connexions approfondies', 't': u'Gramplet', 'v': '1.0.19', 'z': 'DeepConnectionsGramplet.addon.tgz'}
 {'d': 'Attache une source partag\xc3\xa9e \xc3\xa0 des objets multiples', 'g': '4.0', 'i': 'AttachSource', 'n': 'Attacher une source', 't': u'Tool', 'v': '0.0.20', 'z': 'AttachSourceTool.addon.tgz'}
 {'d': "Gramplet pour l'\xc3\xa9dition des notes de l'individu actif", 'g': '4.0', 'i': 'Note Gramplet', 'n': 'Gramplet Note', 't': u'Gramplet', 'v': '1.0.17', 'z': 'NoteGramplet.addon.tgz'}
