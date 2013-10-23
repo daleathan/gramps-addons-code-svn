@@ -63,7 +63,7 @@ except:
 #
 # Try to detect the presence of lxml (only for using XPATH/XSLT)
 # 
-# from xml.etree import ElementTree from default python does not support XPATH/XSLT
+# from xml.etree import ElementTree from default python has a basic XPATH/XSLT API
 #
 #-------------------------------------------------------------------------
 try:
@@ -111,6 +111,8 @@ def epoch(t):
 # The gramplet
 #
 #-------------------------------------------------------------------------
+
+NAMESPACE = '{http://gramps-project.org/xml/1.5.1/}'
 
 class lxmlGramplet(Gramplet):
     """
@@ -291,7 +293,7 @@ class lxmlGramplet(Gramplet):
             #tree = etree.ElementTree(file=filename)
             tree = etree.parse(filename)
             doctype = tree.docinfo.doctype
-            current = '<!DOCTYPE database PUBLIC "-//Gramps//DTD Gramps XML 1.5.0//EN" "http://gramps-project.org/xml/1.5.0/grampsxml.dtd">'
+            current = '<!DOCTYPE database PUBLIC "-//Gramps//DTD Gramps XML 1.5.1//EN" "http://gramps-project.org/xml/1.5.1/grampsxml.dtd">'
             if self.RNGValidation(tree, rng) == True:
                 try:
                     self.ParseXML(tree, filename)
@@ -329,8 +331,8 @@ class lxmlGramplet(Gramplet):
         # namespace issues and 'surname' only on 1.4.0!
         
         namespace = root.nsmap
-        surname_tag = etree.SubElement(root, '{http://gramps-project.org/xml/1.5.0/}surname')
-        ptitle_tag = etree.SubElement(root, '{http://gramps-project.org/xml/1.5.0/}ptitle')
+        surname_tag = etree.SubElement(root, NAMESPACE + 'surname')
+        ptitle_tag = etree.SubElement(root, NAMESPACE + 'ptitle')
         
         # variable
         
@@ -366,7 +368,7 @@ class lxmlGramplet(Gramplet):
                 
                 msg.append(two.items())
                 
-                if two.tag == '{http://gramps-project.org/xml/1.5.0/}mediapath':
+                if two.tag == NAMESPACE + 'mediapath':
                     mediapath = two.text
                 else:
                     mediapath = ''
@@ -381,11 +383,11 @@ class lxmlGramplet(Gramplet):
                     
                     # with namespace ...              
                               
-                    if three.tag == '{http://gramps-project.org/xml/1.5.0/}ptitle':
+                    if three.tag == NAMESPACE + 'ptitle':
                         places.append(three.text)
-                    if three.tag == '{http://gramps-project.org/xml/1.5.0/}stitle':
+                    if three.tag == NAMESPACE + 'stitle':
                         sources.append(three.text)
-                    if three.tag == '{http://gramps-project.org/xml/1.5.0/}file':
+                    if three.tag == NAMESPACE + 'file':
                         thumbs.append(three.items())
                         
                     # search last name
@@ -394,7 +396,7 @@ class lxmlGramplet(Gramplet):
                                                
                         # with namespace ...
                         
-                        if four.tag == '{http://gramps-project.org/xml/1.5.0/}surname':
+                        if four.tag == NAMESPACE + 'surname':
                             surnames.append(four.text)
                             
                     
