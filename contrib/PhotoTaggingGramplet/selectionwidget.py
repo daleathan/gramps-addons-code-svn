@@ -136,6 +136,8 @@ class Region(object):
 class SelectionWidget(gtk.ScrolledWindow):
 
     def __init__(self):
+        self.multiple_selection = True
+
         self.loaded = False
         self.start_point_screen = None
         self.selection = None
@@ -176,6 +178,18 @@ class SelectionWidget(gtk.ScrolledWindow):
     # ======================================================
     # field accessors
     # ======================================================
+
+    def get_multiple_selection(self):
+        """
+        Return whether multiple selection is enabled.
+        """
+        return self.multiple_selection
+
+    def set_multiple_selection(self, enable):
+        """
+        Enables or disables multiple selection.
+        """
+        self.multiple_selection = enable
 
     def set_regions(self, regions):
         self.regions = regions
@@ -527,7 +541,8 @@ class SelectionWidget(gtk.ScrolledWindow):
                 else:
                     # nothing is currently selected
                     if (abs(self.start_point_screen[0] - event.x) >= MIN_SELECTION_SIZE and
-                        abs(self.start_point_screen[1] - event.y) >= MIN_SELECTION_SIZE):
+                        abs(self.start_point_screen[1] - event.y) >= MIN_SELECTION_SIZE and
+                        self.can_select()):
                         # region selection
                         region = Region(*self.selection)
                         self.regions.append(region)
@@ -549,13 +564,13 @@ class SelectionWidget(gtk.ScrolledWindow):
         end_point_orig = self.screen_to_image((event.x, event.y))
         end_point = self.truncate_to_image_size(end_point_orig)
         if self.start_point_screen:
-            # selection (mouse button pressed)
+            # selection or dragging (mouse button pressed)
             if self.grabber is not None and self.grabber != INSIDE:
                 # dragging the grabber
                 dx, dy = (event.x - self.start_point_screen[0], 
                           event.y - self.start_point_screen[1])
                 self.grabber_to_draw = self.modify_selection(dx, dy)
-            else:
+            elif self.can_select():
                 # making new selection
                 start_point = self.screen_to_truncated(self.start_point_screen)
                 self.selection = order_coordinates(start_point, end_point)
@@ -593,6 +608,9 @@ class SelectionWidget(gtk.ScrolledWindow):
     # ======================================================
     # helpers for mouse event handlers
     # ======================================================
+
+    def can_select(self):
+        return self.multiple_selection or len(self.regions) < 1
 
     def modify_selection(self, dx, dy):
         x1, y1, x2, y2 = self.rect_image_to_screen(self.current.coords())
