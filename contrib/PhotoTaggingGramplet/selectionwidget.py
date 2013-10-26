@@ -123,7 +123,8 @@ class Region(object):
         return self.x1 <= x <= self.x2 and self.y1 <= y <= self.y2
 
     def contains_rect(self, other):
-        return self.contains(other.x1, other.y1) and self.contains(other.x2, other.y2)
+        return (self.contains(other.x1, other.y1) and
+                self.contains(other.x2, other.y2))
 
     def area(self):
         return abs(self.x1 - self.x2) * abs(self.y1 - self.y2)
@@ -161,10 +162,14 @@ class SelectionWidget(gtk.ScrolledWindow):
         self.image.connect("query-tooltip", self.show_tooltip)
 
         self.event_box = gtk.EventBox()
-        self.event_box.connect('button-press-event', self.button_press_event)
-        self.event_box.connect('button-release-event', self.button_release_event)
-        self.event_box.connect('motion-notify-event', self.motion_notify_event)
-        self.event_box.connect('scroll-event', self.motion_scroll_event)
+        self.event_box.connect('button-press-event',
+          self.button_press_event)
+        self.event_box.connect('button-release-event',
+          self.button_release_event)
+        self.event_box.connect('motion-notify-event',
+          self.motion_notify_event)
+        self.event_box.connect('scroll-event',
+          self.motion_scroll_event)
         self.event_box.add_events(gtk.gdk.BUTTON_PRESS_MASK)
         self.event_box.add_events(gtk.gdk.BUTTON_RELEASE_MASK)
         self.event_box.add_events(gtk.gdk.POINTER_MOTION_MASK)
@@ -216,11 +221,14 @@ class SelectionWidget(gtk.ScrolledWindow):
 
         try:
             self.pixbuf = gtk.gdk.pixbuf_new_from_file(image_path)
-            self.original_image_size = (self.pixbuf.get_width(), self.pixbuf.get_height())
+            self.original_image_size = (self.pixbuf.get_width(),
+                                        self.pixbuf.get_height())
 
             viewport_size = self.viewport.get_allocation()
-            self.scale = scale_to_fit(self.pixbuf.get_width(), self.pixbuf.get_height(), 
-                                  viewport_size.width, viewport_size.height)
+            self.scale = scale_to_fit(self.pixbuf.get_width(),
+                                      self.pixbuf.get_height(),
+                                      viewport_size.width,
+                                      viewport_size.height)
             self.rescale()
             self.loaded = True
         except (gobject.GError, OSError):
@@ -372,7 +380,8 @@ class SelectionWidget(gtk.ScrolledWindow):
                 x1, y1, x2, y2 = self.rect_image_to_screen(region.coords())
                 self.draw_region_frame(cr, x1, y1, x2, y2)
 
-    def draw_transparent_shading(self, cr, x1, y1, x2, y2, w, h, offset_x, offset_y):
+    def draw_transparent_shading(self, cr, x1, y1, x2, y2, w, h, 
+                                 offset_x, offset_y):
         cr.set_source_rgba(1.0, 1.0, 1.0, SHADING_OPACITY)
         cr.rectangle(offset_x, offset_y, x1 - offset_x, y1 - offset_y)
         cr.rectangle(offset_x, y1, x1 - offset_x, y2 - y1)
@@ -509,7 +518,8 @@ class SelectionWidget(gtk.ScrolledWindow):
             # select a region, if clicked inside one
             click_point = self.screen_to_image((event.x, event.y))
             self.current = self.find_region(*click_point)
-            self.selection = self.current.coords() if self.current is not None else None
+            self.selection = \
+              self.current.coords() if self.current is not None else None
             self.start_point_screen = None
             self.refresh()
             if self.current is not None:
@@ -540,8 +550,8 @@ class SelectionWidget(gtk.ScrolledWindow):
                         self.emit("region-modified")
                 else:
                     # nothing is currently selected
-                    if (abs(self.start_point_screen[0] - event.x) >= MIN_SELECTION_SIZE and
-                        abs(self.start_point_screen[1] - event.y) >= MIN_SELECTION_SIZE and
+                    if (self.minimum_region(self.start_point_screen,
+                                            (event.x, event.y)) and
                         self.can_select()):
                         # region selection
                         region = Region(*self.selection)
@@ -550,9 +560,12 @@ class SelectionWidget(gtk.ScrolledWindow):
                         self.emit("region-created", event)
                     else:
                         # nothing selected, just a click
-                        click_point = self.screen_to_image(self.start_point_screen)
+                        click_point = \
+                          self.screen_to_image(self.start_point_screen)
                         self.current = self.find_region(*click_point)
-                        self.selection = self.current.coords() if self.current is not None else None
+                        self.selection = \
+                          self.current.coords() if self.current is not None \
+                                                else None
                         self.emit("region-selected")
 
                 self.start_point_screen = None
@@ -609,6 +622,10 @@ class SelectionWidget(gtk.ScrolledWindow):
     # helpers for mouse event handlers
     # ======================================================
 
+    def minimum_region(self, point1, point2):
+        return (abs(point1[0] - point2[0]) >= MIN_SELECTION_SIZE and
+                abs(point1[1] - point2[1]) >= MIN_SELECTION_SIZE)
+
     def can_select(self):
         return self.multiple_selection or len(self.regions) < 1
 
@@ -638,17 +655,38 @@ class SelectionWidget(gtk.ScrolledWindow):
             return False
 
 gobject.type_register(SelectionWidget)
-gobject.signal_new("region-modified", SelectionWidget, gobject.SIGNAL_RUN_FIRST,
-                   gobject.TYPE_NONE, ())
-gobject.signal_new("region-created", SelectionWidget, gobject.SIGNAL_RUN_FIRST,
-                   gobject.TYPE_NONE, (gtk.gdk.Event,))
-gobject.signal_new("region-selected", SelectionWidget, gobject.SIGNAL_RUN_FIRST,
-                   gobject.TYPE_NONE, ())
-gobject.signal_new("selection-cleared", SelectionWidget, gobject.SIGNAL_RUN_FIRST,
-                   gobject.TYPE_NONE, ())
-gobject.signal_new("right-button-clicked", SelectionWidget, gobject.SIGNAL_RUN_FIRST,
-                   gobject.TYPE_NONE, (gtk.gdk.Event,))
-gobject.signal_new("zoomed-in", SelectionWidget, gobject.SIGNAL_RUN_FIRST,
-                   gobject.TYPE_NONE, ())
-gobject.signal_new("zoomed-out", SelectionWidget, gobject.SIGNAL_RUN_FIRST,
-                   gobject.TYPE_NONE, ())
+gobject.signal_new("region-modified",
+                   SelectionWidget,
+                   gobject.SIGNAL_RUN_FIRST,
+                   gobject.TYPE_NONE,
+                   ())
+gobject.signal_new("region-created",
+                   SelectionWidget,
+                   gobject.SIGNAL_RUN_FIRST,
+                   gobject.TYPE_NONE,
+                   (gtk.gdk.Event,))
+gobject.signal_new("region-selected",
+                   SelectionWidget,
+                   gobject.SIGNAL_RUN_FIRST,
+                   gobject.TYPE_NONE,
+                   ())
+gobject.signal_new("selection-cleared",
+                   SelectionWidget,
+                   gobject.SIGNAL_RUN_FIRST,
+                   gobject.TYPE_NONE,
+                   ())
+gobject.signal_new("right-button-clicked",
+                   SelectionWidget,
+                   gobject.SIGNAL_RUN_FIRST,
+                   gobject.TYPE_NONE,
+                   (gtk.gdk.Event,))
+gobject.signal_new("zoomed-in",
+                   SelectionWidget,
+                   gobject.SIGNAL_RUN_FIRST,
+                   gobject.TYPE_NONE,
+                   ())
+gobject.signal_new("zoomed-out",
+                   SelectionWidget,
+                   gobject.SIGNAL_RUN_FIRST,
+                   gobject.TYPE_NONE,
+                   ())
