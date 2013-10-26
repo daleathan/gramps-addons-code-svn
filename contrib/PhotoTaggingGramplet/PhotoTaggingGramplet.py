@@ -33,16 +33,13 @@ from __future__ import division
 #
 #-------------------------------------------------------------------------
 import gtk
-import gobject
 
 #-------------------------------------------------------------------------
 #
 # gramps modules
 #
 #-------------------------------------------------------------------------
-import const
 import Utils
-import ManagedWindow
 import Errors
 from config import config
 from gen.db import DbTxn
@@ -51,8 +48,7 @@ from gen.plug import Gramplet, MenuOptions
 from gen.lib import MediaRef, Person
 from gui.editors.editperson import EditPerson
 from gui.selectors import SelectorFactory
-from gen.plug.menu import (BooleanOption, StringOption, NumberOption, 
-                         EnumeratedListOption, FilterOption, PersonOption)
+from gen.plug.menu import (BooleanOption, NumberOption)
 from gui.plug import PluginWindows
 
 from TransUtils import get_addon_translator
