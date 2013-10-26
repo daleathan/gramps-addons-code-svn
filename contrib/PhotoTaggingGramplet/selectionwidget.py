@@ -66,10 +66,7 @@ MIN_ZOOM = 0.05
 MAX_SIZE = 2000
 MIN_SIZE = 50
 SHADING_OPACITY = 0.7
-RADIUS = 5
 MIN_SELECTION_SIZE = 10
-
-THUMBNAIL_IMAGE_SIZE = (50, 50)
 
 def scale_to_fit(orig_x, orig_y, target_x, target_y):
     orig_aspect = orig_x / orig_y
