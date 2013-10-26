@@ -20,6 +20,10 @@
 
 # $Id: $
 
+"""
+This module implements a widget with selection functionality.
+"""
+
 #-------------------------------------------------------------------------
 #
 # Standard python modules
@@ -69,6 +73,10 @@ SHADING_OPACITY = 0.7
 MIN_SELECTION_SIZE = 10
 
 def scale_to_fit(orig_x, orig_y, target_x, target_y):
+    """
+    Calculates the scale factor to fit the rectangle
+    orig_x * orig_y by scaling keeping the aspect ratio.
+    """
     orig_aspect = orig_x / orig_y
     target_aspect = target_x / target_y
     if orig_aspect > target_aspect:
@@ -77,6 +85,11 @@ def scale_to_fit(orig_x, orig_y, target_x, target_y):
         return target_y / orig_y
 
 def resize_keep_aspect(orig_x, orig_y, target_x, target_y):
+    """
+    Calculates the dimensions of the rectangle obtained from
+    the rectangle orig_x * orig_y by scaling to fit 
+    target_x * target_y keeping the aspect ratio.
+    """
     orig_aspect = orig_x / orig_y
     target_aspect = target_x / target_y
     if orig_aspect > target_aspect:
@@ -95,6 +108,14 @@ def order_coordinates(point1, point2):
     y2 = max(point1[1], point2[1])
     return (x1, y1, x2, y2)
 
+def minimum_region(point1, point2):
+    """
+    Returns whether the rectangle defined by the corner points point1
+    and point2 exceeds the minimum dimensions.
+    """
+    return (abs(point1[0] - point2[0]) >= MIN_SELECTION_SIZE and
+            abs(point1[1] - point2[1]) >= MIN_SELECTION_SIZE)
+
 
 class Region(object):
     """
@@ -103,37 +124,70 @@ class Region(object):
     """
 
     def __init__(self, x1, y1, x2, y2):
-        self.set_coords(x1, y1, x2, y2)
+        """
+        Creates a new region with the specified coordinates.
+        """
+        self.x1 = x1
+        self.y1 = y1
+        self.x2 = x2
+        self.y2 = y2
         self.person = None
         self.mediaref = None
 
     def coords(self):
+        """
+        Returns the coordinates of the region as a 4-tuple in the
+        format (x1, y1, x2, y2).
+        """
         return (self.x1, self.y1, self.x2, self.y2)
 
     def set_coords(self, x1, y1, x2, y2):
+        """
+        Sets the coordinates of this region.
+        """
         self.x1 = x1
         self.y1 = y1
         self.x2 = x2
         self.y2 = y2
 
     def contains(self, x, y):
+        """
+        Returns whether the point with coordinates (x, y) lies insided
+        this region.
+        """
         return self.x1 <= x <= self.x2 and self.y1 <= y <= self.y2
 
     def contains_rect(self, other):
+        """
+        Returns whether this region fully contains the region other.
+        """
         return (self.contains(other.x1, other.y1) and
                 self.contains(other.x2, other.y2))
 
     def area(self):
+        """
+        Returns the area of this region.
+        """
         return abs(self.x1 - self.x2) * abs(self.y1 - self.y2)
 
     def intersects(self, other):
+        """
+        Returns whether the current region intersects other.
+        """
         # assumes that x1 <= x2 and y1 <= y2
         return not (self.x2 < other.x1 or self.x1 > other.x2 or
                     self.y2 < other.y1 or self.y1 > other.y2)
 
 class SelectionWidget(gtk.ScrolledWindow):
+    """
+    A widget that displays an image and permits GIMP-like selection of regions
+    within the image. The widget derives from gtk.ScrolledWindow.
+    """
 
     def __init__(self):
+        """
+        Creates a new selection widget.
+        """
         self.multiple_selection = True
 
         self.loaded = False
@@ -153,6 +207,9 @@ class SelectionWidget(gtk.ScrolledWindow):
         self.set_policy(gtk.POLICY_AUTOMATIC, gtk.POLICY_AUTOMATIC)
 
     def _build_gui(self):
+        """
+        Builds and lays out the GUI of the widget.
+        """
         self.image = gtk.Image()
         self.image.set_has_tooltip(True)
         self.image.connect_after("expose-event", self._expose_handler)
@@ -266,7 +323,7 @@ class SelectionWidget(gtk.ScrolledWindow):
 
     def proportional_to_real_rect(self, rect):
         """
-        Translate proportional (ranging from 0 to 100) coordinates to image
+        Translates proportional (ranging from 0 to 100) coordinates to image
         coordinates (in pixels).
         """
         x1, y1, x2, y2 = rect
@@ -275,7 +332,7 @@ class SelectionWidget(gtk.ScrolledWindow):
 
     def real_to_proportional_rect(self, rect):
         """
-        Translate image coordinates (in pixels) to proportional (ranging
+        Translates image coordinates (in pixels) to proportional (ranging
         from 0 to 100).
         """
         x1, y1, x2, y2 = rect
@@ -366,21 +423,17 @@ class SelectionWidget(gtk.ScrolledWindow):
     # ======================================================
 
     def _get_original_image_size(self):
+        """
+        Returns the size of the image before scaling.
+        """
         return self.original_image_size
 
     def _get_scaled_image_size(self):
+        """
+        Returns the size of images scaled with the current scaled.
+        """
         unscaled_size = self._get_original_image_size()
         return (unscaled_size[0] * self.scale, unscaled_size[1] * self.scale)
-
-    def _get_viewport_size(self):
-        rect = self.viewport.get_allocation()
-        return (rect.width, rect.height)
-
-    def _get_used_screen_size(self):
-        scaled_image_size = self._get_scaled_image_size()
-        viewport_size = self._get_viewport_size()
-        return (min(scaled_image_size[0], viewport_size[0]), 
-                min(scaled_image_size[1], viewport_size[1]))
 
     # ======================================================
     # coordinate transformations
@@ -388,7 +441,7 @@ class SelectionWidget(gtk.ScrolledWindow):
 
     def _proportional_to_real(self, coord):
         """
-        Translate proportional (ranging from 0 to 100) coordinates to image
+        Translates proportional (ranging from 0 to 100) coordinates to image
         coordinates (in pixels).
         """
         w, h = self.original_image_size
@@ -396,7 +449,7 @@ class SelectionWidget(gtk.ScrolledWindow):
 
     def _real_to_proportional(self, coord):
         """
-        Translate image coordinates (in pixels) to proportional (ranging
+        Translates image coordinates (in pixels) to proportional (ranging
         from 0 to 100).
         """
         w, h = self.original_image_size
@@ -404,7 +457,7 @@ class SelectionWidget(gtk.ScrolledWindow):
 
     def _image_to_screen(self, coords):
         """
-        Translate image coordinates to viewport coordinates using the current
+        Translates image coordinates to viewport coordinates using the current
         scale and viewport size.
         """
         viewport_rect = self.viewport.get_allocation()
@@ -422,7 +475,7 @@ class SelectionWidget(gtk.ScrolledWindow):
 
     def _screen_to_image(self, coords):
         """
-        Translate viewport coordinates to original (unscaled) image coordinates 
+        Translates viewport coordinates to original (unscaled) image coordinates 
         using the current scale and viewport size.
         """
         viewport_rect = self.viewport.get_allocation()
@@ -439,6 +492,11 @@ class SelectionWidget(gtk.ScrolledWindow):
                 int((coords[1] + offset_y) / self.scale))
 
     def _truncate_to_image_size(self, coords):
+        """
+        Modifies the coordinates of the given point to ensure that it lies
+        within the image. Negative values are replaced with 0, positive values
+        exceeding the image dimensions - with those corresponding dimensions.
+        """
         x, y = coords
         (image_width, image_height) = self._get_original_image_size()
         x = max(x, 0)
@@ -448,9 +506,16 @@ class SelectionWidget(gtk.ScrolledWindow):
         return self._proportional_to_real(self._real_to_proportional((x, y)))
 
     def _screen_to_truncated(self, coords):
+        """
+        Transforms the screen coordinates to image coordinates and truncate to
+        the image size.
+        """
         return self._truncate_to_image_size(self._screen_to_image(coords))
 
     def _rect_image_to_screen(self, rect):
+        """
+        Translates the coordinates of the rectangle from image to screen.
+        """
         x1, y1, x2, y2 = rect
         x1, y1 = self._image_to_screen((x1, y1))
         x2, y2 = self._image_to_screen((x2, y2))
@@ -461,10 +526,17 @@ class SelectionWidget(gtk.ScrolledWindow):
     # ======================================================
 
     def _expose_handler(self, widget, event):
+        """
+        Handles the expose-event signal of the underlying widget.
+        """
         if self.pixbuf:
             self._draw_selection()
 
     def _draw_selection(self):
+        """
+        Draws the image, the selection boxes and does the necessary
+        shading.
+        """
         if not self.scaled_size:
             return
 
@@ -495,6 +567,9 @@ class SelectionWidget(gtk.ScrolledWindow):
 
     def _draw_transparent_shading(self, cr, x1, y1, x2, y2, w, h, 
                                  offset_x, offset_y):
+        """
+        Draws the shading for a selection box.
+        """
         cr.set_source_rgba(1.0, 1.0, 1.0, SHADING_OPACITY)
         cr.rectangle(offset_x, offset_y, x1 - offset_x, y1 - offset_y)
         cr.rectangle(offset_x, y1, x1 - offset_x, y2 - y1)
@@ -507,9 +582,15 @@ class SelectionWidget(gtk.ScrolledWindow):
         cr.fill()
 
     def _draw_selection_frame(self, cr, x1, y1, x2, y2):
+        """
+        Draws the frame during selection.
+        """
         self._draw_region_frame(cr, x1, y1, x2, y2)
 
     def _draw_region_frame(self, cr, x1, y1, x2, y2):
+        """
+        Draws a region frame.
+        """
         cr.set_source_rgb(1.0, 1.0, 1.0) # white
         cr.rectangle(x1, y1, x2 - x1, y2 - y1)
         cr.stroke()
@@ -518,6 +599,9 @@ class SelectionWidget(gtk.ScrolledWindow):
         cr.stroke()
 
     def _draw_grabber(self, cr):
+        """
+        Draws a grabber.
+        """
         if self.selection is not None and self.grabber is not None:
             selection_rect = self._rect_image_to_screen(self.selection)
             cr.set_source_rgb(1.0, 0, 0)
@@ -537,6 +621,10 @@ class SelectionWidget(gtk.ScrolledWindow):
             cr.stroke()
 
     def _rescale(self):
+        """
+        Recalculates the sizes using the current scale and updates
+        the buffers.
+        """
         self.scaled_size = (int(self.original_image_size[0] * self.scale), 
                             int(self.original_image_size[1] * self.scale))
         self.scaled_image = self.pixbuf.scale_simple(self.scaled_size[0],
@@ -551,6 +639,9 @@ class SelectionWidget(gtk.ScrolledWindow):
     # ======================================================
 
     def _find_region(self, x, y):
+        """
+        Finds the smallest region containing point (x, y).
+        """
         result = None
         for region in self.regions:
             if region.contains(x, y):
@@ -563,6 +654,9 @@ class SelectionWidget(gtk.ScrolledWindow):
     # ======================================================
 
     def _button_press_event(self, obj, event):
+        """
+        Handles the button-press-event signal.
+        """
         if not self.is_image_loaded():
             return
         if event.button == 1: # left button
@@ -588,6 +682,9 @@ class SelectionWidget(gtk.ScrolledWindow):
         return True # don't propagate the event further
 
     def _button_release_event(self, obj, event):
+        """
+        Handles the button-release-event signal.
+        """
         if not self.is_image_loaded():
             return
         if event.button == 1:
@@ -608,8 +705,8 @@ class SelectionWidget(gtk.ScrolledWindow):
                         self.emit("region-modified")
                 else:
                     # nothing is currently selected
-                    if (self._minimum_region(self.start_point_screen,
-                                            (event.x, event.y)) and
+                    if (minimum_region(self.start_point_screen,
+                                       (event.x, event.y)) and
                         self._can_select()):
                         # region selection
                         region = Region(*self.selection)
@@ -630,6 +727,9 @@ class SelectionWidget(gtk.ScrolledWindow):
                 self.refresh()
 
     def _motion_notify_event(self, widget, event):
+        """
+        Handles the motion-notify-event signal.
+        """
         if not self.is_image_loaded():
             return
         end_point_orig = self._screen_to_image((event.x, event.y))
@@ -669,6 +769,9 @@ class SelectionWidget(gtk.ScrolledWindow):
         self.image.queue_draw()
 
     def _motion_scroll_event(self, widget, event):
+        """
+        Handles the motion-scroll-event signal.
+        """
         if not self.is_image_loaded():
             return
         if event.direction == gtk.gdk.SCROLL_UP:
@@ -680,14 +783,20 @@ class SelectionWidget(gtk.ScrolledWindow):
     # helpers for mouse event handlers
     # ======================================================
 
-    def _minimum_region(self, point1, point2):
-        return (abs(point1[0] - point2[0]) >= MIN_SELECTION_SIZE and
-                abs(point1[1] - point2[1]) >= MIN_SELECTION_SIZE)
-
     def _can_select(self):
+        """
+        Returns whether selection is currently possible, which is when
+        multiple selection is enabled or otherwise when no region is
+        currently selected.
+        """
         return self.multiple_selection or len(self.regions) < 1
 
     def _modify_selection(self, dx, dy):
+        """
+        Changes the selection when a grabber is dragged, returns the new
+        grabber if a grabber switch has happened, and the current grabber
+        otherwise.
+        """
         x1, y1, x2, y2 = self._rect_image_to_screen(self.current.coords())
         x1, y1, x2, y2 = MOTION_FUNCTIONS[self.grabber](x1, y1, x2, y2, dx, dy)
         (x1, y1) = self._screen_to_truncated((x1, y1))
@@ -701,6 +810,9 @@ class SelectionWidget(gtk.ScrolledWindow):
     # ======================================================
 
     def _show_tooltip(self, widget, x, y, keyboard_mode, tooltip):
+        """
+        Handles the query-tooltip signal.
+        """
         if self.in_region:
             person = self.in_region.person
             if person:
