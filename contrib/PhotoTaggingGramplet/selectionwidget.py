@@ -40,8 +40,6 @@ import gobject
 # gramps modules
 #
 #-------------------------------------------------------------------------
-import const
-import Utils
 from gen.display.name import displayer as name_displayer
 
 from TransUtils import get_addon_translator
@@ -52,7 +50,9 @@ _ = get_addon_translator(__file__).gettext
 # grabbers constants and routines
 #
 #-------------------------------------------------------------------------
-from grabbers import *
+from grabbers import (grabber_generators, can_grab, grabber_position,
+                      switch_grabber, CURSORS, GRABBER_INSIDE, INSIDE,
+                      INNER_GRABBERS, OUTER_GRABBERS, MOTION_FUNCTIONS)
 
 #-------------------------------------------------------------------------
 #
