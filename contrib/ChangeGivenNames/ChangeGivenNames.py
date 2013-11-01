@@ -240,7 +240,7 @@ class ChangeGivenNames(tool.BatchTool, ManagedWindow.ManagedWindow):
         tpath = paths[0] if len(paths) > 0 else None
         node = store.get_iter(tpath) if tpath else None
         if node:
-            name = store.get_value(node, 1) 
+            name = unicode(store.get_value(node, 1))
             for handle in self.name_map[name]:
                 person = self.dbstate.db.get_person_from_handle(handle)
                 EditPerson(self.dbstate, self.uistate, [], person)
@@ -249,7 +249,7 @@ class ChangeGivenNames(tool.BatchTool, ManagedWindow.ManagedWindow):
         with DbTxn(_("Capitalization changes"), self.db, batch=True
                    ) as self.trans:
             self.db.disable_signals()
-            changelist = set(self.model.get_value(node,1)
+            changelist = set(unicode(self.model.get_value(node,1))
                             for node in self.iter_list
                                 if self.model.get_value(node,0))
 
