@@ -62,7 +62,7 @@
 {"t":u'Tool',"i":'PlaceCompletion',"n":'PlaceCompletion',"v":'0.0.14',"g":'3.4',"d":'Zapewnia przegl\xc4\x85daln\xc4\x85 list\xc4\x99 wybranych miejsc, z mo\xc5\xbcliwo\xc5\x9bci\xc4\x85 uzupe\xc5\x82nienia/parsowania/ustawienia p\xc3\xb3l atrybut\xc3\xb3w.',"z":'PlaceCompletion.addon.tgz'}
 {"t":u'Tool',"i":'SetAttribute',"n":'Set Attribute',"v":'0.0.7',"g":'3.4',"d":'Set an attribute to a given value.',"z":'SetAttributeTool.addon.tgz'}
 {"t":u'Tool',"i":'calculateestimateddates',"n":'Obliczanie dat szacunkowych',"v":'0.90.8',"g":'3.4',"d":'Wylicza szacunkowe daty urodzenia i zgonu.',"z":'CalculateEstimatedDates.addon.tgz'}
-{"t":u'Tool',"i":'chgivenname',"n":'Fix Capitalization of Given Names',"v":'1.0.7',"g":'3.4.6',"d":'Searches the entire database and attempts to fix capitalization of the given names.',"z":'ChangeGivenNames.addon.tgz'}
+{"t":u'Tool',"i":'chgivenname',"n":'Fix Capitalization of Given Names',"v":'1.0.8',"g":'3.4.6',"d":'Searches the entire database and attempts to fix capitalization of the given names.',"z":'ChangeGivenNames.addon.tgz'}
 {"t":u'Tool',"i":'climerge',"n":'Command Line Merge',"v":'1.0.7',"g":'3.4',"d":'Merge primary objects via the command line.',"z":'CliMerge.addon.tgz'}
 {"t":u'Tool',"i":'mediaverify',"n":'Media Verify',"v":'1.0.4',"g":'3.4',"d":'Verify that media is present in the correct path',"z":'MediaVerify.addon.tgz'}
 {"t":u'Tool',"i":'rebuild_types',"n":'Rebuild Gramps Types',"v":'1.0.4',"g":'3.4',"d":'Rebuilds Gramps Types',"z":'RebuildTypes.addon.tgz'}

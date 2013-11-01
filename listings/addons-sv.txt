@@ -62,7 +62,7 @@
 {"t":u'Tool',"i":'PlaceCompletion',"n":'Platskomplettering',"v":'0.0.14',"g":'3.4',"d":'L\xc3\xa4mnar en bl\xc3\xa4ddringsbar lista p\xc3\xa5 valda platser, med m\xc3\xb6jlighet att komplettera/avs\xc3\xb6ka/s\xc3\xa4tta attributf\xc3\xa4ltet.',"z":'PlaceCompletion.addon.tgz'}
 {"t":u'Tool',"i":'SetAttribute',"n":'S\xc3\xa4tt attribut',"v":'0.0.7',"g":'3.4',"d":'S\xc3\xa4tt ett attribut till ett givet v\xc3\xa4rde.',"z":'SetAttributeTool.addon.tgz'}
 {"t":u'Tool',"i":'calculateestimateddates',"n":'Ber\xc3\xa4knade uppskattade datum',"v":'0.90.8',"g":'3.4',"d":'Ber\xc3\xa4kna uppskattningar av datum f\xc3\xb6r f\xc3\xb6delse och d\xc3\xb6d.',"z":'CalculateEstimatedDates.addon.tgz'}
-{"t":u'Tool',"i":'chgivenname',"n":'Ordna stavning av f\xc3\xb6rnamn',"v":'1.0.7',"g":'3.4.6',"d":'S\xc3\xb6ker igenom hela databasen och f\xc3\xb6rs\xc3\xb6ker ordna stavning av f\xc3\xb6rnamnen',"z":'ChangeGivenNames.addon.tgz'}
+{"t":u'Tool',"i":'chgivenname',"n":'Ordna stavning av f\xc3\xb6rnamn',"v":'1.0.8',"g":'3.4.6',"d":'S\xc3\xb6ker igenom hela databasen och f\xc3\xb6rs\xc3\xb6ker ordna stavning av f\xc3\xb6rnamnen',"z":'ChangeGivenNames.addon.tgz'}
 {"t":u'Tool',"i":'climerge',"n":'Command Line Merge',"v":'1.0.7',"g":'3.4',"d":'Sl\xc3\xa5 samman prim\xc3\xa4ra objekt via kommandoraden',"z":'CliMerge.addon.tgz'}
 {"t":u'Tool',"i":'mediaverify',"n":'Verifiera media',"v":'1.0.4',"g":'3.4',"d":'Verifierar att media \xc3\xa4r n\xc3\xa4rvarande i r\xc3\xa4tt s\xc3\xb6kv\xc3\xa4g',"z":'MediaVerify.addon.tgz'}
 {"t":u'Tool',"i":'rebuild_types',"n":'Rebuild Gramps Types',"v":'1.0.4',"g":'3.4',"d":'Rebuilds Gramps Types',"z":'RebuildTypes.addon.tgz'}

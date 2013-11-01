@@ -62,7 +62,7 @@
 {"t":u'Tool',"i":'PlaceCompletion',"n":'PlaceCompletion',"v":'0.0.14',"g":'3.4',"d":'Poskytuje zoznam vybran\xc3\xbdch miest ktor\xc3\xbd je mo\xc5\xben\xc3\xa9 prezera\xc5\xa5 s mo\xc5\xbenos\xc5\xa5ou dopl\xc5\x88ova\xc5\xa5/triedi\xc5\xa5/nastavi\xc5\xa5 atrib\xc3\xbaty pol\xc3\xad',"z":'PlaceCompletion.addon.tgz'}
 {"t":u'Tool',"i":'SetAttribute',"n":'Set Attribute',"v":'0.0.7',"g":'3.4',"d":'Set an attribute to a given value.',"z":'SetAttributeTool.addon.tgz'}
 {"t":u'Tool',"i":'calculateestimateddates',"n":'Vypo\xc4\x8d\xc3\xadta\xc5\xa5 odhadovan\xc3\xa9 d\xc3\xa1tumy',"v":'0.90.8',"g":'3.4',"d":'Vypo\xc4\x8d\xc3\xadta pribli\xc5\xben\xc3\xa9 d\xc3\xa1tumy narodenia a \xc3\xbamrtia.',"z":'CalculateEstimatedDates.addon.tgz'}
-{"t":u'Tool',"i":'chgivenname',"n":'Fix Capitalization of Given Names',"v":'1.0.7',"g":'3.4.6',"d":'Searches the entire database and attempts to fix capitalization of the given names.',"z":'ChangeGivenNames.addon.tgz'}
+{"t":u'Tool',"i":'chgivenname',"n":'Fix Capitalization of Given Names',"v":'1.0.8',"g":'3.4.6',"d":'Searches the entire database and attempts to fix capitalization of the given names.',"z":'ChangeGivenNames.addon.tgz'}
 {"t":u'Tool',"i":'climerge',"n":'Command Line Merge',"v":'1.0.7',"g":'3.4',"d":'Merge primary objects via the command line.',"z":'CliMerge.addon.tgz'}
 {"t":u'Tool',"i":'mediaverify',"n":'Media Verify',"v":'1.0.4',"g":'3.4',"d":'Verify that media is present in the correct path',"z":'MediaVerify.addon.tgz'}
 {"t":u'Tool',"i":'rebuild_types',"n":'Rebuild Gramps Types',"v":'1.0.4',"g":'3.4',"d":'Rebuilds Gramps Types',"z":'RebuildTypes.addon.tgz'}
