@@ -19,6 +19,7 @@
 {"t":'Gramplet',"i":'MediaBrowser',"n":u'Medienbrowser',"v":'1.0.13',"g":'4.0',"d":u'Gramplet zeigt Details einer Person',"z":'MediaBrowser.addon.tgz'}
 {"t":'Gramplet',"i":'Note Gramplet',"n":u'Notiz Gramplet',"v":'1.0.17',"g":'4.0',"d":u'Gramplet zum bearbeiten der Notizen der aktiven Person',"z":'NoteGramplet.addon.tgz'}
 {"t":'Gramplet',"i":'Participants',"n":u'Beteiligte',"v":'1.0.2',"g":'4.0',"d":u'Gramplet zeigt die Beteiligten eines Ereignis',"z":'Participants.addon.tgz'}
+{"t":'Gramplet',"i":'Photo Tagging',"n":u'Foto markieren',"v":'1.0.5',"g":'4.0',"d":u'Gramplet zum markieren von Personen auf Fotos',"z":'PhotoTaggingGramplet.addon.tgz'}
 {"t":'Gramplet',"i":'Python Gramplet',"n":u'Python Gramplet',"v":'1.0.16',"g":'4.0',"d":u'Interaktiver Pythoninterpreter',"z":'PythonGramplet.addon.tgz'}
 {"t":'Gramplet',"i":'Query Gramplet',"n":u'Abfrage Gramplet',"v":'1.0.14',"g":'4.0',"d":u'Gramplet zum Ausf\xfchren SQL-\xe4hnlicher Abfragen',"z":'Query.addon.tgz'}
 {"t":'Gramplet',"i":'Related Relatives Gramplet',"n":u'Verbundene Verwandte Gramplet',"v":'1.0.15',"g":'4.0',"d":u'Gramplet zeigt die Beziehung zwischen Verwandten',"z":'RelatedRelativesGramplet.addon.tgz'}
@@ -55,7 +56,6 @@
 {"t":'Tool',"i":'PlaceCompletion',"n":u'OrteVervollst\xe4ndigung',"v":'0.0.22',"g":'4.0',"d":u'Liefert eine durchsuchbare Liste ausgew\xe4hlter Orte mit der M\xf6glichkeit die Attributefelder zu vervollst\xe4ndigen/Syntaxanalyse/setzen.',"z":'PlaceCompletion.addon.tgz'}
 {"t":'Tool',"i":'SetAttribute',"n":u'Attribut setzen',"v":'0.0.15',"g":'4.0',"d":u'Setzt ein Attribut auf einen gegebenen Wert.',"z":'SetAttributeTool.addon.tgz'}
 {"t":'Tool',"i":'calculateestimateddates',"n":u'Gesch\xe4tzte Daten berechnen',"v":'0.90.17',"g":'4.0',"d":u'Berechnet gesch\xe4tzte Daten f\xfcr Geburt und Tod.',"z":'CalculateEstimatedDates.addon.tgz'}
-{"t":'Tool',"i":'censusfix',"n":u'Census Fix',"v":'1.0.6',"g":'3.4',"d":u'Fix changed attributes in census data',"z":'Census.addon.tgz'}
 {"t":'Tool',"i":'chgivenname',"n":u'Gro\xdfschreibung von Vornamen korrigieren',"v":'1.0.21',"g":'4.0.2',"d":u'Durchsucht die gesamte Datenbank und versucht Gro\xdfschreibung von Vornamen zu korrigieren.',"z":'ChangeGivenNames.addon.tgz'}
 {"t":'Tool',"i":'climerge',"n":'Command Line Merge',"v":'1.0.14',"g":'4.0',"d":u'Prim\xe4re Objekte \xfcber die Kommandozeile zusammenfassen.',"z":'CliMerge.addon.tgz'}
 {"t":'Tool',"i":'mediaverify',"n":u'Medien \xdcberpr\xfcfen',"v":'1.0.5',"g":'4.0',"d":u'\xdcberpr\xfcft, das die Medien im korrekten Pfad vorhanden sind',"z":'MediaVerify.addon.tgz'}

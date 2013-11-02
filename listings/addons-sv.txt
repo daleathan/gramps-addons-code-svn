@@ -19,6 +19,7 @@
 {"t":'Gramplet',"i":'MediaBrowser',"n":'Media Browser',"v":'1.0.13',"g":'4.0',"d":'Gramplet showing details of a person',"z":'MediaBrowser.addon.tgz'}
 {"t":'Gramplet',"i":'Note Gramplet',"n":u'Gramplet f\xf6r notis',"v":'1.0.17',"g":'4.0',"d":u"Gramplet for editing active person's notes","z":'NoteGramplet.addon.tgz'}
 {"t":'Gramplet',"i":'Participants',"n":'Participants',"v":'1.0.2',"g":'4.0',"d":'Gramplet showing the participants in an event',"z":'Participants.addon.tgz'}
+{"t":'Gramplet',"i":'Photo Tagging',"n":'Photo Tagging',"v":'1.0.5',"g":'4.0',"d":'Gramplet for tagging people in photos',"z":'PhotoTaggingGramplet.addon.tgz'}
 {"t":'Gramplet',"i":'Python Gramplet',"n":u'Gramplet med Python',"v":'1.0.16',"g":'4.0',"d":u'Interactive Python interpreter',"z":'PythonGramplet.addon.tgz'}
 {"t":'Gramplet',"i":'Query Gramplet',"n":'Query Gramplet',"v":'1.0.14',"g":'4.0',"d":'Gramplet for running SQL-like queries',"z":'Query.addon.tgz'}
 {"t":'Gramplet',"i":'Related Relatives Gramplet',"n":'Related Relatives Gramplet',"v":'1.0.15',"g":'4.0',"d":'Gramplet showing relatives in a relation',"z":'RelatedRelativesGramplet.addon.tgz'}
@@ -55,7 +56,6 @@
 {"t":'Tool',"i":'PlaceCompletion',"n":u'Platskomplettering',"v":'0.0.22',"g":'4.0',"d":u'L\xe4mnar en bl\xe4ddringsbar lista p\xe5 valda platser, med m\xf6jlighet att komplettera/avs\xf6ka/s\xe4tta attributf\xe4ltet.',"z":'PlaceCompletion.addon.tgz'}
 {"t":'Tool',"i":'SetAttribute',"n":u'S\xe4tt attribut',"v":'0.0.15',"g":'4.0',"d":u'S\xe4tt ett attribut till ett givet v\xe4rde.',"z":'SetAttributeTool.addon.tgz'}
 {"t":'Tool',"i":'calculateestimateddates',"n":u'Ber\xe4knade uppskattade datum',"v":'0.90.17',"g":'4.0',"d":u'Ber\xe4kna uppskattningar av datum f\xf6r f\xf6delse och d\xf6d.',"z":'CalculateEstimatedDates.addon.tgz'}
-{"t":'Tool',"i":'censusfix',"n":u'Census Fix',"v":'1.0.6',"g":'3.4',"d":u'Fix changed attributes in census data',"z":'Census.addon.tgz'}
 {"t":'Tool',"i":'chgivenname',"n":u'Ordna stavning av f\xf6rnamn',"v":'1.0.21',"g":'4.0.2',"d":u'S\xf6ker igenom hela databasen och f\xf6rs\xf6ker ordna stavning av f\xf6rnamnen',"z":'ChangeGivenNames.addon.tgz'}
 {"t":'Tool',"i":'climerge',"n":'Command Line Merge',"v":'1.0.14',"g":'4.0',"d":'Merge primary objects via the command line.',"z":'CliMerge.addon.tgz'}
 {"t":'Tool',"i":'mediaverify',"n":'Media Verify',"v":'1.0.5',"g":'4.0',"d":'Verify that media is present in the correct path',"z":'MediaVerify.addon.tgz'}

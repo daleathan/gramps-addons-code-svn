@@ -19,6 +19,7 @@
 {"t":'Gramplet',"i":'MediaBrowser',"n":'Media Browser',"v":'1.0.13',"g":'4.0',"d":'Gramplet showing details of a person',"z":'MediaBrowser.addon.tgz'}
 {"t":'Gramplet',"i":'Note Gramplet',"n":'Note Gramplet',"v":'1.0.17',"g":'4.0',"d":"Gramplet for editing active person's notes","z":'NoteGramplet.addon.tgz'}
 {"t":'Gramplet',"i":'Participants',"n":'Participants',"v":'1.0.2',"g":'4.0',"d":'Gramplet showing the participants in an event',"z":'Participants.addon.tgz'}
+{"t":'Gramplet',"i":'Photo Tagging',"n":'Photo Tagging',"v":'1.0.5',"g":'4.0',"d":'Gramplet for tagging people in photos',"z":'PhotoTaggingGramplet.addon.tgz'}
 {"t":'Gramplet',"i":'Python Gramplet',"n":'Python Gramplet',"v":'1.0.16',"g":'4.0',"d":'Interactive Python interpreter',"z":'PythonGramplet.addon.tgz'}
 {"t":'Gramplet',"i":'Query Gramplet',"n":'Query Gramplet',"v":'1.0.14',"g":'4.0',"d":'Gramplet for running SQL-like queries',"z":'Query.addon.tgz'}
 {"t":'Gramplet',"i":'Related Relatives Gramplet',"n":'Related Relatives Gramplet',"v":'1.0.15',"g":'4.0',"d":'Gramplet showing relatives in a relation',"z":'RelatedRelativesGramplet.addon.tgz'}
@@ -55,7 +56,6 @@
 {"t":'Tool',"i":'PlaceCompletion',"n":'PlaceCompletion',"v":'0.0.22',"g":'4.0',"d":'Provides a browsable list of selected places, with possibility to complete/parse/set the attribute fields.',"z":'PlaceCompletion.addon.tgz'}
 {"t":'Tool',"i":'SetAttribute',"n":'Set Attribute',"v":'0.0.15',"g":'4.0',"d":'Set an attribute to a given value.',"z":'SetAttributeTool.addon.tgz'}
 {"t":'Tool',"i":'calculateestimateddates',"n":u'Vypo\u010d\xedtat odhadovan\xfd datum',"v":'0.90.17',"g":'4.0',"d":u'Vypo\u010d\xedt\xe1 odhadovan\xfd datum narozen\xed a \xfamrt\xed.',"z":'CalculateEstimatedDates.addon.tgz'}
-{"t":'Tool',"i":'censusfix',"n":'Census Fix',"v":'1.0.6',"g":'3.4',"d":'Fix changed attributes in census data',"z":'Census.addon.tgz'}
 {"t":'Tool',"i":'chgivenname',"n":'Fix Capitalization of Given Names',"v":'1.0.21',"g":'4.0.2',"d":'Searches the entire database and attempts to fix capitalization of the given names.',"z":'ChangeGivenNames.addon.tgz'}
 {"t":'Tool',"i":'climerge',"n":'Command Line Merge',"v":'1.0.14',"g":'4.0',"d":'Merge primary objects via the command line.',"z":'CliMerge.addon.tgz'}
 {"t":'Tool',"i":'mediaverify',"n":'Media Verify',"v":'1.0.5',"g":'4.0',"d":'Verify that media is present in the correct path',"z":'MediaVerify.addon.tgz'}

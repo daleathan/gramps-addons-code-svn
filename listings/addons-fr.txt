@@ -19,6 +19,7 @@
 {"t":'Gramplet',"i":'MediaBrowser',"n":u'Navigateur Media',"v":'1.0.13',"g":'4.0',"d":u"Gramplet affichant les d\xe9tails de l'individu","z":'MediaBrowser.addon.tgz'}
 {"t":'Gramplet',"i":'Note Gramplet',"n":u'Gramplet Note',"v":'1.0.17',"g":'4.0',"d":u"Gramplet pour l'\xe9dition des notes de l'individu actif","z":'NoteGramplet.addon.tgz'}
 {"t":'Gramplet',"i":'Participants',"n":u'Participants',"v":'1.0.2',"g":'4.0',"d":u'Gramplet affichant les personnes pr\xe9sentes \xe0 un \xe9v\xe9nement',"z":'Participants.addon.tgz'}
+{"t":'Gramplet',"i":'Photo Tagging',"n":u'Cartographie photographique',"v":'1.0.5',"g":'4.0',"d":u'Gramplet pour d\xe9finir les individus dans les photos',"z":'PhotoTaggingGramplet.addon.tgz'}
 {"t":'Gramplet',"i":'Python Gramplet',"n":u'Gramplet Python',"v":'1.0.16',"g":'4.0',"d":u'Un interpr\xe9teur python interactif',"z":'PythonGramplet.addon.tgz'}
 {"t":'Gramplet',"i":'Query Gramplet',"n":u'Gramplet Requ\xeate',"v":'1.0.14',"g":'4.0',"d":u'Gramplet pour des requ\xeates SQL-like',"z":'Query.addon.tgz'}
 {"t":'Gramplet',"i":'Related Relatives Gramplet',"n":u'Gramplet Parent\xe9s',"v":'1.0.15',"g":'4.0',"d":u'Gramplet affichant les parent\xe9s dans une relation',"z":'RelatedRelativesGramplet.addon.tgz'}
@@ -55,7 +56,6 @@
 {"t":'Tool',"i":'PlaceCompletion',"n":u'Arrangement des lieux',"v":'0.0.22',"g":'4.0',"d":u"Fournit une liste consultable des lieux s\xe9lectionn\xe9s, avec la possibilit\xe9 de compl\xe9ter/analyser/d\xe9finir les champs de l'attribut","z":'PlaceCompletion.addon.tgz'}
 {"t":'Tool',"i":'SetAttribute',"n":u'D\xe9finir un attribut',"v":'0.0.15',"g":'4.0',"d":u'D\xe9finir une valeur \xe0 un attribut.',"z":'SetAttributeTool.addon.tgz'}
 {"t":'Tool',"i":'calculateestimateddates',"n":u'Calcul des dates estim\xe9es',"v":'0.90.17',"g":'4.0',"d":u'Calcul des dates estim\xe9es pour les naissances et d\xe9c\xe8s.',"z":'CalculateEstimatedDates.addon.tgz'}
-{"t":'Tool',"i":'censusfix',"n":u'Census Fix',"v":'1.0.6',"g":'3.4',"d":u'Fix changed attributes in census data',"z":'Census.addon.tgz'}
 {"t":'Tool',"i":'chgivenname',"n":u'R\xe9parer la casse des pr\xe9noms',"v":'1.0.21',"g":'4.0.2',"d":u'Recherche dans toute la base de donn\xe9es et essaye de corriger la casse des pr\xe9noms.',"z":'ChangeGivenNames.addon.tgz'}
 {"t":'Tool',"i":'climerge',"n":'Command Line Merge',"v":'1.0.14',"g":'4.0',"d":u'Fusionne les objets principaux via la ligne de commande',"z":'CliMerge.addon.tgz'}
 {"t":'Tool',"i":'mediaverify',"n":u'V\xe9rification des media',"v":'1.0.5',"g":'4.0',"d":u"V\xe9rifier si l'objet medium est pr\xe9sent avec le bon chemin ","z":'MediaVerify.addon.tgz'}
