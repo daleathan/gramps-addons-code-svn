@@ -450,29 +450,31 @@ class bckGramplet(Gramplet):
         #sel = SelectNote(self.dbstate, self.uistate, [],
                                #_("Select Note"), skip=[])
         #sel.run()
-        
+                
         return self.get_note()
     
     def get_note(self):
         
         notes_list = []
-        notes = self.dbstate.db.get_note_handles()
-        for handle in notes:
-            # Note filter seems to need IDs
-            notes_list.append(self.dbstate.db.note_map.get(handle)[1])
-        notes_list.sort()
+        note_id = 'No note'
         
+        if self.dbstate.db.db_is_open:
+            notes = self.dbstate.db.get_note_handles()
+            for handle in notes:
+                # Note filter seems to need IDs
+                notes_list.append(self.dbstate.db.note_map.get(handle)[1])
+            notes_list.sort()
+            note_id = notes_list[-1]
+                
         # I do not know why these lines do not work !
         
         #self.filter_note = GenericFilter()
         #self.filter_note.add_rule(Rules.Note.HasNote(['2013', _('General')]))
         #index = self.filter_note.apply(self.dbstate.db, notes_list)
-        
-        note_id = notes_list[-1]
+                
+        return note_id
         
         #note = self.dbstate.db.get_note_from_gramps_id(note_id)
-        
-        return note_id
         
         # My internal note handle
         #note_handle = 'c8c202feca8198236b7'
