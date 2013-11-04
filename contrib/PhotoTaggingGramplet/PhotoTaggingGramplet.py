@@ -26,6 +26,7 @@
 #
 #-------------------------------------------------------------------------
 from __future__ import division
+import pickle
 
 #-------------------------------------------------------------------------
 #
@@ -50,6 +51,7 @@ from gui.editors.editperson import EditPerson
 from gui.selectors import SelectorFactory
 from gen.plug.menu import (BooleanOption, NumberOption)
 from gui.plug import PluginWindows
+from DdTargets import DdTargets
 
 from TransUtils import get_addon_translator
 _ = get_addon_translator(__file__).gettext
@@ -289,6 +291,18 @@ class PhotoTaggingGramplet(Gramplet):
         self.treeview.set_search_column(0)
         column1.set_sort_column_id(0)
         column3.set_sort_column_id(2)
+
+        # Drag and Drop
+        self.treeview.drag_dest_set(gtk.DEST_DEFAULT_MOTION |
+                                    gtk.DEST_DEFAULT_DROP,
+                                    [],
+                                    gtk.gdk.ACTION_COPY)
+        tglist = (DdTargets.PERSON_LINK.drag_type,
+                   DdTargets.PERSON_LINK.target_flags,
+                   DdTargets.PERSON_LINK.app_id)
+        self.treeview.drag_dest_set_target_list([tglist])
+        self.treeview.connect('drag_data_received', self.drag_data_received)
+        # End Drag and Drop
 
         scrolled_window2 = gtk.ScrolledWindow()
         scrolled_window2.add(self.treeview)
@@ -718,6 +732,24 @@ class PhotoTaggingGramplet(Gramplet):
 
     def row_activated(self, treeview, path, view_column):
         self.edit_person_clicked(None)
+
+    def drag_data_received(self, widget, context, x, y, sel_data, info, time):
+        """
+        Receive a dropped person onto the treeview.
+        """
+        if sel_data and sel_data.data:
+            (drag_type, idval, handle, val) = pickle.loads(sel_data.data)
+            person = self.dbstate.db.get_person_from_handle(handle)
+            if person:
+                model = self.treeview.get_model()
+                drop_info = self.treeview.get_dest_row_at_pos(x, y)
+                if drop_info:
+                    path, position = drop_info
+                    self.treeview.set_cursor(path)
+                    self.set_current_person(person)
+                    self.selection_widget.clear_selection()
+                    self.refresh()
+                    self.enable_buttons()
 
     # ======================================================
     # helpers for list event handlers
