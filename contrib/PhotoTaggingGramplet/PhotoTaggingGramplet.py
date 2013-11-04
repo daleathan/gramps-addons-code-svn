@@ -263,6 +263,18 @@ class PhotoTaggingGramplet(Gramplet):
         self.selection_widget.connect("zoomed-in", self.zoomed)
         self.selection_widget.connect("zoomed-out", self.zoomed)
 
+        # Drag and Drop
+        self.selection_widget.event_box.drag_dest_set(
+          gtk.DEST_DEFAULT_MOTION | gtk.DEST_DEFAULT_DROP, [],
+          gtk.gdk.ACTION_COPY)
+        tglist = (DdTargets.PERSON_LINK.drag_type,
+                   DdTargets.PERSON_LINK.target_flags,
+                   DdTargets.PERSON_LINK.app_id)
+        self.selection_widget.event_box.drag_dest_set_target_list([tglist])
+        self.selection_widget.event_box.connect('drag_data_received',
+          self.drag_data_received_image)
+        # End Drag and Drop
+
         hpaned.pack1(self.selection_widget, resize=True, shrink=False)
 
         self.treestore = gtk.TreeStore(int, gtk.gdk.Pixbuf, str)
@@ -301,7 +313,8 @@ class PhotoTaggingGramplet(Gramplet):
                    DdTargets.PERSON_LINK.target_flags,
                    DdTargets.PERSON_LINK.app_id)
         self.treeview.drag_dest_set_target_list([tglist])
-        self.treeview.connect('drag_data_received', self.drag_data_received)
+        self.treeview.connect('drag_data_received',
+          self.drag_data_received_list)
         # End Drag and Drop
 
         scrolled_window2 = gtk.ScrolledWindow()
@@ -580,6 +593,22 @@ class PhotoTaggingGramplet(Gramplet):
     def zoomed(self, sender):
         self.enable_buttons()
 
+    def drag_data_received_image(self, widget, context, x, y, sel_data, info, time):
+        """
+        Receive a dropped person onto the treeview.
+        """
+        if sel_data and sel_data.data:
+            (drag_type, idval, handle, val) = pickle.loads(sel_data.data)
+            person = self.dbstate.db.get_person_from_handle(handle)
+            if person:
+                region = self.selection_widget.find_region(x, y)
+                current = self.selection_widget.get_current()
+                if region and (current is None or current == region):
+                    self.ask_and_set_person(region, person)
+                    self.selection_widget.clear_selection()
+                    self.refresh()
+                    self.enable_buttons()
+
     # ======================================================
     # toolbar button event handles
     # ======================================================
@@ -666,7 +695,10 @@ class PhotoTaggingGramplet(Gramplet):
         self.enable_buttons()
 
     def set_current_person(self, person):
-        if self.selection_widget.get_current() and person:
+        self.ask_and_set_person(self.selection_widget.get_current(), person)
+
+    def ask_and_set_person(self, region, person):
+        if region and person:
             other_references = self.regions_referencing_person(person)
             ref_count = len(other_references)
             if ref_count > 0:
@@ -690,7 +722,7 @@ class PhotoTaggingGramplet(Gramplet):
                     dialog.destroy()
                     if response == gtk.RESPONSE_YES:
                         self.delete_regions(other_references)
-            self.set_person(self.selection_widget.get_current(), person)
+            self.set_person(region, person)
 
     def set_person(self, region, person):
         rect = self.check_and_translate_to_proportional(
@@ -733,7 +765,7 @@ class PhotoTaggingGramplet(Gramplet):
     def row_activated(self, treeview, path, view_column):
         self.edit_person_clicked(None)
 
-    def drag_data_received(self, widget, context, x, y, sel_data, info, time):
+    def drag_data_received_list(self, widget, context, x, y, sel_data, info, time):
         """
         Receive a dropped person onto the treeview.
         """

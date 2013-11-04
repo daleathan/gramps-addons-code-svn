@@ -400,6 +400,9 @@ class SelectionWidget(gtk.ScrolledWindow):
         self.selection = None
         self.image.queue_draw()
 
+    def find_region(self, x ,y):
+        return self._find_region(*self._screen_to_image((x, y)))
+
     # ======================================================
     # thumbnails
     # ======================================================
