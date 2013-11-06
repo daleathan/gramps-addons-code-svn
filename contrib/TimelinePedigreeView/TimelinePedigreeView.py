@@ -5,6 +5,7 @@
 #
 # Copyright (C) 2001-2007  Donald N. Allingham, Martin Hawlisch
 # Copyright (C) 2009       Felix Heß <xilef@nurfuerspam.de>
+# Copyright (C) 2013       Doug Blank <doug.blank@gmail.com>
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -142,7 +143,7 @@ class _PersonWidgetBase:
             self.drag_source_set(Gdk.ModifierType.BUTTON1_MASK,
                                 [DdTargets.PERSON_LINK.target()]+
                                 [t.target() for t in DdTargets._all_text_types],
-                                Gdk.ACTION_COPY)
+                                Gdk.DragAction.COPY)
 
     def drag_begin_cb(self, widget, data):
         """Set up some inital conditions for drag. Set up icon."""
@@ -187,7 +188,7 @@ class PersonBoxWidgetCairo(Gtk.DrawingArea, _PersonWidgetBase):
         self.alive = alive
         self.maxlines = maxlines
         self.hightlight = False
-        self.connect("expose_event", self.expose)
+        self.connect("draw", self.expose)
         self.connect("realize", self.realize)
         self.text = ""
         if self.person:
@@ -243,16 +244,18 @@ class PersonBoxWidgetCairo(Gtk.DrawingArea, _PersonWidgetBase):
         Necessary actions when the widget is instantiated on a particular
         display. Print text and resize element.
         """
-        self.context = self.window.cairo_create()
-        self.textlayout = self.context.create_layout()
-        self.textlayout.set_font_description(self.get_style().font_desc)
-        self.textlayout.set_markup(self.text)
-        size = self.textlayout.get_pixel_size()
-        xmin = size[0] + 12
-        ymin = size[1] + 11
-        if self.image:
-            xmin += self.img_surf.get_width()
-            ymin = max(ymin, self.img_surf.get_height()+4)
+        self.context = self.get_window().cairo_create()
+        # FIXME:
+        #self.textlayout = self.context.create_layout()
+        #self.textlayout.set_font_description(self.get_style().font_desc)
+        #self.textlayout.set_markup(self.text)
+        #size = self.textlayout.get_pixel_size()
+        #xmin = size[0] + 12
+        #ymin = size[1] + 11
+        #if self.image:
+        #    xmin += self.img_surf.get_width()
+        #    ymin = max(ymin, self.img_surf.get_height()+4)
+        xmin, ymin = 120, 25
         self.set_size_request(max(xmin, 120), max(ymin, 25))
 
     def expose(self, widget, event):
@@ -262,7 +265,7 @@ class PersonBoxWidgetCairo(Gtk.DrawingArea, _PersonWidgetBase):
         witout text.
         """
         alloc = self.get_allocation()
-        self.context = self.window.cairo_create()
+        self.context = self.get_window().cairo_create()
 
         # widget area for debugging
         #self.context.rectangle(0, 0, alloc.width, alloc.height)
@@ -318,7 +321,8 @@ class PersonBoxWidgetCairo(Gtk.DrawingArea, _PersonWidgetBase):
         # text
         self.context.move_to(5, 4)
         self.context.set_source_rgb(0, 0, 0)
-        self.context.show_layout(self.textlayout)
+        # FIXME:
+        #self.context.show_layout(self.textlayout)
 
         # text extents
         #self.context.set_source_rgba(1, 0, 0, 0.5)
@@ -364,7 +368,7 @@ class PersonBoxWidget(Gtk.DrawingArea, _PersonWidgetBase):
             self.image = Gdk.pixbuf_new_from_file(image)
         except:
             self.image = None
-        self.connect("expose_event", self.expose)
+        self.connect("draw", self.expose)
         self.connect("realize", self.realize)
         text = ""
         if self.person:
@@ -402,12 +406,12 @@ class PersonBoxWidget(Gtk.DrawingArea, _PersonWidgetBase):
         display. Creat all elements for person box(bg_gc, text_gc, border_gc,
         shadow_gc), and setup they style.
         """
-        self.bg_gc = self.window.new_gc()
-        self.text_gc = self.window.new_gc()
-        self.border_gc = self.window.new_gc()
+        self.bg_gc = self.get_window().new_gc()
+        self.text_gc = self.get_window().new_gc()
+        self.border_gc = self.get_window().new_gc()
         self.border_gc.line_style = Gdk.LINE_SOLID
         self.border_gc.line_width = 1
-        self.shadow_gc = self.window.new_gc()
+        self.shadow_gc = self.get_window().new_gc()
         self.shadow_gc.line_style = Gdk.LINE_SOLID
         self.shadow_gc.line_width = 4
         if self.person:
@@ -458,26 +462,26 @@ class PersonBoxWidget(Gtk.DrawingArea, _PersonWidgetBase):
         """
         alloc = self.get_allocation()
         # shadow
-        self.window.draw_line(self.shadow_gc, 3, alloc.height-1,
+        self.get_window().draw_line(self.shadow_gc, 3, alloc.height-1,
                               alloc.width, alloc.height-1)
-        self.window.draw_line(self.shadow_gc, alloc.width-1, 3,
+        self.get_window().draw_line(self.shadow_gc, alloc.width-1, 3,
                               alloc.width-1, alloc.height)
         # box background
-        self.window.draw_rectangle(self.bg_gc, True, 1, 1,
+        self.get_window().draw_rectangle(self.bg_gc, True, 1, 1,
                                    alloc.width-5, alloc.height-5)
         # text
         if self.person:
-            self.window.draw_layout(self.text_gc, 5, 4, self.textlayout)
+            self.get_window().draw_layout(self.text_gc, 5, 4, self.textlayout)
         # image
         if self.image:
-            self.window.draw_pixbuf(self.text_gc, self.image, 0, 0,
+            self.get_window().draw_pixbuf(self.text_gc, self.image, 0, 0,
                                     alloc.width-4-self.image.get_width(), 1)
         # border
         if self.border_gc.line_width > 1:
-            self.window.draw_rectangle(self.border_gc, False, 1, 1,
+            self.get_window().draw_rectangle(self.border_gc, False, 1, 1,
                                        alloc.width-6, alloc.height-6)
         else:
-            self.window.draw_rectangle(self.border_gc, False, 0, 0,
+            self.get_window().draw_rectangle(self.border_gc, False, 0, 0,
                                        alloc.width-4, alloc.height-4)
 
 #-------------------------------------------------------------------------
@@ -611,7 +615,7 @@ class TimelinePedigreeView(NavigationView):
                              | Gdk.EventMask.BUTTON_RELEASE_MASK
                              | Gdk.EventMask.BUTTON1_MOTION_MASK)
         
-        self.gtklayout.connect("expose_event", self.gtklayout_expose)
+        self.gtklayout.connect("draw", self.gtklayout_expose)
         self.gtklayout.connect("button-press-event", self.bg_button_press_cb)
         self.gtklayout.connect("button-release-event", self.bg_button_release_cb)
         self.gtklayout.connect("motion-notify-event", self.bg_motion_notify_event_cb)
@@ -822,8 +826,8 @@ class TimelinePedigreeView(NavigationView):
                     self.gtklayout_lines.append([Tick[1], int(5*TimeLineHeight/8), Tick[1], int(7*TimeLineHeight/8), 1])
                     if Tick[0]:
                         label = Gtk.Label(Tick[0])
-                        label.set_justify(Gtk.JUSTIFY_CENTER)
-                        layout_widget.put(label, int(Tick[1]-label.size_request()[0]/2), 1*TimeLineHeight/4)
+                        label.set_justify(Gtk.Justification.CENTER)
+                        layout_widget.put(label, int(Tick[1]-label.size_request().width/2), 1*TimeLineHeight/4)
             
         
         layout_widget.show_all()
@@ -842,7 +846,7 @@ class TimelinePedigreeView(NavigationView):
 
         # Move personbox to its required position
         pbwSize = BranchData[1].size_request()
-        xBox = BoxRight - pbwSize[0]
+        xBox = BoxRight - pbwSize.width #[0]
         yBox = BranchTop + BranchData[2][4]
         layout_widget.move(BranchData[1], int(xBox), int(yBox))
 
@@ -853,13 +857,13 @@ class TimelinePedigreeView(NavigationView):
                 color = BranchData[1].bgcolor[:3] + (0.7,)
             except AttributeError:
                 color = (211/256.0, 215/256.0, 207/256.0)[:3] + (0.7,)
-            self.gtklayout_boxes.append([xBox - lifespan * 11 + pbwSize[0], yBox, xBox + 5, yBox+pbwSize[1], color])   # +5 for overlapping with the box
+            self.gtklayout_boxes.append([xBox - lifespan * 11 + pbwSize.width, yBox, xBox + 5, yBox+pbwSize.height, color])   # +5 for overlapping with the box
         
         # Calculate position of connection point of this box
-        yBoxConnection = yBox + BranchData[1].size_request()[1]/2
+        yBoxConnection = yBox + BranchData[1].size_request().height/2
         xBoxConnection = BoxRight
         if Direction > 0:
-            xBoxConnection -= pbwSize[0]
+            xBoxConnection -= pbwSize.width
         
         # calculate x-position of vertical line
         xvline = xBoxConnection - Direction * DistX/2           # default for descendants and if date of marriage not known
@@ -900,7 +904,7 @@ class TimelinePedigreeView(NavigationView):
                 if family:
                     text = self.format_helper.format_relation( family, BoxSizes[4])
             label = Gtk.Label(text)
-            label.set_justify(Gtk.JUSTIFY_LEFT)
+            label.set_justify(Gtk.Justification.LEFT)
             label.set_line_wrap(True)
             label.set_alignment(0.1,0.5)
             if family_handle:
@@ -908,7 +912,7 @@ class TimelinePedigreeView(NavigationView):
                 label.add_events(Gdk.EventMask.BUTTON_RELEASE_MASK)
                 label.connect("button-press-event", self.family_button_press_cb, family_handle)
             
-            layout_widget.put(label, xvline + 5, int(yBoxConnection-label.size_request()[1]/2))
+            layout_widget.put(label, xvline + 5, int(yBoxConnection-label.size_request().height/2))
         
         return [xBoxConnection, yBoxConnection]
         
@@ -1058,7 +1062,7 @@ class TimelinePedigreeView(NavigationView):
         
         Branch_Width = 0
         if Direction > 0:
-            Branch_Width = pbwSize[0]
+            Branch_Width = pbwSize.width
                
         Child_Branch_Height = 0
         RelLst = []
@@ -1077,27 +1081,27 @@ class TimelinePedigreeView(NavigationView):
             Ret[4] = DeltaX
             RelLst.append(Ret);
             
-            MaxRelWidth = max(MaxRelWidth, Ret[1].size_request()[0])
+            MaxRelWidth = max(MaxRelWidth, Ret[1].size_request().width)
             
-            yRelConnect.append( yRelBranchTop + Ret[2][4] + Ret[1].size_request()[1]/2 )
+            yRelConnect.append( yRelBranchTop + Ret[2][4] + Ret[1].size_request().height/2 )
             yRelBranchTop = yRelBranchTop + Ret[2][1]
         
         yPersonBoxTop = DistY / 2       # y-Position of PersonBox relative to BranchTop
         if len( yRelConnect ) > 0:
-            yPersonBoxTop = (max(yRelConnect) + min(yRelConnect)) / 2 - pbwSize[1]/2
+            yPersonBoxTop = (max(yRelConnect) + min(yRelConnect)) / 2 - pbwSize.height/2
 
         if self.use_timeline and Direction > 0:
             Branch_Width = max(Branch_Width, lifespan * 11)
         elif not self.use_timeline:
             negWidth = 0
             if Direction > 0:
-                DeltaX = DistX + pbwSize[0]
+                DeltaX = DistX + pbwSize.width
             else:
                 DeltaX = DistX + MaxRelWidth
             
             Branch_Width = 0
             if Direction > 0:
-                Branch_Width = pbwSize[0]
+                Branch_Width = pbwSize.width
             
             for Ret in RelLst:
                 Branch_Width = max(Branch_Width, Ret[2][0] + DeltaX)
@@ -1111,7 +1115,7 @@ class TimelinePedigreeView(NavigationView):
             yChildBranchTop = DeltaY
             Branch_Height += DeltaY
         
-        Branch_Height = max(Branch_Height, yPersonBoxTop + pbwSize[1] + DistY/2)
+        Branch_Height = max(Branch_Height, yPersonBoxTop + pbwSize.height + DistY/2) 
         
         return [ person, pbw, (Branch_Width, Branch_Height, negWidth, Child_Branch_Height, yPersonBoxTop, yChildBranchTop), RelLst, birthyear, lifespan ]
     
@@ -1181,7 +1185,7 @@ class TimelinePedigreeView(NavigationView):
                     
     def gtklayout_expose_old(self, area, event):
         window = self.gtklayout.get_bin_window()
-        size =  self.gtklayout.get_size()
+        #size =  self.gtklayout.get_size()
         if window:
             gc = window.new_gc()
             gc.line_style = Gdk.LINE_SOLID
@@ -1197,15 +1201,16 @@ class TimelinePedigreeView(NavigationView):
                 window.draw_line(gc, int(line[0]), int(line[1]), int(line[2]), int(line[3]))
    
     def gtklayout_expose(self, area, event):
-        #window = self.gtklayout.get_bin_window()
-        window = self.gtklayout.bin_window
+        window = self.gtklayout.get_bin_window()
+        #window = self.gtklayout.bin_window
         if window:   
             # Create the cairo context
             cr = window.cairo_create()
 
             # Restrict Cairo to the exposed area; avoid extra work
-            cr.rectangle(event.area.x, event.area.y, event.area.width, event.area.height)
-            cr.clip()
+            # FIXME:
+            #cr.rectangle(event.area.x, event.area.y, event.area.width, event.area.height)
+            #cr.clip()
             
             for box in self.gtklayout_boxes:
                 cr.set_source_rgba(box[4][0], box[4][1], box[4][2], box[4][3])
@@ -1309,7 +1314,7 @@ class TimelinePedigreeView(NavigationView):
         or call option menu.
         """
         if event.button == 1 and event.type == getattr(Gdk.EventType, "BUTTON_PRESS"):
-            widget.window.set_cursor(Gdk.Cursor(Gdk.FLEUR))
+            widget.get_window().set_cursor(Gdk.Cursor(Gdk.CursorType.FLEUR))
             self._last_x = event.x
             self._last_y = event.y
             self._in_move = True
@@ -1323,7 +1328,7 @@ class TimelinePedigreeView(NavigationView):
         """Exit from scroll mode when button release."""
         if event.button == 1 and event.type == getattr(Gdk.EventType, "BUTTON_RELEASE"):
             self.bg_motion_notify_event_cb(widget, event)
-            widget.window.set_cursor(None)
+            widget.get_window().set_cursor(None)
             self._in_move = False
             return True
         return False
