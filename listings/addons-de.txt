@@ -1,3 +1,4 @@
+{"t":u'Gramplet',"i":'Headline News Gramplet',"n":u'Schlagzeilen Gramplet',"v":'1.0.20',"g":'4.0',"d":u'Gramplet zum zeigen der neuesten Gramps Nachrichten',"z":'HeadlineNewsGramplet.addon.tgz'}
 {"t":'Exporter',"i":'Export GEDCOM Extensions',"n":u'GEDCOM Export Erweiterungen (GED2)',"v":'1.0.8',"g":'4.0',"d":u'Erweiterungen f\xfcr das bekannte GEDCOM Format',"z":'GedcomExtensions.addon.tgz'}
 {"t":'Exporter',"i":'Raw Export',"n":u'Rohdaten Export',"v":'1.0.19',"g":'4.0',"d":u'Dies ist eine Rohdaten Pythonobjekt Ausgabe',"z":'ExportRaw.addon.tgz'}
 {"t":'Exporter',"i":'ex_sqlite',"n":u'SQLite Export',"v":'1.0.20',"g":'4.0',"d":u'SQLite ist ein gebr\xe4uchliches lokales Datenbankformat',"z":'Sqlite.addon.tgz'}
@@ -13,7 +14,7 @@
 {"t":'Gramplet',"i":'Extended Family Attributes',"n":u'Erweiterte Familienattribute',"v":'1.0.14',"g":'4.0',"d":u'Gramplet zeigt die Attribute einer Familie',"z":'ExtendedAttributes.addon.tgz'}
 {"t":'Gramplet',"i":'Extended Person Attributes',"n":u'Erweiterte Person Attribute',"v":'1.0.14',"g":'4.0',"d":u'Gramplet zeigt die Attribute einer Person',"z":'ExtendedAttributes.addon.tgz'}
 {"t":'Gramplet',"i":'Face Detection',"n":u'Gesichtserkennung',"v":'1.0.11',"g":'4.0',"d":u'Gramplet zur Erkennung und Zuordnung von Gesichtern',"z":'FaceDetection.addon.tgz'}
-{"t":'Gramplet',"i":'Headline News Gramplet',"n":u'Schlagzeilen Gramplet',"v":'1.0.19',"g":'4.0',"d":u'Gramplet zum zeigen der neuesten Gramps Nachrichten',"z":'HeadlineNewsGramplet.addon.tgz'}
+{"t":u'Gramplet',"i":'Headline News Gramplet',"n":u'Schlagzeilen Gramplet',"v":'1.0.20',"g":'4.0',"d":u'Gramplet zum zeigen der neuesten Gramps Nachrichten',"z":'HeadlineNewsGramplet.addon.tgz'}
 {"t":'Gramplet',"i":'Import Gramplet',"n":u'Import Gramplet',"v":'1.0.18',"g":'4.0',"d":u'Gramplet zum Textimport',"z":'ImportGramplet.addon.tgz'}
 {"t":'Gramplet',"i":'LastChangeGramplet',"n":u'Letzte \xc4nderung Gramplet',"v":'0.0.21',"g":'4.0',"d":u'Listet die letzten zehn ge\xe4nderten Personendatens\xe4tze',"z":'LastChange.addon.tgz'}
 {"t":'Gramplet',"i":'MediaBrowser',"n":u'Medienbrowser',"v":'1.0.13',"g":'4.0',"d":u'Gramplet zeigt Details einer Person',"z":'MediaBrowser.addon.tgz'}

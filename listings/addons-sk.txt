@@ -1,3 +1,4 @@
+{"t":u'Gramplet',"i":'Headline News Gramplet',"n":u'Gramplet Novinky',"v":'1.0.20',"g":'4.0',"d":u'Gramplet for showing latest the Gramps news',"z":'HeadlineNewsGramplet.addon.tgz'}
 {"t":'Exporter',"i":'Export GEDCOM Extensions',"n":'Export GEDCOM Extensions (GED2)',"v":'1.0.8',"g":'4.0',"d":'Extensions to the common GEDCOM format.',"z":'GedcomExtensions.addon.tgz'}
 {"t":'Exporter',"i":'Raw Export',"n":u'Raw Export',"v":'1.0.19',"g":'4.0',"d":u'This is a raw python object dump',"z":'ExportRaw.addon.tgz'}
 {"t":'Exporter',"i":'ex_sqlite',"n":u'SQLite Export',"v":'1.0.20',"g":'4.0',"d":u'SQLite is a common local database format',"z":'Sqlite.addon.tgz'}
@@ -13,7 +14,7 @@
 {"t":'Gramplet',"i":'Extended Family Attributes',"n":'Extended Family Attributes',"v":'1.0.14',"g":'4.0',"d":'Gramplet showing the attributes of a family',"z":'ExtendedAttributes.addon.tgz'}
 {"t":'Gramplet',"i":'Extended Person Attributes',"n":'Extended Person Attributes',"v":'1.0.14',"g":'4.0',"d":'Gramplet showing the attributes of a person',"z":'ExtendedAttributes.addon.tgz'}
 {"t":'Gramplet',"i":'Face Detection',"n":'Face Detection',"v":'1.0.11',"g":'4.0',"d":'Gramplet for detecting and assigning faces',"z":'FaceDetection.addon.tgz'}
-{"t":'Gramplet',"i":'Headline News Gramplet',"n":u'Gramplet Novinky',"v":'1.0.19',"g":'4.0',"d":u'Gramplet for showing latest the Gramps news',"z":'HeadlineNewsGramplet.addon.tgz'}
+{"t":u'Gramplet',"i":'Headline News Gramplet',"n":u'Gramplet Novinky',"v":'1.0.20',"g":'4.0',"d":u'Gramplet for showing latest the Gramps news',"z":'HeadlineNewsGramplet.addon.tgz'}
 {"t":'Gramplet',"i":'Import Gramplet',"n":'Import Gramplet',"v":'1.0.18',"g":'4.0',"d":'Gramplet for importing text',"z":'ImportGramplet.addon.tgz'}
 {"t":'Gramplet',"i":'LastChangeGramplet',"n":'Last Change Gramplet',"v":'0.0.21',"g":'4.0',"d":'List the last ten person records that have been changed',"z":'LastChange.addon.tgz'}
 {"t":'Gramplet',"i":'MediaBrowser',"n":'Media Browser',"v":'1.0.13',"g":'4.0',"d":'Gramplet showing details of a person',"z":'MediaBrowser.addon.tgz'}

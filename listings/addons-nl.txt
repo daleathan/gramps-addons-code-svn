@@ -1,3 +1,4 @@
+{"t":u'Gramplet',"i":'Headline News Gramplet',"n":u'Laatste nieuws',"v":'1.0.20',"g":'4.0',"d":u'Gramplet die het laatste Gramps-nieuws toont',"z":'HeadlineNewsGramplet.addon.tgz'}
 {"t":'Exporter',"i":'Export GEDCOM Extensions',"n":'Export GEDCOM Extensions (GED2)',"v":'1.0.8',"g":'4.0',"d":'Extensions to the common GEDCOM format.',"z":'GedcomExtensions.addon.tgz'}
 {"t":'Exporter',"i":'Raw Export',"n":u'Ruwe export',"v":'1.0.19',"g":'4.0',"d":u"Dit is een ruwe 'python object'-dump","z":'ExportRaw.addon.tgz'}
 {"t":'Exporter',"i":'ex_sqlite',"n":u"'SQLite'-export","v":'1.0.20',"g":'4.0',"d":u"'SQLite' is een veel gebruikt lokaal gegevensbestandsformaat","z":'Sqlite.addon.tgz'}
@@ -13,7 +14,7 @@
 {"t":'Gramplet',"i":'Extended Family Attributes',"n":u'Uitgebreide familiekenmerken',"v":'1.0.14',"g":'4.0',"d":u'Gramplet die de kenmerken van een familie toont',"z":'ExtendedAttributes.addon.tgz'}
 {"t":'Gramplet',"i":'Extended Person Attributes',"n":u'Uitgebreide persoonskenmerken',"v":'1.0.14',"g":'4.0',"d":u'Gramplet die de kenmerken van een persoon toont',"z":'ExtendedAttributes.addon.tgz'}
 {"t":'Gramplet',"i":'Face Detection',"n":u'Gelaatsherkenning',"v":'1.0.11',"g":'4.0',"d":u'Gramplet om gelaatstrekken te detecteren en toe te kennen',"z":'FaceDetection.addon.tgz'}
-{"t":'Gramplet',"i":'Headline News Gramplet',"n":u'Laatste nieuws',"v":'1.0.19',"g":'4.0',"d":u'Gramplet die het laatste Gramps-nieuws toont',"z":'HeadlineNewsGramplet.addon.tgz'}
+{"t":u'Gramplet',"i":'Headline News Gramplet',"n":u'Laatste nieuws',"v":'1.0.20',"g":'4.0',"d":u'Gramplet die het laatste Gramps-nieuws toont',"z":'HeadlineNewsGramplet.addon.tgz'}
 {"t":'Gramplet',"i":'Import Gramplet',"n":u'Import',"v":'1.0.18',"g":'4.0',"d":u'Gramplet om tekst te importeren',"z":'ImportGramplet.addon.tgz'}
 {"t":'Gramplet',"i":'LastChangeGramplet',"n":u'Laatste wijzigingen',"v":'0.0.21',"g":'4.0',"d":u'De tien laatst gewijzigde persoonsgegevens worden gelijst',"z":'LastChange.addon.tgz'}
 {"t":'Gramplet',"i":'MediaBrowser',"n":u'Media-browser',"v":'1.0.13',"g":'4.0',"d":u'Gramplet die de persoonsdetails toont',"z":'MediaBrowser.addon.tgz'}

@@ -1,3 +1,4 @@
+{"t":u'Gramplet',"i":'Headline News Gramplet',"n":u'Gramplet R\xe9sum\xe9',"v":'1.0.20',"g":'4.0',"d":u'Gramplet pour afficher les derni\xe8res nouvelles de Gramps',"z":'HeadlineNewsGramplet.addon.tgz'}
 {"t":'Exporter',"i":'Export GEDCOM Extensions',"n":u'Exportation des extensions Gedcom (GED2)',"v":'1.0.8',"g":'4.0',"d":u'Extensions du format courant Gedcom.',"z":'GedcomExtensions.addon.tgz'}
 {"t":'Exporter',"i":'Raw Export',"n":u'Export brut',"v":'1.0.19',"g":'4.0',"d":u"Ceci est une image brute d'objet python","z":'ExportRaw.addon.tgz'}
 {"t":'Exporter',"i":'ex_sqlite',"n":u'Exportation SQLite',"v":'1.0.20',"g":'4.0',"d":u'SQLite est un format courant de base de donn\xe9es locale',"z":'Sqlite.addon.tgz'}
@@ -13,7 +14,7 @@
 {"t":'Gramplet',"i":'Extended Family Attributes',"n":u'Attributs \xe9tendus de la famille',"v":'1.0.14',"g":'4.0',"d":u"Gramplet affichant les attributs d'une famille","z":'ExtendedAttributes.addon.tgz'}
 {"t":'Gramplet',"i":'Extended Person Attributes',"n":u"Attributs \xe9tendus de l'individu","v":'1.0.14',"g":'4.0',"d":u"Gramplet affichant les attributs d'un individu","z":'ExtendedAttributes.addon.tgz'}
 {"t":'Gramplet',"i":'Face Detection',"n":u'D\xe9tection de visage',"v":'1.0.11',"g":'4.0',"d":u'Gramplet pour d\xe9tecter et assigner des visages',"z":'FaceDetection.addon.tgz'}
-{"t":'Gramplet',"i":'Headline News Gramplet',"n":u'Gramplet R\xe9sum\xe9',"v":'1.0.19',"g":'4.0',"d":u'Gramplet pour afficher les derni\xe8res nouvelles de Gramps',"z":'HeadlineNewsGramplet.addon.tgz'}
+{"t":u'Gramplet',"i":'Headline News Gramplet',"n":u'Gramplet R\xe9sum\xe9',"v":'1.0.20',"g":'4.0',"d":u'Gramplet pour afficher les derni\xe8res nouvelles de Gramps',"z":'HeadlineNewsGramplet.addon.tgz'}
 {"t":'Gramplet',"i":'Import Gramplet',"n":u'Gramplet Importation',"v":'1.0.18',"g":'4.0',"d":u'Gramplet pour importer du texte',"z":'ImportGramplet.addon.tgz'}
 {"t":'Gramplet',"i":'LastChangeGramplet',"n":u'Gramplet Derni\xe8res modifications',"v":'0.0.21',"g":'4.0',"d":u'Liste les dix derniers individus modifi\xe9s',"z":'LastChange.addon.tgz'}
 {"t":'Gramplet',"i":'MediaBrowser',"n":u'Navigateur Media',"v":'1.0.13',"g":'4.0',"d":u"Gramplet affichant les d\xe9tails de l'individu","z":'MediaBrowser.addon.tgz'}
