@@ -283,7 +283,7 @@ class PhotoTaggingGramplet(Gramplet):
         self.treeview.set_size_request(400, -1)
         self.treeview.connect("cursor-changed", self.cursor_changed)
         self.treeview.connect("row-activated", self.row_activated)
-        column1 = gtk.TreeViewColumn(_(''))
+        column1 = gtk.TreeViewColumn('')
         column2 = gtk.TreeViewColumn(_('Preview'))
         column3 = gtk.TreeViewColumn(_('Person'))
         self.treeview.append_column(column1)
