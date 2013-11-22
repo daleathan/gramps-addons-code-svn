@@ -541,6 +541,8 @@ class PhotoTaggingGramplet(Gramplet):
 
         # populate the context menu
         persons = self.all_referenced_persons()
+        if selected.person is not None:
+            persons.remove(selected.person)
         if persons:
             self.additional_items.append(gtk.SeparatorMenuItem())
             sorted_persons = sorted(list(persons), key=name_displayer.display)
