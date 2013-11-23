@@ -82,17 +82,29 @@ CONFIG = config.register_manager(GRAMPLET_CONFIG_NAME)
 CONFIG.register("detection.box_size", (50,50))
 CONFIG.register("detection.inside_existing_boxes", False)
 CONFIG.register("selection.replace_without_asking", False)
+CONFIG.register("list.show_number", True)
+CONFIG.register("list.show_thumbnail", True)
+CONFIG.register("list.show_name", True)
+CONFIG.register("list.show_age", True)
 CONFIG.load()
 CONFIG.save()
 
 MIN_FACE_SIZE = CONFIG.get("detection.box_size")
 REPLACE_WITHOUT_ASKING = CONFIG.get("selection.replace_without_asking")
 DETECT_INSIDE_EXISTING_BOXES = CONFIG.get("detection.inside_existing_boxes")
+SHOW_NUMBER = CONFIG.get("list.show_number")
+SHOW_THUMBNAIL = CONFIG.get("list.show_thumbnail")
+SHOW_NAME = CONFIG.get("list.show_name")
+SHOW_AGE = CONFIG.get("list.show_age")
 
 def save_config():
     CONFIG.set("detection.box_size", MIN_FACE_SIZE)
     CONFIG.set("detection.inside_existing_boxes", DETECT_INSIDE_EXISTING_BOXES)
     CONFIG.set("selection.replace_without_asking", REPLACE_WITHOUT_ASKING)
+    CONFIG.set("list.show_number", SHOW_NUMBER)
+    CONFIG.set("list.show_thumbnail", SHOW_THUMBNAIL)
+    CONFIG.set("list.show_name", SHOW_NAME)
+    CONFIG.set("list.show_age", SHOW_AGE)
     CONFIG.save()
 
 #-------------------------------------------------------------------------
@@ -132,15 +144,33 @@ class PhotoTaggingOptions(MenuOptions):
         menu.add_option(category_name, "detect_inside_existing_boxes",
                         self.detect_inside_existing_boxes)
 
+        category_name = _("List columns")
+        self.show_number = BooleanOption(_("Show number"), SHOW_NUMBER)
+        self.show_thumbnail = BooleanOption(_("Show thumbnail image"), SHOW_THUMBNAIL)
+        self.show_name = BooleanOption(_("Show name"), SHOW_NAME)
+        self.show_age = BooleanOption(_("Show age"), SHOW_AGE)
+        menu.add_option(category_name, "show_number", self.show_number)
+        menu.add_option(category_name, "show_thumbnail", self.show_thumbnail)
+        menu.add_option(category_name, "show_name", self.show_name)
+        menu.add_option(category_name, "show_age", self.show_age)
+
     def update_settings(self):
         global REPLACE_WITHOUT_ASKING
         global DETECT_INSIDE_EXISTING_BOXES
         global MIN_FACE_SIZE
+        global SHOW_NUMBER
+        global SHOW_THUMBNAIL
+        global SHOW_NAME
+        global SHOW_AGE
         REPLACE_WITHOUT_ASKING = self.replace_without_asking.get_value()
         DETECT_INSIDE_EXISTING_BOXES = self.detect_inside_existing_boxes.get_value()
         width = self.min_face_width.get_value()
         height = self.min_face_height.get_value()
         MIN_FACE_SIZE = (width, height)
+        SHOW_NUMBER = self.show_number.get_value()
+        SHOW_THUMBNAIL = self.show_thumbnail.get_value()
+        SHOW_NAME = self.show_name.get_value()
+        SHOW_AGE = self.show_age.get_value()
         save_config()
 
 #-------------------------------------------------------------------------
@@ -151,11 +181,12 @@ class PhotoTaggingOptions(MenuOptions):
 
 class SettingsDialog(PluginWindows.ToolManagedWindowBase):
 
-    def __init__(self, dbstate, uistate, title, options):
+    def __init__(self, dbstate, uistate, title, options, parent):
         self.dbstate = dbstate
         self.uistate = uistate
         self.title = title
         self.options = options
+        self.parent = parent
 
         PluginWindows.ToolManagedWindowBase.__init__(self, 
           dbstate, uistate, None, "SettingsDialog")
@@ -168,6 +199,7 @@ class SettingsDialog(PluginWindows.ToolManagedWindowBase):
 
     def on_ok_clicked(self, obj):
         self.options.update_settings()
+        self.parent.set_column_visibility()
         self.close()
 
 #-------------------------------------------------------------------------
@@ -277,7 +309,7 @@ class PhotoTaggingGramplet(Gramplet):
 
         hpaned.pack1(self.selection_widget, resize=True, shrink=False)
 
-        self.treestore = gtk.TreeStore(int, gtk.gdk.Pixbuf, str)
+        self.treestore = gtk.TreeStore(int, gtk.gdk.Pixbuf, str, str)
 
         self.treeview = gtk.TreeView(self.treestore)
         self.treeview.set_size_request(400, -1)
@@ -286,23 +318,31 @@ class PhotoTaggingGramplet(Gramplet):
         column1 = gtk.TreeViewColumn('')
         column2 = gtk.TreeViewColumn(_('Preview'))
         column3 = gtk.TreeViewColumn(_('Person'))
+        column4 = gtk.TreeViewColumn(_('Age'))
         self.treeview.append_column(column1)
         self.treeview.append_column(column2)
         self.treeview.append_column(column3)
+        self.treeview.append_column(column4)
 
         cell1 = gtk.CellRendererText()
         cell2 = gtk.CellRendererPixbuf()
         cell3 = gtk.CellRendererText()
+        cell4 = gtk.CellRendererText()
         column1.pack_start(cell1, True)
         column1.add_attribute(cell1, 'text', 0)
         column2.pack_start(cell2, True)
         column2.add_attribute(cell2, 'pixbuf', 1)
         column3.pack_start(cell3, True)
         column3.add_attribute(cell3, 'text', 2)
+        column4.pack_start(cell4, True)
+        column4.add_attribute(cell4, 'text', 3)
 
         self.treeview.set_search_column(0)
         column1.set_sort_column_id(0)
         column3.set_sort_column_id(2)
+        column4.set_sort_column_id(3)
+
+        self.set_column_visibility()
 
         # Drag and Drop
         self.treeview.drag_dest_set(gtk.DEST_DEFAULT_MOTION |
@@ -673,7 +713,7 @@ class PhotoTaggingGramplet(Gramplet):
     def settings_clicked(self, event):
         try:
             SettingsDialog(self.gui.dbstate, self.gui.uistate, 
-                           _("Settings"), PhotoTaggingOptions())
+                           _("Settings"), PhotoTaggingOptions(), self)
         except Errors.WindowActiveError:
             pass
 
@@ -801,12 +841,27 @@ class PhotoTaggingGramplet(Gramplet):
     # refreshing the list
     # ======================================================
 
+    def set_column_visibility(self):
+        self.treeview.get_column(0).set_visible(SHOW_NUMBER)
+        self.treeview.get_column(1).set_visible(SHOW_THUMBNAIL)
+        self.treeview.get_column(2).set_visible(SHOW_NAME)
+        self.treeview.get_column(3).set_visible(SHOW_AGE)
+
     def refresh_list(self):
         self.treestore.clear()
         for (i, region) in enumerate(self.regions, start=1):
             name = name_displayer.display(region.person) if region.person else ""
             thumbnail = self.selection_widget.get_thumbnail(region, THUMBNAIL_IMAGE_SIZE)
-            self.treestore.append(None, (i, thumbnail, name))
+            age = ''
+            media = self.get_current_object()
+            image_date = media.date
+            if image_date is not None and image_date.get_year() > 0:
+                birth_ref = region.person.get_birth_ref()
+                if birth_ref is not None:
+                    birth = self.dbstate.db.get_event_from_handle(birth_ref.ref)
+                    birth_date = birth.get_date_object()
+                    age = '{}'.format((image_date - birth_date)[0])
+            self.treestore.append(None, (i, thumbnail, name, age))
 
     def refresh_selection(self):
         if self.selection_widget.get_current():
