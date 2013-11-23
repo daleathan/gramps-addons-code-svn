@@ -20,7 +20,7 @@
 {"t":'Gramplet',"i":'MediaBrowser',"n":u'Media-browser',"v":'1.0.13',"g":'4.0',"d":u'Gramplet die de persoonsdetails toont',"z":'MediaBrowser.addon.tgz'}
 {"t":'Gramplet',"i":'Note Gramplet',"n":u'Opmerkingen',"v":'1.0.17',"g":'4.0',"d":u'Gramplet om de opmerkingen van de actieve persoon te bewerken',"z":'NoteGramplet.addon.tgz'}
 {"t":'Gramplet',"i":'Participants',"n":'Participants',"v":'1.0.2',"g":'4.0',"d":'Gramplet showing the participants in an event',"z":'Participants.addon.tgz'}
-{"t":'Gramplet',"i":'Photo Tagging',"n":'Photo Tagging',"v":'1.0.8',"g":'4.0',"d":'Gramplet for tagging people in photos',"z":'PhotoTaggingGramplet.addon.tgz'}
+{"t":'Gramplet',"i":'Photo Tagging',"n":'Photo Tagging',"v":'1.0.9',"g":'4.0',"d":'Gramplet for tagging people in photos',"z":'PhotoTaggingGramplet.addon.tgz'}
 {"t":'Gramplet',"i":'Python Gramplet',"n":u'Python-shell',"v":'1.0.16',"g":'4.0',"d":u'Interactieve Python-interpreter',"z":'PythonGramplet.addon.tgz'}
 {"t":'Gramplet',"i":'Query Gramplet',"n":u'Zoeken',"v":'1.0.14',"g":'4.0',"d":u"Gramplet om 'SQL'-achtige zoekopdrachten in te geven","z":'Query.addon.tgz'}
 {"t":'Gramplet',"i":'Related Relatives Gramplet',"n":u'Aanverwanten',"v":'1.0.15',"g":'4.0',"d":u'Gramplet die de verwanten in een verwantschap toont',"z":'RelatedRelativesGramplet.addon.tgz'}
