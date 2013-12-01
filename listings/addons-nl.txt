@@ -1,3 +1,4 @@
+{"t":u'Gramplet',"i":'Wordle Gramplet',"n":'Wordle Gramplet',"v":'1.0.7',"g":'3.4',"d":'Gramplet used to make word clouds with wordle.net',"z":'WordleGramplet.addon.tgz'}
 {"t":u'Exporter',"i":'Raw Export',"n":'Ruwe export',"v":'1.0.10',"g":'3.4',"d":"Dit is een ruwe 'python object'-dump","z":'ExportRaw.addon.tgz'}
 {"t":u'Exporter',"i":'ex_sqlite',"n":"'Sqlite'-export","v":'1.0.14',"g":'3.4',"d":"'Sqlite' is een veel gebruikt lokaal gegevensbestandsformaat","z":'Sqlite.addon.tgz'}
 {"t":u'Exporter',"i":'export_django',"n":'Django-export',"v":'1.0.13',"g":'3.4',"d":'Django is een webstructuur die draait op een geconfigureerd gegevensbestand',"z":'Django.addon.tgz'}

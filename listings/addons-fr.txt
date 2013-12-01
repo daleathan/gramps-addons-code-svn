@@ -1,3 +1,4 @@
+{"t":u'Gramplet',"i":'Wordle Gramplet',"n":'Wordle Gramplet',"v":'1.0.7',"g":'3.4',"d":'Gramplet used to make word clouds with wordle.net',"z":'WordleGramplet.addon.tgz'}
 {"t":u'Exporter',"i":'Raw Export',"n":'Export brut',"v":'1.0.10',"g":'3.4',"d":"Ceci est une image brute d'objet python","z":'ExportRaw.addon.tgz'}
 {"t":u'Exporter',"i":'ex_sqlite',"n":'Exportation SQLite',"v":'1.0.14',"g":'3.4',"d":'SQLite est un format courant de base de donn\xc3\xa9es locale',"z":'Sqlite.addon.tgz'}
 {"t":u'Exporter',"i":'export_django',"n":'Export Django',"v":'1.0.13',"g":'3.4',"d":'Django est un environnement internet fonctionnant avec une base de donn\xc3\xa9es configur\xc3\xa9e',"z":'Django.addon.tgz'}
