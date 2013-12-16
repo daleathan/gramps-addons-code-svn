@@ -53,6 +53,12 @@ else:
 if not os.path.isdir(GRAMPSPATH + "/po"):
     raise ValueError("Where is GRAMPSPATH/po: '%s/po'? Use 'GRAMPSPATH=path python make.py ...'" % GRAMPSPATH)
 
+if (("LANG" not in os.environ) or 
+    (not os.environ["LANG"].startswith("en"))):
+    raise ValueError("LANG should explicitly be english; Use 'LANG=en_US.UTF-8 python make.py...' or similar")
+else:
+    print("make.py: LANG is %s... good!" % os.environ["LANG"])
+
 command = sys.argv[1]
 if len(sys.argv) >= 3:
     addon = sys.argv[2]
@@ -378,4 +384,4 @@ elif command == "listing":
                 fp_out.close()
                 shutil.move("../listings/addons-%s.new" % lang, "../listings/addons-%s.txt" % lang)
 else:
-    raise AttributeError("unknown command")
+    raise AttributeError("unknown command; Use clean, init, update, build, or listing")
