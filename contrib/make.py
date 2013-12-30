@@ -244,15 +244,13 @@ elif command in ["compile"]:
         dirs = [file for file in glob.glob("*") if os.path.isdir(file)]
         for addon in dirs:
             for po in glob.glob(r('''%(addon)s/po/*.po''')):
-                length= len(po)
-                locale = po[length-11:length-9]
+                locale = os.path.basename(po[:-9])
                 system('''mkdir -p "%(addon)s/locale/%(locale)s/LC_MESSAGES/"''')
                 system('''msgfmt %(po)s '''
                        '''-o "%(addon)s/locale/%(locale)s/LC_MESSAGES/addon.mo"''')
     else:
         for po in glob.glob(r('''%(addon)s/po/*.po''')):
-            length= len(po)
-            locale = po[length-11:length-9]
+            locale = os.path.basename(po[:-9])
             system('''mkdir -p "%(addon)s/locale/%(locale)s/LC_MESSAGES/"''')
             system('''msgfmt %(po)s '''
                    '''-o "%(addon)s/locale/%(locale)s/LC_MESSAGES/addon.mo"''')
@@ -263,8 +261,7 @@ elif command == "build":
         # Compile all:
         for addon in dirs:
             for po in glob.glob(r('''%(addon)s/po/*.po''')):
-                length= len(po)
-                locale = po[length-11:length-9]
+                locale = os.path.basename(po[:-9])
                 system('''mkdir -p "%(addon)s/locale/%(locale)s/LC_MESSAGES/"''')
                 system('''msgfmt %(po)s '''
                        '''-o "%(addon)s/locale/%(locale)s/LC_MESSAGES/addon.mo"''')
@@ -286,8 +283,7 @@ elif command == "build":
                    files=files_str)
     else:
         for po in glob.glob(r('''%(addon)s/po/*.po''')):
-                length= len(po)
-                locale = po[length-11:length-9]
+                locale = os.path.basename(po[:-9])
                 system('''mkdir -p "%(addon)s/locale/%(locale)s/LC_MESSAGES/"''')
                 system('''msgfmt %(po)s '''
                        '''-o "%(addon)s/locale/%(locale)s/LC_MESSAGES/addon.mo"''')
@@ -317,9 +313,8 @@ elif command == "listing":
     # Make the locale for for any local languages for Addon:
     for addon in dirs:
         for po in glob.glob(r('''%(addon)s/po/*-local.po''')):
-            length= len(po)
             # Compile
-            locale = po[length-11:length-9]
+            locale = os.path.basename(po[:-9])
             system('''mkdir -p "%(addon)s/locale/%(locale)s/LC_MESSAGES/"''')
             system('''msgfmt %(po)s '''
                    '''-o "%(addon)s/locale/%(locale)s/LC_MESSAGES/addon.mo"''')
