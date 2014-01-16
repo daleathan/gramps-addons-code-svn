@@ -1,29 +1,31 @@
-# Finnish translation for Gramps
 # $Id: fi.po 22700 2013-07-21 06:57:33Z vassilii $
 # This file is distributed under the same license as the Gramps package.
 # Copyright (C) YEAR ORGANIZATION.
+# Pekka Valta <pekka.valta@kolumbus.fi>, 2013.
 msgid ""
 msgstr ""
 "Project-Id-Version: fi\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-01-02 10:27+0100\n"
-"PO-Revision-Date: 2009-11-24 00:06+0200\n"
-"Last-Translator: \n"
-"Language-Team:  <fi@li.org>\n"
-"Language: \n"
+"POT-Creation-Date: 2014-01-02 10:270100\n"
+"PO-Revision-Date: 2014-01-15 21:40+0200\n"
+"Last-Translator: Pekka Valta <pekka.valta@kolumbus.fi>\n"
+"Language-Team: Pekka Valta <pekka.valta@kolumbus.fi>\n"
+"Language: fi_FI\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: pygettext.py 1.4\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 1.6.3\n"
+"X-Poedit-SourceCharset: UTF-8\n"
 
 #: DataEntryGramplet/DataEntryGramplet.gpr.py:8
 msgid "Data Entry Gramplet"
-msgstr ""
+msgstr "Tiedonsyöttö Gramplet"
 
 #: DataEntryGramplet/DataEntryGramplet.gpr.py:9
 msgid "Gramplet for quick data entry"
-msgstr ""
+msgstr "Gramplet, jolla pikasyötetään tietoja"
 
 #: DataEntryGramplet/DataEntryGramplet.gpr.py:13
 msgid "Data Entry"
@@ -31,7 +33,7 @@ msgstr "Muokkain"
 
 #: DataEntryGramplet/DataEntryGramplet.py:69
 msgid "Active person"
-msgstr ""
+msgstr "Aktiivinen henkilö"
 
 #: DataEntryGramplet/DataEntryGramplet.py:71
 msgid "Family:"
@@ -39,12 +41,12 @@ msgstr "Perhe:"
 
 #: DataEntryGramplet/DataEntryGramplet.py:72
 msgid "Sources?"
-msgstr ""
+msgstr "Lähteet?"
 
 #: DataEntryGramplet/DataEntryGramplet.py:74
 #: DataEntryGramplet/DataEntryGramplet.py:107
 msgid "Surname, Given"
-msgstr ""
+msgstr "Sukunimi, etunimi"
 
 #: DataEntryGramplet/DataEntryGramplet.py:75
 #: DataEntryGramplet/DataEntryGramplet.py:108
@@ -69,7 +71,7 @@ msgstr "tuntematon"
 #: DataEntryGramplet/DataEntryGramplet.py:75
 #: DataEntryGramplet/DataEntryGramplet.py:109
 msgid "other"
-msgstr ""
+msgstr "muu"
 
 #: DataEntryGramplet/DataEntryGramplet.py:76
 #: DataEntryGramplet/DataEntryGramplet.py:78
@@ -83,7 +85,7 @@ msgstr "Lähde"
 #: DataEntryGramplet/DataEntryGramplet.py:78
 #: DataEntryGramplet/DataEntryGramplet.py:110
 msgid "Birth"
-msgstr "Syntymä"
+msgstr "Syntymä "
 
 #: DataEntryGramplet/DataEntryGramplet.py:79
 #: DataEntryGramplet/DataEntryGramplet.py:111
@@ -92,55 +94,55 @@ msgstr "Kuolema"
 
 #: DataEntryGramplet/DataEntryGramplet.py:87
 msgid "Save"
-msgstr ""
+msgstr "Talleta"
 
 #: DataEntryGramplet/DataEntryGramplet.py:90
 msgid "Abandon"
-msgstr ""
+msgstr "Peru"
 
 #: DataEntryGramplet/DataEntryGramplet.py:95
 msgid "New person"
-msgstr ""
+msgstr "Uusi henkilö"
 
 #: DataEntryGramplet/DataEntryGramplet.py:96
 msgid "Add relation"
-msgstr ""
+msgstr "Lisää suhde"
 
 #: DataEntryGramplet/DataEntryGramplet.py:97
 msgid "No relation to active person"
-msgstr ""
+msgstr "Ei suhdetta aktiiviseen henkilöön"
 
 #: DataEntryGramplet/DataEntryGramplet.py:98
 msgid "Add as a Parent"
-msgstr ""
+msgstr "Lisää vanhemmaksi"
 
 #: DataEntryGramplet/DataEntryGramplet.py:99
 msgid "Add as a Mother"
-msgstr ""
+msgstr "Lisää äidiksi"
 
 #: DataEntryGramplet/DataEntryGramplet.py:100
 msgid "Add as a Father"
-msgstr ""
+msgstr "Lisää isäksi"
 
 #: DataEntryGramplet/DataEntryGramplet.py:101
 msgid "Add as a Spouse"
-msgstr ""
+msgstr "Lisää puolisoksi"
 
 #: DataEntryGramplet/DataEntryGramplet.py:102
 msgid "Add as a Wife"
-msgstr ""
+msgstr "Lisää vaimoksi"
 
 #: DataEntryGramplet/DataEntryGramplet.py:103
 msgid "Add as a Husband"
-msgstr ""
+msgstr "Lisää mieheksi"
 
 #: DataEntryGramplet/DataEntryGramplet.py:104
 msgid "Add as a Sibling"
-msgstr ""
+msgstr "Lisää sisarukseksi"
 
 #: DataEntryGramplet/DataEntryGramplet.py:105
 msgid "Add as a Child"
-msgstr ""
+msgstr "Lisää lapseksi"
 
 #: DataEntryGramplet/DataEntryGramplet.py:119
 msgid "Add"
@@ -148,7 +150,7 @@ msgstr "Lisää"
 
 #: DataEntryGramplet/DataEntryGramplet.py:122
 msgid "Copy Active Data"
-msgstr ""
+msgstr "Kopioi aktiivit tiedot"
 
 #: DataEntryGramplet/DataEntryGramplet.py:125
 msgid "Clear"
@@ -164,15 +166,15 @@ msgstr ""
 #: DataEntryGramplet/DataEntryGramplet.py:571
 #, python-format
 msgid "Gramplet Data Edit: %s"
-msgstr ""
+msgstr "Gramplet tietojen muokkaus: %s"
 
 #: DataEntryGramplet/DataEntryGramplet.py:517
 msgid "Please provide a name."
-msgstr ""
+msgstr "Annapa nimi."
 
 #: DataEntryGramplet/DataEntryGramplet.py:517
 msgid "Can't add new person."
-msgstr ""
+msgstr "Henkilön lisäys ei onnistu."
 
 #: DataEntryGramplet/DataEntryGramplet.py:525
 #: DataEntryGramplet/DataEntryGramplet.py:533
@@ -183,25 +185,25 @@ msgstr ""
 #: DataEntryGramplet/DataEntryGramplet.py:562
 #: DataEntryGramplet/DataEntryGramplet.py:567
 msgid "Please set an active person."
-msgstr ""
+msgstr "Asetapa aktiivinen henkilö."
 
 #: DataEntryGramplet/DataEntryGramplet.py:525
 #: DataEntryGramplet/DataEntryGramplet.py:528
 msgid "Can't add new person as a parent."
-msgstr ""
+msgstr "Henkilön lisääminen vanhemmaksi ei onnistu."
 
 #: DataEntryGramplet/DataEntryGramplet.py:528
 #: DataEntryGramplet/DataEntryGramplet.py:547
 msgid "Please set the new person's gender."
-msgstr ""
+msgstr "Annapa henkilön sukupuoli."
 
 #: DataEntryGramplet/DataEntryGramplet.py:533
 msgid "Can't add new person as a mother."
-msgstr ""
+msgstr "Henkilön lisääminen äidiksi ei onnistu."
 
 #: DataEntryGramplet/DataEntryGramplet.py:538
 msgid "Can't add new person as a father."
-msgstr ""
+msgstr "Henkilön lisääminen isäksi ei onnistu."
 
 #: DataEntryGramplet/DataEntryGramplet.py:543
 #: DataEntryGramplet/DataEntryGramplet.py:547
@@ -209,42 +211,42 @@ msgstr ""
 #: DataEntryGramplet/DataEntryGramplet.py:807
 #: DataEntryGramplet/DataEntryGramplet.py:840
 msgid "Can't add new person as a spouse."
-msgstr ""
+msgstr "Henkilön lisääminen puolisoksi ei onnistu."
 
 #: DataEntryGramplet/DataEntryGramplet.py:552
 msgid "Can't add new person as a wife."
-msgstr ""
+msgstr "Henkilön lisääminen vaimoksi ei onnistu."
 
 #: DataEntryGramplet/DataEntryGramplet.py:557
 msgid "Can't add new person as a husband."
-msgstr ""
+msgstr "Henkilön lisääminen mieheksi ei onnistu."
 
 #: DataEntryGramplet/DataEntryGramplet.py:562
 msgid "Can't add new person as a sibling."
-msgstr ""
+msgstr "Henkilön lisääminen sisasukseksi ei onnistu."
 
 #: DataEntryGramplet/DataEntryGramplet.py:567
 #: DataEntryGramplet/DataEntryGramplet.py:940
 msgid "Can't add new person as a child."
-msgstr ""
+msgstr "Henkilön lisääminen lapseksi ei onnistu."
 
 #: DataEntryGramplet/DataEntryGramplet.py:765
 msgid "Please set Active person."
-msgstr ""
+msgstr "Asetapa aktiivinen henkilö"
 
 #: DataEntryGramplet/DataEntryGramplet.py:766
 msgid "Can't add new person as a spouse to no one."
-msgstr ""
+msgstr "Henkilön asettaminen kenenkään puolisoksi ei onnistu."
 
 #: DataEntryGramplet/DataEntryGramplet.py:769
 msgid "Please set gender on Active or new person."
-msgstr ""
+msgstr "Asetapa suokupuoli aktiiviselle tai uudelle henkilölle."
 
 #: DataEntryGramplet/DataEntryGramplet.py:806
 #: DataEntryGramplet/DataEntryGramplet.py:839
 msgid "Same genders on Active and new person."
-msgstr ""
+msgstr "Sama sukupuoli aktiiviselle j uudelle henkilölle."
 
 #: DataEntryGramplet/DataEntryGramplet.py:939
 msgid "Please set gender on Active person."
-msgstr ""
+msgstr "Asetapa sukupuoli aktiiviselle henkilölle"

@@ -1,45 +1,47 @@
-# Finnish translation for Gramps
 # $Id: fi.po 22700 2013-07-21 06:57:33Z vassilii $
 # This file is distributed under the same license as the Gramps package.
 # Copyright (C) YEAR ORGANIZATION.
 #
 # Eero Tamminen <eerot@sf>, 2005, 2006, 2007, 2008.
-# Janne Kovesjärvi <janne.kovesjarvi@gmail.com>, 2008, 2009.
+# Janne Kovesj채rvi <janne.kovesjarvi@gmail.com>, 2008, 2009.
 msgid ""
 msgstr ""
 "Project-Id-Version: fi\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-01-02 10:36+0100\n"
-"PO-Revision-Date: 2009-11-24 00:06+0200\n"
-"Last-Translator: Janne Kovesjärvi <janne.kovesjarvi@gmail.com>\n"
-"Language-Team:  <fi@li.org>\n"
-"Language: \n"
+"POT-Creation-Date: 2014-01-02 10:360100\n"
+"PO-Revision-Date: 2014-01-15 20:33+0200\n"
+"Last-Translator: Pekka Valta <pekka.valta@kolumbus.fi>\n"
+"Language-Team: Pekka Valta <pekka.valta@kolumbus.fi>\n"
+"Language: fi_FI\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: pygettext.py 1.4\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 1.6.3\n"
+"X-Poedit-SourceCharset: UTF-8\n"
 
 #: DescendantCount/DescendantCount.gpr.py:3
 #: DescendantCount/DescendantCount.gpr.py:24
+#, fuzzy
 msgid "Descendant Count"
-msgstr ""
+msgstr "Jälkeläismäärä"
 
 #: DescendantCount/DescendantCount.gpr.py:7
 msgid "Display descendant counts for each person."
-msgstr ""
+msgstr "Näytä jokaiselle henkilölle jälkeläismäärä"
 
 #: DescendantCount/DescendantCount.gpr.py:17
 msgid "Descendant Count Gramplet"
-msgstr ""
+msgstr "Jälkeläismäärä Gramplet"
 
 #: DescendantCount/DescendantCount.gpr.py:18
 msgid "Gramplet for showing people and descendant counts"
-msgstr ""
+msgstr "Gramplet joa näyttää henkilöt ja jälkeläismäärät"
 
 #: DescendantCount/DescendantCount.py:84
 msgid "Descendent Count"
-msgstr ""
+msgstr "Jälkeläismäärä"
 
 #: DescendantCount/DescendantCount.py:86
 msgid "Person"
@@ -47,9 +49,9 @@ msgstr "Henkilö"
 
 #: DescendantCount/DescendantCount.py:86
 msgid "Number of Descendants"
-msgstr ""
+msgstr "Jälkeläisten lukumäärä"
 
 #: DescendantCount/DescendantCount.py:95
 #, python-format
 msgid "There are %d people.\n"
-msgstr ""
+msgstr "Henkilöitä on %d .\n"
