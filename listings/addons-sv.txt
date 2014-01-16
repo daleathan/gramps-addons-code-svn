@@ -1,3 +1,4 @@
+{"t":u'Biblioth\xe8que additionnelle',"i":'DE Web Connect Pack',"n":u'DE Web Connect Pack',"v":'0.0.13',"g":'4.0',"d":u'Collection of Web sites for the DE (requires libwebconnect)',"z":'DEWebConnectPack.addon.tgz'}
 {"t":u'Gramplet',"i":'Headline News Gramplet',"n":u'Nyhetsrubriker med Gramplet',"v":'1.0.20',"g":'4.0',"d":u'Gramplet for showing latest the Gramps news',"z":'HeadlineNewsGramplet.addon.tgz'}
 {"t":'Exporter',"i":'Export GEDCOM Extensions',"n":'Export GEDCOM Extensions (GED2)',"v":'1.0.8',"g":'4.0',"d":'Extensions to the common GEDCOM format.',"z":'GedcomExtensions.addon.tgz'}
 {"t":'Exporter',"i":'Raw Export',"n":u'R\xe5 export',"v":'1.0.19',"g":'4.0',"d":u'Detta \xe4r en r\xe5 dumpning av pythonobjekt',"z":'ExportRaw.addon.tgz'}
@@ -38,7 +39,7 @@
 {"t":'Quickreport',"i":'Descendant Count Quickview',"n":u'\xc4ttlingsr\xe4knare',"v":'1.0.16',"g":'4.0',"d":u'Visa antal \xe4ttlingar f\xf6r varje person',"z":'DescendantCount.addon.tgz'}
 {"t":'Quickreport',"i":'NumberOfDescendantsQuickview',"n":u'Antal \xe4ttlingar',"v":'3.4.16',"g":'4.0',"d":u'Visar antal \xe4ttlingar till aktuell person',"z":'NumberOfDescendantsQuickview.addon.tgz'}
 {"t":'Quickreport',"i":'Query Quickview',"n":'Query Quickview',"v":'1.0.14',"g":'4.0',"d":'Quick view for SQL-like running queries',"z":'Query.addon.tgz'}
-{"t":'Quickreport',"i":'allnames',"n":u'Samtliga namn f\xf6r alla personer',"v":'1.0.15',"g":'4.0',"d":u'Visa samtliga namn f\xf6r alla personer',"z":'AllNamesQuickview.addon.tgz'}
+{"t":u'Biblioth\xe8que additionnelle',"i":'DE Web Connect Pack',"n":u'DE Web Connect Pack',"v":'0.0.13',"g":'4.0',"d":u'Collection of Web sites for the DE (requires libwebconnect)',"z":'DEWebConnectPack.addon.tgz'}
 {"t":'Quickreport',"i":'timelinequickview',"n":u'Tidslinje',"v":'1.0.18',"g":'4.0',"d":u'Visar h\xe4ndelser f\xf6r en person p\xe5 en tidslinje',"z":'TimelineQuickview.addon.tgz'}
 {"t":'Report',"i":'Descendants Lines',"n":'Descendants Lines',"v":'0.1.19',"g":'4.0',"d":'Produces descendants lines of a person',"z":'DescendantsLines.addon.tgz'}
 {"t":'Report',"i":'FamilySheet',"n":u'Familjeark',"v":'3.4.21',"g":'4.0',"d":u'Skapar ett familjeark visande all information om en person och dennes partner och barn.',"z":'FamilySheet.addon.tgz'}

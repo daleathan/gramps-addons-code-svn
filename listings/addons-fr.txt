@@ -1,3 +1,4 @@
+{"t":u'Biblioth\xe8que additionnelle',"i":'DE Web Connect Pack',"n":u'Ensemble de liens internet allemands',"v":'0.0.13',"g":'4.0',"d":u"Collection de sites internet pour l'Allemagne (n\xe9cessite libwebconnect)","z":'DEWebConnectPack.addon.tgz'}
 {"t":u'Gramplet',"i":'Headline News Gramplet',"n":u'Gramplet R\xe9sum\xe9',"v":'1.0.20',"g":'4.0',"d":u'Gramplet pour afficher les derni\xe8res nouvelles de Gramps',"z":'HeadlineNewsGramplet.addon.tgz'}
 {"t":'Exporter',"i":'Export GEDCOM Extensions',"n":u'Exportation des extensions Gedcom (GED2)',"v":'1.0.8',"g":'4.0',"d":u'Extensions du format courant Gedcom.',"z":'GedcomExtensions.addon.tgz'}
 {"t":'Exporter',"i":'Raw Export',"n":u'Export brut',"v":'1.0.19',"g":'4.0',"d":u"Ceci est une image brute d'objet python","z":'ExportRaw.addon.tgz'}
@@ -38,7 +39,7 @@
 {"t":'Quickreport',"i":'Descendant Count Quickview',"n":u'Calcul des descendants',"v":'1.0.16',"g":'4.0',"d":u'Affiche le total des descendants pour chaque individu',"z":'DescendantCount.addon.tgz'}
 {"t":'Quickreport',"i":'NumberOfDescendantsQuickview',"n":u'Nombre de descendants',"v":'3.4.16',"g":'4.0',"d":u"Affiche le nombre de descendants de l'individu actif","z":'NumberOfDescendantsQuickview.addon.tgz'}
 {"t":'Quickreport',"i":'Query Quickview',"n":u'Rapport express Requ\xeate',"v":'1.0.14',"g":'4.0',"d":u'Rapport express pour du SQL-like fonctionnant avec requ\xeates',"z":'Query.addon.tgz'}
-{"t":'Quickreport',"i":'allnames',"n":u'Tous les noms pour tous les individus',"v":'1.0.15',"g":'4.0',"d":u'Affiche tous les noms de tous les individus',"z":'AllNamesQuickview.addon.tgz'}
+{"t":u'Biblioth\xe8que additionnelle',"i":'DE Web Connect Pack',"n":u'Ensemble de liens internet allemands',"v":'0.0.13',"g":'4.0',"d":u"Collection de sites internet pour l'Allemagne (n\xe9cessite libwebconnect)","z":'DEWebConnectPack.addon.tgz'}
 {"t":'Quickreport',"i":'timelinequickview',"n":u'Graphique temporel',"v":'1.0.18',"g":'4.0',"d":u"Affiche les \xe9v\xe9nements d'une personne tout au long de sa vie","z":'TimelineQuickview.addon.tgz'}
 {"t":'Report',"i":'Descendants Lines',"n":u'Lignes des descendants',"v":'0.1.19',"g":'4.0',"d":u"Produit les lignes de descendants de l'individu","z":'DescendantsLines.addon.tgz'}
 {"t":'Report',"i":'FamilySheet',"n":u'R\xe9sum\xe9 familial',"v":'3.4.21',"g":'4.0',"d":u"Produit un r\xe9sum\xe9 familial montrant les informations compl\xe8tes sur l'individu, ses conjoints et enfants.","z":'FamilySheet.addon.tgz'}

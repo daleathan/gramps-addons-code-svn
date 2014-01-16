@@ -1,3 +1,4 @@
+{"t":u'Biblioth\xe8que additionnelle',"i":'DE Web Connect Pack',"n":u'DE Web Connect Pack',"v":'0.0.13',"g":'4.0',"d":u'Collection of Web sites for the DE (requires libwebconnect)',"z":'DEWebConnectPack.addon.tgz'}
 {"t":u'Gramplet',"i":'Headline News Gramplet',"n":u'Gramplet nag\u0142\xf3wk\xf3w news\xf3w',"v":'1.0.20',"g":'4.0',"d":u'Gramplet for showing latest the Gramps news',"z":'HeadlineNewsGramplet.addon.tgz'}
 {"t":'Exporter',"i":'Export GEDCOM Extensions',"n":'Export GEDCOM Extensions (GED2)',"v":'1.0.8',"g":'4.0',"d":'Extensions to the common GEDCOM format.',"z":'GedcomExtensions.addon.tgz'}
 {"t":'Exporter',"i":'Raw Export',"n":u'Raw Export',"v":'1.0.19',"g":'4.0',"d":u'This is a raw python object dump',"z":'ExportRaw.addon.tgz'}
@@ -38,7 +39,7 @@
 {"t":'Quickreport',"i":'Descendant Count Quickview',"n":'Descendant Count',"v":'1.0.16',"g":'4.0',"d":'Display descendant counts for each person.',"z":'DescendantCount.addon.tgz'}
 {"t":'Quickreport',"i":'NumberOfDescendantsQuickview',"n":'Number of descendants',"v":'3.4.16',"g":'4.0',"d":'Shows the number of descendants of the current person',"z":'NumberOfDescendantsQuickview.addon.tgz'}
 {"t":'Quickreport',"i":'Query Quickview',"n":'Query Quickview',"v":'1.0.14',"g":'4.0',"d":'Quick view for SQL-like running queries',"z":'Query.addon.tgz'}
-{"t":'Quickreport',"i":'allnames',"n":u'Wszystkie imiona wszystkich os\xf3b',"v":'1.0.15',"g":'4.0',"d":u'Display all names of all people',"z":'AllNamesQuickview.addon.tgz'}
+{"t":u'Biblioth\xe8que additionnelle',"i":'DE Web Connect Pack',"n":u'DE Web Connect Pack',"v":'0.0.13',"g":'4.0',"d":u'Collection of Web sites for the DE (requires libwebconnect)',"z":'DEWebConnectPack.addon.tgz'}
 {"t":'Quickreport',"i":'timelinequickview',"n":u'O\u015b czasu',"v":'1.0.18',"g":'4.0',"d":u"Display a person's events on a timeline","z":'TimelineQuickview.addon.tgz'}
 {"t":'Report',"i":'Descendants Lines',"n":'Descendants Lines',"v":'0.1.19',"g":'4.0',"d":'Produces descendants lines of a person',"z":'DescendantsLines.addon.tgz'}
 {"t":'Report',"i":'FamilySheet',"n":'Family Sheet',"v":'3.4.21',"g":'4.0',"d":'Produces a family sheet showing full information about a person and his/her partners and children.',"z":'FamilySheet.addon.tgz'}

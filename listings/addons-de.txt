@@ -1,3 +1,4 @@
+{"t":u'Biblioth\xe8que additionnelle',"i":'DE Web Connect Pack',"n":u'DE Web Connect Pack',"v":'0.0.13',"g":'4.0',"d":u'Sammlung von Webseiten f\xfcr DE (ben\xf6tigt libwebconnect)',"z":'DEWebConnectPack.addon.tgz'}
 {"t":u'Gramplet',"i":'Headline News Gramplet',"n":u'Schlagzeilen Gramplet',"v":'1.0.20',"g":'4.0',"d":u'Gramplet zum zeigen der neuesten Gramps Nachrichten',"z":'HeadlineNewsGramplet.addon.tgz'}
 {"t":'Exporter',"i":'Export GEDCOM Extensions',"n":u'GEDCOM Export Erweiterungen (GED2)',"v":'1.0.8',"g":'4.0',"d":u'Erweiterungen f\xfcr das bekannte GEDCOM Format',"z":'GedcomExtensions.addon.tgz'}
 {"t":'Exporter',"i":'Raw Export',"n":u'Rohdaten Export',"v":'1.0.19',"g":'4.0',"d":u'Dies ist eine Rohdaten Pythonobjekt Ausgabe',"z":'ExportRaw.addon.tgz'}
@@ -38,7 +39,7 @@
 {"t":'Quickreport',"i":'Descendant Count Quickview',"n":u'Anzahl der Nachkommen',"v":'1.0.16',"g":'4.0',"d":u'Zeigt die Anzahl der Nachkommen f\xfcr jede Person.',"z":'DescendantCount.addon.tgz'}
 {"t":'Quickreport',"i":'NumberOfDescendantsQuickview',"n":u'Anzahl der Nachkommen',"v":'3.4.16',"g":'4.0',"d":u'Zeigt die Anzahl der Nachkommen der aktuellen Person an',"z":'NumberOfDescendantsQuickview.addon.tgz'}
 {"t":'Quickreport',"i":'Query Quickview',"n":u'Abfrage Schnellansicht',"v":'1.0.14',"g":'4.0',"d":u'Schnellansicht f\xfcr SQL-\xe4hnlich laufende Abfragen',"z":'Query.addon.tgz'}
-{"t":'Quickreport',"i":'allnames',"n":u'Alle Namen aller Personen',"v":'1.0.15',"g":'4.0',"d":u'Zeigt alle Namen aller Personen',"z":'AllNamesQuickview.addon.tgz'}
+{"t":u'Biblioth\xe8que additionnelle',"i":'DE Web Connect Pack',"n":u'DE Web Connect Pack',"v":'0.0.13',"g":'4.0',"d":u'Sammlung von Webseiten f\xfcr DE (ben\xf6tigt libwebconnect)',"z":'DEWebConnectPack.addon.tgz'}
 {"t":'Quickreport',"i":'timelinequickview',"n":u'Zeitleiste',"v":'1.0.18',"g":'4.0',"d":u'Zeigt Ereignisse einer Person auf einer Zeitleiste',"z":'TimelineQuickview.addon.tgz'}
 {"t":'Report',"i":'Descendants Lines',"n":u'Nachkommen Linien',"v":'0.1.19',"g":'4.0',"d":u'Erstellt Nachkommenlinien einer Person',"z":'DescendantsLines.addon.tgz'}
 {"t":'Report',"i":'FamilySheet',"n":u'Familienblatt',"v":'3.4.21',"g":'4.0',"d":u'Erstellt ein Familienblatt, das vollst\xe4ndige Informationen \xfcber eine Person und ihre Partner und Kinder enth\xe4lt.',"z":'FamilySheet.addon.tgz'}
