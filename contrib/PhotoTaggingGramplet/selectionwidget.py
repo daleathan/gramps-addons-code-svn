@@ -1,7 +1,7 @@
 #
 # Gramps - a GTK+/GNOME based genealogy program
 #
-# Copyright (C) 2013 Artem Glebov <artem.glebov@gmail.com>
+# Copyright (C) 2013-2014 Artem Glebov <artem.glebov@gmail.com>
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -607,7 +607,6 @@ class SelectionWidget(gtk.ScrolledWindow):
         """
         if self.selection is not None and self.grabber is not None:
             selection_rect = self._rect_image_to_screen(self.selection)
-            cr.set_source_rgb(1.0, 0, 0)
             if self.grabber_position is None:
                 generators = grabber_generators(selection_rect)
             elif self.grabber_position == GRABBER_INSIDE:
@@ -620,8 +619,9 @@ class SelectionWidget(gtk.ScrolledWindow):
                 generator = generators[self.grabber]
             if generator is not None:
                 x1, y1, x2, y2 = generator(*selection_rect)
+                cr.set_source_rgb(1.0, 0, 0)
                 cr.rectangle(x1, y1, x2 - x1, y2 - y1)
-            cr.stroke()
+                cr.stroke()
 
     def _rescale(self):
         """
