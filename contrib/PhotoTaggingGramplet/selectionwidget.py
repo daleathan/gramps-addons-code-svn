@@ -1,7 +1,7 @@
 #
 # Gramps - a GTK+/GNOME based genealogy program
 #
-# Copyright (C) 2013-2014 Artem Glebov <artem.glebov@gmail.com>
+# Copyright (C) 2013, 2014 Artem Glebov <artem.glebov@gmail.com>
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -54,9 +54,7 @@ _ = get_addon_translator(__file__).gettext
 # grabbers constants and routines
 #
 #-------------------------------------------------------------------------
-from grabbers import (grabber_generators, can_grab, grabber_position,
-                      switch_grabber, CURSORS, GRABBER_INSIDE, INSIDE,
-                      INNER_GRABBERS, OUTER_GRABBERS, MOTION_FUNCTIONS)
+from grabbers import can_grab
 
 #-------------------------------------------------------------------------
 #
@@ -291,7 +289,7 @@ class SelectionWidget(gtk.ScrolledWindow):
         self.start_point_screen = None
         self.selection = None
         self.in_region = None
-        self.grabber_position = None
+        self.grabber = None
         self.grabber_to_draw = None
 
         try:
@@ -607,21 +605,14 @@ class SelectionWidget(gtk.ScrolledWindow):
         """
         if self.selection is not None and self.grabber is not None:
             selection_rect = self._rect_image_to_screen(self.selection)
-            if self.grabber_position is None:
-                generators = grabber_generators(selection_rect)
-            elif self.grabber_position == GRABBER_INSIDE:
-                generators = INNER_GRABBERS
-            else:
-                generators = OUTER_GRABBERS
             if self.grabber_to_draw is not None:
-                generator = generators[self.grabber_to_draw]
+                grabber = self.grabber_to_draw
             else:
-                generator = generators[self.grabber]
-            if generator is not None:
-                x1, y1, x2, y2 = generator(*selection_rect)
-                cr.set_source_rgb(1.0, 0, 0)
-                cr.rectangle(x1, y1, x2 - x1, y2 - y1)
-                cr.stroke()
+                grabber = self.grabber
+            x1, y1, x2, y2 = grabber.boundaries(*selection_rect)
+            cr.set_source_rgb(1.0, 0, 0)
+            cr.rectangle(x1, y1, x2 - x1, y2 - y1)
+            cr.stroke()
 
     def _rescale(self):
         """
@@ -699,7 +690,7 @@ class SelectionWidget(gtk.ScrolledWindow):
                         self.current = None
                         self.selection = None
                         self.emit("selection-cleared")
-                    elif self.grabber != INSIDE:
+                    else:
                         # clicked on one of the grabbers
                         dx, dy = (event.x - self.start_point_screen[0], 
                                   event.y - self.start_point_screen[1])
@@ -739,7 +730,7 @@ class SelectionWidget(gtk.ScrolledWindow):
         end_point = self._truncate_to_image_size(end_point_orig)
         if self.start_point_screen:
             # selection or dragging (mouse button pressed)
-            if self.grabber is not None and self.grabber != INSIDE:
+            if self.grabber is not None:
                 # dragging the grabber
                 dx, dy = (event.x - self.start_point_screen[0], 
                           event.y - self.start_point_screen[1])
@@ -757,17 +748,14 @@ class SelectionWidget(gtk.ScrolledWindow):
                 self.grabber = can_grab(rect, event.x, event.y)
                 if self.grabber is not None:
                     self.grabber_to_draw = self.grabber
-                    self.grabber_position = grabber_position(rect)
-                    self.event_box.window.set_cursor(CURSORS[self.grabber])
+                    self.event_box.window.set_cursor(self.grabber.cursor())
                 else:
                     self.grabber_to_draw = None
-                    self.grabber_position = None
                     self.event_box.window.set_cursor(None)
             else:
                 # nothing is active
                 self.grabber = None
                 self.grabber_to_draw = None
-                self.grabber_position = None
                 self.event_box.window.set_cursor(None)
         self.image.queue_draw()
 
@@ -801,10 +789,10 @@ class SelectionWidget(gtk.ScrolledWindow):
         otherwise.
         """
         x1, y1, x2, y2 = self._rect_image_to_screen(self.current.coords())
-        x1, y1, x2, y2 = MOTION_FUNCTIONS[self.grabber](x1, y1, x2, y2, dx, dy)
+        x1, y1, x2, y2 = self.grabber.moved(x1, y1, x2, y2, dx, dy)
         (x1, y1) = self._screen_to_truncated((x1, y1))
         (x2, y2) = self._screen_to_truncated((x2, y2))
-        grabber = switch_grabber(self.grabber, x1, y1, x2, y2)
+        grabber = self.grabber.switch(x1, y1, x2, y2)
         self.selection = order_coordinates((x1, y1), (x2, y2))
         return grabber
 

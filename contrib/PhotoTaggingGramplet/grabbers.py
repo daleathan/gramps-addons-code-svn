@@ -1,7 +1,7 @@
 #
 # Gramps - a GTK+/GNOME based genealogy program
 #
-# Copyright (C) 2013 Artem Glebov <artem.glebov@gmail.com>
+# Copyright (C) 2013, 2014 Artem Glebov <artem.glebov@gmail.com>
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -29,12 +29,200 @@ import gtk
 
 #-------------------------------------------------------------------------
 #
-# grabbers constants and routines
+# grabbers classes
 #
 #-------------------------------------------------------------------------
 
-GRABBER_INSIDE = 0
-GRABBER_OUTSIDE = 1
+class Grabber(object):
+
+    def switch(self, x1, y1, x2, y2):
+        if x1 > x2:
+            if y1 > y2:
+                return self._switches[1]()
+            else:
+                return self._switches[0]()
+        else:
+            if y1 > y2:
+                return self._switches[2]()
+            else:
+                return self
+
+class UpperLeftGrabber(Grabber):
+
+    def __init__(self):
+        self._switches = [UpperRightGrabber, LowerRightGrabber, LowerLeftGrabber]
+
+    def inner(self, x1, y1, x2, y2):
+        return (x1, y1, x1 + MIN_CORNER_GRABBER, y1 + MIN_CORNER_GRABBER)
+
+    def outer(self, x1, y1, x2, y2):
+        return (x1 - MIN_CORNER_GRABBER, y1 - MIN_CORNER_GRABBER, x1, y1)
+
+    def moved(self, x1, y1, x2, y2, dx, dy):
+        return (x1 + dx, y1 + dy, x2, y2)
+
+    def cursor(self):
+        return gtk.gdk.Cursor(gtk.gdk.TOP_LEFT_CORNER)
+
+class UpperGrabber(Grabber):
+
+    def __init__(self):
+        self._switches = [UpperGrabber, LowerGrabber, LowerGrabber]
+
+    def inner(self, x1, y1, x2, y2):
+        return (x1 + MIN_CORNER_GRABBER + MIN_GRABBER_PADDING, 
+                y1, 
+                x2 - MIN_CORNER_GRABBER - MIN_GRABBER_PADDING,
+                y1 + MIN_CORNER_GRABBER)
+
+    def outer(self, x1, y1, x2, y2):
+        return (x1, y1 - MIN_CORNER_GRABBER, x2, y1)
+
+    def moved(self, x1, y1, x2, y2, dx, dy):
+        return (x1, y1 + dy, x2, y2)
+
+    def cursor(self):
+        return gtk.gdk.Cursor(gtk.gdk.TOP_SIDE)
+
+class UpperRightGrabber(Grabber):
+
+    def __init__(self):
+        self._switches = [UpperLeftGrabber, LowerLeftGrabber, LowerRightGrabber]
+
+    def inner(self, x1, y1, x2, y2):
+        return (x2 - MIN_CORNER_GRABBER, y1, x2, y1 + MIN_CORNER_GRABBER)
+
+    def outer(self, x1, y1, x2, y2):
+        return (x2, y1 - MIN_CORNER_GRABBER, x2 + MIN_CORNER_GRABBER, y1)
+
+    def moved(self, x1, y1, x2, y2, dx, dy):
+        return (x1, y1 + dy, x2 + dx, y2)
+
+    def cursor(self):
+        return gtk.gdk.Cursor(gtk.gdk.TOP_RIGHT_CORNER)
+
+class RightGrabber(Grabber):
+
+    def __init__(self):
+        self._switches = [LeftGrabber, LeftGrabber, RightGrabber]
+
+    def inner(self, x1, y1, x2, y2):
+        return (x2 - MIN_CORNER_GRABBER,
+                y1 + MIN_CORNER_GRABBER + MIN_GRABBER_PADDING,
+                x2,
+                y2 - MIN_CORNER_GRABBER - MIN_GRABBER_PADDING)
+
+    def outer(self, x1, y1, x2, y2):
+        return (x2, y1, x2 + MIN_CORNER_GRABBER, y2)
+
+    def moved(self, x1, y1, x2, y2, dx, dy):
+        return (x1, y1, x2 + dx, y2)
+
+    def cursor(self):
+        return gtk.gdk.Cursor(gtk.gdk.RIGHT_SIDE)
+
+class LowerRightGrabber(Grabber):
+
+    def __init__(self):
+        self._switches = [LowerLeftGrabber, UpperLeftGrabber, UpperRightGrabber]
+
+    def inner(self, x1, y1, x2, y2):
+        return (x2 - MIN_CORNER_GRABBER, y2 - MIN_CORNER_GRABBER, x2, y2)
+
+    def outer(self, x1, y1, x2, y2):
+        return (x2, y2, x2 + MIN_CORNER_GRABBER, y2 + MIN_CORNER_GRABBER)
+
+    def moved(self, x1, y1, x2, y2, dx, dy):
+        return (x1, y1, x2 + dx, y2 + dy)
+
+    def cursor(self):
+        return gtk.gdk.Cursor(gtk.gdk.BOTTOM_RIGHT_CORNER)
+
+class LowerGrabber(Grabber):
+
+    def __init__(self):
+        self._switches = [LowerGrabber, UpperGrabber, UpperGrabber]
+
+    def inner(self, x1, y1, x2, y2):
+        return (x1 + MIN_CORNER_GRABBER + MIN_GRABBER_PADDING, 
+                y2 - MIN_CORNER_GRABBER, 
+                x2 - MIN_CORNER_GRABBER - MIN_GRABBER_PADDING,
+                y2)
+
+    def outer(self, x1, y1, x2, y2):
+        return (x1, y2, x2, y2 + MIN_CORNER_GRABBER)
+
+    def moved(self, x1, y1, x2, y2, dx, dy):
+        return (x1, y1, x2, y2 + dy)
+
+    def cursor(self):
+        return gtk.gdk.Cursor(gtk.gdk.BOTTOM_SIDE)
+
+class LowerLeftGrabber(Grabber):
+
+    def __init__(self):
+        self._switches = [LowerRightGrabber, UpperRightGrabber, UpperLeftGrabber]
+
+    def inner(self, x1, y1, x2, y2):
+        return (x1, y2 - MIN_CORNER_GRABBER, x1 + MIN_CORNER_GRABBER, y2)
+
+    def outer(self, x1, y1, x2, y2):
+        return (x1 - MIN_CORNER_GRABBER, y2, x1, y2 + MIN_CORNER_GRABBER)
+
+    def moved(self, x1, y1, x2, y2, dx, dy):
+        return (x1 + dx, y1, x2, y2 + dy)
+
+    def cursor(self):
+        return gtk.gdk.Cursor(gtk.gdk.BOTTOM_LEFT_CORNER)
+
+class LeftGrabber(Grabber):
+
+    def __init__(self):
+        self._switches = [RightGrabber, RightGrabber, LeftGrabber]
+
+    def inner(self, x1, y1, x2, y2):
+        return (x1,
+                y1 + MIN_CORNER_GRABBER + MIN_GRABBER_PADDING,
+                x1 + MIN_CORNER_GRABBER,
+                y2 - MIN_CORNER_GRABBER - MIN_GRABBER_PADDING)
+
+    def outer(self, x1, y1, x2, y2):
+        return (x1 - MIN_CORNER_GRABBER, y1, x1, y2)
+
+    def moved(self, x1, y1, x2, y2, dx, dy):
+        return (x1 + dx, y1, x2, y2)
+
+    def cursor(self):
+        return gtk.gdk.Cursor(gtk.gdk.LEFT_SIDE)
+
+class GrabberWrapper(Grabber):
+
+    def __init__(self, grabber, inner):
+        self._grabber = grabber
+        self._inner = inner
+        if inner:
+            self._boundaries = self._grabber.inner
+        else:
+            self._boundaries = self._grabber.outer
+
+    def moved(self, x1, y1, x2, y2, dx, dy):
+        return self._grabber.moved(x1, y1, x2, y2, dx, dy)
+
+    def cursor(self):
+        return self._grabber.cursor()
+
+    def boundaries(self, x1, y1, x2, y2):
+        return self._boundaries(x1, y1, x2, y2)
+
+    def switch(self, x1, y1, x2, y2):
+        return GrabberWrapper(self._grabber.switch(x1, y1, x2, y2), 
+                              self._inner)
+
+#-------------------------------------------------------------------------
+#
+# grabbers constants and routines
+#
+#-------------------------------------------------------------------------
 
 MIN_CORNER_GRABBER = 20
 MIN_SIDE_GRABBER = 20
@@ -42,181 +230,25 @@ MIN_GRABBER_PADDING = 10
 MIN_SIDE_FOR_INSIDE_GRABBERS = (2 * (MIN_CORNER_GRABBER + MIN_GRABBER_PADDING) + 
                                 MIN_SIDE_GRABBER)
 
-INSIDE = 0
-GRABBER_UPPER_LEFT = 1
-GRABBER_UPPER = 2
-GRABBER_UPPER_RIGHT = 3
-GRABBER_RIGHT = 4
-GRABBER_LOWER_RIGHT = 5
-GRABBER_LOWER = 6
-GRABBER_LOWER_LEFT = 7
-GRABBER_LEFT = 8
-
-def upper_left_grabber_inner(x1, y1, x2, y2):
-    return (x1, y1, x1 + MIN_CORNER_GRABBER, y1 + MIN_CORNER_GRABBER)
-
-def upper_grabber_inner(x1, y1, x2, y2):
-    return (x1 + MIN_CORNER_GRABBER + MIN_GRABBER_PADDING, 
-            y1, 
-            x2 - MIN_CORNER_GRABBER - MIN_GRABBER_PADDING,
-            y1 + MIN_CORNER_GRABBER)
-
-def upper_right_grabber_inner(x1, y1, x2, y2):
-    return (x2 - MIN_CORNER_GRABBER, y1, x2, y1 + MIN_CORNER_GRABBER)
-
-def right_grabber_inner(x1, y1, x2, y2):
-    return (x2 - MIN_CORNER_GRABBER,
-            y1 + MIN_CORNER_GRABBER + MIN_GRABBER_PADDING,
-            x2,
-            y2 - MIN_CORNER_GRABBER - MIN_GRABBER_PADDING)
-
-def lower_right_grabber_inner(x1, y1, x2, y2):
-    return (x2 - MIN_CORNER_GRABBER, y2 - MIN_CORNER_GRABBER, x2, y2)
-
-def lower_grabber_inner(x1, y1, x2, y2):
-    return (x1 + MIN_CORNER_GRABBER + MIN_GRABBER_PADDING, 
-            y2 - MIN_CORNER_GRABBER, 
-            x2 - MIN_CORNER_GRABBER - MIN_GRABBER_PADDING,
-            y2)
-
-def lower_left_grabber_inner(x1, y1, x2, y2):
-    return (x1, y2 - MIN_CORNER_GRABBER, x1 + MIN_CORNER_GRABBER, y2)
-
-def left_grabber_inner(x1, y1, x2, y2):
-    return (x1,
-            y1 + MIN_CORNER_GRABBER + MIN_GRABBER_PADDING,
-            x1 + MIN_CORNER_GRABBER,
-            y2 - MIN_CORNER_GRABBER - MIN_GRABBER_PADDING)
-
-# outer
-
-def upper_left_grabber_outer(x1, y1, x2, y2):
-    return (x1 - MIN_CORNER_GRABBER, y1 - MIN_CORNER_GRABBER, x1, y1)
-
-def upper_grabber_outer(x1, y1, x2, y2):
-    return (x1, y1 - MIN_CORNER_GRABBER, x2, y1)
-
-def upper_right_grabber_outer(x1, y1, x2, y2):
-    return (x2, y1 - MIN_CORNER_GRABBER, x2 + MIN_CORNER_GRABBER, y1)
-
-def right_grabber_outer(x1, y1, x2, y2):
-    return (x2, y1, x2 + MIN_CORNER_GRABBER, y2)
-
-def lower_right_grabber_outer(x1, y1, x2, y2):
-    return (x2, y2, x2 + MIN_CORNER_GRABBER, y2 + MIN_CORNER_GRABBER)
-
-def lower_grabber_outer(x1, y1, x2, y2):
-    return (x1, y2, x2, y2 + MIN_CORNER_GRABBER)
-
-def lower_left_grabber_outer(x1, y1, x2, y2):
-    return (x1 - MIN_CORNER_GRABBER, y2, x1, y2 + MIN_CORNER_GRABBER)
-
-def left_grabber_outer(x1, y1, x2, y2):
-    return (x1 - MIN_CORNER_GRABBER, y1, x1, y2)
-
-# motion
-
-def inside_moved(x1, y1, x2, y2, dx, dy):
-    return (x1, y1, x2, y2)
-
-def upper_left_moved(x1, y1, x2, y2, dx, dy):
-    return (x1 + dx, y1 + dy, x2, y2)
-
-def upper_moved(x1, y1, x2, y2, dx, dy):
-    return (x1, y1 + dy, x2, y2)
-
-def upper_right_moved(x1, y1, x2, y2, dx, dy):
-    return (x1, y1 + dy, x2 + dx, y2)
-
-def right_moved(x1, y1, x2, y2, dx, dy):
-    return (x1, y1, x2 + dx, y2)
-
-def lower_right_moved(x1, y1, x2, y2, dx, dy):
-    return (x1, y1, x2 + dx, y2 + dy)
-
-def lower_moved(x1, y1, x2, y2, dx, dy):
-    return (x1, y1, x2, y2 + dy)
-
-def lower_left_moved(x1, y1, x2, y2, dx, dy):
-    return (x1 + dx, y1, x2, y2 + dy)
-
-def left_moved(x1, y1, x2, y2, dx, dy):
-    return (x1 + dx, y1, x2, y2)
-
 # switching
 
-GRABBERS = [INSIDE,
-            GRABBER_UPPER_LEFT,
-            GRABBER_UPPER,
-            GRABBER_UPPER_RIGHT,
-            GRABBER_RIGHT,
-            GRABBER_LOWER_RIGHT,
-            GRABBER_LOWER,
-            GRABBER_LOWER_LEFT,
-            GRABBER_LEFT]
+upper_left_grabber = UpperLeftGrabber()
+upper_grabber = UpperGrabber()
+upper_right_grabber = UpperRightGrabber()
+right_grabber = RightGrabber()
+lower_right_grabber = LowerRightGrabber()
+lower_grabber = LowerGrabber()
+lower_left_grabber = LowerLeftGrabber()
+left_grabber = LeftGrabber()
 
-INNER_GRABBERS = [None,
-                  upper_left_grabber_inner,
-                  upper_grabber_inner,
-                  upper_right_grabber_inner,
-                  right_grabber_inner,
-                  lower_right_grabber_inner,
-                  lower_grabber_inner,
-                  lower_left_grabber_inner,
-                  left_grabber_inner]
-
-OUTER_GRABBERS = [None,
-                  upper_left_grabber_outer,
-                  upper_grabber_outer,
-                  upper_right_grabber_outer,
-                  right_grabber_outer,
-                  lower_right_grabber_outer,
-                  lower_grabber_outer,
-                  lower_left_grabber_outer,
-                  left_grabber_outer]
-
-MOTION_FUNCTIONS = [inside_moved,
-                    upper_left_moved,
-                    upper_moved,
-                    upper_right_moved,
-                    right_moved,
-                    lower_right_moved,
-                    lower_moved,
-                    lower_left_moved,
-                    left_moved]
-
-GRABBERS_SWITCH = [ 
-  [INSIDE, INSIDE, INSIDE],
-  [GRABBER_UPPER_RIGHT, GRABBER_LOWER_RIGHT, GRABBER_LOWER_LEFT],
-  [GRABBER_UPPER, GRABBER_LOWER, GRABBER_LOWER],
-  [GRABBER_UPPER_LEFT, GRABBER_LOWER_LEFT, GRABBER_LOWER_RIGHT],
-  [GRABBER_LEFT, GRABBER_LEFT, GRABBER_RIGHT],
-  [GRABBER_LOWER_LEFT, GRABBER_UPPER_LEFT, GRABBER_UPPER_RIGHT],
-  [GRABBER_LOWER, GRABBER_UPPER, GRABBER_UPPER],
-  [GRABBER_LOWER_RIGHT, GRABBER_UPPER_RIGHT, GRABBER_UPPER_LEFT],
-  [GRABBER_RIGHT, GRABBER_RIGHT, GRABBER_LEFT]
-]
-
-# cursors
-
-CURSOR_UPPER = gtk.gdk.Cursor(gtk.gdk.TOP_SIDE)
-CURSOR_LOWER = gtk.gdk.Cursor(gtk.gdk.BOTTOM_SIDE)
-CURSOR_LEFT = gtk.gdk.Cursor(gtk.gdk.LEFT_SIDE)
-CURSOR_RIGHT = gtk.gdk.Cursor(gtk.gdk.RIGHT_SIDE)
-CURSOR_UPPER_LEFT = gtk.gdk.Cursor(gtk.gdk.TOP_LEFT_CORNER)
-CURSOR_UPPER_RIGHT = gtk.gdk.Cursor(gtk.gdk.TOP_RIGHT_CORNER)
-CURSOR_LOWER_LEFT = gtk.gdk.Cursor(gtk.gdk.BOTTOM_LEFT_CORNER)
-CURSOR_LOWER_RIGHT = gtk.gdk.Cursor(gtk.gdk.BOTTOM_RIGHT_CORNER)
-
-CURSORS = [None,
-           CURSOR_UPPER_LEFT,
-           CURSOR_UPPER,
-           CURSOR_UPPER_RIGHT,
-           CURSOR_RIGHT,
-           CURSOR_LOWER_RIGHT,
-           CURSOR_LOWER,
-           CURSOR_LOWER_LEFT,
-           CURSOR_LEFT]
+GRABBERS = [upper_left_grabber,
+            upper_grabber,
+            upper_right_grabber,
+            right_grabber,
+            lower_right_grabber,
+            lower_grabber,
+            lower_left_grabber,
+            left_grabber]
 
 # helper functions
 
@@ -227,12 +259,6 @@ def grabber_position(rect):
         return GRABBER_INSIDE
     else:
         return GRABBER_OUTSIDE
-
-def grabber_generators(rect):
-    if grabber_position(rect) == GRABBER_INSIDE:
-        return INNER_GRABBERS
-    else:
-        return OUTER_GRABBERS
 
 def switch_grabber(grabber, x1, y1, x2, y2):
     switch_row = GRABBERS_SWITCH[grabber]
@@ -261,17 +287,17 @@ def can_grab(rect, x, y):
         # grabbers are inside
         if x < x1 or x > x2 or y < y1 or y > y2:
             return None
-        for grabber in GRABBERS[1:]:
-            grabber_area = INNER_GRABBERS[grabber](x1, y1, x2, y2)
+        for grabber in GRABBERS:
+            grabber_area = grabber.inner(x1, y1, x2, y2)
             if inside_rect(grabber_area, x, y):
-                return grabber
-        return INSIDE
+                return GrabberWrapper(grabber, True)
+        return None
     else:
         # grabbers are outside
         if x1 <= x <= x2 and y1 <= y <= y2:
-            return INSIDE
-        for grabber in GRABBERS[1:]:
-            grabber_area = OUTER_GRABBERS[grabber](x1, y1, x2, y2)
+            return None
+        for  grabber in GRABBERS:
+            grabber_area = grabber.outer(x1, y1, x2, y2)
             if inside_rect(grabber_area, x, y):
-                return grabber
+                return GrabberWrapper(grabber, False)
         return None
