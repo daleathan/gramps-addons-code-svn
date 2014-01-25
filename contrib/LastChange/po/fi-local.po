@@ -1,0 +1,176 @@
+# GRAMPS
+# Copyright (C) YEAR ORGANIZATION.
+#
+# Eero Tamminen <eerot@sf>, 2005, 2006, 2007, 2008.
+# Janne Kovesjärvi <janne.kovesjarvi@gmail.com>, 2008, 200, 2013.
+# Pekka Valta <pekka.valta@kolumbus.fi>, 2014.
+msgid ""
+msgstr ""
+"Project-Id-Version: fi\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-01-25 13:25+0100\n"
+"PO-Revision-Date: 2014-01-15 20:54+0200\n"
+"Last-Translator: Pekka Valta <pekka.valta@kolumbus.fi>\n"
+"Language-Team: Pekka Valta <pekka.valta@kolumbus.fi>\n"
+"Language: fi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: pygettext.py 1.4\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 1.6.3\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+
+#: LastChange/LastChange.gpr.py:24
+msgid "Last Change Gramplet"
+msgstr ""
+
+#: LastChange/LastChange.gpr.py:25
+msgid "List the last ten person records that have been changed"
+msgstr ""
+
+#: LastChange/LastChange.gpr.py:34
+msgid "Latest Changes"
+msgstr ""
+
+#: LastChange/LastChange.gpr.py:39 LastChange/LastChangeReport.py:72
+#: LastChange/LastChangeReport.py:102
+msgid "Last Change Report"
+msgstr ""
+
+#: LastChange/LastChange.gpr.py:40
+msgid "Report of the last records that have been changed"
+msgstr ""
+
+#: LastChange/LastChangeGramplet.py:53
+msgid "Double-click name for details"
+msgstr "Kaksoisnapsauta nimeä nähdäksesi yksityiskohdat"
+
+#: LastChange/LastChangeGramplet.py:54
+msgid "No Family Tree loaded."
+msgstr "Ei sukupuuta ladattuna."
+
+#: LastChange/LastChangeGramplet.py:58
+msgid "Processing..."
+msgstr "Käsitellään..."
+
+#: LastChange/LastChangeGramplet.py:70
+msgid "changed on"
+msgstr ""
+
+#: LastChange/LastChangeReport.py:73
+msgid "You must select at least one type of record."
+msgstr ""
+
+#: LastChange/LastChangeReport.py:105 LastChange/LastChangeReport.py:289
+msgid "People"
+msgstr "Henkilöt"
+
+#: LastChange/LastChangeReport.py:107 LastChange/LastChangeReport.py:290
+msgid "Families"
+msgstr "Perheet"
+
+#: LastChange/LastChangeReport.py:109 LastChange/LastChangeReport.py:292
+msgid "Events"
+msgstr "Tapahtumat"
+
+#: LastChange/LastChangeReport.py:111 LastChange/LastChangeReport.py:291
+msgid "Places"
+msgstr "Paikat"
+
+#: LastChange/LastChangeReport.py:113 LastChange/LastChangeReport.py:293
+msgid "Media"
+msgstr "Media"
+
+#: LastChange/LastChangeReport.py:115 LastChange/LastChangeReport.py:294
+msgid "Sources"
+msgstr "Lähteet"
+
+#: LastChange/LastChangeReport.py:169
+msgid "People Changed"
+msgstr ""
+
+#: LastChange/LastChangeReport.py:170 LastChange/LastChangeReport.py:185
+#: LastChange/LastChangeReport.py:216 LastChange/LastChangeReport.py:236
+#: LastChange/LastChangeReport.py:251 LastChange/LastChangeReport.py:267
+msgid "ID"
+msgstr "Tunnus"
+
+#: LastChange/LastChangeReport.py:170
+msgid "Person"
+msgstr "Henkilö"
+
+#: LastChange/LastChangeReport.py:170 LastChange/LastChangeReport.py:185
+#: LastChange/LastChangeReport.py:216 LastChange/LastChangeReport.py:236
+#: LastChange/LastChangeReport.py:251 LastChange/LastChangeReport.py:267
+msgid "Changed On"
+msgstr ""
+
+#: LastChange/LastChangeReport.py:184
+msgid "Families Changed"
+msgstr ""
+
+#: LastChange/LastChangeReport.py:185
+msgid "Family Surname"
+msgstr ""
+
+#: LastChange/LastChangeReport.py:202
+#, python-format
+msgid "%s and %s"
+msgstr ""
+
+#: LastChange/LastChangeReport.py:215
+msgid "Events Changed"
+msgstr ""
+
+#: LastChange/LastChangeReport.py:216
+msgid "Event"
+msgstr "Tapahtuma"
+
+#: LastChange/LastChangeReport.py:235
+msgid "Places Changed"
+msgstr ""
+
+#: LastChange/LastChangeReport.py:236
+msgid "Place"
+msgstr "Paikka"
+
+#: LastChange/LastChangeReport.py:250
+msgid "Media Changed"
+msgstr ""
+
+#: LastChange/LastChangeReport.py:251
+msgid "Path"
+msgstr "Polku"
+
+#: LastChange/LastChangeReport.py:266
+msgid "Sources Changed"
+msgstr ""
+
+#: LastChange/LastChangeReport.py:267
+msgid "Title"
+msgstr "Nimike"
+
+#: LastChange/LastChangeReport.py:287
+msgid "Report Options"
+msgstr "Raporttiasetukset"
+
+#: LastChange/LastChangeReport.py:288
+msgid "Select From"
+msgstr ""
+
+#: LastChange/LastChangeReport.py:310
+msgid "The style used for the title of the page."
+msgstr "Käytettävä tyyli sivun otsikolle."
+
+#: LastChange/LastChangeReport.py:325
+msgid "The style used for the section headers."
+msgstr "Käytettävä tyyli osien ylätunnisteille."
+
+#: LastChange/LastChangeReport.py:335
+msgid "The style used for normal text"
+msgstr ""
+
+#: LastChange/LastChangeReport.py:347
+msgid "The basic style used for table headings."
+msgstr "Käytettävä perustyyli taulukko-otsikoille."
