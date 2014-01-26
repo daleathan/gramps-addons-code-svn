@@ -22,6 +22,13 @@
 
 #-------------------------------------------------------------------------
 #
+# Standard python modules
+#
+#-------------------------------------------------------------------------
+import math
+
+#-------------------------------------------------------------------------
+#
 # GTK/Gnome modules
 #
 #-------------------------------------------------------------------------
@@ -47,6 +54,11 @@ class Grabber(object):
             else:
                 return self
 
+    def grabbers_inside(self, rect):
+        x1, y1, x2, y2 = rect
+        return (x2 - x1 >= MIN_SIDE_FOR_INSIDE_GRABBERS and 
+                y2 - y1 >= MIN_SIDE_FOR_INSIDE_GRABBERS)
+
 class RectangularGrabber(Grabber):
 
     def draw(self, cr, rect):
@@ -57,11 +69,6 @@ class RectangularGrabber(Grabber):
         cr.set_source_rgb(1.0, 0, 0)
         cr.rectangle(x1, y1, x2 - x1, y2 - y1)
         cr.stroke()
-
-    def grabbers_inside(self, rect):
-        x1, y1, x2, y2 = rect
-        return (x2 - x1 >= MIN_SIDE_FOR_INSIDE_GRABBERS and 
-                y2 - y1 >= MIN_SIDE_FOR_INSIDE_GRABBERS)
 
     def can_grab(self, rect, x, y):
         if self.grabbers_inside(rect):
@@ -218,6 +225,38 @@ class LeftGrabber(RectangularGrabber):
     def cursor(self):
         return gtk.gdk.Cursor(gtk.gdk.LEFT_SIDE)
 
+class CentralGrabber(Grabber):
+
+    def draw(self, cr, rect):
+        if not self.grabbers_inside(rect):
+            return
+        x1, y1, x2, y2 = rect
+        cx = (x1 + x2) / 2
+        cy = (y1 + y2) / 2
+        cr.set_source_rgb(1.0, 0, 0)
+        cr.move_to(cx, cy - CENTRAL_GRABBER_CROSS_HALF_SIZE)
+        cr.line_to(cx, cy + CENTRAL_GRABBER_CROSS_HALF_SIZE)
+        cr.move_to(cx - CENTRAL_GRABBER_CROSS_HALF_SIZE, cy)
+        cr.line_to(cx + CENTRAL_GRABBER_CROSS_HALF_SIZE, cy)
+        cr.stroke()
+
+    def can_grab(self, rect, x, y):
+        if not self.grabbers_inside(rect):
+            return False
+        x1, y1, x2, y2 = rect
+        cx = (x1 + x2) / 2
+        cy = (y1 + y2) / 2
+        return distance(cx, cy, x, y) <= CENTRAL_GRABBER_RADIUS
+
+    def cursor(self):
+        return gtk.gdk.Cursor(gtk.gdk.FLEUR)
+
+    def moved(self, x1, y1, x2, y2, dx, dy):
+        return (x1 + dx, y1 + dy, x2 + dx, y2 + dy)
+
+    def switch(self, x1, y1, x2, y2):
+        return self
+
 #-------------------------------------------------------------------------
 #
 # grabbers constants and routines
@@ -227,28 +266,20 @@ class LeftGrabber(RectangularGrabber):
 MIN_CORNER_GRABBER = 20
 MIN_SIDE_GRABBER = 20
 MIN_GRABBER_PADDING = 10
+CENTRAL_GRABBER_RADIUS = 20
+CENTRAL_GRABBER_CROSS_HALF_SIZE = 10
 MIN_SIDE_FOR_INSIDE_GRABBERS = (2 * (MIN_CORNER_GRABBER + MIN_GRABBER_PADDING) + 
                                 MIN_SIDE_GRABBER)
 
-# switching
-
-upper_left_grabber = UpperLeftGrabber()
-upper_grabber = UpperGrabber()
-upper_right_grabber = UpperRightGrabber()
-right_grabber = RightGrabber()
-lower_right_grabber = LowerRightGrabber()
-lower_grabber = LowerGrabber()
-lower_left_grabber = LowerLeftGrabber()
-left_grabber = LeftGrabber()
-
-GRABBERS = [upper_left_grabber,
-            upper_grabber,
-            upper_right_grabber,
-            right_grabber,
-            lower_right_grabber,
-            lower_grabber,
-            lower_left_grabber,
-            left_grabber]
+GRABBERS = [UpperLeftGrabber(),
+            UpperGrabber(),
+            UpperRightGrabber(),
+            RightGrabber(),
+            LowerRightGrabber(),
+            LowerGrabber(),
+            LowerLeftGrabber(),
+            LeftGrabber(),
+            CentralGrabber()]
 
 # helper functions
 
@@ -276,6 +307,9 @@ def switch_grabber(grabber, x1, y1, x2, y2):
 def inside_rect(rect, x, y):
     x1, y1, x2, y2 = rect
     return x1 <= x <= x2 and y1 <= y <= y2
+
+def distance(x1, y1, x2, y2):
+    return math.sqrt((x1 - x2) ** 2 + (y1 - y2) ** 2)
 
 def can_grab(rect, x, y):
     """
