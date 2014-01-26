@@ -47,7 +47,14 @@ class Grabber(object):
             else:
                 return self
 
-class UpperLeftGrabber(Grabber):
+class RectangularGrabber(Grabber):
+
+    def draw(self, cr, x1, y1, x2, y2):
+        cr.set_source_rgb(1.0, 0, 0)
+        cr.rectangle(x1, y1, x2 - x1, y2 - y1)
+        cr.stroke()
+
+class UpperLeftGrabber(RectangularGrabber):
 
     def __init__(self):
         self._switches = [UpperRightGrabber, LowerRightGrabber, LowerLeftGrabber]
@@ -64,7 +71,7 @@ class UpperLeftGrabber(Grabber):
     def cursor(self):
         return gtk.gdk.Cursor(gtk.gdk.TOP_LEFT_CORNER)
 
-class UpperGrabber(Grabber):
+class UpperGrabber(RectangularGrabber):
 
     def __init__(self):
         self._switches = [UpperGrabber, LowerGrabber, LowerGrabber]
@@ -84,7 +91,7 @@ class UpperGrabber(Grabber):
     def cursor(self):
         return gtk.gdk.Cursor(gtk.gdk.TOP_SIDE)
 
-class UpperRightGrabber(Grabber):
+class UpperRightGrabber(RectangularGrabber):
 
     def __init__(self):
         self._switches = [UpperLeftGrabber, LowerLeftGrabber, LowerRightGrabber]
@@ -101,7 +108,7 @@ class UpperRightGrabber(Grabber):
     def cursor(self):
         return gtk.gdk.Cursor(gtk.gdk.TOP_RIGHT_CORNER)
 
-class RightGrabber(Grabber):
+class RightGrabber(RectangularGrabber):
 
     def __init__(self):
         self._switches = [LeftGrabber, LeftGrabber, RightGrabber]
@@ -121,7 +128,7 @@ class RightGrabber(Grabber):
     def cursor(self):
         return gtk.gdk.Cursor(gtk.gdk.RIGHT_SIDE)
 
-class LowerRightGrabber(Grabber):
+class LowerRightGrabber(RectangularGrabber):
 
     def __init__(self):
         self._switches = [LowerLeftGrabber, UpperLeftGrabber, UpperRightGrabber]
@@ -138,7 +145,7 @@ class LowerRightGrabber(Grabber):
     def cursor(self):
         return gtk.gdk.Cursor(gtk.gdk.BOTTOM_RIGHT_CORNER)
 
-class LowerGrabber(Grabber):
+class LowerGrabber(RectangularGrabber):
 
     def __init__(self):
         self._switches = [LowerGrabber, UpperGrabber, UpperGrabber]
@@ -158,7 +165,7 @@ class LowerGrabber(Grabber):
     def cursor(self):
         return gtk.gdk.Cursor(gtk.gdk.BOTTOM_SIDE)
 
-class LowerLeftGrabber(Grabber):
+class LowerLeftGrabber(RectangularGrabber):
 
     def __init__(self):
         self._switches = [LowerRightGrabber, UpperRightGrabber, UpperLeftGrabber]
@@ -175,7 +182,7 @@ class LowerLeftGrabber(Grabber):
     def cursor(self):
         return gtk.gdk.Cursor(gtk.gdk.BOTTOM_LEFT_CORNER)
 
-class LeftGrabber(Grabber):
+class LeftGrabber(RectangularGrabber):
 
     def __init__(self):
         self._switches = [RightGrabber, RightGrabber, LeftGrabber]
@@ -217,6 +224,12 @@ class GrabberWrapper(Grabber):
     def switch(self, x1, y1, x2, y2):
         return GrabberWrapper(self._grabber.switch(x1, y1, x2, y2), 
                               self._inner)
+
+    def draw(self, cr, fragment_x1, fragment_y1,
+             fragment_x2, fragment_y2):
+        x1, y1, x2, y2 = self.boundaries(fragment_x1, fragment_y1,
+                                         fragment_x2, fragment_y2)
+        self._grabber.draw(cr, x1, y1, x2, y2)
 
 #-------------------------------------------------------------------------
 #
