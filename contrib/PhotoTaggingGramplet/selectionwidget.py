@@ -609,7 +609,7 @@ class SelectionWidget(gtk.ScrolledWindow):
                 grabber = self.grabber_to_draw
             else:
                 grabber = self.grabber
-            grabber.draw(cr, *selection_rect)
+            grabber.draw(cr, selection_rect)
 
     def _rescale(self):
         """

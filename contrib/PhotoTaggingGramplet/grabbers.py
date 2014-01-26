@@ -225,10 +225,8 @@ class GrabberWrapper(Grabber):
         return GrabberWrapper(self._grabber.switch(x1, y1, x2, y2), 
                               self._inner)
 
-    def draw(self, cr, fragment_x1, fragment_y1,
-             fragment_x2, fragment_y2):
-        x1, y1, x2, y2 = self.boundaries(fragment_x1, fragment_y1,
-                                         fragment_x2, fragment_y2)
+    def draw(self, cr, rect):
+        x1, y1, x2, y2 = self.boundaries(*rect)
         self._grabber.draw(cr, x1, y1, x2, y2)
 
 #-------------------------------------------------------------------------
