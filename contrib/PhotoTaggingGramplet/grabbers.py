@@ -49,10 +49,26 @@ class Grabber(object):
 
 class RectangularGrabber(Grabber):
 
-    def draw(self, cr, x1, y1, x2, y2):
+    def draw(self, cr, rect):
+        if self.grabbers_inside(rect):
+            x1, y1, x2, y2 = self.inner(*rect)
+        else:
+            x1, y1, x2, y2 = self.outer(*rect)
         cr.set_source_rgb(1.0, 0, 0)
         cr.rectangle(x1, y1, x2 - x1, y2 - y1)
         cr.stroke()
+
+    def grabbers_inside(self, rect):
+        x1, y1, x2, y2 = rect
+        return (x2 - x1 >= MIN_SIDE_FOR_INSIDE_GRABBERS and 
+                y2 - y1 >= MIN_SIDE_FOR_INSIDE_GRABBERS)
+
+    def can_grab(self, rect, x, y):
+        if self.grabbers_inside(rect):
+            grabber_area = self.inner(*rect)
+        else:
+            grabber_area = self.outer(*rect)
+        return inside_rect(grabber_area, x, y)
 
 class UpperLeftGrabber(RectangularGrabber):
 
@@ -202,33 +218,6 @@ class LeftGrabber(RectangularGrabber):
     def cursor(self):
         return gtk.gdk.Cursor(gtk.gdk.LEFT_SIDE)
 
-class GrabberWrapper(Grabber):
-
-    def __init__(self, grabber, inner):
-        self._grabber = grabber
-        self._inner = inner
-        if inner:
-            self._boundaries = self._grabber.inner
-        else:
-            self._boundaries = self._grabber.outer
-
-    def moved(self, x1, y1, x2, y2, dx, dy):
-        return self._grabber.moved(x1, y1, x2, y2, dx, dy)
-
-    def cursor(self):
-        return self._grabber.cursor()
-
-    def boundaries(self, x1, y1, x2, y2):
-        return self._boundaries(x1, y1, x2, y2)
-
-    def switch(self, x1, y1, x2, y2):
-        return GrabberWrapper(self._grabber.switch(x1, y1, x2, y2), 
-                              self._inner)
-
-    def draw(self, cr, rect):
-        x1, y1, x2, y2 = self.boundaries(*rect)
-        self._grabber.draw(cr, x1, y1, x2, y2)
-
 #-------------------------------------------------------------------------
 #
 # grabbers constants and routines
@@ -292,23 +281,7 @@ def can_grab(rect, x, y):
     """
     Checks if (x,y) lies within one of the grabbers of rect.
     """
-    (x1, y1, x2, y2) = rect
-    if (x2 - x1 >= MIN_SIDE_FOR_INSIDE_GRABBERS and 
-        y2 - y1 >= MIN_SIDE_FOR_INSIDE_GRABBERS):
-        # grabbers are inside
-        if x < x1 or x > x2 or y < y1 or y > y2:
-            return None
-        for grabber in GRABBERS:
-            grabber_area = grabber.inner(x1, y1, x2, y2)
-            if inside_rect(grabber_area, x, y):
-                return GrabberWrapper(grabber, True)
-        return None
-    else:
-        # grabbers are outside
-        if x1 <= x <= x2 and y1 <= y <= y2:
-            return None
-        for  grabber in GRABBERS:
-            grabber_area = grabber.outer(x1, y1, x2, y2)
-            if inside_rect(grabber_area, x, y):
-                return GrabberWrapper(grabber, False)
-        return None
+    for grabber in GRABBERS:
+        if grabber.can_grab(rect, x, y):
+            return grabber
+    return None
