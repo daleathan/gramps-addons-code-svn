@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: fi\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-01-25 13:25+0100\n"
-"PO-Revision-Date: 2014-01-15 20:54+0200\n"
+"PO-Revision-Date: 2014-02-02 19:53+0200\n"
 "Last-Translator: Pekka Valta <pekka.valta@kolumbus.fi>\n"
 "Language-Team: Pekka Valta <pekka.valta@kolumbus.fi>\n"
 "Language: fi\n"
@@ -23,24 +23,24 @@ msgstr ""
 
 #: LastChange/LastChange.gpr.py:24
 msgid "Last Change Gramplet"
-msgstr ""
+msgstr "Viimeisin muutos Gramplet"
 
 #: LastChange/LastChange.gpr.py:25
 msgid "List the last ten person records that have been changed"
-msgstr ""
+msgstr "Listaa 10 viimeisintä muutettua henkilöä"
 
 #: LastChange/LastChange.gpr.py:34
 msgid "Latest Changes"
-msgstr ""
+msgstr "Viimeisimmät muutokset"
 
 #: LastChange/LastChange.gpr.py:39 LastChange/LastChangeReport.py:72
 #: LastChange/LastChangeReport.py:102
 msgid "Last Change Report"
-msgstr ""
+msgstr "Viimeisimmän muutoksen raportti"
 
 #: LastChange/LastChange.gpr.py:40
 msgid "Report of the last records that have been changed"
-msgstr ""
+msgstr "Raportti viimeeksi muutetuista tietueista"
 
 #: LastChange/LastChangeGramplet.py:53
 msgid "Double-click name for details"
@@ -56,11 +56,11 @@ msgstr "Käsitellään..."
 
 #: LastChange/LastChangeGramplet.py:70
 msgid "changed on"
-msgstr ""
+msgstr "muutospäivä"
 
 #: LastChange/LastChangeReport.py:73
 msgid "You must select at least one type of record."
-msgstr ""
+msgstr "Sinun on valittava ainakin yhden tyypin tietue."
 
 #: LastChange/LastChangeReport.py:105 LastChange/LastChangeReport.py:289
 msgid "People"
@@ -80,7 +80,7 @@ msgstr "Paikat"
 
 #: LastChange/LastChangeReport.py:113 LastChange/LastChangeReport.py:293
 msgid "Media"
-msgstr "Media"
+msgstr "Mediat"
 
 #: LastChange/LastChangeReport.py:115 LastChange/LastChangeReport.py:294
 msgid "Sources"
@@ -88,7 +88,7 @@ msgstr "Lähteet"
 
 #: LastChange/LastChangeReport.py:169
 msgid "People Changed"
-msgstr ""
+msgstr "Muutetut henkilöt"
 
 #: LastChange/LastChangeReport.py:170 LastChange/LastChangeReport.py:185
 #: LastChange/LastChangeReport.py:216 LastChange/LastChangeReport.py:236
@@ -104,24 +104,24 @@ msgstr "Henkilö"
 #: LastChange/LastChangeReport.py:216 LastChange/LastChangeReport.py:236
 #: LastChange/LastChangeReport.py:251 LastChange/LastChangeReport.py:267
 msgid "Changed On"
-msgstr ""
+msgstr "Muutettu pvm"
 
 #: LastChange/LastChangeReport.py:184
 msgid "Families Changed"
-msgstr ""
+msgstr "Muutetut perheet"
 
 #: LastChange/LastChangeReport.py:185
 msgid "Family Surname"
-msgstr ""
+msgstr "Perheen sukunimi"
 
 #: LastChange/LastChangeReport.py:202
 #, python-format
 msgid "%s and %s"
-msgstr ""
+msgstr "%s  ja %s"
 
 #: LastChange/LastChangeReport.py:215
 msgid "Events Changed"
-msgstr ""
+msgstr "Muutetut tapahtumat"
 
 #: LastChange/LastChangeReport.py:216
 msgid "Event"
@@ -129,7 +129,7 @@ msgstr "Tapahtuma"
 
 #: LastChange/LastChangeReport.py:235
 msgid "Places Changed"
-msgstr ""
+msgstr "Muutetut paikat"
 
 #: LastChange/LastChangeReport.py:236
 msgid "Place"
@@ -137,7 +137,7 @@ msgstr "Paikka"
 
 #: LastChange/LastChangeReport.py:250
 msgid "Media Changed"
-msgstr ""
+msgstr "Muutetut mediat"
 
 #: LastChange/LastChangeReport.py:251
 msgid "Path"
@@ -145,7 +145,7 @@ msgstr "Polku"
 
 #: LastChange/LastChangeReport.py:266
 msgid "Sources Changed"
-msgstr ""
+msgstr "Muutetut lähteet"
 
 #: LastChange/LastChangeReport.py:267
 msgid "Title"
@@ -157,7 +157,7 @@ msgstr "Raporttiasetukset"
 
 #: LastChange/LastChangeReport.py:288
 msgid "Select From"
-msgstr ""
+msgstr "Valitse näistä"
 
 #: LastChange/LastChangeReport.py:310
 msgid "The style used for the title of the page."
@@ -169,7 +169,7 @@ msgstr "Käytettävä tyyli osien ylätunnisteille."
 
 #: LastChange/LastChangeReport.py:335
 msgid "The style used for normal text"
-msgstr ""
+msgstr "Normaalitekstin tyyli"
 
 #: LastChange/LastChangeReport.py:347
 msgid "The basic style used for table headings."

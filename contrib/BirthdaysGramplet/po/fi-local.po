@@ -1,0 +1,37 @@
+﻿# Finnish translation for Gramps
+# $Id: fi.po 23088 valta$
+# This file is distributed under the same license as the Gramps package.
+# translation of fi.po to Finnish
+#
+# Pekka Valta <pekka.valta@kolumbus.fi>, 2014.
+msgid ""
+msgstr ""
+"Project-Id-Version: fi\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-02-03 00:31+0200\n"
+"PO-Revision-Date: 2014-02-03 00:31+0200\n"
+"Last-Translator: Pekka Valta <pekka.valta@kolumbus.fi>\n"
+"Language-Team: Finnish <pekka.valta@kolumbus.fi>\n"
+"Language: fi_FI\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.6.3\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: BirthdaysGramplet/BirthdaysGramplet.gpr.py:4
+#: BirthdaysGramplet/BirthdaysGramplet.gpr.py:12
+msgid "Birthdays Gramplet"
+msgstr "Syntymäpäivät Gramplet"
+
+#: BirthdaysGramplet/BirthdaysGramplet.gpr.py:5
+msgid "a gramplet that displays the birthdays of the living people"
+msgstr "Gramplet näyttää elossa olevien henkilöiden syntymäpäivät"
+
+#: BirthdaysGramplet/BirthdaysGramplet.py:40
+msgid "No Family Tree loaded."
+msgstr "Sukupuuta ei ladattuna."
+
+#: BirthdaysGramplet/BirthdaysGramplet.py:53
+msgid "Processing..."
+msgstr "Työstetään..."
