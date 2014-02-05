@@ -1,4 +1,4 @@
-﻿# Finnish translation for Gramps
+# Finnish translation for Gramps
 # $Id: fi.po 23088 valta$
 # This file is distributed under the same license as the Gramps package.
 # translation of fi.po to Finnish
