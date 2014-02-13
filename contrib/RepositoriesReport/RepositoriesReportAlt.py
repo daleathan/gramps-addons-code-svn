@@ -131,9 +131,13 @@ class RepositoryReportAlt(Report):
         if not self.inc_privat:
             self.database = gramps.gen.proxy.PrivateProxyDb(self.database)
 
-        mark = IndexMark(_('Repositories Report'), INDEX_TYPE_TOC, 1)
+        title = _('Repositories Report')
+        print("sorry, incomplete locales support via '%s' domain for '%s'" 
+                 % (LOCALEDOMAIN, title)
+                 )
+        mark = IndexMark(title, INDEX_TYPE_TOC, 1)
         self.doc.start_paragraph('REPO-ReportTitle')
-        self.doc.write_text(self._('Repositories Report'), mark)
+        self.doc.write_text(title, mark)
         self.doc.end_paragraph()
         self.__write_all_repositories()
         
@@ -262,12 +266,18 @@ class RepositoryReportAlt(Report):
                             self.doc.end_paragraph()
                         if self.inc_public:
                             self.doc.start_paragraph('REPO-Section2')
-                            self.doc.write_text(spacing + self._('Publication information:') + spacing)
+                            self.doc.write_text(spacing + _('Publication information:') + spacing)
+                            print("sorry, incomplete locales support via '%s' domain for '%s'" 
+                                   % (LOCALEDOMAIN, _('Publication information:'))
+                                   )
                             self.doc.write_text(public)
                             self.doc.end_paragraph()
                         if self.inc_datamp:
                             self.doc.start_paragraph('REPO-Section2')
-                            self.doc.write_text(spacing + self._('Data:') + spacing)
+                            self.doc.write_text(spacing + _('Data:') + spacing)
+                            print("sorry, incomplete locales support via '%s' domain for '%s'" 
+                                   % (LOCALEDOMAIN, _('Data:'))
+                                   )
                             self.doc.write_text(data)
                             self.doc.end_paragraph()
 
@@ -339,7 +349,8 @@ class RepositoryReportAlt(Report):
 		quay = citation.get_confidence_level()
 				
 		self.doc.start_paragraph('REPO-Section2')
-		self.doc.write_text(spacing + self._('Page:') + spacing)
+        # sorry, broken feature related to 'gramps' domain
+		self.doc.write_text(spacing + _('Page:') + spacing)
 		self.doc.write_text(page)
 		self.doc.end_paragraph()
 		
