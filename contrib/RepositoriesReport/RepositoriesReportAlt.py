@@ -58,6 +58,8 @@ _ = get_addon_translator().ugettext
 LOCALEDIR = os.path.join(const.USER_PLUGINS, 'RepositoriesReport', 'locale')
 LOCALEDOMAIN = 'addon'
 
+spacing = " "
+
 # see TransUtils.py
 
 def get_available_translations():
@@ -119,10 +121,11 @@ class Translator:
         :rtype: unicode
         
         """
+        
         if self.__trans:
-            return self.__trans.gettext(message)
+            return spacing + self.__trans.gettext(message) + spacing
         else:
-            return unicode(gettext.gettext(message))
+            return spacing + unicode(gettext.gettext(message)) + spacing
 
 class RepositoryReportAlt(Report):
     """
@@ -190,10 +193,9 @@ class RepositoryReportAlt(Report):
         if not self.inc_privat:
             self.database = gen.proxy.PrivateProxyDb(self.database)
 
-        title = self._('Repositories Report')
-        mark = IndexMark(title, INDEX_TYPE_TOC, 1)
+        mark = IndexMark(_('Repositories Report'), INDEX_TYPE_TOC, 1)
         self.doc.start_paragraph('REPO-ReportTitle')
-        self.doc.write_text(title, mark)
+        self.doc.write_text(self._('Repositories Report'), mark)
         self.doc.end_paragraph()
         self.__write_all_repositories()
         
