@@ -201,9 +201,9 @@ class CensusReport(Report):
 
             for offset, column in enumerate(get_census_columns(census_id)):
                 self.doc.start_cell("CEN-BodyCell")
-                if offset == 0: # Assume first column is the name
+                if column == _('Name'):
                     self.doc.start_paragraph("CEN-Name")
-                    self.doc.write_text(row[1])
+                    self.doc.write_text(row[2].get(column, row[1]))
                 else:
                     self.doc.start_paragraph("CEN-Normal")
                     if column in row[2]:
@@ -249,7 +249,7 @@ def get_attributes(person, event_handle):
         if event_ref.ref == event_handle:
             for attr in event_ref.get_attribute_list():
                 if unicode(attr.get_type()) == ORDER_ATTR:
-                    order = attr.get_value()
+                    order = int(attr.get_value())
                 else:
                     attrs[unicode(attr.get_type())] = attr.get_value()
 
