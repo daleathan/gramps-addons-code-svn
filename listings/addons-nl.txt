@@ -1,12 +1,13 @@
+{"t":u'Report',"i":'census_report',"n":'Volkstellingsverslag',"v":'1.0.24',"g":'3.4',"d":'Verslag van de volkstellinggebeurtenissen van een persoon.',"z":'Census.addon.tgz'}
 {"t":u'Tool',"i":'remove_description',"n":'Remove Event Description',"v":'1.0.1',"g":'3.4',"d":'Remove generated event descriptions',"z":'RemoveDescription.addon.tgz'}
 {"t":u'Gramplet',"i":'Wordle Gramplet',"n":'Wordle Gramplet',"v":'1.0.7',"g":'3.4',"d":'Gramplet used to make word clouds with wordle.net',"z":'WordleGramplet.addon.tgz'}
 {"t":u'Exporter',"i":'Raw Export',"n":'Ruwe export',"v":'1.0.10',"g":'3.4',"d":"Dit is een ruwe 'python object'-dump","z":'ExportRaw.addon.tgz'}
 {"t":u'Exporter',"i":'ex_sqlite',"n":"'Sqlite'-export","v":'1.0.14',"g":'3.4',"d":"'Sqlite' is een veel gebruikt lokaal gegevensbestandsformaat","z":'Sqlite.addon.tgz'}
 {"t":u'Exporter',"i":'export_django',"n":'Django-export',"v":'1.0.13',"g":'3.4',"d":'Django is een webstructuur die draait op een geconfigureerd gegevensbestand',"z":'Django.addon.tgz'}
-{"t":u'Gramplet',"i":'AllCensus',"n":'All Census Gramplet',"v":'1.0.3',"g":'3.4',"d":'Gramplet to show all census events',"z":'Census.addon.tgz'}
+{"t":u'Report',"i":'census_report',"n":'Volkstellingsverslag',"v":'1.0.24',"g":'3.4',"d":'Verslag van de volkstellinggebeurtenissen van een persoon.',"z":'Census.addon.tgz'}
 {"t":u'Gramplet',"i":'Ancestor',"n":'Ancestor',"v":'1.0.4',"g":'3.4',"d":"Gramplet showing active person's ancestors","z":'Ancestor.addon.tgz'}
 {"t":u'Gramplet',"i":'Birthdays',"n":'Verjaardagen',"v":'1.0.13',"g":'3.4',"d":'een gramplet dat de verjaardagen van de nog in leven zijnde personen toont',"z":'BirthdaysGramplet.addon.tgz'}
-{"t":u'Gramplet',"i":'Census Gramplet',"n":'Volkstelling-gramplet',"v":'1.0.23',"g":'3.4',"d":'Gramplet interface for census data',"z":'Census.addon.tgz'}
+{"t":u'Report',"i":'census_report',"n":'Volkstellingsverslag',"v":'1.0.24',"g":'3.4',"d":'Verslag van de volkstellinggebeurtenissen van een persoon.',"z":'Census.addon.tgz'}
 {"t":u'Gramplet',"i":'Clipboard Gramplet',"n":'Klembord',"v":'1.0.12',"g":'3.4',"d":'Gramplet om gegevens te groeperen',"z":'ClipboardGramplet.addon.tgz'}
 {"t":u'Gramplet',"i":'Clock Gramplet',"n":'Klok',"v":'0.0.8',"g":'3.4',"d":"Gramplet om de grafische mogelijkheden van 'Cairo' te tonen","z":'ClockGramplet.addon.tgz'}
 {"t":u'Gramplet',"i":'Data Entry Gramplet',"n":'Gegevensinvoer',"v":'1.0.19',"g":'3.4',"d":'Gramplet om gegevens snel in te voeren',"z":'DataEntryGramplet.addon.tgz'}
@@ -57,7 +58,7 @@
 {"t":u'Report',"i":'Repositories Report Options',"n":'Opties voor het bibliotheekverslag',"v":'0.3.3',"g":'3.4',"d":'Tekstverslag van de bibliotheken wordt opgemaakt',"z":'RepositoriesReport.addon.tgz'}
 {"t":u'Report',"i":'Repositories Report',"n":'Bibliotheken',"v":'1.1.3',"g":'3.4',"d":'Tekstverslag van de bibliotheken wordt opgemaakt',"z":'RepositoriesReport.addon.tgz'}
 {"t":u'Report',"i":'TodoReport',"n":'Nog te doen',"v":'1.2.9',"g":'3.4',"d":'Een opmerkingenlijst met een bepaalde tag wordt samen met de gegevens aangemaakt zoals de persoon, familie, gebeurtenissen enzovoort.',"z":'ToDoReport.addon.tgz'}
-{"t":u'Report',"i":'census_report',"n":'Volkstellingsverslag',"v":'1.0.23',"g":'3.4',"d":'Verslag van de volkstellinggebeurtenissen van een persoon.',"z":'Census.addon.tgz'}
+{"t":u'Report',"i":'census_report',"n":'Volkstellingsverslag',"v":'1.0.24',"g":'3.4',"d":'Verslag van de volkstellinggebeurtenissen van een persoon.',"z":'Census.addon.tgz'}
 {"t":u'Report',"i":'denominoviso',"n":'DenominoViso',"v":'2.3.9',"g":'3.4',"d":"Een 'xhtml'-webpagina met een grafische voorstelling van de voorouders/afstammelingen (svg) wordt aangemaakt. Individuele details worden door muisacties zichtbaar. ","z":'DenominoViso.addon.tgz'}
 {"t":u'Report',"i":'fil_descendant_report',"n":'Afstammelingenfilter',"v":'0.3.5',"g":'3.4',"d":'Verslag van de afstammelingen met gebruik van een filter aanmaken',"z":'FilteredReports.addon.tgz'}
 {"t":u'Tool',"i":'AttachSource',"n":'Bron toevoegen',"v":'0.0.15',"g":'3.4',"d":'Een gedeelde bron aan verschillende objecten toevoegen.',"z":'AttachSourceTool.addon.tgz'}

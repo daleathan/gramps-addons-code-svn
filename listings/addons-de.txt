@@ -1,12 +1,13 @@
+{"t":u'Report',"i":'census_report',"n":'Zensusbericht',"v":'1.0.24',"g":'3.4',"d":'Bericht der Zensusereignise f\xc3\xbcr eine Person.',"z":'Census.addon.tgz'}
 {"t":u'Tool',"i":'remove_description',"n":'Remove Event Description',"v":'1.0.1',"g":'3.4',"d":'Remove generated event descriptions',"z":'RemoveDescription.addon.tgz'}
 {"t":u'Gramplet',"i":'Wordle Gramplet',"n":'Wordle Gramplet',"v":'1.0.7',"g":'3.4',"d":'Gramplet used to make word clouds with wordle.net',"z":'WordleGramplet.addon.tgz'}
 {"t":u'Exporter',"i":'Raw Export',"n":'Rohdaten Export',"v":'1.0.10',"g":'3.4',"d":'Dies ist eine Rohdaten Pythonobjekt Ausgabe',"z":'ExportRaw.addon.tgz'}
 {"t":u'Exporter',"i":'ex_sqlite',"n":'SQLite Export',"v":'1.0.14',"g":'3.4',"d":'SQLite ist ein gebr\xc3\xa4uchliches lokales Datenbankformat',"z":'Sqlite.addon.tgz'}
 {"t":u'Exporter',"i":'export_django',"n":'Django Export',"v":'1.0.13',"g":'3.4',"d":'Django ist ein Web Programmger\xc3\xbcst das auf einer konfigurierten Datenbank arbeitet',"z":'Django.addon.tgz'}
-{"t":u'Gramplet',"i":'AllCensus',"n":'All Census Gramplet',"v":'1.0.3',"g":'3.4',"d":'Gramplet to show all census events',"z":'Census.addon.tgz'}
+{"t":u'Report',"i":'census_report',"n":'Zensusbericht',"v":'1.0.24',"g":'3.4',"d":'Bericht der Zensusereignise f\xc3\xbcr eine Person.',"z":'Census.addon.tgz'}
 {"t":u'Gramplet',"i":'Ancestor',"n":'Ancestor',"v":'1.0.4',"g":'3.4',"d":"Gramplet showing active person's ancestors","z":'Ancestor.addon.tgz'}
 {"t":u'Gramplet',"i":'Birthdays',"n":'Geburtstags Gramplet',"v":'1.0.13',"g":'3.4',"d":'ein Gramplet welches die Geburtstage von lebenden Personen zeigt',"z":'BirthdaysGramplet.addon.tgz'}
-{"t":u'Gramplet',"i":'Census Gramplet',"n":'Zensus Gramplet',"v":'1.0.23',"g":'3.4',"d":'Gramplet Schnittstelle f\xc3\xbcr Zensusdaten',"z":'Census.addon.tgz'}
+{"t":u'Report',"i":'census_report',"n":'Zensusbericht',"v":'1.0.24',"g":'3.4',"d":'Bericht der Zensusereignise f\xc3\xbcr eine Person.',"z":'Census.addon.tgz'}
 {"t":u'Gramplet',"i":'Clipboard Gramplet',"n":'Zwischenablage Gramplet',"v":'1.0.12',"g":'3.4',"d":'Gramplet zum gruppieren von Elementen',"z":'ClipboardGramplet.addon.tgz'}
 {"t":u'Gramplet',"i":'Clock Gramplet',"n":'Uhren Gramplet',"v":'0.0.8',"g":'3.4',"d":'Gramplet zum demonstrieren der Cairo Grafik',"z":'ClockGramplet.addon.tgz'}
 {"t":u'Gramplet',"i":'Data Entry Gramplet',"n":'Dateneingabe Gramplet',"v":'1.0.19',"g":'3.4',"d":'Gramplet zur schnellen Dateneingabe',"z":'DataEntryGramplet.addon.tgz'}
@@ -57,7 +58,7 @@
 {"t":u'Report',"i":'Repositories Report Options',"n":'Aufbewahrungsorte Berichtsoptionen',"v":'0.3.3',"g":'3.4',"d":'Erstellt einen schriftlichen Aufbewahrungsorte Bericht',"z":'RepositoriesReport.addon.tgz'}
 {"t":u'Report',"i":'Repositories Report',"n":'Aufbewahrungsorte Bericht',"v":'1.1.3',"g":'3.4',"d":'Erstellt einen schriftlichen Aufbewahrungsorte Bericht',"z":'RepositoriesReport.addon.tgz'}
 {"t":u'Report',"i":'TodoReport',"n":'Zu erledigen Bericht',"v":'1.2.9',"g":'3.4',"d":'Erstellt eine Liste aller Notizen mit einer bestimmten Markierung zusammen mit den Datens\xc3\xa4tzen auf die sie referenziert, die Person, Familie, Ereignis, usw.',"z":'ToDoReport.addon.tgz'}
-{"t":u'Report',"i":'census_report',"n":'Zensusbericht',"v":'1.0.23',"g":'3.4',"d":'Bericht der Zensusereignise f\xc3\xbcr eine Person.',"z":'Census.addon.tgz'}
+{"t":u'Report',"i":'census_report',"n":'Zensusbericht',"v":'1.0.24',"g":'3.4',"d":'Bericht der Zensusereignise f\xc3\xbcr eine Person.',"z":'Census.addon.tgz'}
 {"t":u'Report',"i":'denominoviso',"n":'DenominoViso',"v":'2.3.9',"g":'3.4',"d":'Erstellt eine Web (XHTML) Seite mit einer Grafischen Darstellung von Ahnen/ Nachkommen (SVG) auf der Details \xc3\xbcber Personen durch Mausereignisse sichtbar werden.',"z":'DenominoViso.addon.tgz'}
 {"t":u'Report',"i":'fil_descendant_report',"n":'Gefilterter Nachkommenbericht',"v":'0.3.5',"g":'3.4',"d":'Erstellt einen Nachkommen\xc3\xbcbersicht unter Verwendung eines Filter',"z":'FilteredReports.addon.tgz'}
 {"t":u'Tool',"i":'AttachSource',"n":'Quelle hinzuf\xc3\xbcgen',"v":'0.0.15',"g":'3.4',"d":'F\xc3\xbcgt verteilte Quellen mehreren Objekten hinzu.',"z":'AttachSourceTool.addon.tgz'}

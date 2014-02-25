@@ -1,12 +1,13 @@
+{"t":u'Report',"i":'census_report',"n":'Folkr\xc3\xa4kningsrapport',"v":'1.0.24',"g":'3.4',"d":'Rapport \xc3\xb6ver folkr\xc3\xa4kningsh\xc3\xa4ndelser f\xc3\xb6r en person',"z":'Census.addon.tgz'}
 {"t":u'Tool',"i":'remove_description',"n":'Remove Event Description',"v":'1.0.1',"g":'3.4',"d":'Remove generated event descriptions',"z":'RemoveDescription.addon.tgz'}
 {"t":u'Gramplet',"i":'Wordle Gramplet',"n":'Wordle Gramplet',"v":'1.0.7',"g":'3.4',"d":'Gramplet used to make word clouds with wordle.net',"z":'WordleGramplet.addon.tgz'}
 {"t":u'Exporter',"i":'Raw Export',"n":'R\xc3\xa5 export',"v":'1.0.10',"g":'3.4',"d":'Detta \xc3\xa4r en r\xc3\xa5 dumpning av pythonobjekt',"z":'ExportRaw.addon.tgz'}
 {"t":u'Exporter',"i":'ex_sqlite',"n":'SQLite Export',"v":'1.0.14',"g":'3.4',"d":'SQLite \xc3\xa4r ett vanligt lokal databasformat',"z":'Sqlite.addon.tgz'}
 {"t":u'Exporter',"i":'export_django',"n":'Django-export',"v":'1.0.13',"g":'3.4',"d":'Django \xc3\xa4r ett n\xc3\xa4tbaserat ramverkarbetande med en konfigurerad databas ',"z":'Django.addon.tgz'}
-{"t":u'Gramplet',"i":'AllCensus',"n":'All Census Gramplet',"v":'1.0.3',"g":'3.4',"d":'Gramplet to show all census events',"z":'Census.addon.tgz'}
+{"t":u'Report',"i":'census_report',"n":'Folkr\xc3\xa4kningsrapport',"v":'1.0.24',"g":'3.4',"d":'Rapport \xc3\xb6ver folkr\xc3\xa4kningsh\xc3\xa4ndelser f\xc3\xb6r en person',"z":'Census.addon.tgz'}
 {"t":u'Gramplet',"i":'Ancestor',"n":'Ancestor',"v":'1.0.4',"g":'3.4',"d":"Gramplet showing active person's ancestors","z":'Ancestor.addon.tgz'}
 {"t":u'Gramplet',"i":'Birthdays',"n":'F\xc3\xb6delsedags-Gramplet',"v":'1.0.13',"g":'3.4',"d":'en Gramplet, som visar f\xc3\xb6delsedagarna f\xc3\xb6r levande personer',"z":'BirthdaysGramplet.addon.tgz'}
-{"t":u'Gramplet',"i":'Census Gramplet',"n":'Census Gramplet',"v":'1.0.23',"g":'3.4',"d":'Gramplet interface for census data',"z":'Census.addon.tgz'}
+{"t":u'Report',"i":'census_report',"n":'Folkr\xc3\xa4kningsrapport',"v":'1.0.24',"g":'3.4',"d":'Rapport \xc3\xb6ver folkr\xc3\xa4kningsh\xc3\xa4ndelser f\xc3\xb6r en person',"z":'Census.addon.tgz'}
 {"t":u'Gramplet',"i":'Clipboard Gramplet',"n":'Urklippsgramplet',"v":'1.0.12',"g":'3.4',"d":'Gramplet f\xc3\xb6r gruppering av poster',"z":'ClipboardGramplet.addon.tgz'}
 {"t":u'Gramplet',"i":'Clock Gramplet',"n":'Klock-Gramplet',"v":'0.0.8',"g":'3.4',"d":'Gramplet for demonstrating Cairo graphics',"z":'ClockGramplet.addon.tgz'}
 {"t":u'Gramplet',"i":'Data Entry Gramplet',"n":'Gramplet f\xc3\xb6r datainmatning',"v":'1.0.19',"g":'3.4',"d":'Gramplet for quick data entry',"z":'DataEntryGramplet.addon.tgz'}
@@ -57,7 +58,7 @@
 {"t":u'Report',"i":'Repositories Report Options',"n":'Arkivplatsrapportalternativ',"v":'0.3.3',"g":'3.4',"d":'Skapar en textbaserad rapport \xc3\xb6ver arkivplatser',"z":'RepositoriesReport.addon.tgz'}
 {"t":u'Report',"i":'Repositories Report',"n":'Arkivplatsrapport',"v":'1.1.3',"g":'3.4',"d":'Skapar en textbaserad rapport \xc3\xb6ver arkivplatser',"z":'RepositoriesReport.addon.tgz'}
 {"t":u'Report',"i":'TodoReport',"n":'Todo Report',"v":'1.2.9',"g":'3.4',"d":'Produces a list of all the notes with a given tag along with the records that it references, the Person, Family, Event, etc.',"z":'ToDoReport.addon.tgz'}
-{"t":u'Report',"i":'census_report',"n":'Folkr\xc3\xa4kningsrapport',"v":'1.0.23',"g":'3.4',"d":'Rapport \xc3\xb6ver folkr\xc3\xa4kningsh\xc3\xa4ndelser f\xc3\xb6r en person',"z":'Census.addon.tgz'}
+{"t":u'Report',"i":'census_report',"n":'Folkr\xc3\xa4kningsrapport',"v":'1.0.24',"g":'3.4',"d":'Rapport \xc3\xb6ver folkr\xc3\xa4kningsh\xc3\xa4ndelser f\xc3\xb6r en person',"z":'Census.addon.tgz'}
 {"t":u'Report',"i":'denominoviso',"n":'DenominoViso',"v":'2.3.9',"g":'3.4',"d":'Skapar en hemsida (XHTML) med grafisk representation av f\xc3\xb6rf\xc3\xa4der/\xc3\xa4ttlingar (SVG) d\xc3\xa4r detaljer om individier blir synliga via mush\xc3\xa4ndelser.',"z":'DenominoViso.addon.tgz'}
 {"t":u'Report',"i":'fil_descendant_report',"n":'Rapport med utvalda \xc3\xa4ttlingar',"v":'0.3.5',"g":'3.4',"d":'Skapar en \xc3\xa4ttlingsrapport med hj\xc3\xa4lp av ett filter',"z":'FilteredReports.addon.tgz'}
 {"t":u'Tool',"i":'AttachSource',"n":'Koppla k\xc3\xa4lla',"v":'0.0.15',"g":'3.4',"d":'Kopplar en delad k\xc3\xa4lla till flera objekt.',"z":'AttachSourceTool.addon.tgz'}
