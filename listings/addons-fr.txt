@@ -1,3 +1,4 @@
+{"t":u'Report',"i":'census_report',"n":u'Rapport de recensement',"v":'1.0.31',"g":'4.0',"d":u"Les \xe9v\xe9nements recensement de l'individu.","z":'Census.addon.tgz'}
 {"t":u'Biblioth\xe8que additionnelle',"i":'DE Web Connect Pack',"n":u'Ensemble de liens internet allemands',"v":'0.0.13',"g":'4.0',"d":u"Collection de sites internet pour l'Allemagne (n\xe9cessite libwebconnect)","z":'DEWebConnectPack.addon.tgz'}
 {"t":u'Biblioth\xe8que additionnelle',"i":'FR Web Connect Pack',"n":u'Ensemble de liens internet francophones',"v":'1.0.19',"g":'4.0',"d":u'Collection de sites internet pour les francophones (n\xe9cessite libwebconnect)',"z":'FRWebConnectPack.addon.tgz'}
 {"t":u'Biblioth\xe8que additionnelle',"i":'UK Web Connect Pack',"n":u'Ensemble de liens internet anglo-saxons',"v":'1.0.25',"g":'4.0',"d":u'Collection de sites internet pour le Royaume-uni (n\xe9cessite libwebconnect)',"z":'UKWebConnectPack.addon.tgz'}
@@ -9,7 +10,7 @@
 {"t":u'Export',"i":'ex_sqlite',"n":u'Exportation SQLite',"v":'1.0.20',"g":'4.0',"d":u'SQLite est un format courant de base de donn\xe9es locale',"z":'Sqlite.addon.tgz'}
 {"t":u'Export',"i":'export_django',"n":u'Export Django',"v":'1.0.24',"g":'4.0',"d":u'Django est un environnement internet fonctionnant avec une base de donn\xe9es configur\xe9e',"z":'Django.addon.tgz'}
 {"t":u'Gramplet',"i":'Birthdays',"n":u'Gramplet Anniversaires',"v":'1.0.21',"g":'4.0',"d":u'Ce Gramplet affiche les anniversaires des personnes en vie',"z":'BirthdaysGramplet.addon.tgz'}
-{"t":u'Gramplet',"i":'Census Gramplet',"n":u'Gramplet Recensement',"v":'1.0.29',"g":'4.0',"d":u"Gramplet servant d'interface aux donn\xe9es de recensement","z":'Census.addon.tgz'}
+{"t":u'Report',"i":'census_report',"n":u'Rapport de recensement',"v":'1.0.31',"g":'4.0',"d":u"Les \xe9v\xe9nements recensement de l'individu.","z":'Census.addon.tgz'}
 {"t":u'Gramplet',"i":'Clipboard Gramplet',"n":u'Gramplet Presse-papiers',"v":'1.0.20',"g":'4.0',"d":u'Gramplet pour regrouper des articles',"z":'ClipboardGramplet.addon.tgz'}
 {"t":u'Gramplet',"i":'Clock Gramplet',"n":u'Gramplet Horloge',"v":'0.0.17',"g":'4.0',"d":u'Gramplet pour d\xe9montrer les graphiques Cairo',"z":'ClockGramplet.addon.tgz'}
 {"t":u'Gramplet',"i":'Data Entry Gramplet',"n":u'Gramplet Formulaire',"v":'1.0.28',"g":'4.0',"d":u'Gramplet pour une saisie rapide des donn\xe9es',"z":'DataEntryGramplet.addon.tgz'}
@@ -54,7 +55,7 @@
 {"t":u'Rapport',"i":'Repositories Report Options',"n":u'Rapport des d\xe9p\xf4ts avec options',"v":'0.3.11',"g":'4.0',"d":u'Produit un rapport textuel des d\xe9p\xf4ts',"z":'RepositoriesReport.addon.tgz'}
 {"t":u'Rapport',"i":'Repositories Report',"n":u'Rapport des d\xe9p\xf4ts',"v":'1.1.11',"g":'4.0',"d":u'Produit un rapport textuel des d\xe9p\xf4ts',"z":'RepositoriesReport.addon.tgz'}
 {"t":u'Rapport',"i":'TodoReport',"n":u'Rapport \xc0 Faire',"v":'1.2.16',"g":'4.0',"d":u"Produit une liste de toutes les notes avec une \xe9tiquette donn\xe9e ainsi que les enregistrements qui les r\xe9f\xe9rencent, l'individu, la famille, l'\xe9v\xe9nement, etc.","z":'ToDoReport.addon.tgz'}
-{"t":u'Rapport',"i":'census_report',"n":u'Rapport de recensement',"v":'1.0.29',"g":'4.0',"d":u"Les \xe9v\xe9nements recensement de l'individu.","z":'Census.addon.tgz'}
+{"t":u'Report',"i":'census_report',"n":u'Rapport de recensement',"v":'1.0.31',"g":'4.0',"d":u"Les \xe9v\xe9nements recensement de l'individu.","z":'Census.addon.tgz'}
 {"t":u'Rapport',"i":'database-differences-report',"n":u'Rapport des diff\xe9rences dans la base de donn\xe9es',"v":'1.0.4',"g":'4.0',"d":u'Compare une base de donn\xe9es externe avec la base actuelle.',"z":'Differences.addon.tgz'}
 {"t":u'Rapport',"i":'denominoviso',"n":u'DenominoViso',"v":'2.3.16',"g":'4.0',"d":u'G\xe9n\xe8re une page internet (XHTML) avec une repr\xe9sentation graphique des ascendants/descendants (SVG) dont les d\xe9tails des individus deviennent visibles avec les actions de la souris.',"z":'DenominoViso.addon.tgz'}
 {"t":u'Service cartographique',"i":'GoogleEarth',"n":u'GoogleEarth',"v":'1.0.28',"g":'4.0',"d":u'Cr\xe9\xe9 un fichier de donn\xe9es pouvant \xeatre ouvert dans GoogleEarth',"z":'GoogleEarthWriteKML.addon.tgz'}

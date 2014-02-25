@@ -1,9 +1,10 @@
+{"t":u'Report',"i":'census_report',"n":u'Census Report',"v":'1.0.31',"g":'4.0',"d":u'Report of census events for a person.',"z":'Census.addon.tgz'}
 {"t":'Exporter',"i":'Export GEDCOM Extensions',"n":'Export GEDCOM Extensions (GED2)',"v":'1.0.8',"g":'4.0',"d":'Extensions to the common GEDCOM format.',"z":'GedcomExtensions.addon.tgz'}
 {"t":'Exporter',"i":'Raw Export',"n":u'Raw Export',"v":'1.0.19',"g":'4.0',"d":u'This is a raw python object dump',"z":'ExportRaw.addon.tgz'}
 {"t":'Exporter',"i":'ex_sqlite',"n":u'SQLite Export',"v":'1.0.20',"g":'4.0',"d":u'SQLite is a common local database format',"z":'Sqlite.addon.tgz'}
 {"t":'Exporter',"i":'export_django',"n":'Django Export',"v":'1.0.24',"g":'4.0',"d":'Django is a web framework working on a configured database',"z":'Django.addon.tgz'}
 {"t":'Gramplet',"i":'Birthdays',"n":'Birthdays Gramplet',"v":'1.0.21',"g":'4.0',"d":'a gramplet that displays the birthdays of the living people',"z":'BirthdaysGramplet.addon.tgz'}
-{"t":'Gramplet',"i":'Census Gramplet',"n":u'Census Gramplet',"v":'1.0.29',"g":'4.0',"d":u'Gramplet interface for census data',"z":'Census.addon.tgz'}
+{"t":u'Report',"i":'census_report',"n":u'Census Report',"v":'1.0.31',"g":'4.0',"d":u'Report of census events for a person.',"z":'Census.addon.tgz'}
 {"t":'Gramplet',"i":'Clipboard Gramplet',"n":'Clipboard Gramplet',"v":'1.0.20',"g":'4.0',"d":'Gramplet for grouping items',"z":'ClipboardGramplet.addon.tgz'}
 {"t":'Gramplet',"i":'Clock Gramplet',"n":u'Sm\xe5gramps for klokke',"v":'0.0.17',"g":'4.0',"d":u'Gramplet for demonstrating Cairo graphics',"z":'ClockGramplet.addon.tgz'}
 {"t":'Gramplet',"i":'Data Entry Gramplet',"n":u'Data Entry Gramplet',"v":'1.0.28',"g":'4.0',"d":u'Gramplet for quick data entry',"z":'DataEntryGramplet.addon.tgz'}
@@ -49,7 +50,7 @@
 {"t":'Report',"i":'Repositories Report Options',"n":u'Repositories Report Options',"v":'0.3.11',"g":'4.0',"d":u'Lager en tekstbasert rapport over oppbevaringssteder',"z":'RepositoriesReport.addon.tgz'}
 {"t":'Report',"i":'Repositories Report',"n":u'Oppbevaringsstedsrapport',"v":'1.1.11',"g":'4.0',"d":u'Lager en tekstbasert rapport over oppbevaringssteder',"z":'RepositoriesReport.addon.tgz'}
 {"t":'Report',"i":'TodoReport',"n":u'Todo Report',"v":'1.2.16',"g":'4.0',"d":u'Produces a list of all the notes with a given tag along with the records that it references, the Person, Family, Event, etc.',"z":'ToDoReport.addon.tgz'}
-{"t":'Report',"i":'census_report',"n":u'Census Report',"v":'1.0.29',"g":'4.0',"d":u'Report of census events for a person.',"z":'Census.addon.tgz'}
+{"t":u'Report',"i":'census_report',"n":u'Census Report',"v":'1.0.31',"g":'4.0',"d":u'Report of census events for a person.',"z":'Census.addon.tgz'}
 {"t":'Report',"i":'database-differences-report',"n":'Database Differences Report',"v":'1.0.4',"g":'4.0',"d":'Compares an external database with the current one.',"z":'Differences.addon.tgz'}
 {"t":'Report',"i":'denominoviso',"n":u'DenominoViso',"v":'2.3.16',"g":'4.0',"d":u'Generates a web (XHTML) page with a graphical representation of ancestors/descendants (SVG) where details about individuals become visible upon mouse-events.',"z":'DenominoViso.addon.tgz'}
 {"t":'Tool',"i":'AttachSource',"n":u'Attach Source',"v":'0.0.20',"g":'4.0',"d":u'Attaches a shared source to multiple objects.',"z":'AttachSourceTool.addon.tgz'}

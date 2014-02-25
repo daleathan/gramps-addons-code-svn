@@ -1,9 +1,10 @@
+{"t":u'Report',"i":'census_report',"n":u'Volkstelling',"v":'1.0.31',"g":'4.0',"d":u'Verslag van de volkstellinggebeurtenissen van een persoon.',"z":'Census.addon.tgz'}
 {"t":'Exporter',"i":'Export GEDCOM Extensions',"n":'Export GEDCOM Extensions (GED2)',"v":'1.0.8',"g":'4.0',"d":'Extensions to the common GEDCOM format.',"z":'GedcomExtensions.addon.tgz'}
 {"t":'Exporter',"i":'Raw Export',"n":u'Ruwe export',"v":'1.0.19',"g":'4.0',"d":u"Dit is een ruwe 'python object'-dump","z":'ExportRaw.addon.tgz'}
 {"t":'Exporter',"i":'ex_sqlite',"n":u"'SQLite'-export","v":'1.0.20',"g":'4.0',"d":u"'SQLite' is een veel gebruikt lokaal gegevensbestandsformaat","z":'Sqlite.addon.tgz'}
 {"t":'Exporter',"i":'export_django',"n":u'Django-export',"v":'1.0.24',"g":'4.0',"d":u'Django is een webstructuur die draait op een geconfigureerd gegevensbestand',"z":'Django.addon.tgz'}
 {"t":'Gramplet',"i":'Birthdays',"n":u'Verjaardagen',"v":'1.0.21',"g":'4.0',"d":u'een gramplet dat de verjaardagen van de nog in leven zijnde personen toont',"z":'BirthdaysGramplet.addon.tgz'}
-{"t":'Gramplet',"i":'Census Gramplet',"n":u'Volkstelling',"v":'1.0.29',"g":'4.0',"d":u'Gramplet ingavevensterdie voor volkstellinggegevens',"z":'Census.addon.tgz'}
+{"t":u'Report',"i":'census_report',"n":u'Volkstelling',"v":'1.0.31',"g":'4.0',"d":u'Verslag van de volkstellinggebeurtenissen van een persoon.',"z":'Census.addon.tgz'}
 {"t":'Gramplet',"i":'Clipboard Gramplet',"n":u'Klembord',"v":'1.0.20',"g":'4.0',"d":u'Gramplet om gegevens te groeperen',"z":'ClipboardGramplet.addon.tgz'}
 {"t":'Gramplet',"i":'Clock Gramplet',"n":u'Klok',"v":'0.0.17',"g":'4.0',"d":u"Gramplet om de grafische mogelijkheden van 'Cairo' te tonen","z":'ClockGramplet.addon.tgz'}
 {"t":'Gramplet',"i":'Data Entry Gramplet',"n":u'Gegevensinvoer',"v":'1.0.28',"g":'4.0',"d":u'Gramplet om gegevens snel in te voeren',"z":'DataEntryGramplet.addon.tgz'}
@@ -49,7 +50,7 @@
 {"t":'Report',"i":'Repositories Report Options',"n":u'Opties voor het bibliotheekverslag',"v":'0.3.11',"g":'4.0',"d":u'Tekstverslag van de bibliotheken aanmaken',"z":'RepositoriesReport.addon.tgz'}
 {"t":'Report',"i":'Repositories Report',"n":u'Bibliotheken',"v":'1.1.11',"g":'4.0',"d":u'Tekstverslag van de bibliotheken aanmaken',"z":'RepositoriesReport.addon.tgz'}
 {"t":'Report',"i":'TodoReport',"n":u'Taken',"v":'1.2.16',"g":'4.0',"d":u'Een lijst van opmerkingen met een bepaalde tag wordt aangemaakt, samen met de gegevens waarnaar verwezen wordt, de persoon, familie, gegeven, enz. .',"z":'ToDoReport.addon.tgz'}
-{"t":'Report',"i":'census_report',"n":u'Volkstelling',"v":'1.0.29',"g":'4.0',"d":u'Verslag van de volkstellinggebeurtenissen van een persoon.',"z":'Census.addon.tgz'}
+{"t":u'Report',"i":'census_report',"n":u'Volkstelling',"v":'1.0.31',"g":'4.0',"d":u'Verslag van de volkstellinggebeurtenissen van een persoon.',"z":'Census.addon.tgz'}
 {"t":'Report',"i":'database-differences-report',"n":u'Database Differences Report',"v":'1.0.4',"g":'4.0',"d":u'Compares an external database with the current one.',"z":'Differences.addon.tgz'}
 {"t":'Report',"i":'denominoviso',"n":u'DenominoViso',"v":'2.3.16',"g":'4.0',"d":u"Een 'xhtml'-webpagina met een grafische voorstelling van de voorouders/afstammelingen (svg) wordt aangemaakt. Individuele details worden door muisacties zichtbaar. ","z":'DenominoViso.addon.tgz'}
 {"t":'Tool',"i":'AttachSource',"n":u'Bron toevoegen',"v":'0.0.20',"g":'4.0',"d":u'Een gedeelde bron aan verschillende objecten toevoegen.',"z":'AttachSourceTool.addon.tgz'}

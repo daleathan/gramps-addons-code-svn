@@ -1,9 +1,10 @@
+{"t":u'Report',"i":'census_report',"n":u'Folkr\xe4kningsrapport',"v":'1.0.31',"g":'4.0',"d":u'Rapport \xf6ver folkr\xe4kningsh\xe4ndelser f\xf6r en person',"z":'Census.addon.tgz'}
 {"t":'Exporter',"i":'Export GEDCOM Extensions',"n":'Export GEDCOM Extensions (GED2)',"v":'1.0.8',"g":'4.0',"d":'Extensions to the common GEDCOM format.',"z":'GedcomExtensions.addon.tgz'}
 {"t":'Exporter',"i":'Raw Export',"n":u'R\xe5 export',"v":'1.0.19',"g":'4.0',"d":u'Detta \xe4r en r\xe5 dumpning av pythonobjekt',"z":'ExportRaw.addon.tgz'}
 {"t":'Exporter',"i":'ex_sqlite',"n":u'SQLite Export',"v":'1.0.20',"g":'4.0',"d":u'SQLite \xe4r ett vanligt lokal databasformat',"z":'Sqlite.addon.tgz'}
 {"t":'Exporter',"i":'export_django',"n":u'Django-export',"v":'1.0.24',"g":'4.0',"d":u'Django \xe4r ett n\xe4tbaserat ramverkarbetande med en konfigurerad databas ',"z":'Django.addon.tgz'}
 {"t":'Gramplet',"i":'Birthdays',"n":u'F\xf6delsedags-Gramplet',"v":'1.0.21',"g":'4.0',"d":u'en Gramplet, som visar f\xf6delsedagarna f\xf6r levande personer',"z":'BirthdaysGramplet.addon.tgz'}
-{"t":'Gramplet',"i":'Census Gramplet',"n":u'Census Gramplet',"v":'1.0.29',"g":'4.0',"d":u'Gramplet interface for census data',"z":'Census.addon.tgz'}
+{"t":u'Report',"i":'census_report',"n":u'Folkr\xe4kningsrapport',"v":'1.0.31',"g":'4.0',"d":u'Rapport \xf6ver folkr\xe4kningsh\xe4ndelser f\xf6r en person',"z":'Census.addon.tgz'}
 {"t":'Gramplet',"i":'Clipboard Gramplet',"n":u'Urklippsgramplet',"v":'1.0.20',"g":'4.0',"d":u'Gramplet f\xf6r gruppering av poster',"z":'ClipboardGramplet.addon.tgz'}
 {"t":'Gramplet',"i":'Clock Gramplet',"n":u'Klock-Gramplet',"v":'0.0.17',"g":'4.0',"d":u'Gramplet for demonstrating Cairo graphics',"z":'ClockGramplet.addon.tgz'}
 {"t":'Gramplet',"i":'Data Entry Gramplet',"n":u'Gramplet f\xf6r datainmatning',"v":'1.0.28',"g":'4.0',"d":u'Gramplet for quick data entry',"z":'DataEntryGramplet.addon.tgz'}
@@ -49,7 +50,7 @@
 {"t":'Report',"i":'Repositories Report Options',"n":u'Arkivplatsrapportalternativ',"v":'0.3.11',"g":'4.0',"d":u'Skapar en textbaserad rapport \xf6ver arkivplatser',"z":'RepositoriesReport.addon.tgz'}
 {"t":'Report',"i":'Repositories Report',"n":u'Arkivplatsrapport',"v":'1.1.11',"g":'4.0',"d":u'Skapar en textbaserad rapport \xf6ver arkivplatser',"z":'RepositoriesReport.addon.tgz'}
 {"t":'Report',"i":'TodoReport',"n":u'Todo Report',"v":'1.2.16',"g":'4.0',"d":u'Produces a list of all the notes with a given tag along with the records that it references, the Person, Family, Event, etc.',"z":'ToDoReport.addon.tgz'}
-{"t":'Report',"i":'census_report',"n":u'Folkr\xe4kningsrapport',"v":'1.0.29',"g":'4.0',"d":u'Rapport \xf6ver folkr\xe4kningsh\xe4ndelser f\xf6r en person',"z":'Census.addon.tgz'}
+{"t":u'Report',"i":'census_report',"n":u'Folkr\xe4kningsrapport',"v":'1.0.31',"g":'4.0',"d":u'Rapport \xf6ver folkr\xe4kningsh\xe4ndelser f\xf6r en person',"z":'Census.addon.tgz'}
 {"t":'Report',"i":'database-differences-report',"n":'Database Differences Report',"v":'1.0.4',"g":'4.0',"d":'Compares an external database with the current one.',"z":'Differences.addon.tgz'}
 {"t":'Report',"i":'denominoviso',"n":u'DenominoViso',"v":'2.3.16',"g":'4.0',"d":u'Skapar en hemsida (XHTML) med grafisk representation av f\xf6rf\xe4der/\xe4ttlingar (SVG) d\xe4r detaljer om individier blir synliga via mush\xe4ndelser.',"z":'DenominoViso.addon.tgz'}
 {"t":'Tool',"i":'AttachSource',"n":u'Koppla k\xe4lla',"v":'0.0.20',"g":'4.0',"d":u'Kopplar en delad k\xe4lla till flera objekt.',"z":'AttachSourceTool.addon.tgz'}
