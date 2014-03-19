@@ -856,11 +856,12 @@ class PhotoTaggingGramplet(Gramplet):
             media = self.get_current_object()
             image_date = media.date
             if image_date is not None and image_date.get_year() > 0:
-                birth_ref = region.person.get_birth_ref()
-                if birth_ref is not None:
-                    birth = self.dbstate.db.get_event_from_handle(birth_ref.ref)
-                    birth_date = birth.get_date_object()
-                    age = (image_date - birth_date).format(precision=1)
+                if region.person is not None:
+                    birth_ref = region.person.get_birth_ref()
+                    if birth_ref is not None:
+                        birth = self.dbstate.db.get_event_from_handle(birth_ref.ref)
+                        birth_date = birth.get_date_object()
+                        age = (image_date - birth_date).format(precision=1)
             self.treestore.append(None, (i, thumbnail, name, age))
 
     def refresh_selection(self):
