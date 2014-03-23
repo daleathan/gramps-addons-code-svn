@@ -25,7 +25,7 @@
 {"t":u'Gramplet',"i":'Note Gramplet',"n":'Gramplet Note',"v":'1.0.9',"g":'3.4',"d":"Gramplet pour l'\xc3\xa9dition des notes de l'individu actif","z":'NoteGramplet.addon.tgz'}
 {"t":u'Gramplet',"i":'Participants',"n":'Participants',"v":'1.0.3',"g":'3.4',"d":'Gramplet affichant les personnes pr\xc3\xa9sentes \xc3\xa0 un \xc3\xa9v\xc3\xa9nement',"z":'Participants.addon.tgz'}
 {"t":u'Gramplet',"i":'Person Overview',"n":"Vue g\xc3\xa9n\xc3\xa9rale de l'individu","v":'1.0.3',"g":'3.4',"d":"Gramplet affichant une vue g\xc3\xa9n\xc3\xa9rale des \xc3\xa9v\xc3\xa9nements de l'individu","z":'Overview.addon.tgz'}
-{"t":u'Gramplet',"i":'Photo Tagging',"n":'Cartographie photographique',"v":'1.1.2',"g":'3.4',"d":'Gramplet pour d\xc3\xa9finir les individus dans les photos',"z":'PhotoTaggingGramplet.addon.tgz'}
+{"t":u'Gramplet',"i":'Photo Tagging',"n":'Cartographie photographique',"v":'1.1.3',"g":'3.4',"d":'Gramplet pour d\xc3\xa9finir les individus dans les photos',"z":'PhotoTaggingGramplet.addon.tgz'}
 {"t":u'Gramplet',"i":'Python Gramplet',"n":'Gramplet Python',"v":'1.0.7',"g":'3.4',"d":'Un interpr\xc3\xa9teur python interactif',"z":'PythonGramplet.addon.tgz'}
 {"t":u'Gramplet',"i":'Query Gramplet',"n":'Gramplet Requ\xc3\xaate',"v":'1.0.7',"g":'3.4',"d":'Gramplet pour des requ\xc3\xaates SQL-like',"z":'Query.addon.tgz'}
 {"t":u'Gramplet',"i":'Related Relatives Gramplet',"n":'Gramplet Parent\xc3\xa9s',"v":'1.0.8',"g":'3.4',"d":'Gramplet affichant les parent\xc3\xa9s dans une relation',"z":'RelatedRelativesGramplet.addon.tgz'}

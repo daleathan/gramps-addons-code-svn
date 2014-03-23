@@ -25,7 +25,7 @@
 {"t":u'Gramplet',"i":'Note Gramplet',"n":'Notiz Gramplet',"v":'1.0.9',"g":'3.4',"d":'Gramplet zum bearbeiten der Notizen der aktiven Person',"z":'NoteGramplet.addon.tgz'}
 {"t":u'Gramplet',"i":'Participants',"n":'Beteiligte',"v":'1.0.3',"g":'3.4',"d":'Gramplet zeigt die Beteiligten eines Ereignis',"z":'Participants.addon.tgz'}
 {"t":u'Gramplet',"i":'Person Overview',"n":'Personen\xc3\xbcbersicht',"v":'1.0.3',"g":'3.4',"d":'Gramplet zeigt eine \xc3\x9cbersicht der Ereignisse einer Person',"z":'Overview.addon.tgz'}
-{"t":u'Gramplet',"i":'Photo Tagging',"n":'Foto markieren',"v":'1.1.2',"g":'3.4',"d":'Gramplet zum markieren von Personen auf Fotos',"z":'PhotoTaggingGramplet.addon.tgz'}
+{"t":u'Gramplet',"i":'Photo Tagging',"n":'Foto markieren',"v":'1.1.3',"g":'3.4',"d":'Gramplet zum markieren von Personen auf Fotos',"z":'PhotoTaggingGramplet.addon.tgz'}
 {"t":u'Gramplet',"i":'Python Gramplet',"n":'Python Gramplet',"v":'1.0.7',"g":'3.4',"d":'Interaktiver Pythoninterpreter',"z":'PythonGramplet.addon.tgz'}
 {"t":u'Gramplet',"i":'Query Gramplet',"n":'Query Gramplet',"v":'1.0.7',"g":'3.4',"d":'Gramplet for running SQL-like queries',"z":'Query.addon.tgz'}
 {"t":u'Gramplet',"i":'Related Relatives Gramplet',"n":'Verbundene Verwandte Gramplet',"v":'1.0.8',"g":'3.4',"d":'Gramplet zeigt die Beziehung zwischen Verwandten',"z":'RelatedRelativesGramplet.addon.tgz'}
