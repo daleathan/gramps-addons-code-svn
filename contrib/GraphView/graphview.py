@@ -1249,8 +1249,8 @@ class DotGenerator(object):
 
         # There are two ways of displaying dates:
         # 1) full and on two lines:
-        #       b. 1890 - BirthPlace
-        #       d. 1960 - DeathPlace
+        #       b. 1890-12-31 - BirthPlace
+        #       d. 1960-01-02 - DeathPlace
         if self.show_full_dates or self.show_places:
             if birth:
                 label += _('b. %s') % birth # Short for "born" (could be "*")
