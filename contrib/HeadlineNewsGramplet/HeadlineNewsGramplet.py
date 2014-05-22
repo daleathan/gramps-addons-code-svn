@@ -17,7 +17,7 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
-# $Id$
+# $Id: HeadlineNewsGramplet.py 2293 2013-11-08 22:27:46Z nick-h $
 
 #------------------------------------------------------------------------
 #

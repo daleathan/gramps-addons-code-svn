@@ -16,7 +16,7 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
-# $Id$
+# $Id: DescendantCount.py 1739 2013-04-21 00:46:48Z jralls $
 
 import sys
 

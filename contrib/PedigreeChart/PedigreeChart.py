@@ -18,7 +18,7 @@
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 #
 
-# $Id$
+# $Id: PedigreeChart.py 1780 2013-05-14 14:00:04Z nick-h $
 
 """Reports/Graphical Reports/Pedigree Chart"""
 

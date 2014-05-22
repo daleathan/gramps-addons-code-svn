@@ -1,5 +1,5 @@
 # German translation for Gramps
-# $Id$
+# $Id: de-local.po 2120 2013-09-30 21:21:40Z leonhaeuser $
 # This file is distributed under the same license as the Gramps package.
 # translation of de.po to Deutsch
 #

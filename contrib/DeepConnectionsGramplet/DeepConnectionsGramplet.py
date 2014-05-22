@@ -19,7 +19,7 @@
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 #
 
-# $Id$
+# $Id: DeepConnectionsGramplet.py 2244 2013-10-24 14:32:20Z dsblank $
 
 #------------------------------------------------------------------------
 #

@@ -19,7 +19,7 @@
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 #
 
-# $Id$
+# $Id: QueryGramplet.py 2307 2013-12-18 18:40:01Z dsblank $
 
 #import os
 

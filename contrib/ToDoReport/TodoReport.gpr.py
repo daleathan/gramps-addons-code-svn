@@ -18,7 +18,7 @@
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 #
 
-# $Id$
+# $Id: TodoReport.gpr.py 1899 2013-09-12 13:09:22Z vassilii $
 register(REPORT,
     id   = 'TodoReport',
     name = _('Todo Report'),

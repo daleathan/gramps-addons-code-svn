@@ -24,7 +24,7 @@
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 #
 
-# $Id$
+# $Id: graphview.py 2379 2014-05-06 19:35:55Z mathieumd $
 
 from __future__ import unicode_literals
 

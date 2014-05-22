@@ -18,7 +18,7 @@
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 #
 
-# $Id$
+# $Id: libaccess.py 1487 2012-11-19 16:58:59Z romjerome $
 
 """
 An experiment in delayed field lookup. This defines an interface that

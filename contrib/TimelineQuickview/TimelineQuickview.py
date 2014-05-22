@@ -18,7 +18,7 @@
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 #
 #
-# $Id$
+# $Id: TimelineQuickview.py 1773 2013-05-10 23:28:08Z nick-h $
 #
 #
 """

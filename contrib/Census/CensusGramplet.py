@@ -18,7 +18,7 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 #
-# $Id$
+# $Id: CensusGramplet.py 1766 2013-05-10 18:40:22Z nick-h $
 
 """
 Census Gramplet.

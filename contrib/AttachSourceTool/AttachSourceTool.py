@@ -19,7 +19,7 @@
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 #
 
-# $Id$
+# $Id: AttachSourceTool.py 1739 2013-04-21 00:46:48Z jralls $
 
 "Attach Source Tool"
 
