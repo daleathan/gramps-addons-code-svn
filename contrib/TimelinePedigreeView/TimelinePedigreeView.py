@@ -23,6 +23,8 @@
 
 # $Id: TimelinePedigreeView.py 13881 2009-12-21 13:43:50Z flix007 $
 
+from __future__ import print_function, unicode_literals
+
 #-------------------------------------------------------------------------
 #
 # Python modules
@@ -30,7 +32,11 @@
 #-------------------------------------------------------------------------
 
 from cgi import escape
-import cPickle as pickle
+import sys
+if sys.version_info[0] < 3:
+    import cPickle as pickle
+else:
+    import pickle
 
 #-------------------------------------------------------------------------
 #
@@ -528,7 +534,7 @@ class TimelinePedigreeView(NavigationView):
         """
         try:
             self.Tree_Rebuild()
-        except AttributeError, msg:
+        except AttributeError(msg):
             RunDatabaseRepair(str(msg))
 
     def change_db(self, db):
@@ -604,7 +610,7 @@ class TimelinePedigreeView(NavigationView):
         # Create PersonBoxes, do calculations later needed for positioning
         LstDescendants = self.Tree_Find_Relatives(layout_widget, person, 0, generations[0], 1)
         LstAncestors   = self.Tree_Find_Relatives(layout_widget, person, 0, generations[1], -1, LstDescendants[1])
-        # print "LstDescendants[0] is " + name_displayer.display(LstDescendants[0])
+        # print ("LstDescendants[0] is " + name_displayer.display(LstDescendants[0]))
         
         TimeLineHeight = 0
         if self.use_timeline:
@@ -946,7 +952,7 @@ class TimelinePedigreeView(NavigationView):
     
     def Tree_EstimateBirth(self, person, callerHandles = []):
         if not person:
-            # print "Estimate Birth called with no person"
+            # print ("Estimate Birth called with no person")
             return None
         
         if person.handle in self._birth_cache:
@@ -961,8 +967,8 @@ class TimelinePedigreeView(NavigationView):
             birthdate = birth.get_date_object()
         else:
             #if len(callerHandleList) == 1:
-            #    print "==== Birth estimate requested for " + name_displayer.display(person)
-            #print "Estimate birthdate by looking at children of " + name_displayer.display(person)
+            #    print ("==== Birth estimate requested for " + name_displayer.display(person))
+            #print ("Estimate birthdate by looking at children of " + name_displayer.display(person))
             ChildBirthDates = []        # Estimate birth by looking at children
             family_handles = person.get_family_handle_list()
             for family_handle in family_handles:
@@ -978,7 +984,7 @@ class TimelinePedigreeView(NavigationView):
             if len(ChildBirthDates) > 0:
                 birthdate = min( ChildBirthDates ) - 25
             else:                   # Estimate by looking at parents if there was no success
-                #print "Estimate birthdate by looking at parents of " + name_displayer.display(person)
+                #print ("Estimate birthdate by looking at parents of " + name_displayer.display(person))
                 ParentDates = []
                 family_handle = person.get_main_parents_family_handle()
                 family = self.dbstate.db.get_family_from_handle(family_handle)
@@ -998,13 +1004,13 @@ class TimelinePedigreeView(NavigationView):
                     birthdate = min( ParentDates ) + 25
         
         if len(callerHandleList) == 1 and birthdate is None:
-            print "Cannot estimate birth of " + name_displayer.display(person)
+            print ("Cannot estimate birth of " + name_displayer.display(person))
         
         if len(callerHandleList) == 1:
             self._birth_cache[person.handle] = birthdate
                 
         #elif callerHandle == 0:
-        #    print "Estimate for " + name_displayer.display(person) + " is", birthdate
+        #    print ("Estimate for " + name_displayer.display(person) + " is", birthdate)
         
         return birthdate
                     
@@ -1176,7 +1182,7 @@ class TimelinePedigreeView(NavigationView):
         """
         if event.button == 3 and event.type == Gdk.EventType.BUTTON_PRESS:
             # self.build_full_nav_menu_cb(obj, event, person_handle, family_handle)
-            print "Menu request"
+            print ("Menu request")
         elif event.button == 1 and event.type == Gdk.EventType._2BUTTON_PRESS:
             family = self.dbstate.db.get_family_from_handle(family_handle)
             if family:
