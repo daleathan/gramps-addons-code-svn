@@ -1,3 +1,4 @@
+{"t":u'Gramps View',"i":'TimelinePedigreeView',"n":u'Timeline Pedigree',"v":'0.1.32',"g":'4.1',"d":u'The view shows a timeline pedigree with ancestors and descendants of the selected person',"z":'TimelinePedigreeView.addon.tgz'}
 {"t":'Exporter',"i":'Export GEDCOM Extensions',"n":'Export GEDCOM Extensions (GED2)',"v":'1.0.9',"g":'4.1',"d":'Extensions to the common GEDCOM format.',"z":'GedcomExtensions.addon.tgz'}
 {"t":'Exporter',"i":'Raw Export',"n":'Raw Export',"v":'1.0.21',"g":'4.1',"d":'This is a raw python object dump',"z":'ExportRaw.addon.tgz'}
 {"t":'Exporter',"i":'ex_sqlite',"n":'SQLite Export',"v":'1.0.22',"g":'4.1',"d":'SQLite is a common local database format',"z":'Sqlite.addon.tgz'}
@@ -23,7 +24,7 @@
 {"t":'Gramplet',"i":'Python Gramplet',"n":'Python Gramplet',"v":'1.0.18',"g":'4.1',"d":'Interactive Python interpreter',"z":'PythonGramplet.addon.tgz'}
 {"t":'Quickreport',"i":'Query Quickview',"n":'Query Quickview',"v":'1.0.18',"g":'4.1',"d":'Quick view for SQL-like running queries',"z":'Query.addon.tgz'}
 {"t":'Gramplet',"i":'Related Relatives Gramplet',"n":'Related Relatives Gramplet',"v":'1.0.18',"g":'4.1',"d":'Gramplet showing relatives in a relation',"z":'RelatedRelativesGramplet.addon.tgz'}
-{"t":'Gramps View',"i":'TimelinePedigreeView',"n":'Timeline Pedigree',"v":'0.1.31',"g":'4.1',"d":'The view shows a timeline pedigree with ancestors and descendants of the selected person',"z":'TimelinePedigreeView.addon.tgz'}
+{"t":u'Gramps View',"i":'TimelinePedigreeView',"n":u'Timeline Pedigree',"v":'0.1.32',"g":'4.1',"d":u'The view shows a timeline pedigree with ancestors and descendants of the selected person',"z":'TimelinePedigreeView.addon.tgz'}
 {"t":'Gramps View',"i":'graphview',"n":'Graph View',"v":'1.0.41',"g":'4.1',"d":'Dynamic graph of relations',"z":'GraphView.addon.tgz'}
 {"t":'Importer',"i":'im_sqlite',"n":'SQLite Import',"v":'1.0.23',"g":'4.1',"d":'SQLite is a common local database format',"z":'Sqlite.addon.tgz'}
 {"t":'Importer',"i":'import_django',"n":'Django Import',"v":'1.0.24',"g":'4.1',"d":'Django is a web framework working on a configured database',"z":'Django.addon.tgz'}
