@@ -1,4 +1,3 @@
-# encoding:utf-8
 #
 # Gramps - a GTK+/GNOME based genealogy program
 #
@@ -33,9 +32,9 @@ id    = 'TimelinePedigreeView',
 name  = _("Timeline Pedigree"),
 category = ("Ancestry", _("Ancestry")),
 description =  _("The view shows a timeline pedigree with ancestors and descendants of the selected person"),
-version = '0.1.34',
+version = '0.1.35',
 gramps_target_version = '4.1',
-status = UNSTABLE, # not yet tested with python 3, TypeError: GObject and Gtk.Layout()
+status = STABLE,
 fname = 'TimelinePedigreeView.py',
 authors = ["Felix Heß"],
 authors_email = ["xilef@nurfuerspam.de"],
