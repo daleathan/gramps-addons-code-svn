@@ -1,4 +1,4 @@
-{"t":u'Gramps View',"i":'TimelinePedigreeView',"n":u'Antavla med tidslinje',"v":'0.1.33',"g":'4.1',"d":u'Vyn visar en tidslinje med anor och \xe4ttlingar f\xf6r den valda personen',"z":'TimelinePedigreeView.addon.tgz'}
+{"t":u'Gramps View',"i":'TimelinePedigreeView',"n":u'Antavla med tidslinje',"v":'0.1.34',"g":'4.1',"d":u'Vyn visar en tidslinje med anor och \xe4ttlingar f\xf6r den valda personen',"z":'TimelinePedigreeView.addon.tgz'}
 {"t":'Exporter',"i":'Export GEDCOM Extensions',"n":'Export GEDCOM Extensions (GED2)',"v":'1.0.9',"g":'4.1',"d":'Extensions to the common GEDCOM format.',"z":'GedcomExtensions.addon.tgz'}
 {"t":'Exporter',"i":'Raw Export',"n":u'R\xe5 export',"v":'1.0.21',"g":'4.1',"d":u'Detta \xe4r en r\xe5 dumpning av pythonobjekt',"z":'ExportRaw.addon.tgz'}
 {"t":'Exporter',"i":'ex_sqlite',"n":u'SQLite Export',"v":'1.0.22',"g":'4.1',"d":u'SQLite \xe4r ett vanligt lokal databasformat',"z":'Sqlite.addon.tgz'}
@@ -24,7 +24,7 @@
 {"t":'Gramplet',"i":'Python Gramplet',"n":u'Gramplet med Python',"v":'1.0.18',"g":'4.1',"d":u'Interactive Python interpreter',"z":'PythonGramplet.addon.tgz'}
 {"t":'Quickreport',"i":'Query Quickview',"n":'Query Quickview',"v":'1.0.18',"g":'4.1',"d":'Quick view for SQL-like running queries',"z":'Query.addon.tgz'}
 {"t":'Gramplet',"i":'Related Relatives Gramplet',"n":'Related Relatives Gramplet',"v":'1.0.18',"g":'4.1',"d":'Gramplet showing relatives in a relation',"z":'RelatedRelativesGramplet.addon.tgz'}
-{"t":u'Gramps View',"i":'TimelinePedigreeView',"n":u'Antavla med tidslinje',"v":'0.1.33',"g":'4.1',"d":u'Vyn visar en tidslinje med anor och \xe4ttlingar f\xf6r den valda personen',"z":'TimelinePedigreeView.addon.tgz'}
+{"t":u'Gramps View',"i":'TimelinePedigreeView',"n":u'Antavla med tidslinje',"v":'0.1.34',"g":'4.1',"d":u'Vyn visar en tidslinje med anor och \xe4ttlingar f\xf6r den valda personen',"z":'TimelinePedigreeView.addon.tgz'}
 {"t":'Gramps View',"i":'graphview',"n":u'Diagramvy',"v":'1.0.41',"g":'4.1',"d":u'Levande sl\xe4ktskapsdiagram',"z":'GraphView.addon.tgz'}
 {"t":'Importer',"i":'im_sqlite',"n":u'SQLite Import',"v":'1.0.23',"g":'4.1',"d":u'SQLite \xe4r ett vanligt lokal databasformat',"z":'Sqlite.addon.tgz'}
 {"t":'Importer',"i":'import_django',"n":u'Django-import',"v":'1.0.24',"g":'4.1',"d":u'Django \xe4r ett n\xe4tbaserat ramverkarbetande med en konfigurerad databas ',"z":'Django.addon.tgz'}

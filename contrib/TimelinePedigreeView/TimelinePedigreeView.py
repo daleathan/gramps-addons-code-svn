@@ -1388,7 +1388,7 @@ class TimelinePedigreeView(NavigationView):
         ]
 
         for stock_id, callback, sensitivity in entries:
-            item = Gtk.ImageMenuItem.new_from_stock(stock_id)
+            item = Gtk.ImageMenuItem.new_from_stock(stock_id, None)
             item.set_sensitive(sensitivity)
             if callback:
                 item.connect("activate", callback)
@@ -1494,7 +1494,7 @@ class TimelinePedigreeView(NavigationView):
         menu = Gtk.Menu()
         menu.set_title(_('People Menu'))
 
-        add_item = Gtk.ImageMenuItem(Gtk.STOCK_ADD)
+        add_item = Gtk.ImageMenuItem.new_from_stock(Gtk.STOCK_ADD, None)
         add_item.connect("activate", self.add_parents_cb, person_handle,
                          family_handle)
         add_item.show()
@@ -1528,12 +1528,12 @@ class TimelinePedigreeView(NavigationView):
         go_item.show()
         self.menu.append(go_item)
 
-        edit_item = Gtk.ImageMenuItem.new_from_stock(Gtk.STOCK_EDIT)
+        edit_item = Gtk.ImageMenuItem.new_from_stock(Gtk.STOCK_EDIT, None)
         edit_item.connect("activate", self.edit_person_cb, person_handle)
         edit_item.show()
         self.menu.append(edit_item)
 
-        clipboard_item = Gtk.ImageMenuItem.new_from_stock(Gtk.STOCK_COPY)
+        clipboard_item = Gtk.ImageMenuItem.new_from_stock(Gtk.STOCK_COPY, None)
         clipboard_item.connect("activate", self.copy_person_to_clipboard_cb,
                                person_handle)
         clipboard_item.show()
@@ -1766,12 +1766,12 @@ class TimelinePedigreeView(NavigationView):
         if not family:
             return 0
 
-        edit_item = Gtk.ImageMenuItem(Gtk.STOCK_EDIT)
+        edit_item = Gtk.ImageMenuItem.new_from_stock(Gtk.STOCK_EDIT, None)
         edit_item.connect("activate", self.edit_family_cb, family_handle)
         edit_item.show()
         self.menu.append(edit_item)
 
-        clipboard_item = Gtk.ImageMenuItem(Gtk.STOCK_COPY)
+        clipboard_item = Gtk.ImageMenuItem.new_from_stock(Gtk.STOCK_COPY, None)
         clipboard_item.connect("activate", self.copy_family_to_clipboard_cb,
                                family_handle)
         clipboard_item.show()
