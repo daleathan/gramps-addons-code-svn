@@ -21,10 +21,10 @@
 {"t":'Gramplet',"i":'Participants',"n":'Participants',"v":'1.0.4',"g":'4.1',"d":'Gramplet showing the participants in an event',"z":'Participants.addon.tgz'}
 {"t":'Gramplet',"i":'Photo Tagging',"n":'Photo Tagging',"v":'1.0.5',"g":'4.1',"d":'Gramplet for tagging people in photos',"z":'PhotoTaggingGramplet.addon.tgz'}
 {"t":'Gramplet',"i":'Python Gramplet',"n":u'Gramplet med Python',"v":'1.0.18',"g":'4.1',"d":u'Interactive Python interpreter',"z":'PythonGramplet.addon.tgz'}
+{"t":'Gramplet',"i":'Related Relatives Gramplet',"n":'Related Relatives Gramplet',"v":'1.0.18',"g":'4.1',"d":'Gramplet showing relatives in a relation',"z":'RelatedRelativesGramplet.addon.tgz'}
+{"t":'Gramplet',"i":'Query Gramplet',"n":'Query Gramplet',"v":'1.0.18',"g":'4.1',"d":'Gramplet for running SQL-like queries',"z":'Query.addon.tgz'}
 {"t":'Gramps View',"i":'TimelinePedigreeView',"n":'Antavla med tidslinje',"v":'0.1.35',"g":'4.1',"d":'Vyn visar en tidslinje med anor och ättlingar för den valda personen',"z":'TimelinePedigreeView.addon.tgz'}
 {"t":'Gramps View',"i":'graphview',"n":'Diagramvy',"v":'1.0.42',"g":'4.1',"d":'Levande släktskapsdiagram',"z":'GraphView.addon.tgz'}
-{"t":'Quickreport',"i":'Query Quickview',"n":'Query Quickview',"v":'1.0.18',"g":'4.1',"d":'Quick view for SQL-like running queries',"z":'Query.addon.tgz'}
-{"t":'Gramplet',"i":'Related Relatives Gramplet',"n":'Related Relatives Gramplet',"v":'1.0.18',"g":'4.1',"d":'Gramplet showing relatives in a relation',"z":'RelatedRelativesGramplet.addon.tgz'}
 {"t":'Importer',"i":'im_sqlite',"n":u'SQLite Import',"v":'1.0.23',"g":'4.1',"d":u'SQLite \xe4r ett vanligt lokal databasformat',"z":'Sqlite.addon.tgz'}
 {"t":'Importer',"i":'import_django',"n":u'Django-import',"v":'1.0.24',"g":'4.1',"d":u'Django \xe4r ett n\xe4tbaserat ramverkarbetande med en konfigurerad databas ',"z":'Django.addon.tgz'}
 {"t":'Map service',"i":'GoogleEarth',"n":u'GoogleEarth',"v":'1.0.27',"g":'4.1',"d":u'Skapar datafil f\xf6r GoogleEarth och \xf6ppnar den',"z":'GoogleEarthWriteKML.addon.tgz'}
@@ -36,9 +36,9 @@
 {"t":'Plugin lib',"i":'libwebconnect',"n":'libwebconnect',"v":'1.0.19',"g":'4.1',"d":'Library for web site collections',"z":'libwebconnect.addon.tgz'}
 {"t":'Quickreport',"i":'Descendant Count Quickview',"n":u'\xc4ttlingsr\xe4knare',"v":'1.0.18',"g":'4.1',"d":u'Visa antal \xe4ttlingar f\xf6r varje person',"z":'DescendantCount.addon.tgz'}
 {"t":'Quickreport',"i":'NumberOfDescendantsQuickview',"n":u'Antal \xe4ttlingar',"v":'3.4.18',"g":'4.1',"d":u'Visar antal \xe4ttlingar till aktuell person',"z":'NumberOfDescendantsQuickview.addon.tgz'}
-{"t":'Quickreport',"i":'Query Quickview',"n":'Query Quickview',"v":'1.0.18',"g":'4.1',"d":'Quick view for SQL-like running queries',"z":'Query.addon.tgz'}
 {"t":'Quickreport',"i":'allnames',"n":u'Samtliga namn f\xf6r alla personer',"v":'1.0.17',"g":'4.1',"d":u'Visa samtliga namn f\xf6r alla personer',"z":'AllNamesQuickview.addon.tgz'}
 {"t":'Quickreport',"i":'timelinequickview',"n":u'Tidslinje',"v":'1.0.20',"g":'4.1',"d":u'Visar h\xe4ndelser f\xf6r en person p\xe5 en tidslinje',"z":'TimelineQuickview.addon.tgz'}
+{"t":'Quickreport',"i":'Query Quickview',"n":'Query Quickview',"v":'1.0.18',"g":'4.1',"d":'Quick view for SQL-like running queries',"z":'Query.addon.tgz'}
 {"t":'Report',"i":'Descendants Lines',"n":'Descendants Lines',"v":'0.1.21',"g":'4.1',"d":'Produces descendants lines of a person',"z":'DescendantsLines.addon.tgz'}
 {"t":'Report',"i":'FamilySheet',"n":u'Familjeark',"v":'3.4.23',"g":'4.1',"d":u'Skapar ett familjeark visande all information om en person och dennes partner och barn.',"z":'FamilySheet.addon.tgz'}
 {"t":'Report',"i":'FamilyTree',"n":u'Sl\xe4kttr\xe4d',"v":'3.4.21',"g":'4.1',"d":u'Skapar ett grafiskt sl\xe4kttr\xe4d.',"z":'FamilyTree.addon.tgz'}
