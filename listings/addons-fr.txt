@@ -60,4 +60,4 @@
 {"t":u'Rapport',"i":'denominoviso',"n":u'DenominoViso',"v":'2.3.16',"g":'4.0',"d":u'G\xe9n\xe8re une page internet (XHTML) avec une repr\xe9sentation graphique des ascendants/descendants (SVG) dont les d\xe9tails des individus deviennent visibles avec les actions de la souris.',"z":'DenominoViso.addon.tgz'}
 {"t":u'Service cartographique',"i":'GoogleEarth',"n":u'GoogleEarth',"v":'1.0.28',"g":'4.0',"d":u'Cr\xe9\xe9 un fichier de donn\xe9es pouvant \xeatre ouvert dans GoogleEarth',"z":'GoogleEarthWriteKML.addon.tgz'}
 {"t":u'Vue Gramps',"i":'TimelinePedigreeView',"n":u'Arbre au fil du temps',"v":'0.1.28',"g":'4.0',"d":u"Cette vue affiche une ligne temporelle dans l'arbre avec ascendants et descendants de l'individu s\xe9lectionn\xe9","z":'TimelinePedigreeView.addon.tgz'}
-{"t":u'Vue Gramps',"i":'graphview',"n":u'Vue Graphique',"v":'1.0.40',"g":'4.0',"d":u'Graphique dynamique des relations',"z":'GraphView.addon.tgz'}
+{"t":'Gramps View',"i":'graphview',"n":u'Vue Graphique',"v":'1.0.41',"g":'4.0',"d":u'Graphique dynamique des relations',"z":'GraphView.addon.tgz'}
