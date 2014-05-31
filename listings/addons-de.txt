@@ -1,3 +1,4 @@
+{"t":u'Gramps View',"i":'graphview',"n":'Graphenansicht',"v":'1.0.28',"g":'3.4',"d":'Dynamischer Beziehungengraph',"z":'GraphView.addon.tgz'}
 {"t":u'Report',"i":'census_report',"n":'Zensusbericht',"v":'1.0.24',"g":'3.4',"d":'Bericht der Zensusereignise f\xc3\xbcr eine Person.',"z":'Census.addon.tgz'}
 {"t":u'Tool',"i":'remove_description',"n":'Remove Event Description',"v":'1.0.1',"g":'3.4',"d":'Remove generated event descriptions',"z":'RemoveDescription.addon.tgz'}
 {"t":u'Gramplet',"i":'Wordle Gramplet',"n":'Wordle Gramplet',"v":'1.0.7',"g":'3.4',"d":'Gramplet used to make word clouds with wordle.net',"z":'WordleGramplet.addon.tgz'}
@@ -32,7 +33,7 @@
 {"t":u'Gramplet',"i":'Source References',"n":'Ereignisreferenzen',"v":'1.0.3',"g":'3.4',"d":'Gramplet zeigt die Referenzen f\xc3\xbcr eine Quelle',"z":'SourceReferences.addon.tgz'}
 {"t":u'Gramplet',"i":'TODO2',"n":'Zu erledigen 2',"v":'0.0.3',"g":'3.4',"d":'Gramplet f\xc3\xbcr allgemeine Notizen',"z":'ToDoNotesGramplet.addon.tgz'}
 {"t":u'Gramps View',"i":'TimelinePedigreeView',"n":'Zeitleistestammbaum',"v":'0.1.19',"g":'3.4',"d":'Diese Ansicht zeigt einen Zeitleistenstammbaum mit Vorfahren und Nachkommen der gew\xc3\xa4hlten Person',"z":'TimelinePedigreeView.addon.tgz'}
-{"t":u'Gramps View',"i":'graphview',"n":'Graphenansicht',"v":'1.0.27',"g":'3.4',"d":'Dynamischer Beziehungengraph',"z":'GraphView.addon.tgz'}
+{"t":u'Gramps View',"i":'graphview',"n":'Graphenansicht',"v":'1.0.28',"g":'3.4',"d":'Dynamischer Beziehungengraph',"z":'GraphView.addon.tgz'}
 {"t":u'Importer',"i":'im_sqlite',"n":'SQLite Import',"v":'1.0.15',"g":'3.4',"d":'SQLite ist ein gebr\xc3\xa4uchliches lokales Datenbankformat',"z":'Sqlite.addon.tgz'}
 {"t":u'Importer',"i":'import_django',"n":'Django Import',"v":'1.0.13',"g":'3.4',"d":'Django ist ein Web Programmger\xc3\xbcst das auf einer konfigurierten Datenbank arbeitet',"z":'Django.addon.tgz'}
 {"t":u'Map service',"i":'GoogleEarth',"n":'GoogleEarth',"v":'1.0.15',"g":'3.4',"d":'Erstellt Datendatei f\xc3\xbcr GoogleEarth und \xc3\xb6ffnet sie',"z":'GoogleEarthWriteKML.addon.tgz'}

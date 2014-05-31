@@ -1,3 +1,4 @@
+{"t":u'Gramps View',"i":'graphview',"n":'Vue Graphique',"v":'1.0.28',"g":'3.4',"d":'Graphique dynamique des relations',"z":'GraphView.addon.tgz'}
 {"t":u'Report',"i":'census_report',"n":'Rapport de recensement',"v":'1.0.24',"g":'3.4',"d":"Les \xc3\xa9v\xc3\xa9nements recensement de l'individu.","z":'Census.addon.tgz'}
 {"t":u'Tool',"i":'remove_description',"n":'Remove Event Description',"v":'1.0.1',"g":'3.4',"d":'Remove generated event descriptions',"z":'RemoveDescription.addon.tgz'}
 {"t":u'Gramplet',"i":'Wordle Gramplet',"n":'Wordle Gramplet',"v":'1.0.7',"g":'3.4',"d":'Gramplet used to make word clouds with wordle.net',"z":'WordleGramplet.addon.tgz'}
@@ -32,7 +33,7 @@
 {"t":u'Gramplet',"i":'Source References',"n":'R\xc3\xa9f\xc3\xa9rences de la source',"v":'1.0.3',"g":'3.4',"d":"Gramplet affichant les r\xc3\xa9f\xc3\xa9rences d'une source","z":'SourceReferences.addon.tgz'}
 {"t":u'Gramplet',"i":'TODO2',"n":'\xc3\x80 faire 2',"v":'0.0.3',"g":'3.4',"d":'Gramplet for generic notes',"z":'ToDoNotesGramplet.addon.tgz'}
 {"t":u'Gramps View',"i":'TimelinePedigreeView',"n":'Arbre au fil du temps',"v":'0.1.19',"g":'3.4',"d":"Cette vue affiche une ligne temporelle dans l'arbre avec ascendants et descendants de l'individu s\xc3\xa9lectionn\xc3\xa9","z":'TimelinePedigreeView.addon.tgz'}
-{"t":u'Gramps View',"i":'graphview',"n":'Vue Graphique',"v":'1.0.27',"g":'3.4',"d":'Graphique dynamique des relations',"z":'GraphView.addon.tgz'}
+{"t":u'Gramps View',"i":'graphview',"n":'Vue Graphique',"v":'1.0.28',"g":'3.4',"d":'Graphique dynamique des relations',"z":'GraphView.addon.tgz'}
 {"t":u'Importer',"i":'im_sqlite',"n":'Importation SQLite',"v":'1.0.15',"g":'3.4',"d":'SQLite est un format courant de base de donn\xc3\xa9es locale',"z":'Sqlite.addon.tgz'}
 {"t":u'Importer',"i":'import_django',"n":'Import Django',"v":'1.0.13',"g":'3.4',"d":'Django est un environnement internet fonctionnant avec une base de donn\xc3\xa9es configur\xc3\xa9e',"z":'Django.addon.tgz'}
 {"t":u'Map service',"i":'GoogleEarth',"n":'GoogleEarth',"v":'1.0.15',"g":'3.4',"d":'Cr\xc3\xa9\xc3\xa9 un fichier de donn\xc3\xa9es pouvant \xc3\xaatre ouvert dans GoogleEarth',"z":'GoogleEarthWriteKML.addon.tgz'}

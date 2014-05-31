@@ -1,3 +1,4 @@
+{"t":u'Gramps View',"i":'graphview',"n":'Graph View',"v":'1.0.28',"g":'3.4',"d":'Dynamic graph of relations',"z":'GraphView.addon.tgz'}
 {"t":u'Report',"i":'census_report',"n":'Census Report',"v":'1.0.24',"g":'3.4',"d":'Report of census events for a person.',"z":'Census.addon.tgz'}
 {"t":u'Tool',"i":'remove_description',"n":'Remove Event Description',"v":'1.0.1',"g":'3.4',"d":'Remove generated event descriptions',"z":'RemoveDescription.addon.tgz'}
 {"t":u'Gramplet',"i":'Wordle Gramplet',"n":'Wordle Gramplet',"v":'1.0.7',"g":'3.4',"d":'Gramplet used to make word clouds with wordle.net',"z":'WordleGramplet.addon.tgz'}
@@ -32,7 +33,7 @@
 {"t":u'Gramplet',"i":'Source References',"n":'Source References',"v":'1.0.3',"g":'3.4',"d":'Gramplet showing the references for a source',"z":'SourceReferences.addon.tgz'}
 {"t":u'Gramplet',"i":'TODO2',"n":'Huskeliste2',"v":'0.0.3',"g":'3.4',"d":'Gramplet for generic notes',"z":'ToDoNotesGramplet.addon.tgz'}
 {"t":u'Gramps View',"i":'TimelinePedigreeView',"n":'Timeline Pedigree',"v":'0.1.19',"g":'3.4',"d":'The view shows a timeline pedigree with ancestors and descendants of the selected person',"z":'TimelinePedigreeView.addon.tgz'}
-{"t":u'Gramps View',"i":'graphview',"n":'Graph View',"v":'1.0.27',"g":'3.4',"d":'Dynamic graph of relations',"z":'GraphView.addon.tgz'}
+{"t":u'Gramps View',"i":'graphview',"n":'Graph View',"v":'1.0.28',"g":'3.4',"d":'Dynamic graph of relations',"z":'GraphView.addon.tgz'}
 {"t":u'Importer',"i":'im_sqlite',"n":'SQLite Import',"v":'1.0.15',"g":'3.4',"d":'SQLite is a common local database format',"z":'Sqlite.addon.tgz'}
 {"t":u'Importer',"i":'import_django',"n":'Django Import',"v":'1.0.13',"g":'3.4',"d":'Django is a web framework working on a configured database',"z":'Django.addon.tgz'}
 {"t":u'Map service',"i":'GoogleEarth',"n":'GoogleEarth',"v":'1.0.15',"g":'3.4',"d":'Creates data file for GoogleEarth and opens it',"z":'GoogleEarthWriteKML.addon.tgz'}
