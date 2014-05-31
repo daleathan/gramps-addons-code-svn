@@ -23,9 +23,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-17 18:20+0100\n"
-"PO-Revision-Date: 2011-12-17 19:11+0100\n"
-"Last-Translator: Jérôme Rapinat <romjerome@yahoo.fr>\n"
+"POT-Creation-Date: 2014-05-31 14:47+0200\n"
+"PO-Revision-Date: 2014-05-31 14:51+0100\n"
+"Last-Translator: \n"
 "Language-Team:  <fr@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
@@ -34,16 +34,53 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: GraphView/graphview.gpr.py:3
-#: GraphView/graphview.py:90
+#: GraphView/graphview.py:110
 msgid "Graph View"
 msgstr "Vue Graphique"
 
-# Ancêtres, Aïeux ?
 #: GraphView/graphview.gpr.py:4
-msgid "Ancestry"
-msgstr "Lignée"
+msgid "Charts"
+msgstr "Graphiques"
 
 #: GraphView/graphview.gpr.py:5
 msgid "Dynamic graph of relations"
 msgstr "Graphique dynamique des relations"
+
+#: GraphView/graphview.py:303
+msgid "Show images"
+msgstr "Afficher les images"
+
+#: GraphView/graphview.py:306
+msgid "Highlight the home person"
+msgstr "Mettre en relief la racine"
+
+#: GraphView/graphview.py:309
+msgid "Show full dates"
+msgstr "Afficher les dates complètes"
+
+#: GraphView/graphview.py:312
+msgid "Show places"
+msgstr "Afficher les lieux"
+
+#: GraphView/graphview.py:315
+msgid "Layout"
+msgstr "Mise en page"
+
+#: GraphView/graphview.py:327
+msgid "Home person color"
+msgstr "Couleur de la racine (personne centrale)"
+
+#: GraphView/graphview.py:330
+msgid "Colors"
+msgstr "Couleurs"
+
+#: GraphView/graphview.py:1256
+#, python-format
+msgid "b. %s"
+msgstr "n. %s"
+
+#: GraphView/graphview.py:1262
+#, python-format
+msgid "d. %s"
+msgstr "d. %s"
 
