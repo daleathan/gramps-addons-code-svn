@@ -1,3 +1,4 @@
+{"t":u'Tool',"i":'mediaverify',"n":u'Media Verify',"v":'1.0.6',"g":'4.0',"d":u'Verify that media is present in the correct path',"z":'MediaVerify.addon.tgz'}
 {"t":u'Report',"i":'census_report',"n":u'Census Report',"v":'1.0.31',"g":'4.0',"d":u'Report of census events for a person.',"z":'Census.addon.tgz'}
 {"t":'Exporter',"i":'Export GEDCOM Extensions',"n":'Export GEDCOM Extensions (GED2)',"v":'1.0.8',"g":'4.0',"d":'Extensions to the common GEDCOM format.',"z":'GedcomExtensions.addon.tgz'}
 {"t":'Exporter',"i":'Raw Export',"n":'Raw Export',"v":'1.0.19',"g":'4.0',"d":'This is a raw python object dump',"z":'ExportRaw.addon.tgz'}
@@ -59,5 +60,5 @@
 {"t":'Tool',"i":'calculateestimateddates',"n":u'Calculate Estimated Dates',"v":'0.90.17',"g":'4.0',"d":u'Calculates estimated dates for birth and death.',"z":'CalculateEstimatedDates.addon.tgz'}
 {"t":'Tool',"i":'chgivenname',"n":'Fix Capitalization of Given Names',"v":'1.0.22',"g":'4.0',"d":'Searches the entire database and attempts to fix capitalization of the given names.',"z":'ChangeGivenNames.addon.tgz'}
 {"t":'Tool',"i":'climerge',"n":'Command Line Merge',"v":'1.0.14',"g":'4.0',"d":'Merge primary objects via the command line.',"z":'CliMerge.addon.tgz'}
-{"t":'Tool',"i":'mediaverify',"n":'Media Verify',"v":'1.0.5',"g":'4.0',"d":'Verify that media is present in the correct path',"z":'MediaVerify.addon.tgz'}
+{"t":u'Tool',"i":'mediaverify',"n":u'Media Verify',"v":'1.0.6',"g":'4.0',"d":u'Verify that media is present in the correct path',"z":'MediaVerify.addon.tgz'}
 {"t":'Tool',"i":'thumbgen',"n":'Thumbnail Generator',"v":'1.0.11',"g":'4.0',"d":'Generates thumbnails for media files',"z":'ThumbnailGenerator.addon.tgz'}

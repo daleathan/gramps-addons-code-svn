@@ -1,3 +1,4 @@
+{"t":u'Tool',"i":'mediaverify',"n":u'V\xe9rification des media',"v":'1.0.6',"g":'4.0',"d":u"V\xe9rifier si l'objet medium est pr\xe9sent avec le bon chemin ","z":'MediaVerify.addon.tgz'}
 {"t":u'Report',"i":'census_report',"n":u'Rapport de recensement',"v":'1.0.31',"g":'4.0',"d":u"Les \xe9v\xe9nements recensement de l'individu.","z":'Census.addon.tgz'}
 {"t":u'Biblioth\xe8que additionnelle',"i":'DE Web Connect Pack',"n":u'Ensemble de liens internet allemands',"v":'0.0.13',"g":'4.0',"d":u"Collection de sites internet pour l'Allemagne (n\xe9cessite libwebconnect)","z":'DEWebConnectPack.addon.tgz'}
 {"t":u'Biblioth\xe8que additionnelle',"i":'FR Web Connect Pack',"n":u'Ensemble de liens internet francophones',"v":'1.0.19',"g":'4.0',"d":u'Collection de sites internet pour les francophones (n\xe9cessite libwebconnect)',"z":'FRWebConnectPack.addon.tgz'}
@@ -38,7 +39,7 @@
 {"t":u'Outil',"i":'calculateestimateddates',"n":u'Calcul des dates estim\xe9es',"v":'0.90.17',"g":'4.0',"d":u'Calcul des dates estim\xe9es pour les naissances et d\xe9c\xe8s.',"z":'CalculateEstimatedDates.addon.tgz'}
 {"t":u'Outil',"i":'chgivenname',"n":u'R\xe9parer la casse des pr\xe9noms',"v":'1.0.22',"g":'4.0',"d":u'Recherche dans toute la base de donn\xe9es et essaye de corriger la casse des pr\xe9noms.',"z":'ChangeGivenNames.addon.tgz'}
 {"t":u'Outil',"i":'climerge',"n":'Command Line Merge',"v":'1.0.14',"g":'4.0',"d":u'Fusionne les objets principaux via la ligne de commande',"z":'CliMerge.addon.tgz'}
-{"t":u'Outil',"i":'mediaverify',"n":u'V\xe9rification des media',"v":'1.0.5',"g":'4.0',"d":u"V\xe9rifier si l'objet medium est pr\xe9sent avec le bon chemin ","z":'MediaVerify.addon.tgz'}
+{"t":u'Tool',"i":'mediaverify',"n":u'V\xe9rification des media',"v":'1.0.6',"g":'4.0',"d":u"V\xe9rifier si l'objet medium est pr\xe9sent avec le bon chemin ","z":'MediaVerify.addon.tgz'}
 {"t":u'Outil',"i":'thumbgen',"n":u'G\xe9n\xe9rateur de miniature',"v":'1.0.11',"g":'4.0',"d":u'G\xe9n\xe8re des miniatures de nos fichiers media',"z":'ThumbnailGenerator.addon.tgz'}
 {"t":u'Rapport express',"i":'Descendant Count Quickview',"n":u'Calcul des descendants',"v":'1.0.17',"g":'4.0',"d":u'Affiche le total des descendants pour chaque individu',"z":'DescendantCount.addon.tgz'}
 {"t":u'Rapport express',"i":'NumberOfDescendantsQuickview',"n":u'Nombre de descendants',"v":'3.4.16',"g":'4.0',"d":u"Affiche le nombre de descendants de l'individu actif","z":'NumberOfDescendantsQuickview.addon.tgz'}
