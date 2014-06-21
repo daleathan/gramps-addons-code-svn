@@ -191,7 +191,7 @@ class CensusGramplet(Gramplet, DbGUIElement):
                         p_handle = event.get_place_handle()
                         if p_handle:
                             place = db.get_place_from_handle(p_handle)
-                            place_text = place.get_display_info()[0]
+                            place_text = place.get_title()
                         else:
                             place_text = ''
                             

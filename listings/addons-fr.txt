@@ -3,7 +3,7 @@
 {"t":'Exporter',"i":'ex_sqlite',"n":u'Exportation SQLite',"v":'1.0.22',"g":'4.1',"d":u'SQLite est un format courant de base de donn\xe9es locale',"z":'Sqlite.addon.tgz'}
 {"t":'Exporter',"i":'export_django',"n":u'Export Django',"v":'1.0.24',"g":'4.1',"d":u'Django est un environnement internet fonctionnant avec une base de donn\xe9es configur\xe9e',"z":'Django.addon.tgz'}
 {"t":'Gramplet',"i":'Birthdays',"n":u'Gramplet Anniversaires',"v":'1.0.24',"g":'4.1',"d":u'Ce Gramplet affiche les anniversaires des personnes en vie',"z":'BirthdaysGramplet.addon.tgz'}
-{"t":'Gramplet',"i":'Census Gramplet',"n":u'Gramplet Recensement',"v":'1.0.27',"g":'4.1',"d":u"Gramplet servant d'interface aux donn\xe9es de recensement","z":'Census.addon.tgz'}
+{"t":'Gramplet',"i":'Census Gramplet',"n":'Gramplet Recensement',"v":'1.0.28',"g":'4.1',"d":"Gramplet servant d'interface aux données de recensement","z":'Census.addon.tgz'}
 {"t":'Gramplet',"i":'Clipboard Gramplet',"n":u'Gramplet Presse-papiers',"v":'1.0.23',"g":'4.1',"d":u'Gramplet pour regrouper des articles',"z":'ClipboardGramplet.addon.tgz'}
 {"t":'Gramplet',"i":'Clock Gramplet',"n":u'Gramplet Horloge',"v":'0.0.19',"g":'4.1',"d":u'Gramplet pour d\xe9montrer les graphiques Cairo',"z":'ClockGramplet.addon.tgz'}
 {"t":'Gramplet',"i":'Data Entry Gramplet',"n":u'Gramplet Formulaire',"v":'1.0.29',"g":'4.1',"d":u'Gramplet pour une saisie rapide des donn\xe9es',"z":'DataEntryGramplet.addon.tgz'}
@@ -23,6 +23,7 @@
 {"t":'Gramplet',"i":'Python Gramplet',"n":u'Gramplet Python',"v":'1.0.18',"g":'4.1',"d":u'Un interpr\xe9teur python interactif',"z":'PythonGramplet.addon.tgz'}
 {"t":'Gramplet',"i":'Related Relatives Gramplet',"n":'Gramplet Parentés',"v":'1.0.18',"g":'4.1',"d":'Gramplet affichant les parentés dans une relation',"z":'RelatedRelativesGramplet.addon.tgz'}
 {"t":'Gramplet',"i":'Query Gramplet',"n":'Gramplet Requête',"v":'1.0.18',"g":'4.1',"d":'Gramplet pour des requêtes SQL-like',"z":'Query.addon.tgz'}
+{"t":'Gramplet',"i":'AllCensus',"n":'All Census Gramplet',"v":'1.0.6',"g":'4.1',"d":'Gramplet to show all census events',"z":'Census.addon.tgz'}
 {"t":'Gramps View',"i":'TimelinePedigreeView',"n":'Arbre au fil du temps',"v":'0.1.35',"g":'4.1',"d":"Cette vue affiche une ligne temporelle dans l'arbre avec ascendants et descendants de l'individu sélectionné","z":'TimelinePedigreeView.addon.tgz'}
 {"t":'Gramps View',"i":'graphview',"n":'Vue Graphique',"v":'1.0.42',"g":'4.1',"d":'Graphique dynamique des relations',"z":'GraphView.addon.tgz'}
 {"t":'Importer',"i":'im_sqlite',"n":u'Importation SQLite',"v":'1.0.23',"g":'4.1',"d":u'SQLite est un format courant de base de donn\xe9es locale',"z":'Sqlite.addon.tgz'}
@@ -49,7 +50,7 @@
 {"t":'Report',"i":'Repositories Report Options',"n":u'Rapport des d\xe9p\xf4ts avec options',"v":'0.3.12',"g":'4.1',"d":u'Produit un rapport textuel des d\xe9p\xf4ts',"z":'RepositoriesReport.addon.tgz'}
 {"t":'Report',"i":'Repositories Report',"n":u'Rapport des d\xe9p\xf4ts',"v":'1.1.12',"g":'4.1',"d":u'Produit un rapport textuel des d\xe9p\xf4ts',"z":'RepositoriesReport.addon.tgz'}
 {"t":'Report',"i":'TodoReport',"n":u'Rapport \xc0 Faire',"v":'1.2.19',"g":'4.1',"d":u"Produit une liste de toutes les notes avec une \xe9tiquette donn\xe9e ainsi que les enregistrements qui les r\xe9f\xe9rencent, l'individu, la famille, l'\xe9v\xe9nement, etc.","z":'ToDoReport.addon.tgz'}
-{"t":'Report',"i":'census_report',"n":u'Rapport de recensement',"v":'1.0.27',"g":'4.1',"d":u"Les \xe9v\xe9nements recensement de l'individu.","z":'Census.addon.tgz'}
+{"t":'Report',"i":'census_report',"n":'Rapport de recensement',"v":'1.0.28',"g":'4.1',"d":"Les événements recensement de l'individu.","z":'Census.addon.tgz'}
 {"t":'Report',"i":'database-differences-report',"n":u'Rapport des diff\xe9rences dans la base de donn\xe9es',"v":'1.0.6',"g":'4.1',"d":u'Compare une base de donn\xe9es externe avec la base actuelle.',"z":'Differences.addon.tgz'}
 {"t":'Report',"i":'denominoviso',"n":u'DenominoViso',"v":'2.3.19',"g":'4.1',"d":u'G\xe9n\xe8re une page internet (XHTML) avec une repr\xe9sentation graphique des ascendants/descendants (SVG) dont les d\xe9tails des individus deviennent visibles avec les actions de la souris.',"z":'DenominoViso.addon.tgz'}
 {"t":'Tool',"i":'AttachSource',"n":u'Attacher une source',"v":'0.0.23',"g":'4.1',"d":u'Attache une source partag\xe9e \xe0 des objets multiples',"z":'AttachSourceTool.addon.tgz'}

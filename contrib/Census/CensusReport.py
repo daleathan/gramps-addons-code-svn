@@ -171,7 +171,7 @@ class CensusReport(Report):
 
         # Address
         if place:
-            self.write_heading(_("Address:"), place.get_display_info()[0])
+            self.write_heading(_("Address:"), place.get_title())
         else:
             self.write_heading(_("Address:"), "")
 
