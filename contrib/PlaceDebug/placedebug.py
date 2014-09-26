@@ -78,7 +78,10 @@ class PlaceDebug(tool.BatchTool):
         
         links = ''
         for link in broken_links:
-            links += link[0] + ' -> ' + link[1] + '\n'
+            if link[1] is None:
+                links += link[0] + ' -> None\n'
+            else:
+                links += link[0] + ' -> ' + link[1] + '\n'
         
         if links:
             self.user.info(_('Broken links'), links)
