@@ -263,8 +263,8 @@ def main():
     
     args = parser.parse_args()
     
-    if args.test:
-        tests()
+    #if args.test:
+        #tests()
        
     if args.init:
         if sys.argv[2:] == ['all']:
