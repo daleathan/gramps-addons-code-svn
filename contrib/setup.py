@@ -66,20 +66,7 @@ from argparse import ArgumentParser
 
 ADDONS = [name for name in os.listdir(".") 
                       if os.path.isdir(name) and not name.startswith(".")]
-try:
-    sys.argv[2]
-    ADDON = sys.argv[2]
-except:
-	ADDON = "."
-	
-print(sys.argv)
-
-try:
-	sys.argv[3]
-	LANG = sys.argv[3]
-except:
-	LANG = "en"
-	
+                      	
 ALL_LINGUAS=["en", # translation template
              "all", # all entries
              "bg",
@@ -111,6 +98,20 @@ ALL_LINGUAS=["en", # translation template
              "vi",
              "zh_CN",
              ]
+
+keys = sys.argv[2:]
+
+for key in keys:
+	if key in ADDONS:
+		ADDON = key
+	else:
+		ADDON = '.'
+
+for key in keys:
+	if key in ALL_LINGUAS:
+		LANG = key
+	else:
+		LANG = 'en'
 
 if sys.platform == 'win32':    
       
@@ -275,19 +276,19 @@ def main():
     #if args.test:
         #tests()
        
-    if args.init:
+    if args.init and len(sys.argv) > 2:
         init(ADDON, LANG)
         
-    if args.update:
+    if args.update and len(sys.argv) > 2:
         update(ADDON, LANG)
 			
-    if args.compilation:
+    if args.compilation and len(sys.argv) > 2:
         compilation(ADDON, LANG)
         
-    if args.build:
+    if args.build and len(sys.argv) > 2:
         build(ADDON, LANG)
         
-    if args.clean:
+    if args.clean and len(sys.argv) > 2:
         clean()
         
         
@@ -372,8 +373,6 @@ def template(ADDON, LANG):
     Generates the template.pot for the addon.
     """
     
-    if not sys.argv[2:]:
-        return
     
     os.system('''%(xgettext)s --language=Python --keyword=_ --keyword=N_'''
               ''' --from-code=UTF-8 -o "%(addon)s/po/template.pot" %(addon)s/*.py''' 
@@ -448,9 +447,6 @@ def update(ADDON, LANG):
     """
     Updates po/x-local.po with the latest translations.
     """
-    
-    if not sys.argv[2:]:
-        return
             
     template()
                  
@@ -576,9 +572,6 @@ def compilation(ADDON, LANG):
     Compile translations
     """
     
-    if not sys.argv[2:]:
-        return
-    
     os.system('''%(mkdir)s -pv "%(addon)s/locale"''' % {'mkdir': mkdirCmd, 'addon': ADDON})
     
     for po in glob.glob(os.path.join(ADDON, 'po', '*-local.po')):
@@ -595,9 +588,6 @@ def build(ADDON, LANG):
     """
     Build ../download/AddonDirectory.addon.tgz
     """
-    
-    if not sys.argv[2:]:
-        return
         
     compilation()
     versioning()
@@ -718,9 +708,7 @@ def clean():
     """
     Remove created files
     """
-    
-    if not sys.argv[2:]:
-        return
+
     
     os.system('''%(rm)s -rfv '''
               '''*~ '''
