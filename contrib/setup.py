@@ -70,7 +70,7 @@ try:
     sys.argv[2]
     ADDON = sys.argv[2]
 except:
-	ADDON = ""
+	ADDON = "."
 	
 print(sys.argv)
 
@@ -281,7 +281,7 @@ def main():
                 sys.argv[3] = ALL_LINGUAS
             init(sys.argv[3])
         except:
-			template()
+			template(args)
         
     if args.update:
         try:
@@ -289,7 +289,7 @@ def main():
                 sys.argv[3] = ALL_LINGUAS
             update(sys.argv[3])
         except:
-            template()
+            template(args)
 			
     if args.compilation:
         compilation()
@@ -359,10 +359,8 @@ def init(args):
     Creates the initial empty po/x-local.po file and generates the 
     template.pot for the addon.
     """    
-    
-    print(LANG)
-    
-    template()
+        
+    template(args)
 
     if len(args) > 0:
 		                
@@ -383,10 +381,13 @@ def init(args):
                 print('''You can now edit "%s/po/%s-local.po"!''' % (ADDON, LANG))
 
 
-def template():
+def template(args):
     """
     Generates the template.pot for the addon.
     """
+    
+    if not sys.argv[2:]:
+        return
     
     os.system('''%(xgettext)s --language=Python --keyword=_ --keyword=N_'''
               ''' --from-code=UTF-8 -o "%(addon)s/po/template.pot" %(addon)s/*.py''' 
@@ -460,7 +461,10 @@ def xml():
 def update(args):
     """
     Updates po/x-local.po with the latest translations.
-    """ 
+    """
+    
+    if not sys.argv[2:]:
+        return
             
     template()
                  
@@ -593,6 +597,9 @@ def compilation():
     Compile translations
     """
     
+    if not sys.argv[2:]:
+        return
+    
     os.system('''%(mkdir)s -pv "%(addon)s/locale"''' % {'mkdir': mkdirCmd, 'addon': ADDON})
     
     for po in glob.glob(os.path.join(ADDON, 'po', '*-local.po')):
@@ -609,6 +616,9 @@ def build():
     """
     Build ../download/AddonDirectory.addon.tgz
     """
+    
+    if not sys.argv[2:]:
+        return
         
     compilation()
     versioning()
@@ -729,6 +739,9 @@ def clean():
     """
     Remove created files
     """
+    
+    if not sys.argv[2:]:
+        return
     
     os.system('''%(rm)s -rfv '''
               '''*~ '''
