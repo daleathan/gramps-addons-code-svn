@@ -252,11 +252,9 @@ def main():
                                         "Everything around package."
                                         )
                                            
-    translating.add_argument("-i", dest="init", default=False,
-              choices=ADDONS + ALL_LINGUAS,
+    translating.add_argument("-i", action="store_true", dest="init", default=False,
 			  help="create the environment")
-    translating.add_argument("-u", dest="update", default=False,
-              choices=ADDONS + ALL_LINGUAS,
+    translating.add_argument("-u", action="store_true", dest="update", default=False,
 			  help="update the translation")
               
     building.add_argument("-c", "--compile",
@@ -309,11 +307,11 @@ def versioning():
     """
     
     if ADDON:
-        f = open('%s.gpr.py' % ADDON, "r")
+        f = open('%s/%s.gpr.py' % (ADDON, ADDON), "r")
         lines = [file.strip() for file in f]
         f.close() 
     
-        upf = open('%s.gpr.py' % ADDON, "w")
+        upf = open('%s/%s.gpr.py' % (ADDON, ADDON), "w")
     
         for line in lines:
             if ((line.lstrip().startswith("version")) and 
@@ -362,6 +360,8 @@ def init(args):
     template.pot for the addon.
     """    
     
+    print(LANG)
+    
     template()
 
     if len(args) > 0:
@@ -375,7 +375,7 @@ def init(args):
             if os.path.isfile('''%s/po/%s-local.po''' % (ADDON, LANG)):
                 print('''"%s/po/%s-local.po" already exists!''' % (ADDON, LANG))
             else:
-                os.system('''%(msginit)s --locale=%(arg)s ''' 
+                os.system('''%(msginit)s --locale=%(lang)s ''' 
                           '''--input="%(addon)s/po/template.pot" '''
                           '''--output="%(addon)s/po/%(lang)s-local.po"'''
                           % {'msginit': msginitCmd, 'addon': ADDON, 'lang': LANG} 
@@ -473,7 +473,7 @@ def update(args):
                 
                 # create a temp header file (time log)
                 
-                temp(LANG)
+                temp(ADDON, LANG)
                 
             else:
                 
@@ -483,18 +483,18 @@ def update(args):
                 
                 # create a temp header file (time log)
                 
-                temp(LANG)
+                temp(ADDON, LANG)
                 
             # merge data from previous translation to the temp one
             
-            print('Merge "%(addon)s/po/%(arg)s.po" with "po/%(arg)s-local.po":' % {'addon': ADDON, 'arg': arg})
+            print('Merge "%(addon)s/po/%(lang)s.po" with "%(addon)s/po/%(lang)s-local.po":' % {'addon': ADDON, 'lang': LANG})
     
             os.system('''%(msgmerge)s %(addons)s/po/%(lang)s-local.po %(addons)s/po/%(lang)s.po'''
                       ''' -o %(addons)s/po/%(lang)s.po --no-location -v'''
                       % {'msgmerge': msgmergeCmd, 'addon': ADDON, 'lang': LANG} 
                       )
                         
-            memory(arg)
+            memory(ADDON, LANG)
             
             # like template (msgid) with last message strings (msgstr)
             
@@ -523,19 +523,19 @@ def update(args):
             print('''You can now edit "%s/po/%s-local.po"!''' % (ADDON, LANG))
                       
             
-def temp(arg):
+def temp(addon, lang):
     """
     Generate a temp file for header (time log) and Translation Memory
     """
     
-    os.system('''%(msginit)s --locale=%(arg)s ''' 
-              '''--input="po/template.pot" '''
-              '''--output="po/%(arg)s.po" --no-translator'''
-              % {'msginit': msginitCmd, 'arg': arg} 
+    os.system('''%(msginit)s --locale=%(lang)s ''' 
+              '''--input="%(addons)s/po/template.pot" '''
+              '''--output="%(addon)s/po/%(lang)s.po" --no-translator'''
+              % {'msginit': msginitCmd, 'addon': addon, 'lang': lang} 
               )
     
             
-def memory(arg):
+def memory(addon, lang):
     """
     Translation memory for Gramps (own dictionary: msgid/msgstr)
     """
@@ -551,40 +551,40 @@ def memory(arg):
     # Get all of the addon strings out of the catalog
         
     os.system('''%(msggrep)s --location=../*'''
-              ''' po/template.pot --output-file=po/%(arg)s-temp.po'''
-              % {'msggrep': msggrepCmd, 'arg': arg} 
+              ''' %(addon)s/po/template.pot --output-file=%(addon)s/po/%(lang)s-temp.po'''
+              % {'msggrep': msggrepCmd, 'addon': addon, 'lang': lang} 
               )
     
     # start with Gramps main PO file
     
-    locale_po_files = "%(GRAMPSPATH)s/po/%(arg)s.po" % {'GRAMPSPATH': GRAMPSPATH, 'arg': arg}
+    locale_po_files = "%(GRAMPSPATH)s/%(addon)s/po/%(lang)s.po" % {'GRAMPSPATH': GRAMPSPATH, 'addon': addon, 'lang': lang}
     
     # concat global dict as temp file
     
     if os.path.isfile(locale_po_files):
-        print('Concat temp data: "po/%(arg)s.po" with "%(global)s".' % {'global': locale_po_files, 'arg': arg})
+        print('Concat temp data: "%(addon)s/po/%(lang)s.po" with "%(global)s".' % {'global': locale_po_files, 'addon': addon, 'lang': lang})
             
-        os.system('''%(msgcat)s --use-first po/%(arg)s.po'''
-                  ''' %(global)s -o po/%(arg)s.po --no-location'''
-                  % {'msgcat': msgcatCmd, 'global': locale_po_files, 'arg': arg} 
+        os.system('''%(msgcat)s --use-first %(addon)s/po/%(lang)s.po'''
+                  ''' %(global)s -o %(addon)s/po/%(lang)s.po --no-location'''
+                  % {'msgcat': msgcatCmd, 'global': locale_po_files, 'addon': addon, 'lang': lang} 
                   )
         os.system('''%(msgcmp)s -m --use-fuzzy --use-untranslated'''
-                  ''' po/%(arg)s.po %(global)s'''
-                  % {'msgcmp': msgcmpCmd, 'global': locale_po_files , 'arg': arg} 
+                  ''' %(addon)s/po/%(lang)s.po %(global)s'''
+                  % {'msgcmp': msgcmpCmd, 'global': locale_po_files , 'addon': addon, 'lang': lang} 
                   )
                 
-    if os.path.isfile('po/%s-temp.po' % arg):
-        print('Concat temp data: "po/%(arg)s.po" with "po/%(arg)s-temp.po".' % {'arg': arg})
+    if os.path.isfile('%s/po/%s-temp.po' % (addon, lang)):
+        print('Concat temp data: "%(addon)s/po/%(lang)s.po" with "%(addon)s/po/%(lang)s-temp.po".' % {'addon': addon, 'lang': lang})
                   
-        os.system('''%(msgcat)s --use-first po/%(arg)s.po'''
-                  ''' po/%(arg)s-temp.po -o po/%(arg)s.po --no-location'''
-                  % {'msgcat': msgcatCmd, 'arg': arg} 
+        os.system('''%(msgcat)s --use-first %(addon)s/po/%(lang)s.po'''
+                  ''' %(addon)s/po/%(lang)s-temp.po -o %(addon)s/po/%(lang)s.po --no-location'''
+                  % {'msgcat': msgcatCmd, 'addon': addon, 'lang': lang} 
                   )
                   
-        print('''Remove temp "po/%s-temp.po".''' % arg)
+        print('''Remove temp "%s/po/%s-temp.po".''' % (addon, lang))
             
-        os.system('''%(rm)s -rf -v po/%(arg)s-temp.po'''
-                  % {'rm': rmCmd, 'arg': arg}
+        os.system('''%(rm)s -rf -v %(addon)s/po/%(lang)s-temp.po'''
+                  % {'rm': rmCmd, 'addon': addon, 'lang': lang}
                  )
                                   
     
@@ -593,15 +593,15 @@ def compilation():
     Compile translations
     """
     
-    os.system('''%(mkdir)s -pv "locale"''' % {'mkdir': mkdirCmd})
+    os.system('''%(mkdir)s -pv "%(addon)s/locale"''' % {'mkdir': mkdirCmd, 'addon': ADDON})
     
-    for po in glob.glob(os.path.join('po', '*-local.po')):
+    for po in glob.glob(os.path.join(ADDON, 'po', '*-local.po')):
         f = os.path.basename(po[:-3])
-        mo = os.path.join('locale', f[:-6], 'LC_MESSAGES', 'addon.mo')
+        mo = os.path.join(ADDON, 'locale', f[:-6], 'LC_MESSAGES', 'addon.mo')
         directory = os.path.dirname(mo)
         if not os.path.exists(directory):
             os.makedirs(directory)
-        os.system('%s po/%s.po -o %s' % (msgfmtCmd, f, mo)
+        os.system('%s %s/po/%s.po -o %s' % (msgfmtCmd, ADDON, f, mo)
                  )
            
                
@@ -614,15 +614,15 @@ def build():
     versioning()
     
     files = []
-    files += glob.glob('''%s.py''' % ADDON)
-    files += glob.glob('''%s.gpr.py''' % ADDON)
-    files += glob.glob('''*.py''')
-    files += glob.glob('''*.gpr.py''')
-    files += glob.glob('''locale/*/LC_MESSAGES/*.mo''')
-    files += glob.glob('''*.glade''')
-    files += glob.glob('''*.xml''')
+    files += glob.glob('''%s/*.py''' % ADDON)
+    files += glob.glob('''%s/*.gpr.py''' % ADDON)
+    files += glob.glob('''%s/*.py''' % ADDON)
+    files += glob.glob('''%s/*.gpr.py''' % ADDON)
+    files += glob.glob('''%s/locale/*/LC_MESSAGES/*.mo''' % ADDON)
+    files += glob.glob('''%s/*.glade''' % ADDON)
+    files += glob.glob('''%s/*.xml''' % ADDON)
     files_str = " ".join(files)
-    os.system('''%(mkdir)s -pv ../download ''' % {'mkdir': mkdirCmd}
+    os.system('''%(mkdir)s -pv ../download/%(addon)s ''' % {'mkdir': mkdirCmd, 'addon': ADDON}
              )
     os.system('''%(tar)s cfzv "../download/%(addon)s.addon.tgz" %(files_list)s''' 
               % {'tar': tarCmd, 'files_list': files_str, 'addon': ADDON}
