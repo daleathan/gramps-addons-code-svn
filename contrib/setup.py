@@ -276,26 +276,16 @@ def main():
         #tests()
        
     if args.init:
-        try:
-            if sys.argv[3] == ['all']:
-                sys.argv[3] = ALL_LINGUAS
-            init(sys.argv[3])
-        except:
-			template(args)
+        init(ADDON, LANG)
         
     if args.update:
-        try:
-            if sys.argv[3] == ['all']:
-                sys.argv[3] = ALL_LINGUAS
-            update(sys.argv[3])
-        except:
-            template(args)
+        update(ADDON, LANG)
 			
     if args.compilation:
-        compilation()
+        compilation(ADDON, LANG)
         
     if args.build:
-        build()
+        build(ADDON, LANG)
         
     if args.clean:
         clean()
@@ -354,34 +344,30 @@ def version(sversion):
     return [myint(x or "0") for x in (sversion + "..").split(".")][0:3]
        
                 
-def init(args):
+def init(ADDON, LANG):
     """
     Creates the initial empty po/x-local.po file and generates the 
     template.pot for the addon.
     """    
         
-    template(args)
+    template(ADDON, LANG)
+    
+    print(ADDON, LANG)
 
-    if len(args) > 0:
-		                
-        for arg in args:
-
-            if arg in ADDONS:
-                ADDON = arg
-                os.system('''%(mkdir)s -pv "%(addon)s/po"''' % {'mkdir': mkdirCmd, 'addon': ADDON})
+    os.system('''%(mkdir)s -pv "%(addon)s/po"''' % {'mkdir': mkdirCmd, 'addon': ADDON})
 			
-            if os.path.isfile('''%s/po/%s-local.po''' % (ADDON, LANG)):
-                print('''"%s/po/%s-local.po" already exists!''' % (ADDON, LANG))
-            else:
-                os.system('''%(msginit)s --locale=%(lang)s ''' 
-                          '''--input="%(addon)s/po/template.pot" '''
-                          '''--output="%(addon)s/po/%(lang)s-local.po"'''
-                          % {'msginit': msginitCmd, 'addon': ADDON, 'lang': LANG} 
-                          )
-                print('''You can now edit "%s/po/%s-local.po"!''' % (ADDON, LANG))
+    if os.path.isfile('''%s/po/%s-local.po''' % (ADDON, LANG)):
+        print('''"%s/po/%s-local.po" already exists!''' % (ADDON, LANG))
+    else:
+        os.system('''%(msginit)s --locale=%(lang)s ''' 
+                  '''--input="%(addon)s/po/template.pot" '''
+                  '''--output="%(addon)s/po/%(lang)s-local.po"'''
+                  % {'msginit': msginitCmd, 'addon': ADDON, 'lang': LANG} 
+                  )
+        print('''You can now edit "%s/po/%s-local.po"!''' % (ADDON, LANG))
 
 
-def template(args):
+def template(ADDON, LANG):
     """
     Generates the template.pot for the addon.
     """
@@ -458,7 +444,7 @@ def xml():
     root.clear()
     
     
-def update(args):
+def update(ADDON, LANG):
     """
     Updates po/x-local.po with the latest translations.
     """
@@ -468,63 +454,56 @@ def update(args):
             
     template()
                  
-    if len(args) > 0:                
-        for arg in args:
-                        
-            if arg in ADDONS:
-                ADDON = arg
-                os.system('''%(mkdir)s -pv "%(addon)s/po"''' % {'mkdir': mkdirCmd, 'addon': ADDON})
+    os.system('''%(mkdir)s -pv "%(addon)s/po"''' % {'mkdir': mkdirCmd, 'addon': ADDON})
                 
-                # create a temp header file (time log)
+    # create a temp header file (time log)
                 
-                temp(ADDON, LANG)
+    temp(ADDON, LANG)
+                              
+    # create the locale-local.po file
                 
-            else:
+    init(ADDON, LANG)
                 
-                # create the locale-local.po file
+    # create a temp header file (time log)
                 
-                init(LANG)
+    temp(ADDON, LANG)
                 
-                # create a temp header file (time log)
-                
-                temp(ADDON, LANG)
-                
-            # merge data from previous translation to the temp one
+    # merge data from previous translation to the temp one
             
-            print('Merge "%(addon)s/po/%(lang)s.po" with "%(addon)s/po/%(lang)s-local.po":' % {'addon': ADDON, 'lang': LANG})
+    print('Merge "%(addon)s/po/%(lang)s.po" with "%(addon)s/po/%(lang)s-local.po":' % {'addon': ADDON, 'lang': LANG})
     
-            os.system('''%(msgmerge)s %(addons)s/po/%(lang)s-local.po %(addons)s/po/%(lang)s.po'''
-                      ''' -o %(addons)s/po/%(lang)s.po --no-location -v'''
-                      % {'msgmerge': msgmergeCmd, 'addon': ADDON, 'lang': LANG} 
-                      )
+    os.system('''%(msgmerge)s %(addons)s/po/%(lang)s-local.po %(addons)s/po/%(lang)s.po'''
+              ''' -o %(addons)s/po/%(lang)s.po --no-location -v'''
+              % {'msgmerge': msgmergeCmd, 'addon': ADDON, 'lang': LANG} 
+              )
                         
-            memory(ADDON, LANG)
+    memory(ADDON, LANG)
             
-            # like template (msgid) with last message strings (msgstr)
+    # like template (msgid) with last message strings (msgstr)
             
-            print('Merge "%s/po/%s.po" with "po/template.pot":' % (ADDON, LANG))
+    print('Merge "%s/po/%s.po" with "po/template.pot":' % (ADDON, LANG))
             
-            os.system('''%(msgmerge)s -U %(addon)s/po/%(lang)s.po'''
-                      ''' %(addon)s/po/template.pot -v'''
-                      % {'msgmerge': msgmergeCmd, 'addon': ADDON, 'lang': LANG} 
-                      )
+    os.system('''%(msgmerge)s -U %(addon)s/po/%(lang)s.po'''
+              ''' %(addon)s/po/template.pot -v'''
+              % {'msgmerge': msgmergeCmd, 'addon': ADDON, 'lang': LANG} 
+              )
                       
-            # only used messages (need) and merge back
+    # only used messages (need) and merge back
             
-            print('Move content to "po/%s-local.po".' % arg)
+    print('Move content to "po/%s-local.po".' % arg)
             
-            os.system('''%(msgattrib)s --no-obsolete'''
-                      ''' %(addon)s/po/%(lang)s.po -o %(addon)s/po/%(lang)s-local.po'''
-                      % {'msgattrib': msgattribCmd, 'addon': ADDON, 'lang': LANG} 
-                      )
+    os.system('''%(msgattrib)s --no-obsolete'''
+              ''' %(addon)s/po/%(lang)s.po -o %(addon)s/po/%(lang)s-local.po'''
+              % {'msgattrib': msgattribCmd, 'addon': ADDON, 'lang': LANG} 
+              )
             
-            # remove temp locale.po file
+    # remove temp locale.po file
             
-            os.system('''%(rm)s -rf -v %(addon)s/po/%(lang)s.po'''
-                      % {'rm': rmCmd, 'addon': ADDON, 'lang': LANG}
-                      ) 
+    os.system('''%(rm)s -rf -v %(addon)s/po/%(lang)s.po'''
+              % {'rm': rmCmd, 'addon': ADDON, 'lang': LANG}
+              ) 
                       
-            print('''You can now edit "%s/po/%s-local.po"!''' % (ADDON, LANG))
+    print('''You can now edit "%s/po/%s-local.po"!''' % (ADDON, LANG))
                       
             
 def temp(addon, lang):
@@ -592,7 +571,7 @@ def memory(addon, lang):
                  )
                                   
     
-def compilation():
+def compilation(ADDON, LANG):
     """
     Compile translations
     """
@@ -612,7 +591,7 @@ def compilation():
                  )
            
                
-def build():
+def build(ADDON, LANG):
     """
     Build ../download/AddonDirectory.addon.tgz
     """
