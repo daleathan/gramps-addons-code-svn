@@ -283,7 +283,7 @@ def main():
                 sys.argv[3] = ALL_LINGUAS
             init(sys.argv[3])
         except:
-			print('No support for lang yet')
+			template()
         
     if args.update:
         try:
@@ -291,7 +291,7 @@ def main():
                 sys.argv[3] = ALL_LINGUAS
             update(sys.argv[3])
         except:
-            print('No support for lang yet')
+            template()
 			
     if args.compilation:
         compilation()
@@ -366,9 +366,10 @@ def init(args):
     
     template()
 
-    if len(args) > 0:
+    if len(args) > 0:                
         for arg in args:
-            if os.path.isfile('''po/%s-local.po''' % arg):
+			
+            if arg in ALL_LINGUAS and os.path.isfile('''po/%s-local.po''' % arg):
                 print('''"po/%s-local.po" already exists!''' % arg)
             else:
                 os.system('''%(msginit)s --locale=%(arg)s ''' 
@@ -465,7 +466,7 @@ def update(args):
     if len(args) > 0:                
         for arg in args:
                         
-            if os.path.isfile('''po/%s-local.po''' % arg):
+            if arg in ALL_LINGUAS and os.path.isfile('''po/%s-local.po''' % arg):
                 
                 # create a temp header file (time log)
                 
