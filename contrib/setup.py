@@ -386,21 +386,21 @@ def template():
     """
     
     os.system('''%(xgettext)s --language=Python --keyword=_ --keyword=N_'''
-              ''' --from-code=UTF-8 -o "po/template.pot" *.py''' 
-              % {'xgettext': xgettextCmd}
+              ''' --from-code=UTF-8 -o "%(addon)s/po/template.pot" *.py''' 
+              % {'xgettext': xgettextCmd, 'addon': ADDON}
              )
              
     if os.path.isfile('%s.glade' % ADDON):
         os.system('''%(xgettext)s --add-comments -j -L Glade '''
-                  '''--from-code=UTF-8 -o "po/template.pot" *.glade'''
-                  % {'xgettext': xgettextCmd}
+                  '''--from-code=UTF-8 -o "%(addon)s/po/template.pot" *.glade'''
+                  % {'xgettext': xgettextCmd, 'addon': ADDON}
                  )
     
     if os.path.isfile('%s.xml' % ADDON):         
         xml()
         os.system('''%(xgettext)s --keyword=N_ --add-comments -j'''
-                  ''' --from-code=UTF-8 -o "po/template.pot" xml.h''' 
-                  % {'xgettext': xgettextCmd}
+                  ''' --from-code=UTF-8 -o "%(addon)s/po/template.pot" xml.h''' 
+                  % {'xgettext': xgettextCmd, 'addon': ADDON}
                   )
                                       
     os.system('''%(sed)s -i 's/charset=CHARSET/charset=UTF-8/' '''
