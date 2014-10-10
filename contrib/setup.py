@@ -288,8 +288,11 @@ def main():
     if args.build and len(sys.argv) > 2:
         build(ADDON, LANG)
         
+    if args.listing and len(sys.argv) > 2:
+        listing(ADDON)
+        
     if args.clean and len(sys.argv) > 2:
-        clean()
+        clean(ADDON)
         
         
 def versioning(ADDON):
