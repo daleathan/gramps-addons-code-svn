@@ -256,26 +256,26 @@ class PlaceCompletion(Tool.Tool, ManagedWindow):
             return place.get_longitude()
         elif group == '#latlon' :
             return (place.get_latitude() , place.get_longitude())
-        else :
-            loc = place.get_main_location()
-            if group == ('city') :
-                return loc.get_city()
-            elif group == ('country') :
-                return loc.get_country()
-            elif group == ('county') :
-                return loc.get_county()
-            elif group == ('state') :
-                return loc.get_state()
-            elif group == ('street') :
-                return loc.get_street()
-            elif group == ('parish') :
-                return loc.get_parish()
-            elif group == ('zip') :
-                return loc.get_postal_code()
-            else :
-                ErrorDialog(_("Error in PlaceCompletion.py"),
-                        _("Non existing group used in get"))
-                return '';
+        #else :
+            #loc = place.get_main_location()
+            #if group == ('city') :
+                #return loc.get_city()
+            #elif group == ('country') :
+                #return loc.get_country()
+            #elif group == ('county') :
+                #return loc.get_county()
+            #elif group == ('state') :
+                #return loc.get_state()
+            #elif group == ('street') :
+                #return loc.get_street()
+            #elif group == ('parish') :
+                #return loc.get_parish()
+            #elif group == ('zip') :
+                #return loc.get_postal_code()
+            #else :
+                #ErrorDialog(_("Error in PlaceCompletion.py"),
+                        #_("Non existing group used in get"))
+                #return '';
             
     def group_set(self, place, group, val):
         ''' Sets the group in place with value val
@@ -293,28 +293,28 @@ class PlaceCompletion(Tool.Tool, ManagedWindow):
         elif group == '#latlon' :
             place.set_latitude(val[0])
             place.set_longitude(val[1])
-        else :
-            loc = place.get_main_location()
-            if loc == None :
-                loc = Location()
-            if group == ('city') :
-                loc.set_city(val)
-            elif group == ('country') :
-                loc.set_country(val)
-            elif group == ('county') :
-                loc.set_county(val)
-            elif group == ('state') :
-                loc.set_state(val)
-            elif group == ('street') :
-                loc.set_street(val)
-            elif group == ('parish') :
-                loc.set_parish(val)
-            elif group == ('zip') :
-                loc.set_postal_code(val)
-            else :
-                ErrorDialog(_("Error in PlaceCompletion.py"),
-                        _("Non existing group used in set"))
-            place.set_main_location(loc)
+        #else :
+            #loc = place.get_main_location()
+            #if loc == None :
+                #loc = Location()
+            #if group == ('city') :
+                #loc.set_city(val)
+            #elif group == ('country') :
+                #loc.set_country(val)
+            #elif group == ('county') :
+                #loc.set_county(val)
+            #elif group == ('state') :
+                #loc.set_state(val)
+            #elif group == ('street') :
+                #loc.set_street(val)
+            #elif group == ('parish') :
+                #loc.set_parish(val)
+            #elif group == ('zip') :
+                #loc.set_postal_code(val)
+            #else :
+                #ErrorDialog(_("Error in PlaceCompletion.py"),
+                        #_("Non existing group used in set"))
+            #place.set_main_location(loc)
         return place
             
     def fill_combobox(self, cmb, namelistopt, default) :
@@ -503,7 +503,7 @@ class PlaceCompletion(Tool.Tool, ManagedWindow):
             
             
         #populate the tree
-        self.make_new_model()
+        #self.make_new_model()
         
     def make_new_model(self):
         # model contains 4 colums: text to show, place handle, action, color
@@ -584,23 +584,23 @@ class PlaceCompletion(Tool.Tool, ManagedWindow):
         text = ''
         if place.get_title() :
             text += place.get_title()
-        if place.get_main_location().get_city().strip() or \
-                place.get_main_location().get_state().strip() or \
-                place.get_main_location().get_country().strip() :
-            text += ' ('
-            div = ''
-            if place.get_main_location().get_city().strip() :
-                text += _('City')+': '+place.get_main_location().get_city()
-                div = ', '
-            if place.get_main_location().get_state().strip() :
-                text += div + _('State')+': '+ \
-                            place.get_main_location().get_state()
-                div = ', '
-            if place.get_main_location().get_country().strip() :
-                text += div + _('Country')+': '+ \
-                        place.get_main_location().get_country()
-                div = ', '
-            text += ')'
+        #if place.get_main_location().get_city().strip() or \
+                #place.get_main_location().get_state().strip() or \
+                #place.get_main_location().get_country().strip() :
+            #text += ' ('
+            #div = ''
+            #if place.get_main_location().get_city().strip() :
+                #text += _('City')+': '+place.get_main_location().get_city()
+                #div = ', '
+            #if place.get_main_location().get_state().strip() :
+                #text += div + _('State')+': '+ \
+                            #place.get_main_location().get_state()
+                #div = ', '
+            #if place.get_main_location().get_country().strip() :
+                #text += div + _('Country')+': '+ \
+                        #place.get_main_location().get_country()
+                #div = ', '
+            #text += ')'
         self.model.set(id, 0, text)
         self.model.set(id, 1, place.get_handle())
         self.model.set(id, 2, '')
@@ -738,13 +738,13 @@ class PlaceCompletion(Tool.Tool, ManagedWindow):
             longitude = place.get_longitude()
             latitude = place.get_latitude()
             latitude,longitude = conv_lat_lon(latitude,longitude,"D.D8")
-            city = place.get_main_location().get_city()
-            country = place.get_main_location().get_country()
+            #city = place.get_main_location().get_city()
+            #country = place.get_main_location().get_country()
 
             if longitude and latitude:
                 path = "http://maps.google.com/?sll=%s,%s&z=15" % (latitude,longitude)
-            elif city and country:
-                path = "http://maps.google.com/maps?q=%s,%s" % (city,country)
+            #elif city and country:
+                #path = "http://maps.google.com/maps?q=%s,%s" % (city,country)
             else:
                 path = "http://maps.google.com/maps?q=%s" % '+'.join(descr.split())
             display_url(path)
@@ -959,11 +959,11 @@ class PlaceCompletion(Tool.Tool, ManagedWindow):
             return valoud, valnew, valaction, place
         # we need to lookup the latitude and longitude, construct regex:
         pattern = self.matchlatlon.pattern
-        loc = place.get_main_location()
-        if re.search(('CITY'),pattern) :
-            if loc.get_city().strip() == '' :
-                return valoud, valnew, valaction, place
-            pattern = re.sub(('CITY'), loc.get_city().strip(), pattern)
+        #loc = place.get_main_location()
+        #if re.search(('CITY'),pattern) :
+            #if loc.get_city().strip() == '' :
+                #return valoud, valnew, valaction, place
+            #pattern = re.sub(('CITY'), loc.get_city().strip(), pattern)
         if re.search(('TITLEBEGIN'),pattern) :
             tit = place.get_title().strip()
             titb= tit.split(',')[0].strip()
@@ -973,20 +973,20 @@ class PlaceCompletion(Tool.Tool, ManagedWindow):
         if re.search(('TITLE'),pattern) :
             if place.get_title().strip() == '' :
                 return valoud, valnew, valaction, place
-            pattern = re.sub(('TITLE'), loc.get_title().strip(), pattern)
-        if re.search(('STATE'),pattern) :
-            if place.get_state().strip() == '' :
-                return valoud, valnew, valaction, place
-            pattern = re.sub(('STATE'), loc.get_state().strip(), pattern)
-        if re.search(('PARISH'),pattern) :
-            if loc.get_parish().strip() == '' :
-                return valoud, valnew, valaction, place
-            pattern = re.sub(('PARISH'), loc.get_parish().strip(), pattern)
-        if re.search(('COUNTY'), pattern):
-            if loc.get_county().strip() not in self.county_lookup:
-                return valoud, valnew, valaction, place
-            codes = self.county_lookup[loc.get_county().strip()]
-            pattern = re.sub(('COUNTY'), '(' + '|'.join(codes) + ')', pattern)
+            pattern = re.sub(('TITLE'), place.get_title().strip(), pattern)
+        #if re.search(('STATE'),pattern) :
+            #if place.get_state().strip() == '' :
+                #return valoud, valnew, valaction, place
+            #pattern = re.sub(('STATE'), loc.get_state().strip(), pattern)
+        #if re.search(('PARISH'),pattern) :
+            #if loc.get_parish().strip() == '' :
+                #return valoud, valnew, valaction, place
+            #pattern = re.sub(('PARISH'), loc.get_parish().strip(), pattern)
+        #if re.search(('COUNTY'), pattern):
+            #if loc.get_county().strip() not in self.county_lookup:
+                #return valoud, valnew, valaction, place
+            #codes = self.county_lookup[loc.get_county().strip()]
+            #pattern = re.sub(('COUNTY'), '(' + '|'.join(codes) + ')', pattern)
         #print 'DEBUG info: pattern for search is ' , pattern
         regexll = re.compile(pattern,re.U|re.L|re.M)
         latlongroup = ['lat', 'lon'] 
@@ -1083,12 +1083,12 @@ class PlaceCompletion(Tool.Tool, ManagedWindow):
         tf = title_format.lower()
         empty_result = True
         for v in val:
-            value = eval("place.get_main_location().get_"+v+"()")
+            #value = eval("place.get_main_location().get_"+v+"()")
             if tf.count(v) > 0:
                 empty_result = False
-            tf = tf.replace(v, value)
-        if not empty_result:
-            return tf
+            #tf = tf.replace(v, value)
+        #if not empty_result:
+            #return tf
         return ''
 
     def construct_title(self, place) :
@@ -1106,103 +1106,103 @@ class PlaceCompletion(Tool.Tool, ManagedWindow):
             place = self.group_set(place, ('title'),new)
         elif type == "None" :
             pass
-        elif type == "CS" :
-            valoud.append(place.get_title())
-            new = place.get_main_location().get_city()
-            if place.get_main_location().get_state() :
-                new += ', ' + place.get_main_location().get_state()
-            valnew.append(new)
-            valaction.append([('title'),new])
+        #elif type == "CS" :
+            #valoud.append(place.get_title())
+            #new = place.get_main_location().get_city()
+            #if place.get_main_location().get_state() :
+                #new += ', ' + place.get_main_location().get_state()
+            #valnew.append(new)
+            #valaction.append([('title'),new])
             #do the action in memory
-            place = self.group_set(place, ('title'),new)
-        elif type == "CZC" :
+            #place = self.group_set(place, ('title'),new)
+        #elif type == "CZC" :
             # City,PostalCode,Country
-            valoud.append(place.get_title())
-            city    = place.get_main_location().get_city()
-            pcode   = place.get_main_location().get_postal_code()
-            country = place.get_main_location().get_country()
-            new = city + ',' + pcode + ',' + country
-            valnew.append(new)
-            valaction.append([('title'),new])
+            #valoud.append(place.get_title())
+            #city    = place.get_main_location().get_city()
+            #pcode   = place.get_main_location().get_postal_code()
+            #country = place.get_main_location().get_country()
+            #new = city + ',' + pcode + ',' + country
+            #valnew.append(new)
+            #valaction.append([('title'),new])
             #do the action in memory
-            place = self.group_set(place, ('title'),new)
-        elif type == "CSLPZC" :
+            #place = self.group_set(place, ('title'),new)
+        #elif type == "CSLPZC" :
             # City[(Street;Locality;Parish)],PostalCode,Country
-            valoud.append(place.get_title())
-            city     = place.get_main_location().get_city()
-            street   = place.get_main_location().get_street()
-            locality = place.get_main_location().get_locality()
-            parish   = place.get_main_location().get_parish()
-            pcode      = place.get_main_location().get_postal_code()
-            country  = place.get_main_location().get_country()
-            address  = ''
-            if street or locality or parish:
-                address = '(' + street + ';' + locality + ';' + parish + ')'
-            new = city + address + ',' + pcode + ',' + country
-            valnew.append(new)
-            valaction.append([('title'),new])
+            #valoud.append(place.get_title())
+            #city     = place.get_main_location().get_city()
+            #street   = place.get_main_location().get_street()
+            #locality = place.get_main_location().get_locality()
+            #parish   = place.get_main_location().get_parish()
+            #pcode      = place.get_main_location().get_postal_code()
+            #country  = place.get_main_location().get_country()
+            #address  = ''
+            #if street or locality or parish:
+                #address = '(' + street + ';' + locality + ';' + parish + ')'
+            #new = city + address + ',' + pcode + ',' + country
+            #valnew.append(new)
+            #valaction.append([('title'),new])
             #do the action in memory
-            place = self.group_set(place, ('title'),new)
-        elif type == "T1CS" :
-            old = place.get_title()
-            valoud.append(old)
-            old = old.split(',')[0]
-            new = place.get_main_location().get_city()
-            if old != new :
-                new = old + ', ' + new
-            if place.get_main_location().get_state() :
-                new += ', ' + place.get_main_location().get_state()
-            valnew.append(new)
-            valaction.append([('title'),new])
+            #place = self.group_set(place, ('title'),new)
+        #elif type == "T1CS" :
+            #old = place.get_title()
+            #valoud.append(old)
+            #old = old.split(',')[0]
+            #new = place.get_main_location().get_city()
+            #if old != new :
+                #new = old + ', ' + new
+            #if place.get_main_location().get_state() :
+                #new += ', ' + place.get_main_location().get_state()
+            #valnew.append(new)
+            #valaction.append([('title'),new])
             #do the action in memory
-            place = self.group_set(place, ('title'),new)
-        elif type == "T1CCSC" :
-            old = place.get_title()
-            valoud.append(old)
-            old = old.split(',')[0]
-            new = place.get_main_location().get_city()
-            if old != new :
-                new = old + ', ' + new
-            if place.get_main_location().get_county() :
-                new += ', ' + place.get_main_location().get_county()
-            else:
-                new +=', '
-            if place.get_main_location().get_state() :
-                new += ', ' + place.get_main_location().get_state()
-            else:
-                new +=', '
-            if place.get_main_location().get_country() :
-                new += ', ' + place.get_main_location().get_country()
-            valnew.append(new)
-            valaction.append([('title'),new])
+            #place = self.group_set(place, ('title'),new)
+        #elif type == "T1CCSC" :
+            #old = place.get_title()
+            #valoud.append(old)
+            #old = old.split(',')[0]
+            #new = place.get_main_location().get_city()
+            #if old != new :
+                #new = old + ', ' + new
+            #if place.get_main_location().get_county() :
+                #new += ', ' + place.get_main_location().get_county()
+            #else:
+                #new +=', '
+            #if place.get_main_location().get_state() :
+                #new += ', ' + place.get_main_location().get_state()
+            #else:
+                #new +=', '
+            #if place.get_main_location().get_country() :
+                #new += ', ' + place.get_main_location().get_country()
+            #valnew.append(new)
+            #valaction.append([('title'),new])
             #do the action in memory
-            place = self.group_set(place, ('title'),new)
-        elif type == "T1CCCSC" :
-            old = place.get_title()
-            valoud.append(old)
-            old = old.split(',')[0]
-            old = old.split(' - ')[0]
-            new = place.get_main_location().get_city()
-            if old != new :
-                new = "[" + old + "] - " + new
-            if place.get_main_location().get_postal_code() :
-                new += ', ' + place.get_main_location().get_postal_code()
-            else:
-                new +=', '
-            if place.get_main_location().get_county() :
-                new += ', ' + place.get_main_location().get_county()
-            else:
-                new +=', '
-            if place.get_main_location().get_state() :
-                new += ', ' + place.get_main_location().get_state()
-            else:
-                new +=', '
-            if place.get_main_location().get_country() :
-                new += ', ' + place.get_main_location().get_country()
-            valnew.append(new)
-            valaction.append([('title'),new])
+            #place = self.group_set(place, ('title'),new)
+        #elif type == "T1CCCSC" :
+            #old = place.get_title()
+            #valoud.append(old)
+            #old = old.split(',')[0]
+            #old = old.split(' - ')[0]
+            #new = place.get_main_location().get_city()
+            #if old != new :
+                #new = "[" + old + "] - " + new
+            #if place.get_main_location().get_postal_code() :
+                #new += ', ' + place.get_main_location().get_postal_code()
+            #else:
+                #new +=', '
+            #if place.get_main_location().get_county() :
+                #new += ', ' + place.get_main_location().get_county()
+            #else:
+                #new +=', '
+            #if place.get_main_location().get_state() :
+                #new += ', ' + place.get_main_location().get_state()
+            #else:
+                #new +=', '
+            #if place.get_main_location().get_country() :
+                #new += ', ' + place.get_main_location().get_country()
+            #valnew.append(new)
+            #valaction.append([('title'),new])
             #do the action in memory
-            place = self.group_set(place, ('title'),new)
+            #place = self.group_set(place, ('title'),new)
             
         return valoud, valnew, valaction, place
         
