@@ -366,18 +366,22 @@ def init(args):
     
     template()
 
-    if len(args) > 0:                
+    if len(args) > 0:
+		                
         for arg in args:
+
+            if arg in ADDONS:
+                ADDON = arg
 			
-            if arg in ALL_LINGUAS and os.path.isfile('''po/%s-local.po''' % arg):
-                print('''"po/%s-local.po" already exists!''' % arg)
+            if arg in ALL_LINGUAS and os.path.isfile('''%s/po/%s-local.po''' % (ADDON, arg)):
+                print('''"%s/po/%s-local.po" already exists!''' % (ADDON, arg))
             else:
                 os.system('''%(msginit)s --locale=%(arg)s ''' 
-                          '''--input="po/template.pot" '''
-                          '''--output="po/%(arg)s-local.po"'''
-                          % {'msginit': msginitCmd, 'arg': arg} 
+                          '''--input="%(addon)s/po/template.pot" '''
+                          '''--output="%(addon)s/po/%(arg)s-local.po"'''
+                          % {'msginit': msginitCmd, 'addon': ADDON, 'arg': arg} 
                           )
-                print('''You can now edit "po/%s-local.po"!''' % arg)
+                print('''You can now edit "%s/po/%s-local.po"!''' % (ADDON, arg))
 
 
 def template():
@@ -404,7 +408,7 @@ def template():
                   )
                                       
     os.system('''%(sed)s -i 's/charset=CHARSET/charset=UTF-8/' '''
-              '''"po/template.pot"''' % {'sed': sedCmd}
+              '''"%(addon)s/po/template.pot"''' % {'sed': sedCmd, 'addon': ADDON}
              )
              
 
