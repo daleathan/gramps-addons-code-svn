@@ -74,6 +74,12 @@ except:
 	
 print(sys.argv)
 
+try:
+	sys.argv[3]
+	LANG = sys.argv[3]
+except:
+	LANG = "en"
+	
 ALL_LINGUAS=["en", # translation template
              "all", # all entries
              "bg",
@@ -247,10 +253,10 @@ def main():
                                         )
                                            
     translating.add_argument("-i", dest="init", default=False,
-              choices=ALL_LINGUAS,
+              choices=ADDONS + ALL_LINGUAS,
 			  help="create the environment")
     translating.add_argument("-u", dest="update", default=False,
-              choices=ALL_LINGUAS,
+              choices=ADDONS + ALL_LINGUAS,
 			  help="update the translation")
               
     building.add_argument("-c", "--compile",
