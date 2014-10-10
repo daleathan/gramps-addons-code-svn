@@ -64,9 +64,14 @@ import os
 import sys
 from argparse import ArgumentParser
 
-ALL = [name for name in os.listdir(".") 
+ADDONS = [name for name in os.listdir(".") 
                       if os.path.isdir(name) and not name.startswith(".")]
-ADDON = ''
+try:
+    sys.argv[2]
+    ADDON = sys.argv[2]
+except:
+	ADDON = ""
+	
 print(sys.argv)
 
 ALL_LINGUAS=["en", # translation template
@@ -267,15 +272,21 @@ def main():
         #tests()
        
     if args.init:
-        if sys.argv[2:] == ['all']:
-            sys.argv[2:] = ALL_LINGUAS
-        init(sys.argv[2:])
+        try:
+            if sys.argv[3] == ['all']:
+                sys.argv[3] = ALL_LINGUAS
+            init(sys.argv[3])
+        except:
+			print('No support for lang yet')
         
     if args.update:
-        if sys.argv[2:] == ['all']:
-            sys.argv[2:] = ALL_LINGUAS
-        update(sys.argv[2:])
-        
+        try:
+            if sys.argv[3] == ['all']:
+                sys.argv[3] = ALL_LINGUAS
+            update(sys.argv[3])
+        except:
+            print('No support for lang yet')
+			
     if args.compilation:
         compilation()
         
