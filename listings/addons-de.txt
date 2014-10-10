@@ -1,3 +1,4 @@
+{"t":u'Outil',"i":'PlaceCompletion',"n":u'OrteVervollst\xe4ndigung',"v":'0.0.25',"g":'4.1',"d":u'Liefert eine durchsuchbare Liste ausgew\xe4hlter Orte mit der M\xf6glichkeit die Attributefelder zu vervollst\xe4ndigen/Syntaxanalyse/setzen.',"z":'PlaceCompletion.addon.tgz'}
 {"t":'Exporter',"i":'Export GEDCOM Extensions',"n":u'GEDCOM Export Erweiterungen (GED2)',"v":'1.0.9',"g":'4.1',"d":u'Erweiterungen f\xfcr das bekannte GEDCOM Format',"z":'GedcomExtensions.addon.tgz'}
 {"t":'Exporter',"i":'Raw Export',"n":u'Rohdaten Export',"v":'1.0.21',"g":'4.1',"d":u'Dies ist eine Rohdaten Pythonobjekt Ausgabe',"z":'ExportRaw.addon.tgz'}
 {"t":'Exporter',"i":'ex_sqlite',"n":u'SQLite Export',"v":'1.0.22',"g":'4.1',"d":u'SQLite ist ein gebr\xe4uchliches lokales Datenbankformat',"z":'Sqlite.addon.tgz'}
@@ -54,7 +55,7 @@
 {"t":'Report',"i":'database-differences-report',"n":u'Datenbankunterschiede Bericht',"v":'1.0.6',"g":'4.1',"d":u'Vergleicht eine externe Datenbank mit der aktuell ge\xf6ffneten.',"z":'Differences.addon.tgz'}
 {"t":'Report',"i":'denominoviso',"n":u'DenominoViso',"v":'2.3.19',"g":'4.1',"d":u'Erstellt eine Web (XHTML) Seite mit einer Grafischen Darstellung von Ahnen/ Nachkommen (SVG) auf der Details \xfcber Personen durch Mausereignisse sichtbar werden.',"z":'DenominoViso.addon.tgz'}
 {"t":'Tool',"i":'AttachSource',"n":u'Quelle hinzuf\xfcgen',"v":'0.0.23',"g":'4.1',"d":u'F\xfcgt verteilte Quellen mehreren Objekten hinzu.',"z":'AttachSourceTool.addon.tgz'}
-{"t":'Tool',"i":'PlaceCompletion',"n":u'OrteVervollst\xe4ndigung',"v":'0.0.24',"g":'4.1',"d":u'Liefert eine durchsuchbare Liste ausgew\xe4hlter Orte mit der M\xf6glichkeit die Attributefelder zu vervollst\xe4ndigen/Syntaxanalyse/setzen.',"z":'PlaceCompletion.addon.tgz'}
+{"t":u'Outil',"i":'PlaceCompletion',"n":u'OrteVervollst\xe4ndigung',"v":'0.0.25',"g":'4.1',"d":u'Liefert eine durchsuchbare Liste ausgew\xe4hlter Orte mit der M\xf6glichkeit die Attributefelder zu vervollst\xe4ndigen/Syntaxanalyse/setzen.',"z":'PlaceCompletion.addon.tgz'}
 {"t":'Tool',"i":'SetAttribute',"n":u'Attribut setzen',"v":'0.0.18',"g":'4.1',"d":u'Setzt ein Attribut auf einen gegebenen Wert.',"z":'SetAttributeTool.addon.tgz'}
 {"t":'Tool',"i":'calculateestimateddates',"n":u'Gesch\xe4tzte Daten berechnen',"v":'0.90.19',"g":'4.1',"d":u'Berechnet gesch\xe4tzte Daten f\xfcr Geburt und Tod.',"z":'CalculateEstimatedDates.addon.tgz'}
 {"t":'Tool',"i":'chgivenname',"n":u'Gro\xdfschreibung von Vornamen korrigieren',"v":'1.0.21',"g":'4.1',"d":u'Durchsucht die gesamte Datenbank und versucht Gro\xdfschreibung von Vornamen zu korrigieren.',"z":'ChangeGivenNames.addon.tgz'}

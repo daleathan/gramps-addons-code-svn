@@ -1,3 +1,4 @@
+{"t":u'Outil',"i":'PlaceCompletion',"n":u'Arrangement des lieux',"v":'0.0.25',"g":'4.1',"d":u"Fournit une liste consultable des lieux s\xe9lectionn\xe9s, avec la possibilit\xe9 de compl\xe9ter/analyser/d\xe9finir les champs de l'attribut","z":'PlaceCompletion.addon.tgz'}
 {"t":'Exporter',"i":'Export GEDCOM Extensions',"n":u'Exportation des extensions Gedcom (GED2)',"v":'1.0.9',"g":'4.1',"d":u'Extensions du format courant Gedcom.',"z":'GedcomExtensions.addon.tgz'}
 {"t":'Exporter',"i":'Raw Export',"n":u'Export brut',"v":'1.0.21',"g":'4.1',"d":u"Ceci est une image brute d'objet python","z":'ExportRaw.addon.tgz'}
 {"t":'Exporter',"i":'ex_sqlite',"n":u'Exportation SQLite',"v":'1.0.22',"g":'4.1',"d":u'SQLite est un format courant de base de donn\xe9es locale',"z":'Sqlite.addon.tgz'}
@@ -54,7 +55,7 @@
 {"t":'Report',"i":'database-differences-report',"n":u'Rapport des diff\xe9rences dans la base de donn\xe9es',"v":'1.0.6',"g":'4.1',"d":u'Compare une base de donn\xe9es externe avec la base actuelle.',"z":'Differences.addon.tgz'}
 {"t":'Report',"i":'denominoviso',"n":u'DenominoViso',"v":'2.3.19',"g":'4.1',"d":u'G\xe9n\xe8re une page internet (XHTML) avec une repr\xe9sentation graphique des ascendants/descendants (SVG) dont les d\xe9tails des individus deviennent visibles avec les actions de la souris.',"z":'DenominoViso.addon.tgz'}
 {"t":'Tool',"i":'AttachSource',"n":u'Attacher une source',"v":'0.0.23',"g":'4.1',"d":u'Attache une source partag\xe9e \xe0 des objets multiples',"z":'AttachSourceTool.addon.tgz'}
-{"t":'Tool',"i":'PlaceCompletion',"n":u'Arrangement des lieux',"v":'0.0.24',"g":'4.1',"d":u"Fournit une liste consultable des lieux s\xe9lectionn\xe9s, avec la possibilit\xe9 de compl\xe9ter/analyser/d\xe9finir les champs de l'attribut","z":'PlaceCompletion.addon.tgz'}
+{"t":u'Outil',"i":'PlaceCompletion',"n":u'Arrangement des lieux',"v":'0.0.25',"g":'4.1',"d":u"Fournit une liste consultable des lieux s\xe9lectionn\xe9s, avec la possibilit\xe9 de compl\xe9ter/analyser/d\xe9finir les champs de l'attribut","z":'PlaceCompletion.addon.tgz'}
 {"t":'Tool',"i":'SetAttribute',"n":u'D\xe9finir un attribut',"v":'0.0.18',"g":'4.1',"d":u'D\xe9finir une valeur \xe0 un attribut.',"z":'SetAttributeTool.addon.tgz'}
 {"t":'Tool',"i":'calculateestimateddates',"n":u'Calcul des dates estim\xe9es',"v":'0.90.19',"g":'4.1',"d":u'Calcul des dates estim\xe9es pour les naissances et d\xe9c\xe8s.',"z":'CalculateEstimatedDates.addon.tgz'}
 {"t":'Tool',"i":'chgivenname',"n":u'R\xe9parer la casse des pr\xe9noms',"v":'1.0.21',"g":'4.1',"d":u'Recherche dans toute la base de donn\xe9es et essaye de corriger la casse des pr\xe9noms.',"z":'ChangeGivenNames.addon.tgz'}
