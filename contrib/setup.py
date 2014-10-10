@@ -64,7 +64,10 @@ import os
 import sys
 from argparse import ArgumentParser
 
+ALL = [name for name in os.listdir(".") 
+                      if os.path.isdir(name) and not name.startswith(".")]
 ADDON = ''
+print(sys.argv)
 
 ALL_LINGUAS=["en", # translation template
              "all", # all entries
@@ -225,9 +228,9 @@ def main():
                          description='This specific script build addon', 
                          )
                          
-    parser.add_argument("-t", "--test",
-			  action="store_true", dest="test", default=True,
-			  help="test if programs are properly installed")
+    #parser.add_argument("-t", "--test",
+			  #action="store_true", dest="test", default=True,
+			  #help="test if programs are properly installed")
               
     translating = parser.add_argument_group(
                                            "Translations Options", 
