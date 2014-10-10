@@ -288,33 +288,34 @@ def versioning():
     Update gpr.py version
     """
     
-    f = open('%s.gpr.py' % ADDON, "r")
-    lines = [file.strip() for file in f]
-    f.close() 
+    if ADDON:
+        f = open('%s.gpr.py' % ADDON, "r")
+        lines = [file.strip() for file in f]
+        f.close() 
     
-    upf = open('%s.gpr.py' % ADDON, "w")
+        upf = open('%s.gpr.py' % ADDON, "w")
     
-    for line in lines:
-        if ((line.lstrip().startswith("version")) and 
-            ("=" in line)):
-            print("orig %s" % line.rstrip())
+        for line in lines:
+            if ((line.lstrip().startswith("version")) and 
+                ("=" in line)):
+                print("orig %s" % line.rstrip())
             
-            line, stuff = line.rsplit(",", 1)
-            line = line.rstrip()
-            pos = line.index("version")
+                line, stuff = line.rsplit(",", 1)
+                line = line.rstrip()
+                pos = line.index("version")
             
-            indent = line[0:pos]
-            var, gtv = line[pos:].split('=', 1)
-            lyst = version(gtv.strip()[1:-1])
-            lyst[2] += 1
+                indent = line[0:pos]
+                var, gtv = line[pos:].split('=', 1)
+                lyst = version(gtv.strip()[1:-1])
+                lyst[2] += 1
             
-            newv = ".".join(map(str, lyst))
-            newline = "%sversion = '%s'," % (indent, newv)
-            print("new %s" % newline.rstrip())
-            upf.write('%s\n' % newline)
-        else:
-            upf.write('%s\n' % line)
-    upf.close()
+                newv = ".".join(map(str, lyst))
+                newline = "%sversion = '%s'," % (indent, newv)
+                print("new %s" % newline.rstrip())
+                upf.write('%s\n' % newline)
+            else:
+                upf.write('%s\n' % line)
+        upf.close()
         
         
 def myint(s):
@@ -597,9 +598,9 @@ def build():
     files += glob.glob('''*.glade''')
     files += glob.glob('''*.xml''')
     files_str = " ".join(files)
-    os.system('''%(mkdir)s -pv ../../download ''' % {'mkdir': mkdirCmd}
+    os.system('''%(mkdir)s -pv ../download ''' % {'mkdir': mkdirCmd}
              )
-    os.system('''%(tar)s cfzv "../../download/%(addon)s.addon.tgz" %(files_list)s''' 
+    os.system('''%(tar)s cfzv "../download/%(addon)s.addon.tgz" %(files_list)s''' 
               % {'tar': tarCmd, 'files_list': files_str, 'addon': ADDON}
               )
 
