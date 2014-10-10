@@ -372,7 +372,7 @@ def init(args):
                 ADDON = arg
                 os.system('''%(mkdir)s -pv "%(addon)s/po"''' % {'mkdir': mkdirCmd, 'addon': ADDON})
 			
-            if os.path.isfile('''%s/po/%s-local.po''' % (ADDON, arg)):
+            if os.path.isfile('''%s/po/%s-local.po''' % (ADDON, LANG)):
                 print('''"%s/po/%s-local.po" already exists!''' % (ADDON, LANG))
             else:
                 os.system('''%(msginit)s --locale=%(arg)s ''' 
