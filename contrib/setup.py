@@ -292,7 +292,7 @@ def main():
         clean()
         
         
-def versioning():
+def versioning(ADDON):
     """
     Update gpr.py version
     """
@@ -448,7 +448,7 @@ def update(ADDON, LANG):
     Updates po/x-local.po with the latest translations.
     """
             
-    template()
+    template(ADDON, LANG)
                  
     os.system('''%(mkdir)s -pv "%(addon)s/po"''' % {'mkdir': mkdirCmd, 'addon': ADDON})
                 
@@ -589,8 +589,8 @@ def build(ADDON, LANG):
     Build ../download/AddonDirectory.addon.tgz
     """
         
-    compilation()
-    versioning()
+    compilation(ADDON, LANG)
+    versioning(ADDON)
     
     files = []
     files += glob.glob('''%s/*.py''' % ADDON)
@@ -704,21 +704,21 @@ def listing():
                 shutil.move("../listings/addons-%s.new" % lang, "../listings/addons-%s.txt" % lang)
         
     
-def clean():
+def clean(ADDON):
     """
     Remove created files
     """
 
     
-    os.system('''%(rm)s -rfv '''
-              '''*~ '''
-              '''po/*~ '''
-              '''po/template.pot '''
-              '''locale '''
-              '''*.pyc '''
-              '''*.pyo '''
-              '''xml.h '''
-              % {'rm': rmCmd}
+    os.system('''%(addon)s/%(rm)s -rfv '''
+              '''%(addon)s/*~ '''
+              '''%(addon)s/po/*~ '''
+              '''%(addon)s/po/template.pot '''
+              '''%(addon)s/locale '''
+              '''%(addon)s/*.pyc '''
+              '''%(addon)s/*.pyo '''
+              '''%(addon)s/xml.h '''
+              % {'rm': rmCmd, 'addon': ADDON}
               ) 
     
      
