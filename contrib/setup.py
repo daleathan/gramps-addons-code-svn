@@ -725,10 +725,10 @@ def listing():
         from gramps.gen.plug import make_environment, PTYPE_STR
     except ImportError:
         raise ValueError("Where is GRAMPSPATH: '%s'? Use 'GRAMPSPATH=path python make.py listing'" % GRAMPSPATH)
-    #def register(ptype, **kwargs):
-        #global plugins
-        #kwargs["ptype"] = PTYPE_STR[ptype]
-        #plugins.append(kwargs)
+    def register(ptype, **kwargs):
+        global plugins
+        kwargs["ptype"] = PTYPE_STR[ptype]
+        plugins.append(kwargs)
 
     listings = []
 
@@ -742,17 +742,17 @@ def listing():
             tgz_file = "%s.addon.tgz" % addon
             tgz_exists = os.path.isfile("../download/" + tgz_file)
             if tgz_exists:
-                plugin = {"n": repr(addon["name"]),
-                          "i": repr(addon["id"]),
-                          "t": repr(addon["ptype"]),
-                          "d": repr(addon["description"]),
-                          "v": repr(addon["version"]),
-                          "g": repr(addon["gramps_target_version"]),
+                plugin = {"n": repr("name"),
+                          "i": repr("id"),
+                          "t": repr("ptype"),
+                          "d": repr("description"),
+                          "v": repr("version"),
+                          "g": repr("gramps_target_version"),
                           "z": repr(tgz_file),
                           }
                 listings.append(plugin)
-            for plugin in sorted(listings, key=lambda p: (addon["t"], addon["i"])):
-                fp.write('{"t":%(t)s,"i":%(i)s,"n":%(n)s,"v":%(v)s,"g":%(g)s,"d":%(d)s,"z":%(z)s}\n' % plugin)
+        for plugin in sorted(listings, key=lambda p: (p["t"], p["i"])):
+            fp.write('{"t":%(t)s,"i":%(i)s,"n":%(n)s,"v":%(v)s,"g":%(g)s,"d":%(d)s,"z":%(z)s}\n' % plugin)
         fp.close()
       
     
