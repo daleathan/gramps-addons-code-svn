@@ -745,7 +745,7 @@ def listing():
             gpr_exists = os.path.isfile(gpr_file)
             if tgz_exists and gpr_exists:
                 gpr = open(gpr_file.encode("utf-8", errors="backslashreplace"))
-                print(gpr)
+                print(gpr.get("name"))
                 plugin = {"n": repr("name"),
                           "i": repr("id"),
                           "t": repr("ptype"),
