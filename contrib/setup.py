@@ -729,15 +729,15 @@ def listing():
         global plugins
         kwargs["ptype"] = PTYPE_STR[ptype]
         plugins.append(kwargs)
-    # Replace it!
+    # Replace all!
     for lang in ALL_LINGUAS:
         if lang == 'all':
             continue
         print("Building listing for '%s'..." % lang)
-        listings = []
         fp = open("../listings/addons-%s.txt" % lang, "w")
-        for plugin in sorted(listings, key=lambda p: (p["t"], p["i"])):
-            fp.write('{"t":%(t)s,"i":%(i)s,"n":%(n)s,"v":%(v)s,"g":%(g)s,"d":%(d)s,"z":%(z)s}\n' % plugin)
+        for addon in ADDONS:
+            for plugin in sorted(int(addon), key=lambda p: (p["t"], p["i"])):
+                fp.write('{"t":%(t)s,"i":%(i)s,"n":%(n)s,"v":%(v)s,"g":%(g)s,"d":%(d)s,"z":%(z)s}\n' % plugin)
         fp.close()
       
     
