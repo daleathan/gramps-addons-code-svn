@@ -738,7 +738,7 @@ def listing():
             continue
         print("Building listing for '%s'..." % lang)
         fp = open("../listings/addons-%s.txt" % lang, "w")
-        for addon in ADDONS:
+        for addon in sorted(ADDONS):
             tgz_file = "%s.addon.tgz" % addon
             tgz_exists = os.path.isfile("../download/" + tgz_file)
             if tgz_exists:
