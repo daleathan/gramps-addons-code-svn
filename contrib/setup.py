@@ -746,8 +746,14 @@ def listing():
             if tgz_exists and gpr_exists:
                 gpr = open(gpr_file.encode("utf-8", errors="backslashreplace"))
 
+                code = compile(gpr.read(),
+                                   gpr_file.encode("utf-8", errors="backslashreplace"),
+                                   'exec')
+                #exec(code, make_environment(_=local_gettext),
+                         #{"register": register})
+
                 try:
-                    gpr.read()
+                    print(gpr.read())
                 except:
                     print(addon)
 
