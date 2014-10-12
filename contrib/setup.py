@@ -747,7 +747,8 @@ def listing():
                 gpr = open(gpr_file.encode("utf-8", errors="backslashreplace"))
  
                 plug = dict([file.strip(), None] for file in gpr if file.strip())
-                print(plug['status = STABLE,'])
+                for p in plug:
+                    print(repr(p))
 
                 #code = compile(gpr.read(),
                                    #gpr_file.encode("utf-8", errors="backslashreplace"),
