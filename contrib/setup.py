@@ -75,6 +75,7 @@ ALL_LINGUAS=["en", # translation template
              "da",
              "de",
              "es",
+             "en_GB",
              "fi",
              "fr",
              "he",
@@ -759,31 +760,46 @@ def listing():
                 plug = dict([file.strip(), None] for file in gpr if file.strip())
 
                 name = ident = ptype = description = version = target = ''
+
                 if mo_exists and lang == 'fr':
                     test = open(mo_file)
                     trans_dict = [test.read()]
-                    print(trans_dict)
+
+                
 
                 for p in plug:
 
                     if (repr(p)).startswith("'name"):
-                        name = repr(_(p))
+                        name = p.replace('name', '')
+                        name = name.replace('=', '')
+                        name = name.replace(',', '')
+                        name = repr(_(name))
 
                     if (repr(p)).startswith("'id"):
                         need = True
-                        ident = repr(p)
+                        ident = p.replace('id', '')
+                        ident = ident.replace('=', '')
+                        ident = repr(ident)
 
                     elif (repr(p)).startswith("'ptype"):
-                        ptype = repr(_(p))
+                        ptype = p.replace('ptype', '')
+                        ptype = ptype.replace('=', '')
+                        ptype = repr(_(ptype))
 
                     elif (repr(p)).startswith("'description"):
-                        description = repr(_(p))
+                        description = p.replace('description', '')
+                        description = description.replace('=', '')
+                        description = repr(_(description))
                 
                     elif (repr(p)).startswith('"version'):
-                        version = repr(p)
+                        version = p.replace('version', '')
+                        version = version.replace('=', '')
+                        version = repr(version)
                     
                     elif (repr(p)).startswith('"gramps_target_version'):
-                        target = repr(p)
+                        target = p.replace('gramps_target_version', '')
+                        target = target.replace('=', '')
+                        target = repr(target)
 
                     if (repr(p)).startswith('"include_in_listing'):
                         need = False  
