@@ -720,6 +720,7 @@ def listing():
     try:
         sys.path.insert(0, GRAMPSPATH)
         os.environ['GRAMPS_RESOURCES'] = os.path.abspath(GRAMPSPATH)
+        from gramps.gen.utils.grampslocale import GrampsLocale
         from gramps.gen.const import GRAMPS_LOCALE as glocale
         from gramps.gen.plug import make_environment, PTYPE_STR
     except ImportError:
@@ -747,11 +748,14 @@ def listing():
             gpr_file = "%s/%s.gpr.py" % (addon, addon)
             gpr_exists = os.path.isfile(gpr_file)
             mo_file = "%s/locale/%s/LC_MESSAGES/addon.mo" % (addon, lang)
-            mo_exists = os.path.isfile(mo_file)  
+            mo_exists = os.path.isfile(mo_file)
+            
+            local_gettext = glocale.get_addon_translator(gpr_file, languages=[lang, "en.UTF-8"]).gettext
+            _ = local_gettext
 
             if tgz_exists and gpr_exists:
                 gpr = open(gpr_file.encode("utf-8", errors="backslashreplace"))
- 
+
                 plug = dict([file.strip(), None] for file in gpr if file.strip())
 
                 name = ident = ptype = description = version = target = ''
@@ -763,17 +767,17 @@ def listing():
                 for p in plug:
 
                     if (repr(p)).startswith("'name"):
-                        name = repr(p)
+                        name = repr(_(p))
 
                     if (repr(p)).startswith("'id"):
                         need = True
                         ident = repr(p)
 
                     elif (repr(p)).startswith("'ptype"):
-                        ptype = repr(p)
+                        ptype = repr(_(p))
 
                     elif (repr(p)).startswith("'description"):
-                        description = repr(p)
+                        description = repr(_(p))
                 
                     elif (repr(p)).startswith('"version'):
                         version = repr(p)
