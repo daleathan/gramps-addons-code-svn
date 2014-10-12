@@ -748,7 +748,10 @@ def listing():
  
                 plug = dict([file.strip(), None] for file in gpr if file.strip())
                 for p in plug:
-                    print(repr(p))
+                    #print(repr(p))
+                    if (repr(p)).startswith('"version'):
+                        version = repr(p)
+                        print(version)
 
                 #code = compile(gpr.read(),
                                    #gpr_file.encode("utf-8", errors="backslashreplace"),
@@ -756,14 +759,14 @@ def listing():
                 #exec(code, make_environment(_=local_gettext),
                          #{"register": register})
 
-                plugin = {"n": repr("name"),
-                          "i": repr("id"),
-                          "t": repr("ptype"),
-                          "d": repr("description"),
-                          "v": repr("version"),
-                          "g": repr("gramps_target_version"),
-                          "z": repr(tgz_file),
-                          }
+                        plugin = {"n": repr("name"),
+                                  "i": repr("id"),
+                                  "t": repr("ptype"),
+                                  "d": repr("description"),
+                                  "v": version,
+                                  "g": repr("gramps_target_version"),
+                                  "z": repr(tgz_file),
+                                  }
                 listings.append(plugin)
 
         for plugin in sorted(listings, key=lambda p: (p["t"], p["i"])):
