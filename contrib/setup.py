@@ -747,11 +747,37 @@ def listing():
                 gpr = open(gpr_file.encode("utf-8", errors="backslashreplace"))
  
                 plug = dict([file.strip(), None] for file in gpr if file.strip())
+
+                name = ident = ptype = description = version = target = ''
+
                 for p in plug:
-                    #print(repr(p))
+
+                    if (repr(p)).startswith('"include_in_listing'):
+                        continue                      
+
+                    if (repr(p)).startswith("'name"):
+                        name = repr(p)
+                        print(name)
+
+                    if (repr(p)).startswith("id"):
+                        ident = repr(p)
+                        print(ident)
+
+                    if (repr(p)).startswith("'ptype"):
+                        ptype = repr(p)
+                        print(ptype)
+
+                    if (repr(p)).startswith("'description"):
+                        description = repr(p)
+                        print(description)
+                
                     if (repr(p)).startswith('"version'):
                         version = repr(p)
                         print(version)
+                    
+                    if (repr(p)).startswith('"gramps_target_version'):
+                        target = repr(p)
+                        print(target)
 
                 #code = compile(gpr.read(),
                                    #gpr_file.encode("utf-8", errors="backslashreplace"),
@@ -759,17 +785,17 @@ def listing():
                 #exec(code, make_environment(_=local_gettext),
                          #{"register": register})
 
-                        plugin = {"n": repr("name"),
-                                  "i": repr("id"),
-                                  "t": repr("ptype"),
-                                  "d": repr("description"),
+                        plugin = {"n": name,
+                                  "i": ident,
+                                  "t": ptype,
+                                  "d": description,
                                   "v": version,
-                                  "g": repr("gramps_target_version"),
+                                  "g": target,
                                   "z": repr(tgz_file),
                                   }
-                listings.append(plugin)
+                        listings.append(plugin)
 
-        for plugin in sorted(listings, key=lambda p: (p["t"], p["i"])):
+        for plugin in listings:
             fp.write('{"t":%(t)s,"i":%(i)s,"n":%(n)s,"v":%(v)s,"g":%(g)s,"d":%(d)s,"z":%(z)s}\n' % plugin)
         fp.close()
       
