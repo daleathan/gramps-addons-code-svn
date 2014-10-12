@@ -731,7 +731,8 @@ def listing():
         plugins.append(kwargs)
 
     listings = []
-
+    need = False
+    
     # Replace all!
     for lang in ALL_LINGUAS:
         if lang == 'all':
@@ -750,34 +751,29 @@ def listing():
 
                 name = ident = ptype = description = version = target = ''
 
-                for p in plug:
-
-                    if (repr(p)).startswith('"include_in_listing'):
-                        continue                      
+                for p in plug:                  
 
                     if (repr(p)).startswith("'name"):
                         name = repr(p)
-                        print(name)
 
-                    if (repr(p)).startswith("id"):
+                    if (repr(p)).startswith("'id"):
+                        need = True
                         ident = repr(p)
-                        print(ident)
 
-                    if (repr(p)).startswith("'ptype"):
+                    elif (repr(p)).startswith("'ptype"):
                         ptype = repr(p)
-                        print(ptype)
 
-                    if (repr(p)).startswith("'description"):
+                    elif (repr(p)).startswith("'description"):
                         description = repr(p)
-                        print(description)
                 
-                    if (repr(p)).startswith('"version'):
+                    elif (repr(p)).startswith('"version'):
                         version = repr(p)
-                        print(version)
                     
-                    if (repr(p)).startswith('"gramps_target_version'):
+                    elif (repr(p)).startswith('"gramps_target_version'):
                         target = repr(p)
-                        print(target)
+
+                    if (repr(p)).startswith('"include_in_listing'):
+                        need = False  
 
                 #code = compile(gpr.read(),
                                    #gpr_file.encode("utf-8", errors="backslashreplace"),
@@ -785,17 +781,22 @@ def listing():
                 #exec(code, make_environment(_=local_gettext),
                          #{"register": register})
 
-                        plugin = {"n": name,
-                                  "i": ident,
-                                  "t": ptype,
-                                  "d": description,
-                                  "v": version,
-                                  "g": target,
-                                  "z": repr(tgz_file),
-                                  }
-                        listings.append(plugin)
+                
+            if need:
+                plugin = {
+                        "n": name,
+                        "i": ident,
+                        "t": ptype,
+                        "d": description,
+                        "v": version,
+                        "g": target,
+                        "z": repr(tgz_file),
+                        }
+                        
+                print(plugin)
+                listings.append(plugin)
 
-        for plugin in listings:
+        for plugin in sorted(listings, key=lambda p: p["z"]):
             fp.write('{"t":%(t)s,"i":%(i)s,"n":%(n)s,"v":%(v)s,"g":%(g)s,"d":%(d)s,"z":%(z)s}\n' % plugin)
         fp.close()
       
