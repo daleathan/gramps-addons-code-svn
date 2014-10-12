@@ -862,12 +862,6 @@ def listing():
 
             for p in plug:
 
-                if (repr(p)).startswith("'name"):
-                    name = p.replace('name', '')
-                    name = name.replace('=', '')
-                    name = name.replace(',', '')
-                    name = repr(name)
-
                 if (repr(p)).startswith("'id"):
                     need = True
                     ident = p.replace('id', '')
@@ -875,27 +869,38 @@ def listing():
                     ident = ident.replace(',', '')
                     #ident = repr(ident)
 
+                elif (repr(p)).startswith("'name"):
+                    name = p.replace('name', '')
+                    name = name.replace('=', '')
+                    name = name.replace(',', '')
+                    name = repr(name)
+                    need = False
+
                 elif (repr(p)).startswith("'ptype"):
                     ptype = p.replace('ptype', '')
                     ptype = ptype.replace('=', '')
                     ptype = repr(ptype)
+                    need = False
 
                 elif (repr(p)).startswith("'description"):
                     description = p.replace('description', '')
                     description = description.replace('=', '')
                     description = description.replace(',', '')
                     description = repr(description)
+                    need = False
                 
                 elif (repr(p)).startswith('"version'):
                     version = p.replace('version', '')
                     version = version.replace('=', '')
                     version = version.replace(',', '')
                     version = repr(version)
+                    need = False
                     
                 elif (repr(p)).startswith('"gramps_target_version'):
                     target = p.replace('gramps_target_version', '')
                     target = target.replace('=', '')
                     target = repr(target)
+                    need = False
 
                 if (repr(p)).startswith('"include_in_listing'):
                     need = False  
