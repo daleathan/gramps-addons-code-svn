@@ -746,8 +746,8 @@ def listing():
             if tgz_exists and gpr_exists:
                 gpr = open(gpr_file.encode("utf-8", errors="backslashreplace"))
  
-                files = dict([file.strip(), None] for file in gpr if file.strip())
-                print(files)
+                plug = dict([file.strip(), None] for file in gpr if file.strip())
+                print(plug)
 
                 #code = compile(gpr.read(),
                                    #gpr_file.encode("utf-8", errors="backslashreplace"),
