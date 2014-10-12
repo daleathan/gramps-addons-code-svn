@@ -745,17 +745,15 @@ def listing():
             gpr_exists = os.path.isfile(gpr_file)
             if tgz_exists and gpr_exists:
                 gpr = open(gpr_file.encode("utf-8", errors="backslashreplace"))
+ 
+                files = dict([file.strip(), None] for file in gpr if file.strip())
+                print(files)
 
-                code = compile(gpr.read(),
-                                   gpr_file.encode("utf-8", errors="backslashreplace"),
-                                   'exec')
+                #code = compile(gpr.read(),
+                                   #gpr_file.encode("utf-8", errors="backslashreplace"),
+                                   #'exec')
                 #exec(code, make_environment(_=local_gettext),
                          #{"register": register})
-
-                try:
-                    print(gpr.read())
-                except:
-                    print(addon)
 
                 plugin = {"n": repr("name"),
                           "i": repr("id"),
