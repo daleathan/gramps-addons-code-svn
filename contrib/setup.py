@@ -858,7 +858,7 @@ def listing():
                 #test = open(mo_file)
                 #trans_dict = [test.read()]
 
-                
+            print(plug)
 
             for p in plug:
 
@@ -869,39 +869,34 @@ def listing():
                     ident = ident.replace(',', '')
                     #ident = repr(ident)
 
-                elif (repr(p)).startswith("'name"):
+                if (repr(p)).startswith("'name"):
                     name = p.replace('name', '')
                     name = name.replace('=', '')
                     name = name.replace(',', '')
                     name = repr(name)
-                    need = False
 
                 elif (repr(p)).startswith("'ptype"):
                     ptype = p.replace('ptype', '')
                     ptype = ptype.replace('=', '')
-                    ptype = repr(ptype)
-                    need = False
+                    ptype = repr(ptype)                   
 
                 elif (repr(p)).startswith("'description"):
                     description = p.replace('description', '')
                     description = description.replace('=', '')
                     description = description.replace(',', '')
                     description = repr(description)
-                    need = False
                 
                 elif (repr(p)).startswith('"version'):
                     version = p.replace('version', '')
                     version = version.replace('=', '')
                     version = version.replace(',', '')
                     version = repr(version)
-                    need = False
                     
                 elif (repr(p)).startswith('"gramps_target_version'):
                     target = p.replace('gramps_target_version', '')
                     target = target.replace('=', '')
                     target = repr(target)
-                    need = False
-
+ 
                 if (repr(p)).startswith('"include_in_listing'):
                     need = False  
 
@@ -923,7 +918,7 @@ def listing():
                         "z": repr(tgz_file),
                         }
                         
-                print(plugin)
+                #print(plugin)
                 listings.append(plugin)
 
         for plugin in sorted(listings, key=lambda p: p["z"]):
