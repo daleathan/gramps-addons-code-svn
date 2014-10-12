@@ -735,74 +735,76 @@ def listing():
     need = False
     
     # Replace all!
-    for lang in ALL_LINGUAS:
-        if lang == 'all':
-            continue
+    #for lang in ALL_LINGUAS:
+        #if lang == 'all':
+            #continue
 
-        print("Building listing for '%s'..." % lang)
-        fp = open("../listings/addons-%s.txt" % lang, "w")
+        #print("Building listing for '%s'..." % lang)
+        #fp = open("../listings/addons-%s.txt" % lang, "w")
 
-        for addon in sorted(ADDONS):
+        #for addon in sorted(ADDONS):
 
-            tgz_file = "%s.addon.tgz" % addon
-            tgz_exists = os.path.isfile("../download/" + tgz_file)
-            gpr_file = "%s/%s.gpr.py" % (addon, addon)
-            gpr_exists = os.path.isfile(gpr_file)
-            mo_file = "%s/locale/%s/LC_MESSAGES/addon.mo" % (addon, lang)
-            mo_exists = os.path.isfile(mo_file)
+            #tgz_file = "%s.addon.tgz" % addon
+            #tgz_exists = os.path.isfile("../download/" + tgz_file)
+            #gpr_file = "%s/%s.gpr.py" % (addon, addon)
+            #gpr_exists = os.path.isfile(gpr_file)
+            #mo_file = "%s/locale/%s/LC_MESSAGES/addon.mo" % (addon, lang)
+            #mo_exists = os.path.isfile(mo_file)
             
-            local_gettext = glocale.get_addon_translator(gpr_file, languages=[lang, "en.UTF-8"]).gettext
-            _ = local_gettext
+            #local_gettext = glocale.get_addon_translator(gpr_file, languages=[lang, "en.UTF-8"]).gettext
+            #_ = local_gettext
 
-            if tgz_exists and gpr_exists:
-                gpr = open(gpr_file.encode("utf-8", errors="backslashreplace"))
+            #if tgz_exists and gpr_exists:
+                #gpr = open(gpr_file.encode("utf-8", errors="backslashreplace"))
 
-                plug = dict([file.strip(), None] for file in gpr if file.strip())
+                #plug = dict([file.strip(), None] for file in gpr if file.strip())
 
-                name = ident = ptype = description = version = target = ''
+                #name = ident = ptype = description = version = target = ''
 
-                if mo_exists and lang == 'fr':
-                    test = open(mo_file)
-                    trans_dict = [test.read()]
+                #if mo_exists and lang == 'fr':
+                    #test = open(mo_file)
+                    #trans_dict = [test.read()]
 
                 
 
-                for p in plug:
+                #for p in plug:
 
-                    if (repr(p)).startswith("'name"):
-                        name = p.replace('name', '')
-                        name = name.replace('=', '')
-                        name = name.replace(',', '')
-                        name = repr(_(name))
+                    #if (repr(p)).startswith("'name"):
+                        #name = p.replace('name', '')
+                        #name = name.replace('=', '')
+                        #name = name.replace(',', '')
+                        #name = repr(_(name))
 
-                    if (repr(p)).startswith("'id"):
-                        need = True
-                        ident = p.replace('id', '')
-                        ident = ident.replace('=', '')
-                        ident = repr(ident)
+                    #if (repr(p)).startswith("'id"):
+                        #need = True
+                        #ident = p.replace('id', '')
+                        #ident = ident.replace('=', '')
+                        #ident = ident.replace(',', '')
 
-                    elif (repr(p)).startswith("'ptype"):
-                        ptype = p.replace('ptype', '')
-                        ptype = ptype.replace('=', '')
-                        ptype = repr(_(ptype))
+                    #elif (repr(p)).startswith("'ptype"):
+                        #ptype = p.replace('ptype', '')
+                        #ptype = ptype.replace('=', '')
+                        #ptype = repr(ptype)
 
-                    elif (repr(p)).startswith("'description"):
-                        description = p.replace('description', '')
-                        description = description.replace('=', '')
-                        description = repr(_(description))
+                    #elif (repr(p)).startswith("'description"):
+                        #description = p.replace('description', '')
+                        #description = description.replace('=', '')
+                        #description = description.replace(',', '')
+                        #description = repr(_(description))
                 
-                    elif (repr(p)).startswith('"version'):
-                        version = p.replace('version', '')
-                        version = version.replace('=', '')
-                        version = repr(version)
+                    #elif (repr(p)).startswith('"version'):
+                        #version = p.replace('version', '')
+                        #version = version.replace('=', '')
+                        #version = version.replace(',', '')
+                        #version = repr(version)
                     
-                    elif (repr(p)).startswith('"gramps_target_version'):
-                        target = p.replace('gramps_target_version', '')
-                        target = target.replace('=', '')
-                        target = repr(target)
+                    #elif (repr(p)).startswith('"gramps_target_version'):
+                        #target = p.replace('gramps_target_version', '')
+                        #target = target.replace('=', '')
+                        #target = repr(target)
 
-                    if (repr(p)).startswith('"include_in_listing'):
-                        need = False  
+                    #if (repr(p)).startswith('"include_in_listing'):
+                        #need = False  
 
                 #code = compile(gpr.read(),
                                    #gpr_file.encode("utf-8", errors="backslashreplace"),
@@ -811,25 +813,119 @@ def listing():
                          #{"register": register})
 
                 
-                if need:
-                    plugin = {
-                            "n": name,
-                            "i": ident,
-                            "t": ptype,
-                            "d": description,
-                            "v": version,
-                            "g": target,
-                            "z": repr(tgz_file),
-                            }
+                #if need:
+                    #plugin = {
+                            #"n": name,
+                            #"i": ident,
+                            #"t": ptype,
+                            #"d": description,
+                            #"v": version,
+                            #"g": target,
+                            #"z": repr(tgz_file),
+                            #}
                         
                     #print(plugin)
-                    listings.append(plugin)
+                    #listings.append(plugin)
+
+        #for plugin in sorted(listings, key=lambda p: p["z"]):
+            #fp.write('{"t":%(t)s,"i":%(i)s,"n":%(n)s,"v":%(v)s,"g":%(g)s,"d":%(d)s,"z":%(z)s}\n' % plugin)
+        #fp.close()
+      
+        # change the method
+
+    fp = open("../listings/addons-en.txt", "w")
+
+    for addon in sorted(ADDONS):
+
+        tgz_file = "%s.addon.tgz" % addon
+        tgz_exists = os.path.isfile("../download/" + tgz_file)
+        gpr_file = "%s/%s.gpr.py" % (addon, addon)
+        gpr_exists = os.path.isfile(gpr_file)
+        #mo_file = "%s/locale/%s/LC_MESSAGES/addon.mo" % (addon, lang)
+        #mo_exists = os.path.isfile(mo_file)
+            
+        #local_gettext = glocale.get_addon_translator(gpr_file, languages=[lang, "en.UTF-8"]).gettext
+        #_ = local_gettext
+
+        if tgz_exists and gpr_exists:
+            gpr = open(gpr_file.encode("utf-8", errors="backslashreplace"))
+
+            plug = dict([file.strip(), None] for file in gpr if file.strip())
+
+            name = ident = ptype = description = version = target = ''
+
+            #if mo_exists and lang == 'fr':
+                #test = open(mo_file)
+                #trans_dict = [test.read()]
+
+                
+
+            for p in plug:
+
+                if (repr(p)).startswith("'name"):
+                    name = p.replace('name', '')
+                    name = name.replace('=', '')
+                    name = name.replace(',', '')
+                    name = repr(name)
+
+                if (repr(p)).startswith("'id"):
+                    need = True
+                    ident = p.replace('id', '')
+                    ident = ident.replace('=', '')
+                    ident = ident.replace(',', '')
+                    #ident = repr(ident)
+
+                elif (repr(p)).startswith("'ptype"):
+                    ptype = p.replace('ptype', '')
+                    ptype = ptype.replace('=', '')
+                    ptype = repr(ptype)
+
+                elif (repr(p)).startswith("'description"):
+                    description = p.replace('description', '')
+                    description = description.replace('=', '')
+                    description = description.replace(',', '')
+                    description = repr(description)
+                
+                elif (repr(p)).startswith('"version'):
+                    version = p.replace('version', '')
+                    version = version.replace('=', '')
+                    version = version.replace(',', '')
+                    version = repr(version)
+                    
+                elif (repr(p)).startswith('"gramps_target_version'):
+                    target = p.replace('gramps_target_version', '')
+                    target = target.replace('=', '')
+                    target = repr(target)
+
+                if (repr(p)).startswith('"include_in_listing'):
+                    need = False  
+
+                #code = compile(gpr.read(),
+                                   #gpr_file.encode("utf-8", errors="backslashreplace"),
+                                   #'exec')
+                #exec(code, make_environment(_=local_gettext),
+                         #{"register": register})
+
+                
+            if need:
+                plugin = {
+                        "n": name,
+                        "i": ident,
+                        "t": ptype,
+                        "d": description,
+                        "v": version,
+                        "g": target,
+                        "z": repr(tgz_file),
+                        }
+                        
+                print(plugin)
+                listings.append(plugin)
 
         for plugin in sorted(listings, key=lambda p: p["z"]):
             fp.write('{"t":%(t)s,"i":%(i)s,"n":%(n)s,"v":%(v)s,"g":%(g)s,"d":%(d)s,"z":%(z)s}\n' % plugin)
-        fp.close()
-      
-    
+    fp.close()
+
+
 def clean(ADDON):
     """
     Remove created files
