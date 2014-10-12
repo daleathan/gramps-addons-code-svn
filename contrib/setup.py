@@ -161,7 +161,6 @@ else:
     sys.exit(0)
     
 GNU = [sedCmd, mkdirCmd, rmCmd, tarCmd]
-    
 
 def tests():
     """
@@ -737,21 +736,31 @@ def listing():
     for lang in ALL_LINGUAS:
         if lang == 'all':
             continue
+
         print("Building listing for '%s'..." % lang)
         fp = open("../listings/addons-%s.txt" % lang, "w")
+
         for addon in sorted(ADDONS):
+
             tgz_file = "%s.addon.tgz" % addon
             tgz_exists = os.path.isfile("../download/" + tgz_file)
             gpr_file = "%s/%s.gpr.py" % (addon, addon)
             gpr_exists = os.path.isfile(gpr_file)
+            mo_file = "%s/locale/%s/LC_MESSAGES/addon.mo" % (addon, lang)
+            mo_exists = os.path.isfile(mo_file)  
+
             if tgz_exists and gpr_exists:
                 gpr = open(gpr_file.encode("utf-8", errors="backslashreplace"))
  
                 plug = dict([file.strip(), None] for file in gpr if file.strip())
 
                 name = ident = ptype = description = version = target = ''
+                if mo_exists and lang == 'fr':
+                    test = open(mo_file)
+                    trans_dict = [test.read()]
+                    print(trans_dict)
 
-                for p in plug:                  
+                for p in plug:
 
                     if (repr(p)).startswith("'name"):
                         name = repr(p)
@@ -793,7 +802,7 @@ def listing():
                             "z": repr(tgz_file),
                             }
                         
-                    print(plugin)
+                    #print(plugin)
                     listings.append(plugin)
 
         for plugin in sorted(listings, key=lambda p: p["z"]):
