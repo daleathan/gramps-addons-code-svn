@@ -900,6 +900,7 @@ def listing():
                 elif (repr(p)).startswith('"gramps_target_version'):
                     target = p.replace('gramps_target_version', '')
                     target = target.replace('=', '')
+                    target = target.strip()
                     target = repr(target)
  
                 if (repr(p)).startswith('"include_in_listing'):
