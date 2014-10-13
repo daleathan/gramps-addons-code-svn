@@ -862,6 +862,12 @@ def listing():
 
             for p in plug:
 
+                print(repr(p))
+
+                if (repr(p)).startswith("'register("):
+                    ptype = p.replace('register(', '')
+                    ptype = repr(ptype)  
+
                 if (repr(p)).startswith("'id"):
                     need = True
                     ident = p.replace('id', '')
@@ -873,12 +879,7 @@ def listing():
                     name = p.replace('name', '')
                     name = name.replace('=', '')
                     name = name.replace(',', '')
-                    name = repr(name)
-
-                elif (repr(p)).startswith("'ptype"):
-                    ptype = p.replace('ptype', '')
-                    ptype = ptype.replace('=', '')
-                    ptype = repr(ptype)                   
+                    name = repr(name)                 
 
                 elif (repr(p)).startswith("'description"):
                     description = p.replace('description', '')
