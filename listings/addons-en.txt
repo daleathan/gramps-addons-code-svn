@@ -28,7 +28,6 @@
 {"t":'GRAMPLET,',"i":"Participants","n":'_("Participants")',"v":"'1.0.4'","g":,"d":'_("Gramplet showing the participants in an event")',"z":'Participants.addon.tgz'}
 {"t":'REPORT,',"i":"PedigreeChart","n":'_("Pedigree Chart")',"v":"'1.0.22'","g":,"d":'_("Alternate version of the traditional pedigree chart.")',"z":'PedigreeChart.addon.tgz'}
 {"t":'GRAMPLET,',"i":"Photo Tagging","n":'_("Photo Tagging")',"v":"'1.0.5'","g":,"d":'_("Gramplet for tagging people in photos")',"z":'PhotoTaggingGramplet.addon.tgz'}
-{"t":'TOOL,',"i":'PlaceCompletion',"n":'_("PlaceCompletion")',"v":"'0.0.25'","g":"'4.1',","d":'_("Provides a browsable list of selected places with possibility to complete/parse/set the attribute fields.")',"z":'PlaceCompletion.addon.tgz'}
 {"t":'GRAMPLET,',"i":"Python Gramplet","n":'_("Python Gramplet")',"v":"'1.0.18'","g":,"d":'_("Interactive Python interpreter")',"z":'PythonGramplet.addon.tgz'}
 {"t":'GRAMPLET,',"i":"Query Gramplet","n":'_("Query Gramplet")',"v":"'1.0.18'","g":,"d":'_("Gramplet for running SQL-like queries")',"z":'Query.addon.tgz'}
 {"t":'GRAMPLET,',"i":"Related Relatives Gramplet","n":'_("Related Relatives Gramplet")',"v":"'1.0.18'","g":,"d":'_("Gramplet showing relatives in a relation")',"z":'RelatedRelativesGramplet.addon.tgz'}

@@ -858,11 +858,11 @@ def listing():
                 #test = open(mo_file)
                 #trans_dict = [test.read()]
 
-            print(plug)
+            #print(plug)
 
             for p in plug:
 
-                print(repr(p))
+                #print(repr(p))
 
                 if (repr(p)).startswith("'register("):
                     ptype = p.replace('register(', '')
@@ -903,8 +903,12 @@ def listing():
                     target = target.strip()
                     target = repr(target)
  
-                if (repr(p)).startswith('"include_in_listing'):
-                    need = False  
+                elif (repr(p)).startswith('"include_in_listing'):
+                    need = False
+
+                elif (repr(p)).startswith("'status = UNSTABLE,"):
+                    need = False
+                    print(p)
 
                 #code = compile(gpr.read(),
                                    #gpr_file.encode("utf-8", errors="backslashreplace"),
