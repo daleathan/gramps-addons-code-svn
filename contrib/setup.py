@@ -363,7 +363,7 @@ def init(ADDON, LANG):
     template.pot for the addon.
     """    
         
-    template(ADDON, LANG)
+    template(ADDON)
 
     os.system('''%(mkdir)s -pv "%(addon)s/po"''' % {'mkdir': mkdirCmd, 'addon': ADDON})
     
@@ -378,7 +378,7 @@ def init(ADDON, LANG):
         print('''You can now edit "%s/po/%s-local.po"!''' % (ADDON, LANG))
 
 
-def template(ADDON, LANG):
+def template(ADDON):
     """
     Generates the template.pot for the addon.
     """
@@ -457,7 +457,7 @@ def update(ADDON, LANG):
     Updates po/x-local.po with the latest translations.
     """
             
-    template(ADDON, LANG)
+    template(ADDON)
                  
     os.system('''%(mkdir)s -pv "%(addon)s/po"''' % {'mkdir': mkdirCmd, 'addon': ADDON})
                 
