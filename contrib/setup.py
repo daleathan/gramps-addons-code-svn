@@ -868,14 +868,14 @@ def listing():
                     ptype = p.replace('register(', '')
                     ptype = repr(ptype)  
 
-                if (repr(p)).startswith("'id"):
+                if (repr(p)).startswith("'id") or (repr(p)).startswith('"id'):
                     need = True
                     ident = p.replace('id', '')
                     ident = ident.replace('=', '')
                     ident = ident.replace(',', '')
                     #ident = repr(ident)
 
-                if (repr(p)).startswith("'name"):
+                if (repr(p)).startswith("'name") or (repr(p)).startswith('"name'):
                     name = p.replace('name', '')
                     name = name.replace('=', '')
                     name = name.replace(',', '')
