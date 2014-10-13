@@ -866,10 +866,15 @@ def listing():
 
                 if (repr(p)).startswith("'register("):
                     ptype = p.replace('register(', '')
-                    ptype = repr(ptype)  
+                    ptype = repr(ptype)
+
+                if not ((repr(p)).startswith("'include_in_listing = False,") or \
+                       (repr(p)).startswith("'status = UNSTABLE,")):
+                    need = True
+                else:
+                    print(addon)
 
                 if (repr(p)).startswith("'id") or (repr(p)).startswith('"id'):
-                    need = True
                     ident = p.replace('id', '')
                     ident = ident.replace('=', '')
                     ident = ident.replace(',', '')
@@ -883,40 +888,31 @@ def listing():
                     name = name.strip()
                     name = repr(name)                 
 
-                elif (repr(p)).startswith("'description"):
+                if (repr(p)).startswith("'description"):
                     description = p.replace('description', '')
                     description = description.replace('=', '')
                     description = description.replace(',', '')
                     description = description.strip()
                     description = repr(description)
                 
-                elif (repr(p)).startswith('"version'):
+                if (repr(p)).startswith('"version'):
                     version = p.replace('version', '')
                     version = version.replace('=', '')
                     version = version.replace(',', '')
                     version = version.strip()
                     version = repr(version)
                     
-                elif (repr(p)).startswith('"gramps_target_version'):
+                if (repr(p)).startswith('"gramps_target_version'):
                     target = p.replace('gramps_target_version', '')
                     target = target.replace('=', '')
                     target = target.strip()
                     target = repr(target)
- 
-                elif (repr(p)).startswith("'include_in_listing = False,"):
-                    need = False
-                    print(p,addon)
-
-                elif (repr(p)).startswith("'status = UNSTABLE,"):
-                    need = False
-                    print(p,addon)
 
                 #code = compile(gpr.read(),
                                    #gpr_file.encode("utf-8", errors="backslashreplace"),
                                    #'exec')
                 #exec(code, make_environment(_=local_gettext),
                          #{"register": register})
-
                 
             if need:
                 plugin = {
