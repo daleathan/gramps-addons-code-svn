@@ -380,7 +380,7 @@ def template(ADDON, LANG):
               % {'xgettext': xgettextCmd, 'addon': ADDON}
              )
              
-    if os.path.isfile('%(addon)s/%(addon)s.glade' % {'addon': ADDON}):
+    if os.path.isfile('%(addon)s/placecompletion.glade' % {'addon': ADDON}):
         os.system('''%(xgettext)s --add-comments -j -L Glade '''
                   '''--from-code=UTF-8 -o "%(addon)s/po/template.pot" %(addon)s/*.glade'''
                   % {'xgettext': xgettextCmd, 'addon': ADDON}
@@ -404,7 +404,6 @@ def xml(ADDON):
     """
     
 
-    # in progress ...
     from xml.etree import ElementTree
     
     tree = ElementTree.parse('%s/census.xml' % ADDON)
