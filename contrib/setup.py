@@ -19,7 +19,7 @@
 
 #! /usr/bin/env python
 """
-make.py for Gramps addons.
+setup.py for Gramps addons.
 
 Examples: 
    python setup.py init AddonDirectory
@@ -725,7 +725,7 @@ def listing():
         from gramps.gen.const import GRAMPS_LOCALE as glocale
         from gramps.gen.plug import make_environment, PTYPE_STR
     except ImportError:
-        raise ValueError("Where is GRAMPSPATH: '%s'? Use 'GRAMPSPATH=path python make.py listing'" % GRAMPSPATH)
+        raise ValueError("Where is GRAMPSPATH: '%s'? Use 'GRAMPSPATH=path python setup.py listing'" % GRAMPSPATH)
     def register(ptype, **kwargs):
         global plugins
         kwargs["ptype"] = PTYPE_STR[ptype]
