@@ -469,8 +469,8 @@ def update(ADDON, LANG):
             
     print('Merge "%(addon)s/po/%(lang)s.po" with "%(addon)s/po/%(lang)s-local.po":' % {'addon': ADDON, 'lang': LANG})
     
-    os.system('''%(msgmerge)s %(addons)s/po/%(lang)s-local.po %(addons)s/po/%(lang)s.po'''
-              ''' -o %(addons)s/po/%(lang)s.po --no-location -v'''
+    os.system('''%(msgmerge)s %(addon)s/po/%(lang)s-local.po %(addon)s/po/%(lang)s.po'''
+              ''' -o %(addon)s/po/%(lang)s.po --no-location -v'''
               % {'msgmerge': msgmergeCmd, 'addon': ADDON, 'lang': LANG} 
               )
                         
@@ -487,7 +487,7 @@ def update(ADDON, LANG):
                       
     # only used messages (need) and merge back
             
-    print('Move content to "po/%s-local.po".' % arg)
+    print('Move content to "po/%s-local.po".' % LANG)
             
     os.system('''%(msgattrib)s --no-obsolete'''
               ''' %(addon)s/po/%(lang)s.po -o %(addon)s/po/%(lang)s-local.po'''
@@ -509,7 +509,7 @@ def temp(addon, lang):
     """
     
     os.system('''%(msginit)s --locale=%(lang)s ''' 
-              '''--input="%(addons)s/po/template.pot" '''
+              '''--input="%(addon)s/po/template.pot" '''
               '''--output="%(addon)s/po/%(lang)s.po" --no-translator'''
               % {'msginit': msginitCmd, 'addon': addon, 'lang': lang} 
               )
@@ -590,6 +590,8 @@ def build(ADDON, LANG):
     Build ../download/AddonDirectory.addon.tgz
     """
         
+    print(LANG)
+
     compilation(ADDON, LANG)
     versioning(ADDON)
     
