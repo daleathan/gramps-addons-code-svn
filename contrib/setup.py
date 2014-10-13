@@ -64,8 +64,8 @@ import os
 import sys
 from argparse import ArgumentParser
 
-ADDONS = [name for name in os.listdir(".") 
-                      if os.path.isdir(name) and not name.startswith(".")]
+ADDONS = sorted([name for name in os.listdir(".") 
+                      if os.path.isdir(name) and not name.startswith(".")])
                       	
 ALL_LINGUAS=["en", # translation template
              "all", # all entries
@@ -101,17 +101,17 @@ ALL_LINGUAS=["en", # translation template
              "zh_CN",
              ]
 
-keys = sys.argv[2:]
+arguments = sys.argv[2:]
 
-for key in keys:
-    if key in ADDONS:
-        ADDON = key
+for argument in arguments:
+    if argument in ADDONS:
+        ADDON = argument
     else:
         ADDON = '.'
 
-for key in keys:
-    if key in ALL_LINGUAS:
-        LANG = key
+for argument in arguments:
+    if argument in ALL_LINGUAS:
+        LANG = argument
     else:
         LANG = 'en'
 
@@ -158,7 +158,7 @@ elif sys.platform in ['linux2', 'darwin', 'cygwin']:
     tarCmd = 'tar'
     
 else:
-    print ("ERROR: unknown system, don't know msgmerge, ... commands")
+    print ("ERROR: unknown system, don't know commands")
     sys.exit(0)
     
 GNU = [sedCmd, mkdirCmd, rmCmd, tarCmd]
@@ -254,9 +254,9 @@ def main():
                                         "Everything around package."
                                         )
                                            
-    translating.add_argument("-i", action="store_true", dest="init", default=False,
+    translating.add_argument("-i", choices=ADDONS+ALL_LINGUAS, dest="init", default=False,
               help="create the environment")
-    translating.add_argument("-u", action="store_true", dest="update", default=False,
+    translating.add_argument("-u", choices=ADDONS+ALL_LINGUAS, dest="update", default=False,
               help="update the translation")
               
     building.add_argument("-c", "--compile",
