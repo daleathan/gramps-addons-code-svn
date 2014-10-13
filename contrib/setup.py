@@ -917,12 +917,13 @@ def listing():
                         "g": target,
                         "z": repr(tgz_file),
                         }
+                fp.write('{"t":%(t)s,"i":%(i)s,"n":%(n)s,"v":%(v)s,"g":%(g)s,"d":%(d)s,"z":%(z)s}\n' % plugin)
                         
                 #print(plugin)
                 listings.append(plugin)
 
-        for plugin in sorted(listings, key=lambda p: p["z"]):
-            fp.write('{"t":%(t)s,"i":%(i)s,"n":%(n)s,"v":%(v)s,"g":%(g)s,"d":%(d)s,"z":%(z)s}\n' % plugin)
+        #for plugin in sorted(listings, key=lambda p: p["z"]):
+            #fp.write('{"t":%(t)s,"i":%(i)s,"n":%(n)s,"v":%(v)s,"g":%(g)s,"d":%(d)s,"z":%(z)s}\n' % plugin)
     fp.close()
 
 
