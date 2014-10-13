@@ -903,12 +903,13 @@ def listing():
                     target = target.strip()
                     target = repr(target)
  
-                elif (repr(p)).startswith('"include_in_listing'):
+                elif (repr(p)).startswith("'include_in_listing = False,"):
                     need = False
+                    print(p,addon)
 
                 elif (repr(p)).startswith("'status = UNSTABLE,"):
                     need = False
-                    print(p)
+                    print(p,addon)
 
                 #code = compile(gpr.read(),
                                    #gpr_file.encode("utf-8", errors="backslashreplace"),
