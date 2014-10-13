@@ -356,8 +356,6 @@ def init(ADDON, LANG):
     """    
         
     template(ADDON, LANG)
-    
-    print(ADDON, LANG)
 
     os.system('''%(mkdir)s -pv "%(addon)s/po"''' % {'mkdir': mkdirCmd, 'addon': ADDON})
     
@@ -376,21 +374,20 @@ def template(ADDON, LANG):
     """
     Generates the template.pot for the addon.
     """
-    
-    
+
     os.system('''%(xgettext)s --language=Python --keyword=_ --keyword=N_'''
               ''' --from-code=UTF-8 -o "%(addon)s/po/template.pot" %(addon)s/*.py''' 
               % {'xgettext': xgettextCmd, 'addon': ADDON}
              )
              
-    if os.path.isfile('%s.glade' % ADDON):
+    if os.path.isfile('%(addon)s/%(addon)s.glade' % {'addon': ADDON}):
         os.system('''%(xgettext)s --add-comments -j -L Glade '''
                   '''--from-code=UTF-8 -o "%(addon)s/po/template.pot" %(addon)s/*.glade'''
                   % {'xgettext': xgettextCmd, 'addon': ADDON}
                  )
     
-    if os.path.isfile('%s.xml' % ADDON):         
-        xml()
+    if os.path.isfile('%s/census.xml' % ADDON):        
+        xml(ADDON)
         os.system('''%(xgettext)s --keyword=N_ --add-comments -j'''
                   ''' --from-code=UTF-8 -o "%(addon)s/po/template.pot" %(addon)s/*.xml.h''' 
                   % {'xgettext': xgettextCmd, 'addon': ADDON}
@@ -401,15 +398,16 @@ def template(ADDON, LANG):
              )
              
 
-def xml():
+def xml(ADDON):
     """
     Experimental alternative to 'intltool-extract' for 'census.xml'.
     """
     
+
     # in progress ...
     from xml.etree import ElementTree
     
-    tree = ElementTree.parse('census.xml')
+    tree = ElementTree.parse('%s/census.xml' % ADDON)
     root = tree.getroot()
        
     '''
@@ -437,7 +435,7 @@ def xml():
     msgid "City or Borough"
     '''
     
-    catalog = open('xml.h', 'w')
+    catalog = open('%(addon)s/%(addon)s.xml.h' % {'addon': ADDON}, 'w')
     
     for key in root.iter('_attribute'):
         catalog.write('char *s = N_("%s");\n' % key.text)
