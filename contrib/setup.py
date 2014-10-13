@@ -538,14 +538,14 @@ def memory(addon, lang):
                                
     # Get all of the addon strings out of the catalog
         
-    os.system('''%(msggrep)s --location=../*'''
+    os.system('''%(msggrep)s --location=*/*'''
               ''' %(addon)s/po/template.pot --output-file=%(addon)s/po/%(lang)s-temp.po'''
               % {'msggrep': msggrepCmd, 'addon': addon, 'lang': lang} 
               )
     
     # start with Gramps main PO file
     
-    locale_po_files = "%(GRAMPSPATH)s/%(addon)s/po/%(lang)s.po" % {'GRAMPSPATH': GRAMPSPATH, 'addon': addon, 'lang': lang}
+    locale_po_files = "%(GRAMPSPATH)s/po/%(lang)s.po" % {'GRAMPSPATH': GRAMPSPATH, 'addon': addon, 'lang': lang}
     
     # concat global dict as temp file
     
