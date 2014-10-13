@@ -38,7 +38,7 @@
 {"t":'Plugin lib',"i":'libwebconnect',"n":'libwebconnect',"v":'1.0.19',"g":'4.1',"d":u'Biblioth\xe8que pour les collections de liens internet',"z":'libwebconnect.addon.tgz'}
 {"t":'Quickreport',"i":'Descendant Count Quickview',"n":u'Calcul des descendants',"v":'1.0.18',"g":'4.1',"d":u'Affiche le total des descendants pour chaque individu',"z":'DescendantCount.addon.tgz'}
 {"t":'Quickreport',"i":'NumberOfDescendantsQuickview',"n":u'Nombre de descendants',"v":'3.4.18',"g":'4.1',"d":u"Affiche le nombre de descendants de l'individu actif","z":'NumberOfDescendantsQuickview.addon.tgz'}
-{"t":'Quickreport',"i":'allnames',"n":u'Tous les noms pour tous les individus',"v":'1.0.17',"g":'4.1',"d":u'Affiche tous les noms de tous les individus',"z":'AllNamesQuickview.addon.tgz'}
+{"t":'Exporter',"i":'Export GEDCOM Extensions',"n":u'Exportation des extensions Gedcom (GED2)',"v":'1.0.9',"g":'4.1',"d":u'Extensions du format courant Gedcom.',"z":'GedcomExtensions.addon.tgz'}
 {"t":'Quickreport',"i":'timelinequickview',"n":u'Graphique temporel',"v":'1.0.20',"g":'4.1',"d":u"Affiche les \xe9v\xe9nements d'une personne tout au long de sa vie","z":'TimelineQuickview.addon.tgz'}
 {"t":'Quickreport',"i":'Query Quickview',"n":'Rapport express Requête',"v":'1.0.18',"g":'4.1',"d":'Rapport express pour du SQL-like fonctionnant avec requêtes',"z":'Query.addon.tgz'}
 {"t":'Report',"i":'Descendants Lines',"n":u'Lignes des descendants',"v":'0.1.21',"g":'4.1',"d":u"Produit les lignes de descendants de l'individu","z":'DescendantsLines.addon.tgz'}

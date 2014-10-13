@@ -38,7 +38,7 @@
 {"t":'Plugin lib',"i":'libwebconnect',"n":'libwebconnect',"v":'1.0.19',"g":'4.1',"d":'Library for web site collections',"z":'libwebconnect.addon.tgz'}
 {"t":'Quickreport',"i":'Descendant Count Quickview',"n":u'\xc4ttlingsr\xe4knare',"v":'1.0.18',"g":'4.1',"d":u'Visa antal \xe4ttlingar f\xf6r varje person',"z":'DescendantCount.addon.tgz'}
 {"t":'Quickreport',"i":'NumberOfDescendantsQuickview',"n":u'Antal \xe4ttlingar',"v":'3.4.18',"g":'4.1',"d":u'Visar antal \xe4ttlingar till aktuell person',"z":'NumberOfDescendantsQuickview.addon.tgz'}
-{"t":'Quickreport',"i":'allnames',"n":u'Samtliga namn f\xf6r alla personer',"v":'1.0.17',"g":'4.1',"d":u'Visa samtliga namn f\xf6r alla personer',"z":'AllNamesQuickview.addon.tgz'}
+{"t":'Exporter',"i":'Export GEDCOM Extensions',"n":'Export GEDCOM Extensions (GED2)',"v":'1.0.9',"g":'4.1',"d":'Extensions to the common GEDCOM format.',"z":'GedcomExtensions.addon.tgz'}
 {"t":'Quickreport',"i":'timelinequickview',"n":u'Tidslinje',"v":'1.0.20',"g":'4.1',"d":u'Visar h\xe4ndelser f\xf6r en person p\xe5 en tidslinje',"z":'TimelineQuickview.addon.tgz'}
 {"t":'Quickreport',"i":'Query Quickview',"n":'Query Quickview',"v":'1.0.18',"g":'4.1',"d":'Quick view for SQL-like running queries',"z":'Query.addon.tgz'}
 {"t":'Report',"i":'Descendants Lines',"n":'Descendants Lines',"v":'0.1.21',"g":'4.1',"d":'Produces descendants lines of a person',"z":'DescendantsLines.addon.tgz'}
