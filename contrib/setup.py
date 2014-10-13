@@ -279,13 +279,11 @@ def main():
 
     if args.init:
         print(parser.parse_args())
-        if len(sys.argv) == (3 or 4): # ADDON, LANG
-            init(args.init, args.lang)
+        init(args.init, args.lang)
         
     if args.update:
         print(parser.parse_args())
-        if len(sys.argv) == (3 or 4): # ADDON, LANG
-            update(args.update, args.lang)
+        update(args.update, args.lang)
         
     if args.compilation:
         print(parser.parse_args())
@@ -294,8 +292,7 @@ def main():
         
     if args.build:
         print(parser.parse_args())
-        if len(sys.argv) == (3 or 4): # ADDON
-            build(args.build, args.lang)
+        build(args.build)
         
     if args.listing:
         print(parser.parse_args())
@@ -596,12 +593,10 @@ def compilation(ADDON):
                  )
            
                
-def build(ADDON, LANG):
+def build(ADDON):
     """
     Build ../download/AddonDirectory.addon.tgz
     """
-        
-    print(LANG)
 
     compilation(ADDON)
     versioning(ADDON)
