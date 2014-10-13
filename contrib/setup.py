@@ -873,24 +873,28 @@ def listing():
                     ident = p.replace('id', '')
                     ident = ident.replace('=', '')
                     ident = ident.replace(',', '')
+                    ident = ident.strip()
                     #ident = repr(ident)
 
                 if (repr(p)).startswith("'name") or (repr(p)).startswith('"name'):
                     name = p.replace('name', '')
                     name = name.replace('=', '')
                     name = name.replace(',', '')
+                    name = name.strip()
                     name = repr(name)                 
 
                 elif (repr(p)).startswith("'description"):
                     description = p.replace('description', '')
                     description = description.replace('=', '')
                     description = description.replace(',', '')
+                    description = description.strip()
                     description = repr(description)
                 
                 elif (repr(p)).startswith('"version'):
                     version = p.replace('version', '')
                     version = version.replace('=', '')
                     version = version.replace(',', '')
+                    version = version.strip()
                     version = repr(version)
                     
                 elif (repr(p)).startswith('"gramps_target_version'):
