@@ -71,7 +71,7 @@ ADDONS = sorted([name for name in os.listdir('.')
 
 ALL_ADDONS = ADDONS.append('ALL')
 
-ALL_LINGUAS = (  # translation template
+LINGUAS = ( # translation template
     'en',
     'bg',
     'ca',
@@ -104,6 +104,8 @@ ALL_LINGUAS = (  # translation template
     'vi',
     'zh_CN',
     )
+
+ALL_LINGUAS = ADDONS.append('all')
 
 if sys.platform == 'win32':
 
@@ -267,9 +269,9 @@ def main():
 
     parser = \
         ArgumentParser(description='This specific script build addon',
-                       add_help=False, version='0.1.0')
+                       add_help=False, version='0.1.1')
 
-    parser.add_argument('lang', nargs='?', const=ALL_LINGUAS,
+    parser.add_argument('lang', nargs='?', const=LINGUAS,
                         default='en')
 
     # parser.add_argument("-t", "--test",
@@ -359,6 +361,9 @@ def main():
         print(parser.parse_args())
         if args.compilation == "ALL":
             compilation_all(args.compilation)
+        elif args.compilation == "all":
+            m1 = 'Wrong argument: %s \nTry "setup.py -c ALL"!\n' % sys.argv
+            parser.exit(message = m1)
         else:
             compilation(args.compilation)
 
@@ -366,17 +371,34 @@ def main():
         print(parser.parse_args())
         if args.build == "ALL":
             build_all(args.build)
+        elif args.build == "all":
+            m1 = 'Wrong argument: %s \nTry "setup.py -b ALL"!\n' % sys.argv
+            parser.exit(message = m1)
         else:
             build(args.build)
 
     if args.listing:
         print(parser.parse_args())
-        listing(args.listing)
+        if args.listing != False:
+            if args.listing == "all":
+                listing_all(args.lang)
+            elif args.listing == "ALL":
+                m1 = 'Wrong argument: %s \nTry "setup.py -l all"!\n' % sys.argv
+                parser.exit(message = m1)
+            else:
+                sys.path.insert(3, args.listing)
+                listing(sys.argv[2])
+        else:
+            m2 = 'Wrong argument: %s \n' % sys.argv
+            parser.exit(message = m2)
 
     if args.clean:
         print(parser.parse_args())
         if args.clean == "ALL":
             clean_all(args.clean)
+        elif args.clean == "all":
+            m1 = 'Wrong argument: %s \nTry "setup.py -r ALL"!\n' % sys.argv
+            parser.exit(message = m1)
         else:
             clean(args.clean)
 
@@ -997,7 +1019,7 @@ def listing(LANG):
                         ) or repr(p).startswith("'status = UNSTABLE,")):
                     need = True
                 else:
-                    print(addon)
+                    print("Ignoring: '%s'" % addon)
 
                 if repr(p).startswith("'id") or repr(p).startswith('"id'
                         ):
@@ -1063,6 +1085,19 @@ def listing(LANG):
             # fp.write('{"t":%(t)s,"i":%(i)s,"n":%(n)s,"v":%(v)s,"g":%(g)s,"d":%(d)s,"z":%(z)s}\n' % plugin)
 
     fp.close()
+
+
+def listing_all(LANG):
+    """
+    Remove created files for all addons
+    """
+    
+    for lang in LINGUAS:
+        if lang == 'all':
+            continue
+        else:
+            print(lang)
+            listing(lang)
 
 
 def clean(addon):
