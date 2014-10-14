@@ -1,3 +1,6 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+
 # Gramps - a GTK+/GNOME based genealogy program
 #
 # Copyright (C) 2007-2009  Douglas S. Blank
@@ -17,7 +20,6 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
-#! /usr/bin/env python
 """
 setup.py for Gramps addons.
 
@@ -64,70 +66,78 @@ import os
 import sys
 from argparse import ArgumentParser
 
-ADDONS = sorted([name for name in os.listdir(".") 
-                      if os.path.isdir(name) and not name.startswith(".")])
+ADDONS = sorted([name for name in os.listdir('.')
+                if os.path.isdir(name) and not name.startswith('.')])
 
-ADDONS.append("ALL")
-                   
-ALL_LINGUAS = ("en", # translation template
-             "bg",
-             "ca",
-             "cs",
-             "da",
-             "de",
-             "es",
-             "en_GB",
-             "fi",
-             "fr",
-             "he",
-             "hr",
-             "hu",
-             "it",
-             "ja",
-             "lt",
-             "mk",
-             "nb",
-             "nl",
-             "nn",
-             "pl",
-             "pt_BR",
-             "pt_PT",
-             "ru",            
-             "sk",
-             "sl",
-             "sq",
-             "sv",           
-             "uk",
-             "vi",
-             "zh_CN"
-             )
+ADDONS.append('ALL')
 
-if sys.platform == 'win32':    
-      
+ALL_LINGUAS = (  # translation template
+    'en',
+    'bg',
+    'ca',
+    'cs',
+    'da',
+    'de',
+    'es',
+    'en_GB',
+    'fi',
+    'fr',
+    'he',
+    'hr',
+    'hu',
+    'it',
+    'ja',
+    'lt',
+    'mk',
+    'nb',
+    'nl',
+    'nn',
+    'pl',
+    'pt_BR',
+    'pt_PT',
+    'ru',
+    'sk',
+    'sl',
+    'sq',
+    'sv',
+    'uk',
+    'vi',
+    'zh_CN',
+    )
+
+if sys.platform == 'win32':
+
     # GetText Win 32 obtained from http://gnuwin32.sourceforge.net/packages/gettext.htm
     # ....\gettext\bin\msgmerge.exe needs to be on the path
-    
-    msginitCmd = os.path.join('C:', 'Program Files(x86)', 'gettext', 'bin', 'msginit.exe')
-    msgmergeCmd = os.path.join('C:', 'Program Files(x86)', 'gettext', 'bin', 'msgmerge.exe')
-    msgfmtCmd = os.path.join('C:', 'Program Files(x86)', 'gettext', 'bin', 'msgfmt.exe')
-    msgcatCmd = os.path.join('C:', 'Program Files(x86)', 'gettext', 'bin', 'msgcat.exe')
-    msggrepCmd = os.path.join('C:', 'Program Files(x86)', 'gettext', 'bin', 'msggrep.exe')
-    msgcmpCmd = os.path.join('C:', 'Program Files(x86)', 'gettext', 'bin', 'msgcmp.exe')
-    msgattribCmd = os.path.join('C:', 'Program Files(x86)', 'gettext', 'bin', 'msgattrib.exe')
-    xgettextCmd = os.path.join('C:', 'Program Files(x86)', 'gettext', 'bin', 'xgettext.exe')
-    
+
+    msginitCmd = os.path.join('C:', 'Program Files(x86)', 'gettext',
+                              'bin', 'msginit.exe')
+    msgmergeCmd = os.path.join('C:', 'Program Files(x86)', 'gettext',
+                               'bin', 'msgmerge.exe')
+    msgfmtCmd = os.path.join('C:', 'Program Files(x86)', 'gettext',
+                             'bin', 'msgfmt.exe')
+    msgcatCmd = os.path.join('C:', 'Program Files(x86)', 'gettext',
+                             'bin', 'msgcat.exe')
+    msggrepCmd = os.path.join('C:', 'Program Files(x86)', 'gettext',
+                              'bin', 'msggrep.exe')
+    msgcmpCmd = os.path.join('C:', 'Program Files(x86)', 'gettext',
+                             'bin', 'msgcmp.exe')
+    msgattribCmd = os.path.join('C:', 'Program Files(x86)', 'gettext',
+                                'bin', 'msgattrib.exe')
+    xgettextCmd = os.path.join('C:', 'Program Files(x86)', 'gettext',
+                               'bin', 'xgettext.exe')
+
     pythonCmd = os.path.join(sys.prefix, 'bin', 'python.exe')
-    
+
     # GNU tools
     # see http://gnuwin32.sourceforge.net/packages.html
-    
-    sedCmd = os.path.join('C:', 'Program Files(x86)', 'sed.exe') # sed
-    mkdirCmd = os.path.join('C:', 'Program Files(x86)', 'mkdir.exe') # CoreUtils
-    rmCmd = os.path.join('C:', 'Program Files(x86)', 'rm.exe') # CoreUtils
-    tarCmd = os.path.join('C:', 'Program Files(x86)', 'tar.exe') # tar
-    
+
+    sedCmd = os.path.join('C:', 'Program Files(x86)', 'sed.exe')  # sed
+    mkdirCmd = os.path.join('C:', 'Program Files(x86)', 'mkdir.exe')  # CoreUtils
+    rmCmd = os.path.join('C:', 'Program Files(x86)', 'rm.exe')  # CoreUtils
+    tarCmd = os.path.join('C:', 'Program Files(x86)', 'tar.exe')  # tar
 elif sys.platform in ['linux2', 'darwin', 'cygwin']:
-    
+
     msginitCmd = 'msginit'
     msgmergeCmd = 'msgmerge'
     msgfmtCmd = 'msgfmt'
@@ -136,19 +146,20 @@ elif sys.platform in ['linux2', 'darwin', 'cygwin']:
     msgcmpCmd = 'msgcmp'
     msgattribCmd = 'msgattrib'
     xgettextCmd = 'xgettext'
-    
+
     pythonCmd = os.path.join(sys.prefix, 'bin', 'python')
-    
+
     sedCmd = 'sed'
     mkdirCmd = 'mkdir'
     rmCmd = 'rm'
     tarCmd = 'tar'
-    
 else:
-    print ("ERROR: unknown system, don't know commands")
+
+    print("ERROR: unknown system, don't know commands")
     sys.exit(0)
-    
+
 GNU = [sedCmd, mkdirCmd, rmCmd, tarCmd]
+
 
 def tests():
     """
@@ -156,122 +167,174 @@ def tests():
     We made tests (-t flag) by displaying versions of tools if properly
     installed. Cannot run all commands without 'gettext' and 'python'.
     """
-    
-    try:
-        print("\n====='msginit'=(create your translation)===============\n")
-        os.system('''%(program)s -V''' % {'program': msginitCmd})
-    except:
-        raise ValueError('Please, install %(program)s for creating your translation' % {'program': msginitCmd})
-    
-    try:
-        print("\n====='msgmerge'=(merge your translation)===============\n")
-        os.system('''%(program)s -V''' % {'program': msgmergeCmd})
-    except:
-        raise ValueError('Please, install %(program)s for updating your translation' % {'program': msgmergeCmd})
-        
-    try:
-        print("\n=='msgfmt'=(format your translation for installation)==\n")
-        os.system('''%(program)s -V''' % {'program': msgfmtCmd})
-    except:
-        raise ValueError('Please, install %(program)s for checking your translation' % {'program': msgfmtCmd})
-    
-    try:
-        print("\n==='msgcat'=(concate translations)=====================\n")
-        os.system('''%(program)s -V''' % {'program': msgcatCmd})
-    except:
-        raise ValueError('Please, install %(program)s for concating translations' % {'program': msgcatCmd})
-    
-    try:
-        print("\n===='msggrep'==(extract messages from catalog)=========\n")
-        os.system('''%(program)s -V''' % {'program': msggrepCmd})
-    except:
-        raise ValueError('Please, install %(program)s for extracting messages' % {'program': msggrepCmd})
 
     try:
-        print("\n===='msgcmp'==(compare two gettext files)===============\n")
-        os.system('''%(program)s -V''' % {'program': msgcmpCmd})
+        print("""
+====='msginit'=(create your translation)===============
+""")
+        os.system('%(program)s -V' % {'program': msginitCmd})
     except:
-        raise ValueError('Please, install %(program)s for comparing gettext files' % {'program': msgcmpCmd})
-        
+        raise ValueError('Please, install %(program)s for creating your translation'
+                          % {'program': msginitCmd})
+
     try:
-        print("\n===='msgattrib'==(list groups of messages)=============\n")
-        os.system('''%(program)s -V''' % {'program': msgattribCmd})
+        print("""
+====='msgmerge'=(merge your translation)===============
+""")
+        os.system('%(program)s -V' % {'program': msgmergeCmd})
     except:
-        raise ValueError('Please, install %(program)s for listing groups of messages' % {'program': msgattribCmd})
-        
+        raise ValueError('Please, install %(program)s for updating your translation'
+                          % {'program': msgmergeCmd})
+
     try:
-        print("\n===='xgettext' =(generate a new template)==============\n")
-        os.system('''%(program)s -V''' % {'program': xgettextCmd})
+        print("""
+=='msgfmt'=(format your translation for installation)==
+""")
+        os.system('%(program)s -V' % {'program': msgfmtCmd})
     except:
-        raise ValueError('Please, install %(program)s for generating a new template' % {'program': xgettextCmd})
-    
+        raise ValueError('Please, install %(program)s for checking your translation'
+                          % {'program': msgfmtCmd})
+
     try:
-        print("\n=================='python'=============================\n")
-        os.system('''%(program)s -V''' % {'program': pythonCmd})
+        print("""
+==='msgcat'=(concate translations)=====================
+""")
+        os.system('%(program)s -V' % {'program': msgcatCmd})
+    except:
+        raise ValueError('Please, install %(program)s for concating translations'
+                          % {'program': msgcatCmd})
+
+    try:
+        print("""
+===='msggrep'==(extract messages from catalog)=========
+""")
+        os.system('%(program)s -V' % {'program': msggrepCmd})
+    except:
+        raise ValueError('Please, install %(program)s for extracting messages'
+                          % {'program': msggrepCmd})
+
+    try:
+        print("""
+===='msgcmp'==(compare two gettext files)===============
+""")
+        os.system('%(program)s -V' % {'program': msgcmpCmd})
+    except:
+        raise ValueError('Please, install %(program)s for comparing gettext files'
+                          % {'program': msgcmpCmd})
+
+    try:
+        print("""
+===='msgattrib'==(list groups of messages)=============
+""")
+        os.system('%(program)s -V' % {'program': msgattribCmd})
+    except:
+        raise ValueError('Please, install %(program)s for listing groups of messages'
+                          % {'program': msgattribCmd})
+
+    try:
+        print("""
+===='xgettext' =(generate a new template)==============
+""")
+        os.system('%(program)s -V' % {'program': xgettextCmd})
+    except:
+        raise ValueError('Please, install %(program)s for generating a new template'
+                          % {'program': xgettextCmd})
+
+    try:
+        print("""
+=================='python'=============================
+""")
+        os.system('%(program)s -V' % {'program': pythonCmd})
     except:
         raise ValueError('Please, install python')
-     
+
     for program in GNU:
         try:
-            print("\n=================='%s'=============================\n" % program)
-            os.system('''%s --version''' % program)
+            print("""
+=================='%s'=============================
+"""
+                  % program)
+            os.system('%s --version' % program)
         except:
-            raise ValueError('Please, install or set path for GNU tool: %s' % program)
-        
-    
+            raise ValueError('Please, install or set path for GNU tool: %s'
+                              % program)
+
+
 def main():
     """
     The utility for handling addon.
     """
-    
-    parser = ArgumentParser( 
-                         description='This specific script build addon',
-                         add_help=False,
-                         version='0.1.0'
-                         )
 
-    parser.add_argument(
-                       "lang", nargs='?', const=ALL_LINGUAS, default='en'
-                       )
-                         
-    #parser.add_argument("-t", "--test",
-    #action="store_true", dest="test", default=True,
-    #help="test if programs are properly installed")
-              
-    translating = parser.add_argument_group(
-                                           "Translations Options", 
-                                           "Everything around translations for addon.",
-                                           )
-    building = parser.add_argument_group(
-                                        "Build Options", 
-                                        "Everything around package."
-                                        )
-                                           
-    translating.add_argument("-i", "--init", choices=ADDONS,
-              dest="init", default=False,
-              help="create the environment")
-    translating.add_argument("-u", "--update", choices=ADDONS,
-              dest="update", default=False,
-              help="update the translation")
-              
-    building.add_argument("-c", "--compile",
-              choices=ADDONS, dest="compilation", default=False,
-              help="compile translation files for generating package")
-    building.add_argument("-b", "--build",
-              choices=ADDONS, dest="build", default=False,
-              help="build package")
-    building.add_argument("-l", "--listing",
-              choices=ALL_LINGUAS, dest="listing", default=False,
-              help="list packages")
-    building.add_argument("-r", "--clean",
-              choices=ADDONS, dest="clean", default=False,
-              help="remove files generated by building process")
-    
-    
+    parser = \
+        ArgumentParser(description='This specific script build addon',
+                       add_help=False, version='0.1.0')
+
+    parser.add_argument('lang', nargs='?', const=ALL_LINGUAS,
+                        default='en')
+
+    # parser.add_argument("-t", "--test",
+    # action="store_true", dest="test", default=True,
+    # help="test if programs are properly installed")
+
+    translating = parser.add_argument_group('Translations Options',
+            'Everything around translations for addon.')
+    building = parser.add_argument_group('Build Options',
+            'Everything around package.')
+
+    translating.add_argument(
+        '-i',
+        '--init',
+        choices=ADDONS,
+        dest='init',
+        default=False,
+        help='create the environment',
+        )
+    translating.add_argument(
+        '-u',
+        '--update',
+        choices=ADDONS,
+        dest='update',
+        default=False,
+        help='update the translation',
+        )
+
+    building.add_argument(
+        '-c',
+        '--compile',
+        choices=ADDONS,
+        dest='compilation',
+        default=False,
+        help='compile translation files for generating package',
+        )
+    building.add_argument(
+        '-b',
+        '--build',
+        choices=ADDONS,
+        dest='build',
+        default=False,
+        help='build package',
+        )
+    building.add_argument(
+        '-l',
+        '--listing',
+        choices=ALL_LINGUAS,
+        dest='listing',
+        default=False,
+        help='list packages',
+        )
+    building.add_argument(
+        '-r',
+        '--clean',
+        choices=ADDONS,
+        dest='clean',
+        default=False,
+        help='remove files generated by building process',
+        )
+
     if not 2 < len(sys.argv) < 5:
         m1 = 'Wrong number of arguments: %s \n' % len(sys.argv)
-        m2 = 'Expected number: 3 or 4\n' 
-        parser.exit(message = m1 + m2)         
+        m2 = 'Expected number: 3 or 4\n'
+        parser.exit(message=m1 + m2)
     else:
         try:
             args = parser.parse_args()
@@ -279,23 +342,23 @@ def main():
             m = 'Wrong argument: %s \n' % sys.argv
             l = '  lang available: %s \n' % str(ALL_LINGUAS)
             a = '  addon available: %s \n' % ADDONS
-            parser.exit(message = m + l + a)
+            parser.exit(message=m + l + a)
 
-    #if args.test:
-        #tests()
+    # if args.test:
+        # tests()
 
     if args.init:
         print(parser.parse_args())
         init(args.init, args.lang)
-        
+
     if args.update:
         print(parser.parse_args())
         update(args.update, args.lang)
-        
+
     if args.compilation:
         print(parser.parse_args())
         compilation(args.compilation)
-        
+
     if args.build:
         print(parser.parse_args())
         build(args.build)
@@ -303,84 +366,87 @@ def main():
     if args.listing:
         print(parser.parse_args())
         listing(args.listing)
-        
+
     if args.clean:
         print(parser.parse_args())
         clean(args.clean)
-        
-        
+
+
 def versioning(ADDON):
     """
     Update gpr.py version
     """
-    
+
     if ADDON:
-        f = open('%(addon)s/%(addon)s.gpr.py' % {'addon': ADDON}, "r")
+        f = open('%(addon)s/%(addon)s.gpr.py' % {'addon': ADDON}, 'r')
         lines = [file.strip() for file in f]
-        f.close() 
-    
-        upf = open('%(addon)s/%(addon)s.gpr.py' % {'addon':ADDON}, "w")
-    
+        f.close()
+
+        upf = open('%(addon)s/%(addon)s.gpr.py' % {'addon': ADDON}, 'w')
+
         for line in lines:
-            if ((line.lstrip().startswith("version")) and 
-                ("=" in line)):
-                print("orig %s" % line.rstrip())
-            
-                line, stuff = line.rsplit(",", 1)
+            if line.lstrip().startswith('version') and '=' in line:
+                print('orig %s' % line.rstrip())
+
+                (line, stuff) = line.rsplit(',', 1)
                 line = line.rstrip()
-                pos = line.index("version")
-            
+                pos = line.index('version')
+
                 indent = line[0:pos]
-                var, gtv = line[pos:].split('=', 1)
+                (var, gtv) = line[pos:].split('=', 1)
                 lyst = version(gtv.strip()[1:-1])
                 lyst[2] += 1
-            
-                newv = ".".join(map(str, lyst))
+
+                newv = '.'.join(map(str, lyst))
                 newline = "%sversion = '%s'," % (indent, newv)
-                print("new %s" % newline.rstrip())
+                print('new %s' % newline.rstrip())
                 upf.write('%s\n' % newline)
             else:
                 upf.write('%s\n' % line)
         upf.close()
-        
-        
+
+
 def myint(s):
     """
     Protected version of int()
     """
+
     try:
         v = int(s)
     except:
         v = s
     return v
-        
-        
+
+
 def version(sversion):
     """
     Return the tuple version of a string version.
     """
-    return [myint(x or "0") for x in (sversion + "..").split(".")][0:3]
-       
-                
+
+    return [myint(x or '0') for x in (sversion + '..').split('.')][0:3]
+
+
 def init(ADDON, LANG):
     """
     Creates the initial empty po/x-local.po file and generates the 
     template.pot for the addon.
-    """    
-        
+    """
+
     template(ADDON)
 
-    os.system('''%(mkdir)s -pv "%(addon)s/po"''' % {'mkdir': mkdirCmd, 'addon': ADDON})
-    
-    if os.path.isfile('''%(addon)s/po/%(lang)s-local.po''' % {'addon': ADDON, 'lang': LANG}):
-        print('''"%(addon)s/po/%(lang)s-local.po" already exists!''' % {'addon': ADDON, 'lang': LANG})
+    os.system('%(mkdir)s -pv "%(addon)s/po"' % {'mkdir': mkdirCmd,
+              'addon': ADDON})
+
+    if os.path.isfile('%(addon)s/po/%(lang)s-local.po'
+                      % {'addon': ADDON, 'lang': LANG}):
+        print('"%(addon)s/po/%(lang)s-local.po" already exists!'
+              % {'addon': ADDON, 'lang': LANG})
     else:
-        os.system('''%(msginit)s --locale=%(lang)s ''' 
-                  '''--input="%(addon)s/po/template.pot" '''
-                  '''--output="%(addon)s/po/%(lang)s-local.po"'''
-                  % {'msginit': msginitCmd, 'addon': ADDON, 'lang': LANG} 
-                  )
-        print('''You can now edit "%(addon)s/po/%(lang)s-local.po"!''' % {'addon': ADDON, 'lang': LANG})
+        os.system('%(msginit)s --locale=%(lang)s --input="%(addon)s/po/template.pot" --output="%(addon)s/po/%(lang)s-local.po"'
+                   % {'msginit': msginitCmd, 'addon': ADDON,
+                  'lang': LANG})
+        print('You can now edit "%(addon)s/po/%(lang)s-local.po"!'
+              % {'addon': ADDON, 'lang': LANG})
 
 
 def template(ADDON):
@@ -388,218 +454,197 @@ def template(ADDON):
     Generates the template.pot for the addon.
     """
 
-    os.system('''%(xgettext)s --language=Python --keyword=_ --keyword=N_'''
-              ''' --from-code=UTF-8 -o "%(addon)s/po/template.pot" %(addon)s/*.py''' 
-              % {'xgettext': xgettextCmd, 'addon': ADDON}
-             )
-             
-    if os.path.isfile('%(addon)s/placecompletion.glade' % {'addon': ADDON}):
-        os.system('''%(xgettext)s --add-comments -j -L Glade '''
-                  '''--from-code=UTF-8 -o "%(addon)s/po/template.pot" %(addon)s/*.glade'''
-                  % {'xgettext': xgettextCmd, 'addon': ADDON}
-                 )
-    
-    if os.path.isfile('%s/census.xml' % ADDON):        
+    os.system('%(xgettext)s --language=Python --keyword=_ --keyword=N_ --from-code=UTF-8 -o "%(addon)s/po/template.pot" %(addon)s/*.py'
+               % {'xgettext': xgettextCmd, 'addon': ADDON})
+
+    if os.path.isfile('%(addon)s/placecompletion.glade'
+                      % {'addon': ADDON}):
+        os.system('%(xgettext)s --add-comments -j -L Glade --from-code=UTF-8 -o "%(addon)s/po/template.pot" %(addon)s/*.glade'
+                   % {'xgettext': xgettextCmd, 'addon': ADDON})
+
+    if os.path.isfile('%s/census.xml' % ADDON):
         xml(ADDON)
-        os.system('''%(xgettext)s --keyword=N_ --add-comments -j'''
-                  ''' --from-code=UTF-8 -o "%(addon)s/po/template.pot" %(addon)s/*.xml.h''' 
-                  % {'xgettext': xgettextCmd, 'addon': ADDON}
-                  )
-                                      
-    os.system('''%(sed)s -i 's/charset=CHARSET/charset=UTF-8/' '''
-              '''"%(addon)s/po/template.pot"''' % {'sed': sedCmd, 'addon': ADDON}
-             )
-             
+        os.system('%(xgettext)s --keyword=N_ --add-comments -j --from-code=UTF-8 -o "%(addon)s/po/template.pot" %(addon)s/*.xml.h'
+                   % {'xgettext': xgettextCmd, 'addon': ADDON})
+
+    os.system('%(sed)s -i "s/charset=CHARSET/charset=UTF-8/" "%(addon)s/po/template.pot"'
+               % {'sed': sedCmd, 'addon': ADDON})
+
 
 def xml(ADDON):
     """
     Experimental alternative to 'intltool-extract' for 'census.xml'.
     """
-    
 
     from xml.etree import ElementTree
-    
+
     tree = ElementTree.parse('%s/census.xml' % ADDON)
     root = tree.getroot()
-       
-    '''
-    <?xml version="1.0" encoding="UTF-8"?>
-    <censuses>
-        <census id='UK1841' title='1841 UK Census' date='6 Jun 1841'>
-            <heading>
-                <_attribute>City or Borough</_attribute>
-            </heading>
-            <heading>
-                <_attribute>Parish or Township</_attribute>
-            </heading>
-            <column>
-                <_attribute>Name</_attribute>
-                <size>25</size>
-            </column>
-            <column>
-                <_attribute>Age</_attribute>
-                <size>5</size>
-            </column>
-        
-    char *s = N_("City or Borough");
-    
-    template.pot:
-    msgid "City or Borough"
-    '''
-    
+
     catalog = open('%(addon)s/%(addon)s.xml.h' % {'addon': ADDON}, 'w')
-    
+
     for key in root.iter('_attribute'):
         catalog.write('char *s = N_("%s");\n' % key.text)
-        
+
     catalog.close()
-        
+
     root.clear()
-    
-    
+
+
 def update(ADDON, LANG):
     """
     Updates po/x-local.po with the latest translations.
     """
-            
+
     template(ADDON)
-                 
-    os.system('''%(mkdir)s -pv "%(addon)s/po"''' % {'mkdir': mkdirCmd, 'addon': ADDON})
-                
+
+    os.system('%(mkdir)s -pv "%(addon)s/po"' % {'mkdir': mkdirCmd,
+              'addon': ADDON})
+
     # create a temp header file (time log)
-                
+
     temp(ADDON, LANG)
-                              
+
     # create the locale-local.po file
-                
+
     init(ADDON, LANG)
-                
+
     # create a temp header file (time log)
-                
+
     temp(ADDON, LANG)
-                
+
     # merge data from previous translation to the temp one
-            
-    print('Merge "%(addon)s/po/%(lang)s.po" with "%(addon)s/po/%(lang)s-local.po":' % {'addon': ADDON, 'lang': LANG})
-    
-    os.system('''%(msgmerge)s %(addon)s/po/%(lang)s-local.po %(addon)s/po/%(lang)s.po'''
-              ''' -o %(addon)s/po/%(lang)s.po --no-location -v'''
-              % {'msgmerge': msgmergeCmd, 'addon': ADDON, 'lang': LANG} 
-              )
-                        
+
+    print('Merge "%(addon)s/po/%(lang)s.po" with "%(addon)s/po/%(lang)s-local.po":'
+           % {'addon': ADDON, 'lang': LANG})
+
+    os.system('%(msgmerge)s %(addon)s/po/%(lang)s-local.po %(addon)s/po/%(lang)s.po -o %(addon)s/po/%(lang)s.po --no-location -v'
+               % {'msgmerge': msgmergeCmd, 'addon': ADDON,
+              'lang': LANG})
+
     memory(ADDON, LANG)
-            
+
     # like template (msgid) with last message strings (msgstr)
-            
-    print('Merge "%(addon)s/po/%(lang)s.po" with "po/template.pot":' % {'addon': ADDON, 'lang': LANG})
-            
-    os.system('''%(msgmerge)s -U %(addon)s/po/%(lang)s.po'''
-              ''' %(addon)s/po/template.pot -v'''
-              % {'msgmerge': msgmergeCmd, 'addon': ADDON, 'lang': LANG} 
-              )
-                      
+
+    print('Merge "%(addon)s/po/%(lang)s.po" with "po/template.pot":'
+          % {'addon': ADDON, 'lang': LANG})
+
+    os.system('%(msgmerge)s -U %(addon)s/po/%(lang)s.po %(addon)s/po/template.pot -v'
+               % {'msgmerge': msgmergeCmd, 'addon': ADDON,
+              'lang': LANG})
+
     # only used messages (need) and merge back
-            
+
     print('Move content to "po/%s-local.po".' % LANG)
-            
-    os.system('''%(msgattrib)s --no-obsolete'''
-              ''' %(addon)s/po/%(lang)s.po -o %(addon)s/po/%(lang)s-local.po'''
-              % {'msgattrib': msgattribCmd, 'addon': ADDON, 'lang': LANG} 
-              )
-            
+
+    os.system('%(msgattrib)s --no-obsolete %(addon)s/po/%(lang)s.po -o %(addon)s/po/%(lang)s-local.po'
+               % {'msgattrib': msgattribCmd, 'addon': ADDON,
+              'lang': LANG})
+
     # remove temp locale.po file
-            
-    os.system('''%(rm)s -rf -v %(addon)s/po/%(lang)s.po'''
-              % {'rm': rmCmd, 'addon': ADDON, 'lang': LANG}
-              ) 
-                      
-    print('''You can now edit "%(addon)s/po/%(lang)s-local.po"!''' % {'addon': ADDON, 'lang': LANG})
-                      
-            
+
+    os.system('%(rm)s -rf -v %(addon)s/po/%(lang)s.po' % {'rm': rmCmd,
+              'addon': ADDON, 'lang': LANG})
+
+    print('You can now edit "%(addon)s/po/%(lang)s-local.po"!'
+          % {'addon': ADDON, 'lang': LANG})
+
+
 def temp(addon, lang):
     """
     Generate a temp file for header (time log) and Translation Memory
     """
-    
-    os.system('''%(msginit)s --locale=%(lang)s ''' 
-              '''--input="%(addon)s/po/template.pot" '''
-              '''--output="%(addon)s/po/%(lang)s.po" --no-translator'''
-              % {'msginit': msginitCmd, 'addon': addon, 'lang': lang} 
-              )
-    
-            
+
+    os.system('%(msginit)s --locale=%(lang)s --input="%(addon)s/po/template.pot" --output="%(addon)s/po/%(lang)s.po" --no-translator'
+               % {'msginit': msginitCmd, 'addon': addon, 'lang': lang})
+
+
 def memory(addon, lang):
     """
     Translation memory for Gramps (own dictionary: msgid/msgstr)
     """
-    
-    if "GRAMPSPATH" in os.environ:
-        GRAMPSPATH = os.environ["GRAMPSPATH"]
-    else:
-        GRAMPSPATH = "../../../.."
 
-    if not os.path.isdir(GRAMPSPATH + "/po"):
-        raise ValueError("Where is GRAMPSPATH/po: '%s/po'? Use 'GRAMPSPATH=path python setup.py ...'" % GRAMPSPATH)
-                               
+    if 'GRAMPSPATH' in os.environ:
+        GRAMPSPATH = os.environ['GRAMPSPATH']
+    else:
+        GRAMPSPATH = '../../../..'
+
+    if not os.path.isdir(GRAMPSPATH + '/po'):
+        raise ValueError("Where is GRAMPSPATH/po: '%s/po'? Use 'GRAMPSPATH=path python setup.py ...'"
+                          % GRAMPSPATH)
+
     # Get all of the addon strings out of the catalog
-        
-    os.system('''%(msggrep)s --location=*/*'''
-              ''' %(addon)s/po/template.pot --output-file=%(addon)s/po/%(lang)s-temp.po'''
-              % {'msggrep': msggrepCmd, 'addon': addon, 'lang': lang} 
-              )
-    
+
+    os.system('%(msggrep)s --location=*/* %(addon)s/po/template.pot --output-file=%(addon)s/po/%(lang)s-temp.po'
+               % {'msggrep': msggrepCmd, 'addon': addon, 'lang': lang})
+
     # start with Gramps main PO file
-    
-    locale_po_files = "%(GRAMPSPATH)s/po/%(lang)s.po" % {'GRAMPSPATH': GRAMPSPATH, 'addon': addon, 'lang': lang}
-    
+
+    locale_po_files = '%(GRAMPSPATH)s/po/%(lang)s.po' \
+        % {'GRAMPSPATH': GRAMPSPATH, 'addon': addon, 'lang': lang}
+
     # concat global dict as temp file
-    
+
     if os.path.isfile(locale_po_files):
-        print('Concat temp data: "%(addon)s/po/%(lang)s.po" with "%(global)s".' % {'global': locale_po_files, 'addon': addon, 'lang': lang})
-            
-        os.system('''%(msgcat)s --use-first %(addon)s/po/%(lang)s.po'''
-                  ''' %(global)s -o %(addon)s/po/%(lang)s.po --no-location'''
-                  % {'msgcat': msgcatCmd, 'global': locale_po_files, 'addon': addon, 'lang': lang} 
-                  )
-        os.system('''%(msgcmp)s -m --use-fuzzy --use-untranslated'''
-                  ''' %(addon)s/po/%(lang)s.po %(global)s'''
-                  % {'msgcmp': msgcmpCmd, 'global': locale_po_files , 'addon': addon, 'lang': lang} 
-                  )
-                
-    if os.path.isfile('%(addon)s/po/%(lang)s-temp.po' % {'addon': addon, 'lang': lang}):
-        print('Concat temp data: "%(addon)s/po/%(lang)s.po" with "%(addon)s/po/%(lang)s-temp.po".' % {'addon': addon, 'lang': lang})
-                  
-        os.system('''%(msgcat)s --use-first %(addon)s/po/%(lang)s.po'''
-                  ''' %(addon)s/po/%(lang)s-temp.po -o %(addon)s/po/%(lang)s.po --no-location'''
-                  % {'msgcat': msgcatCmd, 'addon': addon, 'lang': lang}
-                  )
-                  
-        print('''Remove temp "%(addon)s/po/%(lang)s-temp.po".''' % {'addon': addon, 'lang': lang})
-            
-        os.system('''%(rm)s -rf -v %(addon)s/po/%(lang)s-temp.po'''
-                 % {'rm': rmCmd, 'addon': addon, 'lang': lang}
-                 )
-                                  
-    
+        print('Concat temp data: "%(addon)s/po/%(lang)s.po" with "%(global)s".'
+               % {'global': locale_po_files, 'addon': addon,
+              'lang': lang})
+
+        os.system('%(msgcat)s --use-first %(addon)s/po/%(lang)s.po %(global)s -o %(addon)s/po/%(lang)s.po --no-location'
+                   % {
+            'msgcat': msgcatCmd,
+            'global': locale_po_files,
+            'addon': addon,
+            'lang': lang,
+            })
+        os.system('%(msgcmp)s -m --use-fuzzy --use-untranslated %(addon)s/po/%(lang)s.po %(global)s'
+                   % {
+            'msgcmp': msgcmpCmd,
+            'global': locale_po_files,
+            'addon': addon,
+            'lang': lang,
+            })
+
+    if os.path.isfile('%(addon)s/po/%(lang)s-temp.po'
+                      % {'addon': addon, 'lang': lang}):
+        print('Concat temp data: "%(addon)s/po/%(lang)s.po" with "%(addon)s/po/%(lang)s-temp.po".'
+               % {'addon': addon, 'lang': lang})
+
+        os.system('%(msgcat)s --use-first %(addon)s/po/%(lang)s.po %(addon)s/po/%(lang)s-temp.po -o %(addon)s/po/%(lang)s.po --no-location'
+                   % {'msgcat': msgcatCmd, 'addon': addon,
+                  'lang': lang})
+
+        print('Remove temp "%(addon)s/po/%(lang)s-temp.po".'
+              % {'addon': addon, 'lang': lang})
+
+        os.system('%(rm)s -rf -v %(addon)s/po/%(lang)s-temp.po'
+                  % {'rm': rmCmd, 'addon': addon, 'lang': lang})
+
+
 def compilation(ADDON):
     """
     Compile translations
     """
-    
-    os.system('''%(mkdir)s -pv "%(addon)s/locale"''' % {'mkdir': mkdirCmd, 'addon': ADDON})
-    
+
+    os.system('%(mkdir)s -pv "%(addon)s/locale"' % {'mkdir': mkdirCmd,
+              'addon': ADDON})
+
     for po in glob.glob(os.path.join(ADDON, 'po', '*-local.po')):
         f = os.path.basename(po[:-3])
-        mo = os.path.join(ADDON, 'locale', f[:-6], 'LC_MESSAGES', 'addon.mo')
+        mo = os.path.join(ADDON, 'locale', f[:-6], 'LC_MESSAGES',
+                          'addon.mo')
         directory = os.path.dirname(mo)
         if not os.path.exists(directory):
             os.makedirs(directory)
-        os.system(
-                 '''%(msgfmtCmd)s %(addon)s/po/%(lang)s.po -o %(build)s'''
-                 % {'msgfmtCmd': msgfmtCmd, 'addon': ADDON, 'lang': f, 'build': mo}
-                 )
-           
-               
+        os.system('%(msgfmtCmd)s %(addon)s/po/%(lang)s.po -o %(build)s'
+                  % {
+            'msgfmtCmd': msgfmtCmd,
+            'addon': ADDON,
+            'lang': f,
+            'build': mo,
+            })
+
+
 def build(ADDON):
     """
     Build ../download/AddonDirectory.addon.tgz
@@ -607,7 +652,7 @@ def build(ADDON):
 
     compilation(ADDON)
     versioning(ADDON)
-    
+
     files = []
     files += glob.glob('''%s/*.py''' % ADDON)
     files += glob.glob('''%s/*.gpr.py''' % ADDON)
@@ -616,119 +661,151 @@ def build(ADDON):
     files += glob.glob('''%s/locale/*/LC_MESSAGES/*.mo''' % ADDON)
     files += glob.glob('''%s/*.glade''' % ADDON)
     files += glob.glob('''%s/*.xml''' % ADDON)
-    files_str = " ".join(files)
-    os.system('''%(mkdir)s -pv ../download/%(addon)s ''' % {'mkdir': mkdirCmd, 'addon': ADDON}
-             )
-    os.system('''%(tar)s cfzv "../download/%(addon)s.addon.tgz" %(files_list)s''' 
-              % {'tar': tarCmd, 'files_list': files_str, 'addon': ADDON}
-              )
+    files_str = ' '.join(files)
+    os.system('%(mkdir)s -pv ../download/%(addon)s '
+              % {'mkdir': mkdirCmd, 'addon': ADDON})
+    os.system('%(tar)s cfzv "../download/%(addon)s.addon.tgz" %(files_list)s'
+               % {'tar': tarCmd, 'files_list': files_str,
+              'addon': ADDON})
 
 
 def was_listing():
     """
     Listing files ../listing/{lang}.fr
     """
-        
+
     try:
         sys.path.insert(0, GRAMPSPATH)
         os.environ['GRAMPS_RESOURCES'] = os.path.abspath(GRAMPSPATH)
         from gramps.gen.const import GRAMPS_LOCALE as glocale
         from gramps.gen.plug import make_environment, PTYPE_STR
     except ImportError:
-        raise ValueError("Where is GRAMPSPATH: '%s'? Use 'GRAMPSPATH=path python make.py listing'" % GRAMPSPATH)
+        raise ValueError("Where is GRAMPSPATH: '%s'? Use 'GRAMPSPATH=path python make.py listing'"
+                          % GRAMPSPATH)
+
     def register(ptype, **kwargs):
         global plugins
-        kwargs["ptype"] = PTYPE_STR[ptype]
+        kwargs['ptype'] = PTYPE_STR[ptype]
         plugins.append(kwargs)
+
     # first, get a list of all of the possible languages
-    if addon == "all":
-        dirs = [file for file in glob.glob("*") if os.path.isdir(file)]
+
+    if addon == 'all':
+        dirs = [file for file in glob.glob('*') if os.path.isdir(file)]
     else:
         dirs = [addon]
+
     # Make the locale for for any local languages for Addon:
+
     for addon in dirs:
         for po in glob.glob(r('''%(addon)s/po/*-local.po''')):
+
             # Compile
+
             locale = os.path.basename(po[:-9])
-            system('''mkdir -p "%(addon)s/locale/%(locale)s/LC_MESSAGES/"''')
-            system('''msgfmt %(po)s '''
-                   '''-o "%(addon)s/locale/%(locale)s/LC_MESSAGES/addon.mo"''')
+            system('mkdir -p "%(addon)s/locale/%(locale)s/LC_MESSAGES/"'
+                   )
+            system('msgfmt %(po)s -o "%(addon)s/locale/%(locale)s/LC_MESSAGES/addon.mo"'
+                   )
+
     # Get all languages from all addons:
+
     languages = set(['en'])
-    for addon in [file for file in glob.glob("*") if os.path.isdir(file)]:
+    for addon in [file for file in glob.glob('*')
+                  if os.path.isdir(file)]:
         for po in glob.glob(r('''%(addon)s/po/*-local.po''')):
-            length= len(po)
-            locale = po[length-11:length-9]
-            locale_path, locale = po.rsplit("/", 1)
+            length = len(po)
+            locale = po[length - 11:length - 9]
+            (locale_path, locale) = po.rsplit('/', 1)
             languages.add(locale[:-9])
+
     # next, create/edit a file for all languages listing plugins
+
     for lang in languages:
         print("Building listing for '%s'..." % lang)
         listings = []
         for addon in dirs:
-            for gpr in glob.glob(r('''%(addon)s/*.gpr.py''')):
+            for gpr in glob.glob(r('%(addon)s/*.gpr.py')):
+
                 # Make fallback language English (rather than current LANG)
-                local_gettext = glocale.get_addon_translator(
-                    gpr, languages=[lang, "en.UTF-8"]).gettext
+
+                local_gettext = glocale.get_addon_translator(gpr,
+                        languages=[lang, 'en.UTF-8']).gettext
                 plugins = []
-                with open(gpr.encode("utf-8", errors="backslashreplace")) as f:
-                    code = compile(f.read(),
-                                   gpr.encode("utf-8", errors="backslashreplace"),
-                                   'exec')
-                    #exec(code, make_environment(_=local_gettext),
-                         #{"register": register})
+                with open(gpr.encode('utf-8', errors='backslashreplace'
+                          )) as f:
+                    code = compile(f.read(), gpr.encode('utf-8',
+                                   errors='backslashreplace'), 'exec')
+
+                    # exec(code, make_environment(_=local_gettext),
+                         # {"register": register})
+
                 for p in plugins:
-                    tgz_file = "%s.addon.tgz" % gpr.split("/", 1)[0]
-                    tgz_exists = os.path.isfile("../download/" + tgz_file)
-                    if p.get("include_in_listing", True) and tgz_exists:
-                        plugin = {"n": repr(p["name"]),
-                                  "i": repr(p["id"]),
-                                  "t": repr(p["ptype"]),
-                                  "d": repr(p["description"]),
-                                  "v": repr(p["version"]),
-                                  "g": repr(p["gramps_target_version"]),
-                                  "z": repr(tgz_file),
-                                  }
+                    tgz_file = '%s.addon.tgz' % gpr.split('/', 1)[0]
+                    tgz_exists = os.path.isfile('../download/'
+                            + tgz_file)
+                    if p.get('include_in_listing', True) and tgz_exists:
+                        plugin = {
+                            'n': repr(p['name']),
+                            'i': repr(p['id']),
+                            't': repr(p['ptype']),
+                            'd': repr(p['description']),
+                            'v': repr(p['version']),
+                            'g': repr(p['gramps_target_version']),
+                            'z': repr(tgz_file),
+                            }
                         listings.append(plugin)
                     else:
-                        print("   ignoring '%s'" % (p["name"]))
+                        print("   ignoring '%s'" % p['name'])
+
         # Write out new listing:
-        if addon == "all":
+
+        if addon == 'all':
+
             # Replace it!
-            fp = open("../listings/addons-%s.txt" % lang, "w")
-            for plugin in sorted(listings, key=lambda p: (p["t"], p["i"])):
-                print('{"t":%(t)s,"i":%(i)s,"n":%(n)s,"v":%(v)s,"g":%(g)s,"d":%(d)s,"z":%(z)s}' % plugin, file=fp)
+
+            fp = open('../listings/addons-%s.txt' % lang, 'w')
+            for plugin in sorted(listings, key=lambda p: (p['t'], p['i'
+                                 ])):
+                print('{"t":%(t)s,"i":%(i)s,"n":%(n)s,"v":%(v)s,"g":%(g)s,"d":%(d)s,"z":%(z)s}'
+                       % plugin, file=fp)
             fp.close()
         else:
+
             # just update the lines from these addons:
+
             added = False
-            for plugin in sorted(listings, key=lambda p: (p["t"], p["i"])):
-                fp_in = open("../listings/addons-%s.txt" % lang, "r")
-                fp_out = open("../listings/addons-%s.new" % lang, "w")
+            for plugin in sorted(listings, key=lambda p: (p['t'], p['i'
+                                 ])):
+                fp_in = open('../listings/addons-%s.txt' % lang, 'r')
+                fp_out = open('../listings/addons-%s.new' % lang, 'w')
                 for line in fp_in:
                     dictionary = eval(line)
-                    if addon + ".addon.tgz" in line:
-                        print('{"t":%(t)s,"i":%(i)s,"n":%(n)s,"v":%(v)s,"g":%(g)s,"d":%(d)s,"z":%(z)s}' % plugin, file=fp_out)
+                    if addon + '.addon.tgz' in line:
+                        print('{"t":%(t)s,"i":%(i)s,"n":%(n)s,"v":%(v)s,"g":%(g)s,"d":%(d)s,"z":%(z)s}'
+                               % plugin, file=fp_out)
                         added = True
                     else:
-                        if plugin["t"] > dictionary["t"] and not added:
-                            print('{"t":%(t)s,"i":%(i)s,"n":%(n)s,"v":%(v)s,"g":%(g)s,"d":%(d)s,"z":%(z)s}' % plugin, file=fp_out)
+                        if plugin['t'] > dictionary['t'] and not added:
+                            print('{"t":%(t)s,"i":%(i)s,"n":%(n)s,"v":%(v)s,"g":%(g)s,"d":%(d)s,"z":%(z)s}'
+                                   % plugin, file=fp_out)
                             added = True
-                        print(line, end="", file=fp_out)
+                        print(line, end='', file=fp_out)
                 fp_in.close()
                 fp_out.close()
-                shutil.move("../listings/addons-%s.new" % lang, "../listings/addons-%s.txt" % lang)
+                shutil.move('../listings/addons-%s.new' % lang,
+                            '../listings/addons-%s.txt' % lang)
 
 
 def listing(LANG):
     """
     Listing files ../listing/{lang}.fr
     """
-    
-    if "GRAMPSPATH" in os.environ:
-        GRAMPSPATH = os.environ["GRAMPSPATH"]
+
+    if 'GRAMPSPATH' in os.environ:
+        GRAMPSPATH = os.environ['GRAMPSPATH']
     else:
-        GRAMPSPATH = "../../../.."
+        GRAMPSPATH = '../../../..'
 
     try:
         sys.path.insert(0, GRAMPSPATH)
@@ -737,212 +814,220 @@ def listing(LANG):
         from gramps.gen.const import GRAMPS_LOCALE as glocale
         from gramps.gen.plug import make_environment, PTYPE_STR
     except ImportError:
-        raise ValueError("Where is GRAMPSPATH: '%s'? Use 'GRAMPSPATH=path python setup.py listing'" % GRAMPSPATH)
+        raise ValueError("Where is GRAMPSPATH: '%s'? Use 'GRAMPSPATH=path python setup.py listing'"
+                          % GRAMPSPATH)
+
     def register(ptype, **kwargs):
         global plugins
-        kwargs["ptype"] = PTYPE_STR[ptype]
+        kwargs['ptype'] = PTYPE_STR[ptype]
         plugins.append(kwargs)
 
     listings = []
     need = False
-    
+
     # Replace all!
-    #for lang in ALL_LINGUAS:
-        #if lang == 'all':
-            #continue
+    # for lang in ALL_LINGUAS:
+        # if lang == 'all':
+            # continue
 
-        #print("Building listing for '%s'..." % lang)
-        #fp = open("../listings/addons-%s.txt" % lang, "w")
+        # print("Building listing for '%s'..." % lang)
+        # fp = open("../listings/addons-%s.txt" % lang, "w")
 
-        #for addon in sorted(ADDONS):
+        # for addon in sorted(ADDONS):
 
-            #tgz_file = "%s.addon.tgz" % addon
-            #tgz_exists = os.path.isfile("../download/" + tgz_file)
-            #gpr_file = "%s/%s.gpr.py" % (addon, addon)
-            #gpr_exists = os.path.isfile(gpr_file)
-            #mo_file = "%s/locale/%s/LC_MESSAGES/addon.mo" % (addon, lang)
-            #mo_exists = os.path.isfile(mo_file)
-            
-            #local_gettext = glocale.get_addon_translator(gpr_file, languages=[lang, "en.UTF-8"]).gettext
-            #_ = local_gettext
+            # tgz_file = "%s.addon.tgz" % addon
+            # tgz_exists = os.path.isfile("../download/" + tgz_file)
+            # gpr_file = "%s/%s.gpr.py" % (addon, addon)
+            # gpr_exists = os.path.isfile(gpr_file)
+            # mo_file = "%s/locale/%s/LC_MESSAGES/addon.mo" % (addon, lang)
+            # mo_exists = os.path.isfile(mo_file)
 
-            #if tgz_exists and gpr_exists:
-                #gpr = open(gpr_file.encode("utf-8", errors="backslashreplace"))
+            # local_gettext = glocale.get_addon_translator(gpr_file, languages=[lang, "en.UTF-8"]).gettext
+            # _ = local_gettext
 
-                #plug = dict([file.strip(), None] for file in gpr if file.strip())
+            # if tgz_exists and gpr_exists:
+                # gpr = open(gpr_file.encode("utf-8", errors="backslashreplace"))
 
-                #name = ident = ptype = description = version = target = ''
+                # plug = dict([file.strip(), None] for file in gpr if file.strip())
 
-                #if mo_exists and lang == 'fr':
-                    #test = open(mo_file)
-                    #trans_dict = [test.read()]
+                # name = ident = ptype = description = version = target = ''
 
-                
+                # if mo_exists and lang == 'fr':
+                    # test = open(mo_file)
+                    # trans_dict = [test.read()]
 
-                #for p in plug:
+                # for p in plug:
 
-                    #if (repr(p)).startswith("'name"):
-                        #name = p.replace('name', '')
-                        #name = name.replace('=', '')
-                        #name = name.replace(',', '')
-                        #name = repr(_(name))
+                    # if (repr(p)).startswith("'name"):
+                        # name = p.replace('name', '')
+                        # name = name.replace('=', '')
+                        # name = name.replace(',', '')
+                        # name = repr(_(name))
 
-                    #if (repr(p)).startswith("'id"):
-                        #need = True
-                        #ident = p.replace('id', '')
-                        #ident = ident.replace('=', '')
-                        #ident = ident.replace(',', '')
+                    # if (repr(p)).startswith("'id"):
+                        # need = True
+                        # ident = p.replace('id', '')
+                        # ident = ident.replace('=', '')
+                        # ident = ident.replace(',', '')
 
-                    #elif (repr(p)).startswith("'ptype"):
-                        #ptype = p.replace('ptype', '')
-                        #ptype = ptype.replace('=', '')
-                        #ptype = repr(ptype)
+                    # elif (repr(p)).startswith("'ptype"):
+                        # ptype = p.replace('ptype', '')
+                        # ptype = ptype.replace('=', '')
+                        # ptype = repr(ptype)
 
-                    #elif (repr(p)).startswith("'description"):
-                        #description = p.replace('description', '')
-                        #description = description.replace('=', '')
-                        #description = description.replace(',', '')
-                        #description = repr(_(description))
-                
-                    #elif (repr(p)).startswith('"version'):
-                        #version = p.replace('version', '')
-                        #version = version.replace('=', '')
-                        #version = version.replace(',', '')
-                        #version = repr(version)
-                    
-                    #elif (repr(p)).startswith('"gramps_target_version'):
-                        #target = p.replace('gramps_target_version', '')
-                        #target = target.replace('=', '')
-                        #target = repr(target)
+                    # elif (repr(p)).startswith("'description"):
+                        # description = p.replace('description', '')
+                        # description = description.replace('=', '')
+                        # description = description.replace(',', '')
+                        # description = repr(_(description))
 
-                    #if (repr(p)).startswith('"include_in_listing'):
-                        #need = False  
+                    # elif (repr(p)).startswith('"version'):
+                        # version = p.replace('version', '')
+                        # version = version.replace('=', '')
+                        # version = version.replace(',', '')
+                        # version = repr(version)
 
-                #code = compile(gpr.read(),
-                                   #gpr_file.encode("utf-8", errors="backslashreplace"),
-                                   #'exec')
-                #exec(code, make_environment(_=local_gettext),
-                         #{"register": register})
+                    # elif (repr(p)).startswith('"gramps_target_version'):
+                        # target = p.replace('gramps_target_version', '')
+                        # target = target.replace('=', '')
+                        # target = repr(target)
 
-                
-                #if need:
-                    #plugin = {
-                            #"n": name,
-                            #"i": ident,
-                            #"t": ptype,
-                            #"d": description,
-                            #"v": version,
-                            #"g": target,
-                            #"z": repr(tgz_file),
-                            #}
-                        
-                    #print(plugin)
-                    #listings.append(plugin)
+                    # if (repr(p)).startswith('"include_in_listing'):
+                        # need = False
 
-        #for plugin in sorted(listings, key=lambda p: p["z"]):
-            #fp.write('{"t":%(t)s,"i":%(i)s,"n":%(n)s,"v":%(v)s,"g":%(g)s,"d":%(d)s,"z":%(z)s}\n' % plugin)
-        #fp.close()
-      
+                # code = compile(gpr.read(),
+                                   # gpr_file.encode("utf-8", errors="backslashreplace"),
+                                   # 'exec')
+                # exec(code, make_environment(_=local_gettext),
+                         # {"register": register})
+
+                # if need:
+                    # plugin = {
+                            # "n": name,
+                            # "i": ident,
+                            # "t": ptype,
+                            # "d": description,
+                            # "v": version,
+                            # "g": target,
+                            # "z": repr(tgz_file),
+                            # }
+
+                    # print(plugin)
+                    # listings.append(plugin)
+
+        # for plugin in sorted(listings, key=lambda p: p["z"]):
+            # fp.write('{"t":%(t)s,"i":%(i)s,"n":%(n)s,"v":%(v)s,"g":%(g)s,"d":%(d)s,"z":%(z)s}\n' % plugin)
+        # fp.close()
+
         # change the method
 
-    fp = open("../listings/addons-%s.txt" % LANG, "w")
+    fp = open('../listings/addons-%s.txt' % LANG, 'w')
 
     for addon in sorted(ADDONS):
 
-        tgz_file = "%s.addon.tgz" % addon
-        tgz_exists = os.path.isfile("../download/" + tgz_file)
-        gpr_file = "%s/%s.gpr.py" % (addon, addon)
+        tgz_file = '%s.addon.tgz' % addon
+        tgz_exists = os.path.isfile('../download/' + tgz_file)
+        gpr_file = '%s/%s.gpr.py' % (addon, addon)
         gpr_exists = os.path.isfile(gpr_file)
-        #mo_file = "%s/locale/%s/LC_MESSAGES/addon.mo" % (addon, lang)
-        #mo_exists = os.path.isfile(mo_file)
-            
-        #local_gettext = glocale.get_addon_translator(gpr_file, languages=[lang, "en.UTF-8"]).gettext
-        #_ = local_gettext
+
+        # mo_file = "%s/locale/%s/LC_MESSAGES/addon.mo" % (addon, lang)
+        # mo_exists = os.path.isfile(mo_file)
+
+        # local_gettext = glocale.get_addon_translator(gpr_file, languages=[lang, "en.UTF-8"]).gettext
+        # _ = local_gettext
 
         if tgz_exists and gpr_exists:
-            gpr = open(gpr_file.encode("utf-8", errors="backslashreplace"))
+            gpr = open(gpr_file.encode('utf-8',
+                       errors='backslashreplace'))
 
-            plug = dict([file.strip(), None] for file in gpr if file.strip())
+            plug = dict([file.strip(), None] for file in gpr
+                        if file.strip())
 
             name = ident = ptype = description = version = target = ''
 
-            #if mo_exists and lang == 'fr':
-                #test = open(mo_file)
-                #trans_dict = [test.read()]
+            # if mo_exists and lang == 'fr':
+                # test = open(mo_file)
+                # trans_dict = [test.read()]
 
-            #print(plug)
+            # print(plug)
 
             for p in plug:
 
-                #print(repr(p))
+                # print(repr(p))
 
-                if (repr(p)).startswith("'register("):
+                if repr(p).startswith("'register("):
                     ptype = p.replace('register(', '')
                     ptype = repr(ptype)
 
-                if not ((repr(p)).startswith("'include_in_listing = False,") or \
-                       (repr(p)).startswith("'status = UNSTABLE,")):
+                if not (repr(p).startswith("'include_in_listing = False,"
+                        ) or repr(p).startswith("'status = UNSTABLE,")):
                     need = True
                 else:
                     print(addon)
 
-                if (repr(p)).startswith("'id") or (repr(p)).startswith('"id'):
+                if repr(p).startswith("'id") or repr(p).startswith('"id'
+                        ):
                     ident = p.replace('id', '')
                     ident = ident.replace('=', '')
                     ident = ident.replace(',', '')
                     ident = ident.strip()
-                    #ident = repr(ident)
 
-                if (repr(p)).startswith("'name") or (repr(p)).startswith('"name'):
+                    # ident = repr(ident)
+
+                if repr(p).startswith("'name") \
+                    or repr(p).startswith('"name'):
                     name = p.replace('name', '')
                     name = name.replace('=', '')
                     name = name.replace(',', '')
                     name = name.strip()
-                    name = repr(name)                 
+                    name = repr(name)
 
-                if (repr(p)).startswith("'description"):
+                if repr(p).startswith("'description"):
                     description = p.replace('description', '')
                     description = description.replace('=', '')
                     description = description.replace(',', '')
                     description = description.strip()
                     description = repr(description)
-                
-                if (repr(p)).startswith('"version'):
+
+                if repr(p).startswith('"version'):
                     version = p.replace('version', '')
                     version = version.replace('=', '')
                     version = version.replace(',', '')
                     version = version.strip()
                     version = repr(version)
-                    
-                if (repr(p)).startswith('"gramps_target_version'):
+
+                if repr(p).startswith('"gramps_target_version'):
                     target = p.replace('gramps_target_version', '')
                     target = target.replace('=', '')
                     target = target.strip()
                     target = repr(target)
 
-                #code = compile(gpr.read(),
-                                   #gpr_file.encode("utf-8", errors="backslashreplace"),
-                                   #'exec')
-                #exec(code, make_environment(_=local_gettext),
-                         #{"register": register})
-                
+                # code = compile(gpr.read(),
+                                   # gpr_file.encode("utf-8", errors="backslashreplace"),
+                                   # 'exec')
+                # exec(code, make_environment(_=local_gettext),
+                         # {"register": register})
+
             if need:
                 plugin = {
-                        "n": name,
-                        "i": ident,
-                        "t": ptype,
-                        "d": description,
-                        "v": version,
-                        "g": target,
-                        "z": repr(tgz_file),
-                        }
-                fp.write('{"t":%(t)s,"i":%(i)s,"n":%(n)s,"v":%(v)s,"g":%(g)s,"d":%(d)s,"z":%(z)s}\n' % plugin)
-                        
-                #print(plugin)
+                    'n': name,
+                    'i': ident,
+                    't': ptype,
+                    'd': description,
+                    'v': version,
+                    'g': target,
+                    'z': repr(tgz_file),
+                    }
+                fp.write('{"t":%(t)s,"i":%(i)s,"n":%(n)s,"v":%(v)s,"g":%(g)s,"d":%(d)s,"z":%(z)s}\n'
+                          % plugin)
+
+                # print(plugin)
+
                 listings.append(plugin)
 
-        #for plugin in sorted(listings, key=lambda p: p["z"]):
-            #fp.write('{"t":%(t)s,"i":%(i)s,"n":%(n)s,"v":%(v)s,"g":%(g)s,"d":%(d)s,"z":%(z)s}\n' % plugin)
+        # for plugin in sorted(listings, key=lambda p: p["z"]):
+            # fp.write('{"t":%(t)s,"i":%(i)s,"n":%(n)s,"v":%(v)s,"g":%(g)s,"d":%(d)s,"z":%(z)s}\n' % plugin)
+
     fp.close()
 
 
@@ -950,18 +1035,10 @@ def clean(ADDON):
     """
     Remove created files
     """
-    
-    os.system('''%(rm)s -rfv '''
-              '''%(addon)s/*~ '''
-              '''%(addon)s/po/*~ '''
-              '''%(addon)s/po/template.pot '''
-              '''%(addon)s/locale '''
-              '''%(addon)s/*.pyc '''
-              '''%(addon)s/*.pyo '''
-              '''%(addon)s/xml.h '''
-              % {'rm': rmCmd, 'addon': ADDON}
-              ) 
+
+    os.system('%(rm)s -rfv %(addon)s/*~ %(addon)s/po/*~ %(addon)s/po/template.pot %(addon)s/locale %(addon)s/*.pyc %(addon)s/*.pyo %(addon)s/xml.h '
+               % {'rm': rmCmd, 'addon': ADDON})
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     main()
