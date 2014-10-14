@@ -24,39 +24,39 @@
 setup.py for Gramps addons.
 
 Examples: 
-   python setup.py init AddonDirectory
+   python setup.py -i or --init AddonDirectory
 
       Creates the initial directories for the addon.
 
-   python setup.py init AddonDirectory fr
+   python setup.py -i or --init AddonDirectory fr
 
       Creates the initial empty AddonDirectory/po/fr-local.po file
       for the addon.
 
-   python setup.py update AddonDirectory fr
+   python setup.py -u or --update AddonDirectory fr
 
       Updates AddonDirectory/po/fr-local.po with the latest
       translations.
 
-   python setup.py build AddonDirectory
+   python setup.py -b or --build AddonDirectory
 
       Build ../download/AddonDirectory.addon.tgz
 
-   python setup.py build all
+   python setup.py -b or --build ALL
 
       Build ../download/*.addon.tgz
 
-   python setup.py compile AddonDirectory
-   python setup.py compile all
+   python setup.py -c or --compile AddonDirectory
+   python setup.py -c or --compile ALL
 
       Compiles AddonDirectory/po/*-local.po and puts the resulting
       .mo file in AddonDirectory/locale/*/LC_MESSAGES/addon.mo
 
-   python setup.py listing AddonDirectory
-   python setup.py listing all
+   python setup.py -l or --listing AddonDirectory
+   python setup.py -l or --listing all
 
-   python setup.py clean
-   python setup.py clean AddonDirectory
+   python setup.py -c or --clean AddonDirectory
+   python setup.py -c or --clean ALL
 """
 
 from __future__ import print_function
