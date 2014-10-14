@@ -269,7 +269,7 @@ def main():
 
     parser = \
         ArgumentParser(description='This specific script build addon',
-                       add_help=False, version='0.1.1')
+                       add_help=False, version='0.1.2')
 
     parser.add_argument('lang', nargs='?', const=LINGUAS,
                         default='en')
@@ -351,11 +351,19 @@ def main():
 
     if args.init:
         print(parser.parse_args())
-        init(args.init, args.lang)
+        if args.init not in ADDONS:
+            m1 = 'Wrong argument: %s \nTry "setup.py -i {addon_name} {lang}"!\n' % sys.argv
+            parser.exit(message = m1)
+        else:
+            init(args.init, args.lang)
 
     if args.update:
         print(parser.parse_args())
-        update(args.update, args.lang)
+        if args.update not in ADDONS:
+            m1 = 'Wrong argument: %s \nTry "setup.py -u {addon_name} {lang}"!\n' % sys.argv
+            parser.exit(message = m1)
+        else:
+            update(args.update, args.lang)
 
     if args.compilation:
         print(parser.parse_args())
