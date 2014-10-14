@@ -336,7 +336,7 @@ def main():
     if not 2 < len(sys.argv) < 5:
         m1 = 'Wrong number of arguments: %s \n' % len(sys.argv)
         m2 = 'Expected number: 3 or 4\n'
-        parser.exit(message=m1 + m2)
+        parser.exit(message = m1 + m2)
     else:
         try:
             args = parser.parse_args()
@@ -344,7 +344,7 @@ def main():
             m = 'Wrong argument: %s \n' % sys.argv
             l = '  lang available: %s \n' % str(ALL_LINGUAS)
             a = '  addon available: %s \n' % ALL_ADDONS
-            parser.exit(message=m + l + a)
+            parser.exit(message = m + l + a)
 
     # if args.test:
         # tests()
