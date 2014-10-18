@@ -741,7 +741,7 @@ def was_listing():
     try:
         sys.path.insert(0, GRAMPSPATH)
         os.environ['GRAMPS_RESOURCES'] = os.path.abspath(GRAMPSPATH)
-        from gramps.gen.const import GRAMPS_LOCALE as glocale
+        #from gramps.gen.const import GRAMPS_LOCALE as glocale
         from gramps.gen.plug import make_environment, PTYPE_STR
     except ImportError:
         raise ValueError("Where is GRAMPSPATH: '%s'? Use 'GRAMPSPATH=path python make.py --listing'"
@@ -874,8 +874,8 @@ def listing(LANG):
     try:
         sys.path.insert(0, GRAMPSPATH)
         os.environ['GRAMPS_RESOURCES'] = os.path.abspath(GRAMPSPATH)
-        from gramps.gen.utils.grampslocale import GrampsLocale
-        from gramps.gen.const import GRAMPS_LOCALE as glocale
+        #from gramps.gen.utils.grampslocale import GrampsLocale
+        #from gramps.gen.const import GRAMPS_LOCALE as glocale
         from gramps.gen.plug import make_environment, PTYPE_STR
     except ImportError:
         raise ValueError("Where is GRAMPSPATH: '%s'? Use 'GRAMPSPATH=path python setup.py --listing'"
@@ -1020,8 +1020,15 @@ def listing(LANG):
                 # print(repr(p))
 
                 if repr(p).startswith("'register("):
-                    ptype = p.replace('register(', '')
-                    ptype = repr(ptype)
+                    ptype = p.replace("register(", "")
+                    ptype = ptype.replace(",", "")
+
+                    # dirty hack
+
+                    #from gramps.gen.plug import _pluginreg
+                    print(PTYPE_STR)
+
+                    ptype = "_('%s')" % ptype
 
                 if not (repr(p).startswith("'include_in_listing = False,"
                         ) or repr(p).startswith("'status = UNSTABLE,")):
