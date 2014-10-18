@@ -997,6 +997,7 @@ def listing(LANG):
                     target = target.strip()
                     target = target.replace("'", "")
                     target = target.replace('"', '')
+                    target = repr(target)
 
                 # code = compile(gpr.read(),
                                    # gpr_file.encode("utf-8", errors="backslashreplace"),
