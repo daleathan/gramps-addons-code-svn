@@ -886,6 +886,8 @@ def listing(LANG):
         kwargs['ptype'] = PTYPE_STR[ptype]
         plugins.append(kwargs)
 
+    compilation_all('ALL')
+
     listings = []
     need = False
 
@@ -994,11 +996,11 @@ def listing(LANG):
         gpr_file = '%s/%s.gpr.py' % (addon, addon)
         gpr_exists = os.path.isfile(gpr_file)
 
-        # mo_file = "%s/locale/%s/LC_MESSAGES/addon.mo" % (addon, lang)
-        # mo_exists = os.path.isfile(mo_file)
+        mo_file = "%s/locale/%s/LC_MESSAGES/addon.mo" % (addon, LANG)
+        mo_exists = os.path.isfile(mo_file)
 
-        # local_gettext = glocale.get_addon_translator(gpr_file, languages=[lang, "en.UTF-8"]).gettext
-        # _ = local_gettext
+        #local_gettext = glocale.get_addon_translator(gpr_file, languages=[LANG, "en.UTF-8"]).gettext
+        #_ = local_gettext
 
         if tgz_exists and gpr_exists:
             gpr = open(gpr_file.encode('utf-8',
@@ -1009,9 +1011,10 @@ def listing(LANG):
 
             name = ident = ptype = description = version = target = ''
 
-            # if mo_exists and lang == 'fr':
-                # test = open(mo_file)
-                # trans_dict = [test.read()]
+            if mo_exists:
+                test = open(mo_file)
+                trans_dict = [test.read()]
+                print(trans_dict)
 
             # print(plug)
 
@@ -1026,7 +1029,7 @@ def listing(LANG):
                     # dirty hack
 
                     #from gramps.gen.plug import _pluginreg
-                    print(PTYPE_STR)
+                    #print(PTYPE_STR)
 
                     ptype = "_('%s')" % ptype
 
@@ -1100,6 +1103,8 @@ def listing(LANG):
             # fp.write('{"t":%(t)s,"i":%(i)s,"n":%(n)s,"v":%(v)s,"g":%(g)s,"d":%(d)s,"z":%(z)s}\n' % plugin)
 
     fp.close()
+
+    clean_all('ALL')
 
 
 def listing_all(LANG):
