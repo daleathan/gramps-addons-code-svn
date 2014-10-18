@@ -945,8 +945,6 @@ def listing(LANG):
                         print(glocale._get_translation().ugettext(ptype))
                         return
 
-                    
-
                 if not (repr(p).startswith("'include_in_listing = False,"
                         ) or repr(p).startswith("'status = UNSTABLE,")):
                     need = True
@@ -1032,7 +1030,7 @@ def listing(LANG):
 
     fp.close()
 
-    #clean_all('ALL')
+    clean_all('ALL')
 
 
 def listing_all(LANG):
