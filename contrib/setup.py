@@ -744,7 +744,7 @@ def was_listing():
         from gramps.gen.const import GRAMPS_LOCALE as glocale
         from gramps.gen.plug import make_environment, PTYPE_STR
     except ImportError:
-        raise ValueError("Where is GRAMPSPATH: '%s'? Use 'GRAMPSPATH=path python make.py listing'"
+        raise ValueError("Where is GRAMPSPATH: '%s'? Use 'GRAMPSPATH=path python make.py --listing'"
                           % GRAMPSPATH)
 
     def register(ptype, **kwargs):
@@ -878,7 +878,7 @@ def listing(LANG):
         from gramps.gen.const import GRAMPS_LOCALE as glocale
         from gramps.gen.plug import make_environment, PTYPE_STR
     except ImportError:
-        raise ValueError("Where is GRAMPSPATH: '%s'? Use 'GRAMPSPATH=path python setup.py listing'"
+        raise ValueError("Where is GRAMPSPATH: '%s'? Use 'GRAMPSPATH=path python setup.py --listing'"
                           % GRAMPSPATH)
 
     def register(ptype, **kwargs):
