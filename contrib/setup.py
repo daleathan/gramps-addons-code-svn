@@ -931,7 +931,7 @@ def listing(LANG):
                     if LANG != LOCALE[0]:
                         # mixup between our locale and 'en' (avoid corruption)
                         # need 'en.UTF-8' !
-                        local_gettext = glocale.get_addon_translator(gpr_file, languages=[LANG+".UTF-8"]).ugettext
+                        local_gettext = glocale.get_addon_translator(gpr_file, languages=[LOCALE[0]]).ugettext
                         return
                     else:
                         local_gettext = glocale.get_addon_translator(gpr_file, languages=[LANG, "en.UTF-8"]).ugettext
