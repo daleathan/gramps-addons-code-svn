@@ -931,7 +931,7 @@ def listing(LANG):
                     local_gettext = glocale.get_addon_translator(gpr_file, languages=[LANG, "en.UTF-8"]).gettext
                     ptype = make_environment(_ = local_gettext)[ptype]
 
-                    print(glocale._get_translation(), LANG)
+                    #print(glocale._get_translation(), LANG)
 
                     try:
                         ptype = PTYPE_STR[ptype]
@@ -961,7 +961,7 @@ def listing(LANG):
                     name = name.replace(',', '')
                     name = name.strip()
                     name = repr(name)
-                    print(glocale._get_translation(description))
+                    print(glocale._get_translation().gettext(name), LANG)
 
                 if repr(p).startswith("'description"):
                     description = p.replace('description', '')
@@ -969,7 +969,7 @@ def listing(LANG):
                     description = description.replace(',', '')
                     description = description.strip()
                     description = repr(description)
-                    print(glocale._get_translation(description))
+                    print(glocale._get_translation().gettext(description), LANG)
 
                 if repr(p).startswith('"version'):
                     version = p.replace('version', '')
