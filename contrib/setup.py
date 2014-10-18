@@ -881,10 +881,7 @@ def listing(LANG):
         raise ValueError("Where is GRAMPSPATH: '%s'? Use 'GRAMPSPATH=path python setup.py --listing'"
                           % GRAMPSPATH)
 
-    def register(ptype, **kwargs):
-        global plugins
-        kwargs['ptype'] = PTYPE_STR[ptype]
-        plugins.append(kwargs)
+    LOCALE = glocale.get_language_list()
 
     compilation_all('ALL')
 
@@ -928,17 +925,25 @@ def listing(LANG):
                     ptype = ptype.replace(",", "")
 
                     # incomplete dirty hack!
+                    
+                    print(glocale._get_translation(), LANG+".UTF-8")
 
-                    local_gettext = glocale.get_addon_translator(gpr_file, languages=[LANG, "en.UTF-8"]).ugettext
-                    ptype = make_environment(_ = local_gettext)[ptype]
-
-                    #print(glocale._get_translation(), LANG)
-
+                    if LANG != LOCALE[0]:
+                        # mixup between our locale and 'en' (avoid corruption)
+                        # need 'en.UTF-8' !
+                        local_gettext = glocale.get_addon_translator(gpr_file, languages=[LANG+".UTF-8"]).ugettext
+                        return
+                    else:
+                        local_gettext = glocale.get_addon_translator(gpr_file, languages=[LANG, "en.UTF-8"]).ugettext
+                        ptype = make_environment(_ = local_gettext)[ptype]
+                    
                     try:
                         ptype = PTYPE_STR[ptype]
                     except:
                         #print(' wrong PTYPE: %' % ptype)
                         continue
+
+                    
 
                 if not (repr(p).startswith("'include_in_listing = False,"
                         ) or repr(p).startswith("'status = UNSTABLE,")):
@@ -998,12 +1003,6 @@ def listing(LANG):
                     target = target.replace("'", "")
                     target = target.replace('"', '')
                     target = repr(target)
-
-                # code = compile(gpr.read(),
-                                   # gpr_file.encode("utf-8", errors="backslashreplace"),
-                                   # 'exec')
-                # exec(code, make_environment(_=local_gettext),
-                         # {"register": register})
 
             if need:
                 plugin = {
