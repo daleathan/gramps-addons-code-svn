@@ -931,7 +931,7 @@ def listing(LANG):
                     if LANG != LOCALE[0]:
                         # mixup between our locale and 'en' (avoid corruption)
                         # need 'en.UTF-8' !
-                        local_gettext = glocale.get_addon_translator(gpr_file, languages=[LOCALE[0], LANG]).ugettext
+                        local_gettext = glocale.get_addon_translator(gpr_file, languages=[LANG, LOCALE[0]]).ugettext
                         #return
                     else:
                         local_gettext = glocale.get_addon_translator(gpr_file, languages=[LANG, "en.UTF-8"]).ugettext
@@ -942,7 +942,7 @@ def listing(LANG):
                     except:
                         # fallback and corruption with LOCALE[0]
                         print(' wrong PTYPE: %s' % ptype)
-                        print(glocale._get_translation().ugettext(ptype))
+                        print(local_gettext('Tool')) # always corrupted by the locale
                         return
 
                 if not (repr(p).startswith("'include_in_listing = False,"
@@ -1030,7 +1030,7 @@ def listing(LANG):
 
     fp.close()
 
-    clean_all('ALL')
+    #clean_all('ALL')
 
 
 def listing_all(LANG):
