@@ -4,19 +4,20 @@
 #
 #------------------------------------------------------------------------
 
-plg = newplugin()
-plg.id    = 'SourcesCitationsReport'
-plg.name  = _("Sources and Citations Report")
-plg.description =  _("Provides a source and Citations with notes")
-plg.version = '1.0'
-plg.gramps_target_version = '4.1'
-plg.status = STABLE
-plg.fname = 'SourcesCitationsReport.py'
-plg.ptype = REPORT
-plg.authors = ["Uli22"]
-plg.authors_email = ["hansulrich.frink@gmail.com"]
-plg.category = CATEGORY_TEXT
-plg.reportclass = 'SourcesCitationsReport'
-plg.optionclass = 'SourcesCitationsOptions'
-plg.report_modes = [REPORT_MODE_GUI, REPORT_MODE_BKI, REPORT_MODE_CLI]
-plg.require_active = False
+register(REPORT,
+         id    = 'SourcesCitationsReport'
+         name  = _("Sources and Citations Report")
+         description =  _("Provides a source and Citations with notes")
+         version = '1.0'
+         gramps_target_version = '4.1'
+         status = STABLE
+         fname = 'SourcesCitationsReport.py'
+         ptype = REPORT
+         authors = ["Uli22"]
+         authors_email = ["hansulrich.frink@gmail.com"]
+         category = CATEGORY_TEXT
+         reportclass = 'SourcesCitationsReport'
+         optionclass = 'SourcesCitationsOptions'
+         report_modes = [REPORT_MODE_GUI, REPORT_MODE_BKI, REPORT_MODE_CLI]
+         require_active = False
+         )

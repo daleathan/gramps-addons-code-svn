@@ -950,6 +950,7 @@ def listing(LANG):
                     ident = p.replace('id', '')
                     ident = ident.replace('=', '')
                     ident = ident.replace(',', '')
+                    ident = ident.replace("'", "")
                     ident = ident.strip()
 
                     # ident = repr(ident)
@@ -982,6 +983,7 @@ def listing(LANG):
                     version = version.replace('=', '')
                     version = version.replace(',', '')
                     version = version.replace("'", "")
+                    version = version.replace('"', '')
                     version = version.strip()
                     version = repr(version)
 
@@ -989,9 +991,9 @@ def listing(LANG):
                     target = p.replace('gramps_target_version', '')
                     target = target.replace('=', '')
                     target = target.replace(',', '')
-                    target = target.replace("'", "")
                     target = target.strip()
-                    target = repr(target)
+                    target = target.replace("'", "")
+                    target = target.replace('"', '')
 
                 # code = compile(gpr.read(),
                                    # gpr_file.encode("utf-8", errors="backslashreplace"),
