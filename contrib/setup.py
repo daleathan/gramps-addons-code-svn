@@ -964,7 +964,7 @@ def listing(LANG):
                     name = name.replace(')', '')
                     name = name.replace('"', '')
                     name = glocale._get_translation().gettext(name)
-                    name = repr(name)
+                    name = repr(local_gettext(name))
 
                 if repr(p).startswith("'description"):
                     description = p.replace('description', '')
@@ -975,7 +975,7 @@ def listing(LANG):
                     description = description.replace(')', '')
                     description = description.replace('"', '')
                     description = glocale._get_translation().gettext(description)
-                    description = repr(description)
+                    description = repr(local_gettext(description))
 
                 if repr(p).startswith('"version'):
                     version = p.replace('version', '')
