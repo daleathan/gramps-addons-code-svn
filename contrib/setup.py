@@ -1009,6 +1009,9 @@ def listing(LANG):
                     'g': target,
                     'z': repr(tgz_file),
                     }
+
+                if name or ident or version or target == "":
+                    print(plugin)
                 fp.write('{"t":%(t)s,"i":%(i)s,"n":%(n)s,"v":%(v)s,"g":%(g)s,"d":%(d)s,"z":%(z)s}\n'
                           % plugin)
 
