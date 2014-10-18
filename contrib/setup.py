@@ -741,7 +741,7 @@ def was_listing():
     try:
         sys.path.insert(0, GRAMPSPATH)
         os.environ['GRAMPS_RESOURCES'] = os.path.abspath(GRAMPSPATH)
-        #from gramps.gen.const import GRAMPS_LOCALE as glocale
+        from gramps.gen.const import GRAMPS_LOCALE as glocale
         from gramps.gen.plug import make_environment, PTYPE_STR
     except ImportError:
         raise ValueError("Where is GRAMPSPATH: '%s'? Use 'GRAMPSPATH=path python make.py --listing'"
@@ -875,7 +875,7 @@ def listing(LANG):
         sys.path.insert(0, GRAMPSPATH)
         os.environ['GRAMPS_RESOURCES'] = os.path.abspath(GRAMPSPATH)
         #from gramps.gen.utils.grampslocale import GrampsLocale
-        #from gramps.gen.const import GRAMPS_LOCALE as glocale
+        from gramps.gen.const import GRAMPS_LOCALE as glocale
         from gramps.gen.plug import make_environment, PTYPE_STR
     except ImportError:
         raise ValueError("Where is GRAMPSPATH: '%s'? Use 'GRAMPSPATH=path python setup.py --listing'"
@@ -891,101 +891,7 @@ def listing(LANG):
     listings = []
     need = False
 
-    # Replace all!
-    # for lang in ALL_LINGUAS:
-        # if lang == 'all':
-            # continue
-
-        # print("Building listing for '%s'..." % lang)
-        # fp = open("../listings/addons-%s.txt" % lang, "w")
-
-        # for addon in sorted(ADDONS):
-
-            # tgz_file = "%s.addon.tgz" % addon
-            # tgz_exists = os.path.isfile("../download/" + tgz_file)
-            # gpr_file = "%s/%s.gpr.py" % (addon, addon)
-            # gpr_exists = os.path.isfile(gpr_file)
-            # mo_file = "%s/locale/%s/LC_MESSAGES/addon.mo" % (addon, lang)
-            # mo_exists = os.path.isfile(mo_file)
-
-            # local_gettext = glocale.get_addon_translator(gpr_file, languages=[lang, "en.UTF-8"]).gettext
-            # _ = local_gettext
-
-            # if tgz_exists and gpr_exists:
-                # gpr = open(gpr_file.encode("utf-8", errors="backslashreplace"))
-
-                # plug = dict([file.strip(), None] for file in gpr if file.strip())
-
-                # name = ident = ptype = description = version = target = ''
-
-                # if mo_exists and lang == 'fr':
-                    # test = open(mo_file)
-                    # trans_dict = [test.read()]
-
-                # for p in plug:
-
-                    # if (repr(p)).startswith("'name"):
-                        # name = p.replace('name', '')
-                        # name = name.replace('=', '')
-                        # name = name.replace(',', '')
-                        # name = repr(_(name))
-
-                    # if (repr(p)).startswith("'id"):
-                        # need = True
-                        # ident = p.replace('id', '')
-                        # ident = ident.replace('=', '')
-                        # ident = ident.replace(',', '')
-
-                    # elif (repr(p)).startswith("'ptype"):
-                        # ptype = p.replace('ptype', '')
-                        # ptype = ptype.replace('=', '')
-                        # ptype = repr(ptype)
-
-                    # elif (repr(p)).startswith("'description"):
-                        # description = p.replace('description', '')
-                        # description = description.replace('=', '')
-                        # description = description.replace(',', '')
-                        # description = repr(_(description))
-
-                    # elif (repr(p)).startswith('"version'):
-                        # version = p.replace('version', '')
-                        # version = version.replace('=', '')
-                        # version = version.replace(',', '')
-                        # version = repr(version)
-
-                    # elif (repr(p)).startswith('"gramps_target_version'):
-                        # target = p.replace('gramps_target_version', '')
-                        # target = target.replace('=', '')
-                        # target = repr(target)
-
-                    # if (repr(p)).startswith('"include_in_listing'):
-                        # need = False
-
-                # code = compile(gpr.read(),
-                                   # gpr_file.encode("utf-8", errors="backslashreplace"),
-                                   # 'exec')
-                # exec(code, make_environment(_=local_gettext),
-                         # {"register": register})
-
-                # if need:
-                    # plugin = {
-                            # "n": name,
-                            # "i": ident,
-                            # "t": ptype,
-                            # "d": description,
-                            # "v": version,
-                            # "g": target,
-                            # "z": repr(tgz_file),
-                            # }
-
-                    # print(plugin)
-                    # listings.append(plugin)
-
-        # for plugin in sorted(listings, key=lambda p: p["z"]):
-            # fp.write('{"t":%(t)s,"i":%(i)s,"n":%(n)s,"v":%(v)s,"g":%(g)s,"d":%(d)s,"z":%(z)s}\n' % plugin)
-        # fp.close()
-
-        # change the method
+    # change the method
 
     fp = open('../listings/addons-%s.txt' % LANG, 'w')
 
@@ -999,9 +905,6 @@ def listing(LANG):
         mo_file = "%s/locale/%s/LC_MESSAGES/addon.mo" % (addon, LANG)
         mo_exists = os.path.isfile(mo_file)
 
-        #local_gettext = glocale.get_addon_translator(gpr_file, languages=[LANG, "en.UTF-8"]).gettext
-        #_ = local_gettext
-
         if tgz_exists and gpr_exists:
             gpr = open(gpr_file.encode('utf-8',
                        errors='backslashreplace'))
@@ -1012,9 +915,7 @@ def listing(LANG):
             name = ident = ptype = description = version = target = ''
 
             if mo_exists:
-                test = open(mo_file)
-                trans_dict = [test.read()]
-                print(trans_dict)
+                print(mo_file)
 
             # print(plug)
 
@@ -1029,9 +930,17 @@ def listing(LANG):
                     # dirty hack
 
                     #from gramps.gen.plug import _pluginreg
-                    #print(PTYPE_STR)
 
-                    ptype = "_('%s')" % ptype
+                    ptype = make_environment()[ptype]
+
+                    try:
+                        ptype = PTYPE_STR[ptype]
+                    except:
+                        print(' wrong PTYPE: %' % ptype)
+                        continue
+
+                local_gettext = glocale.get_addon_translator(gpr_file, languages=[LANG, "en.UTF-8"]).gettext
+                make_environment(_ = local_gettext)
 
                 if not (repr(p).startswith("'include_in_listing = False,"
                         ) or repr(p).startswith("'status = UNSTABLE,")):
@@ -1086,7 +995,7 @@ def listing(LANG):
                 plugin = {
                     'n': name,
                     'i': ident,
-                    't': ptype,
+                    't': repr(ptype),
                     'd': description,
                     'v': version,
                     'g': target,
@@ -1104,7 +1013,7 @@ def listing(LANG):
 
     fp.close()
 
-    clean_all('ALL')
+    #clean_all('ALL')
 
 
 def listing_all(LANG):
