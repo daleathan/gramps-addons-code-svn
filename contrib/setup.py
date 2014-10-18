@@ -794,7 +794,7 @@ def was_listing():
                 # Make fallback language English (rather than current LANG)
 
                 local_gettext = glocale.get_addon_translator(gpr,
-                        languages=[lang, 'en.UTF-8']).gettext
+                        languages=[lang, 'en.UTF-8']).ugettext
                 plugins = []
                 with open(gpr.encode('utf-8', errors='backslashreplace'
                           )) as f:
@@ -874,6 +874,7 @@ def listing(LANG):
     try:
         sys.path.insert(0, GRAMPSPATH)
         os.environ['GRAMPS_RESOURCES'] = os.path.abspath(GRAMPSPATH)
+        from gramps.gen.constfunc import UNITYPE, cuni
         from gramps.gen.const import GRAMPS_LOCALE as glocale
         from gramps.gen.plug import make_environment, PTYPE_STR
     except ImportError:
@@ -928,7 +929,7 @@ def listing(LANG):
 
                     # incomplete dirty hack!
 
-                    local_gettext = glocale.get_addon_translator(gpr_file, languages=[LANG, "en.UTF-8"]).gettext
+                    local_gettext = glocale.get_addon_translator(gpr_file, languages=[LANG, "en.UTF-8"]).ugettext
                     ptype = make_environment(_ = local_gettext)[ptype]
 
                     #print(glocale._get_translation(), LANG)
@@ -964,7 +965,7 @@ def listing(LANG):
                     name = name.replace('_(', '')
                     name = name.replace(')', '')
                     name = name.replace('"', '')
-                    name = glocale._get_translation().gettext(name)
+                    name = glocale._get_translation().ugettext(name)
                     name = repr(local_gettext(name))
 
                 if repr(p).startswith("'description"):
@@ -975,7 +976,9 @@ def listing(LANG):
                     description = description.replace('_(', '')
                     description = description.replace(')', '')
                     description = description.replace('"', '')
-                    description = glocale._get_translation().gettext(description)
+                    description = glocale._get_translation().ugettext(description)
+                    if UNITYPE(description) == local_gettext(cuni(description)):
+                        print(addon, description, local_gettext(description))
                     description = repr(local_gettext(description))
 
                 if repr(p).startswith('"version'):
@@ -1012,8 +1015,9 @@ def listing(LANG):
                     'z': repr(tgz_file),
                     }
 
-                if name or ident or version or target == "":
-                    print(plugin)
+                #if name or ident or version or target == "":
+                    #print(plugin)
+
                 fp.write('{"t":%(t)s,"i":%(i)s,"n":%(n)s,"v":%(v)s,"g":%(g)s,"d":%(d)s,"z":%(z)s}\n'
                           % plugin)
 
