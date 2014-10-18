@@ -874,7 +874,6 @@ def listing(LANG):
     try:
         sys.path.insert(0, GRAMPSPATH)
         os.environ['GRAMPS_RESOURCES'] = os.path.abspath(GRAMPSPATH)
-        #from gramps.gen.utils.grampslocale import GrampsLocale
         from gramps.gen.const import GRAMPS_LOCALE as glocale
         from gramps.gen.plug import make_environment, PTYPE_STR
     except ImportError:
@@ -927,20 +926,18 @@ def listing(LANG):
                     ptype = p.replace("register(", "")
                     ptype = ptype.replace(",", "")
 
-                    # dirty hack
+                    # incomplete dirty hack!
 
-                    #from gramps.gen.plug import _pluginreg
+                    local_gettext = glocale.get_addon_translator(gpr_file, languages=[LANG, "en.UTF-8"]).gettext
+                    ptype = make_environment(_ = local_gettext)[ptype]
 
-                    ptype = make_environment()[ptype]
+                    print(glocale._get_translation(), LANG)
 
                     try:
                         ptype = PTYPE_STR[ptype]
                     except:
-                        print(' wrong PTYPE: %' % ptype)
+                        #print(' wrong PTYPE: %' % ptype)
                         continue
-
-                local_gettext = glocale.get_addon_translator(gpr_file, languages=[LANG, "en.UTF-8"]).gettext
-                make_environment(_ = local_gettext)
 
                 if not (repr(p).startswith("'include_in_listing = False,"
                         ) or repr(p).startswith("'status = UNSTABLE,")):
@@ -964,6 +961,7 @@ def listing(LANG):
                     name = name.replace(',', '')
                     name = name.strip()
                     name = repr(name)
+                    print(glocale._get_translation(description))
 
                 if repr(p).startswith("'description"):
                     description = p.replace('description', '')
@@ -971,17 +969,21 @@ def listing(LANG):
                     description = description.replace(',', '')
                     description = description.strip()
                     description = repr(description)
+                    print(glocale._get_translation(description))
 
                 if repr(p).startswith('"version'):
                     version = p.replace('version', '')
                     version = version.replace('=', '')
                     version = version.replace(',', '')
+                    version = version.replace("'", "")
                     version = version.strip()
                     version = repr(version)
 
                 if repr(p).startswith('"gramps_target_version'):
                     target = p.replace('gramps_target_version', '')
                     target = target.replace('=', '')
+                    target = target.replace(',', '')
+                    target = target.replace("'", "")
                     target = target.strip()
                     target = repr(target)
 
