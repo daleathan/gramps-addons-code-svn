@@ -960,16 +960,22 @@ def listing(LANG):
                     name = name.replace('=', '')
                     name = name.replace(',', '')
                     name = name.strip()
+                    name = name.replace('_(', '')
+                    name = name.replace(')', '')
+                    name = name.replace('"', '')
+                    name = glocale._get_translation().gettext(name)
                     name = repr(name)
-                    print(glocale._get_translation().gettext(name), LANG)
 
                 if repr(p).startswith("'description"):
                     description = p.replace('description', '')
                     description = description.replace('=', '')
                     description = description.replace(',', '')
                     description = description.strip()
+                    description = description.replace('_(', '')
+                    description = description.replace(')', '')
+                    description = description.replace('"', '')
+                    description = glocale._get_translation().gettext(description)
                     description = repr(description)
-                    print(glocale._get_translation().gettext(description), LANG)
 
                 if repr(p).startswith('"version'):
                     version = p.replace('version', '')
