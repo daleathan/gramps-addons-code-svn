@@ -972,6 +972,8 @@ def listing(LANG):
                     name = name.replace(')', '')
                     name = name.replace('"', '')
                     name = glocale._get_translation().ugettext(name)
+                    if UNITYPE(name) == local_gettext(cuni(name)):
+                        print(addon, name, local_gettext(name))
                     name = repr(local_gettext(name))
 
                 if repr(p).startswith("'description"):
