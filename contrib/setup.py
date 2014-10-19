@@ -1045,8 +1045,10 @@ def listing_all(LANG):
         if lang == 'all':
             continue
         else:
-            print(lang)
-            listing(lang)
+            if lang in os.environ['LANGUAGE']:
+                listing(lang)
+            else:
+                print(lang, os.environ['LANGUAGE'])
 
 
 def clean(addon):
