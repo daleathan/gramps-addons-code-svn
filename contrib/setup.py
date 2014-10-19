@@ -912,7 +912,9 @@ def listing(LANG):
             name = ident = ptype = description = version = target = ''
 
             if mo_exists:
-                print(mo_file)
+                LANGUAGE = LANG +".UTF-8"
+            else:
+                LANGUAGE = os.environ['LANGUAGE']
 
             # print(plug)
 
@@ -925,16 +927,16 @@ def listing(LANG):
                     ptype = ptype.replace(",", "")
 
                     # incomplete dirty hack!
-                    
+
                     print(glocale._get_translation(), LANG+".UTF-8")
 
                     if LANG != LOCALE[0]:
-                        # mixup between our locale and 'en' (avoid corruption)
+                        # mixup between LOCALE[0] and 'en' (avoid corruption)
                         # need 'en.UTF-8' !
-                        local_gettext = glocale.get_addon_translator(gpr_file, languages=[LANG, LOCALE[0]]).ugettext
+                        local_gettext = glocale.get_addon_translator(gpr_file, languages=[LANGUAGE]).ugettext
                         #return
                     else:
-                        local_gettext = glocale.get_addon_translator(gpr_file, languages=[LANG, "en.UTF-8"]).ugettext
+                        local_gettext = glocale.get_addon_translator(gpr_file, languages=[LANG, "en"]).ugettext
                         ptype = make_environment(_ = local_gettext)[ptype]
                     
                     try:
@@ -943,6 +945,7 @@ def listing(LANG):
                         # fallback and corruption with LOCALE[0]
                         print(' wrong PTYPE: %s' % ptype)
                         print(local_gettext('Tool')) # always corrupted by the locale
+                        print("LANGUAGE='%(language)s', LANG='%(lang)s'" % {'language': LANGUAGE, 'lang': os.environ['LANG']})
                         return
 
                 if not (repr(p).startswith("'include_in_listing = False,"
