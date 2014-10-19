@@ -959,10 +959,8 @@ def listing(LANG):
                     ident = p.replace('id', '')
                     ident = ident.replace('=', '')
                     ident = ident.replace(',', '')
-                    ident = ident.replace("'", "")
                     ident = ident.strip()
-
-                    # ident = repr(ident)
+                    #ident = repr(ident)
 
                 if repr(p).startswith("'name") \
                     or repr(p).startswith('"name'):
