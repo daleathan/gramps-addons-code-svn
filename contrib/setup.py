@@ -998,15 +998,6 @@ def listing(LANG):
                     version = version.strip()
                     version = repr(version)
 
-                if repr(p).startswith('"gramps_target_version'):
-                    target = p.replace('gramps_target_version', '')
-                    target = target.replace('=', '')
-                    target = target.replace(',', '')
-                    target = target.strip()
-                    target = target.replace("'", "")
-                    target = target.replace('"', '')
-                    target = repr(target)
-
             if need:
                 plugin = {
                     'n': name,
@@ -1014,7 +1005,7 @@ def listing(LANG):
                     't': repr(ptype),
                     'd': description,
                     'v': version,
-                    'g': target,
+                    'g': "'4.1'",
                     'z': repr(tgz_file),
                     }
 
