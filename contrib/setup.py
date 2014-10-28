@@ -998,6 +998,11 @@ def listing(LANG):
                     version = version.strip()
                     version = repr(version)
 
+            # workaround #7395~c38994
+            if description == '':
+                description = "''"
+                print(description, addon)
+
             if need:
                 plugin = {
                     'n': name,
