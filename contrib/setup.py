@@ -945,7 +945,7 @@ def listing(LANG):
                         # fallback and corruption with LOCALE[0]
                         print(' wrong PTYPE: %s' % ptype)
                         print(local_gettext('Tool')) # always corrupted by the locale
-                        print("LANGUAGE='%(language)s', LANG='%(lang)s'" % {'language': LANGUAGE, 'lang': os.environ['LANG']})
+                        print("LANGUAGE='%(language)s', LANG='%(lang)s'" % {'language': os.environ['LANGUAGE'], 'lang': os.environ['LANG']})
                         return
 
                 if not (repr(p).startswith("'include_in_listing = False,"
