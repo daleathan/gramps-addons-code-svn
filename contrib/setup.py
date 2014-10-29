@@ -709,8 +709,6 @@ def build(addon):
     files = []
     files += glob.glob('''%s/*.py''' % addon)
     files += glob.glob('''%s/*.gpr.py''' % addon)
-    files += glob.glob('''%s/*.py''' % addon)
-    files += glob.glob('''%s/*.gpr.py''' % addon)
     files += glob.glob('''%s/locale/*/LC_MESSAGES/*.mo''' % addon)
     files += glob.glob('''%s/*.glade''' % addon)
     files += glob.glob('''%s/*.xml''' % addon)
