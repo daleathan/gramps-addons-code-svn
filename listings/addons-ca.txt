@@ -13,7 +13,7 @@
 {"t":u'Gramplet',"i":"Extended Family Attributes","n":u'Extended Person Attributes',"v":'1.0.15',"g":'4.1',"d":u"Gramplet que mostra els atributs d'una persona","z":'ExtendedAttributes.addon.tgz'}
 {"t":u'Informe',"i":'FamilySheet',"n":u"'Family Sheet'","v":'3.4.23',"g":'4.1',"d":u'Produces a family sheet showing full information ',"z":'FamilySheet.addon.tgz'}
 {"t":u'Informe',"i":'FamilyTree',"n":u"'Family Tree'","v":'4.1.3',"g":'4.1',"d":'',"z":'FamilyTree.addon.tgz'}
-{"t":u'Exportador',"i":'Export GEDCOM Extensions',"n":u'_accell   GEDCOM Extensions (GED2',"v":'1.0.9',"g":'4.1',"d":u'Extensions to the common GEDCOM format.',"z":'GedcomExtensions.addon.tgz'}
+{"t":u'Exportador',"i":'Export GEDCOM Extensions',"n":u'GEDCOM Extensions (GED2)',"v":'1.0.9',"g":'4.1',"d":u'Extensions to the common GEDCOM format.',"z":'GedcomExtensions.addon.tgz'}
 {"t":u'Servei de mapes',"i":'GoogleEarth',"n":u"'GoogleEarth'","v":'1.0.27',"g":'4.1',"d":u'Creates data file for GoogleEarth and opens it',"z":'GoogleEarthWriteKML.addon.tgz'}
 {"t":u'Gramplet',"i":"Headline News Gramplet","n":u'Headline News Gramplet',"v":'1.0.21',"g":'4.1',"d":u'Gramplet for showing latest the Gramps news',"z":'HeadlineNewsGramplet.addon.tgz'}
 {"t":u'Gramplet',"i":"Import Gramplet","n":u'Import Gramplet',"v":'1.0.20',"g":'4.1',"d":u'Gramplet for importing text',"z":'ImportGramplet.addon.tgz'}
@@ -29,7 +29,7 @@
 {"t":u'Gramplet',"i":"Related Relatives Gramplet","n":u'Related Relatives Gramplet',"v":'1.0.18',"g":'4.1',"d":u'Gramplet showing relatives in a relation',"z":'RelatedRelativesGramplet.addon.tgz'}
 {"t":u'Informe',"i":'Repositories Report Options',"n":u'Repositories Report Options',"v":'0.3.12',"g":'4.1',"d":u'Produeix un informe de repositoris en text',"z":'RepositoriesReport.addon.tgz'}
 {"t":u'Eina',"i":'SetAttribute',"n":u'Set Attribute',"v":'0.0.18',"g":'4.1',"d":u'Set an attribute to a given value.',"z":'SetAttributeTool.addon.tgz'}
-{"t":u'Informe',"i":'SourcesCitationsReport',"n":u'Sources and Citations Report',"v":'1.0',"g":'4.1',"d":u'Provides a source and Citations with notes',"z":'SourcesCitationsReport.addon.tgz'}
+{"t":u'Informe',"i":'SourcesCitationsReport',"n":u'Sources and Citations Report',"v":'1.0.1',"g":'4.1',"d":u'Provides a source and Citations with notes',"z":'SourcesCitationsReport.addon.tgz'}
 {"t":u'Exportador',"i":'im_sqlite',"n":u"'SQLite Import'","v":'1.0.23',"g":'4.1',"d":'',"z":'Sqlite.addon.tgz'}
 {"t":u'Eina',"i":'thumbgen',"n":u'Thumbnail Generator',"v":'1.0.13',"g":'4.1',"d":u'Generates thumbnails for media files',"z":'ThumbnailGenerator.addon.tgz'}
 {"t":u'Vista de Gramps',"i":'TimelinePedigreeView',"n":u'Timeline Pedigree',"v":'0.1.35',"g":'4.1',"d":u'The view shows a timeline pedigree with ancestors and descendants of the selected person',"z":'TimelinePedigreeView.addon.tgz'}

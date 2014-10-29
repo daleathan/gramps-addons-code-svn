@@ -977,6 +977,9 @@ def listing(LANG):
                     if UNITYPE(name) == local_gettext(cuni(name)):
                         print(addon, name, local_gettext(name))
                     name = repr(local_gettext(name))
+                    # ugly workaround for name_accell (Export GEDCOM Extensions)
+                    name = name.replace('_accell   ', '')
+                    name = name.replace('(GED2', '(GED2)')
 
                 if repr(p).startswith("'description"):
                     description = p.replace('description', '')
