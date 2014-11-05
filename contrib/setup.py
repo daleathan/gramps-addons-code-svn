@@ -896,7 +896,7 @@ def listing(LANG):
         tgz_exists = os.path.isfile('../download/' + tgz_file)
         gprs = glob.glob('%(addon)s/*gpr.py' % {'addon': addon})
         for gpr in gprs:
-            gpr_file = gprs[0]
+            gpr_file = gpr
             print(gpr_file, gprs)
             gpr_exists = os.path.isfile(gpr_file)
 
