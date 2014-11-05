@@ -2,7 +2,7 @@
 {"t":u'Outil',"i":'AttachSource',"n":u'Attacher une source',"v":'0.0.23',"g":'4.1',"d":u'Attache une source partag\xe9e \xe0 des objets multiples',"z":'AttachSourceTool.addon.tgz'}
 {"t":u'Gramplet',"i":'Birthdays',"n":u'Gramplet Anniversaires',"v":'1.0.24',"g":'4.1',"d":u'Ce Gramplet affiche les anniversaires des personnes en vie',"z":'BirthdaysGramplet.addon.tgz'}
 {"t":u'Outil',"i":'calculateestimateddates',"n":u'Calculate Estimated Dates',"v":'0.90.19',"g":'4.1',"d":u'Calculates estimated dates for birth and death.',"z":'CalculateEstimatedDates.addon.tgz'}
-{"t":u'Rapport',"i":'census_report',"n":u'Census Report',"v":'1.0.28',"g":'4.1',"d":u'Report of census events for a person.',"z":'Census.addon.tgz'}
+{"t":u'Gramplet',"i":"Census Gramplet","n":u'Census Gramplet',"v":'1.0.28',"g":'4.1',"d":u'Gramplet interface for census data',"z":'Census.addon.tgz'}
 {"t":u'Outil',"i":'chgivenname',"n":u'Fix Capitalization of Given Names',"v":'1.0.21',"g":'4.1',"d":u'Searches the entire database and attempts to ',"z":'ChangeGivenNames.addon.tgz'}
 {"t":u'Outil',"i":'climerge',"n":u'Command Line Merge',"v":'1.0.17',"g":'4.1',"d":u'Merge primary objects via the command line.',"z":'CliMerge.addon.tgz'}
 {"t":u'Gramplet',"i":"Clipboard Gramplet","n":u'Gramplet Presse-papiers',"v":'1.0.23',"g":'4.1',"d":u'Gramplet pour regrouper des articles',"z":'ClipboardGramplet.addon.tgz'}
@@ -13,7 +13,7 @@
 {"t":u'Gramplet',"i":"Descendant Count Gramplet","n":u'Calcul des descendants',"v":'1.0.19',"g":'4.1',"d":u'Affiche le total des descendants pour chaque individu',"z":'DescendantCount.addon.tgz'}
 {"t":u'Rapport',"i":'Descendants Lines',"n":u'Descendants Lines',"v":'0.1.21',"g":'4.1',"d":u'Produces descendants lines of a person',"z":'DescendantsLines.addon.tgz'}
 {"t":u'Rapport',"i":'database-differences-report',"n":u'Rapport des diff\xe9rences dans la base de donn\xe9es',"v":'1.0.6',"g":'4.1',"d":u'Compare une base de donn\xe9es externe avec la base actuelle.',"z":'Differences.addon.tgz'}
-{"t":u'Import',"i":"import_django","n":u"'Django Import'","v":'1.0.24',"g":'4.1',"d":'',"z":'Django.addon.tgz'}
+{"t":u'Export',"i":"export_django","n":u"'Django Export'","v":'1.0.24',"g":'4.1',"d":'',"z":'Django.addon.tgz'}
 {"t":u'Gramplet',"i":"Edit Image Exif Metadata","n":u'Edit Image Exif Metadata',"v":'1.5.4',"g":'4.1',"d":u'Gramplet to view edit and save image Exif metadata',"z":'EditExifMetadata.addon.tgz'}
 {"t":u'Export',"i":'Raw Export',"n":u"'Raw Export'","v":'1.0.21',"g":'4.1',"d":'',"z":'ExportRaw.addon.tgz'}
 {"t":u'Gramplet',"i":"Extended Family Attributes","n":u"Attributs \xe9tendus de l'individu","v":'1.0.15',"g":'4.1',"d":u"Gramplet affichant les attributs d'un individu","z":'ExtendedAttributes.addon.tgz'}
