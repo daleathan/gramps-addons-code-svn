@@ -938,10 +938,7 @@ def listing(LANG):
                         #return
                     else:
                         local_gettext = glocale.get_addon_translator(gpr_file, languages=[LANG, "en"]).ugettext
-                        if ptype == '':
-                            print('TO CHECK:', gpr_file)
-                        else:
-                            ptype = make_environment(_ = local_gettext)[ptype]
+                        ptype = make_environment(_ = local_gettext)[ptype]
 
                     # need to match translations build by Gramps program
 
