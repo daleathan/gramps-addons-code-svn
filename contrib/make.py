@@ -305,8 +305,9 @@ elif command == "listing":
         global plugins
         kwargs["ptype"] = PTYPE_STR[ptype]
         plugins.append(kwargs)
+    cmd_arg = addon
     # first, get a list of all of the possible languages
-    if addon == "all":
+    if cmd_arg == "all":
         dirs = [file for file in glob.glob("*") if os.path.isdir(file)]
     else:
         dirs = [addon]
@@ -353,7 +354,7 @@ elif command == "listing":
                     else:
                         print("Ignoring '%s' in Language %s..." % (p["name"], lang))
         # Write out new listing:
-        if addon == "all":
+        if cmd_arg == "all":
             # Replace it!
             fp = open("../listings/addons-%s.txt" % lang, "w")
             for plugin in sorted(listings, key=lambda p: (p["t"], p["i"])):
@@ -367,7 +368,7 @@ elif command == "listing":
                 fp_out = open("../listings/addons-%s.new" % lang, "w")
                 for line in fp_in:
                     dictionary = eval(line)
-                    if addon + ".addon.tgz" in line:
+                    if cmd_arg + ".addon.tgz" in line:
                         print('{"t":%(t)s,"i":%(i)s,"n":%(n)s,"v":%(v)s,"g":%(g)s,"d":%(d)s,"z":%(z)s}' % plugin, file=fp_out)
                         added = True
                     else:
