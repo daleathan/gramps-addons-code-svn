@@ -48,11 +48,12 @@
 {"t":u'Report',"i":'AncestorFill',"n":'AncestorFill',"v":'1.0.3',"g":'3.4',"d":'Report on the filling of the tree',"z":'AncestorFill.addon.tgz'}
 {"t":u'Report',"i":'Descendants Lines',"n":'Afstammingslijnen',"v":'0.1.16',"g":'3.4',"d":'Afstammingslijnen van een persoon aanmaken',"z":'DescendantsLines.addon.tgz'}
 {"t":u'Report',"i":'FamilySheet',"n":'Familiepagina',"v":'3.4.10',"g":'3.4',"d":'Een familiepagina die de volledige informatie over een persoon en zijn/haar partners en kinderen, toont.',"z":'FamilySheet.addon.tgz'}
-{"t":u'Report',"i":'FamilyTree',"n":'Stamboom',"v":'3.4.10',"g":'3.4',"d":'Grafische stamboom aanmaken.',"z":'FamilyTree.addon.tgz'}
+{"t":u'Report',"i":'FamilyTree',"n":'Stamboom',"v":'3.4.14',"g":'3.4',"d":'Grafische stamboom aanmaken.',"z":'FamilyTree.addon.tgz'}
 {"t":u'Report',"i":'LastChangeReport',"n":'Laatste wijzigingen',"v":'0.0.12',"g":'3.4',"d":'Verslag van de laatst gewijzigde gegevens',"z":'LastChange.addon.tgz'}
 {"t":u'Report',"i":'LinesOfDescendency',"n":'Afstammelingslijnen',"v":'1.1.11',"g":'3.4',"d":'Alle afstammelingslijnen van een bepaalde voorouder tot een bepaalde afstammeling worden als tekst afgedrukt.',"z":'LinesOfDescendency.addon.tgz'}
 {"t":u'Report',"i":'ListeEclair',"n":'Liste Eclair',"v":'1.0.2',"g":'3.4',"d":'Produit une liste eclair',"z":'ListeEclair.addon.tgz'}
 {"t":u'Report',"i":'PedigreeChart',"n":'Stamboomgrafiek',"v":'1.0.11',"g":'3.4',"d":'Alternatieve versie van de traditionele stamboomgrafiek',"z":'PedigreeChart.addon.tgz'}
+{"t":u'Report',"i":'PersonEverythingReport',"n":'PersonEverything Report',"v":'1.0.1',"g":'3.4',"d":'Produces a report containing everything about the active person',"z":'PersonEverything.addon.tgz'}
 {"t":u'Report',"i":'Repositories Report Options',"n":'Opties voor het bibliotheekverslag',"v":'0.3.4',"g":'3.4',"d":'Tekstverslag van de bibliotheken wordt opgemaakt',"z":'RepositoriesReport.addon.tgz'}
 {"t":u'Report',"i":'Repositories Report',"n":'Bibliotheken',"v":'1.1.4',"g":'3.4',"d":'Tekstverslag van de bibliotheken wordt opgemaakt',"z":'RepositoriesReport.addon.tgz'}
 {"t":u'Report',"i":'TodoReport',"n":'Nog te doen',"v":'1.2.9',"g":'3.4',"d":'Een opmerkingenlijst met een bepaalde tag wordt samen met de gegevens aangemaakt zoals de persoon, familie, gebeurtenissen enzovoort.',"z":'ToDoReport.addon.tgz'}
