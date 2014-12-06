@@ -1,5 +1,5 @@
 
-register(REPORT
+register(REPORT,
     id = 'database-differences-report',
     name = _("Database Differences Report"),
     description = _("Compares an external database with the current one."),
