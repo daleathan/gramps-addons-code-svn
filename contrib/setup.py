@@ -395,7 +395,7 @@ def main():
                 parser.exit(message = m1)
             else:
                 sys.path.insert(3, args.listing)
-                listing(sys.argv[2])
+                is_listing(sys.argv[2])
         else:
             m2 = 'Wrong argument: %s \n' % sys.argv
             parser.exit(message = m2)
@@ -731,10 +731,15 @@ def build_all(ADDON):
         build(addon)
         
 
-def was_listing():
+def is_listing(LANG):
     """
     Listing files ../listing/{lang}.fr
     """
+
+    if 'GRAMPSPATH' in os.environ:
+        GRAMPSPATH = os.environ['GRAMPSPATH']
+    else:
+        GRAMPSPATH = '../../../..'
 
     try:
         sys.path.insert(0, GRAMPSPATH)
@@ -742,40 +747,41 @@ def was_listing():
         from gramps.gen.const import GRAMPS_LOCALE as glocale
         from gramps.gen.plug import make_environment, PTYPE_STR
     except ImportError:
-        raise ValueError("Where is GRAMPSPATH: '%s'? Use 'GRAMPSPATH=path python make.py --listing'"
-                          % GRAMPSPATH)
+        raise ValueError("Where is 'GRAMPSPATH' or 'GRAMPS_RESOURCES'?")
 
     def register(ptype, **kwargs):
         global plugins
-        kwargs['ptype'] = PTYPE_STR[ptype]
+        kwargs['ptype'] = PTYPE_STR[ptype] # need to build gramps translations
         plugins.append(kwargs)
+
+    cmd_arg = LANG
 
     # first, get a list of all of the possible languages
 
-    if addon == 'all':
+    if cmd_arg == 'all':
         dirs = [file for file in glob.glob('*') if os.path.isdir(file)]
     else:
-        dirs = [addon]
+        dirs = [LANG]
 
     # Make the locale for for any local languages for Addon:
 
     for addon in dirs:
-        for po in glob.glob(r('''%(addon)s/po/*-local.po''')):
+        for po in glob.glob('%(addon)s/po/*-local.po' % {'addon': addon}):
 
             # Compile
 
             locale = os.path.basename(po[:-9])
             system('mkdir -p "%(addon)s/locale/%(locale)s/LC_MESSAGES/"'
-                   )
+                    )
             system('msgfmt %(po)s -o "%(addon)s/locale/%(locale)s/LC_MESSAGES/addon.mo"'
-                   )
+                    )
 
     # Get all languages from all addons:
 
     languages = set(['en'])
     for addon in [file for file in glob.glob('*')
                   if os.path.isdir(file)]:
-        for po in glob.glob(r('''%(addon)s/po/*-local.po''')):
+        for po in glob.glob('%(addon)s/po/*-local.po' % {'addon': addon}):
             length = len(po)
             locale = po[length - 11:length - 9]
             (locale_path, locale) = po.rsplit('/', 1)
@@ -787,7 +793,7 @@ def was_listing():
         print("Building listing for '%s'..." % lang)
         listings = []
         for addon in dirs:
-            for gpr in glob.glob(r('%(addon)s/*.gpr.py')):
+            for gpr in glob.glob('%(addon)s/*.gpr.py' % {'addon': addon}):
 
                 # Make fallback language English (rather than current LANG)
 
@@ -822,7 +828,7 @@ def was_listing():
 
         # Write out new listing:
 
-        if addon == 'all':
+        if cmd_arg == 'all':
 
             # Replace it!
 
@@ -843,7 +849,7 @@ def was_listing():
                 fp_out = open('../listings/addons-%s.new' % lang, 'w')
                 for line in fp_in:
                     dictionary = eval(line)
-                    if addon + '.addon.tgz' in line:
+                    if cmd_arg + '.addon.tgz' in line:
                         print('{"t":%(t)s,"i":%(i)s,"n":%(n)s,"v":%(v)s,"g":%(g)s,"d":%(d)s,"z":%(z)s}'
                                % plugin, file=fp_out)
                         added = True
@@ -1054,7 +1060,7 @@ def listing_all(LANG):
             continue
         else:
             if lang in os.environ['LANGUAGE']:
-                listing(lang)
+                is_listing(lang)
             else:
                 print(lang, os.environ['LANGUAGE'])
 
