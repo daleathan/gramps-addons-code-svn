@@ -1,5 +1,4 @@
 #! /usr/bin/env python
-# $Id$
 """
 make.py for Gramps addons.
 
@@ -306,7 +305,7 @@ elif command == "listing":
         raise ValueError("Where is GRAMPSPATH: '%s'? Use 'GRAMPSPATH=path python make.py listing'" % GRAMPSPATH)
     def register(ptype, **kwargs):
         global plugins
-        kwargs["ptype"] = PTYPE_STR[ptype]
+        kwargs["ptype"] = PTYPE_STR[ptype] # need to take care of translated types
         plugins.append(kwargs)
     cmd_arg = addon
     # first, get a list of all of the possible languages
