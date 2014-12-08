@@ -227,25 +227,7 @@ class RepositoryReportAlt(Report):
                     abbrev = src.get_abbreviation()
                     public = src.get_publication_info()
 
-                    # keys and values into a dict {}
-
-                    try:
-                        keyval = src.get_data_map()
-
-                        # list of tuples [('',''),('','')]
-
-                        listup = list(keyval.items())
-
-                        # format strings
-
-                        dictio = ['%s=%s' % (k, v) for k, v in listup]
-
-                        # one string and '; ' as separator
-
-                        data = '; '.join(dictio)
-                        
-                    except:
-                        data = ''
+                    data = ''
 
                     # if need, generates child section
 
