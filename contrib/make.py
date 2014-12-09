@@ -50,11 +50,11 @@ if "GRAMPSPATH" in os.environ:
 else:
     GRAMPSPATH = "../../.."
 
-if (("LANG" not in os.environ) or 
-    (not os.environ["LANG"].startswith("en"))):
-    raise ValueError("LANG should explicitly be english; Use 'LANG=en_US.UTF-8 python make.py...' or similar")
+if (("LANGUAGE" not in os.environ) or 
+    (not os.environ["LANGUAGE"].startswith("en"))):
+    raise ValueError("LANGUAGE should explicitly be english; Use 'LANGUAGE=en_US.UTF-8 python make.py...' or similar")
 else:
-    print("make.py: LANG is %s... good!" % os.environ["LANG"])
+    print("make.py: LANGUAGE is %s... good!" % os.environ["LANGUAGE"])
 
 command = sys.argv[1]
 if len(sys.argv) >= 3:
