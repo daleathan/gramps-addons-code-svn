@@ -281,7 +281,8 @@ class RepositoryReportAlt(Report):
                         medialist = src.get_citation_child_list()
                         for media_handle in medialist:
                             photo = src.get_media_list()
-                            self.__write_referenced_media(photo, media_handle)
+                            # bug 8072
+                            #self.__write_referenced_media(photo, media_handle)
                             
             for (object_type, citationref) in self.database.find_backlink_handles(source_handle):
                 if self.incl_citat:
@@ -309,7 +310,10 @@ class RepositoryReportAlt(Report):
             
             #self.doc.add_media_object(name=filename, align=right, w_cm=4, h_cm=4)
 
-            ReportUtils.insert_image(self.database, self.doc, image, self.user, None)
+            try:
+                ReportUtils.insert_image(self.database, self.doc, image, self.user, None)
+            except:
+                pass
 
     def __write_referenced_citations(self, handle):
 		"""
