@@ -227,7 +227,20 @@ class RepositoryReportAlt(Report):
                     abbrev = src.get_abbreviation()
                     public = src.get_publication_info()
 
-                    data = ''
+                    # keys and values into a list []
+
+                    data = ' '
+                    
+                    if len(src.serialize()[9]) > 1:
+                        for i in range(len(src.serialize()[9])):
+                            key = str(src.serialize()[9][i][1][1])
+                            value = str(src.serialize()[9][i][2])
+                            data += " " + key + " = " + value + ", "
+                    
+                    if len(src.serialize()[9]) == 1:
+                        key = str(src.serialize()[9][0][1][1])
+                        value = str(src.serialize()[9][0][2])
+                        data = key + " = " + value + ", "
 
                     # if need, generates child section
 
