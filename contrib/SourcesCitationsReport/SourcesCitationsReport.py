@@ -86,19 +86,19 @@ from collections import defaultdict
 # GRAMPS modules
 #
 #------------------------------------------------------------------------
-import gen.lib
-from gen.plug.menu import StringOption, MediaOption, NumberOption
-from gen.plug.menu import FilterOption, PlaceListOption, EnumeratedListOption, \
+import gramps.gen.lib
+from gramps.gen.plug.menu import StringOption, MediaOption, NumberOption
+from gramps.gen.plug.menu import FilterOption, PlaceListOption, EnumeratedListOption, \
                           BooleanOption
-from gen.plug.report import Report
-from gen.plug.report import MenuReportOptions
-from gen.plug.report import utils as ReportUtils
+from gramps.gen.plug.report import Report
+from gramps.gen.plug.report import MenuReportOptions
+from gramps.gen.plug.report import utils as ReportUtils
 
-from gen.plug.docgen import (IndexMark, FontStyle, ParagraphStyle, TableStyle,
+from gramps.gen.plug.docgen import (IndexMark, FontStyle, ParagraphStyle, TableStyle,
                             TableCellStyle, FONT_SANS_SERIF, FONT_SERIF, 
                             INDEX_TYPE_TOC, INDEX_TYPE_ALP, PARA_ALIGN_CENTER)                    
                     
-from Utils import media_path_full
+from gramps.gen.utils.file import media_path_full
 from gramps.gen.const import GRAMPS_LOCALE as glocale
 try:
     _trans = glocale.get_addon_translator(__file__)
@@ -122,7 +122,7 @@ class SourcesCitationsReport(Report):
         The arguments are:
 
         database        - the GRAMPS database instance
-        options         - instance of the Options class for this report
+        options        - instance of the Options class for this report
         user            - a gen.user.User() instance
 
         This report needs the following parameters (class variables)
@@ -141,16 +141,16 @@ class SourcesCitationsReport(Report):
         self.showperson = menu.get_option_by_name('showperson').get_value()
 
         
-        filter_option = menu.get_option_by_name('filter')
-        self.filter = filter_option.get_filter()
+        #filter_option = menu.get_option_by_name('filter')
+        #self.filter = filter_option.get_filter()
 #        self.sort = Sort.Sort(self.database)
 
-        if self.filter.get_name() != '':
+        #if self.filter.get_name() != '':
             # Use the selected filter to provide a list of source handles
-            sourcefilterlist = self.__db.iter_source_handles()
-            self.source_handles = self.filter.apply(self.__db, sourcefilterlist)
-        else:
-            self.source_handles = self.__db.get_source_handles()
+            #sourcefilterlist = self.__db.iter_source_handles()
+            #self.source_handles = self.filter.apply(self.__db, sourcefilterlist)
+        #else:
+        self.source_handles = self.__db.get_source_handles()
 
     def write_report(self):
         """
@@ -406,16 +406,16 @@ class SourcesCitationsOptions(MenuReportOptions):
         menu.add_option(category_name, "footer", footer)
         
         # Reload filters to pick any new ones
-        CustomFilters = None
-        from Filters import CustomFilters, GenericFilter
+        #CustomFilters = None
+        #from Filters import CustomFilters, GenericFilter
 
-        opt = FilterOption(_("Select using filter"), 0)
-        opt.set_help(_("Select places using a filter"))
-        filter_list = []
-        filter_list.append(GenericFilter())
-        filter_list.extend(CustomFilters.get_filters('Source'))
-        opt.set_filters(filter_list)
-        menu.add_option(category_name, "filter", opt)
+        #opt = FilterOption(_("Select using filter"), 0)
+        #opt.set_help(_("Select places using a filter"))
+        #filter_list = []
+        #filter_list.append(GenericFilter())
+        #filter_list.extend(CustomFilters.get_filters('Source'))
+        #opt.set_filters(filter_list)
+        #menu.add_option(category_name, "filter", opt)
         
         showperson = BooleanOption(_("Show persons"), True)
         showperson.set_help(_("Whether to show events and persons mentioned in the note"))
