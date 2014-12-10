@@ -3,9 +3,10 @@
 #
 # Copyright (C) 2006-2007  Alex Roitman
 # Copyright (C) 2008-2009  Gary Burton
-# Copyright (C) 2007-2011  Jerome Rapinat
+# Copyright (C) 2007-2014  Jerome Rapinat
 # Copyright (C) 2009  Brian G. Matherly
 # Copyright (C) 2010  Douglas S. Blank
+# Copyright (C) 2011  Nick Hall
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -227,20 +228,14 @@ class RepositoryReportAlt(Report):
                     abbrev = src.get_abbreviation()
                     public = src.get_publication_info()
 
-                    # keys and values into a list []
+                    # keys and values
 
                     data = ' '
                     
-                    if len(src.serialize()[9]) > 1:
-                        for i in range(len(src.serialize()[9])):
-                            key = str(src.serialize()[9][i][1][1])
-                            value = str(src.serialize()[9][i][2])
-                            data += " " + key + " = " + value + ", "
-                    
-                    if len(src.serialize()[9]) == 1:
-                        key = str(src.serialize()[9][0][1][1])
-                        value = str(src.serialize()[9][0][2])
-                        data = key + " = " + value + ", "
+                    for attribute in src.get_attribute_list():
+                        key = str(attribute.get_type())
+                        value = str(attribute.get_value())
+                        data += '%s=%s; ' % (key, value)
 
                     # if need, generates child section
 
