@@ -40,11 +40,11 @@
 {"t":'Report',"i":'FamilyTree',"n":u'Arbre familial',"v":'4.1.3',"g":'4.1',"d":u'Produit un arbre familial sous forme graphique.',"z":'FamilyTree.addon.tgz'}
 {"t":'Report',"i":'LastChangeReport',"n":u'Rapport Derni\xe8res modifications',"v":'0.0.22',"g":'4.1',"d":u'Rapport pour les derniers enregistrements modifi\xe9s',"z":'LastChange.addon.tgz'}
 {"t":'Report',"i":'LinesOfDescendency',"n":u'Lines of Descendency Report',"v":'1.1.22',"g":'4.1',"d":u"Affiche toutes les lignes de descendants d'un anc\xeatre donn\xe9 \xe0 un descendant choisi dans un format textuel.","z":'LinesOfDescendency.addon.tgz'}
-{"t":'Report',"i":'ListeEclair',"n":u'Liste \xc9clair',"v":'1.0.12',"g":'4.1',"d":u'Produces a tiny tafel',"z":'ListeEclair.addon.tgz'}
+{"t":'Report',"i":'ListeEclair',"n":u'Liste \xc9clair',"v":'1.0.13',"g":'4.1',"d":u'Produces a tiny tafel',"z":'ListeEclair.addon.tgz'}
 {"t":'Report',"i":'PedigreeChart',"n":u'Arbre graphique',"v":'1.0.22',"g":'4.1',"d":u"Version alternative de l'arbre graphique traditionnel.","z":'PedigreeChart.addon.tgz'}
 {"t":'Report',"i":'PersonEverythingReport',"n":'PersonEverything Report',"v":'1.0.1',"g":'4.1',"d":'Produces a report containing everything about the active person',"z":'PersonEverything.addon.tgz'}
-{"t":'Report',"i":'Repositories Report',"n":u'Rapport des d\xe9p\xf4ts',"v":'1.1.14',"g":'4.1',"d":u'Produit un rapport textuel des d\xe9p\xf4ts',"z":'RepositoriesReport.addon.tgz'}
-{"t":'Report',"i":'Repositories Report',"n":u'Rapport des d\xe9p\xf4ts',"v":'1.1.14',"g":'4.1',"d":u'Produit un rapport textuel des d\xe9p\xf4ts',"z":'RepositoriesReport.addon.tgz'}
+{"t":'Report',"i":'Repositories Report',"n":u'Rapport des d\xe9p\xf4ts',"v":'1.1.15',"g":'4.1',"d":u'Produit un rapport textuel des d\xe9p\xf4ts',"z":'RepositoriesReport.addon.tgz'}
+{"t":'Report',"i":'Repositories Report',"n":u'Rapport des d\xe9p\xf4ts',"v":'1.1.15',"g":'4.1',"d":u'Produit un rapport textuel des d\xe9p\xf4ts',"z":'RepositoriesReport.addon.tgz'}
 {"t":'Report',"i":'SourcesCitationsReport',"n":u'Rapport de sources et citations',"v":'1.0.1',"g":'4.1',"d":u'Fournit une source et ses citations avec les notes',"z":'SourcesCitationsReport.addon.tgz'}
 {"t":'Report',"i":'TodoReport',"n":u'Rapport \xc0 Faire',"v":'1.2.19',"g":'4.1',"d":u"Produit une liste de toutes les notes avec une \xe9tiquette donn\xe9e ainsi que les enregistrements qui les r\xe9f\xe9rencent, l'individu, la famille, l'\xe9v\xe9nement, etc.","z":'ToDoReport.addon.tgz'}
 {"t":'Report',"i":'census_report',"n":u'Rapport de recensement',"v":'1.0.28',"g":'4.1',"d":u"Les \xe9v\xe9nements recensement de l'individu.","z":'Census.addon.tgz'}

@@ -40,11 +40,11 @@
 {"t":'Report',"i":'FamilyTree',"n":u'Stammbaum',"v":'4.1.3',"g":'4.1',"d":u'Erzeugt einen grafischen Stammbaum.',"z":'FamilyTree.addon.tgz'}
 {"t":'Report',"i":'LastChangeReport',"n":u'Letzte \xc4nderungen Bericht',"v":'0.0.22',"g":'4.1',"d":u'Bericht der letzten Datens\xe4tze die ge\xe4ndert wurden',"z":'LastChange.addon.tgz'}
 {"t":'Report',"i":'LinesOfDescendency',"n":u'Nachkommen Linien Bericht',"v":'1.1.22',"g":'4.1',"d":u'Druckt alle Nachkommenlinien von einem gegebenen Vorfahren zu einem gegebenen Nachkommen in Textform.',"z":'LinesOfDescendency.addon.tgz'}
-{"t":'Report',"i":'ListeEclair',"n":u'Blitz Liste',"v":'1.0.12',"g":'4.1',"d":u'Produces a tiny tafel',"z":'ListeEclair.addon.tgz'}
+{"t":'Report',"i":'ListeEclair',"n":u'Blitz Liste',"v":'1.0.13',"g":'4.1',"d":u'Produces a tiny tafel',"z":'ListeEclair.addon.tgz'}
 {"t":'Report',"i":'PedigreeChart',"n":u'Ahnentafelgrafik',"v":'1.0.22',"g":'4.1',"d":u'Alternative Version zur traditionellen Ahnentafelgrafik.',"z":'PedigreeChart.addon.tgz'}
 {"t":'Report',"i":'PersonEverythingReport',"n":'PersonEverything Report',"v":'1.0.1',"g":'4.1',"d":'Produces a report containing everything about the active person',"z":'PersonEverything.addon.tgz'}
-{"t":'Report',"i":'Repositories Report',"n":u'Aufbewahrungsorte Bericht',"v":'1.1.14',"g":'4.1',"d":u'Erstellt einen schriftlichen Aufbewahrungsorte Bericht',"z":'RepositoriesReport.addon.tgz'}
-{"t":'Report',"i":'Repositories Report',"n":u'Aufbewahrungsorte Bericht',"v":'1.1.14',"g":'4.1',"d":u'Erstellt einen schriftlichen Aufbewahrungsorte Bericht',"z":'RepositoriesReport.addon.tgz'}
+{"t":'Report',"i":'Repositories Report',"n":u'Aufbewahrungsorte Bericht',"v":'1.1.15',"g":'4.1',"d":u'Erstellt einen schriftlichen Aufbewahrungsorte Bericht',"z":'RepositoriesReport.addon.tgz'}
+{"t":'Report',"i":'Repositories Report',"n":u'Aufbewahrungsorte Bericht',"v":'1.1.15',"g":'4.1',"d":u'Erstellt einen schriftlichen Aufbewahrungsorte Bericht',"z":'RepositoriesReport.addon.tgz'}
 {"t":'Report',"i":'SourcesCitationsReport',"n":u'Quellen und Fundstellenbericht',"v":'1.0.1',"g":'4.1',"d":u'Liefert einen Bericht mit den Notizen (Zitaten) sortiert nach Quelle und Fundstellen',"z":'SourcesCitationsReport.addon.tgz'}
 {"t":'Report',"i":'TodoReport',"n":u'Zu erledigen Bericht',"v":'1.2.19',"g":'4.1',"d":u'Erstellt eine Liste aller Notizen mit einer bestimmten Markierung zusammen mit den Datens\xe4tzen auf die sie referenziert, die Person, Familie, Ereignis, usw.',"z":'ToDoReport.addon.tgz'}
 {"t":'Report',"i":'census_report',"n":u'Zensusbericht',"v":'1.0.28',"g":'4.1',"d":u'Bericht der Zensusereignise f\xfcr eine Person.',"z":'Census.addon.tgz'}

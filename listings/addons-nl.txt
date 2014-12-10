@@ -40,11 +40,11 @@
 {"t":'Report',"i":'FamilyTree',"n":u'Familiestamboom',"v":'4.1.3',"g":'4.1',"d":u'Grafische familiestamboom wordt aangemaakt.',"z":'FamilyTree.addon.tgz'}
 {"t":'Report',"i":'LastChangeReport',"n":u'Verslag laatste wijziging',"v":'0.0.22',"g":'4.1',"d":u'Verslag van de laatst gewijzigde gegevens',"z":'LastChange.addon.tgz'}
 {"t":'Report',"i":'LinesOfDescendency',"n":u'Lines of Descendency Report',"v":'1.1.22',"g":'4.1',"d":u'Alle afstammelingslijnen van een bepaalde voorouder tot een bepaalde afstammeling worden in tekst afgedrukt.',"z":'LinesOfDescendency.addon.tgz'}
-{"t":'Report',"i":'ListeEclair',"n":u'Liste Eclair',"v":'1.0.12',"g":'4.1',"d":u'Produces a tiny tafel',"z":'ListeEclair.addon.tgz'}
+{"t":'Report',"i":'ListeEclair',"n":u'Liste Eclair',"v":'1.0.13',"g":'4.1',"d":u'Produces a tiny tafel',"z":'ListeEclair.addon.tgz'}
 {"t":'Report',"i":'PedigreeChart',"n":u'Stamboomgrafiek',"v":'1.0.22',"g":'4.1',"d":u'Alternatieve versie van de traditionele stamboomgrafiek',"z":'PedigreeChart.addon.tgz'}
 {"t":'Report',"i":'PersonEverythingReport',"n":'PersonEverything Report',"v":'1.0.1',"g":'4.1',"d":'Produces a report containing everything about the active person',"z":'PersonEverything.addon.tgz'}
-{"t":'Report',"i":'Repositories Report',"n":u'Bibliothekenverslag',"v":'1.1.14',"g":'4.1',"d":u'Tekstverslag van de bibliotheken wordt opgemaakt',"z":'RepositoriesReport.addon.tgz'}
-{"t":'Report',"i":'Repositories Report',"n":u'Bibliothekenverslag',"v":'1.1.14',"g":'4.1',"d":u'Tekstverslag van de bibliotheken wordt opgemaakt',"z":'RepositoriesReport.addon.tgz'}
+{"t":'Report',"i":'Repositories Report',"n":u'Bibliothekenverslag',"v":'1.1.15',"g":'4.1',"d":u'Tekstverslag van de bibliotheken wordt opgemaakt',"z":'RepositoriesReport.addon.tgz'}
+{"t":'Report',"i":'Repositories Report',"n":u'Bibliothekenverslag',"v":'1.1.15',"g":'4.1',"d":u'Tekstverslag van de bibliotheken wordt opgemaakt',"z":'RepositoriesReport.addon.tgz'}
 {"t":'Report',"i":'SourcesCitationsReport',"n":'Sources and Citations Report',"v":'1.0.1',"g":'4.1',"d":'Provides a source and Citations with notes',"z":'SourcesCitationsReport.addon.tgz'}
 {"t":'Report',"i":'TodoReport',"n":u"'Nog te doen'-verslag","v":'1.2.19',"g":'4.1',"d":u'Een lijst van opmerkingen met een bepaalde aanduiding wordt aangemaakt, samen met de gegevens waarnaar verwezen wordt, de persoon, familie, gegeven, enz. .',"z":'ToDoReport.addon.tgz'}
 {"t":'Report',"i":'census_report',"n":u'Volkstellingsverslag',"v":'1.0.28',"g":'4.1',"d":u'Verslag van de volkstellinggebeurtenissen van een persoon.',"z":'Census.addon.tgz'}
