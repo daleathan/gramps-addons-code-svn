@@ -1,5 +1,7 @@
-# French translation for gramps
-# Copyright (C) 2001-2013 Free Software Foundation, Inc.
+# French translation for Gramps
+# $Id$
+# This file is distributed under the same license as the Gramps package.
+# Copyright (C) 2001-2014 Free Software Foundation, Inc.
 #
 # Quelques variables pour la cohérence:
 #  ancestor : ascendant
@@ -18,14 +20,14 @@
 # Matthieu Pupat <tieum.tieum@free.fr>, 2004, 2005.
 # Guillaume Pratte <guillaumep@soireevideo.org>, 2005.
 # Frederic Chateaux, 2007-2008.
-# Jérôme Rapinat <romjerome@yahoo.fr>, 2005-2013.
+# Jérôme Rapinat <romjerome@yahoo.fr>, 2005-2014.
 # Mathieu MD <mathieu.md@gmail.com>, 2012.
 msgid ""
 msgstr ""
-"Project-Id-Version: 4.0-beta1\n"
+"Project-Id-Version: 4.1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-02-25 15:50+0100\n"
-"PO-Revision-Date: 2013-02-25 15:57+0100\n"
+"POT-Creation-Date: 2014-12-10 18:55+0100\n"
+"PO-Revision-Date: 2014-12-10 19:01+0100\n"
 "Last-Translator: \n"
 "Language-Team: French <traduc@traduc.org>\n"
 "Language: fr\n"
@@ -43,55 +45,56 @@ msgstr "Rapport des différences dans la base de données"
 msgid "Compares an external database with the current one."
 msgstr "Compare une base de données externe avec la base actuelle."
 
-#: Differences/differences.py:157
-msgid "Differences Report"
-msgstr "Rapport des différences"
+#: Differences/differences.py:123
+msgid "Family Tree Differences"
+msgstr "Différences de l'arbre familial"
 
-# Substantif (GNOME fr)
-#: Differences/differences.py:158
-msgid "Looking for differences..."
-msgstr "Recherche des différences..."
+#: Differences/differences.py:124
+msgid "Processing..."
+msgstr "Traitement en cours..."
 
-#: Differences/differences.py:272
+#: Differences/differences.py:291
 msgid "Report Options"
 msgstr "Options du rapport"
 
-#: Differences/differences.py:273
+#: Differences/differences.py:292
 msgid "Family Tree file"
 msgstr "Fichier arbre familial"
 
-#: Differences/differences.py:274
+#: Differences/differences.py:293
 msgid "Select a .gpkg or .gramps file"
 msgstr "Sélectionner un fichier .gpkg ou .gramps"
 
-#: Differences/differences.py:277
+#: Differences/differences.py:296
 msgid "Show items that are different"
 msgstr "Afficher les parties différentes"
 
-#: Differences/differences.py:278
+#: Differences/differences.py:297
 msgid "Include items that are different"
 msgstr "Inclure les parties différentes"
 
-#: Differences/differences.py:281
-msgid "Show deleted items"
-msgstr "Afficher les parties supprimées"
+#: Differences/differences.py:300
+msgid "Show items missing from file"
+msgstr "Affiche les données manquantes du fichier"
 
-#: Differences/differences.py:282
+#: Differences/differences.py:301
 msgid "Include items not in file but in database"
 msgstr "Inclure les parties non-présentes dans le fichier mais dans la base de données"
 
-#: Differences/differences.py:285
-msgid "Show added items"
-msgstr "Afficher les parties nouvelles"
+#: Differences/differences.py:304
+msgid "Show items added in file"
+msgstr "Affiche les données ajoutées dans le fichier"
 
-#: Differences/differences.py:286
+#: Differences/differences.py:305
 msgid "Include items in file but not in database"
 msgstr "Inclure les parties présentes dans le fichier mais absentes dans la base de données"
 
-#: Differences/differences.py:331
-#: Differences/differences.py:333
-#: Differences/differences.py:336
-#: Differences/differences.py:339
+#: Differences/differences.py:350
+#: Differences/differences.py:352
+#: Differences/differences.py:355
+#: Differences/differences.py:358
 msgid "Text"
 msgstr "Texte"
 
+#~ msgid "Differences Report"
+#~ msgstr "Rapport des différences"
