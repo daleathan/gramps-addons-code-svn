@@ -42,10 +42,10 @@
 {"t":'Report',"i":'LinesOfDescendency',"n":'Lines of Descendency Report',"v":'1.1.22',"g":'4.1',"d":'Prints out all descendency lines from a given ancestor to a given descendent in text.',"z":'LinesOfDescendency.addon.tgz'}
 {"t":'Report',"i":'ListeEclair',"n":u'Tiny Tafel',"v":'1.0.13',"g":'4.1',"d":u'Produces a tiny tafel',"z":'ListeEclair.addon.tgz'}
 {"t":'Report',"i":'PedigreeChart',"n":u'Antavla',"v":'1.0.22',"g":'4.1',"d":u'Antavlealternativ',"z":'PedigreeChart.addon.tgz'}
-{"t":'Report',"i":'PersonEverythingReport',"n":'PersonEverything Report',"v":'1.0.1',"g":'4.1',"d":'Produces a report containing everything about the active person',"z":'PersonEverything.addon.tgz'}
+{"t":'Report',"i":'PersonEverythingReport',"n":'PersonEverything Report',"v":'1.0.2',"g":'4.1',"d":'Produces a report containing everything about the active person',"z":'PersonEverything.addon.tgz'}
 {"t":'Report',"i":'Repositories Report',"n":u'Arkivplatsrapport',"v":'1.1.15',"g":'4.1',"d":u'Skapar en textbaserad rapport \xf6ver arkivplatser',"z":'RepositoriesReport.addon.tgz'}
 {"t":'Report',"i":'Repositories Report',"n":u'Arkivplatsrapport',"v":'1.1.15',"g":'4.1',"d":u'Skapar en textbaserad rapport \xf6ver arkivplatser',"z":'RepositoriesReport.addon.tgz'}
-{"t":'Report',"i":'SourcesCitationsReport',"n":'Sources and Citations Report',"v":'1.0.1',"g":'4.1',"d":'Provides a source and Citations with notes',"z":'SourcesCitationsReport.addon.tgz'}
+{"t":'Report',"i":'SourcesCitationsReport',"n":'Sources and Citations Report',"v":'1.0.2',"g":'4.1',"d":'Provides a source and Citations with notes',"z":'SourcesCitationsReport.addon.tgz'}
 {"t":'Report',"i":'TodoReport',"n":u'Todo Report',"v":'1.2.19',"g":'4.1',"d":u'Produces a list of all the notes with a given tag along with the records that it references, the Person, Family, Event, etc.',"z":'ToDoReport.addon.tgz'}
 {"t":'Report',"i":'census_report',"n":u'Folkr\xe4kningsrapport',"v":'1.0.28',"g":'4.1',"d":u'Rapport \xf6ver folkr\xe4kningsh\xe4ndelser f\xf6r en person',"z":'Census.addon.tgz'}
 {"t":'Report',"i":'database-differences-report',"n":'Database Differences Report',"v":'1.0.6',"g":'4.1',"d":'Compares an external database with the current one.',"z":'Differences.addon.tgz'}
