@@ -1,0 +1,394 @@
+# Italian translation for GRAMPS
+# This file is distributed under the same license as the Gramps package.
+# Copyright (C) 2001-2013 the Gramps Project
+#
+# Common and noteworthy translations:
+#
+#   alternate              alternativo
+#   ancestor               ascendente
+#   ancestral              ascendenza
+#   autosave               salvataggio automatico
+#   baptism                battesimo
+#   birth                  nascita
+#   christening            battesimo (anachronistic - see gramps-devel ML)
+#   church parish          parrocchia
+#   county                 provincia
+#   country                stato
+#   common-law             (relazione) di fatto
+#   dead                   decedere
+#   death                  decesso
+#   descendant             discendente/discendenza
+#   had a child %(child)s  divenne padre/madre di %(child)s
+#                          (copes with male and femail children)
+#   he was son of          fu figlio di
+#   home person            persona-casa
+#   family (adj)           famigliare
+#   half-sibling           fratelli unilaterali
+#   in %(place)s           in quel di (copes with all sort of place names)
+#   location               località
+#   merge, to              fondere
+#   partner                partner
+#   province               provincia, regione
+#   record                 elemento
+#   relationship path      percorso (delle) relazioni
+#   report                 resoconto
+#   state (geog)           regione, stato
+#   step-sibling           fratellastri
+#   thumbnail              anteprima
+#   unmarried              celibe/nubile
+#
+# A special remark are required by some sentences related to reports.
+#
+# * "%s was born on %s"
+#
+#   In Italian, we use a tense equivalent to the English's past simple
+#   for living people, and the equivalent to English's present perfect
+#   for people who died.  Unfortunately, the program cannot distinguish
+#   between these two cases.
+#
+# * ", and was buried on %s."
+#
+#   In Italian, the word for buried declines accordingly to its subject
+#   gender.
+#
+# * "born %(date)s in %(place)s%(endnotes)s"
+#
+#   The same rule as for "buried" applies to born, as well.
+#
+# Marco Molteni <molter@gufi.org>, 2001-2002;.
+# Lorenzo Cappelletti <lorenzo.cappelletti@email.it>, 2003.
+# Luigi Toscano <luigi.toscano@tiscali.it>, 2008, 2009, 2010, 2011, 2012, 2013, 2014.
+msgid ""
+msgstr ""
+"Project-Id-Version: gramps 3\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-12-11 14:23+0100\n"
+"PO-Revision-Date: 2014-09-28 02:52+0200\n"
+"Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
+"Language-Team: Italian <tp@lists.linux.it>\n"
+"Language: it\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.5\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: PersonEverything/PersonEverything.gpr.py:31
+msgid "PersonEverything Report"
+msgstr ""
+
+#: PersonEverything/PersonEverything.gpr.py:32
+msgid "Produces a report containing everything about the active person"
+msgstr ""
+
+#: PersonEverything/PersonEverything.py:103
+#, python-format
+msgid "Person %s is not in the Database"
+msgstr "La persona %s non è nel database"
+
+#: PersonEverything/PersonEverything.py:125
+#, python-format
+msgid "All information about %s"
+msgstr ""
+
+#: PersonEverything/PersonEverything.py:134
+msgid "Person Events"
+msgstr "Eventi personali"
+
+#: PersonEverything/PersonEverything.py:140
+msgid "Families"
+msgstr "Famiglie"
+
+#: PersonEverything/PersonEverything.py:146
+msgid "Endnotes"
+msgstr "Note a piè di pagina"
+
+#: PersonEverything/PersonEverything.py:162
+msgid "Gender"
+msgstr "Sesso"
+
+#: PersonEverything/PersonEverything.py:165
+msgid "Primary name"
+msgstr ""
+
+#: PersonEverything/PersonEverything.py:166
+#: PersonEverything/PersonEverything.py:173
+#: PersonEverything/PersonEverything.py:293
+#: PersonEverything/PersonEverything.py:679
+msgid "Type"
+msgstr "Tipo"
+
+#: PersonEverything/PersonEverything.py:172
+msgid "Alternate name"
+msgstr ""
+
+#: PersonEverything/PersonEverything.py:192
+msgid "Event reference"
+msgstr ""
+
+#: PersonEverything/PersonEverything.py:193
+msgid "Role"
+msgstr "Ruolo"
+
+#: PersonEverything/PersonEverything.py:200
+msgid "Family"
+msgstr "Famiglia"
+
+#: PersonEverything/PersonEverything.py:206
+msgid "Child"
+msgstr "Figlio/a"
+
+#: PersonEverything/PersonEverything.py:212
+msgid "Relationship to Father"
+msgstr ""
+
+#: PersonEverything/PersonEverything.py:217
+msgid "Relationship to Mother"
+msgstr ""
+
+#: PersonEverything/PersonEverything.py:230
+msgid "Parent Family"
+msgstr ""
+
+#: PersonEverything/PersonEverything.py:241
+msgid "Relationship"
+msgstr "Relazione"
+
+#: PersonEverything/PersonEverything.py:251
+msgid "Father"
+msgstr "Padre"
+
+#: PersonEverything/PersonEverything.py:262
+msgid "Mother"
+msgstr "Madre"
+
+#: PersonEverything/PersonEverything.py:284
+#: PersonEverything/PersonEverything.py:924
+#: PersonEverything/PersonEverything.py:940
+msgid "Private"
+msgstr "Privato"
+
+#: PersonEverything/PersonEverything.py:308
+msgid "Address"
+msgstr "Indirizzo"
+
+#: PersonEverything/PersonEverything.py:318
+msgid "Attribute"
+msgstr "Attributo"
+
+#: PersonEverything/PersonEverything.py:346
+msgid "Confidence"
+msgstr "Confidenza"
+
+#: PersonEverything/PersonEverything.py:360
+msgid "Date"
+msgstr "Data"
+
+#: PersonEverything/PersonEverything.py:370
+msgid "Description"
+msgstr "Descrizione"
+
+#: PersonEverything/PersonEverything.py:379
+msgid "Event"
+msgstr "Evento"
+
+#: PersonEverything/PersonEverything.py:380
+msgid "Event type"
+msgstr "Tipo evento"
+
+#: PersonEverything/PersonEverything.py:395
+msgid "Temple and status"
+msgstr ""
+
+#: PersonEverything/PersonEverything.py:406
+msgid "LDS Ordinance family"
+msgstr ""
+
+#: PersonEverything/PersonEverything.py:410
+msgid "LDS "
+msgstr ""
+
+#: PersonEverything/PersonEverything.py:411
+msgid "Ordinance"
+msgstr ""
+
+#: PersonEverything/PersonEverything.py:426
+msgid "Street, City, County, State, Postal Code, Country, Phone number"
+msgstr ""
+
+#: PersonEverything/PersonEverything.py:440
+msgid "Media Reference"
+msgstr "Riferimento oggetto multimediale"
+
+#: PersonEverything/PersonEverything.py:447
+#: PersonEverything/PersonEverything.py:687
+msgid "Description and Path"
+msgstr ""
+
+#: PersonEverything/PersonEverything.py:466
+msgid "Could not add photo to page"
+msgstr "Impossibile aggiungere foto alla pagina"
+
+#: PersonEverything/PersonEverything.py:467
+msgid "File does not exist"
+msgstr "Il file non esiste"
+
+#: PersonEverything/PersonEverything.py:476
+msgid "Referenced Region"
+msgstr ""
+
+#: PersonEverything/PersonEverything.py:494
+msgid "unknown"
+msgstr "sconosciuto"
+
+#: PersonEverything/PersonEverything.py:495
+msgid "Media Object"
+msgstr "Oggetto multimediale"
+
+#: PersonEverything/PersonEverything.py:497
+msgid "Mime type"
+msgstr ""
+
+#: PersonEverything/PersonEverything.py:508
+msgid ""
+"Given name(s): Title, Given, Suffix, Call Name, Nick Name, Family Nick Name"
+msgstr ""
+
+#: PersonEverything/PersonEverything.py:533
+msgid "Note"
+msgstr "Note"
+
+#: PersonEverything/PersonEverything.py:534
+msgid "Note type"
+msgstr ""
+
+#: PersonEverything/PersonEverything.py:546
+#: PersonEverything/PersonEverything.py:550
+msgid "Main Location"
+msgstr ""
+
+#: PersonEverything/PersonEverything.py:547
+#: PersonEverything/PersonEverything.py:557
+msgid "Parish"
+msgstr "Parrocchia"
+
+#: PersonEverything/PersonEverything.py:556
+#: PersonEverything/PersonEverything.py:560
+msgid "Alternate Location"
+msgstr ""
+
+#: PersonEverything/PersonEverything.py:567
+msgid "Place"
+msgstr "Luogo"
+
+#: PersonEverything/PersonEverything.py:568
+msgid "Place Name"
+msgstr "Nome luogo"
+
+#: PersonEverything/PersonEverything.py:574
+msgid "Latitude, Longitude"
+msgstr ""
+
+#: PersonEverything/PersonEverything.py:595
+msgid "Call number"
+msgstr "Segnatura"
+
+#: PersonEverything/PersonEverything.py:602
+msgid "Repository"
+msgstr "Depositi"
+
+#: PersonEverything/PersonEverything.py:603
+msgid "Repository type"
+msgstr ""
+
+#: PersonEverything/PersonEverything.py:618
+msgid "Data"
+msgstr ""
+
+#: PersonEverything/PersonEverything.py:625
+msgid "Repository reference"
+msgstr ""
+
+#: PersonEverything/PersonEverything.py:626
+msgid "Media type"
+msgstr ""
+
+#: PersonEverything/PersonEverything.py:633
+#: PersonEverything/PersonEverything.py:637
+msgid "Surname"
+msgstr "Cognome"
+
+#: PersonEverything/PersonEverything.py:634
+msgid "Origin type"
+msgstr ""
+
+#: PersonEverything/PersonEverything.py:641
+msgid "Prefix, surname, connector"
+msgstr ""
+
+#: PersonEverything/PersonEverything.py:646
+msgid "{This is the primary surname}"
+msgstr ""
+
+#: PersonEverything/PersonEverything.py:659
+msgid "Tag name"
+msgstr ""
+
+#: PersonEverything/PersonEverything.py:670
+msgid "Tag colour and priority"
+msgstr ""
+
+#: PersonEverything/PersonEverything.py:678
+msgid "URL"
+msgstr "URL"
+
+#: PersonEverything/PersonEverything.py:863
+msgid "Source"
+msgstr "Fonte"
+
+#: PersonEverything/PersonEverything.py:869
+msgid "Citation"
+msgstr "Citazione"
+
+#: PersonEverything/PersonEverything.py:918
+msgid "No source information found"
+msgstr ""
+
+#: PersonEverything/PersonEverything.py:959
+msgid "Report Options"
+msgstr "Opzioni resoconto"
+
+#: PersonEverything/PersonEverything.py:961
+msgid "Center Person"
+msgstr "Persona centrale"
+
+#: PersonEverything/PersonEverything.py:962
+msgid "The center person for the report"
+msgstr "La persona centrale del resoconto"
+
+#: PersonEverything/PersonEverything.py:968
+msgid "Name format"
+msgstr "Formato nome"
+
+#: PersonEverything/PersonEverything.py:969
+msgid "Default"
+msgstr "Predefinita"
+
+#: PersonEverything/PersonEverything.py:972
+msgid "Select the format to display names"
+msgstr "Seleziona il formato per la visualizzazione dei nomi"
+
+#: PersonEverything/PersonEverything.py:986
+msgid "The style used for the title of the page."
+msgstr "Lo stile usato per il titolo della pagina."
+
+#: PersonEverything/PersonEverything.py:997
+#, python-format
+msgid "The style used for the level %d display."
+msgstr "Lo stile usato per la visualizzazione del livello %d."
+
+#: PersonEverything/PersonEverything.py:1018
+msgid "The basic style used for the endnotes source display."
+msgstr ""
+"Lo stile base usato per la visualizzazione delle fonti nelle note a piè di "
+"pagina."

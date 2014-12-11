@@ -1,0 +1,338 @@
+# Hebrew translation for Gramps
+# $Id$
+# This file is distributed under the same license as the Gramps package.
+# Copyright (C) 2009 Igal Shapira
+#
+# Igal Shapira <igal.shapira@gmail.com>, 2009, 2010, 2011.
+msgid ""
+msgstr ""
+"Project-Id-Version: 4.0.4\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-12-11 14:23+0100\n"
+"PO-Revision-Date: 2014-03-24 20:15+0300\n"
+"Last-Translator: Igal Shapira <igal.shapira@gmail.com>\n"
+"Language-Team: he <igal.shapira@gmail.com>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: PersonEverything/PersonEverything.gpr.py:31
+msgid "PersonEverything Report"
+msgstr ""
+
+#: PersonEverything/PersonEverything.gpr.py:32
+msgid "Produces a report containing everything about the active person"
+msgstr ""
+
+#: PersonEverything/PersonEverything.py:103
+#, python-format
+msgid "Person %s is not in the Database"
+msgstr ""
+
+#: PersonEverything/PersonEverything.py:125
+#, python-format
+msgid "All information about %s"
+msgstr ""
+
+#: PersonEverything/PersonEverything.py:134
+#, fuzzy
+msgid "Person Events"
+msgstr "אירועים אישיים"
+
+#: PersonEverything/PersonEverything.py:140
+msgid "Families"
+msgstr "משפחות"
+
+#: PersonEverything/PersonEverything.py:146
+msgid "Endnotes"
+msgstr ""
+
+#: PersonEverything/PersonEverything.py:162
+msgid "Gender"
+msgstr "מגדר"
+
+#: PersonEverything/PersonEverything.py:165
+msgid "Primary name"
+msgstr ""
+
+#: PersonEverything/PersonEverything.py:166
+#: PersonEverything/PersonEverything.py:173
+#: PersonEverything/PersonEverything.py:293
+#: PersonEverything/PersonEverything.py:679
+msgid "Type"
+msgstr "סוג"
+
+#: PersonEverything/PersonEverything.py:172
+msgid "Alternate name"
+msgstr ""
+
+#: PersonEverything/PersonEverything.py:192
+msgid "Event reference"
+msgstr ""
+
+#: PersonEverything/PersonEverything.py:193
+msgid "Role"
+msgstr "תפקיד"
+
+#: PersonEverything/PersonEverything.py:200
+msgid "Family"
+msgstr "משפחה"
+
+#: PersonEverything/PersonEverything.py:206
+msgid "Child"
+msgstr "צאצא"
+
+#: PersonEverything/PersonEverything.py:212
+msgid "Relationship to Father"
+msgstr ""
+
+#: PersonEverything/PersonEverything.py:217
+msgid "Relationship to Mother"
+msgstr ""
+
+#: PersonEverything/PersonEverything.py:230
+msgid "Parent Family"
+msgstr ""
+
+#: PersonEverything/PersonEverything.py:241
+msgid "Relationship"
+msgstr "מערכת יחסים"
+
+#: PersonEverything/PersonEverything.py:251
+msgid "Father"
+msgstr "אב"
+
+#: PersonEverything/PersonEverything.py:262
+msgid "Mother"
+msgstr "אם"
+
+#: PersonEverything/PersonEverything.py:284
+#: PersonEverything/PersonEverything.py:924
+#: PersonEverything/PersonEverything.py:940
+msgid "Private"
+msgstr "פרטי"
+
+#: PersonEverything/PersonEverything.py:308
+msgid "Address"
+msgstr "כתובת"
+
+#: PersonEverything/PersonEverything.py:318
+msgid "Attribute"
+msgstr "מאפיין"
+
+#: PersonEverything/PersonEverything.py:346
+msgid "Confidence"
+msgstr ""
+
+#: PersonEverything/PersonEverything.py:360
+msgid "Date"
+msgstr "תאריך"
+
+#: PersonEverything/PersonEverything.py:370
+msgid "Description"
+msgstr "תיאור"
+
+#: PersonEverything/PersonEverything.py:379
+msgid "Event"
+msgstr "אירוע"
+
+#: PersonEverything/PersonEverything.py:380
+msgid "Event type"
+msgstr "סוג אירוע"
+
+#: PersonEverything/PersonEverything.py:395
+msgid "Temple and status"
+msgstr ""
+
+#: PersonEverything/PersonEverything.py:406
+msgid "LDS Ordinance family"
+msgstr ""
+
+#: PersonEverything/PersonEverything.py:410
+msgid "LDS "
+msgstr ""
+
+#: PersonEverything/PersonEverything.py:411
+msgid "Ordinance"
+msgstr ""
+
+#: PersonEverything/PersonEverything.py:426
+msgid "Street, City, County, State, Postal Code, Country, Phone number"
+msgstr ""
+
+#: PersonEverything/PersonEverything.py:440
+msgid "Media Reference"
+msgstr ""
+
+#: PersonEverything/PersonEverything.py:447
+#: PersonEverything/PersonEverything.py:687
+msgid "Description and Path"
+msgstr ""
+
+#: PersonEverything/PersonEverything.py:466
+msgid "Could not add photo to page"
+msgstr "לא ניתן להוסיף תמונה לעמוד"
+
+#: PersonEverything/PersonEverything.py:467
+msgid "File does not exist"
+msgstr "הקובץ לא קיים"
+
+#: PersonEverything/PersonEverything.py:476
+msgid "Referenced Region"
+msgstr ""
+
+#: PersonEverything/PersonEverything.py:494
+msgid "unknown"
+msgstr "לא ידוע"
+
+#: PersonEverything/PersonEverything.py:495
+msgid "Media Object"
+msgstr "אובייקט מדיה"
+
+#: PersonEverything/PersonEverything.py:497
+msgid "Mime type"
+msgstr ""
+
+#: PersonEverything/PersonEverything.py:508
+msgid ""
+"Given name(s): Title, Given, Suffix, Call Name, Nick Name, Family Nick Name"
+msgstr ""
+
+#: PersonEverything/PersonEverything.py:533
+msgid "Note"
+msgstr "הערה"
+
+#: PersonEverything/PersonEverything.py:534
+msgid "Note type"
+msgstr ""
+
+#: PersonEverything/PersonEverything.py:546
+#: PersonEverything/PersonEverything.py:550
+msgid "Main Location"
+msgstr ""
+
+#: PersonEverything/PersonEverything.py:547
+#: PersonEverything/PersonEverything.py:557
+msgid "Parish"
+msgstr "קהילה"
+
+#: PersonEverything/PersonEverything.py:556
+#: PersonEverything/PersonEverything.py:560
+msgid "Alternate Location"
+msgstr ""
+
+#: PersonEverything/PersonEverything.py:567
+msgid "Place"
+msgstr "מקום"
+
+#: PersonEverything/PersonEverything.py:568
+msgid "Place Name"
+msgstr "שם המקום"
+
+#: PersonEverything/PersonEverything.py:574
+msgid "Latitude, Longitude"
+msgstr ""
+
+#: PersonEverything/PersonEverything.py:595
+msgid "Call number"
+msgstr "מספר לחיוג"
+
+#: PersonEverything/PersonEverything.py:602
+msgid "Repository"
+msgstr "מאגר"
+
+#: PersonEverything/PersonEverything.py:603
+msgid "Repository type"
+msgstr ""
+
+#: PersonEverything/PersonEverything.py:618
+msgid "Data"
+msgstr ""
+
+#: PersonEverything/PersonEverything.py:625
+msgid "Repository reference"
+msgstr ""
+
+#: PersonEverything/PersonEverything.py:626
+msgid "Media type"
+msgstr ""
+
+#: PersonEverything/PersonEverything.py:633
+#: PersonEverything/PersonEverything.py:637
+msgid "Surname"
+msgstr "שם משפחה"
+
+#: PersonEverything/PersonEverything.py:634
+msgid "Origin type"
+msgstr ""
+
+#: PersonEverything/PersonEverything.py:641
+msgid "Prefix, surname, connector"
+msgstr ""
+
+#: PersonEverything/PersonEverything.py:646
+msgid "{This is the primary surname}"
+msgstr ""
+
+#: PersonEverything/PersonEverything.py:659
+msgid "Tag name"
+msgstr ""
+
+#: PersonEverything/PersonEverything.py:670
+msgid "Tag colour and priority"
+msgstr ""
+
+#: PersonEverything/PersonEverything.py:678
+msgid "URL"
+msgstr "כתובת אינטרנט"
+
+#: PersonEverything/PersonEverything.py:863
+msgid "Source"
+msgstr "מקור"
+
+#: PersonEverything/PersonEverything.py:869
+msgid "Citation"
+msgstr "ציטוט"
+
+#: PersonEverything/PersonEverything.py:918
+msgid "No source information found"
+msgstr ""
+
+#: PersonEverything/PersonEverything.py:959
+msgid "Report Options"
+msgstr "אפשרויות דוח"
+
+#: PersonEverything/PersonEverything.py:961
+msgid "Center Person"
+msgstr "אדם מרכזי"
+
+#: PersonEverything/PersonEverything.py:962
+msgid "The center person for the report"
+msgstr "האדם המרכזי בדוח"
+
+#: PersonEverything/PersonEverything.py:968
+msgid "Name format"
+msgstr "תבנית שם"
+
+#: PersonEverything/PersonEverything.py:969
+msgid "Default"
+msgstr "ברירת המחדל"
+
+#: PersonEverything/PersonEverything.py:972
+msgid "Select the format to display names"
+msgstr "בחרי את התבנית להצגת השמות"
+
+#: PersonEverything/PersonEverything.py:986
+msgid "The style used for the title of the page."
+msgstr "הסגנון בשימוש להצגת כותרת העמוד."
+
+#: PersonEverything/PersonEverything.py:997
+#, python-format
+msgid "The style used for the level %d display."
+msgstr "הסגנון בשימוש להצגת רמה %d."
+
+#: PersonEverything/PersonEverything.py:1018
+msgid "The basic style used for the endnotes source display."
+msgstr "הסגנון הבסיסי שישמש להצגת הערות הקצה."

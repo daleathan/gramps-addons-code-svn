@@ -1,0 +1,373 @@
+# Danish translation for Gramps
+# $Id$
+# This file is distributed under the same license as the Gramps package.
+# Dansk oversættelse til GRAMPS
+# Copyright (C) 2002 Free Software Foundation, Inc.
+# Lars Kr. Lundin <gramps@lklundin.dk>, 2002.
+# Morten Bo Johansen <mbj@spamcop.net>, 2006-, >= Gramps 0.7.3
+# *** Vedr. ordstilling: ***
+# Ofte vil det lyde mere naturligt at ændre en ordstilling ved at
+# bytte om på hoved- og ledsætning, som f.eks.
+#   
+#   "Før reparationen udføres, forvis dig om at databasen virkelig
+#   "ikke længere kan åbnes"
+# til
+#   
+#   "forvis dig om at databasen virkelig ikke kan åbnes før du
+#   "udfører reparationen."
+#   
+# Jeg har dog i mange tilfælde valgt at bevare den oprindelige
+# ordstilling, da der ligger en opmærksomhedsskabende værdi i denne. Her
+# bliver man f.eks. som det første i sætningen gjort opmærksom på at man
+# IKKE skal udføre reparationen FØR .. -MBJ
+# *** Oversættelser af visse ord/vendinger: ***
+# LDS: SDH (Latter Day Saints -> Sidste Dages Hellige)
+# home person: proband
+# ancestor: ane
+# given name: fornavn
+# preferences: indstillinger
+# link: forbindelse
+# family tree: slægtsbog (men se nedenfor)
+# First Communion: Førstekommunion
+# probate: skifte
+# record: optegnelse
+#
+# Anvendt af Lars Kr. Lundin:
+# citation: citering (fremfor f.eks. 'kildehenvisning')
+# database: database (fremfor det tidligere 'slægtsbog')
+# matches: matcher (fremfor det tidligere 'passer med')
+# locale: landestandard (i mangel af bedre)
+msgid ""
+msgstr ""
+"Project-Id-Version: GRAMPS 3.4.3 (SVN 21236)\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-12-11 14:23+0100\n"
+"PO-Revision-Date: 2013-05-16 14:50+0200\n"
+"Last-Translator: Lars Kristian Lundin <gramps@lklundin.dk>\n"
+"Language-Team: Danish <dansk@dansk-gruppen.dk>\n"
+"Language: da\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: pygettext.py 1.4\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"X-Generator: http://jedmodes.sourceforge.net/mode/po_mode\n"
+
+#: PersonEverything/PersonEverything.gpr.py:31
+msgid "PersonEverything Report"
+msgstr ""
+
+#: PersonEverything/PersonEverything.gpr.py:32
+msgid "Produces a report containing everything about the active person"
+msgstr ""
+
+#: PersonEverything/PersonEverything.py:103
+#, python-format
+msgid "Person %s is not in the Database"
+msgstr "Personen %s findes ikke i databasen"
+
+#: PersonEverything/PersonEverything.py:125
+#, python-format
+msgid "All information about %s"
+msgstr ""
+
+#: PersonEverything/PersonEverything.py:134
+msgid "Person Events"
+msgstr "Persons hændelser"
+
+#: PersonEverything/PersonEverything.py:140
+msgid "Families"
+msgstr "Familier"
+
+#: PersonEverything/PersonEverything.py:146
+msgid "Endnotes"
+msgstr "Slutnoter"
+
+#: PersonEverything/PersonEverything.py:162
+msgid "Gender"
+msgstr "Køn"
+
+#: PersonEverything/PersonEverything.py:165
+msgid "Primary name"
+msgstr ""
+
+#: PersonEverything/PersonEverything.py:166
+#: PersonEverything/PersonEverything.py:173
+#: PersonEverything/PersonEverything.py:293
+#: PersonEverything/PersonEverything.py:679
+msgid "Type"
+msgstr "Type"
+
+#: PersonEverything/PersonEverything.py:172
+msgid "Alternate name"
+msgstr ""
+
+#: PersonEverything/PersonEverything.py:192
+msgid "Event reference"
+msgstr ""
+
+#: PersonEverything/PersonEverything.py:193
+msgid "Role"
+msgstr "Rolle"
+
+#: PersonEverything/PersonEverything.py:200
+msgid "Family"
+msgstr "Familie"
+
+#: PersonEverything/PersonEverything.py:206
+msgid "Child"
+msgstr "Barn"
+
+#: PersonEverything/PersonEverything.py:212
+msgid "Relationship to Father"
+msgstr ""
+
+#: PersonEverything/PersonEverything.py:217
+msgid "Relationship to Mother"
+msgstr ""
+
+#: PersonEverything/PersonEverything.py:230
+msgid "Parent Family"
+msgstr ""
+
+#: PersonEverything/PersonEverything.py:241
+msgid "Relationship"
+msgstr "Slægtskab"
+
+#: PersonEverything/PersonEverything.py:251
+msgid "Father"
+msgstr "Fader"
+
+#: PersonEverything/PersonEverything.py:262
+msgid "Mother"
+msgstr "Moder"
+
+#: PersonEverything/PersonEverything.py:284
+#: PersonEverything/PersonEverything.py:924
+#: PersonEverything/PersonEverything.py:940
+msgid "Private"
+msgstr "Privat"
+
+#: PersonEverything/PersonEverything.py:308
+msgid "Address"
+msgstr "Adresse"
+
+#: PersonEverything/PersonEverything.py:318
+msgid "Attribute"
+msgstr "Attribut"
+
+#: PersonEverything/PersonEverything.py:346
+msgid "Confidence"
+msgstr "Troværdighed"
+
+#: PersonEverything/PersonEverything.py:360
+msgid "Date"
+msgstr "Dato"
+
+#: PersonEverything/PersonEverything.py:370
+msgid "Description"
+msgstr "Beskrivelse"
+
+#: PersonEverything/PersonEverything.py:379
+msgid "Event"
+msgstr "Hændelse"
+
+#: PersonEverything/PersonEverything.py:380
+msgid "Event type"
+msgstr "Hændelsestype"
+
+#: PersonEverything/PersonEverything.py:395
+msgid "Temple and status"
+msgstr ""
+
+#: PersonEverything/PersonEverything.py:406
+msgid "LDS Ordinance family"
+msgstr ""
+
+#: PersonEverything/PersonEverything.py:410
+msgid "LDS "
+msgstr ""
+
+#: PersonEverything/PersonEverything.py:411
+msgid "Ordinance"
+msgstr ""
+
+#: PersonEverything/PersonEverything.py:426
+msgid "Street, City, County, State, Postal Code, Country, Phone number"
+msgstr ""
+
+#: PersonEverything/PersonEverything.py:440
+msgid "Media Reference"
+msgstr ""
+
+#: PersonEverything/PersonEverything.py:447
+#: PersonEverything/PersonEverything.py:687
+msgid "Description and Path"
+msgstr ""
+
+#: PersonEverything/PersonEverything.py:466
+msgid "Could not add photo to page"
+msgstr "Kunne ikke føje foto til siden"
+
+#: PersonEverything/PersonEverything.py:467
+msgid "File does not exist"
+msgstr "Filen findes ikke"
+
+#: PersonEverything/PersonEverything.py:476
+msgid "Referenced Region"
+msgstr ""
+
+#: PersonEverything/PersonEverything.py:494
+msgid "unknown"
+msgstr "ukendt"
+
+#: PersonEverything/PersonEverything.py:495
+msgid "Media Object"
+msgstr "Medieobjekt"
+
+#: PersonEverything/PersonEverything.py:497
+msgid "Mime type"
+msgstr ""
+
+#: PersonEverything/PersonEverything.py:508
+msgid ""
+"Given name(s): Title, Given, Suffix, Call Name, Nick Name, Family Nick Name"
+msgstr ""
+
+#: PersonEverything/PersonEverything.py:533
+msgid "Note"
+msgstr "Note"
+
+#: PersonEverything/PersonEverything.py:534
+msgid "Note type"
+msgstr ""
+
+#: PersonEverything/PersonEverything.py:546
+#: PersonEverything/PersonEverything.py:550
+msgid "Main Location"
+msgstr ""
+
+#: PersonEverything/PersonEverything.py:547
+#: PersonEverything/PersonEverything.py:557
+msgid "Parish"
+msgstr "Sogn"
+
+#: PersonEverything/PersonEverything.py:556
+#: PersonEverything/PersonEverything.py:560
+msgid "Alternate Location"
+msgstr ""
+
+#: PersonEverything/PersonEverything.py:567
+msgid "Place"
+msgstr "Sted"
+
+#: PersonEverything/PersonEverything.py:568
+msgid "Place Name"
+msgstr "Stednavn"
+
+#: PersonEverything/PersonEverything.py:574
+msgid "Latitude, Longitude"
+msgstr ""
+
+# What sort of number is this?
+#: PersonEverything/PersonEverything.py:595
+msgid "Call number"
+msgstr "Henvisningsnummer"
+
+#: PersonEverything/PersonEverything.py:602
+msgid "Repository"
+msgstr "Arkiv"
+
+#: PersonEverything/PersonEverything.py:603
+msgid "Repository type"
+msgstr ""
+
+#: PersonEverything/PersonEverything.py:618
+msgid "Data"
+msgstr ""
+
+#: PersonEverything/PersonEverything.py:625
+msgid "Repository reference"
+msgstr ""
+
+#: PersonEverything/PersonEverything.py:626
+msgid "Media type"
+msgstr ""
+
+#: PersonEverything/PersonEverything.py:633
+#: PersonEverything/PersonEverything.py:637
+msgid "Surname"
+msgstr "Efternavn"
+
+#: PersonEverything/PersonEverything.py:634
+msgid "Origin type"
+msgstr ""
+
+#: PersonEverything/PersonEverything.py:641
+msgid "Prefix, surname, connector"
+msgstr ""
+
+#: PersonEverything/PersonEverything.py:646
+msgid "{This is the primary surname}"
+msgstr ""
+
+#: PersonEverything/PersonEverything.py:659
+msgid "Tag name"
+msgstr ""
+
+#: PersonEverything/PersonEverything.py:670
+msgid "Tag colour and priority"
+msgstr ""
+
+#: PersonEverything/PersonEverything.py:678
+msgid "URL"
+msgstr "Webadresse"
+
+#: PersonEverything/PersonEverything.py:863
+msgid "Source"
+msgstr "Kilde"
+
+#: PersonEverything/PersonEverything.py:869
+msgid "Citation"
+msgstr "Citering"
+
+#: PersonEverything/PersonEverything.py:918
+msgid "No source information found"
+msgstr ""
+
+#: PersonEverything/PersonEverything.py:959
+msgid "Report Options"
+msgstr "Rapport-tilvalg"
+
+#: PersonEverything/PersonEverything.py:961
+msgid "Center Person"
+msgstr "Fokusperson"
+
+#: PersonEverything/PersonEverything.py:962
+msgid "The center person for the report"
+msgstr "Person som er i fokus for rapporten"
+
+#: PersonEverything/PersonEverything.py:968
+msgid "Name format"
+msgstr "Navneformat"
+
+#: PersonEverything/PersonEverything.py:969
+msgid "Default"
+msgstr "Standard"
+
+#: PersonEverything/PersonEverything.py:972
+msgid "Select the format to display names"
+msgstr "Vælg formatet som navne skal vises i"
+
+#: PersonEverything/PersonEverything.py:986
+msgid "The style used for the title of the page."
+msgstr "Stilen der bruges til sidens titel."
+
+#: PersonEverything/PersonEverything.py:997
+#, python-format
+msgid "The style used for the level %d display."
+msgstr "Stilen der bruges til visning af niveau %d."
+
+#: PersonEverything/PersonEverything.py:1018
+msgid "The basic style used for the endnotes source display."
+msgstr "Den grundlæggende stil brugt til slutnoterne i kildevisning."
