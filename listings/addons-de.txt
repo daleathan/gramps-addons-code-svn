@@ -41,7 +41,7 @@
 {"t":'Report',"i":'LastChangeReport',"n":u'Letzte \xc4nderungen Bericht',"v":'0.0.22',"g":'4.1',"d":u'Bericht der letzten Datens\xe4tze die ge\xe4ndert wurden',"z":'LastChange.addon.tgz'}
 {"t":'Report',"i":'LinesOfDescendency',"n":u'Nachkommen Linien Bericht',"v":'1.1.22',"g":'4.1',"d":u'Druckt alle Nachkommenlinien von einem gegebenen Vorfahren zu einem gegebenen Nachkommen in Textform.',"z":'LinesOfDescendency.addon.tgz'}
 {"t":'Report',"i":'ListeEclair',"n":u'Blitz Liste',"v":'1.0.13',"g":'4.1',"d":u'Produces a tiny tafel',"z":'ListeEclair.addon.tgz'}
-{"t":'Report',"i":'PedigreeChart',"n":u'Ahnentafelgrafik',"v":'1.0.22',"g":'4.1',"d":u'Alternative Version zur traditionellen Ahnentafelgrafik.',"z":'PedigreeChart.addon.tgz'}
+{"t":'Report',"i":'PedigreeChart',"n":u'Ahnentafelgrafik',"v":'1.0.23',"g":'4.1',"d":u'Alternative Version zur traditionellen Ahnentafelgrafik.',"z":'PedigreeChart.addon.tgz'}
 {"t":'Report',"i":'PersonEverythingReport',"n":'PersonEverything Report',"v":'1.0.2',"g":'4.1',"d":'Produces a report containing everything about the active person',"z":'PersonEverything.addon.tgz'}
 {"t":'Report',"i":'Repositories Report',"n":u'Aufbewahrungsorte Bericht',"v":'1.1.15',"g":'4.1',"d":u'Erstellt einen schriftlichen Aufbewahrungsorte Bericht',"z":'RepositoriesReport.addon.tgz'}
 {"t":'Report',"i":'Repositories Report',"n":u'Aufbewahrungsorte Bericht',"v":'1.1.15',"g":'4.1',"d":u'Erstellt einen schriftlichen Aufbewahrungsorte Bericht',"z":'RepositoriesReport.addon.tgz'}
