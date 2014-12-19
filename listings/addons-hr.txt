@@ -37,7 +37,7 @@
 {"t":u'Quickreport',"i":'timelinequickview',"n":u'Vremenska linija',"v":'1.0.18',"g":'4.0',"d":u"Display a person's events on a timeline","z":'TimelineQuickview.addon.tgz'}
 {"t":u'Report',"i":'Descendants Lines',"n":u'Descendants Lines',"v":'0.1.19',"g":'4.0',"d":u'Produces descendants lines of a person',"z":'DescendantsLines.addon.tgz'}
 {"t":u'Report',"i":'FamilySheet',"n":u'Family Sheet',"v":'3.4.21',"g":'4.0',"d":u'Produces a family sheet showing full information about a person and his/her partners and children.',"z":'FamilySheet.addon.tgz'}
-{"t":u'Report',"i":'FamilyTree',"n":u'Family Tree',"v":'4.0.3',"g":'4.0',"d":u'Produces a graphical family tree.',"z":'FamilyTree.addon.tgz'}
+{"t":'Report',"i":'FamilyTree',"n":'Family Tree',"v":'4.0.4',"g":'4.0',"d":'Produces a graphical family tree.',"z":'FamilyTree.addon.tgz'}
 {"t":u'Report',"i":'LastChangeReport',"n":u'Last Change Report',"v":'0.0.22',"g":'4.0',"d":u'Report of the last records that have been changed',"z":'LastChange.addon.tgz'}
 {"t":u'Report',"i":'LinesOfDescendency',"n":u'Lines of Descendency Report',"v":'1.1.19',"g":'4.0',"d":u'Prints out all descendency lines from a given ancestor to a given descendent in text.',"z":'LinesOfDescendency.addon.tgz'}
 {"t":u'Report',"i":'ListeEclair',"n":u'Tiny Tafel',"v":'1.0.9',"g":'4.0',"d":u'Generates a tiny tafel',"z":'ListeEclair.addon.tgz'}
