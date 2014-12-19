@@ -1,3 +1,5 @@
+{"t":u'Report',"i":'PersonEverythingReport',"n":'PersonEverything Report',"v":'1.0.2',"g":'3.4',"d":'Produces a report containing everything about the active person',"z":'PersonEverything.addon.tgz'}
+{"t":u'Report',"i":'FamilyTree',"n":'Arbre familial',"v":'3.4.15',"g":'3.4',"d":'Produces a graphical family tree.',"z":'FamilyTree.addon.tgz'}
 {"t":u'Exporter',"i":'Raw Export',"n":'Raw Export',"v":'1.0.10',"g":'3.4',"d":'This is a raw python object dump',"z":'ExportRaw.addon.tgz'}
 {"t":u'Exporter',"i":'ex_sqlite',"n":'SQLite Export',"v":'1.0.14',"g":'3.4',"d":'SQLite is a common local database format',"z":'Sqlite.addon.tgz'}
 {"t":u'Exporter',"i":'export_django',"n":'Django Export',"v":'1.0.13',"g":'3.4',"d":'Django is a web framework working on a configured database',"z":'Django.addon.tgz'}
@@ -48,12 +50,12 @@
 {"t":u'Report',"i":'AncestorFill',"n":'AncestorFill',"v":'1.0.3',"g":'3.4',"d":'Report on the filling of the tree',"z":'AncestorFill.addon.tgz'}
 {"t":u'Report',"i":'Descendants Lines',"n":'Descendants Lines',"v":'0.1.16',"g":'3.4',"d":'Produces descendants lines of a person',"z":'DescendantsLines.addon.tgz'}
 {"t":u'Report',"i":'FamilySheet',"n":'Family Sheet',"v":'3.4.10',"g":'3.4',"d":'Produces a family sheet showing full information about a person and his/her partners and children.',"z":'FamilySheet.addon.tgz'}
-{"t":u'Report',"i":'FamilyTree',"n":'Family Tree',"v":'3.4.14',"g":'3.4',"d":'Produces a graphical family tree.',"z":'FamilyTree.addon.tgz'}
+{"t":u'Report',"i":'FamilyTree',"n":'Arbre familial',"v":'3.4.15',"g":'3.4',"d":'Produces a graphical family tree.',"z":'FamilyTree.addon.tgz'}
 {"t":u'Report',"i":'LastChangeReport',"n":'Last Change Report',"v":'0.0.12',"g":'3.4',"d":'Report of the last records that have been changed',"z":'LastChange.addon.tgz'}
 {"t":u'Report',"i":'LinesOfDescendency',"n":'Lines of Descendency Report',"v":'1.1.11',"g":'3.4',"d":'Prints out all descendency lines from a given ancestor to a given descendent in text.',"z":'LinesOfDescendency.addon.tgz'}
 {"t":u'Report',"i":'ListeEclair',"n":'Liste Eclair',"v":'1.0.2',"g":'3.4',"d":'Produit une liste eclair',"z":'ListeEclair.addon.tgz'}
 {"t":u'Report',"i":'PedigreeChart',"n":'Pedigree Chart',"v":'1.0.11',"g":'3.4',"d":'Alternate version of the traditional pedigree chart.',"z":'PedigreeChart.addon.tgz'}
-{"t":u'Report',"i":'PersonEverythingReport',"n":'PersonEverything Report',"v":'1.0.1',"g":'3.4',"d":'Produces a report containing everything about the active person',"z":'PersonEverything.addon.tgz'}
+{"t":u'Report',"i":'PersonEverythingReport',"n":'PersonEverything Report',"v":'1.0.2',"g":'3.4',"d":'Produces a report containing everything about the active person',"z":'PersonEverything.addon.tgz'}
 {"t":u'Report',"i":'Repositories Report Options',"n":'Repositories Report Options',"v":'0.3.4',"g":'3.4',"d":'Poskytuje textov\xc3\xba spr\xc3\xa1vu o arch\xc3\xadvoch',"z":'RepositoriesReport.addon.tgz'}
 {"t":u'Report',"i":'Repositories Report',"n":'Spr\xc3\xa1va o arch\xc3\xadvoch',"v":'1.1.4',"g":'3.4',"d":'Poskytuje textov\xc3\xba spr\xc3\xa1vu o arch\xc3\xadvoch',"z":'RepositoriesReport.addon.tgz'}
 {"t":u'Report',"i":'TodoReport',"n":'Todo Report',"v":'1.2.9',"g":'3.4',"d":'Produces a list of all the notes with a given tag along with the records that it references, the Person, Family, Event, etc.',"z":'ToDoReport.addon.tgz'}
