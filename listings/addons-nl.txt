@@ -41,7 +41,7 @@
 {"t":u'Report',"i":'LastChangeReport',"n":u'Laatste wijzigingen',"v":'0.0.22',"g":'4.0',"d":u'Verslag van de laatst gewijzigde gegevens',"z":'LastChange.addon.tgz'}
 {"t":u'Report',"i":'LinesOfDescendency',"n":u'Afstammelingenlijnen',"v":'1.1.19',"g":'4.0',"d":u'Alle afstammelingenlijnen van een bepaalde voorouder tot een bepaalde afstammeling worden als tekst afgedrukt.',"z":'LinesOfDescendency.addon.tgz'}
 {"t":u'Report',"i":'ListeEclair',"n":u'Liste Eclair',"v":'1.0.9',"g":'4.0',"d":u'Produit une liste eclair',"z":'ListeEclair.addon.tgz'}
-{"t":u'Report',"i":'PedigreeChart',"n":u'Stamboomgrafiek',"v":'1.0.20',"g":'4.0',"d":u'Alternatieve versie van de traditionele stamboomgrafiek.',"z":'PedigreeChart.addon.tgz'}
+{"t":'Report',"i":'PedigreeChart',"n":u'Stamboomgrafiek',"v":'1.0.21',"g":'4.0',"d":u'Alternatieve versie van de traditionele stamboomgrafiek.',"z":'PedigreeChart.addon.tgz'}
 {"t":u'Report',"i":'PersonEverythingReport',"n":u'PersonEverything Report',"v":'1.0.1',"g":'4.0',"d":u'Produces a report containing everything about the active person',"z":'PersonEverything.addon.tgz'}
 {"t":u'Report',"i":'Repositories Report Options',"n":u'Opties voor het bibliotheekverslag',"v":'0.3.13',"g":'4.0',"d":u'Tekstverslag van de bibliotheken aanmaken',"z":'RepositoriesReport.addon.tgz'}
 {"t":u'Report',"i":'Repositories Report',"n":u'Bibliotheken',"v":'1.1.13',"g":'4.0',"d":u'Tekstverslag van de bibliotheken aanmaken',"z":'RepositoriesReport.addon.tgz'}
