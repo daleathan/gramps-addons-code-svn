@@ -1,3 +1,4 @@
+{"t":u'Report',"i":'PedigreeChart',"n":'Ahnentafelgrafik',"v":'1.0.12',"g":'3.4',"d":'Alternative Version zur traditionellen Ahnentafelgrafik.',"z":'PedigreeChart.addon.tgz'}
 {"t":u'Report',"i":'PersonEverythingReport',"n":'PersonEverything Report',"v":'1.0.2',"g":'3.4',"d":'Produces a report containing everything about the active person',"z":'PersonEverything.addon.tgz'}
 {"t":u'Report',"i":'FamilyTree',"n":'Arbre familial',"v":'3.4.15',"g":'3.4',"d":'Erzeugt einen grafischen Stammbaum.',"z":'FamilyTree.addon.tgz'}
 {"t":u'Exporter',"i":'Raw Export',"n":'Rohdaten Export',"v":'1.0.10',"g":'3.4',"d":'Dies ist eine Rohdaten Pythonobjekt Ausgabe',"z":'ExportRaw.addon.tgz'}
@@ -54,7 +55,7 @@
 {"t":u'Report',"i":'LastChangeReport',"n":'Letzte \xc3\x84nderungen Bericht',"v":'0.0.12',"g":'3.4',"d":'Bericht der letzten Datens\xc3\xa4tze die ge\xc3\xa4ndert wurden',"z":'LastChange.addon.tgz'}
 {"t":u'Report',"i":'LinesOfDescendency',"n":'Nachkommen Linien Bericht',"v":'1.1.11',"g":'3.4',"d":'Druckt alle Nachkommenlinien von einem gegebenen Vorfahren zu einem gegebenen Nachkommen in Textform.',"z":'LinesOfDescendency.addon.tgz'}
 {"t":u'Report',"i":'ListeEclair',"n":'Blitz Liste',"v":'1.0.2',"g":'3.4',"d":'Erstellt eine Blitz Liste',"z":'ListeEclair.addon.tgz'}
-{"t":u'Report',"i":'PedigreeChart',"n":'Ahnentafelgrafik',"v":'1.0.11',"g":'3.4',"d":'Alternative Version zur traditionellen Ahnentafelgrafik.',"z":'PedigreeChart.addon.tgz'}
+{"t":u'Report',"i":'PedigreeChart',"n":'Ahnentafelgrafik',"v":'1.0.12',"g":'3.4',"d":'Alternative Version zur traditionellen Ahnentafelgrafik.',"z":'PedigreeChart.addon.tgz'}
 {"t":u'Report',"i":'PersonEverythingReport',"n":'PersonEverything Report',"v":'1.0.2',"g":'3.4',"d":'Produces a report containing everything about the active person',"z":'PersonEverything.addon.tgz'}
 {"t":u'Report',"i":'Repositories Report Options',"n":'Aufbewahrungsorte Berichtsoptionen',"v":'0.3.4',"g":'3.4',"d":'Erstellt einen schriftlichen Aufbewahrungsorte Bericht',"z":'RepositoriesReport.addon.tgz'}
 {"t":u'Report',"i":'Repositories Report',"n":'Aufbewahrungsorte Bericht',"v":'1.1.4',"g":'3.4',"d":'Erstellt einen schriftlichen Aufbewahrungsorte Bericht',"z":'RepositoriesReport.addon.tgz'}
