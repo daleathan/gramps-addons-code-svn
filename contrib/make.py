@@ -1,4 +1,5 @@
 #! /usr/bin/env python
+# -*- coding: utf-8 -*-
 """
 make.py for Gramps addons.
 
@@ -48,10 +49,7 @@ import os
 if "GRAMPSPATH" in os.environ:
     GRAMPSPATH = os.environ["GRAMPSPATH"]
 else:
-    GRAMPSPATH = "../../../.."
-
-if not os.path.isdir(GRAMPSPATH + "/po"):
-    raise ValueError("Where is GRAMPSPATH/po: '%s/po'? Use 'GRAMPSPATH=path python make.py ...'" % GRAMPSPATH)
+    GRAMPSPATH = "../../.."
 
 if (("LANGUAGE" not in os.environ) or 
     (not os.environ["LANGUAGE"].startswith("en"))):
@@ -68,7 +66,7 @@ def system(scmd, **kwargs):
     Replace and call system with scmd.
     """
     cmd = r(scmd, **kwargs)
-    print(cmd)
+    #print(cmd)
     os.system(cmd)
 
 def echo(scmd, **kwargs):
@@ -89,13 +87,12 @@ def r(scmd, **kwargs):
 
 def increment_target(filenames):
     for filename in filenames:
-        print(filename)
         fp = open(filename, "r")
         newfp = open("%s.new" % filename, "w")
         for line in fp:
             if ((line.lstrip().startswith("version")) and 
                 ("=" in line)):
-                print("orig = %s" % line.rstrip())
+                #print("orig = %s" % line.rstrip())
                 line, stuff = line.rsplit(",", 1)
                 line = line.rstrip()
                 pos = line.index("version")
@@ -204,6 +201,8 @@ elif command == "update":
            '''%(addon)s/po/%(locale)s.po'''
            ''' -o %(addon)s/po/%(locale)s-local.po''')
     # Start with Gramps main PO file:
+    if not os.path.isdir(GRAMPSPATH + "/po"):
+        raise ValueError("Where is GRAMPSPATH/po: '%s/po'? Use 'GRAMPSPATH=path python make.py update'" % GRAMPSPATH)
     locale_po_files = [r("%(GRAMPSPATH)s/po/%(locale)s.po")]
     # Next, get all of the translations from other addons:
     for module in [name for name in os.listdir(".") if os.path.isdir(name)]:
@@ -298,12 +297,16 @@ elif command == "build":
         system('''tar cfz "../download/%(addon)s.addon.tgz" %(files)s''',
                files=files_str)
 elif command == "listing":
-    sys.path.append(os.path.join(GRAMPSPATH, "src"))
-    from TransUtils import get_addon_translator
-    from gen.plug import make_environment, PTYPE_STR
+    try:
+        sys.path.insert(0, GRAMPSPATH)
+        os.environ['GRAMPS_RESOURCES'] = os.path.abspath(GRAMPSPATH)
+        from gramps.gen.const import GRAMPS_LOCALE as glocale
+        from gramps.gen.plug import make_environment, PTYPE_STR
+    except ImportError:
+        raise ValueError("Where is GRAMPSPATH: '%s'? Use 'GRAMPSPATH=path python make.py listing'" % GRAMPSPATH)
     def register(ptype, **kwargs):
         global plugins
-        kwargs["ptype"] = PTYPE_STR[ptype]
+        kwargs["ptype"] = PTYPE_STR[ptype] # need to take care of translated types
         plugins.append(kwargs)
     cmd_arg = addon
     # first, get a list of all of the possible languages
@@ -329,55 +332,67 @@ elif command == "listing":
             languages.add(locale[:-9])
     # next, create/edit a file for all languages listing plugins
     for lang in languages:
+        print("Building listing for '%s'..." % lang)
         listings = []
         for addon in dirs:
             for gpr in glob.glob(r('''%(addon)s/*.gpr.py''')):
-                local_gettext = get_addon_translator(gpr,
-                                       languages=[lang]).gettext
+                # Make fallback language English (rather than current LANG)
+                local_gettext = glocale.get_addon_translator(
+                    gpr, languages=[lang, "en.UTF-8"]).gettext
                 plugins = []
-                execfile(gpr.encode(sys.getfilesystemencoding()),
-                         make_environment(_=local_gettext),
+                with open(gpr.encode("utf-8", errors="backslashreplace")) as f:
+                    code = compile(f.read(),
+                                   gpr.encode("utf-8", errors="backslashreplace"),
+                                   'exec')
+                    exec(code, make_environment(_=local_gettext),
                          {"register": register})
                 for p in plugins:
                     tgz_file = "%s.addon.tgz" % gpr.split("/", 1)[0]
                     tgz_exists = os.path.isfile("../download/" + tgz_file)
                     if p.get("include_in_listing", True) and tgz_exists:
-                        plugin = {"n": repr(p["name"]), 
-                                  "i": repr(p["id"]), 
-                                  "t": repr(p["ptype"]), 
-                                  "d": repr(p["description"]), 
-                                  "v": repr(p["version"]), 
-                                  "g": repr(p["gramps_target_version"]), 
-                                  "z": repr(tgz_file), 
+                        plugin = {"n": p["name"].replace("'", "\\'"),
+                                  "i": p["id"].replace("'", "\\'"),
+                                  "t": p["ptype"].replace("'", "\\'"),
+                                  "d": p["description"].replace("'", "\\'"),
+                                  "v": p["version"].replace("'", "\\'"),
+                                  "g": p["gramps_target_version"].replace("'", "\\'"),
+                                  "z": (tgz_file),
                                   }
                         listings.append(plugin)
                     else:
-                        print("Ignoring '%s' in Language %s..." % (p["name"], lang))
+                        print("   ignoring '%s'" % (p["name"]))
         # Write out new listing:
         if cmd_arg == "all":
             # Replace it!
             fp = open("../listings/addons-%s.txt" % lang, "w")
             for plugin in sorted(listings, key=lambda p: (p["t"], p["i"])):
-                print('{"t":%(t)s,"i":%(i)s,"n":%(n)s,"v":%(v)s,"g":%(g)s,"d":%(d)s,"z":%(z)s}' % plugin, file=fp)
+                print("""{"t":'%(t)s',"i":'%(i)s',"n":'%(n)s',"v":'%(v)s',"g":'%(g)s',"d":'%(d)s',"z":'%(z)s'}""" % plugin, file=fp)
             fp.close()
         else:
             # just update the lines from these addons:
-            added = False
             for plugin in sorted(listings, key=lambda p: (p["t"], p["i"])):
                 fp_in = open("../listings/addons-%s.txt" % lang, "r")
                 fp_out = open("../listings/addons-%s.new" % lang, "w")
+                added = False
                 for line in fp_in:
                     dictionary = eval(line)
                     if cmd_arg + ".addon.tgz" in line:
-                        print('{"t":%(t)s,"i":%(i)s,"n":%(n)s,"v":%(v)s,"g":%(g)s,"d":%(d)s,"z":%(z)s}' % plugin, file=fp_out)
+                        #print("UPDATED")
+                        print("""{"t":'%(t)s',"i":'%(i)s',"n":'%(n)s',"v":'%(v)s',"g":'%(g)s',"d":'%(d)s',"z":'%(z)s'}""" % plugin, file=fp_out)
                         added = True
-                    else:
-                        if plugin["t"] > dictionary["t"] and not added:
-                            print('{"t":%(t)s,"i":%(i)s,"n":%(n)s,"v":%(v)s,"g":%(g)s,"d":%(d)s,"z":%(z)s}' % plugin, file=fp_out)
-                            added = True
+                    elif ((plugin["t"], plugin["i"]) < (dictionary["t"], dictionary["i"])) and not added:
+                        #print("ADDED in middle")
+                        print("""{"t":'%(t)s',"i":'%(i)s',"n":'%(n)s',"v":'%(v)s',"g":'%(g)s',"d":'%(d)s',"z":'%(z)s'}""" % plugin, file=fp_out)
+                        added = True
                         print(line, end="", file=fp_out)
+                    else:
+                        print(line, end="", file=fp_out)
+                if not added:
+                    #print("ADDED at end")
+                    print("""{"t":'%(t)s',"i":'%(i)s',"n":'%(n)s',"v":'%(v)s',"g":'%(g)s',"d":'%(d)s',"z":'%(z)s'}""" % plugin, file=fp_out)
                 fp_in.close()
                 fp_out.close()
                 shutil.move("../listings/addons-%s.new" % lang, "../listings/addons-%s.txt" % lang)
+                    
 else:
-    raise AttributeError("unknown command; Use clean, init, update, build, or listing")
+    raise AttributeError("unknown command")
