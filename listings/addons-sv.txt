@@ -48,6 +48,7 @@
 {"t":'Report',"i":'SourcesCitationsReport',"n":'Sources and Citations Report',"v":'1.0.2',"g":'4.1',"d":'Provides a source and Citations with notes',"z":'SourcesCitationsReport.addon.tgz'}
 {"t":'Report',"i":'TodoReport',"n":u'Todo Report',"v":'1.2.19',"g":'4.1',"d":u'Produces a list of all the notes with a given tag along with the records that it references, the Person, Family, Event, etc.',"z":'ToDoReport.addon.tgz'}
 {"t":'Report',"i":'census_report',"n":u'Folkr\xe4kningsrapport',"v":'1.0.28',"g":'4.1',"d":u'Rapport \xf6ver folkr\xe4kningsh\xe4ndelser f\xf6r en person',"z":'Census.addon.tgz'}
+{"t":'Report',"i":'d3-descendantindentedtree',"n":'Descendant Indented Tree',"v":'1.0.1',"g":'4.1',"d":'Generates a web page with a graphical representation of descendants (SVG) representedas a Collapsible Indented Tree Layout from the D3.js JavaScript library.',"z":'D3Charts.addon.tgz'}
 {"t":'Report',"i":'database-differences-report',"n":'Database Differences Report',"v":'1.0.6',"g":'4.1',"d":'Compares an external database with the current one.',"z":'Differences.addon.tgz'}
 {"t":'Tool',"i":'AttachSource',"n":u'Koppla k\xe4lla',"v":'0.0.23',"g":'4.1',"d":u'Kopplar en delad k\xe4lla till flera objekt.',"z":'AttachSourceTool.addon.tgz'}
 {"t":'Tool',"i":'PlaceCompletion',"n":u'Platskomplettering',"v":'0.0.27',"g":'4.1',"d":u'L\xe4mnar en bl\xe4ddringsbar lista p\xe5 valda platser, med m\xf6jlighet att komplettera/avs\xf6ka/s\xe4tta attributf\xe4ltet.',"z":'PlaceCompletion.addon.tgz'}
