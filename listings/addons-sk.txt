@@ -47,6 +47,7 @@
 {"t":u'Report',"i":'Repositories Report',"n":u'Spr\xe1va o arch\xedvoch',"v":'1.1.13',"g":'4.0',"d":u'Poskytuje textov\xfa spr\xe1vu o arch\xedvoch',"z":'RepositoriesReport.addon.tgz'}
 {"t":u'Report',"i":'TodoReport',"n":u'Todo Report',"v":'1.2.16',"g":'4.0',"d":u'Produces a list of all the notes with a given tag along with the records that it references, the Person, Family, Event, etc.',"z":'ToDoReport.addon.tgz'}
 {"t":u'Report',"i":'census_report',"n":u'Census Report',"v":'1.0.31',"g":'4.0',"d":u'Report of census events for a person.',"z":'Census.addon.tgz'}
+{"t":'Report',"i":'d3-descendantindentedtree',"n":'Descendant Indented Tree',"v":'1.0.1',"g":'4.0',"d":'Generates a web page with a graphical representation of descendants (SVG) representedas a Collapsible Indented Tree Layout from the D3.js JavaScript library.',"z":'D3Charts.addon.tgz'}
 {"t":u'Report',"i":'database-differences-report',"n":u'Database Differences Report',"v":'1.0.4',"g":'4.0',"d":u'Compares an external database with the current one.',"z":'Differences.addon.tgz'}
 {"t":u'Tool',"i":'AttachSource',"n":u'Attach Source',"v":'0.0.21',"g":'4.0',"d":u'Attaches a shared source to multiple objects.',"z":'AttachSourceTool.addon.tgz'}
 {"t":u'Tool',"i":'PlaceCompletion',"n":u'PlaceCompletion',"v":'0.0.22',"g":'4.0',"d":u'Poskytuje zoznam vybran\xfdch miest ktor\xfd je mo\u017en\xe9 prezera\u0165 s mo\u017enos\u0165ou dopl\u0148ova\u0165/triedi\u0165/nastavi\u0165 atrib\xfaty pol\xed',"z":'PlaceCompletion.addon.tgz'}

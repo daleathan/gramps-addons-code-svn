@@ -47,6 +47,7 @@
 {"t":u'Report',"i":'Repositories Report',"n":u'Repositories Report',"v":'1.1.13',"g":'4.0',"d":u'Produces a textual repositories report',"z":'RepositoriesReport.addon.tgz'}
 {"t":u'Report',"i":'TodoReport',"n":u'Todo Report',"v":'1.2.16',"g":'4.0',"d":u'Produces a list of all the notes with a given tag along with the records that it references, the Person, Family, Event, etc.',"z":'ToDoReport.addon.tgz'}
 {"t":u'Report',"i":'census_report',"n":u'Census Report',"v":'1.0.31',"g":'4.0',"d":u'Report of census events for a person.',"z":'Census.addon.tgz'}
+{"t":'Report',"i":'d3-descendantindentedtree',"n":'Descendant Indented Tree',"v":'1.0.1',"g":'4.0',"d":'Generates a web page with a graphical representation of descendants (SVG) representedas a Collapsible Indented Tree Layout from the D3.js JavaScript library.',"z":'D3Charts.addon.tgz'}
 {"t":u'Report',"i":'database-differences-report',"n":u'Database Differences Report',"v":'1.0.4',"g":'4.0',"d":u'Compares an external database with the current one.',"z":'Differences.addon.tgz'}
 {"t":u'Tool',"i":'AttachSource',"n":u'L\xe4hteen liitt\xe4minen',"v":'0.0.21',"g":'4.0',"d":u'Liitt\xe4\xe4 jaetun l\xe4hteen moneen kohteeseen.',"z":'AttachSourceTool.addon.tgz'}
 {"t":u'Tool',"i":'PlaceCompletion',"n":u'PlaceCompletion',"v":'0.0.22',"g":'4.0',"d":u'Provides a browsable list of selected places, with possibility to complete/parse/set the attribute fields.',"z":'PlaceCompletion.addon.tgz'}
