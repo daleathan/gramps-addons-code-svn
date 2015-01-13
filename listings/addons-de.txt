@@ -35,6 +35,7 @@
 {"t":u'Quickreport',"i":'NumberOfDescendantsQuickview',"n":u'Anzahl der Nachkommen',"v":'3.4.16',"g":'4.0',"d":u'Zeigt die Anzahl der Nachkommen der aktuellen Person an',"z":'NumberOfDescendantsQuickview.addon.tgz'}
 {"t":u'Quickreport',"i":'allnames',"n":u'Alle Namen aller Personen',"v":'1.0.16',"g":'4.0',"d":u'Zeigt alle Namen aller Personen',"z":'AllNamesQuickview.addon.tgz'}
 {"t":u'Quickreport',"i":'timelinequickview',"n":u'Zeitleiste',"v":'1.0.18',"g":'4.0',"d":u'Zeigt Ereignisse einer Person auf einer Zeitleiste',"z":'TimelineQuickview.addon.tgz'}
+{"t":'Report',"i":'DetDescendantBook',"n":'Detailed Descendand Book',"v":'1.0.3',"g":'4.0',"d":'Produces one or more detaied descendant reports based on a supplied query.',"z":'DescendantBooks.addon.tgz'}
 {"t":u'Report',"i":'Descendants Lines',"n":u'Nachkommen Linien',"v":'0.1.19',"g":'4.0',"d":u'Erstellt Nachkommenlinien einer Person',"z":'DescendantsLines.addon.tgz'}
 {"t":u'Report',"i":'FamilySheet',"n":u'Familienblatt',"v":'3.4.21',"g":'4.0',"d":u'Erstellt ein Familienblatt, das vollst\xe4ndige Informationen \xfcber eine Person und ihre Partner und Kinder enth\xe4lt.',"z":'FamilySheet.addon.tgz'}
 {"t":'Report',"i":'FamilyTree',"n":u'Stammbaum',"v":'4.0.4',"g":'4.0',"d":u'Erzeugt einen grafischen Stammbaum.',"z":'FamilyTree.addon.tgz'}
