@@ -24,7 +24,7 @@
 {"t":'Gramps View',"i":'graphview',"n":u'Graphenansicht',"v":'1.0.43',"g":'4.1',"d":u'Dynamischer Beziehungengraph',"z":'GraphView.addon.tgz'}
 {"t":'Importer',"i":'im_sqlite',"n":u'SQLite Import',"v":'1.0.23',"g":'4.1',"d":u'SQLite ist ein gebr\xe4uchliches lokales Datenbankformat',"z":'Sqlite.addon.tgz'}
 {"t":'Importer',"i":'import_django',"n":u'Django Import',"v":'1.0.24',"g":'4.1',"d":u'Django ist ein Web Programmger\xfcst das auf einer konfigurierten Datenbank arbeitet',"z":'Django.addon.tgz'}
-{"t":'Map service',"i":'GoogleEarth',"n":u'GoogleEarth',"v":'1.0.29',"g":'4.1',"d":u'Erstellt Datendatei f\xfcr GoogleEarth und \xf6ffnet sie',"z":'GoogleEarthWriteKML.addon.tgz'}
+{"t":'Map service',"i":'GoogleEarth',"n":'GoogleEarth',"v":'1.0.30',"g":'4.1',"d":'Erstellt Datendatei für GoogleEarth und öffnet sie',"z":'GoogleEarthWriteKML.addon.tgz'}
 {"t":'Plugin lib',"i":'DE Web Connect Pack',"n":u'DE Web Connect Pack',"v":'0.0.14',"g":'4.1',"d":u'Sammlung von Webseiten f\xfcr DE (ben\xf6tigt libwebconnect)',"z":'DEWebConnectPack.addon.tgz'}
 {"t":'Plugin lib',"i":'FR Web Connect Pack',"n":u'FR Web Verkn\xfcpfungspaket',"v":'1.0.20',"g":'4.1',"d":u'Sammlung von Webseiten f\xfcr FR (ben\xf6tigt libwebconnect)',"z":'FRWebConnectPack.addon.tgz'}
 {"t":'Plugin lib',"i":'UK Web Connect Pack',"n":u'UK Web Verkn\xfcpfungspaket',"v":'1.0.27',"g":'4.1',"d":u'Sammlung von Webseiten f\xfcr UK (ben\xf6tigt libwebconnect)',"z":'UKWebConnectPack.addon.tgz'}
