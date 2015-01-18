@@ -37,7 +37,7 @@
 {"t":'Quickreport',"i":'timelinequickview',"n":'Tidslinje',"v":'1.0.20',"g":'4.1',"d":'Visar händelser för en person på en tidslinje',"z":'TimelineQuickview.addon.tgz'}
 {"t":'Report',"i":'Descendants Lines',"n":'Descendants Lines',"v":'0.1.21',"g":'4.1',"d":'Produces descendants lines of a person',"z":'DescendantsLines.addon.tgz'}
 {"t":'Report',"i":'FamilySheet',"n":'Familjeark',"v":'3.4.23',"g":'4.1',"d":'Skapar ett familjeark visande all information om en person och dennes partner och barn.',"z":'FamilySheet.addon.tgz'}
-{"t":'Report',"i":'FamilyTree',"n":'Släktträd',"v":'4.1.4',"g":'4.1',"d":'Skapar ett grafiskt släktträd.',"z":'FamilyTree.addon.tgz'}
+{"t":'Report',"i":'FamilyTree',"n":'Släktträd',"v":'4.1.5',"g":'4.1',"d":'Skapar ett grafiskt släktträd.',"z":'FamilyTree.addon.tgz'}
 {"t":'Report',"i":'LastChangeReport',"n":'Rapport över senaste ändringar',"v":'0.0.22',"g":'4.1',"d":'Rapport över de poster, som har ändrats senast',"z":'LastChange.addon.tgz'}
 {"t":'Report',"i":'LinesOfDescendency',"n":'Lines of Descendency Report',"v":'1.1.22',"g":'4.1',"d":'Prints out all descendency lines from a given ancestor to a given descendent in text.',"z":'LinesOfDescendency.addon.tgz'}
 {"t":'Report',"i":'ListeEclair',"n":'Tiny Tafel',"v":'1.0.13',"g":'4.1',"d":'Produces a tiny tafel',"z":'ListeEclair.addon.tgz'}
