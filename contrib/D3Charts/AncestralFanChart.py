@@ -201,7 +201,7 @@ class AncestralFanChartReport(Report):
         """
         
         gen_pad = (generation-1) * 2
-        self.json_fp.write('%s{\n' % (self.pad_str(gen_pad)))
+        self.jjsson_fp.write('%s{\n' % (self.pad_str(gen_pad)))
         self.json_fp.write('%s"name": "",\n' %
             (self.pad_str(gen_pad+1)))
         self.json_fp.write('%s"gender": "%s",\n' %
@@ -258,7 +258,7 @@ class AncestralFanChartReport(Report):
         name = self._name_display.display(person)
         self.json_fp.write('%s{\n' % (self.pad_str(gen_pad)))
         self.json_fp.write('%s"name": "%s",\n' %
-            (self.pad_str(gen_pad+1), name))
+            (self.pad_str(gen_pad+1), name.replace('"', "'")))
         self.json_fp.write('%s"gender": "%s",\n' %
             (self.pad_str(gen_pad+1), self.get_gender_str(person)))
 
