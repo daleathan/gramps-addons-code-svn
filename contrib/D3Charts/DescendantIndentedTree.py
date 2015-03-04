@@ -254,7 +254,7 @@ class Printinfo():
             self.json_fp.write('%s"display_num": "%s",\n' %
                 (self.pad_str(gen_pad+1), "sp."))
             self.json_fp.write('%s"name": "%s",\n' %
-                (self.pad_str(gen_pad+1), name))
+                (self.pad_str(gen_pad+1), name.replace('"', "'")))
             self.json_fp.write('%s"spouse": "%s",\n' %
                 (self.pad_str(gen_pad+1), "true"))
             self.dump_string(spouse, level, family_handle)
@@ -264,7 +264,7 @@ class Printinfo():
             self.json_fp.write('%s"display_num": "%s",\n' %
                 (self.pad_str(gen_pad+1), "sp."))
             self.json_fp.write('%s"name": "%s",\n' %
-                (self.pad_str(gen_pad+1), name))
+                (self.pad_str(gen_pad+1), name.replace('"', "'")))
             self.json_fp.write('%s"spouse": "%s"\n' %
                 (self.pad_str(gen_pad+1), "true"))
 
@@ -280,7 +280,7 @@ class Printinfo():
             self.json_fp.write('%s"display_num": "%s",\n' %
                 (self.pad_str(gen_pad+1), "sp."))
             self.json_fp.write('%s"name": "%s",\n' %
-                (self.pad_str(gen_pad+1), name))
+                (self.pad_str(gen_pad+1), name.replace('"', "'")))
             self.json_fp.write('%s"spouse": "%s"\n' %
                 (self.pad_str(gen_pad+1), "true"))
 
