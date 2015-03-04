@@ -1,4 +1,4 @@
-{"t":'Report',"i":'DetDescendantBook',"n":'Detailed Descendand Book',"v":'1.0.2',"g":'3.4',"d":'Produces one or more detaied descendant reports based on a supplied query.',"z":'DescendantBooks.addon.tgz'}
+{"t":'Report',"i":'DetailedDescendantBook',"n":'Detailed Descendant Book',"v":'1.0.4',"g":'3.4',"d":'Produces one or more detaied descendant reports based on a supplied query.',"z":'DescendantBooks.addon.tgz'}
 {"t":u'Report',"i":'PedigreeChart',"n":'Pedigree Chart',"v":'1.0.12',"g":'3.4',"d":'Alternate version of the traditional pedigree chart.',"z":'PedigreeChart.addon.tgz'}
 {"t":u'Report',"i":'PersonEverythingReport',"n":'PersonEverything Report',"v":'1.0.2',"g":'3.4',"d":'Produces a report containing everything about the active person',"z":'PersonEverything.addon.tgz'}
 {"t":u'Report',"i":'FamilyTree',"n":'Arbre familial',"v":'3.4.15',"g":'3.4',"d":'Gera uma \xc3\xa1rvore geneal\xc3\xb3gica gr\xc3\xa1fica',"z":'FamilyTree.addon.tgz'}

@@ -1,4 +1,4 @@
-{"t":'Report',"i":'DetDescendantBook',"n":'Detailed Descendand Book',"v":'1.0.2',"g":'3.4',"d":'Produces one or more detaied descendant reports based on a supplied query.',"z":'DescendantBooks.addon.tgz'}
+{"t":'Report',"i":'DetailedDescendantBook',"n":'Detailed Descendant Book',"v":'1.0.4',"g":'3.4',"d":'Produces one or more detaied descendant reports based on a supplied query.',"z":'DescendantBooks.addon.tgz'}
 {"t":u'Report',"i":'PedigreeChart',"n":'Arbre graphique',"v":'1.0.12',"g":'3.4',"d":"Version alternative de l'arbre graphique traditionnel.","z":'PedigreeChart.addon.tgz'}
 {"t":u'Report',"i":'PersonEverythingReport',"n":'Rapport Tout sur la personne',"v":'1.0.2',"g":'3.4',"d":'Produit un rapport contenant tout sur la personne active',"z":'PersonEverything.addon.tgz'}
 {"t":u'Report',"i":'FamilyTree',"n":'Arbre familial',"v":'3.4.15',"g":'3.4',"d":'Produit un arbre familial sous forme graphique.',"z":'FamilyTree.addon.tgz'}
