@@ -389,7 +389,7 @@ class AncestralFanChartReport(Report):
                     '</html>\n'
                 fp.write(outstr)
 
-        except IOError,msg:
+        except IOError as msg:
             ErrorDialog(_("Failed writing %s: %s") % (self.destfile, str(msg)))
             return
 
@@ -634,7 +634,7 @@ class AncestralFanChartReport(Report):
                 fp.write('if (top != self) top.location.' +
                     'replace(location);\n')
 
-        except IOError,msg:
+        except IOError as msg:
             ErrorDialog(_("Failed writing %s: %s") % (dest_js, str(msg)))
             return
 
@@ -660,7 +660,7 @@ class AncestralFanChartReport(Report):
                 self.json_fp.write(']')
 
 
-        except IOError,msg:
+        except IOError as msg:
             ErrorDialog(_("Failed writing %s: %s") % (dest_json, str(msg)))
             return
 

@@ -527,7 +527,7 @@ class DescendantIndentedTreeReport(Report):
                     '</html>\n'
                 fp.write(outstr)
 
-        except IOError,msg:
+        except IOError as msg:
             ErrorDialog(_("Failed writing %s: %s") % (self.destfile, str(msg)))
             return
 
@@ -744,7 +744,7 @@ class DescendantIndentedTreeReport(Report):
                     'd.children ? "#c6dbef" : "#fd8d3c";\n')
                 fp.write('}\n')
 
-        except IOError,msg:
+        except IOError as msg:
             ErrorDialog(_("Failed writing %s: %s") % (dest_js, str(msg)))
             return
 
@@ -759,7 +759,7 @@ class DescendantIndentedTreeReport(Report):
                                       self.divs)
                 recurse.recurse(generation, self.center_person, None)
 
-        except IOError,msg:
+        except IOError as msg:
             ErrorDialog(_("Failed writing %s: %s") % (dest_json, str(msg)))
             return
 
