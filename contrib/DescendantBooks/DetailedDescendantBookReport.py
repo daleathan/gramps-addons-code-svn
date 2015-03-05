@@ -266,7 +266,7 @@ class DetailedDescendantBookReport(Report):
     def apply_mod_reg_filter(self, person_handle):
         self.apply_mod_reg_filter_aux(person_handle, 1, 1)
         mod_reg_number = 1
-        for generation in xrange(len(self.gen_keys)):
+        for generation in range(len(self.gen_keys)):
             for key in self.gen_keys[generation]:
                 person_handle = self.map[key]
                 if person_handle not in self.dnumber:
@@ -338,7 +338,7 @@ class DetailedDescendantBookReport(Report):
                                         self.numbering)
 
                 self.generation = 0
-                for self.generation in xrange(len(self.gen_keys)):
+                for self.generation in range(len(self.gen_keys)):
 
                     if self.childref:
                         self.prev_gen_handles = self.gen_handles.copy()
@@ -414,7 +414,7 @@ class DetailedDescendantBookReport(Report):
             self.generation = 0
 
             self.numbers_printed = list()
-            for self.generation in xrange(len(self.gen_keys)):
+            for self.generation in range(len(self.gen_keys)):
                 if self.pgbrk and self.generation > 0:
                     self.doc.page_break()
                 self.doc.start_paragraph("DDR-Generation")

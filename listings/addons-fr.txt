@@ -35,7 +35,7 @@
 {"t":'Quickreport',"i":'NumberOfDescendantsQuickview',"n":'Nombre de descendants',"v":'3.4.16',"g":'4.0',"d":'Affiche le nombre de descendants de l\'individu actif',"z":'NumberOfDescendantsQuickview.addon.tgz'}
 {"t":'Quickreport',"i":'allnames',"n":'Tous les noms pour tous les individus',"v":'1.0.16',"g":'4.0',"d":'Affiche tous les noms de tous les individus',"z":'AllNamesQuickview.addon.tgz'}
 {"t":'Quickreport',"i":'timelinequickview',"n":'Graphique temporel',"v":'1.0.18',"g":'4.0',"d":'Affiche les événements d\'une personne tout au long de sa vie',"z":'TimelineQuickview.addon.tgz'}
-{"t":'Report',"i":'DetailedDescendantBook',"n":'Detailed Descendant Book',"v":'1.0.1',"g":'4.0',"d":'Produces one or more detailed descendant reports based on a supplied query.',"z":'DescendantBooks.addon.tgz'}
+{"t":'Report',"i":'DetailedDescendantBook',"n":'Detailed Descendant Book',"v":'1.0.2',"g":'4.0',"d":'Produces one or more detailed descendant reports based on a supplied query.',"z":'DescendantBooks.addon.tgz'}
 {"t":'Report',"i":'Descendants Lines',"n":'Lignes des descendants',"v":'0.1.19',"g":'4.0',"d":'Produit les lignes de descendants de l\'individu',"z":'DescendantsLines.addon.tgz'}
 {"t":'Report',"i":'FamilySheet',"n":'Résumé familial',"v":'3.4.21',"g":'4.0',"d":'Produit un résumé familial montrant les informations complètes sur l\'individu, ses conjoints et enfants.',"z":'FamilySheet.addon.tgz'}
 {"t":'Report',"i":'FamilyTree',"n":'Arbre familial',"v":'4.0.4',"g":'4.0',"d":'Produit un arbre familial sous forme graphique.',"z":'FamilyTree.addon.tgz'}

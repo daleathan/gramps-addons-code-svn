@@ -21,6 +21,7 @@
 # standard python modules
 #
 #------------------------------------------------------------------------
+from __future__ import print_function
 import copy
 
 #------------------------------------------------------------------------
@@ -57,7 +58,7 @@ class CollectAscendants():
         """
         for person_handle in handles:
             person = self.database.get_person_from_handle(person_handle)
-            print person.gramps_id, person.get_primary_name().get_name()
+            print(person.gramps_id, person.get_primary_name().get_name())
 
     def __get_mate_handles(self, person):
         """

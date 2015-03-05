@@ -77,15 +77,15 @@ def RunReport(dbstate, uistate, mod_str, name, trans_name, report_str, options_s
                     out_file = dialog.options.get_output()
                     open_file_with_default_application(out_file)
             
-            except Errors.FilterError, msg:
+            except Errors.FilterError as msg:
                 (m1, m2) = msg.messages()
                 ErrorDialog(m1, m2)
-            except IOError, msg:
+            except IOError as msg:
                 ErrorDialog(_("Report could not be created"), str(msg))
-            except Errors.ReportError, msg:
+            except Errors.ReportError as msg:
                 (m1, m2) = msg.messages()
                 ErrorDialog(m1, m2)
-            except Errors.DatabaseError,msg:                
+            except Errors.DatabaseError as msg:                
                 ErrorDialog(_("Report could not be created"), str(msg))
                 raise
             except:
