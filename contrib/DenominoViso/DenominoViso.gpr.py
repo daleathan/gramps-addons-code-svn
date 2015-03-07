@@ -7,7 +7,7 @@ register(REPORT,
     id = 'denominoviso',
     name = _('DenominoViso'),
     category = CATEGORY_WEB,
-    status = UNSTABLE, # not yet tested with python 3, number of arguments and widget
+    status = STABLE, # number of arguments and widget
     fname = 'DenominoViso.py',
     reportclass = 'DenominoVisoReport',
     optionclass = 'DenominoVisoOptions',
@@ -18,6 +18,6 @@ register(REPORT,
                     'representation of ancestors/descendants (SVG) '
                     'where details about individuals become visible '
                     'upon mouse-events.'),
-    version = '2.3.19',
+    version = '2.3.21',
     gramps_target_version = '4.1',
 )
