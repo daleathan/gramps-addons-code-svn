@@ -51,8 +51,10 @@ from Errors import ReportError
 from gen.lib import ChildRefType
 from gen.plug.menu import (ColorOption, NumberOption, PersonOption,
                           EnumeratedListOption, DestinationOption, StringOption)
+import config
 from gen.plug.report import Report
 from gen.plug.report import MenuReportOptions
+from QuestionDialog import ErrorDialog
 
 #------------------------------------------------------------------------
 #
@@ -81,7 +83,8 @@ class AncestralFanChartReport(Report):
         name_format - Preferred format to display names
         pat_bg      - Background color for paternal ancestors
         mat_bg      - Background color for maternal ancestors
-        destfile    - Destination HTML filename
+        dest_path   - Destination Path
+        dest_file   - Destination HTML filename
         """
         Report.__init__(self, database, options, user)
 
@@ -92,15 +95,18 @@ class AncestralFanChartReport(Report):
         self.max_gen = menu.get_option_by_name('maxgen').get_value()
         self.pat_bg = menu.get_option_by_name('pat_bg').get_value()
         self.mat_bg = menu.get_option_by_name('mat_bg').get_value()
-        self.destfile = unicode(
-            menu.get_option_by_name('destfile').get_value())
-        self.destpath = os.path.dirname(self.destfile)
+        self.dest_path = unicode(
+            menu.get_option_by_name('dest_path').get_value())
+        self.dest_file = unicode(
+            menu.get_option_by_name('dest_file').get_value())
         self.destprefix, self.destext = \
-            os.path.splitext(os.path.basename(self.destfile))
-        self.destjson = os.path.join(self.destpath, "json",
-                                     "%s.json" % (self.destprefix))
-        self.destjs = os.path.join(self.destpath, "js",
-                                   "%s.js" % (self.destprefix))
+            os.path.splitext(os.path.basename(self.dest_file))
+        self.destjson = unicode(os.path.join(self.dest_path, "json",
+                                     "%s.json" % (self.destprefix)))
+        self.destjs = unicode(os.path.join(self.dest_path, "js",
+                                   "%s.js" % (self.destprefix)))
+        self.desthtml = unicode(os.path.join(self.dest_path,
+                                     os.path.basename(self.dest_file)))
 
         pid = menu.get_option_by_name('pid').get_value()
         self.center_person = database.get_person_from_gramps_id(pid)
@@ -351,7 +357,7 @@ class AncestralFanChartReport(Report):
         name = self._name_display.display(self.center_person)
         title = "Ancestral Fan Chart for " + name
         try:
-            with io.open(self.destfile, 'w', encoding='utf8') as fp:
+            with io.open(self.desthtml, 'w', encoding='utf8') as fp:
                 # Generate HTML File
                 outstr = '<!DOCTYPE html>\n' + \
                     '<html>\n' + \
@@ -384,23 +390,23 @@ class AncestralFanChartReport(Report):
                 fp.write(outstr)
 
         except IOError,msg:
-            ErrorDialog(_("Failed writing %s: %s") % (self.destfile, str(msg)))
+            ErrorDialog(_("Failed writing %s: %s") % (self.desthtml, str(msg)))
             return
 
         # Create required directory structure
         try:
-            if not os.path.exists(os.path.join(self.destpath, "css")):
-                os.mkdir(os.path.join(self.destpath, "css"))
-            if not os.path.exists(os.path.join(self.destpath, "images")):
-                os.mkdir(os.path.join(self.destpath, "images"))
-            if not os.path.exists(os.path.join(self.destpath, "js")):
-                os.mkdir(os.path.join(self.destpath, "js"))
-            if not os.path.exists(os.path.join(self.destpath, "js", "d3")):
-                os.mkdir(os.path.join(self.destpath, "js", "d3"))
-            if not os.path.exists(os.path.join(self.destpath, "js", "jquery")):
-                os.mkdir(os.path.join(self.destpath, "js", "jquery"))
-            if not os.path.exists(os.path.join(self.destpath, "json")):
-                os.mkdir(os.path.join(self.destpath, "json"))
+            if not os.path.exists(os.path.join(self.dest_path, "css")):
+                os.mkdir(os.path.join(self.dest_path, "css"))
+            if not os.path.exists(os.path.join(self.dest_path, "images")):
+                os.mkdir(os.path.join(self.dest_path, "images"))
+            if not os.path.exists(os.path.join(self.dest_path, "js")):
+                os.mkdir(os.path.join(self.dest_path, "js"))
+            if not os.path.exists(os.path.join(self.dest_path, "js", "d3")):
+                os.mkdir(os.path.join(self.dest_path, "js", "d3"))
+            if not os.path.exists(os.path.join(self.dest_path, "js", "jquery")):
+                os.mkdir(os.path.join(self.dest_path, "js", "jquery"))
+            if not os.path.exists(os.path.join(self.dest_path, "json")):
+                os.mkdir(os.path.join(self.dest_path, "json"))
         except OSError as why:
             ErrorDialog(_("Failed to create directory structure : %s") % (why))
             return
@@ -409,20 +415,20 @@ class AncestralFanChartReport(Report):
             # Copy/overwrite css/images/js files
             plugin_dir = os.path.dirname(__file__)
             shutil.copy(os.path.join(plugin_dir, "css", "fanchart.css"),
-                os.path.join(self.destpath, "css"))
+                os.path.join(self.dest_path, "css"))
             shutil.copy(os.path.join(plugin_dir, "images", "male.png"),
-                os.path.join(self.destpath, "images"))
+                os.path.join(self.dest_path, "images"))
             shutil.copy(os.path.join(plugin_dir, "images", "female.png"),
-                os.path.join(self.destpath, "images"))
+                os.path.join(self.dest_path, "images"))
             shutil.copy(
                 os.path.join(plugin_dir, "images", "texture-noise.png"),
-                os.path.join(self.destpath, "images"))
+                os.path.join(self.dest_path, "images"))
             shutil.copy(os.path.join(plugin_dir, "js", "d3", "d3.min.js"),
-                os.path.join(self.destpath, "js", "d3"))
+                os.path.join(self.dest_path, "js", "d3"))
             shutil.copy(
                 os.path.join(
                     plugin_dir, "js", "jquery", "jquery-2.0.3.min.js"),
-                os.path.join(self.destpath, "js", "jquery"))
+                os.path.join(self.dest_path, "js", "jquery"))
         except OSError as why:
             ErrorDialog(_("Failed to copy web files : %s") % (why))
             return
@@ -715,7 +721,12 @@ class AncestralFanChartOptions(MenuReportOptions):
         mat_bg.set_help(_("RGB-color for maternal box background."))
         menu.add_option(category_name, "mat_bg", mat_bg)
 
-        destfile = DestinationOption(_("Destination"),
-            os.path.join(os.getcwd(), "AncestralFanChart.html"))
-        destfile.set_help(_("The destination file for html content."))
-        menu.add_option(category_name, "destfile", destfile)
+        dest_path = DestinationOption(_("Destination"),
+            config.get('paths.website-directory'))
+        dest_path.set_help(_("The destination path for generated files."))
+        dest_path.set_directory_entry(True)
+        menu.add_option(category_name, "dest_path", dest_path)
+
+        dest_file = StringOption(_("Filename"), "AncestralFanChart.html")
+        dest_file.set_help(_("The destination file name for html content."))
+        menu.add_option(category_name, "dest_file", dest_file)
