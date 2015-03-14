@@ -35,8 +35,10 @@
 {"t":'Quickreport',"i":'NumberOfDescendantsQuickview',"n":'Nombre de descendants',"v":'3.4.18',"g":'4.1',"d":'Affiche le nombre de descendants de l\'individu actif',"z":'NumberOfDescendantsQuickview.addon.tgz'}
 {"t":'Quickreport',"i":'allnames',"n":'Tous les noms pour tous les individus',"v":'1.0.17',"g":'4.1',"d":'Affiche tous les noms de tous les individus',"z":'AllNamesQuickview.addon.tgz'}
 {"t":'Quickreport',"i":'timelinequickview',"n":'Graphique temporel',"v":'1.0.20',"g":'4.1',"d":'Affiche les événements d\'une personne tout au long de sa vie',"z":'TimelineQuickview.addon.tgz'}
-{"t":'Report',"i":'DetailedDescendantBook',"n":'Detailed Descendant Book',"v":'1.0.1',"g":'4.1',"d":'Produces one or more detailed descendant reports based on a supplied query.',"z":'DescendantBooks.addon.tgz'}
+{"t":'Report',"i":'AncestorFill',"n":'Remplissage de l\'arbre',"v":'1.0.5',"g":'4.1',"d":'Rapport sur le remplissage de l\'arbre.',"z":'AncestorFill.addon.tgz'}
+{"t":'Report',"i":'DescendantBook',"n":'Descendant Book',"v":'1.0.1',"g":'4.1',"d":'Produces one or more descendant reports based on a supplied query.',"z":'DescendantBooks.addon.tgz'}
 {"t":'Report',"i":'Descendants Lines',"n":'Lignes des descendants',"v":'0.1.21',"g":'4.1',"d":'Produit les lignes de descendants de l\'individu',"z":'DescendantsLines.addon.tgz'}
+{"t":'Report',"i":'DetailedDescendantBook',"n":'Detailed Descendant Book',"v":'1.0.1',"g":'4.1',"d":'Produces one or more detailed descendant reports based on a supplied query.',"z":'DescendantBooks.addon.tgz'}
 {"t":'Report',"i":'FamilySheet',"n":'Résumé familial',"v":'3.4.23',"g":'4.1',"d":'Produit un résumé familial montrant les informations complètes sur l\'individu, ses conjoints et enfants.',"z":'FamilySheet.addon.tgz'}
 {"t":'Report',"i":'FamilyTree',"n":'Arbre familial',"v":'4.1.5',"g":'4.1',"d":'Produit un arbre familial sous forme graphique.',"z":'FamilyTree.addon.tgz'}
 {"t":'Report',"i":'LastChangeReport',"n":'Rapport Dernières modifications',"v":'0.0.22',"g":'4.1',"d":'Rapport pour les derniers enregistrements modifiés',"z":'LastChange.addon.tgz'}
@@ -49,6 +51,8 @@
 {"t":'Report',"i":'SourcesCitationsReport',"n":'Rapport de sources et citations',"v":'1.0.3',"g":'4.1',"d":'Fournit une source et ses citations avec les notes',"z":'SourcesCitationsReport.addon.tgz'}
 {"t":'Report',"i":'TodoReport',"n":'Rapport À Faire',"v":'1.2.19',"g":'4.1',"d":'Produit une liste de toutes les notes avec une étiquette donnée ainsi que les enregistrements qui les référencent, l\'individu, la famille, l\'événement, etc.',"z":'ToDoReport.addon.tgz'}
 {"t":'Report',"i":'census_report',"n":'Rapport de recensement',"v":'1.0.28',"g":'4.1',"d":'Les événements recensement de l\'individu.',"z":'Census.addon.tgz'}
+{"t":'Report',"i":'d3-ancestralcollapsibletree',"n":'Ancestral Collapsible Tree',"v":'1.0.5',"g":'4.1',"d":'Generates a web page with a graphical representation of ancestors (SVG) represented as a Collapsible Tree Layout from the D3.js JavaScript library.',"z":'D3Charts.addon.tgz'}
+{"t":'Report',"i":'d3-ancestralfanchart',"n":'Ancestral Fan Chart',"v":'1.0.5',"g":'4.1',"d":'Generates a web page with a graphical representation of ancestors (SVG) represented as a Fan Chart from the D3.js JavaScript library.',"z":'D3Charts.addon.tgz'}
 {"t":'Report',"i":'d3-descendantindentedtree',"n":'Descendant Indented Tree',"v":'1.0.5',"g":'4.1',"d":'Generates a web page with a graphical representation of descendants (SVG) representedas a Collapsible Indented Tree Layout from the D3.js JavaScript library.',"z":'D3Charts.addon.tgz'}
 {"t":'Report',"i":'database-differences-report',"n":'Rapport des différences dans la base de données',"v":'1.0.7',"g":'4.1',"d":'Compare une base de données externe avec la base actuelle.',"z":'Differences.addon.tgz'}
 {"t":'Report',"i":'denominoviso',"n":'DenominoViso',"v":'2.3.21',"g":'4.1',"d":'Génère une page internet (XHTML) avec une représentation graphique des ascendants/descendants (SVG) dont les détails des individus deviennent visibles avec les actions de la souris.',"z":'DenominoViso.addon.tgz'}
@@ -58,6 +62,7 @@
 {"t":'Tool',"i":'calculateestimateddates',"n":'Calcul des dates estimées',"v":'0.90.19',"g":'4.1',"d":'Calcul des dates estimées pour les naissances et décès.',"z":'CalculateEstimatedDates.addon.tgz'}
 {"t":'Tool',"i":'chgivenname',"n":'Réparer la casse des prénoms',"v":'1.0.21',"g":'4.1',"d":'Recherche dans toute la base de données et essaye de corriger la casse des prénoms.',"z":'ChangeGivenNames.addon.tgz'}
 {"t":'Tool',"i":'climerge',"n":'Command Line Merge',"v":'1.0.17',"g":'4.1',"d":'Fusionne les objets principaux via la ligne de commande',"z":'CliMerge.addon.tgz'}
+{"t":'Tool',"i":'downloadmedia',"n":'Télécharge des objets media depuis internet',"v":'1.0.1',"g":'4.1',"d":'Cet outil télécharge des fichiers depuis internet',"z":'DownloadMedia.addon.tgz'}
 {"t":'Tool',"i":'mediaverify',"n":'Vérification des media',"v":'1.0.7',"g":'4.1',"d":'Vérifier si l\'objet medium est présent avec le bon chemin ',"z":'MediaVerify.addon.tgz'}
 {"t":'Tool',"i":'placedebug',"n":'Place Debug Tool',"v":'1.0.1',"g":'4.1',"d":'Check for broken place links',"z":'PlaceDebug.addon.tgz'}
 {"t":'Tool',"i":'thumbgen',"n":'Générateur de miniature',"v":'1.0.13',"g":'4.1',"d":'Génère des miniatures de nos fichiers media',"z":'ThumbnailGenerator.addon.tgz'}
