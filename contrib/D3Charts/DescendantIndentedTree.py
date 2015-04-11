@@ -514,7 +514,7 @@ class Printinfo():
         else:
             delim = "_"
 
-        name_str = name.replace(" ", delim)
+        name_str = name.replace(" ", delim).lower()
         name_out = unicodedata.normalize('NFKD',
             unicode(name_str)).encode('ascii', 'ignore')
         name_out = ''.join(c for c in name_out if c in valid_filename_chars)
@@ -862,11 +862,11 @@ class DescendantIndentedTreeReport(Report):
         self.destprefix, self.destext = \
             os.path.splitext(os.path.basename(self.dest_file))
         self.destcss = unicode(os.path.join(
-            self.dest_path, "css", "indented-%s.css" % (self.destprefix)))
+            self.dest_path, "css", "indentedtree-%s.css" % (self.destprefix)))
         self.destjson = unicode(os.path.join(
-            self.dest_path, "json", "indented-%s.json" % (self.destprefix)))
+            self.dest_path, "json", "indentedtree-%s.json" % (self.destprefix)))
         self.destjs = unicode(os.path.join(
-            self.dest_path, "js", "indented-%s.js" % (self.destprefix)))
+            self.dest_path, "js", "indentedtree-%s.js" % (self.destprefix)))
         self.desthtml = unicode(os.path.join(
             self.dest_path, os.path.basename(self.dest_file)))
         self.arrows = menu.get_option_by_name('arrows').get_value()
@@ -1002,7 +1002,7 @@ class DescendantIndentedTreeReport(Report):
                     '    <link type="text/css" rel="stylesheet" ' + \
                     'href="css/d3.tip.css"/>\n' + \
                     '    <link type="text/css" rel="stylesheet" ' + \
-                    'href="css/indented-%s.css"/>\n' % (self.destprefix) + \
+                    'href="css/indentedtree-%s.css"/>\n' % (self.destprefix) + \
                     '  </head>\n' + \
                     '  <body>\n' + \
                     '    <div id="body">\n' + \
@@ -1032,8 +1032,8 @@ class DescendantIndentedTreeReport(Report):
                     '    </div>\n' + \
                     '    <div id="testString">\n' + \
                     '    </div>\n' + \
-                    '    <script type="text/javascript" src="js/indented' + \
-                    '-%s.js"></script>\n' % (self.destprefix) + \
+                    '    <script type="text/javascript" src="js/' + \
+                    'indentedtree-%s.js"></script>\n' % (self.destprefix) + \
                     '  </body>\n' + \
                     '</html>\n'
                 fp.write(outstr)
@@ -1130,8 +1130,9 @@ class DescendantIndentedTreeReport(Report):
                          'margin.right)\n')
                 fp.write(' .append("g").attr("class", "node_test");\n\n')
 
-                fp.write('d3.json("json/delaney.json", '
-                         'function(error, descendant) {\n')
+                fp.write('d3.json("json/indentedtree-%s.json", ' %
+                         (self.destprefix))
+                fp.write('function(error, descendant) {\n')
                 fp.write(' descendant.x0 = 0;\n')
                 fp.write(' descendant.y0 = 0; \n')
                 fp.write(' calc_max_width(root = descendant);\n')
@@ -1140,7 +1141,6 @@ class DescendantIndentedTreeReport(Report):
                 fp.write('  d3.select("svg").attr("width", '
                          'width + margin.left + margin.right);\n')
                 fp.write(' }\n')
-                fp.write(' console.log(width);\n')
                 fp.write('});\n\n')
 
                 fp.write('function calc_max_width(source) {\n')
@@ -1172,7 +1172,7 @@ class DescendantIndentedTreeReport(Report):
                     fp.write(' });\n\n')
                     fp.write('svg.call(tip);\n\n')
 
-                out_str='d3.json("json/indented-%s.json", ' % (self.destprefix)
+                out_str='d3.json("json/indentedtree-%s.json", ' % (self.destprefix)
                 fp.write(out_str + 'function(error, descendant) {\n')
                 fp.write(' descendant.x0 = 0;\n')
                 fp.write(' descendant.y0 = 0;\n')
