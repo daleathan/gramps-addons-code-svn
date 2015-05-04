@@ -11,17 +11,18 @@
 # $Id: $
 
 register(REPORT,
-id = 'DynamicWeb',
-name = _("Dynamic Web Report"),
-description =  _("Produces dynamic web pages for the database"),
-version = '0.0.21',
-gramps_target_version = '4.1',
-status = UNSTABLE,
-fname = 'dynamicweb.py',
-authors = ["Pierre Bélissent"],
-authors_email = ["pierre.belissent@gmail.com"],
-category = CATEGORY_WEB,
-reportclass = 'DynamicWebReport',
-optionclass = 'DynamicWebOptions',
-report_modes = [REPORT_MODE_GUI, REPORT_MODE_CLI]
+	id = 'DynamicWeb',
+	name = _("Dynamic Web Report"),
+	description =  _("Produces dynamic web pages for the database"),
+	version = '0.0.25',
+	gramps_target_version = '4.1',
+	status = UNSTABLE,
+	fname = 'dynamicweb.py',
+	category = CATEGORY_WEB,
+	reportclass = 'DynamicWebReport',
+	optionclass = 'DynamicWebOptions',
+	report_modes = [REPORT_MODE_GUI, REPORT_MODE_CLI],
+	authors = ['Pierre Bélissent'],
+	authors_email = ['pierre.belissent@gmail.com'],
+	require_active = True
 )
