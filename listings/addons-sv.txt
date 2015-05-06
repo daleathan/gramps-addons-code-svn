@@ -1,4 +1,4 @@
-{"t":'Exporter',"i":'Export GEDCOM Extensions',"n":'Export GEDCOM Extensions (GED2)',"v":'1.0.9',"g":'4.1',"d":'Extensions to the common GEDCOM format.',"z":'GedcomExtensions.addon.tgz'}
+{"t":'Exporter',"i":'Export GEDCOM Extensions',"n":'Export GEDCOM Extensions (GED2)',"v":'1.0.10',"g":'4.1',"d":'Extensions to the common GEDCOM format.',"z":'GedcomExtensions.addon.tgz'}
 {"t":'Exporter',"i":'Raw Export',"n":'Rå export',"v":'1.0.21',"g":'4.1',"d":'Detta är en rå dumpning av pythonobjekt',"z":'ExportRaw.addon.tgz'}
 {"t":'Exporter',"i":'ex_sqlite',"n":'SQLite Export',"v":'1.0.22',"g":'4.1',"d":'SQLite är ett vanligt lokal databasformat',"z":'Sqlite.addon.tgz'}
 {"t":'Exporter',"i":'export_django',"n":'Django-export',"v":'1.0.24',"g":'4.1',"d":'Django är ett nätbaserat ramverkarbetande med en konfigurerad databas ',"z":'Django.addon.tgz'}
