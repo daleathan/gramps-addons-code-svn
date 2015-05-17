@@ -25,7 +25,7 @@
 #
 #------------------------------------------------------------------------
 import re
-import gobject
+from gi.repository import GLib
 import urllib2
 from xml.dom import minidom, Node
 # FIXME For Python 3:
@@ -106,7 +106,7 @@ class HeadlineNewsGramplet(Gramplet):
         self.set_use_markup(True)
         self.set_wrap(False)
         self.set_text(_("No Family Tree loaded."))
-        self.timer = gobject.timeout_add(self.update_interval, 
+        self.timer = GLib.timeout_add(self.update_interval, 
                                          self.update_by_timer)
 
     def update_by_timer(self):
