@@ -46,11 +46,13 @@ function BodyDecorate()
 	// Check if the current page needs a menu
 	var menuless = false;
 	if ($('.dwr-menuless').length > 0) menuless = true;
+	if (search.SvgExpanded) menuless = true;
+	if (search.MapExpanded) menuless = true;
 	
 	// Build the div for the body content
 	$('body').wrapInner('<div id="body-page" class="container"></div>');
 	
-	// Buid menu if any
+	// Build menu if any
 	if (!menuless)
 	{
 		BuildMenu();
@@ -122,8 +124,6 @@ function innerDivNetSize(size, div)
 
 var search = {
 	//Txt; // Test of the search input form (in the navbar or embedded in the page)
-	//Asc; // Number of ascending generations
-	//Dsc; // Number of descending generations
 	//Idx; // Index of the current person (in table "I")
 	//Fdx; // Index of the current family (in table "F")
 	//Mdx; // Index of the current media object (in table "M")
@@ -131,9 +131,23 @@ var search = {
 	//Pdx; // Index of the current place (in table "P")
 	//Rdx; // Index of the current repository (in table "R")
 	//SNdx; // Index of the current surname (in table "SN")
-	//SvgType; // Type of SVG graph used (the number is the index in graphsInitialize)
+	//Igid; // Gramps ID of the current person
+	//Fgid; // Gramps ID of the current family
+	//Mgid; // Gramps ID of the current media object
+	//Sgid; // Gramps ID of the current source
+	//Pgid; // Gramps ID of the current place
+	//Rgid; // Gramps ID of the current repository
+	//SvgType; // Type of SVG graph used
+	//SvgShape; // The SVG graph shape
+	//Asc; // Number of ascending generations
+	//Dsc; // Number of descending generations
+	//SvgDistribAsc; // The SVG graph parents distribution
+	//SvgDistribDsc; // The SVG graph children distribution
+	//SvgBackground; // The SVG graph color scheme
+	//SvgDup; // Show duplicates in SVG graph
+	//SvgExpanded; // Whether the SVG tree should be expanded to full screen
 	//ImgList; // List of media index (in table "M") for the slideshow
-	//mapExpanded; // Whether the map should be expanded to full screen
+	//MapExpanded; // Whether the map should be expanded to full screen
 };
 
 
@@ -157,12 +171,24 @@ function ParseSearchString()
 	search.Pdx = GetURLParameter('pdx', -1);
 	search.Rdx = GetURLParameter('rdx', -1);
 	search.SNdx = GetURLParameter('sndx', -1);
+	search.Igid = GetURLParameter('igid', '');
+	search.Fgid = GetURLParameter('fgid', '');
+	search.Mgid = GetURLParameter('mgid', '');
+	search.Sgid = GetURLParameter('sgid', '');
+	search.Pgid = GetURLParameter('pgid', '');
+	search.Rgid = GetURLParameter('rgid', '');
 	search.Asc = GetURLParameter('sasc', 4);
 	search.Dsc = GetURLParameter('sdsc', 4);
 	search.SvgType = GetURLParameter('svgtype', SVG_TREE_TYPE);
+	search.SvgShape = GetURLParameter('svgshape', SVG_TREE_SHAPE);
+	search.SvgDistribAsc = GetURLParameter('svgdasc', SVG_TREE_DISTRIB_ASC);
+	search.SvgDistribDsc = GetURLParameter('svgddsc', SVG_TREE_DISTRIB_DSC);
+	search.SvgBackground = GetURLParameter('svgbk', SVG_TREE_BACKGROUND);
+	search.SvgDup = GetURLParameter('svgdup', SVG_TREE_SHOW_DUP);
+	search.SvgExpanded = GetURLParameter('svgx', false);
 	search.ImgList = GetURLParameter('simg', []);
 	if (search.Mdx != -1 && search.ImgList.length == 0) search.ImgList = [search.Mdx];
-	search.mapExpanded = GetURLParameter('mexp', false);
+	search.MapExpanded = GetURLParameter('mexp', false);
 }
 
 function GetURLParameter(sParam, def)
@@ -177,16 +203,20 @@ function GetURLParameter(sParam, def)
 		var sParameterName = sURLVariables[i].split('=');
 		if (sParameterName[0] == sParam)
 		{
-			s = decodeURIComponent(sParameterName[1]);
-			if ($.inArray(s, ['true', 'on']) >= 0) s = true;
-			if ($.inArray(s, ['false', 'off']) >= 0) s = false;
+			var s = decodeURIComponent(sParameterName[1]);
 			if (typeof(def) == 'number')
 			{
 				s = parseInt(s);
 				if (isNaN(s)) s = def;
 			}
 			if (def instanceof Array) s = $.parseJSON(s);
-			if (typeof(def) == 'boolean') s = s ? true : false;
+			if (typeof(def) == 'boolean')
+			{
+				if ($.inArray(s, ['true', 'on']) >= 0) s = true;
+				if ($.inArray(s, ['false', 'off']) >= 0) s = false;
+				if (!isNaN(parseInt(s))) s = parseInt(s);
+				s = s ? true : false;
+			}
 			return(s);
 		}
 	}
@@ -209,19 +239,23 @@ function BuildSearchString(params)
 	s = SetURLParameter(s, 'pdx', params.Pdx, search.Pdx, -1);
 	s = SetURLParameter(s, 'rdx', params.Rdx, search.Rdx, -1);
 	s = SetURLParameter(s, 'sndx', params.SNdx, search.SNdx, -1);
+	s = SetURLParameter(s, 'igid', params.Igid, search.Igid, '');
+	s = SetURLParameter(s, 'fgid', params.Fgid, search.Fgid, '');
+	s = SetURLParameter(s, 'mgid', params.Mgid, search.Mgid, '');
+	s = SetURLParameter(s, 'sgid', params.Sgid, search.Sgid, '');
+	s = SetURLParameter(s, 'pgid', params.Pgid, search.Pgid, '');
+	s = SetURLParameter(s, 'rgid', params.Rgid, search.Rgid, '');
 	s = SetURLParameter(s, 'sasc', params.Asc, search.Asc, 4);
 	s = SetURLParameter(s, 'sdsc', params.Dsc, search.Dsc, 4);
 	s = SetURLParameter(s, 'svgtype', params.SvgType, search.SvgType, SVG_TREE_TYPE);
+	s = SetURLParameter(s, 'svgshape', params.SvgShape, search.SvgShape, SVG_TREE_SHAPE);
+	s = SetURLParameter(s, 'svgdasc', params.SvgDistribAsc, search.SvgDistribAsc, SVG_TREE_DISTRIB_ASC);
+	s = SetURLParameter(s, 'svgddsc', params.SvgDistribDsc, search.SvgDistribDsc, SVG_TREE_DISTRIB_DSC);
+	s = SetURLParameter(s, 'svgbk', params.SvgBackground, search.SvgBackground, SVG_TREE_BACKGROUND);
+	s = SetURLParameter(s, 'svgdup', params.SvgDup, search.SvgDup, SVG_TREE_SHOW_DUP);
+	s = SetURLParameter(s, 'svgx', params.SvgExpanded, search.SvgExpanded, false);
 	s = SetURLParameter(s, 'simg', params.ImgList, search.ImgList, []);
-	s = SetURLParameter(s, 'mexp', params.mapExpanded, search.mapExpanded, false);
-	
-// test for search string compression: result is not satisfactory
-// toto = $.base64.encode(RawDeflate.deflate(unescape(encodeURIComponent(s))));
-// titi = decodeURIComponent(escape(RawDeflate.inflate($.base64.decode(toto))));
-// console.log(s);
-// console.log(toto);
-// console.log(titi);
-// console.log(titi == s);
+	s = SetURLParameter(s, 'mexp', params.MapExpanded, search.MapExpanded, false);
 	return(s);
 }
 
