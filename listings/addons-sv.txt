@@ -3,6 +3,7 @@
 {"t":'Exporter',"i":'ex_sqlite',"n":'SQLite Export',"v":'1.0.22',"g":'4.1',"d":'SQLite är ett vanligt lokal databasformat',"z":'Sqlite.addon.tgz'}
 {"t":'Gramplet',"i":'Headline News Gramplet',"n":'Nyhetsrubriker med Gramplet',"v":'1.0.22',"g":'4.1',"d":'Gramplet for showing latest the Gramps news',"z":'HeadlineNewsGramplet.addon.tgz'}
 {"t":'Gramplet',"i":'Photo Tagging',"n":'Photo Tagging',"v":'1.0.6',"g":'4.1',"d":'Gramplet for tagging people in photos',"z":'PhotoTaggingGramplet.addon.tgz'}
+{"t":'Gramplet',"i":'Query Gramplet',"n":'Query Gramplet',"v":'1.0.20',"g":'4.1',"d":'Gramplet for running SQL-like queries',"z":'Query.addon.tgz'}
 {"t":'Importer',"i":'import_django',"n":'Django-import',"v":'1.0.25',"g":'4.1',"d":'Django är ett nätbaserat ramverkarbetande med en konfigurerad databas ',"z":'Django.addon.tgz'}
 {"t":'Gramplet',"i":'Birthdays',"n":'Födelsedags-Gramplet',"v":'1.0.24',"g":'4.1',"d":'en Gramplet, som visar födelsedagarna för levande personer',"z":'BirthdaysGramplet.addon.tgz'}
 {"t":'Gramplet',"i":'Census Gramplet',"n":'Census Gramplet',"v":'1.0.28',"g":'4.1',"d":'Gramplet interface for census data',"z":'Census.addon.tgz'}
@@ -34,6 +35,7 @@
 {"t":'Plugin lib',"i":'libwebconnect',"n":'libwebconnect',"v":'1.0.19',"g":'4.1',"d":'Library for web site collections',"z":'libwebconnect.addon.tgz'}
 {"t":'Quickreport',"i":'Descendant Count Quickview',"n":'Ättlingsräknare',"v":'1.0.18',"g":'4.1',"d":'Visa antal ättlingar för varje person',"z":'DescendantCount.addon.tgz'}
 {"t":'Quickreport',"i":'NumberOfDescendantsQuickview',"n":'Antal ättlingar',"v":'3.4.18',"g":'4.1',"d":'Visar antal ättlingar till aktuell person',"z":'NumberOfDescendantsQuickview.addon.tgz'}
+{"t":'Quickreport',"i":'Query Quickview',"n":'Query Quickview',"v":'1.0.20',"g":'4.1',"d":'Quick view for SQL-like running queries',"z":'Query.addon.tgz'}
 {"t":'Quickreport',"i":'allnames',"n":'Samtliga namn för alla personer',"v":'1.0.17',"g":'4.1',"d":'Visa samtliga namn för alla personer',"z":'AllNamesQuickview.addon.tgz'}
 {"t":'Quickreport',"i":'timelinequickview',"n":'Tidslinje',"v":'1.0.20',"g":'4.1',"d":'Visar händelser för en person på en tidslinje',"z":'TimelineQuickview.addon.tgz'}
 {"t":'Report',"i":'AncestorFill',"n":'Anors fyllnadsgrad',"v":'1.0.5',"g":'4.1',"d":'Rapport över ifyllnad av släktträd',"z":'AncestorFill.addon.tgz'}
