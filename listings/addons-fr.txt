@@ -4,6 +4,7 @@
 {"t":'Gramplet',"i":'Headline News Gramplet',"n":'Gramplet Résumé',"v":'1.0.22',"g":'4.1',"d":'Gramplet pour afficher les dernières nouvelles de Gramps',"z":'HeadlineNewsGramplet.addon.tgz'}
 {"t":'Gramplet',"i":'Photo Tagging',"n":'Cartographie photographique',"v":'1.0.6',"g":'4.1',"d":'Gramplet pour définir les individus dans les photos',"z":'PhotoTaggingGramplet.addon.tgz'}
 {"t":'Gramplet',"i":'Query Gramplet',"n":'Gramplet Requête',"v":'1.0.20',"g":'4.1',"d":'Gramplet pour des requêtes SQL-like',"z":'Query.addon.tgz'}
+{"t":'Gramps View',"i":'graphview',"n":'Vue Graphique',"v":'1.0.44',"g":'4.1',"d":'Graphique dynamique des relations',"z":'GraphView.addon.tgz'}
 {"t":'Importer',"i":'import_django',"n":'Import Django',"v":'1.0.25',"g":'4.1',"d":'Django est un environnement internet fonctionnant avec une base de données configurée',"z":'Django.addon.tgz'}
 {"t":'Gramplet',"i":'Birthdays',"n":'Gramplet Anniversaires',"v":'1.0.24',"g":'4.1',"d":'Ce Gramplet affiche les anniversaires des personnes en vie',"z":'BirthdaysGramplet.addon.tgz'}
 {"t":'Gramplet',"i":'Census Gramplet',"n":'Gramplet Recensement',"v":'1.0.28',"g":'4.1',"d":'Gramplet servant d\'interface aux données de recensement',"z":'Census.addon.tgz'}

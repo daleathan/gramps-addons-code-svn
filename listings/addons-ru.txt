@@ -4,6 +4,7 @@
 {"t":'Gramplet',"i":'Headline News Gramplet',"n":'Headline News Gramplet',"v":'1.0.22',"g":'4.1',"d":'Gramplet for showing latest the Gramps news',"z":'HeadlineNewsGramplet.addon.tgz'}
 {"t":'Gramplet',"i":'Photo Tagging',"n":'Разметка фотографий',"v":'1.0.6',"g":'4.1',"d":'Грамплет для разметки фотографий',"z":'PhotoTaggingGramplet.addon.tgz'}
 {"t":'Gramplet',"i":'Query Gramplet',"n":'Query Gramplet',"v":'1.0.20',"g":'4.1',"d":'Gramplet for running SQL-like queries',"z":'Query.addon.tgz'}
+{"t":'Gramps View',"i":'graphview',"n":'Graph View',"v":'1.0.44',"g":'4.1',"d":'Dynamic graph of relations',"z":'GraphView.addon.tgz'}
 {"t":'Importer',"i":'import_django',"n":'Django Import',"v":'1.0.25',"g":'4.1',"d":'Django is a web framework working on a configured database',"z":'Django.addon.tgz'}
 {"t":'Gramplet',"i":'Birthdays',"n":'Birthdays Gramplet',"v":'1.0.24',"g":'4.1',"d":'a gramplet that displays the birthdays of the living people',"z":'BirthdaysGramplet.addon.tgz'}
 {"t":'Gramplet',"i":'Census Gramplet',"n":'Census Gramplet',"v":'1.0.28',"g":'4.1',"d":'Gramplet interface for census data',"z":'Census.addon.tgz'}

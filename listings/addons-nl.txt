@@ -4,6 +4,7 @@
 {"t":'Gramplet',"i":'Headline News Gramplet',"n":'\'Belangrijkste nieuws\'-gramplet',"v":'1.0.22',"g":'4.1',"d":'Gramplet toont het laatste Gramps-nieuws',"z":'HeadlineNewsGramplet.addon.tgz'}
 {"t":'Gramplet',"i":'Photo Tagging',"n":'Photo Tagging',"v":'1.0.6',"g":'4.1',"d":'Gramplet for tagging people in photos',"z":'PhotoTaggingGramplet.addon.tgz'}
 {"t":'Gramplet',"i":'Query Gramplet',"n":'Zoek-gramplet',"v":'1.0.20',"g":'4.1',"d":'Gramplet om \'sql\'-achtige zoekopdrachten in te geven',"z":'Query.addon.tgz'}
+{"t":'Gramps View',"i":'graphview',"n":'Grafiekscherm',"v":'1.0.44',"g":'4.1',"d":'Dynamische grafiek van de relaties',"z":'GraphView.addon.tgz'}
 {"t":'Importer',"i":'import_django',"n":'Django-import',"v":'1.0.25',"g":'4.1',"d":'Django is een webstructuur die draait op een geconfigureerd gegevensbestand',"z":'Django.addon.tgz'}
 {"t":'Gramplet',"i":'Birthdays',"n":'Verjaardagsgramplet',"v":'1.0.24',"g":'4.1',"d":'een gramplet dat de verjaardagen van de nog in leven zijnde personen toont',"z":'BirthdaysGramplet.addon.tgz'}
 {"t":'Gramplet',"i":'Census Gramplet',"n":'Volkstelling-gramplet',"v":'1.0.28',"g":'4.1',"d":'Gramplet interface for census data',"z":'Census.addon.tgz'}
